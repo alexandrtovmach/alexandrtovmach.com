@@ -8,7 +8,8 @@
     "react": "^15.6.2",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "2.0.0-next.66cc7a90"
+    "react-scripts": "2.0.0-next.66cc7a90",
+    "react-switch": "^3.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

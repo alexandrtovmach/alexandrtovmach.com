@@ -4,3 +4,8 @@
   position: fixed;
   border-bottom: 5px solid;
 }
+
+.hidden-header {
+  width: 100%;
+  height: calc(100px + 5px);
+}
