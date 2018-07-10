@@ -7,26 +7,25 @@
   .button {
     position: relative;
     outline: none;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border: 0;
     border-radius: 100px;
-    margin: 0 12px;
+    margin: 0 10px;
     cursor: pointer;
     
     &.button--large {
       z-index: 1;
       position: relative;
-      width: 60px;
-      height: 60px;
     }
 
     .earth {
       position: absolute;
       display: block;
-      font-size: 40px;
-      top: calc(50% - 25px);
-      left: calc(50% - 40px/2);
+      top: 2.5%;
+      left: 2.5%;
+      width: 100%;
+      height: 100%;
       transition: 200ms 200ms;
       transform: scale(1);
       &.active {
@@ -36,12 +35,12 @@
     }
 
     .cross {
-      content: '\274C';
       position: absolute;
       display: block;
-      font-size: 45px;
-      top: calc(50% - 25px);
-      left: calc(50% - 15px);
+      top: 25%;
+      left: 25%;
+      width: 50%;
+      height: 50%;
       transition: 100ms;
       transform: scale(0);
       &.active {

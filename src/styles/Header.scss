@@ -1,21 +1,32 @@
 .header {
-  width: 100%;
+  width: calc(100% - 20px*2);
   height: 60px;
+  padding: 0 20px;
   position: fixed;
-  border-bottom: 5px solid;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
-  .theme-switcher {
-    .react-switch-bg {
-      >div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        >svg {
-          width: 80%;
-          height: 80%;
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .control-panel {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .theme-switcher {
+      .react-switch-bg {
+        >div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          >svg {
+            width: 80%;
+            height: 80%;
+          }
         }
       }
     }

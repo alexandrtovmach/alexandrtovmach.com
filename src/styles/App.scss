@@ -11,15 +11,16 @@
       color: $dark-main-color;
       fill: $dark-main-color;
     }
-    .header .button-group .button {
-      background: $dark-second-color;
-      color: $dark-main-color;
-      fill: $dark-main-color;
-      // .icon {
-      //   &:after {
-      //     background: $dark-main-color;
-      //   }
-      // }
+    .header {
+      // box-shadow: 0 4px 10px -5px $dark-second-color;
+      .logo {
+        fill: $dark-second-color;
+      }
+      .button-group .button {
+        background: $dark-second-color;
+        color: $dark-main-color;
+        fill: $dark-main-color;
+      }
     }
   }
 
@@ -30,15 +31,16 @@
       color: $light-main-color;
       fill: $light-main-color;
     }
-    .header .button-group .button {
-      background: $light-second-color;
-      color: $light-main-color;
-      fill: $light-main-color;
-      // .icon {
-      //   &:after {
-      //     background: $light-main-color;
-      //   }
-      // }
+    .header {
+      // box-shadow: 0 4px 10px -5px $light-second-color;
+      .logo {
+        fill: $light-second-color;
+      }
+      .button-group .button {
+        background: $light-second-color;
+        color: $light-main-color;
+        fill: $light-main-color;
+      }
     }
   }
 

@@ -10,7 +10,7 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      locale: getLanguage(),
+      locale: window.localStorage.getItem("user_language") || getLanguage(),
       theme: detectTheme()
     };
     this.handleThemeChange = this.handleThemeChange.bind(this);
@@ -24,6 +24,7 @@ export default class App extends React.Component {
   }
  
   handleLanguageChange(lang) {
+    window.localStorage.setItem("user_language", lang);
     this.setState({
       locale: lang
     });

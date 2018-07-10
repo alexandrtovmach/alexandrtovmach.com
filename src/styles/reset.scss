@@ -41,3 +41,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+:active, :hover, :focus {
+	outline: 0;
+	outline-offset: 0;
+}

@@ -94,8 +94,8 @@ export default class RadialMenu extends React.Component {
         </StaggeredMotion>
         
         <Motion
-          defaultStyle={{ s: 0.675 }}
-          style={{ s: spring(this.state.active ? 1 : 0.675, { stiffness: 330, damping: 14 }) }}
+          defaultStyle={{ s: 1 }}
+          style={{ s: spring(this.state.active ? 1.25 : 1, { stiffness: 330, damping: 14 }) }}
         >
           {interpolatingStyles =>
             <button
