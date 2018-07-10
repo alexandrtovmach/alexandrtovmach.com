@@ -3,6 +3,20 @@
   height: 100px;
   position: fixed;
   border-bottom: 5px solid;
+
+  .theme-switcher {
+    .react-switch-bg {
+      >div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        >svg {
+          width: 80%;
+          height: 80%;
+        }
+      }
+    }
+  }
 }
 
 .hidden-header {
