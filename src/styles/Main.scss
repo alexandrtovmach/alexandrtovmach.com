@@ -1,0 +1,9 @@
+.main {
+  width: 100%;
+  height: calc(100vh - 60px + 5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-family: 'Lato', sans-serif;
+}

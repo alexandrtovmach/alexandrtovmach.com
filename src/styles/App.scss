@@ -11,6 +11,16 @@
       color: $dark-main-color;
       fill: $dark-main-color;
     }
+    .header .button-group .button {
+      background: $dark-second-color;
+      color: $dark-main-color;
+      fill: $dark-main-color;
+      // .icon {
+      //   &:after {
+      //     background: $dark-main-color;
+      //   }
+      // }
+    }
   }
 
   &.light-theme {
@@ -19,6 +29,16 @@
     .theme-switcher {
       color: $light-main-color;
       fill: $light-main-color;
+    }
+    .header .button-group .button {
+      background: $light-second-color;
+      color: $light-main-color;
+      fill: $light-main-color;
+      // .icon {
+      //   &:after {
+      //     background: $light-main-color;
+      //   }
+      // }
     }
   }
 
