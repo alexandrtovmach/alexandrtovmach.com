@@ -6,6 +6,7 @@ export default {
     go_to_main_page: "Go to main page"
   },
   "Main": {
-    welcome: "You're welcome!"
+    welcome: "You're welcome!",
+    pages: ["Main", "About", "Schedule", "Portfolio", "Blog"]
   }
 }

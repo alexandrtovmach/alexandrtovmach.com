@@ -1,0 +1,17 @@
+.navigation {
+  .tabs-panel {
+    position: fixed;
+    left: 20px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50%;
+    font-weight: 100;
+
+    .tab {
+      margin: 10px;
+      cursor: pointer;
+    }
+  }
+}

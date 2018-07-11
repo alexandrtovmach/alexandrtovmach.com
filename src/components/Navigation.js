@@ -10,10 +10,11 @@ export default class Navigation extends React.Component {
     super();
 
     this.state = {
-      index: 2
+      index: 0
     }
 
     this.handleChangeIndex = this.handleChangeIndex.bind(this);
+    this.generateTabs = this.generateTabs.bind(this);
   }
 
   handleChangeIndex(newIndex) {
@@ -22,12 +23,15 @@ export default class Navigation extends React.Component {
     })
   }
 
+  generateTabs(tagsArray) {
+    return tagsArray.map((el, i) => {
+      return <div key={i} className="tab" onClick={() => {this.handleChangeIndex(i)}}>{el}</div>
+    })
+  }
+
   render () {
     return (
-      <div className="navi">
-        <div className="tab" onClick={() => {this.handleChangeIndex(0)}}>One {this.state.index === 0}</div>
-        <div className="tab" onClick={() => {this.handleChangeIndex(1)}}>Two {this.state.index === 1}</div>
-        <div className="tab" onClick={() => {this.handleChangeIndex(2)}}>Three {this.state.index === 2}</div>
+      <div className="navigation">
         <AutoPlaySwipeableViews
           enableMouseEvents={true}
           index={this.state.index}
@@ -35,6 +39,9 @@ export default class Navigation extends React.Component {
         >
           {this.props.children}
         </AutoPlaySwipeableViews>
+        <div className="tabs-panel">
+          {this.generateTabs(this.props.tags)}
+        </div>
       </div>
     )
   }
