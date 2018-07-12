@@ -1,9 +1,15 @@
 import React from "react";
 import classnames from "classnames";
+import screenfull from "screenfull";
 
 import Header from "./Header";
+import Navigation from './Navigation';
 import Main from "./MainPage/Main";
-import { getThemeConfig, detectTheme } from '../services/theme';
+import About from "./AboutPage/About";
+import Calendar from "./CalendarPage/Calendar";
+import Portfolio from "./PortfolioPage/Portfolio";
+import Blog from "./BlogPage/Blog";
+import { getThemeConfig, detectTheme, updateMetaTagsTheme } from '../services/theme';
 import { getLanguage, getTranslations } from '../services/language';
 
 export default class App extends React.Component {
@@ -13,8 +19,17 @@ export default class App extends React.Component {
       locale: window.localStorage.getItem("user_language") || getLanguage(),
       theme: detectTheme()
     };
+
     this.handleThemeChange = this.handleThemeChange.bind(this);
     this.handleLanguageChange = this.handleLanguageChange.bind(this);
+  }
+
+  componentDidMount() {
+    updateMetaTagsTheme(this.state.theme.mainColor);
+  }
+ 
+  componentDidUpdate() {
+    updateMetaTagsTheme(this.state.theme.mainColor);
   }
  
   handleThemeChange(light) {
@@ -40,11 +55,27 @@ export default class App extends React.Component {
           locale={ this.state.locale }
           langPack={ getTranslations(this.state.locale, "Header") }
         />
-        <div className="hidden-header"></div>
-        <Main
-          theme={ this.state.theme }
-          langPack={ getTranslations(this.state.locale, "Main") }
-        />
+
+        <Navigation
+          langPack={ getTranslations(this.state.locale, "Navigation") }
+        >
+          <Main
+            theme={ this.state.theme }
+            langPack={ getTranslations(this.state.locale, "Main") }
+          />
+          <About 
+            langPack={ getTranslations(this.state.locale, "About") }
+          />
+          <Calendar  
+            langPack={ getTranslations(this.state.locale, "Calendar") }
+          />
+          <Portfolio  
+            langPack={ getTranslations(this.state.locale, "Portfolio") }
+          />
+          <Blog  
+            langPack={ getTranslations(this.state.locale, "Blog") }
+          />
+        </Navigation>
       </div>
     );
   }

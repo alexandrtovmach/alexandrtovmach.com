@@ -9,6 +9,7 @@
   z-index: 2;
 
   .logo {
+    flex: 0 0 auto;
     width: 40px;
     height: 40px;
   }
@@ -32,9 +33,4 @@
       }
     }
   }
-}
-
-.hidden-header {
-  width: 100%;
-  height: calc(60px + 5px);
 }

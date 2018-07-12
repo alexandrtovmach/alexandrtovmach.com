@@ -11,6 +11,10 @@ export function detectTheme() {
   return spacetime(new Date()).daylight().current.status === "day" ? themes.light: themes.dark;
 }
 
+export function updateMetaTagsTheme(newColor) {
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", newColor);
+}
+
 const themes = {
   dark: {
     name: "dark-theme",

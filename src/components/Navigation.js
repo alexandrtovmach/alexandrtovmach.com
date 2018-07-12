@@ -1,8 +1,9 @@
 import React from 'react';
+import classnames from "classnames";
 import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
+import { autoPlay, bindKeyboard } from 'react-swipeable-views-utils';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+const AutoPlaySwipeableViews = bindKeyboard(autoPlay(SwipeableViews));
 
 export default class Navigation extends React.Component {
 
@@ -25,7 +26,17 @@ export default class Navigation extends React.Component {
 
   generateTabs(tagsArray) {
     return tagsArray.map((el, i) => {
-      return <div key={i} className="tab" onClick={() => {this.handleChangeIndex(i)}}>{el}</div>
+      return (
+        <div
+          key={i}
+          className={classnames("tab", {
+            "active-tab": this.state.index === i
+          })}
+          onClick={() => {this.handleChangeIndex(i)}}
+        >
+          {el}
+        </div>
+      )
     })
   }
 
@@ -33,6 +44,9 @@ export default class Navigation extends React.Component {
     return (
       <div className="navigation">
         <AutoPlaySwipeableViews
+          resistance
+          className="tabs-content"
+          interval={5000}
           enableMouseEvents={true}
           index={this.state.index}
           onChangeIndex={this.handleChangeIndex}
@@ -40,7 +54,7 @@ export default class Navigation extends React.Component {
           {this.props.children}
         </AutoPlaySwipeableViews>
         <div className="tabs-panel">
-          {this.generateTabs(this.props.tags)}
+          {this.generateTabs(this.props.langPack.tags)}
         </div>
       </div>
     )

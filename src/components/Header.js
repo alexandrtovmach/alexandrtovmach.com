@@ -20,7 +20,7 @@ export default class Header extends React.Component {
               languageWord={this.props.langPack.language}
             />
           </div>
-          <label title={this.props.theme.name === "light-theme"? this.props.langPack.switch_to_night_mode: this.props.langPack.switch_to_day_mode}>
+          <div style={{fontSize: "initial"}} title={this.props.theme.name === "light-theme"? this.props.langPack.switch_to_night_mode: this.props.langPack.switch_to_day_mode}>
             <Switch
               className="theme-switcher"
               width={60}
@@ -35,7 +35,7 @@ export default class Header extends React.Component {
               checkedIcon={<MoonSVG />}
               uncheckedIcon={<SunSVG />}
             />
-          </label>
+          </div>
         </div>
       </div>
     );

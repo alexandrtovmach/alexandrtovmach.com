@@ -1,17 +1,42 @@
 .navigation {
+  height: 100%;
+  .tabs-content {
+    height: 100%;
+    .react-swipeable-view-container {
+      height: 100%;
+    }
+  }
   .tabs-panel {
     position: fixed;
-    left: 20px;
+    margin: 10px 20px;
     bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50%;
+    font-size: 75%;
     font-weight: 100;
 
     .tab {
-      margin: 10px;
+      margin: 0 10px;
       cursor: pointer;
+      position: relative;
+      white-space: nowrap;      
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        transition: 0.5s;
+        border-bottom: 1.5px solid;
+      }
+      &.active-tab {
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
     }
   }
 }
