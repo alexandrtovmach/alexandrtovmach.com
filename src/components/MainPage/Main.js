@@ -16,9 +16,9 @@ export default class Main extends React.Component {
   render() {
     return (
       <div className={classnames("main")}>
-        <BackgroundMain
+        {/* <BackgroundMain
           theme={this.props.theme}
-        />
+        /> */}
         <Navigation
           tags={this.props.langPack.pages}
         >
