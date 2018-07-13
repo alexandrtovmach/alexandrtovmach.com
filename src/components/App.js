@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import screenfull from "screenfull";
+// import screenfull from "screenfull";
 
 import Header from "./Header";
 import Navigation from './Navigation';
@@ -10,26 +10,28 @@ import Calendar from "./CalendarPage/Calendar";
 import Portfolio from "./PortfolioPage/Portfolio";
 import Blog from "./BlogPage/Blog";
 import { getThemeConfig, detectTheme, updateMetaTagsTheme } from '../services/theme';
-import { getLanguage, getTranslations } from '../services/language';
+import { getLanguage, getTranslations, updateLangTag } from '../services/language';
 
 export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      locale: window.localStorage.getItem("user_language") || getLanguage(),
-      theme: detectTheme()
+      locale: getLanguage(),
+      theme: detectTheme(),
+      redirect: false
     };
-
     this.handleThemeChange = this.handleThemeChange.bind(this);
     this.handleLanguageChange = this.handleLanguageChange.bind(this);
   }
 
   componentDidMount() {
     updateMetaTagsTheme(this.state.theme.mainColor);
+    updateLangTag(this.state.locale);
   }
  
   componentDidUpdate() {
     updateMetaTagsTheme(this.state.theme.mainColor);
+    updateLangTag(this.state.locale);
   }
  
   handleThemeChange(light) {
@@ -55,7 +57,6 @@ export default class App extends React.Component {
           locale={ this.state.locale }
           langPack={ getTranslations(this.state.locale, "Header") }
         />
-
         <Navigation
           langPack={ getTranslations(this.state.locale, "Navigation") }
         >

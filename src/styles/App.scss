@@ -7,16 +7,13 @@
     background-color: $dark-main-color;
     color: $dark-second-color;
     border-color: $dark-second-color;
+    fill: $dark-second-color;
 
     .theme-switcher {
       color: $dark-main-color;
       fill: $dark-main-color;
     }
     .header {
-      // box-shadow: 0 4px 10px -5px $dark-second-color;
-      .logo {
-        fill: $dark-second-color;
-      }
       .button-group .button {
         background: $dark-second-color;
         color: $dark-main-color;
@@ -29,15 +26,12 @@
     background-color: $light-main-color;
     color: $light-second-color;
     border-color: $light-second-color;
+    fill: $light-second-color;
     .theme-switcher {
       color: $light-main-color;
       fill: $light-main-color;
     }
     .header {
-      // box-shadow: 0 4px 10px -5px $light-second-color;
-      .logo {
-        fill: $light-second-color;
-      }
       .button-group .button {
         background: $light-second-color;
         color: $light-main-color;

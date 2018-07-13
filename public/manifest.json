@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "AT Portfolio",
+  "name": "Alexandr Tovmach portfolio",
+  "description": "Web portfolio to easy show my skills and expirience",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,7 +10,7 @@
     }
   ],
   "start_url": "./index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }

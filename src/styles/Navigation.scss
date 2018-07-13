@@ -15,12 +15,17 @@
     align-items: center;
     font-size: 75%;
     font-weight: 100;
-
     .tab {
       margin: 0 10px;
       cursor: pointer;
       position: relative;
-      white-space: nowrap;      
+      white-space: nowrap;
+      .text {
+        display: inline;
+      }
+      .icon {
+        display: none;
+      }
       &::after {
         content: "";
         display: block;
@@ -35,6 +40,28 @@
         &::after {
           width: 100%;
           left: 0;
+        }
+      }
+    }
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      margin: 10px 0;
+      .tab {
+        flex: 1 0 20px;
+        max-width: 40px;
+        margin: 0 6vw;
+        transition: 0.5s;
+        .text {
+          display: none;
+        }
+        .icon {
+          display: block;
+        }
+        &::after {
+          display: none;
+        }
+        &.active-tab {
+          transform: translateY(-10px);
         }
       }
     }

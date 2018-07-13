@@ -3,6 +3,20 @@ import classnames from "classnames";
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay, bindKeyboard } from 'react-swipeable-views-utils';
 
+import HomeSVG from '../styles/assets/icons/home';
+import AboutSVG from '../styles/assets/icons/about';
+import CalendarSVG from '../styles/assets/icons/calendar';
+import PortfolioSVG from '../styles/assets/icons/portfolio';
+import BlogSVG from '../styles/assets/icons/blog';
+
+const iconsInOrder = [
+  <HomeSVG className="icon" />,
+  <AboutSVG className="icon" />,
+  <CalendarSVG className="icon" />,
+  <PortfolioSVG className="icon" />,
+  <BlogSVG className="icon" />
+]
+
 const AutoPlaySwipeableViews = bindKeyboard(autoPlay(SwipeableViews));
 
 export default class Navigation extends React.Component {
@@ -34,7 +48,8 @@ export default class Navigation extends React.Component {
           })}
           onClick={() => {this.handleChangeIndex(i)}}
         >
-          {el}
+          <span className="text">{el}</span>
+          {iconsInOrder[i]}
         </div>
       )
     })
