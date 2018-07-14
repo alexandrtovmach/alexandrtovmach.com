@@ -60,6 +60,7 @@ export default class App extends React.Component {
         />
         <Background />
         <Navigation
+          theme={ this.state.theme }
           langPack={ getTranslations(this.state.locale, "Navigation") }
         >
           <Main
