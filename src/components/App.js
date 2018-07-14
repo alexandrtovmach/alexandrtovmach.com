@@ -3,6 +3,7 @@ import classnames from "classnames";
 // import screenfull from "screenfull";
 
 import Header from "./Header";
+import BackgroundMain from './BackgroundMain';
 import Navigation from './Navigation';
 import Main from "./MainPage/Main";
 import About from "./AboutPage/About";
@@ -57,11 +58,11 @@ export default class App extends React.Component {
           locale={ this.state.locale }
           langPack={ getTranslations(this.state.locale, "Header") }
         />
+        <BackgroundMain />
         <Navigation
           langPack={ getTranslations(this.state.locale, "Navigation") }
         >
           <Main
-            theme={ this.state.theme }
             langPack={ getTranslations(this.state.locale, "Main") }
           />
           <About 

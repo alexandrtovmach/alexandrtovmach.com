@@ -1,25 +1,24 @@
 .main {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 100%;
+  padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 200%;
-  font-family: 'Lato', sans-serif;
+  flex-direction: column;
   background-color: inherit;
+  text-align: left;
 
-  .background-main {
-    position: absolute;
-    top: 0;
-    left: 0;
+  h1 {
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
+    font-size: 80%;
+    font-weight: 200;
+    font-variant: small-caps;
+    margin: 1vh 0;
   }
-
-  >* {
-    z-index: 1;
+  span {
+    font-size: 200%;
+    width: 100%;
   }
 }

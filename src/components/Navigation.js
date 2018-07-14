@@ -61,7 +61,7 @@ export default class Navigation extends React.Component {
         <AutoPlaySwipeableViews
           resistance
           className="tabs-content"
-          interval={5000}
+          interval={30000}
           enableMouseEvents={true}
           index={this.state.index}
           onChangeIndex={this.handleChangeIndex}

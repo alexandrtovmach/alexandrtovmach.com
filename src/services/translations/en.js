@@ -6,7 +6,8 @@ export default {
     go_to_main_page: "Go to main page"
   },
   "Main": {
-    welcome: "You're welcome!"
+    welcome: "You're welcome!",
+    welcome_text: "This mini-site is designed to showcase my skills as a UI/UX designer and a web-developer"
   },
   "Navigation": {
     tags: ["Main", "About", "Schedule", "Portfolio", "Blog"]
