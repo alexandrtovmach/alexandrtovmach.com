@@ -2,6 +2,9 @@
   width: 100%;
   height: 100vh;
   transition: 1s;
+  *::selection {
+    background: gold;
+  }
 
   &.dark-theme {
     background-color: $dark-main-color;
