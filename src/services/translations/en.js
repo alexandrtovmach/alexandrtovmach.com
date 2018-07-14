@@ -9,6 +9,18 @@ export default {
     welcome: "You're welcome!",
     welcome_text: "This mini-site is designed to showcase my skills as a UI/UX designer and a web-developer"
   },
+  "About": {
+    about: "About"
+  },
+  "Calendar": {
+    calendar: "Schedule"
+  },
+  "Portfolio": {
+    portfolio: "Portfolio"
+  },
+  "Blog": {
+    blog: "Blog"
+  },
   "Navigation": {
     tags: ["Main", "About", "Schedule", "Portfolio", "Blog"]
   }
