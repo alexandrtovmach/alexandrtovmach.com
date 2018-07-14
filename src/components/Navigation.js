@@ -71,6 +71,18 @@ export default class Navigation extends React.Component {
         <div className="tabs-panel">
           {this.generateTabs(this.props.langPack.tags)}
         </div>
+        <div className="navigation-arrows">
+          <div className={classnames("left", {
+            "hidden": !this.state.index
+          })}>
+            Left
+          </div>
+          <div className={classnames("right", {
+            "hidden": (this.props.children.length - 1) === this.state.index
+          })}>
+            Right
+          </div>
+        </div>
       </div>
     )
   }

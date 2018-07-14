@@ -66,4 +66,18 @@
       }
     }
   }
+  .navigation-arrows {
+    font-weight: 100;
+    font-stretch: extra-condensed;
+    .left {
+      position: fixed;
+      top: 50%;
+      left: 20px;
+    }
+    .right {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+    }
+  }
 }
