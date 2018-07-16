@@ -7,7 +7,11 @@ export default {
   },
   "Main": {
     welcome: "You're welcome!",
-    welcome_text: "This mini-site is designed to showcase my skills as a UI/UX designer and a web-developer"
+    welcome_text: "This mini-site is designed to showcase my skills as a UI/UX designer and a web-developer",
+    about: "About",
+    calendar: "Schedule",
+    portfolio: "Portfolio",
+    blog: "Blog"
   },
   "About": {
     about: "About"

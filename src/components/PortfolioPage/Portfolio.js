@@ -4,7 +4,7 @@ import classnames from "classnames";
 export default class Portfolio extends React.Component {
   render() {
     return (
-      <div className={classnames("portfolio")}>
+      <div className={classnames("page")}>
         {this.props.langPack.portfolio}
       </div>
     );

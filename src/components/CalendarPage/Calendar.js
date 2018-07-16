@@ -4,7 +4,7 @@ import classnames from "classnames";
 export default class Calendar extends React.Component {
   render() {
     return (
-      <div className={classnames("calendar")}>
+      <div className={classnames("page")}>
         {this.props.langPack.calendar}
       </div>
     );

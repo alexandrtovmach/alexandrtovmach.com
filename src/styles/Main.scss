@@ -1,12 +1,15 @@
-.main {
+.page {
   position: relative;
-  width: 90%;
+  width: calc(100% - 20px*2);
   height: 100%;
   padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.main-index {
   background-color: inherit;
   text-align: left;
 
@@ -21,4 +24,16 @@
     font-size: 200%;
     width: 100%;
   }
+}
+.main-about {
+  
+}
+.main-calendar {
+
+}
+.main-portfolio {
+
+}
+.main-blog {
+
 }

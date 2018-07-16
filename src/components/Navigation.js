@@ -76,20 +76,20 @@ export default class Navigation extends React.Component {
             className={classnames("left", "arrow", {
               "hidden": !this.state.index
             })}
-            onClick={() => this.handleChangeIndex(--this.state.index)}
+            onClick={() => this.handleChangeIndex(this.state.index - 1)}
           >
             <svg viewBox="-2 -2 50 80">
-              <polyline fill="none" stroke={this.props.theme.secondColor} stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/>
+              <polyline fill="none" stroke={this.props.theme.secondColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/>
             </svg>  
           </button>
           <button
             className={classnames("right", "arrow", {
               "hidden": (this.props.children.length - 1) === this.state.index
             })}
-            onClick={() => this.handleChangeIndex(++this.state.index)}
+            onClick={() => this.handleChangeIndex(this.state.index + 1)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 50 80">
-              <polyline fill="none" stroke={this.props.theme.secondColor} stroke-width="1" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/>
+              <polyline fill="none" stroke={this.props.theme.secondColor} strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/>
             </svg>
           </button>
         </div>

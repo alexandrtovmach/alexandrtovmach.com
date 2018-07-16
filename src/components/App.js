@@ -1,12 +1,14 @@
 import React from "react";
 import classnames from "classnames";
+import { Switch, Route, Router } from "react-router-dom";
+import history from "../services/routerHistory";
 // import screenfull from "screenfull";
 
 import Header from "./Header";
-import Background from './Background';
-import Navigation from './Navigation';
 import Main from "./MainPage/Main";
+import MainBackground from './MainPage/MainBackground';
 import About from "./AboutPage/About";
+import AboutBackground from './AboutPage/AboutBackground';
 import Calendar from "./CalendarPage/Calendar";
 import Portfolio from "./PortfolioPage/Portfolio";
 import Blog from "./BlogPage/Blog";
@@ -58,27 +60,53 @@ export default class App extends React.Component {
           locale={ this.state.locale }
           langPack={ getTranslations(this.state.locale, "Header") }
         />
-        <Background />
-        <Navigation
-          theme={ this.state.theme }
-          langPack={ getTranslations(this.state.locale, "Navigation") }
-        >
-          <Main
-            langPack={ getTranslations(this.state.locale, "Main") }
-          />
-          <About 
-            langPack={ getTranslations(this.state.locale, "About") }
-          />
-          <Calendar  
-            langPack={ getTranslations(this.state.locale, "Calendar") }
-          />
-          <Portfolio  
-            langPack={ getTranslations(this.state.locale, "Portfolio") }
-          />
-          <Blog  
-            langPack={ getTranslations(this.state.locale, "Blog") }
-          />
-        </Navigation>
+        <Router history={history}>
+          <Switch>
+            <Route exact path="/" render={
+              () => (
+                <div className="page">
+                  <MainBackground />
+                  <Main
+                    theme={ this.state.theme }
+                    langPack={ getTranslations(this.state.locale, "Main") }
+                    navigationLangPack={ getTranslations(this.state.locale, "Navigation") }
+                  />
+                </div>
+              )
+            }/>
+            <Route exact path="/about" render={
+              () => (
+                <div className="page">
+                  <AboutBackground />
+                  <About 
+                    langPack={ getTranslations(this.state.locale, "About") }
+                  />
+                </div>
+              )
+            } />
+            <Route path="/calendar" render={
+              () => (
+                <Calendar 
+                  langPack={ getTranslations(this.state.locale, "Calendar") }
+                />
+              )
+            } />
+            <Route path="/portfolio" render={
+              () => (
+                <Portfolio 
+                  langPack={ getTranslations(this.state.locale, "Portfolio") }
+                />
+              )
+            } />
+            <Route path="/blog" render={
+              () => (
+                <Blog 
+                  langPack={ getTranslations(this.state.locale, "Blog") }
+                />
+              )
+            } />
+          </Switch>
+        </Router>
       </div>
     );
   }
