@@ -69,6 +69,7 @@ export default class App extends React.Component {
                   <Main
                     theme={ this.state.theme }
                     langPack={ getTranslations(this.state.locale, "Main") }
+                    locale={ this.state.locale }
                     navigationLangPack={ getTranslations(this.state.locale, "Navigation") }
                   />
                 </div>

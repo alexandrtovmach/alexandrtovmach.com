@@ -1,9 +1,14 @@
 import React from "react";
 import classnames from "classnames";
+import SkillsChart from './SkillsChart';
 
 import Navigation from '../Navigation';
+import data from '../../services/skillsData';
 
 export default class Main extends React.Component {
+  onSelect(event){
+    console.log(event);
+  }
 
   render() {
     return (
@@ -16,7 +21,25 @@ export default class Main extends React.Component {
           <h1>{this.props.langPack.welcome_text}</h1>
         </div>
         <div className={classnames("page main-about")}>
-          <a href="/about">{this.props.langPack.about}</a>
+          {/* <div className="skillsChartContainer">
+            <SkillsChart
+              data={data[this.props.locale]}
+              onSelect={this.onSelect}
+              scale="linear"
+              tooltipContent={
+                <div
+                  class="sunburstTooltip"
+                />
+              }
+              tooltip
+              keyId="skillsChart"
+              width="300"
+              height="300"
+            />
+          </div> */}
+          <a href="/about">
+            {this.props.langPack.about}
+          </a>
         </div>
         <div className={classnames("page main-calendar")}>
           <a href="/calendar">{this.props.langPack.calendar}</a>
