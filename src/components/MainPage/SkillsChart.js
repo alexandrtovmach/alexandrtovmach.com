@@ -69,50 +69,54 @@ class SkillsChart extends React.Component {
           tooltip.attr(key, tooltipContent.props[key]);
         });
       }
-      svg.selectAll('path').data(partition(root).descendants()).enter().append('path')
-      .style('fill', (d) => {
-        let hue;
-        const current = d;
-        if (current.depth === 0) {
-          return '#33cccc';
-        }
-        if (current.depth <= 1) {
-          hue = hueDXScale(d.x0);
-          current.fill = d3.hsl(hue, 0.5, 0.6);
-          return current.fill;
-        }
-        current.fill = current.parent.fill.brighter(0.5);
-        const hsl = d3.hsl(current.fill);
-        hue = hueDXScale(current.x0);
-        const colorshift = hsl.h + (hue / 4);
-        return d3.hsl(colorshift, hsl.s, hsl.l);
-      })
-      .attr('stroke', '#fff')
-      .attr('stroke-width', '1')
-      .on('click', d => click(d, node, svg, self, x, y, radius, arc))
-      .on('mouseover', function (d) {
-        if (self.props.tooltip) {
-          d3.select(this).style('cursor', 'pointer');
-          tooltip.html(() => { const name = formatNameTooltip(d); return name; });
-          return tooltip.transition().duration(50).style('opacity', 1);
-        }
-        return null;
-      })
-      .on('mousemove', () => {
-        if (self.props.tooltip) {
-          tooltip
-            .style('top', `${d3.event.pageY - 50}px`)
-            .style('left', `${d3.event.pageX - 50}px`);
-        }
-        return null;
-      })
-      .on('mouseout', function () {
-        if (self.props.tooltip) {
-          d3.select(this).style('cursor', 'default');
-          tooltip.transition().duration(50).style('opacity', 0);
-        }
-        return null;
-      });
+      svg.selectAll('path')
+        .data(partition(root).descendants())
+        .enter()
+        .append('path')
+        .style('fill', (d) => {
+          let hue;
+          const current = d;
+          if (current.depth === 0) {
+            return 'transparent';
+          }
+          if (current.depth <= 1) {
+            hue = hueDXScale(d.x0);
+            current.fill = d3.hsl(hue, 0.5, 0.6);
+            return current.fill;
+          }
+          current.fill = current.parent.fill.brighter(0.5);
+          const hsl = d3.hsl(current.fill);
+          hue = hueDXScale(current.x0);
+          const colorshift = hsl.h + (hue / 4);
+          return d3.hsl(colorshift, hsl.s, hsl.l);
+        })
+        .attr('stroke', '#fff')
+        .attr('stroke-width', '1')
+        .on('click', d => click(d, node, svg, self, x, y, radius, arc))
+        .on('mouseover', function (d) {
+          if (self.props.tooltip) {
+            d3.select(this).style('cursor', 'pointer');
+            tooltip.html(() => { const name = formatNameTooltip(d); return name; });
+            return tooltip.transition().duration(50).style('opacity', 1);
+          }
+          return null;
+        })
+        .on('mousemove', () => {
+          if (self.props.tooltip) {
+            const postionObj = this.chartRef.getBoundingClientRect();
+            tooltip
+              .style('top', `${d3.event.pageY - postionObj.top - 50}px`)
+              .style('left', `${d3.event.pageX - postionObj.left - 50}px`);
+          }
+          return null;
+        })
+        .on('mouseout', function () {
+          if (self.props.tooltip) {
+            d3.select(this).style('cursor', 'default');
+            tooltip.transition().duration(50).style('opacity', 0);
+          }
+          return null;
+        });
     } else {
       svg.selectAll('path').data(partition(root).descendants());
     }
@@ -145,7 +149,7 @@ class SkillsChart extends React.Component {
   }
   render() {
     return (
-      <div id={this.props.keyId}>
+      <div ref={ref => this.chartRef = ref} id={this.props.keyId}>
         <svg style={{ width: parseInt(this.props.width, 10) || 480, height: parseInt(this.props.height, 10) || 400 }} id={`${this.props.keyId}-svg`} />
       </div>
     );

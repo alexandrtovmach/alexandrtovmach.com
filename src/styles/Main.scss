@@ -1,17 +1,17 @@
-.page {
-  position: relative;
+.main-page {
   width: calc(100% - 20px*2);
   height: 100%;
   padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
 .main-index {
+  @extend .main-page;
   background-color: inherit;
   text-align: left;
+  flex-direction: column;
 
   h1 {
     width: 100%;
@@ -26,14 +26,14 @@
   }
 }
 .main-about {
-  
+  @extend .main-page;  
 }
 .main-calendar {
-
+  @extend .main-page;
 }
 .main-portfolio {
-
+  @extend .main-page;
 }
 .main-blog {
-
+  @extend .main-page;
 }
