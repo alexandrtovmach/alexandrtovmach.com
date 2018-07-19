@@ -4,7 +4,16 @@ export default {
     "children": [
       {
         "name": "Web",
-        "size": 3.5
+        "children": [
+          {
+            "name": "Frontend",
+            "size": 2.3
+          },
+          {
+            "name": "Backend",
+            "size": 1.3
+          }
+        ]
       },
       {
         "name": "Design",
@@ -21,7 +30,17 @@ export default {
     "children": [
       {
         "name": "Веб",
-        "size": 3.5
+        "size": 3.5,
+        "children": [
+          {
+            "name": "Frontend",
+            "size": 2.3
+          },
+          {
+            "name": "Backend",
+            "size": 1.3
+          }
+        ]
       },
       {
         "name": "Дизайн",
@@ -38,7 +57,17 @@ export default {
     "children": [
       {
         "name": "Веб розробка",
-        "size": 3.5
+        "size": 3.5,
+        "children": [
+          {
+            "name": "Frontend",
+            "size": 2.3
+          },
+          {
+            "name": "Backend",
+            "size": 1.3
+          }
+        ]
       },
       {
         "name": "Дизайн",

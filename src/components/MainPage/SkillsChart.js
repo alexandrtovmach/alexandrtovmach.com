@@ -73,25 +73,27 @@ class SkillsChart extends React.Component {
         .data(partition(root).descendants())
         .enter()
         .append('path')
-        .style('fill', (d) => {
-          let hue;
-          const current = d;
-          if (current.depth === 0) {
-            return 'transparent';
-          }
-          if (current.depth <= 1) {
-            hue = hueDXScale(d.x0);
-            current.fill = d3.hsl(hue, 0.5, 0.6);
+        .style('fill', (current) => {
+          // if (current.depth === 0) {
+          //   return 'transparent';
+          // }
+          // if (current.depth <= 1) {
+            // hue = hueDXScale(d.x0);
+            // const opacity = current.value
+            console.log(current);
+            current.fill = d3.rgb(255, 215, 0, Math.max(current.x0, current.x1));
             return current.fill;
-          }
-          current.fill = current.parent.fill.brighter(0.5);
-          const hsl = d3.hsl(current.fill);
-          hue = hueDXScale(current.x0);
-          const colorshift = hsl.h + (hue / 4);
-          return d3.hsl(colorshift, hsl.s, hsl.l);
+          // }
+          // current.fill = current.parent.fill.darker(0.5);
+          // const hsl = d3.hsl(current.fill);
+          // hue = hueDXScale(current.x0);
+          // console.log(current.x0);
+          // return d3.rgb(255, 215, 0, current.x0);
+          // const colorshift = hsl.h + (hue / 4);
+          // return d3.hsl(colorshift, hsl.s, hsl.l);
         })
         .attr('stroke', '#fff')
-        .attr('stroke-width', '1')
+        .attr('stroke-width', '0')
         .on('click', d => click(d, node, svg, self, x, y, radius, arc))
         .on('mouseover', function (d) {
           if (self.props.tooltip) {
