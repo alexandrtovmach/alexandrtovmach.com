@@ -2,12 +2,9 @@ import React from 'react';
 import { isEqual } from 'lodash/lang';
 import * as d3 from 'd3';
 
-function formatNumberTooltip(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
 function formatNameTooltip(d) {
   const name = d.data.name;
-  return `${name}<br> (${formatNumberTooltip(d.value)})`;
+  return `<span class="toltip-name">${name}</span><span class="toltip-value">${d.value.toFixed(1)}</span>`;
 }
 
 class SkillsChart extends React.Component {
@@ -40,9 +37,9 @@ class SkillsChart extends React.Component {
       return tween;
     }
   }
-  update(root, firstBuild, svg, partition, hueDXScale, x, y, radius, arc, node, self) {  // eslint-disable-line
-    if (firstBuild) {
-      firstBuild = false; // eslint-disable-line
+  update(root, svg, partition, x, y, radius, arc, node, self) {  // eslint-disable-line
+    if (!this.isBuilded) {
+      this.isBuilded = true;
       function arcTweenZoom(d) { // eslint-disable-line
         const xd = d3.interpolate(x.domain(), [d.x0, d.x1]), // eslint-disable-line
           yd = d3.interpolate(y.domain(), [d.y0, 1]),
@@ -74,26 +71,13 @@ class SkillsChart extends React.Component {
         .enter()
         .append('path')
         .style('fill', (current) => {
-          // if (current.depth === 0) {
-          //   return 'transparent';
-          // }
-          // if (current.depth <= 1) {
-            // hue = hueDXScale(d.x0);
-            // const opacity = current.value
-            console.log(current);
-            current.fill = d3.rgb(255, 215, 0, Math.max(current.x0, current.x1));
-            return current.fill;
-          // }
-          // current.fill = current.parent.fill.darker(0.5);
-          // const hsl = d3.hsl(current.fill);
-          // hue = hueDXScale(current.x0);
-          // console.log(current.x0);
-          // return d3.rgb(255, 215, 0, current.x0);
-          // const colorshift = hsl.h + (hue / 4);
-          // return d3.hsl(colorshift, hsl.s, hsl.l);
+          // const redQ = 255/215;
+          // const greenQ = 215/255;
+          // current.fill = d3.rgb(current.depth*redQ*10, current.depth*greenQ*10, 0);
+          return "transparent";
         })
-        .attr('stroke', '#fff')
-        .attr('stroke-width', '0')
+        .attr('stroke', "rgb(255, 215, 0)")
+        .attr('stroke-width', '1')
         .on('click', d => click(d, node, svg, self, x, y, radius, arc))
         .on('mouseover', function (d) {
           if (self.props.tooltip) {
@@ -103,15 +87,15 @@ class SkillsChart extends React.Component {
           }
           return null;
         })
-        .on('mousemove', () => {
-          if (self.props.tooltip) {
-            const postionObj = this.chartRef.getBoundingClientRect();
-            tooltip
-              .style('top', `${d3.event.pageY - postionObj.top - 50}px`)
-              .style('left', `${d3.event.pageX - postionObj.left - 50}px`);
-          }
-          return null;
-        })
+        // .on('mousemove', () => {
+        //   if (self.props.tooltip) {
+        //     const postionObj = this.chartRef.getBoundingClientRect();
+        //     tooltip
+        //       .style('top', `${d3.event.pageY - postionObj.top - 100}px`)
+        //       .style('left', `${d3.event.pageX - postionObj.left - 100}px`);
+        //   }
+        //   return null;
+        // })
         .on('mouseout', function () {
           if (self.props.tooltip) {
             d3.select(this).style('cursor', 'default');
@@ -139,14 +123,10 @@ class SkillsChart extends React.Component {
           .endAngle(d => Math.max(0, Math.min(2 * Math.PI, x(d.x1))))
           .innerRadius(d => Math.max(0, y(d.y0)))
           .outerRadius(d => Math.max(0, y(d.y1))),
-        hueDXScale = d3.scaleLinear()
-          .domain([0, 1])
-          .range([0, 360]),
         rootData = d3.hierarchy(props.data);
-      const firstBuild = true;
       const node = rootData;
       rootData.sum(d => d.size);
-      self.update(rootData, firstBuild, svg, partition, hueDXScale, x, y, radius, arc, node, self); // GO!
+      self.update(rootData, svg, partition, x, y, radius, arc, node, self); // GO!
     }
   }
   render() {

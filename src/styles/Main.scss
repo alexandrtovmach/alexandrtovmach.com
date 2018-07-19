@@ -26,7 +26,8 @@
   }
 }
 .main-about {
-  @extend .main-page;  
+  @extend .main-page;
+  flex-direction: column;
 }
 .main-calendar {
   @extend .main-page;
