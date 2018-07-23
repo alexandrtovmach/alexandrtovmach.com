@@ -62,21 +62,24 @@ class SkillsChart extends React.Component {
         .style('fill', (current) => {
           // const redQ = 255/215;
           // const greenQ = 215/255;
-          // current.fill = d3.rgb(current.depth*redQ*10, current.depth*greenQ*10, 0);
+          // return current.fill = d3.rgb(current.depth*redQ*10, current.depth*greenQ*10, 0);
           return "transparent";
         })
         .attr('stroke', "rgb(255, 215, 0)")
         .attr('stroke-width', '2.5')
         .on('click', d => click(d, node, svg, self, x, y, radius, arc))
-        .on('mouseover', function (d) {
+        .on('mouseover', function (d, i, arr) {
+          arr[i].style.fill = "rgb(255, 215, 0)";
           if (self.props.tooltip) {
             d3.select(this).style('cursor', 'pointer');
             self.tooltipRef.innerHTML = formatNameTooltip(d);
-            return self.tooltipRef.style.opacity = 1;
+            self.tooltipRef.style.opacity = 1;
+            return null;
           }
           return null;
         })
-        .on('mouseout', function () {
+        .on('mouseout', function (d, i, arr) {
+          arr[i].style.fill = "transparent";
           if (self.props.tooltip) {
             d3.select(this).style('cursor', 'default');
             self.tooltipRef.style.opacity = 0;
