@@ -1,16 +1,17 @@
 #skillsChart {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   .sunburstTooltip {
-    position: absolute;
-    font-size: 50%;
+    font-size: 60%;
     z-index: 10;
     padding: 10px 20px;
     border-radius: 4px;
     text-align: center;
     background-color: $main_bg_colors;
-    top: -100px;
-    left: 0;
     width: 100%;
+    transition: 0.2s;
 
     .toltip-name {
       display: block;

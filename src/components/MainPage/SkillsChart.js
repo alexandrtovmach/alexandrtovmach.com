@@ -77,13 +77,13 @@ class SkillsChart extends React.Component {
           return "transparent";
         })
         .attr('stroke', "rgb(255, 215, 0)")
-        .attr('stroke-width', '1')
+        .attr('stroke-width', '2.5')
         .on('click', d => click(d, node, svg, self, x, y, radius, arc))
         .on('mouseover', function (d) {
           if (self.props.tooltip) {
             d3.select(this).style('cursor', 'pointer');
             tooltip.html(() => { const name = formatNameTooltip(d); return name; });
-            return tooltip.transition().duration(50).style('opacity', 1);
+            return tooltip.style('opacity', 1);
           }
           return null;
         })
@@ -99,7 +99,7 @@ class SkillsChart extends React.Component {
         .on('mouseout', function () {
           if (self.props.tooltip) {
             d3.select(this).style('cursor', 'default');
-            tooltip.transition().duration(50).style('opacity', 0);
+            tooltip.style('opacity', 0);
           }
           return null;
         });
