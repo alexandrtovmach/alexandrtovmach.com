@@ -19,12 +19,12 @@ class SkillsChart extends React.Component {
     }
   }
 
-  arcTweenData(a, i, node, x, arc) {  // eslint-disable-line
+  arcTweenData(a, i, node, x, arc) {
     const oi = d3.interpolate({ x0: (a.x0s ? a.x0s : 0), x1: (a.x1s ? a.x1s : 0) }, a);
     function tween(t) {
       const b = oi(t);
-      a.x0s = b.x0;   // eslint-disable-line
-      a.x1s = b.x1;   // eslint-disable-line
+      a.x0s = b.x0; 
+      a.x1s = b.x1; 
       return arc(b);
     }
     if (i === 0) {
@@ -33,15 +33,15 @@ class SkillsChart extends React.Component {
         x.domain(xd(t));
         return tween(t);
       };
-    } else {  // eslint-disable-line
+    } else {
       return tween;
     }
   }
-  update(root, svg, partition, x, y, radius, arc, node, self) {  // eslint-disable-line
-    if (!this.isBuilded) {
+  update(root, svg, partition, x, y, radius, arc, node, self) {
+    // if (!this.isBuilded) {
       this.isBuilded = true;
-      function arcTweenZoom(d) { // eslint-disable-line
-        const xd = d3.interpolate(x.domain(), [d.x0, d.x1]), // eslint-disable-line
+      function arcTweenZoom(d) {
+        const xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
           yd = d3.interpolate(y.domain(), [d.y0, 1]),
           yr = d3.interpolate(y.range(), [d.y0 ? 40 : 0, radius]);
         return function (data, i) {
@@ -50,8 +50,8 @@ class SkillsChart extends React.Component {
               : (t) => { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); return arc(data); };
         };
       }
-      function click(d) { // eslint-disable-line
-        node = d; // eslint-disable-line
+      function click(d) {
+        node = d;
         self.props.onSelect && self.props.onSelect(d);
         svg.selectAll('path').transition().duration(1000).attrTween('d', arcTweenZoom(d));
       }
@@ -66,7 +66,7 @@ class SkillsChart extends React.Component {
           return "transparent";
         })
         .attr('stroke', "rgb(255, 215, 0)")
-        .attr('stroke-width', '2.5')
+        .attr('stroke-width', '2')
         .on('click', d => click(d, node, svg, self, x, y, radius, arc))
         .on('mouseover', function (d, i, arr) {
           arr[i].style.fill = "rgb(255, 215, 0)";
@@ -86,18 +86,18 @@ class SkillsChart extends React.Component {
           }
           return null;
         });
-    } else {
-      svg.selectAll('path').data(partition(root).descendants());
-    }
+    // } else {
+    //   svg.selectAll('path').data(partition(root).descendants());
+    // }
     svg.selectAll('path').transition().duration(1000).attrTween('d', (d, i) => self.arcTweenData(d, i, node, x, arc));
   }
   renderSunburst(props) {
     if (props.data) {
-      const self = this, // eslint-disable-line
+      const self = this,
         gWidth = props.width,
         gHeight = props.height,
         radius = (Math.min(gWidth, gHeight) / 2) - 10,
-        svg = d3.select(`#${this.props.keyId}-svg`).append('g').attr('transform', `translate(${gWidth / 2},${gHeight / 2})`),
+        svg = !this.isBuilded? d3.select(`#${this.props.keyId}-svg`).append('g').attr('transform', `translate(${gWidth / 2},${gHeight / 2})`): d3.select(`#${this.props.keyId}-svg`).select('g'),
         x = d3.scaleLinear().range([0, 2 * Math.PI]),
         y = props.scale === 'linear' ? d3.scaleLinear().range([0, radius]) : d3.scaleSqrt().range([0, radius]),
         partition = d3.partition(),
