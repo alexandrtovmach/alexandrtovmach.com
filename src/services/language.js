@@ -1,6 +1,6 @@
 import getBrowserLanguage from 'get-browser-language';
 import { parse } from "query-string";
-import langPacks from './translations';
+import langPacks from '../utils/translations';
 
 export function getLanguage() {
   const queryLang = parse(window.location.search).hl;

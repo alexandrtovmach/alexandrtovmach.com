@@ -3,7 +3,7 @@ import classnames from "classnames";
 import SkillsChart from './SkillsChart';
 
 import Navigation from '../Navigation';
-import data from '../../services/skillsData';
+import data from '../../utils/skillsData';
 
 export default class Main extends React.Component {
   onSelect(event){
