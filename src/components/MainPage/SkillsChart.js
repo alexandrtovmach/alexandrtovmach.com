@@ -82,7 +82,7 @@ class SkillsChart extends React.Component {
           arr[i].style.fill = "transparent";
           if (self.props.tooltip) {
             d3.select(this).style('cursor', 'default');
-            self.tooltipRef.style.opacity = 0;
+            // self.tooltipRef.style.opacity = 0;
           }
           return null;
         });

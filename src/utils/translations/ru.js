@@ -11,7 +11,9 @@ export default {
     about: "О себе",
     calendar: "Расписание",
     portfolio: "Портфолио",
-    blog: "Блог"
+    blog: "Блог",
+    details: "Детальнее",
+    a_bit_about: "Немного о себе..."
   },
   "About": {
     about: "О себе"

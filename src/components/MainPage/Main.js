@@ -21,6 +21,8 @@ export default class Main extends React.Component {
           <h1>{this.props.langPack.welcome_text}</h1>
         </div>
         <div className={classnames("main-about")}>
+          <h2>{this.props.langPack.a_bit_about}</h2>
+          <p>{this.props.langPack.welcome_text}</p>
           <SkillsChart
             data={data[this.props.locale]}
             onSelect={this.onSelect}
@@ -30,8 +32,8 @@ export default class Main extends React.Component {
             width="300"
             height="300"
           />
-          <a href="/about">
-            {this.props.langPack.about}
+          <a href="/about" className="button" title={this.props.langPack.about} >
+            {this.props.langPack.details}
           </a>
         </div>
         <div className={classnames("main-calendar")}>

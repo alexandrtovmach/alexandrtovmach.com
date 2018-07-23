@@ -11,7 +11,9 @@ export default {
     about: "About",
     calendar: "Schedule",
     portfolio: "Portfolio",
-    blog: "Blog"
+    blog: "Blog",
+    details: "Details",
+    a_bit_about: "A little bit about myself..."
   },
   "About": {
     about: "About"
