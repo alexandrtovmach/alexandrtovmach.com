@@ -55,17 +55,6 @@ class SkillsChart extends React.Component {
         self.props.onSelect && self.props.onSelect(d);
         svg.selectAll('path').transition().duration(1000).attrTween('d', arcTweenZoom(d));
       }
-      const tooltipContent = self.props.tooltipContent;
-      const tooltip = d3.select(`#${self.props.keyId}`)
-        .append(tooltipContent ? tooltipContent.type : 'div')
-        .style('position', 'absolute')
-        .style('z-index', '10')
-        .style('opacity', '0');
-      if (tooltipContent) {
-        Object.keys(tooltipContent.props).forEach((key) => {
-          tooltip.attr(key, tooltipContent.props[key]);
-        });
-      }
       svg.selectAll('path')
         .data(partition(root).descendants())
         .enter()
@@ -82,24 +71,15 @@ class SkillsChart extends React.Component {
         .on('mouseover', function (d) {
           if (self.props.tooltip) {
             d3.select(this).style('cursor', 'pointer');
-            tooltip.html(() => { const name = formatNameTooltip(d); return name; });
-            return tooltip.style('opacity', 1);
+            self.tooltipRef.innerHTML = formatNameTooltip(d);
+            return self.tooltipRef.style.opacity = 1;
           }
           return null;
         })
-        // .on('mousemove', () => {
-        //   if (self.props.tooltip) {
-        //     const postionObj = this.chartRef.getBoundingClientRect();
-        //     tooltip
-        //       .style('top', `${d3.event.pageY - postionObj.top - 100}px`)
-        //       .style('left', `${d3.event.pageX - postionObj.left - 100}px`);
-        //   }
-        //   return null;
-        // })
         .on('mouseout', function () {
           if (self.props.tooltip) {
             d3.select(this).style('cursor', 'default');
-            tooltip.style('opacity', 0);
+            self.tooltipRef.style.opacity = 0;
           }
           return null;
         });
@@ -133,6 +113,10 @@ class SkillsChart extends React.Component {
     return (
       <div ref={ref => this.chartRef = ref} id={this.props.keyId}>
         <svg style={{ width: parseInt(this.props.width, 10) || 480, height: parseInt(this.props.height, 10) || 400 }} id={`${this.props.keyId}-svg`} />
+        <div ref={ref => this.tooltipRef = ref} className={this.props.tooltipClassName || "sunburstTooltip"}>
+          <span className="toltip-name">Name</span>
+          <span className="toltip-value">0.0</span>
+        </div>
       </div>
     );
   }

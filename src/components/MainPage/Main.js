@@ -25,11 +25,6 @@ export default class Main extends React.Component {
             data={data[this.props.locale]}
             onSelect={this.onSelect}
             scale="linear"
-            tooltipContent={
-              <div
-                class="sunburstTooltip"
-              />
-            }
             tooltip
             keyId="skillsChart"
             width="300"
