@@ -13,7 +13,9 @@ export default {
     portfolio: "Портфолио",
     blog: "Блог",
     details: "Детальнее",
-    a_bit_about: "Немного о себе..."
+    a_bit_about: "Немного о себе...",
+    about_text_start: "У меня есть опыт в",
+    about_text_finish: "и многом другом.",
   },
   "About": {
     about: "О себе"

@@ -6,8 +6,17 @@ import Navigation from '../Navigation';
 import data from '../../utils/skillsData';
 
 export default class Main extends React.Component {
+  constructor() {
+    super();
+    this.onTooltipUpdate = this.onTooltipUpdate.bind(this);
+  }
+
   onSelect(event){
     console.log(event);
+  }
+
+  onTooltipUpdate(content) {
+    this.skillsTooltipRef.innerHTML = content;
   }
 
   render() {
@@ -21,20 +30,28 @@ export default class Main extends React.Component {
           <h1>{this.props.langPack.welcome_text}</h1>
         </div>
         <div className={classnames("main-about")}>
-          <h2>{this.props.langPack.a_bit_about}</h2>
-          <p>{this.props.langPack.welcome_text}</p>
+          <div className="about-text-block">
+            <h2>{this.props.langPack.a_bit_about}</h2>
+            <p>
+              {this.props.langPack.about_text_start}
+              &nbsp;
+              <span ref={ref => this.skillsTooltipRef = ref} className="toltip-name">
+                Name
+              </span>
+              <br/>
+              {this.props.langPack.about_text_finish}
+            </p>
+            <a href="/about" className="button" title={this.props.langPack.about} >
+              {this.props.langPack.details}
+            </a>
+          </div>
           <SkillsChart
             data={data[this.props.locale]}
             onSelect={this.onSelect}
+            onTooltipUpdate={this.onTooltipUpdate}
             scale="linear"
-            tooltip
             keyId="skillsChart"
-            width="300"
-            height="300"
           />
-          <a href="/about" className="button" title={this.props.langPack.about} >
-            {this.props.langPack.details}
-          </a>
         </div>
         <div className={classnames("main-calendar")}>
           <a href="/calendar">{this.props.langPack.calendar}</a>

@@ -27,7 +27,7 @@ $amount: 20;
         $blurRadius: ($randomFactor + 1) * $size * 0.2;
         width: $size;
         height: $size;
-        color: $main_bg_colors;
+        color: $main-color;
         top: random(90) * 1%;
         left: random(90) * 1%;
         animation-duration: ((1 - $randomFactor) * $animationDuration) + 10s;

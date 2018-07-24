@@ -76,7 +76,7 @@ export default class RadialMenu extends React.Component {
               {interpolatingStyles.map((style, i) =>
                 <button
                   key={i}
-                  className="button"
+                  className="lang-button"
                   style={{
                     position: 'relative',
                     right: style.x,
@@ -99,7 +99,7 @@ export default class RadialMenu extends React.Component {
         >
           {interpolatingStyles =>
             <button
-              className="button button--large"
+              className="lang-button lang-button--large"
               style={{
                 transform: 'scale(' + interpolatingStyles.s + ')',
               }}
@@ -116,4 +116,4 @@ export default class RadialMenu extends React.Component {
   }
 }
 
-const ButtonGroup = (props) => <div className="button-group" style={props.style} onMouseLeave={props.leaveTimeout}>{props.children}</div>;
+const ButtonGroup = (props) => <div className="lang-button-group" style={props.style} onMouseLeave={props.leaveTimeout}>{props.children}</div>;

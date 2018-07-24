@@ -13,7 +13,9 @@ export default {
     portfolio: "Portfolio",
     blog: "Blog",
     details: "Details",
-    a_bit_about: "A little bit about myself..."
+    a_bit_about: "A little bit about myself...",
+    about_text_start: "I'm experienced in",
+    about_text_finish: "and many other things.",
   },
   "About": {
     about: "About"

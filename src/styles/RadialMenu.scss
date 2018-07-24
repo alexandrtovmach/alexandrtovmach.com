@@ -1,10 +1,10 @@
-.button-group {
+.lang-button-group {
   display: flex;
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
 
-  .button {
+  .lang-button {
     position: relative;
     outline: none;
     width: 30px;
@@ -14,7 +14,7 @@
     margin: 0 5px;
     cursor: pointer;
     
-    &.button--large {
+    &.lang-button--large {
       margin: 0 10px;
       position: relative;
     }
