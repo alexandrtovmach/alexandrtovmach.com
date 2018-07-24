@@ -1,3 +1,5 @@
+@import "./ThemeStyles.scss";
+
 .app-container {
   width: 100%;
   height: 100vh;
@@ -5,44 +7,6 @@
   *::selection {
     background: gold;
   }
-
-  &.dark-theme {
-    background-color: $dark-main-color;
-    color: $dark-second-color;
-    border-color: $dark-second-color;
-    fill: $dark-second-color;
-
-    .theme-switcher {
-      color: $dark-main-color;
-      fill: $dark-main-color;
-    }
-    .header {
-      .lang-button-group .lang-button {
-        background: $dark-second-color;
-        color: $dark-main-color;
-        fill: $dark-main-color;
-      }
-    }
-  }
-
-  &.light-theme {
-    background-color: $light-main-color;
-    color: $light-second-color;
-    border-color: $light-second-color;
-    fill: $light-second-color;
-    .theme-switcher {
-      color: $light-main-color;
-      fill: $light-main-color;
-    }
-    .header {
-      .lang-button-group .lang-button {
-        background: $light-second-color;
-        color: $light-main-color;
-        fill: $light-main-color;
-      }
-    }
-  }
-
   .page {
     position: relative;
     width: 100%;

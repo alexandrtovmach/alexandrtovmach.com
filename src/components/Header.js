@@ -22,7 +22,7 @@ export default class Header extends React.Component {
           </div>
           <div style={{fontSize: "initial"}} title={this.props.theme.name === "light-theme"? this.props.langPack.switch_to_night_mode: this.props.langPack.switch_to_day_mode}>
             <Switch
-              className="theme-switcher"
+              className="theme-switcher theme-color-main theme-fill-main"
               width={60}
               height={30}
               handleDiameter={24}

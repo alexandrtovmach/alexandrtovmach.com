@@ -76,7 +76,7 @@ export default class RadialMenu extends React.Component {
               {interpolatingStyles.map((style, i) =>
                 <button
                   key={i}
-                  className="lang-button"
+                  className="lang-button theme-background-second theme-color-main theme-fill-main"
                   style={{
                     position: 'relative',
                     right: style.x,
@@ -99,7 +99,7 @@ export default class RadialMenu extends React.Component {
         >
           {interpolatingStyles =>
             <button
-              className="lang-button lang-button--large"
+              className="lang-button lang-button--large theme-background-second theme-color-main theme-fill-main"
               style={{
                 transform: 'scale(' + interpolatingStyles.s + ')',
               }}
