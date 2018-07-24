@@ -1,0 +1,16 @@
+{
+  "short_name": "AT Portfolio",
+  "name": "Alexandr Tovmach portfolio",
+  "description": "Web portfolio to easy show my skills and expirience",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
