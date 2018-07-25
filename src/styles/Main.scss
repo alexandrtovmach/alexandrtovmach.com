@@ -46,15 +46,7 @@
       }
     }
     .button {
-      position: relative;
-      background-color: $main-color;
-      padding: 10px 20px;
-      border-radius: 2px;
-      text-transform: uppercase;
-      display: inline-block;
-      text-align: center;
-      cursor: pointer;
-      z-index: 2;
+      margin-top: 0.5vh;
     }
   }
   @import "./SkillsChart.scss";

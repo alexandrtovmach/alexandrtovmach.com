@@ -14,6 +14,10 @@ export default {
     blog: "Blog",
     details: "Details",
     a_bit_about: "A little bit about myself...",
+    years: {
+      one: "year",
+      many: "years"
+    },
     about_text_start: "I'm experienced in",
     about_text_finish: "and many other things.",
   },

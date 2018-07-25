@@ -15,6 +15,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }  
-
+  }
+  .button {
+    position: relative;
+    background-color: $main-color;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+  }
 }

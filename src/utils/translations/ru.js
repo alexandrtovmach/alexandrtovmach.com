@@ -14,8 +14,13 @@ export default {
     blog: "Блог",
     details: "Детальнее",
     a_bit_about: "Немного о себе...",
-    about_text_start: "У меня есть опыт в",
-    about_text_finish: "и многом другом.",
+    years: {
+      one: "год",
+      many: "года"
+    },
+    about_text_p1: "Привет, меня зовут Александр и мне",
+    about_text_p2: "У меня есть опыт работы с",
+    about_text_finish: "и многими другими технологиями.",
   },
   "About": {
     about: "О себе"

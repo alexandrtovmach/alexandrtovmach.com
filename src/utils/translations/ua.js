@@ -14,6 +14,10 @@ export default {
     blog: "Блог",
     details: "Детальніше",
     a_bit_about: "Трохи про себе...",
+    years: {
+      one: "рік",
+      many: "роки"
+    },
     about_text_start: "В мене є досвід роботи",
     about_text_finish: "та багато іншого.",
   },
