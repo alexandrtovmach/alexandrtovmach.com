@@ -15,10 +15,11 @@ export default {
     details: "Details",
     a_bit_about: "A little bit about myself...",
     years: {
-      one: "year",
-      many: "years"
+      one: "year old",
+      many: "years old"
     },
-    about_text_start: "I'm experienced in",
+    about_text_p1: "Hello, my name is Alexandr and I'm",
+    about_text_p2: "I am experienced in",
     about_text_finish: "and many other things.",
   },
   "About": {

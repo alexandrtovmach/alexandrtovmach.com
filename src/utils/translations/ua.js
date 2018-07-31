@@ -18,8 +18,9 @@ export default {
       one: "рік",
       many: "роки"
     },
-    about_text_start: "В мене є досвід роботи",
-    about_text_finish: "та багато іншого.",
+    about_text_p1: "Привіт, мене звати Олександр і мені",
+    about_text_p2: "В мене є досвід роботи з",
+    about_text_finish: "та багатьма іншими технологіями.",
   },
   "About": {
     about: "Про себе"
