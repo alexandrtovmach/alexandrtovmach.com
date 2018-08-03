@@ -70,7 +70,7 @@ export default class Main extends React.Component {
             <p>
               {this.props.langPack.calendar_text}
             </p>
-
+            <ShortCalendar />
             <a href="/calendar" className="button" title={this.props.langPack.calendar} >
               {this.props.langPack.details}
             </a>

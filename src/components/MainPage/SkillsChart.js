@@ -2,7 +2,8 @@ import React from 'react';
 import { isEqual } from 'lodash/lang';
 import * as d3 from 'd3';
 
-class SkillsChart extends React.Component {
+
+export default class SkillsChart extends React.Component {
 
   componentDidMount() {
     this.renderSunburst(this.props);
@@ -105,5 +106,3 @@ class SkillsChart extends React.Component {
     );
   }
 }
-
-export default SkillsChart;
