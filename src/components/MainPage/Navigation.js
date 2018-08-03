@@ -3,11 +3,11 @@ import classnames from "classnames";
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay, bindKeyboard } from 'react-swipeable-views-utils';
 
-import HomeSVG from '../styles/assets/icons/home';
-import AboutSVG from '../styles/assets/icons/about';
-import CalendarSVG from '../styles/assets/icons/calendar';
-import PortfolioSVG from '../styles/assets/icons/portfolio';
-import BlogSVG from '../styles/assets/icons/blog';
+import { ReactComponent as HomeSVG } from '../../styles/assets/icons/home.svg';
+import { ReactComponent as AboutSVG } from '../../styles/assets/icons/about.svg';
+import { ReactComponent as CalendarSVG } from '../../styles/assets/icons/calendar.svg';
+import { ReactComponent as PortfolioSVG } from '../../styles/assets/icons/portfolio.svg';
+import { ReactComponent as BlogSVG } from '../../styles/assets/icons/blog.svg';
 
 const iconsInOrder = [
   <HomeSVG className="icon" />,

@@ -2,9 +2,9 @@ import React from "react";
 import Switch from "react-switch";
 
 import RadialMenu from './RadialMenu';
-import MoonSVG from "../styles/assets/icons/moon";
-import SunSVG from "../styles/assets/icons/sun";
-import LogoSVG from "../styles/assets/images/logo";
+import { ReactComponent as MoonSVG } from "../styles/assets/icons/moon.svg";
+import { ReactComponent as SunSVG } from "../styles/assets/icons/sun.svg";
+import { ReactComponent as LogoSVG } from "../styles/assets/images/logo.svg";
 
 export default class Header extends React.Component {
   render() {

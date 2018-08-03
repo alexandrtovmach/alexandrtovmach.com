@@ -6,21 +6,21 @@ export default {
     go_to_main_page: "На головну"
   },
   "Main": {
-    welcome: "Вітаємо!",
+    welcome_head: "Вітаємо!",
     welcome_text: "Цей міні-сайт створений для демонстрації моїх навичок дизанера і веб-розробника.",
     about: "Про себе",
     calendar: "Розклад",
     portfolio: "Портфоліо",
     blog: "Блог",
     details: "Детальніше",
-    a_bit_about: "Трохи про себе...",
+    about_head: "Трохи про себе...",
     years: {
       one: "рік",
       many: "роки"
     },
     about_text_p1: "Привіт, мене звати Олександр і мені",
     about_text_p2: "В мене є досвід роботи з",
-    about_text_finish: "та багатьма іншими технологіями.",
+    about_text_p3: "та багатьма іншими технологіями.",
   },
   "About": {
     about: "Про себе"

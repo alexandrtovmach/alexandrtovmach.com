@@ -1,10 +1,11 @@
 import React from "react";
 import classnames from "classnames";
-import SkillsChart from './SkillsChart';
 
-import Navigation from '../Navigation';
+
+import SkillsChart from './SkillsChart';
+import ShortCalendar from './ShortCalendar';
+import Navigation from './Navigation';
 import data from '../../utils/skillsData';
-import { SSL_OP_NO_TLSv1_1 } from "constants";
 
 export default class Main extends React.Component {
   constructor() {
@@ -32,12 +33,12 @@ export default class Main extends React.Component {
         langPack={ this.props.navigationLangPack }
       >
         <div className={classnames("main-index")}>
-          <span>{this.props.langPack.welcome}</span>
+          <span>{this.props.langPack.welcome_head}</span>
           <h1>{this.props.langPack.welcome_text}</h1>
         </div>
         <div className={classnames("main-about")}>
           <div className="about-text-block">
-            <h2>{this.props.langPack.a_bit_about}</h2>
+            <h2>{this.props.langPack.about_head}</h2>
             <p>
               {this.props.langPack.about_text_p1}
               &nbsp;
@@ -49,7 +50,7 @@ export default class Main extends React.Component {
                 Name
               </span>
               <br/>
-              {this.props.langPack.about_text_finish}
+              {this.props.langPack.about_text_p3}
             </p>
             <a href="/about" className="button" title={this.props.langPack.about} >
               {this.props.langPack.details}
@@ -64,7 +65,16 @@ export default class Main extends React.Component {
           />
         </div>
         <div className={classnames("main-calendar")}>
-          <a href="/calendar">{this.props.langPack.calendar}</a>
+          <div className="calendar-text-block">
+            <h2>{this.props.langPack.calendar_head}</h2>
+            <p>
+              {this.props.langPack.calendar_text}
+            </p>
+
+            <a href="/calendar" className="button" title={this.props.langPack.calendar} >
+              {this.props.langPack.details}
+            </a>
+          </div>
         </div>
         <div className={classnames("main-portfolio")}>
           <a href="/portfolio">{this.props.langPack.portfolio}</a>
