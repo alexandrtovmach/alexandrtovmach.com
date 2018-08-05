@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import { getEvents } from "../../services/calendar";
 
-export default class ShortCalendar extends React.Component {
+export default class Calendar extends React.Component {
 
   generateEvents() {
     return (
@@ -24,6 +24,12 @@ export default class ShortCalendar extends React.Component {
         </div>
       ))
     )
+  }
+
+  
+
+  generateDays(baseDate = new Date(), limitRound = 3, events = []) {
+
   }
 
   render() {

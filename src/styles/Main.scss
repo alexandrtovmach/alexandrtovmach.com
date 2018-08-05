@@ -79,15 +79,10 @@
       margin-top: 0.5vh;
     }
   }
-  .calendar-container {
+  .calendar-wrap {
     width: 100%;
     height: 20vh;
     border: 2px solid $main-color;
-    display: flex;
-    .calendar-event {
-      flex: auto;
-      font-size: 50%;
-    }
   }
 }
 .main-portfolio {

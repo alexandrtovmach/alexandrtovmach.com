@@ -3,7 +3,7 @@ import classnames from "classnames";
 
 
 import SkillsChart from './SkillsChart';
-import ShortCalendar from './ShortCalendar';
+import Calendar from './Calendar';
 import Navigation from './Navigation';
 import data from '../../utils/skillsData';
 
@@ -70,7 +70,9 @@ export default class Main extends React.Component {
             <p>
               {this.props.langPack.calendar_text}
             </p>
-            <ShortCalendar />
+            <div className="calendar-wrap">
+              <Calendar />
+            </div>
             <a href="/calendar" className="button" title={this.props.langPack.calendar} >
               {this.props.langPack.details}
             </a>
