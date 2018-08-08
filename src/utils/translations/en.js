@@ -24,6 +24,27 @@ export default {
     calendar_head: "My availability in the near future",
     calendar_text: "Here you can see the short version of my personal calnedar, to know about my work plans.",
   },
+  "CalendarComponent": {
+    weekday1: "Monday",
+    weekday2: "Tuesday",
+    weekday3: "Wednesday",
+    weekday4: "Thursday",
+    weekday5: "Friday",
+    weekday6: "Saturday",
+    weekday7: "Sunday",
+    month1: "January",
+    month2: "February",
+    month3: "Marth",
+    month4: "April",
+    month5: "May",
+    month6: "June",
+    month7: "July",
+    month8: "August",
+    month9: "September",
+    month10: "October",
+    month11: "November",
+    month12: "December"
+  },
   "About": {
     about: "About"
   },

@@ -2,9 +2,9 @@ import React from "react";
 import classnames from "classnames";
 
 
-import SkillsChart from './SkillsChart';
-import Calendar from './Calendar';
-import Navigation from './Navigation';
+import SkillsChart from './common/SkillsChart';
+import Navigation from './common/Navigation';
+import Calendar from '../CalendarComponent/Calendar';
 import data from '../../utils/skillsData';
 
 export default class Main extends React.Component {
@@ -71,7 +71,9 @@ export default class Main extends React.Component {
               {this.props.langPack.calendar_text}
             </p>
             <div className="calendar-wrap">
-              <Calendar />
+              <Calendar
+                langPack={ this.props.calendarLangPack }
+              />
             </div>
             <a href="/calendar" className="button" title={this.props.langPack.calendar} >
               {this.props.langPack.details}

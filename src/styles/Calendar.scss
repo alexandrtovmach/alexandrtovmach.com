@@ -16,15 +16,70 @@
   flex-wrap: wrap;
 
   .calendar-event {
+    position: relative;
     flex: 1 1 100px;
     font-size: 50%;
-    border-radius: 20px;
-    padding: 1%;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
     transition: 0.5s;
+    border: 1px solid $main-color;
+    cursor: default;
 
     &:hover {
       background-color: $main-color;
       transform: scale(1.1);
+      z-index: 5;
+      .event-description {
+        opacity: 1;
+      }
+    }
+    &.holiday {
+      &:hover {
+        background-color: rgb(200, 200, 200);
+        transform: scale(1);
+      }
+    }
+
+    .event-title {
+      font-size: 120%;
+      max-height: 2em;
+      overflow: hidden;
+    }
+
+    .event-description {
+      max-height: 3em;
+      overflow: hidden;
+      margin: 10px 0;
+      font-size: 80%;
+      opacity: 0.5;
+    }
+
+    .event-tags {
+      display: flex;
+      font-size: 60%;
+      margin: 5px 0;
+      .event-tag {
+        margin-right: 5px;
+        padding: 3px;
+        border-radius: 5px;
+        background-color: rgba(150, 224, 115, 1);
+      }
+    }
+
+    .meta-date {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      text-align: right;
+
+      .date {
+        font-size: 150%;
+      }
+      .weekday, .month {
+        font-size: 50%;
+        opacity: 0.5;
+      }
     }
   }
 }

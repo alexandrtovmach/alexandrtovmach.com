@@ -4,9 +4,9 @@ import { Switch, Route, Router } from "react-router-dom";
 import history from "../services/routerHistory";
 // import screenfull from "screenfull";
 
-import Header from "./Header";
+import Header from "./HeaderComponent/Header";
 import Main from "./MainPage/Main";
-import MainBackground from './MainPage/MainBackground';
+import MainBackground from './MainPage/common/MainBackground';
 import About from "./AboutPage/About";
 import AboutBackground from './AboutPage/AboutBackground';
 import Calendar from "./CalendarPage/Calendar";
@@ -71,6 +71,7 @@ export default class App extends React.Component {
                     langPack={ getTranslations(this.state.locale, "Main") }
                     locale={ this.state.locale }
                     navigationLangPack={ getTranslations(this.state.locale, "Navigation") }
+                    calendarLangPack={ getTranslations(this.state.locale, "CalendarComponent") }
                   />
                 </div>
               )

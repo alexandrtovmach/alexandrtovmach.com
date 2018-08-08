@@ -1,8 +1,8 @@
 import React from 'react';
 import { Motion, StaggeredMotion, spring } from 'react-motion';
 
-import { ReactComponent as CrossSVG } from "../styles/assets/icons/cross.svg";
-import { ReactComponent as EarthSVG } from "../styles/assets/icons/earth.svg";
+import { ReactComponent as CrossSVG } from "../../styles/assets/icons/cross.svg";
+import { ReactComponent as EarthSVG } from "../../styles/assets/icons/earth.svg";
 
 export default class RadialMenu extends React.Component {
   constructor() {

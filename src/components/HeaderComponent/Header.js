@@ -1,10 +1,10 @@
 import React from "react";
 import Switch from "react-switch";
 
-import RadialMenu from './RadialMenu';
-import { ReactComponent as MoonSVG } from "../styles/assets/icons/moon.svg";
-import { ReactComponent as SunSVG } from "../styles/assets/icons/sun.svg";
-import { ReactComponent as LogoSVG } from "../styles/assets/images/logo.svg";
+import LanguageMenu from './LanguageMenu';
+import { ReactComponent as MoonSVG } from "../../styles/assets/icons/moon.svg";
+import { ReactComponent as SunSVG } from "../../styles/assets/icons/sun.svg";
+import { ReactComponent as LogoSVG } from "../../styles/assets/images/logo.svg";
 
 export default class Header extends React.Component {
   render() {
@@ -15,7 +15,7 @@ export default class Header extends React.Component {
         </a>
         <div className="control-panel">
           <div className="language-switcher">
-            <RadialMenu
+            <LanguageMenu
               handleLanguageChange={this.props.handleLanguageChange}
               languageWord={this.props.langPack.language}
             />
