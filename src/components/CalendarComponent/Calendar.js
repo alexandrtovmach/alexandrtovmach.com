@@ -58,27 +58,37 @@ export default class Calendar extends React.Component {
     return dates.map((date) => {
       const {d, w, m} = this._dateGenerator(date);
       const event = this._findEvents(events, date) || {};
-      console.log(event, this.props.langPack[`month${m}`], this.props.langPack[`weekday${w}`], d);
 
       return (
         <div
           key={"date-" + date}
           className={classNames("calendar-event", {
-            holiday: event.tags && event.tags.includes("holiday")
+            holiday: event.tags && event.tags.includes("holiday"),
+            freeday: !event.name
           })}
         >
-          <div className="event-title">{event.name}</div> 
-          <div className="event-tags">
-            {event.tags && event.tags.map(tag => (
-              <div
-                key={"date-tag-" + date}
-                className="event-tag"
-              >
-                {tag}
-              </div>
-            ))}
-          </div>
-          <div className="event-description">{event.description}</div>
+          {!event.name? [
+            <div className="event-freeday">
+              <button className="button">{this.props.langPack.book_now}</button>
+              <div className="event-description">{this.props.langPack.book_now_description}</div>
+            </div>
+
+          ] : [
+              <div className="event-title">{event.name}</div>,
+              <div className="event-tags">
+                {event.tags && event.tags.map(tag => (
+                  <div
+                    key={"date-tag-" + date + tag}
+                    className="event-tag"
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>,
+              <div className="event-description">{event.description}</div>
+          ]
+          }
+
           <div className="meta-date">
             <div className="date">{d}</div>
             <div className="month">{this.props.langPack[`month${m}`]}</div>
