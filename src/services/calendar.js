@@ -1,71 +1,31 @@
+const API_KEY = "AIzaSyBS4jzKakkbQqT1nLoWeAXMhhv0zddLLMU";
+const CALENDAR_ID = "25b7e2v5vatnp8e9a343iu0p0o@group.calendar.google.com";
+
 export function getEvents(count = 5) {
-  return mockEvents.slice(0, count);
+  return pullEventsFromAPI(count)
+    .then(response => {
+      return response.items.map(event => transformEventData(event));
+    })
 }
 
+function pullEventsFromAPI(count) {
+  const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events/?key=${API_KEY}&maxResults=${count}`;
+  return fetch(url)
+  .then(data => data.json())
+  .catch(err => {
+    console.error(err);
+  })
+}
 
-const mockEvents = [
-  {
-    id: 1,
-    name: "Project one with super long name to test this",
-    description: "Work with JSON data parsing. Description to long to show in one moment but we need to test at all",
-    tags: ["opensource", "npm", "web"],
-    start: new Date(2018, 7, 17, 0, 0).valueOf(),
-    end: new Date(2018, 7, 17, 23, 59).valueOf()
-  },
-  {
-    id: 2,
-    name: "Maintance website",
-    description: "Support of previous projects",
-    tags: ["web", "freelance"],
-    start: new Date(2018, 7, 18, 0, 0).valueOf(),
-    end: new Date(2018, 7, 18, 23, 59).valueOf()
-  },
-  {
-    id: 3,
-    name: "Holiday",
-    description: "Time to reload",
-    tags: ["holiday"],
-    start: new Date(2018, 7, 19, 0, 0).valueOf(),
-    end: new Date(2018, 7, 19, 23, 59).valueOf()
-  },
-  {
-    id: 4,
-    name: "Project one",
-    description: "Custom form",
-    tags: ["opensource", "npm"],
-    start: new Date(2018, 7, 20, 0, 0).valueOf(),
-    end: new Date(2018, 7, 20, 17, 59).valueOf()
-  },
-  {
-    id: 5,
-    name: "Project one",
-    description: "Write README.md",
-    tags: ["opensource", "npm"],
-    start: new Date(2018, 7, 21, 20, 0).valueOf(),
-    end: new Date(2018, 7, 21, 23, 59).valueOf()
-  },
-  {
-    id: 6,
-    name: "Project one",
-    description: "Prepare to release",
-    tags: ["opensource", "npm"],
-    start: new Date(2018, 7, 23, 0, 0).valueOf(),
-    end: new Date(2018, 7, 23, 23, 59).valueOf()
-  },
-  {
-    id: 7,
-    name: "Holiday",
-    description: "Time to reload",
-    tags: ["holiday"],
-    start: new Date(2018, 7, 25, 0, 0).valueOf(),
-    end: new Date(2018, 7, 25, 23, 59).valueOf()
-  },
-  {
-    id: 8,
-    name: "Project one",
-    description: "Release day!",
-    tags: ["opensource", "npm"],
-    start: new Date(2018, 7, 26, 0, 0).valueOf(),
-    end: new Date(2018, 7, 26, 23, 59).valueOf()
-  },
-]
+function transformEventData(event) {
+
+
+  return {
+    id: event.id,
+    name: event.summary || "Unknown name",
+    description: (event.description && event.description.split("++")[0]) || event.description || "",
+    tags: (event.description && event.description.match(/(\+\+)\s*?([a-zA-Z,]+)/)[2].split(",")) || [],
+    start: new Date(event.start.dateTime).valueOf(),
+    end: new Date(event.end.dateTime).valueOf()
+  }
+}

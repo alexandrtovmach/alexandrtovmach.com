@@ -26,7 +26,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-  @include fluid-type(font-size, 300px, 1920px, 20px, 40px);
+  @include fluid-type(font-size, 300px, 1920px, 30px, 40px);
 }
 ol, ul {
 	list-style: none;

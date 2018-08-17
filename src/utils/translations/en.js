@@ -21,8 +21,8 @@ export default {
     about_text_p1: "Hello, my name is Alexandr and I'm",
     about_text_p2: "I am experienced in",
     about_text_p3: "and many other things.",
-    calendar_head: "My availability in the near future",
-    calendar_text: "Here you can see the short version of my personal Google calnedar, to know about my work plans.",
+    calendar_head: "Short schedule",
+    calendar_text: "Here you can see the short version of my personal Google calnedar, to know about my work plans. If you want to see my full calendar, click on DETAILS.",
   },
   "CalendarComponent": {
     weekday1: "Monday",
@@ -44,8 +44,8 @@ export default {
     month10: "October",
     month11: "November",
     month12: "December",
-    book_now: "Contact now",
-    book_now_description: "Seems like I'm available in this day to complete some task. Feel free to contact with me by email and book my services to this date."
+    book_now: "Contact",
+    book_now_description: "Seems like I'm available in this day."
   },
   "About": {
     about: "About"
