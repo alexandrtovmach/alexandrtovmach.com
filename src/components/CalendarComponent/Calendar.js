@@ -38,9 +38,10 @@ export default class Calendar extends React.Component {
     };
   }
 
-  _findEvents(events = [], date = Date.now()) {
+  _findEvents(events = [], date_end) {
+    const date_start = date_end - oneDayMilliseconds;
     return events.find(event => {
-      return date <= event.start && event.start < date + oneDayMilliseconds
+      return (event.start >= date_start) && (event.start < date_end)
     })
   }
 
