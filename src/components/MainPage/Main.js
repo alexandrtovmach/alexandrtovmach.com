@@ -65,7 +65,7 @@ export default class Main extends React.Component {
           />
         </div>
         <div className={classnames("main-calendar")}>
-          <div className="calendar-text-block">
+          <div className="calendar-block">
             <h2>{this.props.langPack.calendar_head}</h2>
             <p>
               {this.props.langPack.calendar_text}
@@ -81,7 +81,15 @@ export default class Main extends React.Component {
           </div>
         </div>
         <div className={classnames("main-portfolio")}>
-          <a href="/portfolio">{this.props.langPack.portfolio}</a>
+          <div className="portfolio-block">
+            <h2>{this.props.langPack.portfolio_head}</h2>
+            <div className="portfolio-wrap">
+              
+            </div>
+            <a href="/portfolio" className="button" title={this.props.langPack.portfolio} >
+              {this.props.langPack.details}
+            </a>
+          </div>
         </div>
         <div className={classnames("main-blog")}>
           <a href="/blog">{this.props.langPack.blog}</a>
