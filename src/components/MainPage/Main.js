@@ -5,6 +5,7 @@ import classnames from "classnames";
 import SkillsChart from './common/SkillsChart';
 import Navigation from './common/Navigation';
 import Calendar from '../CalendarComponent/Calendar';
+import MacComponent from '../PortfolioPage/devicesComponents/MacComponent';
 import data from '../../utils/skillsData';
 
 export default class Main extends React.Component {
@@ -84,7 +85,7 @@ export default class Main extends React.Component {
           <div className="portfolio-block">
             <h2>{this.props.langPack.portfolio_head}</h2>
             <div className="portfolio-wrap">
-              
+              <MacComponent />
             </div>
             <a href="/portfolio" className="button" title={this.props.langPack.portfolio} >
               {this.props.langPack.details}
