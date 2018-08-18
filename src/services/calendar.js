@@ -18,13 +18,12 @@ function pullEventsFromAPI(count) {
 }
 
 function transformEventData(event) {
-
-
+  const match = event.description && event.description.match(/([a-zA-Z,. ]+)?\s*?(\+\+)\s*?([a-zA-Z,]+)/);
   return {
     id: event.id,
     name: event.summary || "Unknown name",
-    description: (event.description && event.description.split("++")[0]) || event.description || "",
-    tags: (event.description && event.description.match(/(\+\+)\s*?([a-zA-Z,]+)/)[2].split(",")) || [],
+    description: (match && match[1]) || "",
+    tags: (match && match[3] && match[3].split(",")) || [],
     start: new Date(event.start.dateTime).valueOf(),
     end: new Date(event.end.dateTime).valueOf()
   }
