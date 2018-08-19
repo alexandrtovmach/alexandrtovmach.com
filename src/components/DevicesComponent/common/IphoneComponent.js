@@ -5,7 +5,7 @@ import { ReactComponent as IPhoneSVG } from '../../../styles/assets/images/IPhon
 
 export default (props) => {
   return (
-    <div className={classnames("device", "phone-device")} >
+    <div className={classnames("device", "phone-device", "no-theme")} >
       <img src={props.img} alt="phone-screenshot"/>
       <IPhoneSVG />
     </div>

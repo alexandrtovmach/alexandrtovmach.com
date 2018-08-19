@@ -92,7 +92,7 @@ export default class Main extends React.Component {
           </div>
           <div className="portfolio-devices-container">
             <DevicesComponent
-              portfolio={portfolio_collector[0]}
+              portfolio={portfolio_collector[1]}
             />
           </div>
         </div>

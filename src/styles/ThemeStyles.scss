@@ -59,3 +59,9 @@
     background-color: $light-second-color;
   }
 }
+.no-theme {
+  background-color: initial;
+  color: initial;
+  border-color: initial;
+  fill: initial;
+}
