@@ -13,6 +13,7 @@ export default {
     portfolio: "Portfolio",
     blog: "Blog",
     details: "Details",
+    more: "More",
     about_head: "A little bit about myself...",
     years: {
       one: "year old",

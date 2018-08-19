@@ -1,0 +1,71 @@
+.devices {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .device {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    svg {
+      fill: unset;
+    }
+    img {
+      position: absolute;
+    }
+    &.desktop-device {
+      z-index: 0;
+      img {
+        width: 91.6%;
+        height: 61.8%;
+        top: 4.8%;
+        left: 4.2%;
+        z-index: -1;
+      }
+    }
+    &.pad-device {
+      z-index: 1;
+      img {
+        width: 89.2%;
+        height: 79.5%;
+        top: 9.6%;
+        left: 5.2%;
+        z-index: -1;
+      }
+    }
+    &.phone-device {
+      z-index: 2;
+      img {
+        width: 87%;
+        height: 92%;
+        top: 3%;
+        left: 6.2%;
+        z-index: -1;
+      }
+    }
+  }
+
+  .desktop-device-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .pad-device-container {
+    position: absolute;
+    bottom: 0%;
+    left: -10%;
+    width: 35%;
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+  }
+  .phone-device-container {
+    position: absolute;
+    bottom: -10%;
+    left: 20%;
+    width: 20%;
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+  }
+}

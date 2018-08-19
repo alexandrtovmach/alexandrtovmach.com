@@ -4,9 +4,11 @@ import classnames from "classnames";
 
 import SkillsChart from './common/SkillsChart';
 import Navigation from './common/Navigation';
-import Calendar from '../CalendarComponent/Calendar';
-import MacComponent from '../PortfolioPage/devicesComponents/MacComponent';
+import CalendarComponent from '../CalendarComponent/CalendarComponent';
+import DevicesComponent from '../DevicesComponent/DevicesComponent';
+
 import data from '../../utils/skillsData';
+import portfolio_collector from '../../utils/portfolio/portfolio_collector';
 
 export default class Main extends React.Component {
   constructor() {
@@ -72,7 +74,7 @@ export default class Main extends React.Component {
               {this.props.langPack.calendar_text}
             </p>
             <div className="calendar-wrap">
-              <Calendar
+              <CalendarComponent
                 langPack={ this.props.calendarLangPack }
               />
             </div>
@@ -82,14 +84,16 @@ export default class Main extends React.Component {
           </div>
         </div>
         <div className={classnames("main-portfolio")}>
-          <div className="portfolio-block">
+          <div className="portfolio-text-block">
             <h2>{this.props.langPack.portfolio_head}</h2>
-            <div className="portfolio-wrap">
-              <MacComponent />
-            </div>
             <a href="/portfolio" className="button" title={this.props.langPack.portfolio} >
-              {this.props.langPack.details}
+              {this.props.langPack.more}
             </a>
+          </div>
+          <div className="portfolio-devices-container">
+            <DevicesComponent
+              portfolio={portfolio_collector[0]}
+            />
           </div>
         </div>
         <div className={classnames("main-blog")}>

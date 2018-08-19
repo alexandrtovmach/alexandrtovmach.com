@@ -13,6 +13,7 @@ export default {
     portfolio: "Портфоліо",
     blog: "Блог",
     details: "Детальніше",
+    more: "Ще",
     about_head: "Трохи про себе...",
     years: {
       one: "рік",

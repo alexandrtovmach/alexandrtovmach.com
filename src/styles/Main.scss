@@ -89,12 +89,28 @@
 }
 .main-portfolio {
   @extend .main-page;
-  .portfolio-block {
-    width: 100%;
+  .portfolio-text-block {
+    flex: 50%;
     h2 {
       width: 100%;
       font-size: 150%;
       font-weight: 400;
+    }
+  }
+  .portfolio-devices-container {
+    flex: 50%;
+    width: 50%;
+    height: 40vw;
+  }
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    .portfolio-text-block {
+      flex: 0 1 10%;
+      width: 100%;
+    }
+    .portfolio-devices-container {
+      flex: 0 0 35%;
+      width: 100%;
     }
   }
 }
