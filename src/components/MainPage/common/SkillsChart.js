@@ -8,10 +8,10 @@ export default class SkillsChart extends React.Component {
   componentDidMount() {
     this.renderSunburst(this.props);
   }
-
-  componentWillReceiveProps(nextProps) {
-    if (!isEqual(this.props, nextProps)) {
-      this.renderSunburst(nextProps);
+  
+  componentDidUpdate(prevProps) {
+    if (!isEqual(prevProps, this.props)) {
+      this.renderSunburst(this.props);
     }
   }
 
