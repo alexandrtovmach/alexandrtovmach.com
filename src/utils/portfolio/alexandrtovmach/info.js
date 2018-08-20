@@ -1,6 +1,6 @@
-import desktop_img from "./desktop.png";
-import pad_img from "./pad.png";
-import phone_img from "./phone.png";
+import desktop_img from "./desktop.jpg";
+import pad_img from "./pad.jpg";
+import phone_img from "./phone.jpg";
 
 export default {
   name: {
