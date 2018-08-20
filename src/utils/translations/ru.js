@@ -25,7 +25,7 @@ export default {
     about_text_p3: "и многими другими технологиями.",
     calendar_head: "Краткое расписание",
     calendar_text: "Здесь вы можете видеть краткую версию моего Google календаря, чтобы знать о моих рабочих планах.",
-    portfolio_head: "Последняя работа",
+    portfolio_head: "Последние работы",
   },
   "CalendarComponent": {
     weekday1: "Понедельник",
