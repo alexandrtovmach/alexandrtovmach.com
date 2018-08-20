@@ -75,13 +75,15 @@
     <title>Alexandr Tovmach portfolio</title>
   </head>
   <body>
+    <!-- Preloader -->
+    <div style="position: absolute; width: 100%; height: 100vh; z-index: -1; display: flex; align-items: center; justify-content: center;">
+      <img style="width: 200px" src="./preloader.svg" alt="Loading...">
+    </div>
+    <!-- Preloader -->
+
     <noscript>
       <iframe src="/resume.en.html" style="width: 100%; height: 100vh" frameborder="0"></iframe>
     </noscript>
-
-    <script defer src="/__/firebase/5.4.0/firebase-app.js"></script>
-    <script defer src="/__/firebase/5.4.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/init.js"></script>
     <div id="root"></div>
   </body>
 </html>

@@ -1,0 +1,44 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' viewBox='0 0 500 500'>
+    <polygon
+        id="start"
+        points='465.4,459.3 465.4,459.3 465.4,459.3'
+    >
+        <animate
+            id="start-anim"
+            begin="0ms"
+            fill="freeze"
+            attributeName="points"
+            dur="500ms"
+            to="404.8,359.9 465.4,459.3 418.1,354.9"
+        />
+    </polygon>
+    <path
+        id="middle"
+        d='M395.6,348.4 L396.5,346.1 L412.7,342.8 L413,343 c-0,0 0,0 0,0 L413,343 c-0,0 0,0 0,0 L396,346 L396,346 z'
+    >
+        <animate
+            id="middle-anim"
+            begin="start-anim.begin + 500ms"
+            fill="freeze"
+            attributeName="d"
+            dur="1500ms"
+            values="
+                M395.6,348.4 L396.5,346.1 L412.7,342.8 L413,343 c-0,0 0,0 0,0 L413,343 c-0,0 0,0 0,0 L396,346 L396,346 z;
+                M244.6,99.6 L395.5,346.1 L411.7,342.8 L266.1,21.3 c-0,0 0,0 0,0 L250,100 c-0,0 0,0 0,0 L249,100 L245,99.6 z;
+                M246.4,99.6 l150.1,246.5 l16.2-3.3 L267.1,21.3 c-8.1-17.8-33.4-18-41.5-0.1 L27.3,459.4 c-6.8,15.1,4.2,32.6,20.7,32.6 l54.1-74.1 L246.4,99.6 z"
+           keyTimes="0; 0.5; 1"
+        />
+    </path>
+    <path
+        id="end"
+        d='M100.2,418 l0,0 L50.2,490.6 c-0,0 0,0 0,0'
+    >
+        <animate
+            begin="middle-anim.begin + 1500ms"
+            fill="freeze"
+            attributeName="d"
+            dur="750ms"
+            to="M102.2,417.9 l371.5-82.5 L56.2,490.6 c-15.5,5.8-32-6.8-30.9-23.3"
+        />
+    </path>
+</svg>
