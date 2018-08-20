@@ -86,6 +86,7 @@ export default class Main extends React.Component {
         <div className={classnames("main-portfolio")}>
           <div className="portfolio-text-block">
             <h2>{this.props.langPack.portfolio_head}</h2>
+            <div>{portfolio_collector[1].name[this.props.locale]}</div>
             <a href="/portfolio" className="button" title={this.props.langPack.portfolio} >
               {this.props.langPack.more}
             </a>

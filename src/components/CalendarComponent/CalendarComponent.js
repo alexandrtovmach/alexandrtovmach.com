@@ -9,15 +9,17 @@ export default class Calendar extends React.Component {
 
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      fitCount: this.getEventsFitCount() || 3
+    };
   }
 
   componentDidMount() {
-    const fitCount = this.getEventsFitCount();
-    getEvents(fitCount + 2)
+    getEvents(this.state.fitCount + 2)
       .then(eventsArr => {
+        console.info("Pulled events", eventsArr);
         this.setState({
-          days: this.generateDays(Date.now(), fitCount, eventsArr)
+          events: eventsArr
         })
       })
   }
@@ -46,7 +48,6 @@ export default class Calendar extends React.Component {
   }
 
   generateDays(baseDate = Date.now(), daysCount = 3, events = []) {
-    console.log(events);
     const dates = this._makeArrOfDates(baseDate, daysCount);
     return dates.map((date) => {
       const {d, w, m} = this._dateGenerator(date);
@@ -105,13 +106,13 @@ export default class Calendar extends React.Component {
   }
 
   getEventsFitCount() {
-    return Math.ceil(window.innerWidth/250);
+    return Math.ceil(window.innerWidth/300);
   }
 
   render() {
     return (
       <div className="calendar-container">
-        {this.state.days}
+        {this.generateDays(Date.now(), this.state.fitCount, this.state.events)}
       </div>
     )
   }

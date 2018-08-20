@@ -24,7 +24,7 @@ export default {
     about_text_p3: "and many other things.",
     calendar_head: "Short schedule",
     calendar_text: "Here you can see the short version of my personal Google calnedar, to know about my work plans. If you want to see my full calendar, click on DETAILS.",
-    portfolio_head: "Last projects",
+    portfolio_head: "Last project",
   },
   "CalendarComponent": {
     weekday1: "Monday",
