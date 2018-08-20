@@ -8,7 +8,7 @@ export default class SkillsChart extends React.Component {
   componentDidMount() {
     this.renderSunburst(this.props);
   }
-  
+
   componentDidUpdate(prevProps) {
     if (!isEqual(prevProps, this.props)) {
       this.renderSunburst(this.props);
@@ -99,6 +99,7 @@ export default class SkillsChart extends React.Component {
   }
 
   render() {
+    console.log("skills")
     return (
       <div ref={ref => this.chartRef = ref} id={this.props.keyId}>
         <svg id={`${this.props.keyId}-svg`} />
