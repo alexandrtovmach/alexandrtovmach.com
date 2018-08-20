@@ -50,7 +50,7 @@ export default class Main extends React.Component {
               {this.props.langPack.about_text_p2}
               &nbsp;
               <span ref={ref => this.skillsTooltipRef = ref} className="toltip-name">
-                many
+                {this.props.langPack.many}
               </span>
               <br/>
               {this.props.langPack.about_text_p3}
