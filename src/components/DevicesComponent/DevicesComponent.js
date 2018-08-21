@@ -1,5 +1,5 @@
 import React from "react";
-// import classnames from "classnames";
+import isEqual from 'lodash.isequal';
 
 import ImacComponent from './common/ImacComponent';
 import IpadComponent from './common/IpadComponent';
@@ -16,6 +16,10 @@ export default class DevicesComponent extends React.Component {
     this.setState({
       project: this.props.portfolio
     })
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return !isEqual(this.state, nextState) || !isEqual(this.props, nextProps);
   }
 
   render() {

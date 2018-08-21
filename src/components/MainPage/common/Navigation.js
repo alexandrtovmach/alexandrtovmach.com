@@ -64,7 +64,7 @@ export default class Navigation extends React.Component {
           interval={30000}
           enableMouseEvents={true}
           index={this.state.index}
-          // onChangeIndex={this.handleChangeIndex}
+          onChangeIndex={this.handleChangeIndex}
         >
           {this.props.children}
         </AutoPlaySwipeableViews>

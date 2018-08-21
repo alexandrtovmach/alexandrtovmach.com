@@ -1,4 +1,5 @@
 import React from 'react';
+import isEqual from 'lodash.isequal';
 import classNames from 'classnames';
 
 import { getEvents } from "../../services/calendar";
@@ -24,7 +25,11 @@ export default class Calendar extends React.Component {
         })
       })
   }
-  
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return !isEqual(this.state, nextState) || !isEqual(this.props, nextProps);
+  }
+
   _makeArrOfDates(base = Date.now(), count = 10) {
     const datesArr = [];
     for (let i = 0; i < count; i++) {

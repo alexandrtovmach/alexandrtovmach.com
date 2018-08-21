@@ -1,5 +1,5 @@
 import React from 'react';
-import { isEqual } from 'lodash/lang';
+import isEqual from 'lodash.isequal';
 import * as d3 from 'd3';
 
 
@@ -13,6 +13,10 @@ export default class SkillsChart extends React.Component {
     if (!isEqual(prevProps, this.props)) {
       this.renderSunburst(this.props);
     }
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return !isEqual(this.state, nextState) || !isEqual(this.props, nextProps);
   }
 
   arcTweenData(a, i, node, x, arc) {
@@ -99,7 +103,6 @@ export default class SkillsChart extends React.Component {
   }
 
   render() {
-    console.log("skills")
     return (
       <div ref={ref => this.chartRef = ref} id={this.props.keyId}>
         <svg id={`${this.props.keyId}-svg`} />
