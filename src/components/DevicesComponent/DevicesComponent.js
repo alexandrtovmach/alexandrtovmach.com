@@ -14,7 +14,7 @@ export default class DevicesComponent extends React.Component {
 
   componentDidMount() {
     this.setState({
-      project: this.props.portfolio
+      project: this.props.project
     })
   }
 

@@ -9,14 +9,14 @@ export default {
     ua: "PATProfi  сайт"
   },
   description: {
-    en: "PATProfi website design. I'm also worked as QA and PM in this project.",
+    en: "Some use cases require you to create multiple apps at the same time. For example, you might want to read data from the Realtime Database of one Firebase project and store files in another project. Or you might want to authenticate one app while have another app be unauthenticated. The Firebase SDK allows you to create multiple apps at the same time, each with their own configuration information.",
     ru: "Личный сайт",
     ua: "Персональний сайт"
   },
   skills: ["UI/UX", "Design", "Project Mangement", "Quality Assurance"],
   price: "500$",
-  start: new Date(2018, 7, 10),
-  end: new Date(2018, 8, 10),
+  start: new Date(2018, 7, 10).toISOString(),
+  end: new Date(2018, 8, 10).toISOString(),
   link: "https://patprofi.space",
   screenshots: {
     desktop: desktop_img,

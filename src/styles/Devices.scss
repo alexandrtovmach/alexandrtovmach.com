@@ -50,7 +50,7 @@
   .pad-device-container {
     position: absolute;
     bottom: 0%;
-    left: -10%;
+    right: -3%;
     width: 35%;
     @media screen and (max-width: 900px) {
       display: none;
@@ -59,7 +59,7 @@
   .phone-device-container {
     position: absolute;
     bottom: -10%;
-    left: 20%;
+    right: 25%;
     width: 20%;
     @media screen and (max-width: 900px) {
       display: none;

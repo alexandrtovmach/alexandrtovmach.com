@@ -91,24 +91,12 @@
   @extend .main-page;
   .portfolio-text-block {
     flex: 50%;
+    padding: 10px 20px 0 0;
+    margin: 20px 0;
     h2 {
       width: 100%;
       font-size: 150%;
       font-weight: 400;
-    }
-    .portfolio-project-text {
-      font-size: 50%;
-      border-left: 1em solid $main-color;
-      padding: 0 0 0 1em;
-      h3 {
-        width: 100%;
-        font-size: 150%;
-        font-weight: 200;
-        margin: 1em 0 0 0;
-      }
-      p {
-        margin: 0.5em 0 1em 0;
-      }
     }
   }
   .portfolio-devices-container {
@@ -121,10 +109,16 @@
     .portfolio-text-block {
       flex: 0 1 10%;
       width: 100%;
+      .portfolio-project-text {
+        p {
+          display: none;
+        }
+      }
     }
     .portfolio-devices-container {
       flex: 0 0 35%;
       width: 100%;
+      max-width: 600px;
     }
   }
 }

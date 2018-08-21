@@ -6,6 +6,7 @@ import SkillsChart from './common/SkillsChart';
 import Navigation from './common/Navigation';
 import CalendarComponent from '../CalendarComponent/CalendarComponent';
 import DevicesComponent from '../DevicesComponent/DevicesComponent';
+import PortfolioProjectTextComponent from '../PortfolioProjectTextComponent/PortfolioProjectTextComponent';
 
 import data from '../../utils/skillsData';
 import portfolio_collector from '../../utils/portfolio/portfolio_collector';
@@ -87,17 +88,17 @@ export default class Main extends React.Component {
         <div className={classnames("main-portfolio")}>
           <div className="portfolio-text-block">
             <h2>{this.props.langPack.portfolio_head}</h2>
-            <div className="portfolio-project-text">
-              <h3>{last_project.name[this.props.locale]}</h3>
-              <p>{last_project.description[this.props.locale]}</p>
-            </div>
+            <PortfolioProjectTextComponent
+              project={last_project}
+              locale={this.props.locale}
+            />
             <a href="/portfolio" className="button" title={this.props.langPack.portfolio} >
               {this.props.langPack.more}
             </a>
           </div>
           <div className="portfolio-devices-container">
             <DevicesComponent
-              portfolio={last_project}
+              project={last_project}
             />
           </div>
         </div>

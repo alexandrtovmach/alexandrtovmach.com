@@ -1,0 +1,30 @@
+.portfolio-project-text {
+  font-size: 50%;
+  border-left: 0.5em solid $main-color;
+  padding: 0 0 0 0.5em;
+  margin: 20px 0;
+  h3 {
+    width: 100%;
+    font-size: 150%;
+    font-weight: 300;
+  }
+  p {
+    margin: 0.5em 0;
+    font-weight: 200;
+    font-size: 90%;
+    opacity: 0.8;
+  }
+  .meta-project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
+    opacity: 0.7;
+    .project-price {
+      font-size: 110%;
+    }
+    .project-time {
+      font-size: 90%;
+    }
+  }
+}
