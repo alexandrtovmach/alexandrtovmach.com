@@ -16,9 +16,9 @@ export default class Main extends React.Component {
     this.onTooltipUpdate = this.onTooltipUpdate.bind(this);
   }
 
-  onSelect(event){
-    console.log(event);
-  }
+  // onSelect(event){
+  //   console.log(event);
+  // }
 
   onTooltipUpdate(content) {
     this.skillsTooltipRef.innerHTML = content;
@@ -30,6 +30,7 @@ export default class Main extends React.Component {
   }
 
   render() {
+    const last_project = portfolio_collector[portfolio_collector.length - 1];
     return (
       <Navigation
         theme={ this.props.theme }
@@ -50,7 +51,7 @@ export default class Main extends React.Component {
               {this.props.langPack.about_text_p2}
               &nbsp;
               <span ref={ref => this.skillsTooltipRef = ref} className="toltip-name">
-                many
+                {this.props.langPack.many}
               </span>
               <br/>
               {this.props.langPack.about_text_p3}
@@ -61,7 +62,7 @@ export default class Main extends React.Component {
           </div>
           <SkillsChart
             data={data[this.props.locale]}
-            onSelect={this.onSelect}
+            // onSelect={this.onSelect}
             onTooltipUpdate={this.onTooltipUpdate}
             scale="linear"
             keyId="skillsChart"
@@ -86,14 +87,17 @@ export default class Main extends React.Component {
         <div className={classnames("main-portfolio")}>
           <div className="portfolio-text-block">
             <h2>{this.props.langPack.portfolio_head}</h2>
-            <div>{portfolio_collector[1].name[this.props.locale]}</div>
+            <div className="portfolio-project-text">
+              <h3>{last_project.name[this.props.locale]}</h3>
+              <p>{last_project.description[this.props.locale]}</p>
+            </div>
             <a href="/portfolio" className="button" title={this.props.langPack.portfolio} >
               {this.props.langPack.more}
             </a>
           </div>
           <div className="portfolio-devices-container">
             <DevicesComponent
-              portfolio={portfolio_collector[1]}
+              portfolio={last_project}
             />
           </div>
         </div>

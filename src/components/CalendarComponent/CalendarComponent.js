@@ -10,7 +10,8 @@ export default class Calendar extends React.Component {
   constructor() {
     super();
     this.state = {
-      fitCount: this.getEventsFitCount() || 3
+      fitCount: this.getEventsFitCount() || 3,
+      events: []
     };
   }
 
@@ -23,7 +24,7 @@ export default class Calendar extends React.Component {
         })
       })
   }
-
+  
   _makeArrOfDates(base = Date.now(), count = 10) {
     const datesArr = [];
     for (let i = 0; i < count; i++) {
