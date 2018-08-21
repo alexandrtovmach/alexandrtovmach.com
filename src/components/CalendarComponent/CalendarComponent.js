@@ -10,20 +10,25 @@ export default class Calendar extends React.Component {
 
   constructor() {
     super();
+
     this.state = {
-      fitCount: this.getEventsFitCount() || 3,
+      fitCount: 3,
       events: []
     };
   }
 
   componentDidMount() {
-    getEvents(this.state.fitCount + 2)
+    requestAnimationFrame(() => {
+      const fitElementsCount = Math.ceil(window.innerWidth/300);
+      getEvents(fitElementsCount + 2)
       .then(eventsArr => {
         console.info("Pulled events", eventsArr);
         this.setState({
-          events: eventsArr
+          events: eventsArr,
+          fitCount: fitElementsCount
         })
       })
+    });
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -109,10 +114,6 @@ export default class Calendar extends React.Component {
         )
       }
     })
-  }
-
-  getEventsFitCount() {
-    return Math.ceil(window.innerWidth/300);
   }
 
   render() {
