@@ -23,7 +23,7 @@ $amount: 20;
     @for $i from 1 through $amount {
       &:nth-child(#{$i}) {
         $randomFactor: random();
-        $size: $particleSize*$randomFactor;
+        $size: $particleSize * $randomFactor;
         $blurRadius: ($randomFactor + 1) * $size * 0.2;
         width: $size;
         height: $size;
@@ -32,7 +32,10 @@ $amount: 20;
         left: random(90) * 1%;
         animation-duration: ((1 - $randomFactor) * $animationDuration) + 10s;
         transform-origin: (random(100) - 25) * 1vw (random(100) - 25) * 1vh;
-        box-shadow: ($particleSize * $randomFactor + 1) 0 $blurRadius currentColor;
+        box-shadow: ($particleSize * $randomFactor + 1)
+          0
+          $blurRadius
+          currentColor;
       }
     }
   }

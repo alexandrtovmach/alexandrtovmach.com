@@ -1,13 +1,12 @@
-import React from 'react';
-import isEqual from 'lodash.isequal';
-import classNames from 'classnames';
+import React from "react";
+import isEqual from "lodash.isequal";
+import classNames from "classnames";
 
 import { getEvents } from "../../services/calendar";
 
-const oneDayMilliseconds = 1000*60*60*24;
+const oneDayMilliseconds = 1000 * 60 * 60 * 24;
 
 export default class Calendar extends React.Component {
-
   constructor() {
     super();
 
@@ -19,15 +18,14 @@ export default class Calendar extends React.Component {
 
   componentDidMount() {
     requestAnimationFrame(() => {
-      const fitElementsCount = Math.ceil(window.innerWidth/300);
-      getEvents(fitElementsCount + 2)
-      .then(eventsArr => {
+      const fitElementsCount = Math.ceil(window.innerWidth / 300);
+      getEvents(fitElementsCount + 2).then(eventsArr => {
         console.info("Pulled events", eventsArr);
         this.setState({
           events: eventsArr,
           fitCount: fitElementsCount
-        })
-      })
+        });
+      });
     });
   }
 
@@ -38,7 +36,7 @@ export default class Calendar extends React.Component {
   _makeArrOfDates(base = Date.now(), count = 10) {
     const datesArr = [];
     for (let i = 0; i < count; i++) {
-      datesArr.push(base + i*oneDayMilliseconds);
+      datesArr.push(base + i * oneDayMilliseconds);
     }
     return datesArr;
   }
@@ -54,14 +52,14 @@ export default class Calendar extends React.Component {
   _findEvents(events = [], date_end) {
     const date_start = date_end - oneDayMilliseconds;
     return events.find(event => {
-      return (event.start >= date_start) && (event.start < date_end)
-    })
+      return event.start >= date_start && event.start < date_end;
+    });
   }
 
   generateDays(baseDate = Date.now(), daysCount = 3, events = []) {
     const dates = this._makeArrOfDates(baseDate, daysCount);
-    return dates.map((date) => {
-      const {d, w, m} = this._dateGenerator(date);
+    return dates.map(date => {
+      const { d, w, m } = this._dateGenerator(date);
       const event = this._findEvents(events, date) || {};
 
       if (event.name) {
@@ -75,23 +73,23 @@ export default class Calendar extends React.Component {
           >
             <div className="event-title">{event.name}</div>
             <div className="event-tags">
-              {event.tags && event.tags.map(tag => (
-                <div
-                  key={"date-tag-" + date + tag}
-                  className="event-tag"
-                >
-                  {tag}
-                </div>
-              ))}
+              {event.tags &&
+                event.tags.map(tag => (
+                  <div key={"date-tag-" + date + tag} className="event-tag">
+                    {tag}
+                  </div>
+                ))}
             </div>
             <div className="event-description">{event.description}</div>
             <div className="meta-date">
               <div className="date">{d}</div>
               <div className="month">{this.props.langPack[`month${m}`]}</div>
-              <div className="weekday">{this.props.langPack[`weekday${w}`]}</div>
+              <div className="weekday">
+                {this.props.langPack[`weekday${w}`]}
+              </div>
             </div>
           </div>
-        )
+        );
       } else {
         return (
           <div
@@ -102,18 +100,22 @@ export default class Calendar extends React.Component {
             })}
           >
             <div className="event-freeday">
-              <div className="event-description">{this.props.langPack.book_now_description}</div>
+              <div className="event-description">
+                {this.props.langPack.book_now_description}
+              </div>
               <button className="button">{this.props.langPack.book_now}</button>
             </div>
             <div className="meta-date">
               <div className="date">{d}</div>
               <div className="month">{this.props.langPack[`month${m}`]}</div>
-              <div className="weekday">{this.props.langPack[`weekday${w}`]}</div>
+              <div className="weekday">
+                {this.props.langPack[`weekday${w}`]}
+              </div>
             </div>
           </div>
-        )
+        );
       }
-    })
+    });
   }
 
   render() {
@@ -121,6 +123,6 @@ export default class Calendar extends React.Component {
       <div className="calendar-container">
         {this.generateDays(Date.now(), this.state.fitCount, this.state.events)}
       </div>
-    )
+    );
   }
-};
+}

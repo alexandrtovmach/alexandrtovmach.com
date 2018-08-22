@@ -1440,7 +1440,9 @@
   }
 }
 @keyframes twinkle {
-  0%, 80%, 100% {
+  0%,
+  80%,
+  100% {
     opacity: 0.7;
     box-shadow: 0 0 0 $main-color;
   }

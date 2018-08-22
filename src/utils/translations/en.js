@@ -1,13 +1,14 @@
 export default {
-  "Header": {
+  Header: {
     switch_to_night_mode: "Switch to Night mode",
     switch_to_day_mode: "Switch to Day mode",
     language: "Choose language",
     go_to_main_page: "Go to main page"
   },
-  "Main": {
+  Main: {
     welcome_head: "You're welcome!",
-    welcome_text: "This mini-site is designed to showcase my skills as a UI/UX designer and a web-developer",
+    welcome_text:
+      "This mini-site is designed to showcase my skills as a UI/UX designer and a web-developer",
     about: "About",
     calendar: "Schedule",
     portfolio: "Portfolio",
@@ -24,13 +25,14 @@ export default {
     many: "many",
     about_text_p3: "and many other things.",
     calendar_head: "Short schedule",
-    calendar_text: "Here you can see the short version of my personal Google calnedar, to know about my work plans. If you want to see my full calendar, click on DETAILS.",
+    calendar_text:
+      "Here you can see the short version of my personal Google calnedar, to know about my work plans. If you want to see my full calendar, click on DETAILS.",
     portfolio_head: "Last projects",
-    "Navigation": {
+    Navigation: {
       tags: ["Main", "About", "Schedule", "Portfolio", "Blog"]
     }
   },
-  "CalendarComponent": {
+  CalendarComponent: {
     weekday1: "Monday",
     weekday2: "Tuesday",
     weekday3: "Wednesday",
@@ -53,16 +55,16 @@ export default {
     book_now: "Contact",
     book_now_description: "Seems like I'm available in this day."
   },
-  "About": {
+  About: {
     about: "About"
   },
-  "Calendar": {
+  Calendar: {
     calendar: "Schedule"
   },
-  "Portfolio": {
+  Portfolio: {
     portfolio: "Portfolio"
   },
-  "Blog": {
+  Blog: {
     blog: "Blog"
   }
-}
+};

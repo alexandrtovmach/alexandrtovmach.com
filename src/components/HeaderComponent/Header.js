@@ -1,7 +1,7 @@
 import React from "react";
 import Switch from "react-switch";
 
-import LanguageMenu from './LanguageMenu';
+import LanguageMenu from "./LanguageMenu";
 import { ReactComponent as MoonSVG } from "../../styles/assets/icons/moon.svg";
 import { ReactComponent as SunSVG } from "../../styles/assets/icons/sun.svg";
 import { ReactComponent as LogoSVG } from "../../styles/assets/images/logo.svg";
@@ -10,7 +10,11 @@ export default class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <a className="logo theme-fill-second" href="/" title={this.props.langPack.go_to_main_page}>
+        <a
+          className="logo theme-fill-second"
+          href="/"
+          title={this.props.langPack.go_to_main_page}
+        >
           <LogoSVG />
         </a>
         <div className="control-panel">
@@ -20,7 +24,14 @@ export default class Header extends React.Component {
               languageWord={this.props.langPack.language}
             />
           </div>
-          <div style={{fontSize: "initial"}} title={this.props.theme.name === "light-theme"? this.props.langPack.switch_to_night_mode: this.props.langPack.switch_to_day_mode}>
+          <div
+            style={{ fontSize: "initial" }}
+            title={
+              this.props.theme.name === "light-theme"
+                ? this.props.langPack.switch_to_night_mode
+                : this.props.langPack.switch_to_day_mode
+            }
+          >
             <Switch
               className="theme-switcher theme-color-main theme-fill-main"
               width={60}

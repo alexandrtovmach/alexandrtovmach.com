@@ -1,12 +1,10 @@
-import React from 'react';
+import React from "react";
 import Main from "../components/MainPage/Main";
-import MainBackground from '../components/MainPage/common/MainBackground';
+import MainBackground from "../components/MainPage/common/MainBackground";
 
-export default (props) => (
+export default props => (
   <div className="page">
     <MainBackground />
-    <Main
-      {...props}
-    />
+    <Main {...props} />
   </div>
 );

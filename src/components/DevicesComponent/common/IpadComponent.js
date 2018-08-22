@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 import classnames from "classnames";
 
-import { ReactComponent as IPadSVG } from '../../../styles/assets/images/IPad_Air.svg';
+import { ReactComponent as IPadSVG } from "../../../styles/assets/images/IPad_Air.svg";
 
-export default (props) => {
+export default props => {
   return (
-    <div className={classnames("device", "pad-device", "no-theme")} >
-      <img src={props.img} alt="pad-screenshot"/>
+    <div className={classnames("device", "pad-device", "no-theme")}>
+      <img src={props.img} alt="pad-screenshot" />
       <IPadSVG />
     </div>
-  )
-}
+  );
+};

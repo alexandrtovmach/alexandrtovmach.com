@@ -1,13 +1,14 @@
 export default {
-  "Header": {
+  Header: {
     switch_to_night_mode: "Включить Ночной режим",
     switch_to_day_mode: "Включить Дневной режим",
     language: "Выбрать язык",
     go_to_main_page: "На главную"
   },
-  "Main": {
+  Main: {
     welcome_head: "Добро пожаловать!",
-    welcome_text: "Этот мини-сайт создан для демонстрации моих навыков дизанера и веб-разработчика.",
+    welcome_text:
+      "Этот мини-сайт создан для демонстрации моих навыков дизанера и веб-разработчика.",
     about: "О себе",
     calendar: "Расписание",
     portfolio: "Портфолио",
@@ -24,13 +25,14 @@ export default {
     many: "многими",
     about_text_p3: "и многими другими технологиями.",
     calendar_head: "Краткое расписание",
-    calendar_text: "Здесь вы можете видеть краткую версию моего Google календаря, чтобы знать о моих рабочих планах.",
+    calendar_text:
+      "Здесь вы можете видеть краткую версию моего Google календаря, чтобы знать о моих рабочих планах.",
     portfolio_head: "Последние работы",
-    "Navigation": {
+    Navigation: {
       tags: ["Главная", "О себе", "Расписание", "Портфолио", "Блог"]
     }
   },
-  "CalendarComponent": {
+  CalendarComponent: {
     weekday1: "Понедельник",
     weekday2: "Вторник",
     weekday3: "Среда",
@@ -53,16 +55,16 @@ export default {
     book_now: "Связаться",
     book_now_description: "Похоже что я свободен в этот день."
   },
-  "About": {
+  About: {
     about: "О себе"
   },
-  "Calendar": {
+  Calendar: {
     calendar: "Расписание"
   },
-  "Portfolio": {
+  Portfolio: {
     portfolio: "Портфолио"
   },
-  "Blog": {
+  Blog: {
     blog: "Блог"
   }
-}
+};

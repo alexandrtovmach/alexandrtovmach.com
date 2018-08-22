@@ -1,12 +1,10 @@
-import React from 'react';
+import React from "react";
 import About from "../components/AboutPage/About";
-import AboutBackground from '../components/AboutPage/AboutBackground';
+import AboutBackground from "../components/AboutPage/AboutBackground";
 
-export default (props) => (
+export default props => (
   <div className="page">
     <AboutBackground />
-    <About 
-      {...props}
-    />
+    <About {...props} />
   </div>
-)
+);

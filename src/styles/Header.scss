@@ -1,5 +1,5 @@
 .header {
-  width: calc(100% - 20px*2);
+  width: calc(100% - 20px * 2);
   height: 60px;
   padding: 0 20px;
   position: fixed;
@@ -21,11 +21,11 @@
     align-items: center;
     .theme-switcher {
       .react-switch-bg {
-        >div {
+        > div {
           display: flex;
           align-items: center;
           justify-content: center;
-          >svg {
+          > svg {
             width: 80%;
             height: 80%;
           }

@@ -1,15 +1,15 @@
 import React from "react";
 import classnames from "classnames";
 
+import SkillsChart from "./common/SkillsChart";
+import Navigation from "./common/Navigation";
+import CalendarComponent from "../CalendarComponent/CalendarComponent";
+import DevicesComponent from "../DevicesComponent/DevicesComponent";
+import PortfolioProjectTextComponent from "../PortfolioProjectTextComponent/PortfolioProjectTextComponent";
+import BlogListComponent from "../BlogComponent/BlogListComponent";
 
-import SkillsChart from './common/SkillsChart';
-import Navigation from './common/Navigation';
-import CalendarComponent from '../CalendarComponent/CalendarComponent';
-import DevicesComponent from '../DevicesComponent/DevicesComponent';
-import PortfolioProjectTextComponent from '../PortfolioProjectTextComponent/PortfolioProjectTextComponent';
-
-import data from '../../utils/skillsData';
-import portfolio_collector from '../../utils/portfolio/portfolio_collector';
+import data from "../../utils/skillsData";
+import portfolio_collector from "../../utils/portfolio/portfolio_collector";
 
 export default class Main extends React.Component {
   constructor() {
@@ -26,16 +26,20 @@ export default class Main extends React.Component {
   }
 
   calcHowOldIAm(yearWord) {
-    const yearDiff = Math.floor((new Date() - new Date(1995, 9, 2))/(1000*60*60*24*365));
-    return (yearDiff.toString().slice(-1) === "1") ? `${yearDiff} ${yearWord.one}`: `${yearDiff} ${yearWord.many}` 
+    const yearDiff = Math.floor(
+      (new Date() - new Date(1995, 9, 2)) / (1000 * 60 * 60 * 24 * 365)
+    );
+    return yearDiff.toString().slice(-1) === "1"
+      ? `${yearDiff} ${yearWord.one}`
+      : `${yearDiff} ${yearWord.many}`;
   }
 
   render() {
     const last_project = portfolio_collector[portfolio_collector.length - 1];
     return (
       <Navigation
-        theme={ this.props.theme }
-        langPack={ this.props.langPack.Navigation }
+        theme={this.props.theme}
+        langPack={this.props.langPack.Navigation}
       >
         <div className={classnames("main-index")}>
           <span>{this.props.langPack.welcome_head}</span>
@@ -47,17 +51,23 @@ export default class Main extends React.Component {
             <p>
               {this.props.langPack.about_text_p1}
               &nbsp;
-              {this.calcHowOldIAm(this.props.langPack.years)}.
-              &nbsp;
+              {this.calcHowOldIAm(this.props.langPack.years)}. &nbsp;
               {this.props.langPack.about_text_p2}
               &nbsp;
-              <span ref={ref => this.skillsTooltipRef = ref} className="toltip-name">
+              <span
+                ref={ref => (this.skillsTooltipRef = ref)}
+                className="toltip-name"
+              >
                 {this.props.langPack.many}
               </span>
-              <br/>
+              <br />
               {this.props.langPack.about_text_p3}
             </p>
-            <a href="/about" className="button" title={this.props.langPack.about} >
+            <a
+              href="/about"
+              className="button"
+              title={this.props.langPack.about}
+            >
               {this.props.langPack.details}
             </a>
           </div>
@@ -72,15 +82,15 @@ export default class Main extends React.Component {
         <div className={classnames("main-calendar")}>
           <div className="calendar-block">
             <h2>{this.props.langPack.calendar_head}</h2>
-            <p>
-              {this.props.langPack.calendar_text}
-            </p>
+            <p>{this.props.langPack.calendar_text}</p>
             <div className="calendar-wrap">
-              <CalendarComponent
-                langPack={ this.props.calendarLangPack }
-              />
+              <CalendarComponent langPack={this.props.calendarLangPack} />
             </div>
-            <a href="/calendar" className="button" title={this.props.langPack.calendar} >
+            <a
+              href="/calendar"
+              className="button"
+              title={this.props.langPack.calendar}
+            >
               {this.props.langPack.details}
             </a>
           </div>
@@ -92,18 +102,27 @@ export default class Main extends React.Component {
               project={last_project}
               locale={this.props.locale}
             />
-            <a href="/portfolio" className="button" title={this.props.langPack.portfolio} >
+            <a
+              href="/portfolio"
+              className="button"
+              title={this.props.langPack.portfolio}
+            >
               {this.props.langPack.more}
             </a>
           </div>
           <div className="portfolio-devices-container">
-            <DevicesComponent
-              project={last_project}
-            />
+            <DevicesComponent project={last_project} />
           </div>
         </div>
         <div className={classnames("main-blog")}>
-          <a href="/blog">{this.props.langPack.blog}</a>
+          <BlogListComponent
+            items={3}
+            infinityScroll={false}
+            locale={this.props.locale}
+          />
+          <a href="/blog" className="button" title={this.props.langPack.blog}>
+            {this.props.langPack.more}
+          </a>
         </div>
       </Navigation>
     );

@@ -8,7 +8,6 @@
   flex-direction: column;
 }
 
-
 .calendar-container {
   width: 100%;
   height: 100%;
@@ -97,7 +96,8 @@
       .date {
         font-size: 150%;
       }
-      .weekday, .month {
+      .weekday,
+      .month {
         font-size: 50%;
         opacity: 0.5;
       }

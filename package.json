@@ -6,6 +6,7 @@
     "classnames": "2.2.6",
     "d3": "^5.5.0",
     "dotenv": "^6.0.0",
+    "firebase": "^5.4.0",
     "get-browser-language": "^1.0.0",
     "lodash.isequal": "^4.5.0",
     "node-sass": "^4.9.0",
@@ -25,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged",
+    "prettify": "prettier --write './src/**/*.{js,json,jsx,css,scss}'"
   },
   "engines": {
     "node": ">=9.0.0"

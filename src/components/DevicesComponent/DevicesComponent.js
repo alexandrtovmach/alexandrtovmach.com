@@ -1,12 +1,11 @@
 import React from "react";
-import isEqual from 'lodash.isequal';
+import isEqual from "lodash.isequal";
 
-import ImacComponent from './common/ImacComponent';
-import IpadComponent from './common/IpadComponent';
-import IphoneComponent from './common/IphoneComponent';
+import ImacComponent from "./common/ImacComponent";
+import IpadComponent from "./common/IpadComponent";
+import IphoneComponent from "./common/IphoneComponent";
 
 export default class DevicesComponent extends React.Component {
-
   constructor() {
     super();
     this.state = {};
@@ -15,7 +14,7 @@ export default class DevicesComponent extends React.Component {
   componentDidMount() {
     this.setState({
       project: this.props.project
-    })
+    });
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -26,28 +25,22 @@ export default class DevicesComponent extends React.Component {
     const { project } = this.state;
     return (
       <div className="devices">
-        <div
-          className="desktop-device-container"
-        >
+        <div className="desktop-device-container">
           <ImacComponent
             img={project && project.screenshots && project.screenshots.desktop}
           />
         </div>
-        <div
-          className="pad-device-container"
-        >
+        <div className="pad-device-container">
           <IpadComponent
             img={project && project.screenshots && project.screenshots.pad}
           />
         </div>
-        <div
-          className="phone-device-container"
-        >
+        <div className="phone-device-container">
           <IphoneComponent
             img={project && project.screenshots && project.screenshots.phone}
           />
         </div>
       </div>
-    )
+    );
   }
 }

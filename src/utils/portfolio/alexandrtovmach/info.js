@@ -21,6 +21,6 @@ export default {
   screenshots: {
     desktop: desktop_img,
     pad: pad_img,
-    phone: phone_img,
+    phone: phone_img
   }
 };

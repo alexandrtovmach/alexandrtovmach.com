@@ -1,12 +1,12 @@
 .main-page {
-  width: calc(100% - 80px*2);
+  width: calc(100% - 80px * 2);
   height: 100%;
   padding: 0 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 480px) {
-    width: calc(100% - 20px*2);
+    width: calc(100% - 20px * 2);
     padding: 0 20px;
   }
 }
@@ -54,7 +54,7 @@
     }
   }
   @import "./SkillsChart.scss";
-} 
+}
 .main-calendar {
   @extend .main-page;
   .calendar-block {
