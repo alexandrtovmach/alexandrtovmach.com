@@ -35,7 +35,7 @@ export default class Main extends React.Component {
     return (
       <Navigation
         theme={ this.props.theme }
-        langPack={ this.props.navigationLangPack }
+        langPack={ this.props.langPack.Navigation }
       >
         <div className={classnames("main-index")}>
           <span>{this.props.langPack.welcome_head}</span>

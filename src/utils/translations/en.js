@@ -26,6 +26,9 @@ export default {
     calendar_head: "Short schedule",
     calendar_text: "Here you can see the short version of my personal Google calnedar, to know about my work plans. If you want to see my full calendar, click on DETAILS.",
     portfolio_head: "Last projects",
+    "Navigation": {
+      tags: ["Main", "About", "Schedule", "Portfolio", "Blog"]
+    }
   },
   "CalendarComponent": {
     weekday1: "Monday",
@@ -61,8 +64,5 @@ export default {
   },
   "Blog": {
     blog: "Blog"
-  },
-  "Navigation": {
-    tags: ["Main", "About", "Schedule", "Portfolio", "Blog"]
   }
 }

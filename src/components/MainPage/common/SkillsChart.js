@@ -4,9 +4,22 @@ import * as d3 from 'd3';
 
 
 export default class SkillsChart extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      gWidth: 0,
+      gHeight: 0
+    }
+  }
 
   componentDidMount() {
-    this.renderSunburst(this.props);
+    requestAnimationFrame(() => {
+      this.setState({
+        gWidth: this.chartRef.clientWidth,
+        gHeight: this.chartRef.clientHeight
+      })
+      this.renderSunburst(this.props);
+    })
   }
 
   componentDidUpdate(prevProps) {
@@ -81,25 +94,26 @@ export default class SkillsChart extends React.Component {
     svg.selectAll('path').transition().duration(1000).attrTween('d', (d, i) => self.arcTweenData(d, i, node, x, arc));
   }
   renderSunburst(props) {
-    if (props.data) {
-      const self = this,
-        gWidth = this.chartRef.clientWidth,
-        gHeight = this.chartRef.clientHeight,
-        radius = (Math.min(gWidth, gHeight) / 2) - 10,
-        svg = !this.isBuilded? d3.select(`#${this.props.keyId}-svg`).append('g').attr('transform', `translate(${gWidth / 2},${gHeight / 2})`): d3.select(`#${this.props.keyId}-svg`).select('g'),
-        x = d3.scaleLinear().range([0, 2 * Math.PI]),
-        y = props.scale === 'linear' ? d3.scaleLinear().range([0, radius]) : d3.scaleSqrt().range([0, radius]),
-        partition = d3.partition(),
-        arc = d3.arc()
-          .startAngle(d => Math.max(0, Math.min(2 * Math.PI, x(d.x0))))
-          .endAngle(d => Math.max(0, Math.min(2 * Math.PI, x(d.x1))))
-          .innerRadius(d => Math.max(0, y(d.y0)))
-          .outerRadius(d => Math.max(0, y(d.y1))),
-        rootData = d3.hierarchy(props.data);
-      const node = rootData;
-      rootData.sum(d => d.size);
-      self.update(rootData, svg, partition, x, y, radius, arc, node, self); // GO!
-    }
+    requestAnimationFrame(() => {
+      if (props.data) {
+        const { gWidth, gHeight } = this.state;
+        const radius = (Math.min(gWidth, gHeight) / 2) - 10,
+          svg = !this.isBuilded? d3.select(`#${this.props.keyId}-svg`).append('g').attr('transform', `translate(${gWidth / 2},${gHeight / 2})`): d3.select(`#${this.props.keyId}-svg`).select('g'),
+          // svg = !this.isBuilded? d3.select(`#${this.props.keyId}-svg`).append('g').attr('transform', `translate(${gWidth / 2},${gHeight / 2})`): d3.select(`#${this.props.keyId}-svg`).select('g'),
+          x = d3.scaleLinear().range([0, 2 * Math.PI]),
+          y = props.scale === 'linear' ? d3.scaleLinear().range([0, radius]) : d3.scaleSqrt().range([0, radius]),
+          partition = d3.partition(),
+          arc = d3.arc()
+            .startAngle(d => Math.max(0, Math.min(2 * Math.PI, x(d.x0))))
+            .endAngle(d => Math.max(0, Math.min(2 * Math.PI, x(d.x1))))
+            .innerRadius(d => Math.max(0, y(d.y0)))
+            .outerRadius(d => Math.max(0, y(d.y1))),
+          rootData = d3.hierarchy(props.data);
+        const node = rootData;
+        rootData.sum(d => d.size);
+        this.update(rootData, svg, partition, x, y, radius, arc, node, this); // GO!
+      }
+    })
   }
 
   render() {
@@ -107,6 +121,6 @@ export default class SkillsChart extends React.Component {
       <div ref={ref => this.chartRef = ref} id={this.props.keyId}>
         <svg id={`${this.props.keyId}-svg`} />
       </div>
-    );
+    )
   }
 }
