@@ -19,8 +19,7 @@
     "react-swipeable-views": "^0.12.14",
     "react-switch": "^3.0.4",
     "screenfull": "^3.3.2",
-    "spacetime": "4.2.2",
-    "spacetime-daylight": "1.0.0"
+    "suncalc": "^1.8.0"
   },
   "scripts": {
     "start": "react-scripts start",

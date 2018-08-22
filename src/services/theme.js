@@ -1,14 +1,11 @@
-import spacetime from 'spacetime';
-import daylight from 'spacetime-daylight';
-
-spacetime.extend(daylight);
+import { dayNow } from './dayNow';
 
 export function getThemeConfig(light) {
   return light? themes.light: themes.dark;
 }
 
 export function detectTheme() {
-  return spacetime(new Date()).daylight().current.status === "day" ? themes.light: themes.dark;
+  return dayNow(new Date())? themes.light: themes.dark;
 }
 
 export function updateMetaTagsTheme(newColor) {
