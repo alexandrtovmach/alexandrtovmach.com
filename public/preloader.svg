@@ -18,7 +18,7 @@
                 404.8,359.9 465.4,459.3 418.1,354.9
             "
             keyTimes="0; 0.37; 0.4; 0.6; 0.66; 1"
-            repeatCount=1
+            repeatCount="1"
         />
     </polygon>
     <path
