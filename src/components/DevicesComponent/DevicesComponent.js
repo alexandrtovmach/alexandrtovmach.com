@@ -1,28 +1,16 @@
 import React from "react";
-import isEqual from "lodash.isequal";
 
 import ImacComponent from "./common/ImacComponent";
 import IpadComponent from "./common/IpadComponent";
 import IphoneComponent from "./common/IphoneComponent";
 
 export default class DevicesComponent extends React.Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  componentDidMount() {
-    this.setState({
-      project: this.props.project
-    });
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    return !isEqual(this.state, nextState) || !isEqual(this.props, nextProps);
+  shouldComponentUpdate(nextProps) {
+    return !this.props.isEqual(this.props, nextProps);
   }
 
   render() {
-    const { project } = this.state;
+    const { project } = this.props;
     return (
       <div className="devices">
         <div className="desktop-device-container">

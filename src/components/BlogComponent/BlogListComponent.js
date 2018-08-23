@@ -6,11 +6,17 @@ import { getAllByCategory } from "../../services/api/firebase";
 export default class BlogListComponent extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      posts: []
+    };
   }
 
   componentDidMount() {
-    getAllByCategory("/blog", 3).then(res => console.log(res));
+    getAllByCategory("blog", this.props.items || 3).then(posts => {
+      this.setState({
+        posts: posts
+      });
+    });
   }
 
   render() {

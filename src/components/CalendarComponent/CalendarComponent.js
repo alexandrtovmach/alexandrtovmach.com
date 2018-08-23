@@ -1,5 +1,4 @@
 import React from "react";
-import isEqual from "lodash.isequal";
 import classNames from "classnames";
 
 import { getEvents } from "../../services/calendar";
@@ -30,13 +29,21 @@ export default class Calendar extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return !isEqual(this.state, nextState) || !isEqual(this.props, nextProps);
+    return (
+      !this.props.isEqual(this.state, nextState) ||
+      !this.props.isEqual(this.props, nextProps)
+    );
   }
 
   _makeArrOfDates(base = Date.now(), count = 10) {
     const datesArr = [];
+    base = new Date(base);
+    base.setHours(0);
+    base.setMinutes(0);
+    base.setSeconds(0);
+    base.setMilliseconds(0);
     for (let i = 0; i < count; i++) {
-      datesArr.push(base + i * oneDayMilliseconds);
+      datesArr.push(base.valueOf() + i * oneDayMilliseconds);
     }
     return datesArr;
   }
@@ -52,6 +59,9 @@ export default class Calendar extends React.Component {
   _findEvents(events = [], date_end) {
     const date_start = date_end - oneDayMilliseconds;
     return events.find(event => {
+      console.log(
+        `${event.start} >= ${date_start} && ${event.start} < ${date_end}`
+      );
       return event.start >= date_start && event.start < date_end;
     });
   }

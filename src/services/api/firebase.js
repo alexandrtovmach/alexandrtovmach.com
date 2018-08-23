@@ -20,3 +20,11 @@ export function getAllByCategory(category = "", limit = 10) {
     .then(snapshot => snapshot.val())
     .catch(err => console.error("getAllByCategory", err));
 }
+
+export function setByCategory(category = "", data = {}) {
+  return databaseRef
+    .child(category)
+    .set(data)
+    .then(snapshot => snapshot)
+    .catch(err => console.error("setByCategory", err));
+}

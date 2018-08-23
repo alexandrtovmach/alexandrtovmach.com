@@ -7,13 +7,15 @@ export default props => {
       .toDateString()
       .match(/(\w+\s)(\w+)\s(\d+)\s(\d+)/);
     const em = new Date(end).toDateString().match(/(\w+\s)(\w+)\s(\d+)\s(\d+)/);
-    return `${sm[2]}${sm[3]} ${sm[4]} - ${em[2]}${em[3]} ${em[4]}`;
+    return sm && em && `${sm[2]}${sm[3]} ${sm[4]} - ${em[2]}${em[3]} ${em[4]}`;
   }
 
   return (
     <div className="portfolio-project-text">
-      <h3>{props.project.name[props.locale]}</h3>
-      <p>{props.project.description[props.locale]}</p>
+      <h3>{props.project.name && props.project.name[props.locale]}</h3>
+      <p>
+        {props.project.description && props.project.description[props.locale]}
+      </p>
       <hr />
       <div className="meta-project-info">
         <div

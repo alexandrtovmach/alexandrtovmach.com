@@ -8,7 +8,7 @@ export function getEvents(count = 5) {
 }
 
 function pullEventsFromAPI(count) {
-  const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events/?key=${API_KEY}&maxResults=${count}`;
+  const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events/?key=${API_KEY}&maxResults=${count}&timeMin=${new Date().toISOString()}`;
   return fetch(url)
     .then(data => data.json())
     .catch(err => {
