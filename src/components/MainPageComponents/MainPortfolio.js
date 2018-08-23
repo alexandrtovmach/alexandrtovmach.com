@@ -29,6 +29,7 @@ export default class MainPortfolioComponent extends React.Component {
   render() {
     return (
       <div className="main-portfolio">
+        <div className="overlapperForSupportTouchEvent" />
         <div className="portfolio-text-block">
           <h2>{this.props.langPack.portfolio_head}</h2>
           <PortfolioProjectTextComponent
