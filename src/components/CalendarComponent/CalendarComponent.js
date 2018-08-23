@@ -19,7 +19,6 @@ export default class Calendar extends React.Component {
     requestAnimationFrame(() => {
       const fitElementsCount = Math.ceil(window.innerWidth / 300);
       getEvents(fitElementsCount + 2).then(eventsArr => {
-        console.info("Pulled events", eventsArr);
         this.setState({
           events: eventsArr,
           fitCount: fitElementsCount
@@ -56,12 +55,9 @@ export default class Calendar extends React.Component {
     };
   }
 
-  _findEvents(events = [], date_end) {
-    const date_start = date_end - oneDayMilliseconds;
+  _findEvents(events = [], date_start) {
+    const date_end = date_start + oneDayMilliseconds;
     return events.find(event => {
-      console.log(
-        `${event.start} >= ${date_start} && ${event.start} < ${date_end}`
-      );
       return event.start >= date_start && event.start < date_end;
     });
   }
@@ -71,7 +67,6 @@ export default class Calendar extends React.Component {
     return dates.map(date => {
       const { d, w, m } = this._dateGenerator(date);
       const event = this._findEvents(events, date) || {};
-
       if (event.name) {
         return (
           <div

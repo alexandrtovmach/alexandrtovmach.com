@@ -8,7 +8,12 @@ export function getEvents(count = 5) {
 }
 
 function pullEventsFromAPI(count) {
-  const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events/?key=${API_KEY}&maxResults=${count}&timeMin=${new Date().toISOString()}`;
+  const minDate = new Date();
+  minDate.setHours(0);
+  minDate.setMinutes(0);
+  minDate.setSeconds(0);
+  minDate.setMilliseconds(0);
+  const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events/?key=${API_KEY}&maxResults=${count}&timeMin=${minDate.toISOString()}`;
   return fetch(url)
     .then(data => data.json())
     .catch(err => {
