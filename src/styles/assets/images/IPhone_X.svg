@@ -216,10 +216,10 @@
 <path id="path5267-7-7" sodipodi:cy="7.8693609" sodipodi:cx="64.264961" sodipodi:rx="2.1329119" sodipodi:ry="2.1095259" sodipodi:end="6.2684653" sodipodi:start="0" sodipodi:type="arc" fill="#0F0F0F" d="
 	M251,29.7c0,4.4-3.6,8-8,8c-4.4,0-8.1-3.5-8.1-7.9s3.5-8,8-8c4.4,0,8.1,3.5,8.1,7.9l-8.1,0.1H251z"/>
 <linearGradient id="rect5872_1_" gradientUnits="userSpaceOnUse" x1="180.3813" y1="699.9382" x2="179.3708" y2="-197.9561" gradientTransform="matrix(1 0 0 -1 0 722)">
-	<stop  offset="0" style="stop-color:#404040"/>
-	<stop  offset="2.193147e-002" style="stop-color:#464646"/>
-	<stop  offset="0.9995" style="stop-color:#525252;stop-opacity:1.568628e-002"/>
-	<stop  offset="1" style="stop-color:#444444;stop-opacity:0"/>
+	<stop  offset="0" style="stop-color:#eeeeee"/>
+	<stop  offset="2.193147e-002" style="stop-color:#e9e9e9e9"/>
+	<stop  offset="0.9995" style="stop-color:#ececec;stop-opacity:1.568628e-002"/>
+	<stop  offset="1" style="stop-color:#dddddd;stop-opacity:0"/>
 </linearGradient>
 <path id="rect5872" opacity="0.1" fill="url(#rect5872_1_)" d="M55.8,22.2c-17.8,0-32.1,14.3-32.1,32.1v613.2
 	c0,17.8,14.3,32.1,32.1,32.1h248.4c17.8,0,32.1-14.3,32.1-32.1V54.3c0-17.8-14.3-32.1-32.1-32.1h-31.4c-3,0-5.4,2.4-5.4,5.4V30

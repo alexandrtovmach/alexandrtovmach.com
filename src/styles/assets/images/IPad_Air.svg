@@ -1011,8 +1011,8 @@
 	<path fill="url(#svgid_ipad_11_)" d="M378.3,3H173.1l18,55h191.4c1.2,0,2.3,1,2.3,2.3v479c0,1.2-1,2.3-2.3,2.3h-32.7l18.2,55.5h10.3
 		c13.8,0,25-11.2,25-25V28C403.3,14.2,392.1,3,378.3,3z"/>
 	<linearGradient id="svgid_ipad_12_" gradientUnits="userSpaceOnUse" x1="410.9657" y1="431.8507" x2="258.966" y2="-25.149">
-		<stop  offset="0" style="stop-color:#606060"/>
-		<stop  offset="1" style="stop-color:#999999"/>
+		<stop  offset="0" style="stop-color:#eeeeee"/>
+		<stop  offset="1" style="stop-color:#f9f9f9"/>
 	</linearGradient>
 	<path fill="url(#svgid_ipad_12_)" d="M384.8,539.3v-479c0-1.2-1-2.3-2.3-2.3H191.2l158.7,483.6h32.7
 		C383.8,541.5,384.8,540.5,384.8,539.3z"/>
