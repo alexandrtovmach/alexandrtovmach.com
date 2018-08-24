@@ -7,7 +7,7 @@ export default props => {
   return (
     <div className={classnames("device", "pad-device", "no-theme")}>
       <img src={props.img} alt="pad-screenshot" />
-      <img src={IPadSVG} />
+      <img src={IPadSVG} alt="iPad" />
     </div>
   );
 };

@@ -7,7 +7,7 @@ export default props => {
   return (
     <div className={classnames("device", "desktop-device", "no-theme")}>
       <img src={props.img} alt="desktop-screenshot" />
-      <img src={IMacSVG} />
+      <img src={IMacSVG} alt="iMac" />
     </div>
   );
 };
