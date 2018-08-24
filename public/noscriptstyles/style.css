@@ -1,0 +1,8 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
+  font-size: 10vh;
+  height: 90vh;
+}
