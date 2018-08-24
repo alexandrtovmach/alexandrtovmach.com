@@ -914,67 +914,67 @@
 <?xpacket end="w"?>
 	</metadata>
 <g>
-	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="404.8335" y1="572" x2="404.8335" y2="28">
+	<linearGradient id="svgid_ipad_1_" gradientUnits="userSpaceOnUse" x1="404.8335" y1="572" x2="404.8335" y2="28">
 		<stop  offset="0" style="stop-color:#000000"/>
 		<stop  offset="0.2672" style="stop-color:#808080"/>
 		<stop  offset="0.7126" style="stop-color:#808080"/>
 		<stop  offset="1" style="stop-color:#000000"/>
 	</linearGradient>
-	<rect x="403.3" y="28" fill="url(#SVGID_1_)" width="3" height="544"/>
-	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="2.167" y1="572" x2="2.167" y2="28">
+	<rect x="403.3" y="28" fill="url(#svgid_ipad_1_)" width="3" height="544"/>
+	<linearGradient id="svgid_ipad_2_" gradientUnits="userSpaceOnUse" x1="2.167" y1="572" x2="2.167" y2="28">
 		<stop  offset="0" style="stop-color:#3C3C3C"/>
 		<stop  offset="0.5344" style="stop-color:#939393"/>
 		<stop  offset="1" style="stop-color:#3C3C3C"/>
 	</linearGradient>
-	<rect x="0.7" y="28" fill="url(#SVGID_2_)" width="3" height="544"/>
-	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="28.667" y1="1.5" x2="378.3335" y2="1.5">
+	<rect x="0.7" y="28" fill="url(#svgid_ipad_2_)" width="3" height="544"/>
+	<linearGradient id="svgid_ipad_3_" gradientUnits="userSpaceOnUse" x1="28.667" y1="1.5" x2="378.3335" y2="1.5">
 		<stop  offset="0" style="stop-color:#3C3C3C"/>
 		<stop  offset="0.5344" style="stop-color:#939393"/>
 		<stop  offset="1" style="stop-color:#3C3C3C"/>
 	</linearGradient>
-	<rect x="28.7" fill="url(#SVGID_3_)" width="349.7" height="3"/>
-	<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="25.6539" y1="-1.2619" x2="-1.935186e-002" y2="24.4114">
+	<rect x="28.7" fill="url(#svgid_ipad_3_)" width="349.7" height="3"/>
+	<linearGradient id="svgid_ipad_4_" gradientUnits="userSpaceOnUse" x1="25.6539" y1="-1.2619" x2="-1.935186e-002" y2="24.4114">
 		<stop  offset="0" style="stop-color:#3C3C3C"/>
 		<stop  offset="0.2389" style="stop-color:#000000"/>
 		<stop  offset="0.5092" style="stop-color:#000000"/>
 		<stop  offset="0.532" style="stop-color:#B3B3B3"/>
 		<stop  offset="0.9087" style="stop-color:#393939"/>
 	</linearGradient>
-	<path fill="url(#SVGID_4_)" d="M28.7,3V0c-15.4,0-28,12.6-28,28h3C3.7,14.2,14.9,3,28.7,3z"/>
+	<path fill="url(#svgid_ipad_4_)" d="M28.7,3V0c-15.4,0-28,12.6-28,28h3C3.7,14.2,14.9,3,28.7,3z"/>
 	
-		<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="265.7785" y1="-145.7201" x2="237.2742" y2="-117.2158" gradientTransform="matrix(0 1 -1 0 265.3335 -237.3335)">
+		<linearGradient id="svgid_ipad_5_" gradientUnits="userSpaceOnUse" x1="265.7785" y1="-145.7201" x2="237.2742" y2="-117.2158" gradientTransform="matrix(0 1 -1 0 265.3335 -237.3335)">
 		<stop  offset="0" style="stop-color:#3C3C3C"/>
 		<stop  offset="0.2389" style="stop-color:#000000"/>
 		<stop  offset="0.5092" style="stop-color:#000000"/>
 		<stop  offset="0.532" style="stop-color:#B3B3B3"/>
 		<stop  offset="0.9087" style="stop-color:#393939"/>
 	</linearGradient>
-	<path fill="url(#SVGID_5_)" d="M403.3,28h3c0-15.4-12.6-28-28-28v3C392.1,3,403.3,14.2,403.3,28z"/>
+	<path fill="url(#svgid_ipad_5_)" d="M403.3,28h3c0-15.4-12.6-28-28-28v3C392.1,3,403.3,14.2,403.3,28z"/>
 	
-		<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="378.332" y1="471.5" x2="28.6655" y2="471.5" gradientTransform="matrix(-1 0 0 -1 406.999 1070)">
+		<linearGradient id="svgid_ipad_6_" gradientUnits="userSpaceOnUse" x1="378.332" y1="471.5" x2="28.6655" y2="471.5" gradientTransform="matrix(-1 0 0 -1 406.999 1070)">
 		<stop  offset="0" style="stop-color:#000000"/>
 		<stop  offset="0.5344" style="stop-color:#939393"/>
 		<stop  offset="1" style="stop-color:#3C3C3C"/>
 	</linearGradient>
-	<rect x="28.7" y="597" fill="url(#SVGID_6_)" width="349.7" height="3"/>
+	<rect x="28.7" y="597" fill="url(#svgid_ipad_6_)" width="349.7" height="3"/>
 	
-		<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="-0.596" y1="494.9866" x2="25.0773" y2="469.3133" gradientTransform="matrix(-1 0 0 -1 406.999 1070)">
+		<linearGradient id="svgid_ipad_7_" gradientUnits="userSpaceOnUse" x1="-0.596" y1="494.9866" x2="25.0773" y2="469.3133" gradientTransform="matrix(-1 0 0 -1 406.999 1070)">
 		<stop  offset="0" style="stop-color:#3C3C3C"/>
 		<stop  offset="0.2389" style="stop-color:#000000"/>
 		<stop  offset="0.5092" style="stop-color:#000000"/>
 		<stop  offset="0.532" style="stop-color:#B3B3B3"/>
 		<stop  offset="0.9087" style="stop-color:#393939"/>
 	</linearGradient>
-	<path fill="url(#SVGID_7_)" d="M378.3,597v3c15.4,0,28-12.6,28-28h-3C403.3,585.8,392.1,597,378.3,597z"/>
+	<path fill="url(#svgid_ipad_7_)" d="M378.3,597v3c15.4,0,28-12.6,28-28h-3C403.3,585.8,392.1,597,378.3,597z"/>
 	
-		<linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="702.6133" y1="-112.5535" x2="731.1176" y2="-141.0578" gradientTransform="matrix(0 -1 1 0 141.6655 1307.3335)">
+		<linearGradient id="svgid_ipad_8_" gradientUnits="userSpaceOnUse" x1="702.6133" y1="-112.5535" x2="731.1176" y2="-141.0578" gradientTransform="matrix(0 -1 1 0 141.6655 1307.3335)">
 		<stop  offset="0" style="stop-color:#3C3C3C"/>
 		<stop  offset="0.2389" style="stop-color:#000000"/>
 		<stop  offset="0.5092" style="stop-color:#000000"/>
 		<stop  offset="0.532" style="stop-color:#B3B3B3"/>
 		<stop  offset="0.9087" style="stop-color:#393939"/>
 	</linearGradient>
-	<path fill="url(#SVGID_8_)" d="M3.7,572h-3c0,15.4,12.6,28,28,28v-3C14.9,597,3.7,585.8,3.7,572z"/>
+	<path fill="url(#svgid_ipad_8_)" d="M3.7,572h-3c0,15.4,12.6,28,28,28v-3C14.9,597,3.7,585.8,3.7,572z"/>
 </g>
 <path fill="#000" d="M378.3,3H28.7c-13.8,0-25,11.2-25,25v544c0,13.8,11.2,25,25,25h349.7c13.8,0,25-11.2,25-25V28
 	C403.3,14.2,392.1,3,378.3,3z M384.8,539.3c0,1.2-1,2.3-2.3,2.3H23.3c-1.2,0-2.3-1-2.3-2.3v-479c0-1.2,1-2.3,2.3-2.3h359.2
@@ -987,49 +987,49 @@
 <g>
 	<g>
 		<g>
-			<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="203.146" y1="585.915" x2="203.146" y2="571.6396">
+			<linearGradient id="svgid_ipad_9_" gradientUnits="userSpaceOnUse" x1="203.146" y1="585.915" x2="203.146" y2="571.6396">
 				<stop  offset="0" style="stop-color:#646464"/>
 				<stop  offset="1" style="stop-color:#141414"/>
 			</linearGradient>
-			<path fill="url(#SVGID_9_)" d="M203.1,572.7c-5,0-9.8-0.4-14.2-1c0,7.9,6.4,14.3,14.3,14.3c7.9,0,14.3-6.4,14.3-14.3
+			<path fill="url(#svgid_ipad_9_)" d="M203.1,572.7c-5,0-9.8-0.4-14.2-1c0,7.9,6.4,14.3,14.3,14.3c7.9,0,14.3-6.4,14.3-14.3
 				C212.9,572.3,208.1,572.7,203.1,572.7z"/>
 		</g>
 	</g>
 </g>
-<linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="207.8743" y1="576.4819" x2="198.1829" y2="566.7905">
+<linearGradient id="svgid_ipad_10_" gradientUnits="userSpaceOnUse" x1="207.8743" y1="576.4819" x2="198.1829" y2="566.7905">
 	<stop  offset="0" style="stop-color:#1A1A1A"/>
 	<stop  offset="0.7045" style="stop-color:#666666"/>
 </linearGradient>
-<path fill="url(#SVGID_10_)" d="M206.3,577.4h-6.5c-1.4,0-2.5-1.1-2.5-2.5v-6.5c0-1.4,1.1-2.5,2.5-2.5h6.5c1.4,0,2.5,1.1,2.5,2.5
+<path fill="url(#svgid_ipad_10_)" d="M206.3,577.4h-6.5c-1.4,0-2.5-1.1-2.5-2.5v-6.5c0-1.4,1.1-2.5,2.5-2.5h6.5c1.4,0,2.5,1.1,2.5,2.5
 	v6.5C208.8,576.3,207.7,577.4,206.3,577.4z M199.8,566.7c-1,0-1.8,0.8-1.8,1.8v6.5c0,1,0.8,1.8,1.8,1.8h6.5c1,0,1.7-0.8,1.7-1.8
 	v-6.5c0-1-0.8-1.8-1.7-1.8H199.8z"/>
 <g opacity="0.15">
-	<linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="424.5653" y1="427.3279" x2="272.5657" y2="-29.6717">
+	<linearGradient id="svgid_ipad_11_" gradientUnits="userSpaceOnUse" x1="424.5653" y1="427.3279" x2="272.5657" y2="-29.6717">
 		<stop  offset="0" style="stop-color:#000000"/>
 		<stop  offset="1" style="stop-color:#5B5B5B"/>
 	</linearGradient>
-	<path fill="url(#SVGID_11_)" d="M378.3,3H173.1l18,55h191.4c1.2,0,2.3,1,2.3,2.3v479c0,1.2-1,2.3-2.3,2.3h-32.7l18.2,55.5h10.3
+	<path fill="url(#svgid_ipad_11_)" d="M378.3,3H173.1l18,55h191.4c1.2,0,2.3,1,2.3,2.3v479c0,1.2-1,2.3-2.3,2.3h-32.7l18.2,55.5h10.3
 		c13.8,0,25-11.2,25-25V28C403.3,14.2,392.1,3,378.3,3z"/>
-	<linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="410.9657" y1="431.8507" x2="258.966" y2="-25.149">
+	<linearGradient id="svgid_ipad_12_" gradientUnits="userSpaceOnUse" x1="410.9657" y1="431.8507" x2="258.966" y2="-25.149">
 		<stop  offset="0" style="stop-color:#606060"/>
 		<stop  offset="1" style="stop-color:#999999"/>
 	</linearGradient>
-	<path fill="url(#SVGID_12_)" d="M384.8,539.3v-479c0-1.2-1-2.3-2.3-2.3H191.2l158.7,483.6h32.7
+	<path fill="url(#svgid_ipad_12_)" d="M384.8,539.3v-479c0-1.2-1-2.3-2.3-2.3H191.2l158.7,483.6h32.7
 		C383.8,541.5,384.8,540.5,384.8,539.3z"/>
 </g>
 <g>
-	<linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="200.9859" y1="28.4845" x2="206.7004" y2="34.199">
+	<linearGradient id="svgid_ipad_13_" gradientUnits="userSpaceOnUse" x1="200.9859" y1="28.4845" x2="206.7004" y2="34.199">
 		<stop  offset="0" style="stop-color:#353535"/>
 		<stop  offset="1" style="stop-color:#666666"/>
 	</linearGradient>
-	<path fill="url(#SVGID_13_)" d="M199.8,31.3c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4c0-2.2-1.8-4-4-4C201.6,27.3,199.8,29.1,199.8,31.3"/>
+	<path fill="url(#svgid_ipad_13_)" d="M199.8,31.3c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4c0-2.2-1.8-4-4-4C201.6,27.3,199.8,29.1,199.8,31.3"/>
 	
-		<radialGradient id="SVGID_14_" cx="213.2663" cy="29.105" r="2.3891" gradientTransform="matrix(0.9896 0 0 0.9896 -7.7178 1.9852)" gradientUnits="userSpaceOnUse">
+		<radialGradient id="svgid_ipad_14_" cx="213.2663" cy="29.105" r="2.3891" gradientTransform="matrix(0.9896 0 0 0.9896 -7.7178 1.9852)" gradientUnits="userSpaceOnUse">
 		<stop  offset="0" style="stop-color:#00599E"/>
 		<stop  offset="0.8098" style="stop-color:#002674"/>
 		<stop  offset="1" style="stop-color:#00599E"/>
 	</radialGradient>
-	<path fill="url(#SVGID_14_)" d="M201.9,31.3c0,1.1,0.9,1.9,1.9,1.9c1.1,0,1.9-0.9,1.9-1.9c0-1.1-0.9-1.9-1.9-1.9
+	<path fill="url(#svgid_ipad_14_)" d="M201.9,31.3c0,1.1,0.9,1.9,1.9,1.9c1.1,0,1.9-0.9,1.9-1.9c0-1.1-0.9-1.9-1.9-1.9
 		C202.8,29.4,201.9,30.3,201.9,31.3"/>
 	<g>
 		<path fill="#161922" d="M203.4,31.6c0-0.5,0.4-0.9,0.9-0.9c0.5,0,0.9,0.4,0.9,0.9c0,0.5-0.4,0.9-0.9,0.9

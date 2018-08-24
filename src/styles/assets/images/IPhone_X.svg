@@ -32,22 +32,22 @@
 		v79.2c0,0.9-0.8,1.7-1.7,1.7h-13.1c-0.9,0-1.7-0.8-1.7-1.7v-79.2c0-0.9,0.8-1.7,1.7-1.7H358.3z"/>
 	<g>
 		<defs>
-			<path id="SVGID_1_" d="M358.3,167.1c0.9,0,1.7,0.8,1.7,1.7v79.2c0,0.9-0.8,1.7-1.7,1.7h-13.1c-0.9,0-1.7-0.8-1.7-1.7v-79.2
+			<path id="svgid_iphone_1_" d="M358.3,167.1c0.9,0,1.7,0.8,1.7,1.7v79.2c0,0.9-0.8,1.7-1.7,1.7h-13.1c-0.9,0-1.7-0.8-1.7-1.7v-79.2
 				c0-0.9,0.8-1.7,1.7-1.7H358.3z"/>
 		</defs>
-		<clipPath id="SVGID_2_">
-			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		<clipPath id="svgid_iphone_2_">
+			<use xlink:href="#svgid_iphone_1_"  overflow="visible"/>
 		</clipPath>
 		
-			<g id="rect5351-6-6-3" inkscape:connector-curvature="0" sodipodi:nodetypes="ssssccs" clip-path="url(#SVGID_2_)" filter="url(#filter5465-7-2)">
+			<g id="rect5351-6-6-3" inkscape:connector-curvature="0" sodipodi:nodetypes="ssssccs" clip-path="url(#svgid_iphone_2_)" filter="url(#filter5465-7-2)">
 			
-				<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-100.7254" y1="614.1098" x2="-100.7254" y2="593.0681" gradientTransform="matrix(-3.7795 0 0 -3.7795 -22.2386 2489.644)">
+				<linearGradient id="svgid_iphone_3_" gradientUnits="userSpaceOnUse" x1="-100.7254" y1="614.1098" x2="-100.7254" y2="593.0681" gradientTransform="matrix(-3.7795 0 0 -3.7795 -22.2386 2489.644)">
 				<stop  offset="0" style="stop-color:#CBCBCB;stop-opacity:0.2745"/>
 				<stop  offset="4.000000e-002" style="stop-color:#CBCBCB"/>
 				<stop  offset="0.96" style="stop-color:#CBCBCB"/>
 				<stop  offset="1" style="stop-color:#CBCBCB;stop-opacity:0.2757"/>
 			</linearGradient>
-			<path fill="url(#SVGID_3_)" d="M357.9,168.6c0.8,0,1.5,0.7,1.5,1.5v76.5c0,0.8-0.7,1.5-1.5,1.5h-0.5v-79.5L357.9,168.6z"/>
+			<path fill="url(#svgid_iphone_3_)" d="M357.9,168.6c0.8,0,1.5,0.7,1.5,1.5v76.5c0,0.8-0.7,1.5-1.5,1.5h-0.5v-79.5L357.9,168.6z"/>
 		</g>
 	</g>
 </g>
@@ -56,21 +56,21 @@
 		C0,98.5,0.7,97.7,1.7,97.7z"/>
 	<g>
 		<defs>
-			<path id="SVGID_4_" d="M1.7,97.7h13.1c0.9,0,1.7,0.8,1.7,1.7v24.6c0,0.9-0.8,1.7-1.7,1.7H1.7c-0.9,0-1.7-0.8-1.7-1.7V99.4
+			<path id="svgid_iphone_4_" d="M1.7,97.7h13.1c0.9,0,1.7,0.8,1.7,1.7v24.6c0,0.9-0.8,1.7-1.7,1.7H1.7c-0.9,0-1.7-0.8-1.7-1.7V99.4
 				C0,98.5,0.7,97.7,1.7,97.7z"/>
 		</defs>
-		<clipPath id="SVGID_5_">
-			<use xlink:href="#SVGID_4_"  overflow="visible"/>
+		<clipPath id="svgid_iphone_5_">
+			<use xlink:href="#svgid_iphone_4_"  overflow="visible"/>
 		</clipPath>
-		<g id="rect5351-6" inkscape:connector-curvature="0" clip-path="url(#SVGID_5_)" filter="url(#filter5465)">
+		<g id="rect5351-6" inkscape:connector-curvature="0" clip-path="url(#svgid_iphone_5_)" filter="url(#filter5465)">
 			
-				<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="-64.2264" y1="614.1098" x2="-64.2264" y2="607.4978" gradientTransform="matrix(3.7795 0 0 -3.7795 244.2761 2420.2913)">
+				<linearGradient id="svgid_iphone_6_" gradientUnits="userSpaceOnUse" x1="-64.2264" y1="614.1098" x2="-64.2264" y2="607.4978" gradientTransform="matrix(3.7795 0 0 -3.7795 244.2761 2420.2913)">
 				<stop  offset="0" style="stop-color:#CBCBCB;stop-opacity:0.2745"/>
 				<stop  offset="5.000000e-002" style="stop-color:#CBCBCB"/>
 				<stop  offset="0.95" style="stop-color:#CBCBCB"/>
 				<stop  offset="1" style="stop-color:#CBCBCB;stop-opacity:0.2757"/>
 			</linearGradient>
-			<path fill="url(#SVGID_6_)" d="M2.1,99.2c-0.8,0-1.5,0.7-1.5,1.5v22c0,0.8,0.7,1.5,1.5,1.5h0.5v-25H2.1z"/>
+			<path fill="url(#svgid_iphone_6_)" d="M2.1,99.2c-0.8,0-1.5,0.7-1.5,1.5v22c0,0.8,0.7,1.5,1.5,1.5h0.5v-25H2.1z"/>
 		</g>
 	</g>
 </g>
@@ -79,22 +79,22 @@
 		c0,0.9,0.8,1.7,1.7,1.7h13.1c0.9,0,1.7-0.8,1.7-1.7v-48.8c0-0.9-0.8-1.7-1.7-1.7H1.7z"/>
 	<g>
 		<defs>
-			<path id="SVGID_7_" d="M1.7,150c-0.9,0-1.7,0.8-1.7,1.7v48.8c0,0.9,0.8,1.7,1.7,1.7h13.1c0.9,0,1.7-0.8,1.7-1.7v-48.8
+			<path id="svgid_iphone_7_" d="M1.7,150c-0.9,0-1.7,0.8-1.7,1.7v48.8c0,0.9,0.8,1.7,1.7,1.7h13.1c0.9,0,1.7-0.8,1.7-1.7v-48.8
 				c0-0.9-0.8-1.7-1.7-1.7H1.7z"/>
 		</defs>
-		<clipPath id="SVGID_8_">
-			<use xlink:href="#SVGID_7_"  overflow="visible"/>
+		<clipPath id="svgid_iphone_8_">
+			<use xlink:href="#svgid_iphone_7_"  overflow="visible"/>
 		</clipPath>
 		
-			<g id="rect5351-6-6" inkscape:connector-curvature="0" sodipodi:nodetypes="ssssccs" clip-path="url(#SVGID_8_)" filter="url(#filter5465-7)">
+			<g id="rect5351-6-6" inkscape:connector-curvature="0" sodipodi:nodetypes="ssssccs" clip-path="url(#svgid_iphone_8_)" filter="url(#filter5465-7)">
 			
-				<linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="-64.2129" y1="614.1098" x2="-64.2129" y2="601.1" gradientTransform="matrix(3.7795 0 0 -3.7795 244.2385 2472.5667)">
+				<linearGradient id="svgid_iphone_9_" gradientUnits="userSpaceOnUse" x1="-64.2129" y1="614.1098" x2="-64.2129" y2="601.1" gradientTransform="matrix(3.7795 0 0 -3.7795 244.2385 2472.5667)">
 				<stop  offset="0" style="stop-color:#CBCBCB;stop-opacity:0.2745"/>
 				<stop  offset="5.000000e-002" style="stop-color:#CBCBCB"/>
 				<stop  offset="0.95" style="stop-color:#CBCBCB"/>
 				<stop  offset="1" style="stop-color:#CBCBCB;stop-opacity:0.2757"/>
 			</linearGradient>
-			<path fill="url(#SVGID_9_)" d="M2.1,151.5c-0.8,0-1.5,0.7-1.5,1.5v46.1c0,0.8,0.7,1.5,1.5,1.5h0.5v-49.2H2.1z"/>
+			<path fill="url(#svgid_iphone_9_)" d="M2.1,151.5c-0.8,0-1.5,0.7-1.5,1.5v46.1c0,0.8,0.7,1.5,1.5,1.5h0.5v-49.2H2.1z"/>
 		</g>
 	</g>
 </g>
@@ -103,22 +103,22 @@
 		v48.8c0,0.9,0.8,1.7,1.7,1.7h13.1c0.9,0,1.7-0.8,1.7-1.7V200c0-0.9-0.8-1.7-1.7-1.7H1.7z"/>
 	<g>
 		<defs>
-			<path id="SVGID_10_" d="M1.7,198.3C0.8,198.3,0,199,0,200v48.8c0,0.9,0.8,1.7,1.7,1.7h13.1c0.9,0,1.7-0.8,1.7-1.7V200
+			<path id="svgid_iphone_10_" d="M1.7,198.3C0.8,198.3,0,199,0,200v48.8c0,0.9,0.8,1.7,1.7,1.7h13.1c0.9,0,1.7-0.8,1.7-1.7V200
 				c0-0.9-0.8-1.7-1.7-1.7H1.7z"/>
 		</defs>
-		<clipPath id="SVGID_11_">
-			<use xlink:href="#SVGID_10_"  overflow="visible"/>
+		<clipPath id="svgid_iphone_11_">
+			<use xlink:href="#svgid_iphone_10_"  overflow="visible"/>
 		</clipPath>
 		
-			<g id="rect5351-6-6-2" inkscape:connector-curvature="0" sodipodi:nodetypes="ssssccs" clip-path="url(#SVGID_11_)" filter="url(#filter5465-7-8)">
+			<g id="rect5351-6-6-2" inkscape:connector-curvature="0" sodipodi:nodetypes="ssssccs" clip-path="url(#svgid_iphone_11_)" filter="url(#filter5465-7-8)">
 			
-				<linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="-64.2129" y1="596.7372" x2="-64.2129" y2="583.7275" gradientTransform="matrix(3.7795 0 0 -3.7795 244.2385 2455.1941)">
+				<linearGradient id="svgid_iphone_12_" gradientUnits="userSpaceOnUse" x1="-64.2129" y1="596.7372" x2="-64.2129" y2="583.7275" gradientTransform="matrix(3.7795 0 0 -3.7795 244.2385 2455.1941)">
 				<stop  offset="0" style="stop-color:#CBCBCB;stop-opacity:0.2745"/>
 				<stop  offset="5.000000e-002" style="stop-color:#CBCBCB"/>
 				<stop  offset="0.95" style="stop-color:#CBCBCB"/>
 				<stop  offset="1" style="stop-color:#CBCBCB;stop-opacity:0.2757"/>
 			</linearGradient>
-			<path fill="url(#SVGID_12_)" d="M2.1,199.8c-0.8,0-1.5,0.7-1.5,1.5v46.1c0,0.8,0.7,1.5,1.5,1.5h0.5v-49.2H2.1z"/>
+			<path fill="url(#svgid_iphone_12_)" d="M2.1,199.8c-0.8,0-1.5,0.7-1.5,1.5v46.1c0,0.8,0.7,1.5,1.5,1.5h0.5v-49.2H2.1z"/>
 		</g>
 	</g>
 </g>
@@ -141,14 +141,14 @@
 	</g>
 	<g>
 		<defs>
-			<path id="SVGID_13_" d="M56.7,2C27.1,2,3.2,25.9,3.2,55.6V666c0,29.7,23.9,53.6,53.6,53.6h246.5c29.7,0,53.6-23.9,53.6-53.6V55.6
+			<path id="svgid_iphone_13_" d="M56.7,2C27.1,2,3.2,25.9,3.2,55.6V666c0,29.7,23.9,53.6,53.6,53.6h246.5c29.7,0,53.6-23.9,53.6-53.6V55.6
 				c0-29.7-23.9-53.6-53.6-53.6L56.7,2z M55.3,6h249.4c26.6,0,48,21.4,48,48v614.2c0,26.6-21.4,48-48,48H55.3c-26.6,0-48-21.4-48-48
 				V54C7.3,27.4,28.7,6,55.3,6z"/>
 		</defs>
-		<clipPath id="SVGID_14_">
-			<use xlink:href="#SVGID_13_"  overflow="visible"/>
+		<clipPath id="svgid_iphone_14_">
+			<use xlink:href="#svgid_iphone_13_"  overflow="visible"/>
 		</clipPath>
-		<path id="path4878" inkscape:connector-curvature="0" clip-path="url(#SVGID_14_)" fill="#434343" d="M37.9,11.6
+		<path id="path4878" inkscape:connector-curvature="0" clip-path="url(#svgid_iphone_14_)" fill="#434343" d="M37.9,11.6
 			c-6.6-0.2-19.1,1.8-32,16.3c-18.8,21.1-2,8.4-2,8.4s11.5-17.9,27.6-20.2s11.2-3.9,11.2-3.9S40.9,11.7,37.9,11.6z M322.1,11.6
 			c-3,0.1-4.8,0.6-4.8,0.6s-4.9,1.6,11.2,3.9s27.6,20.2,27.6,20.2s16.8,12.7-2-8.4C341.2,13.4,328.7,11.4,322.1,11.6z M-2.4,681.9
 			c-1.4-0.2-0.5,2.3,8.3,12.2c18.8,21.1,36.8,15.7,36.8,15.7s4.9-1.6-11.2-3.9c-16.1-2.3-27.6-20.2-27.6-20.2S-0.8,682.1-2.4,681.9z

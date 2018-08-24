@@ -6,12 +6,12 @@
     position: relative;
     width: 100%;
     height: 100%;
-    img {
+    img:nth-child(1) {
       position: absolute;
     }
     &.desktop-device {
       z-index: 0;
-      img {
+      img:nth-child(1) {
         width: 91.6%;
         height: 61.8%;
         top: 4.8%;
@@ -21,7 +21,7 @@
     }
     &.pad-device {
       z-index: 1;
-      img {
+      img:nth-child(1) {
         width: 89.2%;
         height: 79.5%;
         top: 9.6%;
@@ -31,7 +31,7 @@
     }
     &.phone-device {
       z-index: 2;
-      img {
+      img:nth-child(1) {
         width: 87%;
         height: 92%;
         top: 3%;
