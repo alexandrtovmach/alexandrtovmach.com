@@ -95,21 +95,12 @@
       </div>
       <iframe src="/resume.en.html" style="width: 100%; height: 100%" frameborder="0"></iframe>
     </noscript>
-    <div id="root">
-    </div>
+    <div id="root"></div>
     <script>
       if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          }, function(err) {
-            console.log('ServiceWorker registration failed: ', err);
-          }).catch(function(err) {
-            console.log(err)
-          });
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
         });
-      } else {
-        console.log('ServiceWorker is not supported');
       }
     </script>
   </body>

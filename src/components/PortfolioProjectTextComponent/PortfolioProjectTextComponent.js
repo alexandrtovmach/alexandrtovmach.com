@@ -3,11 +3,19 @@ import classNames from "classnames";
 
 export default props => {
   function renderTimeString(start, end) {
-    const sm = new Date(start)
-      .toDateString()
-      .match(/(\w+\s)(\w+)\s(\d+)\s(\d+)/);
-    const em = new Date(end).toDateString().match(/(\w+\s)(\w+)\s(\d+)\s(\d+)/);
-    return sm && em && `${sm[2]}${sm[3]} ${sm[4]} - ${em[2]}${em[3]} ${em[4]}`;
+    const sD = new Date(start),
+      eD = new Date(end),
+      langPack = props.calendarLangPack,
+      sDD = sD.getDate() || 1,
+      sDM = langPack[`month${sD.getMonth() + 1}`] || "Jan",
+      sDY = sD.getFullYear() || 2018,
+      eDD = eD.getDate() || 2,
+      eDM = langPack[`month${eD.getMonth() + 1}`] || "Jan",
+      eDY = eD.getFullYear() || 2018;
+    return `${sDD} ${sDM.slice(0, 3)} ${sDY} - ${eDD} ${eDM.slice(
+      0,
+      3
+    )} ${eDY}`;
   }
 
   return (

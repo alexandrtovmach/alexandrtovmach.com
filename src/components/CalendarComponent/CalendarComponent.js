@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-import { getEvents } from "../../services/calendar";
+import { getEvents } from "../../services/api/calendar";
 
 const oneDayMilliseconds = 1000 * 60 * 60 * 24;
 
@@ -131,7 +131,7 @@ export default class Calendar extends React.Component {
 
   render() {
     return (
-      <div className="calendar-container">
+      <div className={classNames("calendar-container")}>
         {this.generateDays(Date.now(), this.state.fitCount, this.state.events)}
       </div>
     );

@@ -15,12 +15,13 @@
     },
     {
       "src":"favicons/largetile.png",
-      "sizes": "558x500",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "start_url": "./index.html",
   "display": "fullscreen",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary"
 }

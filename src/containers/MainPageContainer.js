@@ -48,6 +48,7 @@ export default class MainPageContainer extends React.Component {
             langPack={this.props.langPack}
             locale={this.props.locale}
             getAllByCategory={getAllByCategory}
+            calendarLangPack={this.props.calendarLangPack}
             isEqual={isEqual}
           />
           <MainBlogComponent

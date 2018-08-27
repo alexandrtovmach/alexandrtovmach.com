@@ -29,4 +29,17 @@
     cursor: pointer;
     z-index: 2;
   }
+  .offline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($main-color, 0.3);
+    &::before {
+      display: block;
+      content: "Offline mode";
+    }
+    * {
+      display: none;
+    }
+  }
 }
