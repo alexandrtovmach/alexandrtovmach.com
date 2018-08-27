@@ -94,6 +94,7 @@ export default class RadialMenu extends React.Component {
                   }}
                   onClick={() => this.pickLanguage(values[i])}
                   title={tooltips[i]}
+                  name={tooltips[i]}
                 >
                   {values[i]}
                 </button>
@@ -119,6 +120,7 @@ export default class RadialMenu extends React.Component {
               }}
               onClick={this.onClick}
               title={this.props.languageWord}
+              name={this.props.languageWord}
             >
               <EarthSVG
                 className={this.state.active ? "earth active" : "earth"}

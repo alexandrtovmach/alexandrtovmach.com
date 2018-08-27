@@ -77,6 +77,8 @@ export default class Navigation extends React.Component {
             className={classnames("left", "arrow", {
               hidden: !this.state.index
             })}
+            title={this.props.langPack.left_button}
+            name={this.props.langPack.left_button}
             onClick={() => this.handleChangeIndex(this.state.index - 1)}
           >
             <svg viewBox="-2 -2 50 80">
@@ -94,6 +96,8 @@ export default class Navigation extends React.Component {
             className={classnames("right", "arrow", {
               hidden: this.props.children.length - 1 === this.state.index
             })}
+            title={this.props.langPack.right_button}
+            name={this.props.langPack.right_button}
             onClick={() => this.handleChangeIndex(this.state.index + 1)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 50 80">

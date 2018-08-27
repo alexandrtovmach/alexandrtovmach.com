@@ -29,7 +29,9 @@ export default {
       "Here you can see the short version of my personal Google calnedar, to know about my work plans. If you want to see my full calendar, click on DETAILS.",
     portfolio_head: "Last projects",
     Navigation: {
-      tags: ["Main", "About", "Schedule", "Portfolio", "Blog"]
+      tags: ["Main", "About", "Schedule", "Portfolio", "Blog"],
+      right_button: "Next",
+      left_button: "Previous"
     }
   },
   CalendarComponent: {
