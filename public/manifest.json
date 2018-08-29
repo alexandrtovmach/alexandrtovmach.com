@@ -9,17 +9,17 @@
       "type": "image/x-icon"
     },
     {
-      "src":"favicons/favicon-195.png",
+      "src":"favicons/app-icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src":"favicons/largetile.png",
+      "src":"favicons/app-icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/",
   "display": "fullscreen",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
