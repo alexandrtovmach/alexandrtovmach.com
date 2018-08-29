@@ -1,3 +1,5 @@
 import React from "react";
 
-export default () => <div>Blog Item</div>;
+export default props => {
+  return <div>{props.post.name && props.post.name[props.locale]}</div>;
+};

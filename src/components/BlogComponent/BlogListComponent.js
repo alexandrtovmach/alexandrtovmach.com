@@ -14,7 +14,7 @@ export default class BlogListComponent extends React.Component {
   componentDidMount() {
     getAllByCategory("blog", this.props.items || 3).then(posts => {
       this.setState({
-        posts: posts
+        posts: Object.keys(posts).map(el => posts[el])
       });
     });
   }
@@ -22,7 +22,13 @@ export default class BlogListComponent extends React.Component {
   render() {
     return (
       <div className="blog-list">
-        <BlogItemComponent />
+        {this.state.posts.map((post, i) => (
+          <BlogItemComponent
+            key={"blog-item-" + i}
+            post={post}
+            locale={this.props.locale}
+          />
+        ))}
       </div>
     );
   }
