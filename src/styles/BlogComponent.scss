@@ -5,7 +5,7 @@
     border: 1px solid $main-color;
     padding: 0 10px;
     margin: 10px 0;
-    font-size: 80%;
+    font-size: 50%;
     &:hover {
       background-color: $main-color;
       transform: scale(1.1);
@@ -16,14 +16,14 @@
     }
     h3 {
       font-family: inherit;
-      font-size: inherit;
+      font-size: 120%;
       font-weight: inherit;
       margin: 10px 0;
     }
     p {
       max-height: 3em;
       overflow: hidden;
-      font-size: 50%;
+      font-size: 100%;
       margin: 0 0 10px 0;
       opacity: 0.8;
       transition: 0.5s;

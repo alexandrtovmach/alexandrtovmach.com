@@ -56,8 +56,8 @@
       max-height: 3em;
       overflow: hidden;
       margin: 10px 2.5em 10px 0;
-      font-size: 80%;
-      opacity: 0.5;
+      font-size: 100%;
+      opacity: 0.6;
       transition: 0.5s;
     }
 
@@ -94,12 +94,12 @@
       text-align: right;
 
       .date {
-        font-size: 150%;
+        font-size: 200%;
       }
       .weekday,
       .month {
-        font-size: 50%;
-        opacity: 0.5;
+        font-size: 80%;
+        opacity: 0.6;
       }
     }
   }
