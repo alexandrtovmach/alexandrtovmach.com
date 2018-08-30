@@ -1,11 +1,14 @@
 .blog-list {
   .blog-link {
-    display: flex;
-    flex-direction: column;
+    display: block;
+    // flex-direction: column;
+    // align-items: space-between;
     border: 1px solid $main-color;
-    padding: 0 10px;
+    padding: 10px;
     margin: 10px 0;
     font-size: 50%;
+    border-radius: 10px;
+    transition: 0.5s;
     &:hover {
       background-color: $main-color;
       transform: scale(1.1);
@@ -15,18 +18,31 @@
       }
     }
     h3 {
-      font-family: inherit;
-      font-size: 120%;
-      font-weight: inherit;
-      margin: 10px 0;
+      width: 100%;
+      font-size: 150%;
+      font-weight: 300;
+      margin: 0 0 10px 0;
     }
     p {
-      max-height: 3em;
-      overflow: hidden;
-      font-size: 100%;
+      max-height: 5em;
       margin: 0 0 10px 0;
+      text-indent: 1em;
+      font-weight: 200;
+      font-size: 90%;
       opacity: 0.8;
       transition: 0.5s;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+    }
+    .blog-date {
+      width: 100%;
+      margin: 3em 0 0 0;
+      opacity: 0.7;
+      font-size: 90%;
+      font-style: italic;
+      text-align: right;
+      border-top: 1px solid black;
     }
   }
 }

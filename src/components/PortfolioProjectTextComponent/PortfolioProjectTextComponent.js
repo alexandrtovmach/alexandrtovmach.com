@@ -1,23 +1,9 @@
 import React from "react";
 import classNames from "classnames";
 
-export default props => {
-  function renderTimeString(start, end) {
-    const sD = new Date(start),
-      eD = new Date(end),
-      langPack = props.calendarLangPack,
-      sDD = sD.getDate() || 1,
-      sDM = langPack[`month${sD.getMonth() + 1}`] || "Jan",
-      sDY = sD.getFullYear() || 2018,
-      eDD = eD.getDate() || 2,
-      eDM = langPack[`month${eD.getMonth() + 1}`] || "Jan",
-      eDY = eD.getFullYear() || 2018;
-    return `${sDD} ${sDM.slice(0, 3)} ${sDY} - ${eDD} ${eDM.slice(
-      0,
-      3
-    )} ${eDY}`;
-  }
+import { renderDateString } from "../../services/calendar";
 
+export default props => {
   return (
     <div className="portfolio-project-text">
       <h3>{props.project.name && props.project.name[props.locale]}</h3>
@@ -38,7 +24,11 @@ export default props => {
             hidden: !props.project.start || !props.project.end
           })}
         >
-          {renderTimeString(props.project.start, props.project.end)}
+          {renderDateString(
+            props.locale,
+            props.project.start,
+            props.project.end
+          )}
         </div>
       </div>
     </div>

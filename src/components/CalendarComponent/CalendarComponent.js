@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-import { getEvents } from "../../services/api/calendar";
+import { getEvents } from "../../services/calendar";
 
 const oneDayMilliseconds = 1000 * 60 * 60 * 24;
 
