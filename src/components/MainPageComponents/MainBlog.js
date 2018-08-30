@@ -13,6 +13,7 @@ export default class MainPortfolioComponent extends React.Component {
   render() {
     return (
       <div className="main-blog">
+        <h2>{this.props.langPack.blog_head}</h2>
         <BlogListComponent
           items={3}
           infinityScroll={false}

@@ -1,5 +1,3 @@
-@import "./mixins.scss";
-
 html,
 body,
 div,
@@ -85,8 +83,7 @@ video {
   padding: 0;
   border: 0;
   vertical-align: baseline;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: $main-font;
 }
 /* HTML5 display-role reset for older browsers */
 article,

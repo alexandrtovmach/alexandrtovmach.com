@@ -1,11 +1,14 @@
-// Dark theme variables
+// color theme variables
 $dark-main-color: black;
+$light-main-color: white;
 $dark-second-color: white;
+$light-second-color: black;
 $main-color: gold;
 
-// Dark theme variables
-$light-main-color: white;
-$light-second-color: black;
+// fonts
+$main-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+  Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$second-font: Georgia, serif;
 
 .hidden {
   display: none;

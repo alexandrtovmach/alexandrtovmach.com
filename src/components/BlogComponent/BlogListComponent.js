@@ -1,6 +1,6 @@
 import React from "react";
 
-import BlogItemComponent from "./BlogItemComponent";
+import BlogLinkComponent from "./BlogLinkComponent";
 import { getAllByCategory } from "../../services/api/firebase";
 
 export default class BlogListComponent extends React.Component {
@@ -14,7 +14,7 @@ export default class BlogListComponent extends React.Component {
   componentDidMount() {
     getAllByCategory("blog", this.props.items || 3).then(posts => {
       this.setState({
-        posts: Object.keys(posts).map(el => posts[el])
+        posts: Object.keys(posts).map(el => ({ id: el, ...posts[el] }))
       });
     });
   }
@@ -23,8 +23,8 @@ export default class BlogListComponent extends React.Component {
     return (
       <div className="blog-list">
         {this.state.posts.map((post, i) => (
-          <BlogItemComponent
-            key={"blog-item-" + i}
+          <BlogLinkComponent
+            key={"blog-item-link" + i}
             post={post}
             locale={this.props.locale}
           />

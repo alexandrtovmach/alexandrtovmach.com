@@ -1,0 +1,32 @@
+.blog-list {
+  .blog-link {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $main-color;
+    padding: 0 10px;
+    margin: 10px 0;
+    font-size: 80%;
+    &:hover {
+      background-color: $main-color;
+      transform: scale(1.1);
+      z-index: 5;
+      p {
+        opacity: 1;
+      }
+    }
+    h3 {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      margin: 10px 0;
+    }
+    p {
+      max-height: 3em;
+      overflow: hidden;
+      font-size: 50%;
+      margin: 0 0 10px 0;
+      opacity: 0.8;
+      transition: 0.5s;
+    }
+  }
+}
