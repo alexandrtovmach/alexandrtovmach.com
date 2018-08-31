@@ -10,7 +10,7 @@ export default props => {
       <a
         href={`blog/${props.locale}/${post.id}`}
         title={post.name[props.locale]}
-        className="blog-link"
+        className="blog-link post"
       >
         <h3>{post.name[props.locale]}</h3>
         <p style={{ WebkitBoxOrient: "vertical" }}>

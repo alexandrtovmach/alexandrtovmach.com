@@ -27,22 +27,28 @@
 
     &:hover {
       background-color: $main-color;
-      transform: scale(1.1);
       z-index: 5;
+      color: $dark-main-color;
       .event-description {
         opacity: 1;
       }
     }
     &.holiday {
+      color: inherit;
       &:hover {
-        background-color: rgb(200, 200, 200);
+        background-color: transparent;
         transform: scale(1);
       }
     }
     &.freeday {
+      color: inherit;
       &:hover {
-        background-color: rgb(255, 255, 255);
+        background-color: transparent;
         transform: scale(1);
+        .event-contact-button {
+          height: 30%;
+          animation: blaming 0.5s infinite alternate;
+        }
       }
     }
 
@@ -76,14 +82,14 @@
     .event-freeday {
       width: 100%;
       height: 100%;
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
-      // flex-direction: column;
-      // text-align: center;
-
-      .event-description {
-        // margin: 10px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      .event-contact-button {
+        height: 20%;
+        transition: 0.3s;
+        cursor: pointer;
       }
     }
 
@@ -102,5 +108,14 @@
         opacity: 0.6;
       }
     }
+  }
+}
+
+@keyframes blaming {
+  from {
+    fill: inherit;
+  }
+  to {
+    fill: $main-color;
   }
 }

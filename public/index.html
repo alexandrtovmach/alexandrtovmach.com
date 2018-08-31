@@ -97,7 +97,7 @@
     </noscript>
     <div id="root"></div>
     <script>
-      if ('serviceWorker' in navigator) {
+      if ('serviceWorker' in navigator && window.location.href.includes("alexandrtovmach")) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/sw.js');
         });

@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { getEvents } from "../../services/calendar";
+import { ReactComponent as ContactSVG } from "../../styles/assets/icons/contact.svg";
 
 const oneDayMilliseconds = 1000 * 60 * 60 * 24;
 
@@ -105,16 +106,20 @@ export default class Calendar extends React.Component {
             })}
           >
             <div className="event-freeday">
+              <div className="event-title">
+                {this.props.langPack.book_now_title}
+              </div>
               <div className="event-description">
                 {this.props.langPack.book_now_description}
               </div>
-              <button
+              {/* <button
                 className="button"
                 name={this.props.langPack.book_now}
                 title={this.props.langPack.book_now}
               >
                 {this.props.langPack.book_now}
-              </button>
+              </button> */}
+              <ContactSVG className="event-contact-button" />
             </div>
             <div className="meta-date">
               <div className="date">{d}</div>

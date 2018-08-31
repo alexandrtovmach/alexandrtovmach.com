@@ -1,5 +1,5 @@
 import React from "react";
-import Blog from "../components/BlogPage/Blog";
+import Blog from "../components/BlogPageComponents/Blog";
 
 export default props => (
   <div className="page">

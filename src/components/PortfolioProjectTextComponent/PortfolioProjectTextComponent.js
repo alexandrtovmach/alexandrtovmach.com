@@ -5,12 +5,11 @@ import { renderDateString } from "../../services/calendar";
 
 export default props => {
   return (
-    <div className="portfolio-project-text">
+    <div className="portfolio-project-text post">
       <h3>{props.project.name && props.project.name[props.locale]}</h3>
       <p>
         {props.project.description && props.project.description[props.locale]}
       </p>
-      <hr />
       <div className="meta-project-info">
         <div
           className={classNames("project-price", {

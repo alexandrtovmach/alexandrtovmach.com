@@ -1,6 +1,6 @@
 import React from "react";
-import About from "../components/AboutPage/About";
-import AboutBackground from "../components/AboutPage/AboutBackground";
+import About from "../components/AboutPageComponents/About";
+import AboutBackground from "../components/AboutPageComponents/AboutBackground";
 
 export default props => (
   <div className="page">
