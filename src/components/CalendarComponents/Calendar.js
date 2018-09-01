@@ -106,20 +106,13 @@ export default class Calendar extends React.Component {
             })}
           >
             <div className="event-freeday">
-              <div className="event-title">
-                {this.props.langPack.book_now_title}
-              </div>
               <div className="event-description">
                 {this.props.langPack.book_now_description}
               </div>
-              {/* <button
-                className="button"
-                name={this.props.langPack.book_now}
-                title={this.props.langPack.book_now}
-              >
-                {this.props.langPack.book_now}
-              </button> */}
-              <ContactSVG className="event-contact-button" />
+              <ContactSVG
+                className="event-contact-button"
+                alt={this.props.langPack.book_now}
+              />
             </div>
             <div className="meta-date">
               <div className="date">{d}</div>

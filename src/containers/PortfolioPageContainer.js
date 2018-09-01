@@ -1,5 +1,5 @@
 import React from "react";
-import Portfolio from "../components/PortfolioPageComponents/Portfolio";
+import Portfolio from "../components/PortfolioPageComponents/PortfolioPage";
 
 export default props => (
   <div className="page">

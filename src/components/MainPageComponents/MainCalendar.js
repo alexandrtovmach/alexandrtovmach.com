@@ -1,6 +1,6 @@
 import React from "react";
 
-import CalendarComponent from "../CalendarComponent/CalendarComponent";
+import CalendarComponent from "../CalendarComponents/Calendar";
 
 export default class MainCalendarComponent extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {

@@ -2,16 +2,22 @@
 @import "./mixins.scss";
 @import "./reset.scss";
 @import "./App.scss";
-@import "./Header.scss";
-@import "./Navigation.scss";
-@import "./MainBackground.scss";
-@import "./Devices.scss";
-@import "./PortfolioProjectTextComponent.scss";
-@import "./BlogComponent.scss";
-@import "./Main.scss";
-@import "./AboutBackground.scss";
-@import "./About.scss";
-@import "./Calendar.scss";
-@import "./Portfolio.scss";
-@import "./Blog.scss";
-@import "./RadialMenu.scss";
+
+// Styles for components global or reusable
+@import "./components/Header/Header.scss";
+@import "./components/Header/RadialMenu.scss";
+@import "./components/Calendar/Calendar.scss";
+@import "./components/Portfolio/PortfolioDevices.scss";
+@import "./components/Portfolio/PortfolioText.scss";
+@import "./components/Blog/Blog.scss";
+
+// Styles for pages
+@import "./pages/MainPage/MainPage.scss";
+@import "./pages/MainPage/Navigation.scss";
+@import "./pages/MainPage/MainBackground.scss";
+@import "./pages/MainPage/SkillsChart.scss";
+@import "./pages/AboutPage/AboutPage.scss";
+@import "./pages/AboutPage/AboutBackground.scss";
+@import "./pages/CalendarPage/CalendarPage.scss";
+@import "./pages/PortfolioPage/PortfolioPage.scss";
+@import "./pages/BlogPage/BlogPage.scss";

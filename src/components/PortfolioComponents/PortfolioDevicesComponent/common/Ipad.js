@@ -1,7 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 
-import IPadSVG from "../../../styles/assets/images/IPad_Air.svg";
+import IPadSVG from "../../../../styles/assets/images/IPad_Air.svg";
 
 export default props => {
   return (

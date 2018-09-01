@@ -1,6 +1,6 @@
 import React from "react";
 
-import BlogListComponent from "../BlogComponent/BlogListComponent";
+import BlogListComponent from "../BlogComponent/BlogList";
 
 export default class MainPortfolioComponent extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {

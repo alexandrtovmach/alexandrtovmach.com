@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-import { renderDateString } from "../../services/calendar";
+import { renderDateString } from "../../../services/calendar";
 
 export default props => {
   return (

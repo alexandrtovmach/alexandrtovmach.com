@@ -1,7 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 
-import IMacSVG from "../../../styles/assets/images/IMac.svg";
+import IMacSVG from "../../../../styles/assets/images/IMac.svg";
 
 export default props => {
   return (

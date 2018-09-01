@@ -1,7 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 
-import IPhoneSVG from "../../../styles/assets/images/IPhone_X.svg";
+import IPhoneSVG from "../../../../styles/assets/images/IPhone_X.svg";
 
 export default props => {
   return (

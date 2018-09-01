@@ -57,7 +57,7 @@ export default {
     month12: "Декабрь",
     book_now: "Связаться",
     book_now_title: "Свободный день",
-    book_now_description: "Похоже что я свободен в этот день."
+    book_now_description: "Свободный день. Забронируйте время сейчас."
   },
   About: {
     about: "О себе"

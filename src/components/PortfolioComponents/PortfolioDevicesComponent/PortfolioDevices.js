@@ -1,8 +1,8 @@
 import React from "react";
 
-import ImacComponent from "./common/ImacComponent";
-import IpadComponent from "./common/IpadComponent";
-import IphoneComponent from "./common/IphoneComponent";
+import ImacComponent from "./common/Imac";
+import IpadComponent from "./common/Ipad";
+import IphoneComponent from "./common/Iphone";
 
 export default class DevicesComponent extends React.Component {
   shouldComponentUpdate(nextProps) {

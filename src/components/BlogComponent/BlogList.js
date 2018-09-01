@@ -1,6 +1,6 @@
 import React from "react";
 
-import BlogLinkComponent from "./BlogLinkComponent";
+import BlogLinkComponent from "./BlogLink";
 import { getAllByCategory } from "../../services/api/firebase";
 
 export default class BlogListComponent extends React.Component {

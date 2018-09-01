@@ -1,5 +1,5 @@
 import React from "react";
-import Calendar from "../components/CalendarPageComponents/Calendar";
+import Calendar from "../components/CalendarPageComponents/CalendarPage";
 
 export default props => (
   <div className="page">

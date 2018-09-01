@@ -57,7 +57,7 @@ export default {
     month12: "December",
     book_now: "Contact",
     book_now_title: "Free time",
-    book_now_description: "Seems like I'm available in this day."
+    book_now_description: "Free day. Contact with me to book this time."
   },
   About: {
     about: "About"
