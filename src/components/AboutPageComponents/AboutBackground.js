@@ -15,7 +15,7 @@ export default props => {
 
   return (
     <div className="background-about">
-      <div className="stars">{generateStars(100)}</div>
+      <div className="stars">{generateStars(20)}</div>
     </div>
   );
 };
