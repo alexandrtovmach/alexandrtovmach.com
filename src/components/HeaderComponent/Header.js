@@ -1,7 +1,7 @@
 import React from "react";
 import Switch from "react-switch";
 
-import LanguageMenu from "./LanguageMenu";
+import LangSwitcher from "./LangSwitcher";
 import { ReactComponent as MoonSVG } from "../../styles/assets/icons/moon.svg";
 import { ReactComponent as SunSVG } from "../../styles/assets/icons/sun.svg";
 import { ReactComponent as LogoSVG } from "../../styles/assets/images/logo.svg";
@@ -19,7 +19,7 @@ export default class Header extends React.Component {
         </a>
         <div className="control-panel">
           <div className="language-switcher">
-            <LanguageMenu
+            <LangSwitcher
               handleLanguageChange={this.props.handleLanguageChange}
               languageWord={this.props.langPack.language}
             />
