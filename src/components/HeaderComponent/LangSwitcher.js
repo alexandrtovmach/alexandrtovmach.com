@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-// import { Motion, StaggeredMotion, spring } from "react-motion";
 
 import { ReactComponent as CrossSVG } from "../../styles/assets/icons/cross.svg";
 import { ReactComponent as EarthSVG } from "../../styles/assets/icons/earth.svg";
