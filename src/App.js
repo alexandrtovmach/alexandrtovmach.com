@@ -27,6 +27,14 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
+    window.requestAnimationFrame =
+      window.requestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function(callback) {
+        window.setTimeout(callback, 1000 / 60);
+      };
     updateMetaTagsTheme(this.state.theme.mainColor);
     updateLangTag(this.state.locale);
   }

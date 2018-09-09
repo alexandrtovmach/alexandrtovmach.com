@@ -18,11 +18,13 @@ const themes = {
   dark: {
     name: "dark-theme",
     mainColor: "#000",
-    secondColor: "#fff"
+    secondColor: "#fff",
+    baseColor: "#ffd700"
   },
   light: {
     name: "light-theme",
     mainColor: "#fff",
-    secondColor: "#000"
+    secondColor: "#000",
+    baseColor: "#ffd700"
   }
 };
