@@ -15,10 +15,10 @@
     "react-dom": "^16.4.2",
     "react-intl": "^2.4.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "2.0.0-next.66cc7a90",
+    "react-scripts": "2.0.0-next.a671462c",
     "react-swipeable-views": "^0.12.16",
     "react-switch": "^3.0.4",
-    "screenfull": "^3.3.2",
+    "screenfull": "^3.3.3",
     "suncalc": "^1.8.0"
   },
   "scripts": {
