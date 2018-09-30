@@ -17,6 +17,47 @@
   border-radius: 100%;
   transform: translateZ(0);
 }
+.alex-img {
+  position: fixed;
+  width: calc(30vh + 30vw);
+  max-height: 80vh;
+  bottom: 0;
+  right: calc(-8vh + -8vw);
+  &:hover {
+    + .alex-title-container {
+      transform: translate3d(50%, 50%, 0);
+    }
+  }
+}
+.alex-title-container {
+  position: fixed;
+  width: calc(15vh + 15vw);
+  height: calc(15vh + 15vw);
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+  padding: 10%;
+  background-color: $main-color;
+  transform: translate3d(80%, 80%, 0);
+  z-index: 1;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  &:hover {
+    transform: translate3d(50%, 50%, 0);
+  }
+  > span {
+    font-size: 70%;
+    display: block;
+    width: 40%;
+    text-align: center;
+  }
+  > a {
+    font-size: 50%;
+    width: 40%;
+    display: block;
+    text-align: center;
+  }
+}
 
 @for $n from 0 through 20 {
   .container:nth-child(#{$n}) {
@@ -25,7 +66,7 @@
     height: $size + px;
     left: (random(200) / 2 + vw);
     animation-delay: (random(100) / 5 / $size - 1000 + s);
-    animation-duration: (random(2000) / 5 / $size + s);
+    animation-duration: (random(2000) / 5 / $size + 20 + s);
     .star {
       width: inherit;
       height: inherit;

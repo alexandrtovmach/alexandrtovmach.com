@@ -1,9 +1,13 @@
 .about-page {
-  width: 90%;
+  width: calc(100% - 80px * 2);
   height: 100%;
-  padding: 0 20px;
+  padding: 0 80px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+  @media screen and (max-width: 480px) {
+    width: calc(100% - 20px * 2);
+    padding: 0 20px;
+  }
 }
