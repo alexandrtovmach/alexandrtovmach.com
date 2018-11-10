@@ -24,3 +24,7 @@
     }
   }
 }
+
+@function vp($value) {
+  @return unquote("calc(" + $value + vw + " + " + $value + vh + ")");
+}

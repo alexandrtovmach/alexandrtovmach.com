@@ -19,10 +19,10 @@
 }
 .alex-img {
   position: fixed;
-  width: calc(30vh + 30vw);
+  width: vp(30);
   max-height: 80vh;
   bottom: 0;
-  right: calc(-8vh + -8vw);
+  right: vp(-8);
   &:hover {
     + .alex-title-container {
       transform: translate3d(50%, 50%, 0);
@@ -31,8 +31,8 @@
 }
 .alex-title-container {
   position: fixed;
-  width: calc(15vh + 15vw);
-  height: calc(15vh + 15vw);
+  width: vp(15);
+  height: vp(15);
   border-radius: 50%;
   bottom: 0;
   right: 0;
