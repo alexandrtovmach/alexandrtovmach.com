@@ -6,7 +6,7 @@ export default {
     go_to_main_page: "Go to main page"
   },
   Main: {
-    welcome_head: "You're welcome!",
+    welcome_head: "Welcome!",
     welcome_text:
       "This mini-site is designed to showcase my skills as a UI/UX designer and a web-developer",
     about: "About",
