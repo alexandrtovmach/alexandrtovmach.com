@@ -40,26 +40,26 @@
   transform: translate3d(80%, 80%, 0);
   z-index: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   transition-duration: 0.8s;
   transition-timing-function: cubic-bezier(0.87, -0.41, 0.19, 1.44);
   &:hover {
     transform: translate3d(50%, 50%, 0);
   }
   .alex-bubble-content {
-    transform: translate3d(-60%, -120%, 0);
-    width: 40%;
+    width: calc(50% - 5% * 2);
+    height: 50%;
+    margin: 25% 2% 0 8%;
     > span {
       font-size: 70%;
       display: block;
-      // width: 40%;
       text-align: center;
     }
     > a {
       font-size: 50%;
-      // width: 40%;
       display: block;
+      margin: 5% 0;
       text-align: center;
       text-decoration: underline;
     }
