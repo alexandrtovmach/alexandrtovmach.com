@@ -1,6 +1,7 @@
 @import "./ThemeStyles.scss";
 
 .app-container {
+  position: relative;
   width: 100%;
   height: 100vh;
   transition: 1s;
@@ -15,6 +16,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: auto;
   }
   .button {
     border: none;
@@ -57,6 +59,25 @@
       }
     }
   }
+
+  .header-compensator {
+    padding-top: calc(60px + 1em);
+    height: calc(100% - 60px - 1em);
+  }
+
+  .page-text-wrapper {
+    width: 60%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width: 900px) {
+      width: 80%;
+    }
+    @media screen and (max-width: 480px) {
+      width: 90%;
+    }
+  }
+
   .offline {
     display: flex;
     justify-content: center;
@@ -70,4 +91,25 @@
       display: none;
     }
   }
+}
+
+.parallax {
+  perspective: 1px;
+  height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translate3d(700px, 0, -800px) rotateY(30deg);
+}
+.parallax__layer--base {
+  transform: translateZ(0);
+}
+.parallax__layer--back {
+  transform: translateZ(-1px);
 }
