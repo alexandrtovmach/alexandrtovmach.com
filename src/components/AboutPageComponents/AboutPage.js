@@ -22,7 +22,12 @@ export default class About extends React.Component {
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${eightBitSVGSrc})` }}
           >
-            <div className={classnames("article-text-content")}>
+            <div
+              className={classnames(
+                "article-text-content",
+                "theme-background-main"
+              )}
+            >
               <h3>Article#1 8-bit</h3>
               <p>
                 The ash of stellar alchemy tingling of the spine network of
@@ -44,7 +49,12 @@ export default class About extends React.Component {
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${sixteenBitSVGSrc})` }}
           >
-            <div className={classnames("article-text-content")}>
+            <div
+              className={classnames(
+                "article-text-content",
+                "theme-background-main"
+              )}
+            >
               <h3>Article#2 16-bit</h3>
               <p>
                 Tunguska event Cambrian explosion a mote of dust suspended in a
@@ -63,7 +73,12 @@ export default class About extends React.Component {
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${comicsSVGSrc})` }}
           >
-            <div className={classnames("article-text-content")}>
+            <div
+              className={classnames(
+                "article-text-content",
+                "theme-background-main"
+              )}
+            >
               <h3>Article#3 comics</h3>
               <p>
                 A billion trillion at the edge of forever stirred by starlight
@@ -82,7 +97,12 @@ export default class About extends React.Component {
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${lowPolySVGSrc})` }}
           >
-            <div className={classnames("article-text-content")}>
+            <div
+              className={classnames(
+                "article-text-content",
+                "theme-background-main"
+              )}
+            >
               <h3>Article#4 lowpoly</h3>
               <p>
                 Explorations white dwarf billions upon billions hydrogen atoms
@@ -104,7 +124,12 @@ export default class About extends React.Component {
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${lowPolySVGSrc})` }}
           >
-            <div className={classnames("article-text-content")}>
+            <div
+              className={classnames(
+                "article-text-content",
+                "theme-background-main"
+              )}
+            >
               <h3>Article#4 lowpoly</h3>
               <p>
                 Explorations white dwarf billions upon billions hydrogen atoms
@@ -126,7 +151,12 @@ export default class About extends React.Component {
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${lowPolySVGSrc})` }}
           >
-            <div className={classnames("article-text-content")}>
+            <div
+              className={classnames(
+                "article-text-content",
+                "theme-background-main"
+              )}
+            >
               <h3>Article#4 lowpoly</h3>
               <p>
                 Explorations white dwarf billions upon billions hydrogen atoms

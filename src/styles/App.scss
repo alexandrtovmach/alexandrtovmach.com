@@ -61,8 +61,8 @@
   }
 
   .header-compensator {
-    padding-top: calc(60px + 1em);
-    height: calc(100% - 60px - 1em);
+    padding-top: calc(#{$header-height} + 1em);
+    height: calc(100% - #{$header-height} - 1em);
   }
 
   .page-text-wrapper {

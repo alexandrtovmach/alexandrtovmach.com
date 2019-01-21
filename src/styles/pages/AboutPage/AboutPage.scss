@@ -15,23 +15,30 @@
 
   article {
     margin: 2em 0;
+    height: calc(100vh - #{$header-height});
     &.parallax {
       background-attachment: fixed;
-      background-position: 75% center;
+      background-position: 75% bottom;
       background-size: 30% auto;
       background-repeat: no-repeat;
       @media screen and (max-width: 900px) {
-        background-size: 55% auto;
-        background-position: 105% center;
+        height: auto;
+        background-size: auto 80%;
+        background-position: center bottom;
       }
-      // @media screen and (max-width: 480px) {
-      //   width: 90%;
-      // }
+      @media screen and (max-width: 480px) {
+        width: 100%;
+      }
     }
     .article-text-content {
       width: 60%;
+      opacity: 0.8;
+      height: 100%;
       @media screen and (max-width: 900px) {
         width: 70%;
+        padding-bottom: 100vh;
+        -webkit-mask-image: linear-gradient(to top, transparent 35%, black 55%);
+        mask-image: linear-gradient(to top, transparent 35%, black 55%);
       }
       @media screen and (max-width: 480px) {
         width: 100%;
