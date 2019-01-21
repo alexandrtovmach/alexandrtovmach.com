@@ -14,21 +14,28 @@
   }
 
   article {
-    display: flex;
-    justify-content: space-between;
-    &.image-left {
-      flex-direction: row-reverse;
-    }
-    &.image-right {
-      flex-direction: row;
-    }
-    .alex-img {
-      flex: 1 0 40%;
-      // &:hover {
-      //   + .alex-bubble {
-      //     transform: translate3d(50%, 50%, 0);
-      //   }
+    margin: 2em 0;
+    &.parallax {
+      background-attachment: fixed;
+      background-position: 75% center;
+      background-size: 30% auto;
+      background-repeat: no-repeat;
+      @media screen and (max-width: 900px) {
+        background-size: 55% auto;
+        background-position: 105% center;
+      }
+      // @media screen and (max-width: 480px) {
+      //   width: 90%;
       // }
+    }
+    .article-text-content {
+      width: 60%;
+      @media screen and (max-width: 900px) {
+        width: 70%;
+      }
+      @media screen and (max-width: 480px) {
+        width: 100%;
+      }
     }
   }
 }

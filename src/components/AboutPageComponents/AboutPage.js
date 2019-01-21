@@ -1,7 +1,10 @@
 import React from "react";
 import classnames from "classnames";
 
-import AlexSVGSrc from "../../styles/assets/images/alex.svg";
+import eightBitSVGSrc from "../../styles/assets/images/8bit.svg";
+import sixteenBitSVGSrc from "../../styles/assets/images/16bit.svg";
+import comicsSVGSrc from "../../styles/assets/images/comics.svg";
+import lowPolySVGSrc from "../../styles/assets/images/lowpoly.svg";
 
 export default class About extends React.Component {
   render() {
@@ -15,10 +18,11 @@ export default class About extends React.Component {
       >
         <h1>My story</h1>
         <section className={"about-story"}>
-          <article className={classnames("image-right", "parallax")}>
-            <div
-              className={classnames("parallax-layer", "parallax-layer--back")}
-            >
+          <article
+            className={classnames("image-right", "parallax")}
+            style={{ backgroundImage: `url(${eightBitSVGSrc})` }}
+          >
+            <div className={classnames("article-text-content")}>
               <h3>Article#1 8-bit</h3>
               <p>
                 The ash of stellar alchemy tingling of the spine network of
@@ -35,18 +39,12 @@ export default class About extends React.Component {
                 upon billions.
               </p>
             </div>
-            <img
-              src={AlexSVGSrc}
-              alt="it's me"
-              className={classnames(
-                "parallax-layer",
-                "parallax-layer--back",
-                "alex-img"
-              )}
-            />
           </article>
-          <article className={"image-left"}>
-            <div>
+          <article
+            className={classnames("image-right", "parallax")}
+            style={{ backgroundImage: `url(${sixteenBitSVGSrc})` }}
+          >
+            <div className={classnames("article-text-content")}>
               <h3>Article#2 16-bit</h3>
               <p>
                 Tunguska event Cambrian explosion a mote of dust suspended in a
@@ -60,11 +58,13 @@ export default class About extends React.Component {
                 upon billions upon billions.
               </p>
             </div>
-            <img src={AlexSVGSrc} alt="it's me" className="alex-img" />
           </article>
-          <article className={"image-right"}>
-            <div>
-              Article#3 comics
+          <article
+            className={classnames("image-right", "parallax")}
+            style={{ backgroundImage: `url(${comicsSVGSrc})` }}
+          >
+            <div className={classnames("article-text-content")}>
+              <h3>Article#3 comics</h3>
               <p>
                 A billion trillion at the edge of forever stirred by starlight
                 billions upon billions hydrogen atoms the only home we've ever
@@ -77,11 +77,13 @@ export default class About extends React.Component {
                 upon billions upon billions upon billions
               </p>
             </div>
-            <img src={AlexSVGSrc} alt="it's me" className="alex-img" />
           </article>
-          <article>
-            <div>
-              Article#4 flat
+          <article
+            className={classnames("image-right", "parallax")}
+            style={{ backgroundImage: `url(${lowPolySVGSrc})` }}
+          >
+            <div className={classnames("article-text-content")}>
+              <h3>Article#4 lowpoly</h3>
               <p>
                 Explorations white dwarf billions upon billions hydrogen atoms
                 quasar science? Dispassionate extraterrestrial observer a
@@ -97,9 +99,52 @@ export default class About extends React.Component {
                 billions.
               </p>
             </div>
-            <img src={AlexSVGSrc} alt="it's me" className="alex-img" />
           </article>
-          <article>
+          <article
+            className={classnames("image-right", "parallax")}
+            style={{ backgroundImage: `url(${lowPolySVGSrc})` }}
+          >
+            <div className={classnames("article-text-content")}>
+              <h3>Article#4 lowpoly</h3>
+              <p>
+                Explorations white dwarf billions upon billions hydrogen atoms
+                quasar science? Dispassionate extraterrestrial observer a
+                billion trillion great turbulent clouds with pretty stories for
+                which there's little good evidence Flatland Jean-François
+                Champollion? Kindling the energy hidden in matter are creatures
+                of the cosmos rich in mystery brain is the seed of intelligence
+                paroxysm of global death shores of the cosmic ocean? Hundreds of
+                thousands dispassionate extraterrestrial observer concept of the
+                number one the only home we've ever known citizens of distant
+                epochs rich in heavy atoms and billions upon billions upon
+                billions upon billions upon billions upon billions upon
+                billions.
+              </p>
+            </div>
+          </article>
+          <article
+            className={classnames("image-right", "parallax")}
+            style={{ backgroundImage: `url(${lowPolySVGSrc})` }}
+          >
+            <div className={classnames("article-text-content")}>
+              <h3>Article#4 lowpoly</h3>
+              <p>
+                Explorations white dwarf billions upon billions hydrogen atoms
+                quasar science? Dispassionate extraterrestrial observer a
+                billion trillion great turbulent clouds with pretty stories for
+                which there's little good evidence Flatland Jean-François
+                Champollion? Kindling the energy hidden in matter are creatures
+                of the cosmos rich in mystery brain is the seed of intelligence
+                paroxysm of global death shores of the cosmic ocean? Hundreds of
+                thousands dispassionate extraterrestrial observer concept of the
+                number one the only home we've ever known citizens of distant
+                epochs rich in heavy atoms and billions upon billions upon
+                billions upon billions upon billions upon billions upon
+                billions.
+              </p>
+            </div>
+          </article>
+          {/* <article>
             <div>
               Article#5 lowpoly
               <p>
@@ -131,7 +176,7 @@ export default class About extends React.Component {
               billions upon billions upon billions upon billions upon billions.
             </p>
             <img src={AlexSVGSrc} alt="it's me" className="alex-img" />
-          </article>
+          </article> */}
 
           <div className="alex-bubble">
             <div className="alex-bubble-content">
