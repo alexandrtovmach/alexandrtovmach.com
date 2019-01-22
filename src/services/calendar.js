@@ -3,7 +3,11 @@ import { getTranslations } from "./language";
 
 export function getEvents(count = 5) {
   return pullEventsFromAPI(count).then(response => {
-    return response.items.map(event => transformEventData(event));
+    return (
+      response &&
+      response.items &&
+      response.items.map(event => transformEventData(event))
+    );
   });
 }
 

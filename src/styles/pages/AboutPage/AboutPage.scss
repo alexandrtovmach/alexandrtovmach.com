@@ -1,6 +1,7 @@
 .about-page {
   height: 100%;
   font-size: 80%;
+  position: static;
 
   h1,
   h2,
@@ -23,7 +24,7 @@
       background-repeat: no-repeat;
       @media screen and (max-width: 900px) {
         height: auto;
-        background-size: auto 80%;
+        background-size: auto 80vh;
         background-position: center bottom;
       }
       @media screen and (max-width: 480px) {
@@ -35,13 +36,10 @@
       opacity: 0.8;
       height: 100%;
       @media screen and (max-width: 900px) {
-        width: 70%;
+        width: 100%;
         padding-bottom: 100vh;
         -webkit-mask-image: linear-gradient(to top, transparent 35%, black 55%);
         mask-image: linear-gradient(to top, transparent 35%, black 55%);
-      }
-      @media screen and (max-width: 480px) {
-        width: 100%;
       }
     }
   }

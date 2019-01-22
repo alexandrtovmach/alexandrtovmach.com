@@ -45,7 +45,7 @@
   },
   "browserslist": {
     "development": [
-      "last 2 versions"
+      "last 4 versions"
     ],
     "production": [
       "last 4 versions",
