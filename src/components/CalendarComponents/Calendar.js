@@ -11,15 +11,15 @@ export default class Calendar extends React.Component {
     super();
 
     this.state = {
-      fitCount: 3,
+      fitCount: 2,
       events: []
     };
   }
 
   componentDidMount() {
     requestAnimationFrame(() => {
-      const fitElementsCount = Math.ceil(window.innerWidth / 300);
-      getEvents(fitElementsCount + 2).then(eventsArr => {
+      const fitElementsCount = Math.ceil(window.innerWidth / 600);
+      getEvents(fitElementsCount * 3 + 2).then(eventsArr => {
         this.setState({
           events: eventsArr,
           fitCount: fitElementsCount
@@ -58,79 +58,87 @@ export default class Calendar extends React.Component {
 
   _findEvents(events = [], date_start) {
     const date_end = date_start + oneDayMilliseconds;
-    return events.find(event => {
+    return events.filter(event => {
       return event.start >= date_start && event.start < date_end;
     });
   }
 
-  generateDays(baseDate = Date.now(), daysCount = 3, events = []) {
-    const dates = this._makeArrOfDates(baseDate, daysCount);
-    return dates.map(date => {
-      const { d, w, m } = this._dateGenerator(date);
-      const event = this._findEvents(events, date) || {};
-      if (event.name) {
-        return (
-          <div
-            key={"date-" + date}
-            className={classNames("calendar-event", {
-              holiday: event.tags && event.tags.includes("holiday"),
-              freeday: !event.name
-            })}
-          >
-            <div className="event-title">{event.name}</div>
-            <div className="event-tags">
-              {event.tags &&
-                event.tags.map(tag => (
-                  <div key={"date-tag-" + date + tag} className="event-tag">
-                    {tag}
-                  </div>
-                ))}
-            </div>
-            <div className="event-description">{event.description}</div>
-            <div className="meta-date">
-              <div className="date">{d}</div>
-              <div className="month">{this.props.langPack[`month${m}`]}</div>
-              <div className="weekday">
-                {this.props.langPack[`weekday${w}`]}
-              </div>
-            </div>
-          </div>
-        );
-      } else {
-        return (
-          <div
-            key={"date-" + date}
-            className={classNames("calendar-event", {
-              holiday: event.tags && event.tags.includes("holiday"),
-              freeday: !event.name
-            })}
-          >
-            <div className="event-freeday">
-              <div className="event-description">
-                {this.props.langPack.book_now_description}
-              </div>
-              <ContactSVG
-                className="event-contact-button"
-                alt={this.props.langPack.book_now}
-              />
-            </div>
-            <div className="meta-date">
-              <div className="date">{d}</div>
-              <div className="month">{this.props.langPack[`month${m}`]}</div>
-              <div className="weekday">
-                {this.props.langPack[`weekday${w}`]}
-              </div>
-            </div>
-          </div>
-        );
-      }
-    });
-  }
-
   render() {
+    const { fitCount: daysCount, events } = this.state;
+    const { langPack } = this.props;
+    const dates = this._makeArrOfDates(Date.now(), daysCount);
     return (
       <div className={classNames("calendar-container")}>
-        {this.generateDays(Date.now(), this.state.fitCount, this.state.events)}
+        {dates.map(date => {
+          const { d, w, m } = this._dateGenerator(date);
+          const currentEvents = this._findEvents(events, date) || {};
+          return (
+            <div
+              key={"date-" + date}
+              className={classNames("calendar-item", {
+                holiday: currentEvents.some(
+                  event => event.tags && event.tags.includes("holiday")
+                ),
+                freeday: !currentEvents.length
+              })}
+            >
+              {currentEvents.map((event, i) => {
+                if (event.name) {
+                  return (
+                    <div
+                      key={`date-event-${date}-${i}`}
+                      className={classNames("calendar-event", {
+                        holiday: event.tags && event.tags.includes("holiday"),
+                        freeday: !event.name
+                      })}
+                    >
+                      <div className="event-tags">
+                        {event.tags &&
+                          event.tags.map(tag => (
+                            <div
+                              key={"date-tag-" + date + tag}
+                              className="event-tag"
+                            >
+                              {tag}
+                            </div>
+                          ))}
+                      </div>
+                      <div className="event-title">{event.name}</div>
+                      <div className="event-description">
+                        {event.description}
+                      </div>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div
+                      key={"date-" + date}
+                      className={classNames("calendar-event", {
+                        holiday: event.tags && event.tags.includes("holiday"),
+                        freeday: !event.name
+                      })}
+                    >
+                      <div className="event-freeday">
+                        <div className="event-description">
+                          {langPack.book_now_description}
+                        </div>
+                        <ContactSVG
+                          className="event-contact-button"
+                          alt={langPack.book_now}
+                        />
+                      </div>
+                    </div>
+                  );
+                }
+              })}
+              <div className="meta-date">
+                <div className="date">{d}</div>
+                <div className="month">{langPack[`month${m}`]}</div>
+                <div className="weekday">{langPack[`weekday${w}`]}</div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     );
   }

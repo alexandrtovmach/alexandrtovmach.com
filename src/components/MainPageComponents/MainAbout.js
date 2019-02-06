@@ -65,9 +65,9 @@ export default class MainAboutComponent extends React.Component {
             <br />
             {this.props.langPack.about_text_p3}
           </p>
-          <a href="/about" className="button" title={this.props.langPack.about}>
+          {/* <a href="/about" className="button" title={this.props.langPack.about}>
             {this.props.langPack.details}
-          </a>
+          </a> */}
         </div>
         <SkillsChart
           data={this.state.skillsData[this.props.locale]}

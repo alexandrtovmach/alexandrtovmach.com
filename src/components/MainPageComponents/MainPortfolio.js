@@ -36,13 +36,13 @@ export default class MainPortfolioComponent extends React.Component {
             project={this.state.project}
             locale={this.props.locale}
           />
-          <a
+          {/* <a
             href="/portfolio"
             className="button"
             title={this.props.langPack.portfolio}
           >
             {this.props.langPack.more}
-          </a>
+          </a> */}
         </div>
         <div className="portfolio-devices-container">
           <DevicesComponent

@@ -100,7 +100,7 @@ section {
   display: block;
 }
 body {
-  line-height: 1;
+  line-height: 1.1;
   @include fluid-type(font-size, 300px, 1920px, 30px, 40px);
 }
 ol,

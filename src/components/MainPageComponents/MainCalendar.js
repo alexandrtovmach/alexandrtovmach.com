@@ -22,13 +22,13 @@ export default class MainCalendarComponent extends React.Component {
               isEqual={this.props.isEqual}
             />
           </div>
-          <a
+          {/* <a
             href="/calendar"
             className="button"
             title={this.props.langPack.calendar}
           >
             {this.props.langPack.details}
-          </a>
+          </a> */}
         </div>
       </div>
     );
