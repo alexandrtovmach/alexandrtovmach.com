@@ -4,23 +4,21 @@ import { renderDateString } from "../../services/calendar";
 
 export default props => {
   const post = props.post;
-  const dateArr = post.id.split("-").reverse();
-  if (post) {
+  if (post && post.link[props.locale]) {
     return (
       <a
-        href={`blog/${props.locale}/${post.id}`}
+        href={post.link[props.locale]}
         title={post.name[props.locale]}
         className="blog-link post"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <h3>{post.name[props.locale]}</h3>
         <p style={{ WebkitBoxOrient: "vertical" }}>
           {post.short_description[props.locale]}
         </p>
         <div className="blog-date">
-          {renderDateString(
-            props.locale,
-            new Date("20" + dateArr[0], dateArr[1] - 1, dateArr[2])
-          )}
+          {renderDateString(props.locale, new Date(post.id))}
         </div>
       </a>
     );
