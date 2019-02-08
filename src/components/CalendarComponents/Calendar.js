@@ -82,55 +82,38 @@ export default class Calendar extends React.Component {
                 freeday: !currentEvents.length
               })}
             >
-              {currentEvents.map((event, i) => {
-                if (event.name) {
-                  return (
-                    <div
-                      key={`date-event-${date}-${i}`}
-                      className={classNames("calendar-event", {
-                        holiday: event.tags && event.tags.includes("holiday"),
-                        freeday: !event.name
-                      })}
-                    >
-                      <div className="event-tags">
-                        {event.tags &&
-                          event.tags.map(tag => (
-                            <div
-                              key={"date-tag-" + date + tag}
-                              className="event-tag"
-                            >
-                              {tag}
-                            </div>
-                          ))}
-                      </div>
-                      <div className="event-title">{event.name}</div>
-                      <div className="event-description">
-                        {event.description}
-                      </div>
+              {currentEvents.length ? (
+                currentEvents.map((event, i) => (
+                  <div
+                    key={`date-event-${date}-${i}`}
+                    className="calendar-event"
+                  >
+                    <div className="event-tags">
+                      {event.tags &&
+                        event.tags.map(tag => (
+                          <div
+                            key={"date-tag-" + date + tag}
+                            className="event-tag"
+                          >
+                            {tag}
+                          </div>
+                        ))}
                     </div>
-                  );
-                } else {
-                  return (
-                    <div
-                      key={"date-" + date}
-                      className={classNames("calendar-event", {
-                        holiday: event.tags && event.tags.includes("holiday"),
-                        freeday: !event.name
-                      })}
-                    >
-                      <div className="event-freeday">
-                        <div className="event-description">
-                          {langPack.book_now_description}
-                        </div>
-                        <ContactSVG
-                          className="event-contact-button"
-                          alt={langPack.book_now}
-                        />
-                      </div>
-                    </div>
-                  );
-                }
-              })}
+                    <div className="event-title">{event.name}</div>
+                    <div className="event-description">{event.description}</div>
+                  </div>
+                ))
+              ) : (
+                <div className="event-freeday">
+                  <div className="event-description">
+                    {langPack.book_now_description}
+                  </div>
+                  <ContactSVG
+                    className="event-contact-button"
+                    alt={langPack.book_now}
+                  />
+                </div>
+              )}
               <div className="meta-date">
                 <div className="date">{d}</div>
                 <div className="month">{langPack[`month${m}`]}</div>
