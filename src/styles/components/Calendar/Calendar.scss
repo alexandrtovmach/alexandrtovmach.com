@@ -19,9 +19,9 @@
     flex: 1 0 100px;
     font-size: 50%;
     margin: 5px;
-    padding: 0.5em;
     border: 1px solid $main-color;
     cursor: default;
+    overflow: hidden;
 
     &.holiday {
       color: inherit;
@@ -42,24 +42,26 @@
     }
 
     .calendar-event {
-      margin-bottom: 0.5em;
-      padding: 0.5em;
+      margin: 0 0.5em;
+      padding: 0.75em 0;
       transition: 0.5s;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      width: 75%;
 
-      &:hover {
-        background-color: $main-color;
-        z-index: 5;
-        color: $dark-main-color;
+      &:nth-last-child(2) {
+        border-bottom: none;
       }
+
       .event-title {
         font-size: 150%;
         font-weight: 500;
-        max-height: 2em;
+        max-height: 2em * 1.1;
         overflow: hidden;
       }
 
       .event-description {
-        max-height: 3em;
+        max-height: 3em * 1.1;
         overflow: hidden;
         margin: 0.3em 0 0 0;
         font-size: 80%;
@@ -100,9 +102,10 @@
 
     .meta-date {
       position: absolute;
-      bottom: 10px;
-      right: 10px;
+      bottom: 0.5em;
+      right: 0.5em;
       text-align: right;
+      opacity: 0.5;
 
       .date {
         font-size: 200%;
