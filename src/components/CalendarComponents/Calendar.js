@@ -108,10 +108,15 @@ export default class Calendar extends React.Component {
                   <div className="event-description">
                     {langPack.book_now_description}
                   </div>
-                  <ContactSVG
+                  <a
+                    href="mailto:alexandrtovmach@gmail.com"
                     className="event-contact-button"
-                    alt={langPack.book_now}
-                  />
+                  >
+                    <ContactSVG
+                      className="event-contact-button-svg"
+                      alt={langPack.book_now}
+                    />
+                  </a>
                 </div>
               )}
               <div className="meta-date">

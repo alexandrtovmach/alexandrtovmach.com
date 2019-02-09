@@ -33,7 +33,6 @@
       color: inherit;
       &:hover {
         background-color: transparent;
-        transform: scale(1);
         .event-contact-button {
           height: 30%;
           animation: blaming 0.5s infinite alternate;
@@ -101,6 +100,9 @@
         height: 20%;
         transition: 0.3s;
         cursor: pointer;
+        .event-contact-button-svg {
+          height: 100%;
+        }
       }
     }
 
