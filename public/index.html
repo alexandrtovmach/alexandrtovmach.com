@@ -112,21 +112,20 @@
       <iframe src="/resume.en.html" style="width: 100%; height: 100%" frameborder="0"></iframe>
     </noscript>
     <div id="root"></div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134175339-1"></script>
     <script>
       if ('serviceWorker' in navigator && window.location.href.includes("alexandrtovmach")) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/sw.js');
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-134175339-1');
         });
       }
     </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134175339-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-134175339-1');
     </script>
   </body>
 </html>
