@@ -16,8 +16,8 @@ export default class About extends React.Component {
           "page-text-wrapper"
         )}
       >
-        <h1>My story</h1>
         <section className={"about-story"}>
+          <h1>My story</h1>
           <article
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${eightBitSVGSrc})` }}
@@ -120,100 +120,13 @@ export default class About extends React.Component {
               </p>
             </div>
           </article>
-          <article
-            className={classnames("image-right", "parallax")}
-            style={{ backgroundImage: `url(${lowPolySVGSrc})` }}
-          >
-            <div
-              className={classnames(
-                "article-text-content",
-                "theme-background-main"
-              )}
-            >
-              <h3>Article#4 lowpoly</h3>
-              <p>
-                Explorations white dwarf billions upon billions hydrogen atoms
-                quasar science? Dispassionate extraterrestrial observer a
-                billion trillion great turbulent clouds with pretty stories for
-                which there's little good evidence Flatland Jean-François
-                Champollion? Kindling the energy hidden in matter are creatures
-                of the cosmos rich in mystery brain is the seed of intelligence
-                paroxysm of global death shores of the cosmic ocean? Hundreds of
-                thousands dispassionate extraterrestrial observer concept of the
-                number one the only home we've ever known citizens of distant
-                epochs rich in heavy atoms and billions upon billions upon
-                billions upon billions upon billions upon billions upon
-                billions.
-              </p>
-            </div>
-          </article>
-          <article
-            className={classnames("image-right", "parallax")}
-            style={{ backgroundImage: `url(${lowPolySVGSrc})` }}
-          >
-            <div
-              className={classnames(
-                "article-text-content",
-                "theme-background-main"
-              )}
-            >
-              <h3>Article#4 lowpoly</h3>
-              <p>
-                Explorations white dwarf billions upon billions hydrogen atoms
-                quasar science? Dispassionate extraterrestrial observer a
-                billion trillion great turbulent clouds with pretty stories for
-                which there's little good evidence Flatland Jean-François
-                Champollion? Kindling the energy hidden in matter are creatures
-                of the cosmos rich in mystery brain is the seed of intelligence
-                paroxysm of global death shores of the cosmic ocean? Hundreds of
-                thousands dispassionate extraterrestrial observer concept of the
-                number one the only home we've ever known citizens of distant
-                epochs rich in heavy atoms and billions upon billions upon
-                billions upon billions upon billions upon billions upon
-                billions.
-              </p>
-            </div>
-          </article>
-          {/* <article>
-            <div>
-              Article#5 lowpoly
-              <p>
-                Extraordinary claims require extraordinary evidence another
-                world Vangelis the ash of stellar alchemy vanquish the
-                impossible Drake Equation. Brain is the seed of intelligence
-                emerged into consciousness rings of Uranus concept of the number
-                one from which we spring hundreds of thousands. Hundreds of
-                thousands encyclopaedia galactica hundreds of thousands
-                inconspicuous motes of rock and gas something incredible is
-                waiting to be known inconspicuous motes of rock and gas and
-                billions upon billions upon billions upon billions upon billions
-                upon billions upon billions.
-              </p>
-              <img src={AlexSVGSrc} alt="it's me" className="alex-img" />
-            </div>
-          </article>
-          <article>
-            Article#6 3d
-            <p>
-              Globular star cluster hearts of the stars the ash of stellar
-              alchemy extraplanetary cosmic fugue bits of moving fluff.
-              Something incredible is waiting to be known rings of Uranus the
-              sky calls to us with pretty stories for which there's little good
-              evidence across the centuries from which we spring? Made in the
-              interiors of collapsing stars inconspicuous motes of rock and gas
-              Sea of Tranquility are creatures of the cosmos network of
-              wormholes take root and flourish and billions upon billions upon
-              billions upon billions upon billions upon billions upon billions.
-            </p>
-            <img src={AlexSVGSrc} alt="it's me" className="alex-img" />
-          </article> */}
 
-          <div className="alex-bubble">
+          {/* <div className="alex-bubble">
             <div className="alex-bubble-content">
               <span>How to create image like this?</span>
               <a href="https://youtube.com">Watch on my YouTube</a>
             </div>
-          </div>
+          </div> */}
         </section>
         <section className={"about-media"} />
         <section className={"about-charts"} />
