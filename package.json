@@ -18,6 +18,7 @@
     "react-scripts": "2.1.1",
     "react-swipeable-views": "^0.13.0",
     "react-switch": "^3.0.4",
+    "react-youtube": "^7.9.0",
     "screenfull": "^3.3.3",
     "suncalc": "^1.8.0"
   },

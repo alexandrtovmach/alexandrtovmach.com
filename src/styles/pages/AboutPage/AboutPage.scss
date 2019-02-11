@@ -52,6 +52,37 @@
   }
 
   .about-media {
+    margin: #{$header-height} 0 0 0;
+    height: calc(100vh - #{$header-height});
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .media-youtube-container {
+      width: 100%;
+      height: 50%;
+      .media-youtube {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .about-socials {
+    margin: #{$header-height} 0 0 0;
+    height: calc(100vh - #{$header-height});
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .socials-item {
+      display: block;
+      height: 2em;
+      margin: 0.5em;
+      > svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 
