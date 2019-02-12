@@ -10,11 +10,11 @@ import { ReactComponent as PortfolioSVG } from "../../styles/assets/icons/portfo
 import { ReactComponent as BlogSVG } from "../../styles/assets/icons/blog.svg";
 
 const iconsInOrder = [
-  <HomeSVG className="icon" />,
-  <AboutSVG className="icon" />,
-  <CalendarSVG className="icon" />,
-  <PortfolioSVG className="icon" />,
-  <BlogSVG className="icon" />
+  <HomeSVG className="icon" key="home-icon-key" />,
+  <AboutSVG className="icon" key="about-icon-key" />,
+  <CalendarSVG className="icon" key="calendar-icon-key" />,
+  <PortfolioSVG className="icon" key="protfolio-icon-key" />,
+  <BlogSVG className="icon" key="blog-icon-key" />
 ];
 
 const AutoPlaySwipeableViews = bindKeyboard(autoPlay(SwipeableViews));
