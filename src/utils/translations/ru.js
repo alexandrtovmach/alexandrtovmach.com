@@ -1,4 +1,5 @@
 export default {
+  _locale: "ru",
   switch_to_night_mode: "Включить Ночной режим",
   switch_to_day_mode: "Включить Дневной режим",
   language: "Выбрать язык",
@@ -51,5 +52,8 @@ export default {
   book_now: "Связаться",
   book_now_title: "Свободный день",
   book_now_description: "Свободный день. Забронируйте время сейчас.",
-  my_story: "Моя история"
+  my_story: "Моя история",
+  About: {
+    story_1: ""
+  }
 };
