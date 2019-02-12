@@ -34,7 +34,7 @@ export default class MainPortfolioComponent extends React.Component {
           <h2>{this.props.langPack.portfolio_head}</h2>
           <PortfolioProjectTextComponent
             project={this.state.project}
-            locale={this.props.locale}
+            locale={this.props.langPack._locale}
           />
           {/* <a
             href="/portfolio"

@@ -20,44 +20,30 @@ const MainBlogComponent = asyncComponent(() =>
   import("../components/MainPageComponents/MainBlog")
 );
 
-export default class MainPageContainer extends React.Component {
-  render() {
-    return (
-      <div className="page">
-        <MainBackground />
-        <Navigation
-          theme={this.props.theme}
-          langPack={this.props.langPack.Navigation}
-        >
-          <div className="main-index">
-            <span>{this.props.langPack.welcome_head}</span>
-            <h1>{this.props.langPack.welcome_text}</h1>
-          </div>
-          <MainAboutComponent
-            langPack={this.props.langPack}
-            locale={this.props.locale}
-            getAllByCategory={getAllByCategory}
-            isEqual={isEqual}
-          />
-          <MainCalendarComponent
-            langPack={this.props.langPack}
-            calendarLangPack={this.props.calendarLangPack}
-            isEqual={isEqual}
-          />
-          <MainPortfolioComponent
-            langPack={this.props.langPack}
-            locale={this.props.locale}
-            getAllByCategory={getAllByCategory}
-            isEqual={isEqual}
-          />
-          <MainBlogComponent
-            langPack={this.props.langPack}
-            locale={this.props.locale}
-            getAllByCategory={getAllByCategory}
-            isEqual={isEqual}
-          />
-        </Navigation>
+export default ({ langPack, theme }) => (
+  <div className="page">
+    <MainBackground />
+    <Navigation theme={theme} langPack={langPack}>
+      <div className="main-index">
+        <span>{langPack.welcome_head}</span>
+        <h1>{langPack.welcome_text}</h1>
       </div>
-    );
-  }
-}
+      <MainAboutComponent
+        langPack={langPack}
+        getAllByCategory={getAllByCategory}
+        isEqual={isEqual}
+      />
+      <MainCalendarComponent langPack={langPack} isEqual={isEqual} />
+      <MainPortfolioComponent
+        langPack={langPack}
+        getAllByCategory={getAllByCategory}
+        isEqual={isEqual}
+      />
+      <MainBlogComponent
+        langPack={langPack}
+        getAllByCategory={getAllByCategory}
+        isEqual={isEqual}
+      />
+    </Navigation>
+  </div>
+);

@@ -10,15 +10,14 @@ export default class MainAboutComponent extends React.Component {
     };
 
     this.onTooltipUpdate = this.onTooltipUpdate.bind(this);
-    // this.onSelect = this.onSelect.bind(this);
   }
 
   componentDidMount() {
-    this.props.getAllByCategory("skills").then(skills_data => {
-      this.setState({
-        skillsData: skills_data
-      });
-    });
+    const { getAllByCategory } = this.props;
+    getAllByCategory &&
+      getAllByCategory("skills").then(skillsData =>
+        this.setState({ skillsData })
+      );
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -41,41 +40,38 @@ export default class MainAboutComponent extends React.Component {
     this.skillsTooltipRef.innerHTML = content;
   }
 
-  // onSelect(event){
-  //   console.log(event);
-  // }
-
   render() {
+    const { langPack, isEqual } = this.props;
+    const { skillsData } = this.state;
     return (
       <div className="main-about">
         <div className="about-text-block">
-          <h2>{this.props.langPack.about_head}</h2>
+          <h2>{langPack.about_head}</h2>
           <p>
-            {this.props.langPack.about_text_p1}
+            {langPack.about_text_p1}
             &nbsp;
-            {this.calcHowOldIAm(this.props.langPack.years)}. &nbsp;
-            {this.props.langPack.about_text_p2}
+            {this.calcHowOldIAm(langPack.years)}. &nbsp;
+            {langPack.about_text_p2}
             &nbsp;
             <span
               ref={ref => (this.skillsTooltipRef = ref)}
               className="toltip-name"
             >
-              {this.props.langPack.many}
+              {langPack.many}
             </span>
             <br />
-            {this.props.langPack.about_text_p3}
+            {langPack.about_text_p3}
           </p>
-          {/* <a href="/about" className="button" title={this.props.langPack.about}>
-            {this.props.langPack.details}
+          {/* <a href="/about" className="button" title={langPack.about}>
+            {langPack.details}
           </a> */}
         </div>
         <SkillsChart
-          data={this.state.skillsData[this.props.locale]}
-          // onSelect={this.onSelect}
+          data={skillsData[langPack._locale]}
           onTooltipUpdate={this.onTooltipUpdate}
           scale="linear"
           keyId="skillsChart"
-          isEqual={this.props.isEqual}
+          isEqual={isEqual}
         />
       </div>
     );

@@ -20,7 +20,7 @@ const BlogPageContainer = asyncComponent(() =>
   import("./containers/BlogPageContainer")
 );
 
-export default props => {
+export default ({ langPack, theme }) => {
   return (
     <Router history={history}>
       <Switch>
@@ -29,36 +29,46 @@ export default props => {
           path="/"
           render={() => (
             <MainPageContainer
-              langPack={props.langPack.Main}
-              theme={props.theme}
-              locale={props.locale}
-              calendarLangPack={props.langPack.CalendarComponent}
+              langPack={{ ...langPack, ...langPack["Main"] }}
+              theme={theme}
             />
           )}
         />
         <Route
           exact
           path="/about"
-          render={() => <AboutPageContainer langPack={props.langPack.About} />}
+          render={() => (
+            <AboutPageContainer
+              langPack={{ ...langPack, ...langPack["About"] }}
+            />
+          )}
         />
         <Route
           exact
           path="/calendar"
           render={() => (
-            <CalendarPageContainer langPack={props.langPack.Calendar} />
+            <CalendarPageContainer
+              langPack={{ ...langPack, ...langPack["Calendar"] }}
+            />
           )}
         />
         <Route
           exact
           path="/portfolio"
           render={() => (
-            <PortfolioPageContainer langPack={props.langPack.Portfolio} />
+            <PortfolioPageContainer
+              langPack={{ ...langPack, ...langPack["Portfolio"] }}
+            />
           )}
         />
         <Route
           exact
           path="/blog"
-          render={() => <BlogPageContainer langPack={props.langPack.Blog} />}
+          render={() => (
+            <BlogPageContainer
+              langPack={{ ...langPack, ...langPack["Blog"] }}
+            />
+          )}
         />
       </Switch>
     </Router>

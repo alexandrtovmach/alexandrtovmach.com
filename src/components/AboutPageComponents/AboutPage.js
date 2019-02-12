@@ -19,6 +19,7 @@ import { ReactComponent as DribbbleSVG } from "../../styles/assets/icons/dribbbl
 
 export default class About extends React.Component {
   render() {
+    const { langPack } = this.props;
     return (
       <div
         className={classnames(
@@ -28,7 +29,7 @@ export default class About extends React.Component {
         )}
       >
         <section className={"about-story"}>
-          <h1>My story</h1>
+          <h1>{langPack["my_story"]}</h1>
           <article
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${eightBitSVGSrc})` }}
@@ -157,15 +158,6 @@ export default class About extends React.Component {
             <GitHubSVG className="theme-fill-second" />
           </a>
           <a
-            href="https://twitter.com/alexandrtovmach"
-            target="_blank"
-            title="Twitter"
-            rel="noopener noreferrer"
-            className="socials-item"
-          >
-            <TwitterSVG className="theme-fill-second" />
-          </a>
-          <a
             href="https://ru.stackoverflow.com/users/312473/alexandr-tovmach"
             target="_blank"
             title="StackOverflow"
@@ -173,6 +165,15 @@ export default class About extends React.Component {
             className="socials-item"
           >
             <StackOverflowSVG className="theme-fill-second" />
+          </a>
+          <a
+            href="https://twitter.com/alexandrtovmach"
+            target="_blank"
+            title="Twitter"
+            rel="noopener noreferrer"
+            className="socials-item"
+          >
+            <TwitterSVG className="theme-fill-second" />
           </a>
           <a
             href="https://www.npmjs.com/~alexandrtovmach"

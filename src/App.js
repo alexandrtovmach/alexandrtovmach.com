@@ -58,20 +58,17 @@ export default class App extends React.Component {
   }
 
   render() {
+    const { theme, locale } = this.state;
+    const langPack = getTranslations(locale);
     return (
-      <div className={classNames("app-container", this.state.theme.name)}>
+      <div className={classNames("app-container", theme.name)}>
         <Header
           handleThemeChange={this.handleThemeChange}
           handleLanguageChange={this.handleLanguageChange}
-          theme={this.state.theme}
-          locale={this.state.locale}
-          langPack={getTranslations(this.state.locale, "Header")}
+          theme={theme}
+          langPack={{ ...langPack, ...langPack["Header"] }}
         />
-        <Router
-          theme={this.state.theme}
-          langPack={getTranslations(this.state.locale)}
-          locale={this.state.locale}
-        />
+        <Router theme={theme} langPack={langPack} />
       </div>
     );
   }
