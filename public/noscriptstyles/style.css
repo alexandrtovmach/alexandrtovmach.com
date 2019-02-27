@@ -74,3 +74,24 @@ main {
 main:hover {
   box-shadow: 0 0 50px #cccccc;
 }
+
+
+/* print rules */
+@media print {
+  header {
+    display: none;
+  }
+  main {
+    width: 100vw;
+    max-width: none;
+    box-shadow: none;
+  }
+  a:after {
+    content: " (" attr(href) ")";
+    font-size: 60%;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+}
+/* print rules end */
