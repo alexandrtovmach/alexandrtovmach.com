@@ -10,11 +10,11 @@ import { ReactComponent as PortfolioSVG } from "../../styles/assets/icons/portfo
 import { ReactComponent as BlogSVG } from "../../styles/assets/icons/blog.svg";
 
 const iconsInOrder = [
-  <HomeSVG className="icon" />,
-  <AboutSVG className="icon" />,
-  <CalendarSVG className="icon" />,
-  <PortfolioSVG className="icon" />,
-  <BlogSVG className="icon" />
+  <HomeSVG className="icon" key="home-icon-key" />,
+  <AboutSVG className="icon" key="about-icon-key" />,
+  <CalendarSVG className="icon" key="calendar-icon-key" />,
+  <PortfolioSVG className="icon" key="protfolio-icon-key" />,
+  <BlogSVG className="icon" key="blog-icon-key" />
 ];
 
 const AutoPlaySwipeableViews = bindKeyboard(autoPlay(SwipeableViews));
@@ -38,12 +38,13 @@ export default class Navigation extends React.Component {
   }
 
   generateTabs(tagsArray) {
+    const { index } = this.state;
     return tagsArray.map((el, i) => {
       return (
         <div
           key={i}
           className={classnames("tab", {
-            "active-tab": this.state.index === i
+            "active-tab": index === i
           })}
           onClick={() => {
             this.handleChangeIndex(i);
@@ -57,6 +58,8 @@ export default class Navigation extends React.Component {
   }
 
   render() {
+    const { langPack, children, theme } = this.props;
+    const { index } = this.state;
     return (
       <div className="navigation">
         <AutoPlaySwipeableViews
@@ -64,27 +67,25 @@ export default class Navigation extends React.Component {
           className="tabs-content"
           interval={30000}
           enableMouseEvents={true}
-          index={this.state.index}
+          index={index}
           onChangeIndex={this.handleChangeIndex}
         >
-          {this.props.children}
+          {children}
         </AutoPlaySwipeableViews>
-        <div className="tabs-panel">
-          {this.generateTabs(this.props.langPack.tags)}
-        </div>
+        <div className="tabs-panel">{this.generateTabs(langPack.tags)}</div>
         <div className="navigation-arrows">
           <button
             className={classnames("left", "arrow", {
-              hidden: !this.state.index
+              hidden: !index
             })}
-            title={this.props.langPack.left_button}
-            name={this.props.langPack.left_button}
-            onClick={() => this.handleChangeIndex(this.state.index - 1)}
+            title={langPack.left_button}
+            name={langPack.left_button}
+            onClick={() => this.handleChangeIndex(index - 1)}
           >
             <svg viewBox="-2 -2 50 80">
               <polyline
                 fill="none"
-                stroke={this.props.theme.secondColor}
+                stroke={theme.secondColor}
                 strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -94,16 +95,16 @@ export default class Navigation extends React.Component {
           </button>
           <button
             className={classnames("right", "arrow", {
-              hidden: this.props.children.length - 1 === this.state.index
+              hidden: children.length - 1 === index
             })}
-            title={this.props.langPack.right_button}
-            name={this.props.langPack.right_button}
-            onClick={() => this.handleChangeIndex(this.state.index + 1)}
+            title={langPack.right_button}
+            name={langPack.right_button}
+            onClick={() => this.handleChangeIndex(index + 1)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 50 80">
               <polyline
                 fill="none"
-                stroke={this.props.theme.secondColor}
+                stroke={theme.secondColor}
                 strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"

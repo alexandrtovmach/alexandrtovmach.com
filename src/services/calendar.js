@@ -13,7 +13,7 @@ export function getEvents(count = 5) {
 
 export function renderDateString(locale = "en", start, end) {
   const sD = new Date(start),
-    langPack = getTranslations([locale || "en"], "CalendarComponent"),
+    langPack = getTranslations([locale || "en"]),
     sDD = sD.getDate() || 1,
     sDM = langPack[`month${sD.getMonth() + 1}`] || "Jan",
     sDY = sD.getFullYear() || 2018;

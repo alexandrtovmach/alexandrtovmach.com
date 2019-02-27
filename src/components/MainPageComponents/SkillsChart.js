@@ -84,12 +84,7 @@ export default class SkillsChart extends React.Component {
       .data(partition(root).descendants())
       .enter()
       .append("path")
-      .style("fill", current => {
-        // const redQ = 255/215;
-        // const greenQ = 215/255;
-        // return current.fill = d3.rgb(current.depth*redQ*10, current.depth*greenQ*10, 0);
-        return "transparent";
-      })
+      .style("fill", "transparent")
       .attr("stroke", "rgb(255, 215, 0)")
       .attr("stroke-width", "2")
       .on("click", d => click(d, node, svg, self, x, y, radius, arc))

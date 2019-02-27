@@ -19,6 +19,7 @@ import { ReactComponent as DribbbleSVG } from "../../styles/assets/icons/dribbbl
 
 export default class About extends React.Component {
   render() {
+    const { langPack } = this.props;
     return (
       <div
         className={classnames(
@@ -28,7 +29,7 @@ export default class About extends React.Component {
         )}
       >
         <section className={"about-story"}>
-          <h1>My story</h1>
+          <h1>{langPack["my_story"]}</h1>
           <article
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${eightBitSVGSrc})` }}
@@ -39,21 +40,8 @@ export default class About extends React.Component {
                 "theme-background-main"
               )}
             >
-              <h3>Article#1 8-bit</h3>
-              <p>
-                The ash of stellar alchemy tingling of the spine network of
-                wormholes brain is the seed of intelligence worldlets Flatland?
-                Drake Equation dream of the mind's eye colonies something
-                incredible is waiting to be known Drake Equation Cambrian
-                explosion. Finite but unbounded not a sunrise but a galaxyrise
-                intelligent beings a mote of dust suspended in a sunbeam Sea of
-                Tranquility the carbon in our apple pies. Bits of moving fluff
-                the sky calls to us dispassionate extraterrestrial observer bits
-                of moving fluff a very small stage in a vast cosmic arena
-                dispassionate extraterrestrial observer and billions upon
-                billions upon billions upon billions upon billions upon billions
-                upon billions.
-              </p>
+              <h3>8-bit</h3>
+              <p>{langPack["story_1"]}</p>
             </div>
           </article>
           <article
@@ -66,18 +54,8 @@ export default class About extends React.Component {
                 "theme-background-main"
               )}
             >
-              <h3>Article#2 16-bit</h3>
-              <p>
-                Tunguska event Cambrian explosion a mote of dust suspended in a
-                sunbeam take root and flourish globular star cluster vanquish
-                the impossible? Tingling of the spine Euclid shores of the
-                cosmic ocean stirred by starlight dream of the mind's eye star
-                stuff harvesting star light? The carbon in our apple pies not a
-                sunrise but a galaxyrise Sea of Tranquility are creatures of the
-                cosmos brain is the seed of intelligence another world and
-                billions upon billions upon billions upon billions upon billions
-                upon billions upon billions.
-              </p>
+              <h3>16-bit</h3>
+              <p>{langPack["story_2"]}</p>
             </div>
           </article>
           <article
@@ -90,18 +68,8 @@ export default class About extends React.Component {
                 "theme-background-main"
               )}
             >
-              <h3>Article#3 comics</h3>
-              <p>
-                A billion trillion at the edge of forever stirred by starlight
-                billions upon billions hydrogen atoms the only home we've ever
-                known. The carbon in our apple pies hearts of the stars hundreds
-                of thousands colonies Sea of Tranquility citizens of distant
-                epochs. Citizens of distant epochs inconspicuous motes of rock
-                and gas permanence of the stars paroxysm of global death rich in
-                heavy atoms with pretty stories for which there's little good
-                evidence and billions upon billions upon billions upon billions
-                upon billions upon billions upon billions
-              </p>
+              <h3>Comics</h3>
+              <p>{langPack["story_3"]}</p>
             </div>
           </article>
           <article
@@ -114,21 +82,8 @@ export default class About extends React.Component {
                 "theme-background-main"
               )}
             >
-              <h3>Article#4 lowpoly</h3>
-              <p>
-                Explorations white dwarf billions upon billions hydrogen atoms
-                quasar science? Dispassionate extraterrestrial observer a
-                billion trillion great turbulent clouds with pretty stories for
-                which there's little good evidence Flatland Jean-François
-                Champollion? Kindling the energy hidden in matter are creatures
-                of the cosmos rich in mystery brain is the seed of intelligence
-                paroxysm of global death shores of the cosmic ocean? Hundreds of
-                thousands dispassionate extraterrestrial observer concept of the
-                number one the only home we've ever known citizens of distant
-                epochs rich in heavy atoms and billions upon billions upon
-                billions upon billions upon billions upon billions upon
-                billions.
-              </p>
+              <h3>Lowpoly</h3>
+              <p>{langPack["story_4"]}</p>
             </div>
           </article>
 
@@ -157,15 +112,6 @@ export default class About extends React.Component {
             <GitHubSVG className="theme-fill-second" />
           </a>
           <a
-            href="https://twitter.com/alexandrtovmach"
-            target="_blank"
-            title="Twitter"
-            rel="noopener noreferrer"
-            className="socials-item"
-          >
-            <TwitterSVG className="theme-fill-second" />
-          </a>
-          <a
             href="https://ru.stackoverflow.com/users/312473/alexandr-tovmach"
             target="_blank"
             title="StackOverflow"
@@ -173,6 +119,15 @@ export default class About extends React.Component {
             className="socials-item"
           >
             <StackOverflowSVG className="theme-fill-second" />
+          </a>
+          <a
+            href="https://twitter.com/alexandrtovmach"
+            target="_blank"
+            title="Twitter"
+            rel="noopener noreferrer"
+            className="socials-item"
+          >
+            <TwitterSVG className="theme-fill-second" />
           </a>
           <a
             href="https://www.npmjs.com/~alexandrtovmach"

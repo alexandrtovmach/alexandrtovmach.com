@@ -11,23 +11,21 @@ export default class MainCalendarComponent extends React.Component {
   }
 
   render() {
+    const { langPack, isEqual } = this.props;
     return (
       <div className={"main-calendar"}>
         <div className="calendar-block">
-          <h2>{this.props.langPack.calendar_head}</h2>
-          <p>{this.props.langPack.calendar_text}</p>
+          <h2>{langPack.calendar_head}</h2>
+          <p>{langPack.calendar_text}</p>
           <div className="calendar-wrap">
-            <CalendarComponent
-              langPack={this.props.calendarLangPack}
-              isEqual={this.props.isEqual}
-            />
+            <CalendarComponent langPack={langPack} isEqual={isEqual} />
           </div>
           {/* <a
             href="/calendar"
             className="button"
-            title={this.props.langPack.calendar}
+            title={langPack.calendar}
           >
-            {this.props.langPack.details}
+            {langPack.details}
           </a> */}
         </div>
       </div>

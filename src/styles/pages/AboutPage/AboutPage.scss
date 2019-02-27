@@ -1,3 +1,6 @@
+* {
+  -webkit-overflow-scrolling: touch;
+}
 .about-page {
   height: 100%;
   font-size: 80%;
@@ -37,6 +40,7 @@
         width: 60%;
         opacity: 0.8;
         height: 100%;
+        transition: 1s background-color;
         @media screen and (max-width: 900px) {
           width: 100%;
           padding-bottom: 100vh;
@@ -76,7 +80,7 @@
     flex-direction: column;
     .socials-item {
       display: block;
-      height: 2em;
+      height: 1.5em;
       margin: 0.5em;
       > svg {
         width: 100%;
