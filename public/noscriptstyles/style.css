@@ -1,8 +1,76 @@
-main {
+body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: aquamarine;
-  font-size: 10vh;
-  height: 90vh;
+  background-color: #ffffff;
+  height: 150vh;
+}
+
+header {
+  top: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 20px * 2);
+  height: 60px;
+  padding: 0 20px;
+}
+
+/* lang menu */
+.lang-button-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+}
+.lang-button-group .lang-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 100px;
+  margin: 0 5px;
+  padding: 0;
+  transition: 0.5s;
+  cursor: pointer;
+  background-color: #ffffff;
+  text-decoration: none;
+  transform: scale(0);
+  box-shadow: 0 0 5px #cccccc;
+  color: #000000;
+}
+.lang-button-group .lang-button.lang-button--large {
+  margin: 0 10px;
+  position: relative;
+  transform: scale(1);
+}
+.lang-button-group .lang-button .earth {
+  position: absolute;
+  display: block;
+  top: 7.5%;
+  left: 7.5%;
+  width: 85%;
+  height: 85%;
+  transition: 300ms;
+}
+.lang-button-group:hover > a.lang-button {
+  transform: scale(0.8);
+}
+/* lang menu end */
+
+main {
+  width: 60%;
+  max-width: 800px;
+  height: 100vh;
+  box-shadow: 0 0 50px #eeeeee;
+  transition: 500ms;
+}
+
+main:hover {
+  box-shadow: 0 0 50px #cccccc;
 }
