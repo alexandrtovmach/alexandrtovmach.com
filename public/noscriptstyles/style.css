@@ -8,6 +8,12 @@
   flex-direction: column;
 }
 
+span.highlighted {
+  font-size: 100%!important;
+  font-weight: 500!important;
+  opacity: 1!important;
+}
+
 body {
   background-color: #ffffff;
   height: 150vh;
@@ -102,6 +108,7 @@ section.basic-info > .text {
 
 section.basic-info > .text > h1 {
   line-height: 1;
+  margin-bottom: 1mm;
   font-weight: normal;
   font-size: 130%;
   text-transform: uppercase;
@@ -200,29 +207,6 @@ section.main-info > section.main-info-right > .link > img {
   margin: 3mm 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* print rules */
 @media print {
   *,
@@ -249,6 +233,10 @@ section.main-info > section.main-info-right > .link > img {
   }
   section.main-info > section.main-info-right > .link {
     display: block;
+  }
+
+  @page {
+    margin: 10mm 20mm;
   }
 }
 /* print rules end */
