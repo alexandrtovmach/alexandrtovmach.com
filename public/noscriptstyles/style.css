@@ -28,7 +28,7 @@ header {
   justify-content: space-between;
   width: calc(100% - 20px * 2);
   height: 60px;
-  font-size: 20px;
+  font-size: 50%;
   padding: 0 20px;
 }
 
@@ -60,7 +60,7 @@ header {
   color: #000000;
 }
 .lang-button-group .lang-button.lang-button--large {
-  margin: 0 10px;
+  margin: 0 0 0 10px;
   position: relative;
   transform: scale(1);
 }
@@ -143,6 +143,7 @@ section.basic-info > .contacts > .contact-item > svg {
 
 section.main-info {
   display: flex;
+  flex-wrap: wrap;
   font-size: 80%;
 }
 
@@ -182,7 +183,7 @@ section.main-info > section p {
 }
 
 section.main-info > section.main-info-left {
-  flex: 1 0 70%;
+  flex: 1 0 calc(70% - 10mm - 1px);
   padding-right: 10mm;
   border-right: 1px solid #000000;
 }
@@ -194,7 +195,7 @@ section.main-info > section.main-info-left > .experience .time {
 }
 
 section.main-info > section.main-info-right {
-  flex: 0 1 30%;
+  flex: 0 1 calc(20% - 10mm);
   padding-left: 10mm;
 }
 
@@ -240,3 +241,34 @@ section.main-info > section.main-info-right > .link > img {
   }
 }
 /* print rules end */
+
+
+@media screen and (max-width: 560px) {
+  body {
+    height: auto;
+    font-size: 7mm;
+  }
+  header {
+    background-color: #ffffff;
+    z-index: 5;
+  }
+  main {
+    width: calc(100% - 0.5em*2);
+    height: calc(100% - 0.5em*2);
+    padding: 1em 0.5em;
+  }
+  section.basic-info > .contacts > .contact-item > span {
+    display: none;
+  }
+  section.main-info > section.main-info-left {
+    flex: 100%;
+    border-right: none;
+    padding-right: 0;
+  }
+  section.main-info > section.main-info-right {
+    flex: 100%;
+    padding-left: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+}
