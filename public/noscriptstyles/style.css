@@ -209,7 +209,7 @@ section.main-info > section.main-info-right > .link {
 
 section.main-info > section.main-info-right > .link > img {
   width: 100%;
-  margin: 3mm 0;
+  margin-top: 1mm;
 }
 
 /* print rules */
