@@ -17,7 +17,7 @@ span.highlighted {
 body {
   background-color: #ffffff;
   height: 150vh;
-  font-size: 8mm;
+  font-size: 7mm;
 }
 
 header {
@@ -99,18 +99,21 @@ section {
 section.basic-info {
   display: flex;
   justify-content: space-between;
-  padding: 10mm 0;
+  padding: 5mm 0 10mm 0;
 }
 
 section.basic-info > .text {
   flex: 1 0 60%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 section.basic-info > .text > h1 {
   line-height: 1;
   margin-bottom: 1mm;
   font-weight: normal;
-  font-size: 130%;
+  font-size: 150%;
   text-transform: uppercase;
 }
 
@@ -131,13 +134,13 @@ section.basic-info > .contacts {
 }
 
 section.basic-info > .contacts > .contact-item {
-  height: 6mm;
+  margin: 0.2em 0;
   color: inherit;
   text-decoration: none;
 }
 
 section.basic-info > .contacts > .contact-item > svg {
-  height: 70%;
+  height: 4mm;
   margin: 0 2mm;
 }
 
@@ -149,11 +152,11 @@ section.main-info {
 
 section.main-info > section {
   border-top: 1px solid #000000;
-  padding-top: 10mm;
+  padding-top: 5mm;
 }
 
 section.main-info > section > article {
-  margin-bottom: 10mm;
+  margin-bottom: 5mm;
 }
 
 section.main-info > section h3 {
@@ -161,6 +164,7 @@ section.main-info > section h3 {
   font-weight: normal;
   font-size: 80%;
   text-transform: uppercase;
+  margin-bottom: 3mm;
 }
 
 section.main-info > section h4 {
@@ -183,8 +187,8 @@ section.main-info > section p {
 }
 
 section.main-info > section.main-info-left {
-  flex: 1 0 calc(70% - 10mm - 1px);
-  padding-right: 10mm;
+  flex: 1 0 calc(70% - 5mm - 1px);
+  padding-right: 5mm;
   border-right: 1px solid #000000;
 }
 
@@ -195,8 +199,8 @@ section.main-info > section.main-info-left > .experience .time {
 }
 
 section.main-info > section.main-info-right {
-  flex: 0 1 calc(20% - 10mm);
-  padding-left: 10mm;
+  flex: 0 1 calc(20% - 5mm);
+  padding-left: 5mm;
 }
 
 section.main-info > section.main-info-right > .link {
