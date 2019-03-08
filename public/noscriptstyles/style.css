@@ -99,7 +99,7 @@ section {
 section.basic-info {
   display: flex;
   justify-content: space-between;
-  padding: 5mm 0 10mm 0;
+  padding-bottom: 5mm;
 }
 
 section.basic-info > .text {
@@ -247,10 +247,9 @@ section.main-info > section.main-info-right > .link > img {
 /* print rules end */
 
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 1024px) {
   body {
     height: auto;
-    font-size: 7mm;
   }
   header {
     background-color: #ffffff;
@@ -259,7 +258,7 @@ section.main-info > section.main-info-right > .link > img {
   main {
     width: calc(100% - 0.5em*2);
     height: calc(100% - 0.5em*2);
-    padding: 1em 0.5em;
+    padding: 3em 0.5em 1em 0.5em;
   }
   section.basic-info > .contacts > .contact-item > span {
     display: none;
