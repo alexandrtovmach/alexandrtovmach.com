@@ -16,7 +16,6 @@ span.highlighted {
 
 body {
   background-color: #ffffff;
-  height: 150vh;
   font-size: 7mm;
 }
 
@@ -81,6 +80,7 @@ header {
 main {
   width: calc(210mm - 10mm*2);
   height: calc(297mm - 10mm*2);
+  margin: 20vh auto;
   padding: 10mm;
   box-shadow: 0 0 50mm #eeeeee;
   background-color: #ffffff;
