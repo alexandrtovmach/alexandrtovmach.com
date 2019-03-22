@@ -229,8 +229,9 @@ section.main-info > section.main-info-right > .link > img {
     height: 100%;
   }
   main {
-    width: 210mm;
-    height: 297mm;
+    width: 100%;
+    height: 100%;
+    margin: 10mm;
     padding: 0;
   }
   body > *:not(main) {
