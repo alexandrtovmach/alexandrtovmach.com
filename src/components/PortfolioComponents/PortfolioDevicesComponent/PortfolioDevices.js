@@ -10,23 +10,21 @@ export default class DevicesComponent extends React.Component {
   }
 
   render() {
-    const { project } = this.props;
+    const {
+      project: {
+        screenshots: { desktop, pad, phone }
+      }
+    } = this.props;
     return (
       <div className="devices">
         <div className="desktop-device-container">
-          <ImacComponent
-            img={project && project.screenshots && project.screenshots.desktop}
-          />
+          <ImacComponent images={desktop} />
         </div>
         <div className="pad-device-container">
-          <IpadComponent
-            img={project && project.screenshots && project.screenshots.pad}
-          />
+          <IpadComponent images={pad} />
         </div>
         <div className="phone-device-container">
-          <IphoneComponent
-            img={project && project.screenshots && project.screenshots.phone}
-          />
+          <IphoneComponent images={phone} />
         </div>
       </div>
     );

@@ -7,7 +7,7 @@ export default class MainPortfolioComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      project: {}
+      project: null
     };
   }
 
@@ -27,28 +27,29 @@ export default class MainPortfolioComponent extends React.Component {
   }
 
   render() {
+    const { langPack, isEqual } = this.props;
+    const { project } = this.state;
     return (
       <div className="main-portfolio">
         <div className="overlapperForSupportTouchEvent" />
         <div className="portfolio-text-block">
-          <h2>{this.props.langPack.portfolio_head}</h2>
-          <PortfolioProjectTextComponent
-            project={this.state.project}
-            locale={this.props.langPack._locale}
-          />
+          <h2>{langPack.portfolio_head}</h2>
+          {project && (
+            <PortfolioProjectTextComponent
+              project={project}
+              locale={langPack._locale}
+            />
+          )}
           {/* <a
             href="/portfolio"
             className="button"
-            title={this.props.langPack.portfolio}
+            title={langPack.portfolio}
           >
-            {this.props.langPack.more}
+            {langPack.more}
           </a> */}
         </div>
         <div className="portfolio-devices-container">
-          <DevicesComponent
-            project={this.state.project}
-            isEqual={this.props.isEqual}
-          />
+          {project && <DevicesComponent project={project} isEqual={isEqual} />}
         </div>
       </div>
     );
