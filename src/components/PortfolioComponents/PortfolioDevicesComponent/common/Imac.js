@@ -15,7 +15,7 @@ export default ({ images }) => {
           "2500w": images.x3
         }}
         sizes={[
-          { size: "80vw", mediaCondition: "(max-width: 900px)" },
+          { size: "80vw", mediaCondition: "(max-width: $mq-laptop)" },
           { size: "50vw" }
         ]}
         src={images.x1}

@@ -70,10 +70,10 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: $mq-laptop) {
       width: 80%;
     }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: $mq-mobile) {
       width: 90%;
     }
   }

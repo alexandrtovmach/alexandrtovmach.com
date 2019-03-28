@@ -52,7 +52,7 @@
     bottom: 0%;
     right: -3%;
     width: 35%;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: $mq-laptop) {
       display: none;
     }
   }
@@ -61,7 +61,7 @@
     bottom: -10%;
     right: 25%;
     width: 20%;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: $mq-laptop) {
       display: none;
     }
   }

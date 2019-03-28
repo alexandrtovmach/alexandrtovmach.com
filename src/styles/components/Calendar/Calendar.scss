@@ -65,7 +65,7 @@
         margin: 0.3em 0 0 0;
         font-size: 80%;
         opacity: 0.6;
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: $mq-mobile) {
           display: none;
         }
       }
@@ -87,7 +87,6 @@
       padding: 0.75em 0;
       width: calc(100% - 0.5em * 2);
       height: calc(100% - 0.75em * 2);
-      font-size: 150%;
       font-weight: 500;
       display: flex;
       flex-direction: column;

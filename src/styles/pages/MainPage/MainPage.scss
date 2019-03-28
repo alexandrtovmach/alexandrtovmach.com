@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: $mq-mobile) {
     width: calc(100% - 20px * 2);
     padding: 0 20px;
   }
@@ -80,7 +80,7 @@
     .calendar-wrap {
       width: 100%;
       height: 30vh;
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: $mq-mobile) {
         // height: 150px;
       }
     }
@@ -98,7 +98,7 @@
     width: auto;
     height: auto;
     z-index: 3;
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: $mq-laptop) {
       display: none;
     }
   }
@@ -117,7 +117,7 @@
     width: 50%;
     height: 40vw;
   }
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: $mq-laptop) {
     flex-direction: column;
     .portfolio-text-block {
       flex: 0 1 10%;
@@ -134,7 +134,7 @@
       max-width: 600px;
     }
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: $mq-mobile) {
     .portfolio-devices-container {
       max-width: 45vh;
     }
