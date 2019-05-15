@@ -15,7 +15,7 @@ const databaseRef = firebase.database().ref();
 export function getAllByCategory(category = "", limit = 10) {
   return databaseRef
     .child(category)
-    .limitToFirst(limit)
+    .limitToLast(limit)
     .once("value")
     .then(snapshot => snapshot.val())
     .catch(err => console.error("getAllByCategory", err));
