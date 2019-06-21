@@ -2,7 +2,8 @@ export default {
   _locale: "ru",
   switch_to_night_mode: "Включить Ночной режим",
   switch_to_day_mode: "Включить Дневной режим",
-  language: "Выбрать язык",
+  choose_language: "Выбрать язык",
+  language: "Язык",
   go_to_main_page: "На главную",
   welcome_head: "Добро пожаловать!",
   welcome_text:

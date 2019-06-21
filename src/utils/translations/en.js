@@ -2,7 +2,8 @@ export default {
   _locale: "en",
   switch_to_night_mode: "Switch to Night mode",
   switch_to_day_mode: "Switch to Day mode",
-  language: "Choose language",
+  choose_language: "Choose language",
+  language: "Language",
   go_to_main_page: "Go to main page",
   welcome_head: "Welcome!",
   welcome_text:

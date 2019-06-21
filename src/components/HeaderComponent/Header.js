@@ -21,7 +21,7 @@ export default class Header extends React.Component {
           <div className="language-switcher">
             <LangSwitcher
               handleLanguageChange={this.props.handleLanguageChange}
-              languageWord={this.props.langPack.language}
+              languageWord={this.props.langPack.choose_language}
             />
           </div>
           <div
