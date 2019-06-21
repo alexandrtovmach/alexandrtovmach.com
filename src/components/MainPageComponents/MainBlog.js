@@ -19,6 +19,7 @@ export default class MainPortfolioComponent extends React.Component {
           items={3}
           infinityScroll={false}
           locale={langPack._locale}
+          langPack={langPack}
         />
         {/* <a href="/blog" className="button" title={langPack.blog}>
           {langPack.more}

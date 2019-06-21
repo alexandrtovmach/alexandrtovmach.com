@@ -20,13 +20,16 @@ export default class BlogListComponent extends React.Component {
   }
 
   render() {
+    const { posts } = this.state;
+    const { locale, langPack } = this.props;
     return (
       <div className="blog-list">
-        {this.state.posts.map((post, i) => (
+        {posts.map((post, i) => (
           <BlogLinkComponent
             key={"blog-item-link" + i}
             post={post}
-            locale={this.props.locale}
+            locale={locale}
+            langPack={langPack}
           />
         ))}
       </div>

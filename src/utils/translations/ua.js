@@ -2,7 +2,8 @@ export default {
   _locale: "ua",
   switch_to_night_mode: "Включити Нічний режим",
   switch_to_day_mode: "Включити Денний режим",
-  language: "Обрати мову",
+  choose_language: "Обрати мову",
+  language: "Мова",
   go_to_main_page: "На головну",
   welcome_head: "Вітаємо!",
   welcome_text:
