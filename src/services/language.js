@@ -13,8 +13,17 @@ export function getLanguage() {
 }
 
 export function getTranslations(lang, filter) {
-  let result = langPacks[lang] || langPacks["en"];
-  return filter ? result[filter] : result;
+  const result = langPacks[lang] || langPacks["en"];
+  const languages = {
+    ru: "Русский",
+    ua: "Українська",
+    en: "English"
+  };
+  const pack = filter ? result[filter] : result;
+  return {
+    languages,
+    ...pack
+  };
 }
 
 export function updateLangTag(newLang) {

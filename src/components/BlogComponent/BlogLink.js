@@ -17,7 +17,7 @@ export default props => {
       <div className="blog-lang" />
       <div className="blog-meta">
         <span className="meta-lang">
-          {`${props.langPack.language}: ${post.lang}`}
+          {`${props.langPack.language}: ${props.langPack.languages[post.lang]}`}
         </span>
         <span className="meta-date">
           {renderDateString(props.locale, new Date(post.id))}
