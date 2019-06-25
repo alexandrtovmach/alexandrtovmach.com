@@ -33,9 +33,10 @@ export default class LangSwitchNew extends React.Component {
   }
 
   leaveTimeout() {
-    if (this.state.active && !this.state.timeout) {
+    const { active, timeout } = this.state;
+    if (active && !timeout) {
       const timeout = setTimeout(() => {
-        if (this.state.active) {
+        if (active) {
           this.setState({
             active: false,
             timeout: timeout
@@ -46,28 +47,30 @@ export default class LangSwitchNew extends React.Component {
   }
 
   render() {
-    const values = ["ua", "ru", "en"];
-    const tooltips = ["Україньска", "Русский", "English"];
+    const { langPack, languageWord } = this.props;
+    const { active } = this.state;
+    const values = Object.keys(langPack.languages);
+    const tooltips = Object.values(langPack.languages);
 
     return (
       <div className="lang-button-group" onMouseLeave={this.leaveTimeout}>
         <button
           className="lang-button lang-button--large theme-background-second theme-color-main theme-fill-main"
           style={{
-            transform: `scale(1.${+this.state.active * 2})`
+            transform: `scale(1.${+active * 2})`
           }}
           onClick={this.onClick}
-          title={this.props.languageWord}
-          name={this.props.languageWord}
+          title={languageWord}
+          name={languageWord}
         >
           <EarthSVG
             className={classNames("earth", {
-              active: this.state.active
+              active: active
             })}
           />
           <CrossSVG
             className={classNames("cross", {
-              active: this.state.active
+              active: active
             })}
           />
         </button>
@@ -78,9 +81,9 @@ export default class LangSwitchNew extends React.Component {
             style={{
               transitionDelay: `${i * 0.1}s`,
               transform: `translateX(${
-                this.state.active ? 0 : 30 * (i + 1)
-              }px) scale(${+this.state.active})`,
-              pointerEvents: this.state.active ? "auto" : "none"
+                active ? 0 : 30 * (i + 1)
+              }px) scale(${+active})`,
+              pointerEvents: active ? "auto" : "none"
             }}
             onClick={() => this.pickLanguage(value)}
             title={tooltips[i]}
