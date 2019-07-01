@@ -4,10 +4,12 @@ import SwipeableViews from "react-swipeable-views";
 import { autoPlay, bindKeyboard } from "react-swipeable-views-utils";
 
 import { ReactComponent as HomeSVG } from "../../styles/assets/icons/home.svg";
-import { ReactComponent as AboutSVG } from "../../styles/assets/icons/about.svg";
+import { ReactComponent as AboutSVG } from "../../styles/assets/icons/profile.svg";
 import { ReactComponent as CalendarSVG } from "../../styles/assets/icons/calendar.svg";
-import { ReactComponent as PortfolioSVG } from "../../styles/assets/icons/portfolio.svg";
-import { ReactComponent as BlogSVG } from "../../styles/assets/icons/blog.svg";
+import { ReactComponent as PortfolioSVG } from "../../styles/assets/icons/briefcase.svg";
+import { ReactComponent as BlogSVG } from "../../styles/assets/icons/clip.svg";
+import { ReactComponent as LeftArrowSVG } from "../../styles/assets/icons/left-arrow.svg";
+import { ReactComponent as RightArrowSVG } from "../../styles/assets/icons/right-arrow.svg";
 
 const iconsInOrder = [
   <HomeSVG className="icon" key="home-icon-key" />,
@@ -82,16 +84,7 @@ export default class Navigation extends React.Component {
             name={langPack.left_button}
             onClick={() => this.handleChangeIndex(index - 1)}
           >
-            <svg viewBox="-2 -2 50 80">
-              <polyline
-                fill="none"
-                stroke={theme.secondColor}
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                points="45.63,75.8 0.375,38.087 45.63,0.375 "
-              />
-            </svg>
+            <LeftArrowSVG stroke={theme.secondColor} />
           </button>
           <button
             className={classnames("right", "arrow", {
@@ -101,16 +94,7 @@ export default class Navigation extends React.Component {
             name={langPack.right_button}
             onClick={() => this.handleChangeIndex(index + 1)}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 50 80">
-              <polyline
-                fill="none"
-                stroke={theme.secondColor}
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                points="0.375,0.375 45.63,38.087 0.375,75.8 "
-              />
-            </svg>
+            <RightArrowSVG stroke={theme.secondColor} />
           </button>
         </div>
       </div>

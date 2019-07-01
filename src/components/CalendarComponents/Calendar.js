@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { getEvents } from "../../services/calendar";
-import { ReactComponent as ContactSVG } from "../../styles/assets/icons/contact.svg";
+import { ReactComponent as ContactSVG } from "../../styles/assets/icons/envelope.svg";
 
 const oneDayMilliseconds = 1000 * 60 * 60 * 24;
 
