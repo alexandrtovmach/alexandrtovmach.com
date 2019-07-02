@@ -52,6 +52,11 @@
           mask-image: linear-gradient(to top, transparent 35%, black 55%);
         }
       }
+      .story-sprite {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
     }
   }
 

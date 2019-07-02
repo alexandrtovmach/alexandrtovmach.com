@@ -1,6 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import YouTube from "react-youtube";
+import SpriteAnimator from "react-sprite-animator";
 
 import eightBitSVGSrc from "../../styles/assets/images/8bit.svg";
 import sixteenBitSVGSrc from "../../styles/assets/images/16bit.svg";
@@ -43,6 +44,13 @@ export default class About extends React.Component {
               <h3>8-bit</h3>
               <p>{langPack["story_1"]}</p>
             </div>
+            <SpriteAnimator
+              sprite="https://cdn.codeandweb.com/blog/2016/05/10/how-to-create-a-sprite-sheet/spritestrip.png"
+              width={258}
+              height={258}
+              fps={15}
+              className="story-sprite"
+            />
           </article>
           <article
             className={classnames("image-right", "parallax")}
