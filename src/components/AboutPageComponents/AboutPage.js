@@ -3,7 +3,8 @@ import classnames from "classnames";
 import YouTube from "react-youtube";
 import SpriteAnimator from "react-sprite-animator";
 
-import eightBitSVGSrc from "../../styles/assets/images/8bit.svg";
+import eightBitSpriteSrc from "../../styles/assets/images/8bit_sprite.png";
+// import eightBitSVGSrc from "../../styles/assets/images/8bit.svg";
 import sixteenBitSVGSrc from "../../styles/assets/images/16bit.svg";
 import comicsSVGSrc from "../../styles/assets/images/comics.svg";
 import lowPolySVGSrc from "../../styles/assets/images/lowpoly.svg";
@@ -33,7 +34,7 @@ export default class About extends React.Component {
           <h1>{langPack["my_story"]}</h1>
           <article
             className={classnames("image-right", "parallax")}
-            style={{ backgroundImage: `url(${eightBitSVGSrc})` }}
+            // style={{ backgroundImage: `url(${eightBitSVGSrc})` }}
           >
             <div
               className={classnames(
@@ -45,10 +46,11 @@ export default class About extends React.Component {
               <p>{langPack["story_1"]}</p>
             </div>
             <SpriteAnimator
-              sprite="https://cdn.codeandweb.com/blog/2016/05/10/how-to-create-a-sprite-sheet/spritestrip.png"
-              width={258}
-              height={258}
-              fps={15}
+              sprite={eightBitSpriteSrc}
+              width={800}
+              height={800}
+              scale={7}
+              fps={5}
               className="story-sprite"
             />
           </article>
