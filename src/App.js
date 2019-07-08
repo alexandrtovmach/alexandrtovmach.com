@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 import Router from "./Router";
-import Header from "./components/HeaderComponent/Header";
+import Header from "./components/Header/Header";
 import {
   getThemeConfig,
   detectTheme,
