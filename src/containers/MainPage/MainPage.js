@@ -9,16 +9,16 @@ import { getAllByCategory } from "../../services/api/firebase";
 
 import "./MainPage.scss";
 
-const MainAboutComponent = asyncComponent(() =>
+const MainAbout = asyncComponent(() =>
   import("../../components/MainPage/MainAbout")
 );
-const MainCalendarComponent = asyncComponent(() =>
+const MainCalendar = asyncComponent(() =>
   import("../../components/MainPage/MainCalendar")
 );
-const MainPortfolioComponent = asyncComponent(() =>
+const MainPortfolio = asyncComponent(() =>
   import("../../components/MainPage/MainPortfolio")
 );
-const MainBlogComponent = asyncComponent(() =>
+const MainBlog = asyncComponent(() =>
   import("../../components/MainPage/MainBlog")
 );
 
@@ -30,18 +30,18 @@ export default ({ langPack, theme }) => (
         <span>{langPack.welcome_head}</span>
         <h1>{langPack.welcome_text}</h1>
       </div>
-      <MainAboutComponent
+      <MainAbout
         langPack={langPack}
         getAllByCategory={getAllByCategory}
         isEqual={isEqual}
       />
-      <MainCalendarComponent langPack={langPack} isEqual={isEqual} />
-      <MainPortfolioComponent
+      <MainCalendar langPack={langPack} isEqual={isEqual} />
+      <MainPortfolio
         langPack={langPack}
         getAllByCategory={getAllByCategory}
         isEqual={isEqual}
       />
-      <MainBlogComponent
+      <MainBlog
         langPack={langPack}
         getAllByCategory={getAllByCategory}
         isEqual={isEqual}
