@@ -1,0 +1,155 @@
+@import "constants.scss";
+.main-page {
+  width: calc(100% - 80px * 2);
+  height: 100%;
+  padding: 0 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: $mq-mobile) {
+    width: calc(100% - 20px * 2);
+    padding: 0 20px;
+  }
+}
+
+.main-index {
+  @extend .main-page;
+  background-color: inherit;
+  text-align: left;
+  flex-direction: column;
+
+  h1 {
+    width: 100%;
+    font-size: 60%;
+    font-weight: 200;
+    font-variant: small-caps;
+    margin: 1vh 0;
+  }
+  span {
+    font-size: 150%;
+    width: 100%;
+  }
+}
+.main-about {
+  @extend .main-page;
+  .about-text-block {
+    width: 100%;
+    h2 {
+      width: 100%;
+      font-size: 150%;
+      font-weight: 400;
+    }
+    p {
+      width: 100%;
+      font-weight: 200;
+      font-size: 60%;
+      font-variant: small-caps;
+      margin: 1vh 0;
+      .toltip-name {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+    .button {
+      margin-top: 0.5vh;
+    }
+  }
+}
+.main-calendar {
+  @extend .main-page;
+  .calendar-block {
+    width: 100%;
+    h2 {
+      width: 100%;
+      font-size: 150%;
+      font-weight: 400;
+    }
+    p {
+      width: 100%;
+      font-weight: 200;
+      font-size: 60%;
+      font-variant: small-caps;
+      margin: 1vh 0;
+      .toltip-name {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+    .button {
+      margin-top: 0.5vh;
+    }
+    .calendar-wrap {
+      width: 100%;
+      height: 30vh;
+      @media screen and (max-width: $mq-mobile) {
+        // height: 150px;
+      }
+    }
+  }
+}
+.main-portfolio {
+  @extend .main-page;
+  position: relative;
+  .overlapperForSupportTouchEvent {
+    position: absolute;
+    top: 20%;
+    bottom: 18%;
+    left: 50%;
+    right: 70px;
+    width: auto;
+    height: auto;
+    z-index: 3;
+    @media screen and (max-width: $mq-laptop) {
+      display: none;
+    }
+  }
+  .portfolio-text-block {
+    flex: 50%;
+    padding: 10px 20px 0 0;
+    margin: 20px 0;
+    h2 {
+      width: 100%;
+      font-size: 150%;
+      font-weight: 400;
+    }
+  }
+  .portfolio-devices-container {
+    flex: 50%;
+    width: 50%;
+    height: 40vw;
+  }
+  @media screen and (max-width: $mq-laptop) {
+    flex-direction: column;
+    .portfolio-text-block {
+      flex: 0 1 10%;
+      width: 100%;
+      .portfolio-project-text {
+        p {
+          display: none;
+        }
+      }
+    }
+    .portfolio-devices-container {
+      flex: 0 0 35%;
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+  @media screen and (max-width: $mq-mobile) {
+    .portfolio-devices-container {
+      max-width: 45vh;
+    }
+  }
+}
+.main-blog {
+  @extend .main-page;
+  flex-direction: column;
+  h2 {
+    width: 100%;
+    font-size: 150%;
+    font-weight: 400;
+  }
+  .blog-list {
+    margin: 20px 0;
+  }
+}

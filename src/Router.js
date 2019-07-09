@@ -4,21 +4,17 @@ import history from "./services/routerHistory";
 
 import asyncComponent from "./AsyncComponent";
 
-const MainPageContainer = asyncComponent(() =>
-  import("./containers/MainPageContainer")
+const MainPage = asyncComponent(() => import("./containers/MainPage/MainPage"));
+const AboutPage = asyncComponent(() =>
+  import("./containers/AboutPage/AboutPage")
 );
-const AboutPageContainer = asyncComponent(() =>
-  import("./containers/AboutPageContainer")
+const CalendarPage = asyncComponent(() =>
+  import("./containers/CalendarPage/CalendarPage")
 );
-const CalendarPageContainer = asyncComponent(() =>
-  import("./containers/CalendarPageContainer")
+const PortfolioPage = asyncComponent(() =>
+  import("./containers/PortfolioPage/PortfolioPage")
 );
-const PortfolioPageContainer = asyncComponent(() =>
-  import("./containers/PortfolioPageContainer")
-);
-const BlogPageContainer = asyncComponent(() =>
-  import("./containers/BlogPageContainer")
-);
+const BlogPage = asyncComponent(() => import("./containers/BlogPage/BlogPage"));
 
 export default ({ langPack, theme }) => {
   return (
@@ -28,7 +24,7 @@ export default ({ langPack, theme }) => {
           exact
           path="/"
           render={() => (
-            <MainPageContainer
+            <MainPage
               langPack={{ ...langPack, ...langPack["Main"] }}
               theme={theme}
             />
@@ -38,25 +34,21 @@ export default ({ langPack, theme }) => {
           exact
           path="/about"
           render={() => (
-            <AboutPageContainer
-              langPack={{ ...langPack, ...langPack["About"] }}
-            />
+            <AboutPage langPack={{ ...langPack, ...langPack["About"] }} />
           )}
         />
         <Route
           exact
           path="/calendar"
           render={() => (
-            <CalendarPageContainer
-              langPack={{ ...langPack, ...langPack["Calendar"] }}
-            />
+            <CalendarPage langPack={{ ...langPack, ...langPack["Calendar"] }} />
           )}
         />
         <Route
           exact
           path="/portfolio"
           render={() => (
-            <PortfolioPageContainer
+            <PortfolioPage
               langPack={{ ...langPack, ...langPack["Portfolio"] }}
             />
           )}
@@ -65,9 +57,7 @@ export default ({ langPack, theme }) => {
           exact
           path="/blog"
           render={() => (
-            <BlogPageContainer
-              langPack={{ ...langPack, ...langPack["Blog"] }}
-            />
+            <BlogPage langPack={{ ...langPack, ...langPack["Blog"] }} />
           )}
         />
       </Switch>
