@@ -9,9 +9,9 @@
 }
 
 span.highlighted {
-  font-size: 100%!important;
-  font-weight: 500!important;
-  opacity: 1!important;
+  font-size: 100% !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
 }
 
 body {
@@ -78,8 +78,8 @@ header {
 /* lang menu end */
 
 main {
-  width: calc(1000px - 2em*2);
-  height: calc(1600px - 2em*2);
+  width: calc(1000px - 2em * 2);
+  height: calc(1600px - 2em * 2);
   margin: 20vh auto;
   padding: 2em;
   box-shadow: 0 0 5em #eeeeee;
@@ -172,7 +172,9 @@ section.main-info > section h4 {
   font-size: 50%;
 }
 
-section.main-info > section p, section.main-info > section li, section.main-info > section span {
+section.main-info > section p,
+section.main-info > section li,
+section.main-info > section span {
   line-height: 1.2;
   font-weight: 100;
   font-size: 50%;
@@ -249,7 +251,6 @@ section.main-info > section.main-info-right > .link > picture > * {
 }
 /* print rules end */
 
-
 @media screen and (max-width: 1024px) {
   body {
     height: auto;
@@ -259,8 +260,8 @@ section.main-info > section.main-info-right > .link > picture > * {
     z-index: 5;
   }
   main {
-    width: calc(100% - 0.5em*2);
-    height: calc(100% - 0.5em*2);
+    width: calc(100% - 0.5em * 2);
+    height: calc(100% - 0.5em * 2);
     padding: 3em 0.5em 1em 0.5em;
     margin: 0;
   }
