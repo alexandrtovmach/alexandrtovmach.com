@@ -4,19 +4,17 @@ import * as d3 from "d3";
 import "./SkillsChart.scss";
 
 export default class SkillsChart extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      gWidth: 0,
-      gHeight: 0
-    };
-  }
+  state = {
+    gWidth: 0,
+    gHeight: 0
+  };
+  chartRef = React.createRef();
 
   componentDidMount() {
     requestAnimationFrame(() => {
       this.setState({
-        gWidth: this.chartRef.clientWidth,
-        gHeight: this.chartRef.clientHeight
+        gWidth: this.chartRef.current.clientWidth,
+        gHeight: this.chartRef.current.clientHeight
       });
       this.renderSunburst(this.props);
     });
@@ -29,17 +27,11 @@ export default class SkillsChart extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return (
-      !this.props.isEqual(this.state, nextState) ||
-      !this.props.isEqual(this.props, nextProps)
-    );
+    return !this.props.isEqual(this.state, nextState) || !this.props.isEqual(this.props, nextProps);
   }
 
   arcTweenData(a, i, node, x, arc) {
-    const oi = d3.interpolate(
-      { x0: a.x0s ? a.x0s : 0, x1: a.x1s ? a.x1s : 0 },
-      a
-    );
+    const oi = d3.interpolate({ x0: a.x0s ? a.x0s : 0, x1: a.x1s ? a.x1s : 0 }, a);
     function tween(t) {
       const b = oi(t);
       a.x0s = b.x0;
@@ -120,10 +112,7 @@ export default class SkillsChart extends React.Component {
             : d3.select(`#${this.props.keyId}-svg`).select("g"),
           // svg = !this.isBuilded? d3.select(`#${this.props.keyId}-svg`).append('g').attr('transform', `translate(${gWidth / 2},${gHeight / 2})`): d3.select(`#${this.props.keyId}-svg`).select('g'),
           x = d3.scaleLinear().range([0, 2 * Math.PI]),
-          y =
-            props.scale === "linear"
-              ? d3.scaleLinear().range([0, radius])
-              : d3.scaleSqrt().range([0, radius]),
+          y = props.scale === "linear" ? d3.scaleLinear().range([0, radius]) : d3.scaleSqrt().range([0, radius]),
           partition = d3.partition(),
           arc = d3
             .arc()
@@ -141,7 +130,7 @@ export default class SkillsChart extends React.Component {
 
   render() {
     return (
-      <div ref={ref => (this.chartRef = ref)} id={this.props.keyId}>
+      <div ref={this.chartRef} id={this.props.keyId}>
         <svg id={`${this.props.keyId}-svg`} />
       </div>
     );

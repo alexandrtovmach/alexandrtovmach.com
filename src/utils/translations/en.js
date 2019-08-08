@@ -6,8 +6,7 @@ export default {
   language: "Language",
   go_to_main_page: "Go to main page",
   welcome_head: "Welcome!",
-  welcome_text:
-    "This mini-site is designed to showcase my skills as a UI/UX designer and a web-developer",
+  welcome_text: "This mini-site is designed to showcase my skills as a UI/UX designer and a web-developer",
   about: "About",
   calendar: "Schedule",
   portfolio: "Portfolio",
@@ -24,8 +23,7 @@ export default {
   many: "many",
   about_text_p3: "and many other things.",
   calendar_head: "Short schedule",
-  calendar_text:
-    "Here you can see the short version of my personal Google calnedar, to know about my work plans.",
+  calendar_text: "Here you can see the short version of my personal Google calnedar, to know about my work plans.",
   portfolio_head: "Last projects",
   blog_head: "New articles",
   tags: ["Main", "About", "Schedule", "Portfolio", "Blog"],

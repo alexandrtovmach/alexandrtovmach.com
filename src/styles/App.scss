@@ -44,13 +44,7 @@
     display: block;
     padding: 1em 1.5em;
     transition: 0.5s;
-    background: linear-gradient(
-      to right,
-      $main-color 0%,
-      $main-color 50%,
-      transparent 50%,
-      transparent 100%
-    );
+    background: linear-gradient(to right, $main-color 0%, $main-color 50%, transparent 50%, transparent 100%);
     background-position: calc(100% + 1em) 0%;
     background-size: 200%;
     * {

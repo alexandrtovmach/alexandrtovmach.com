@@ -3,8 +3,10 @@ import Portfolio from "../../components/PortfolioPage/PortfolioPage";
 
 import "./PortfolioPage.scss";
 
-export default props => (
+const PortfolioPage = props => (
   <div className="page">
     <Portfolio {...props} />
   </div>
 );
+
+export default PortfolioPage;

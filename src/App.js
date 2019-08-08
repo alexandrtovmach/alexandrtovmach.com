@@ -3,16 +3,8 @@ import classNames from "classnames";
 
 import Router from "./Router";
 import Header from "./components/Header/Header";
-import {
-  getThemeConfig,
-  detectTheme,
-  updateMetaTagsTheme
-} from "./services/theme";
-import {
-  getLanguage,
-  getTranslations,
-  updateLangTag
-} from "./services/language";
+import { getThemeConfig, detectTheme, updateMetaTagsTheme } from "./services/theme";
+import { getLanguage, getTranslations, updateLangTag } from "./services/language";
 
 export default class App extends React.Component {
   constructor() {

@@ -20,10 +20,7 @@ export default class MainPortfolioComponent extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return (
-      !this.props.isEqual(this.state, nextState) ||
-      !this.props.isEqual(this.props, nextProps)
-    );
+    return !this.props.isEqual(this.state, nextState) || !this.props.isEqual(this.props, nextProps);
   }
 
   render() {
@@ -34,12 +31,7 @@ export default class MainPortfolioComponent extends React.Component {
         <div className="overlapperForSupportTouchEvent" />
         <div className="portfolio-text-block">
           <h2>{langPack.portfolio_head}</h2>
-          {project && (
-            <PortfolioProjectTextComponent
-              project={project}
-              locale={langPack._locale}
-            />
-          )}
+          {project && <PortfolioProjectTextComponent project={project} locale={langPack._locale} />}
           {/* <a
             href="/portfolio"
             className="button"

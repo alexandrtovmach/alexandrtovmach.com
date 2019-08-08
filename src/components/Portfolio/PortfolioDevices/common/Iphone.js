@@ -4,7 +4,7 @@ import Image from "react-simple-image";
 
 import IPhoneSVG from "../../../../styles/assets/images/IPhone_X.svg";
 
-export default ({ images }) => {
+const IPhone = ({ images }) => {
   return (
     <div className={classnames("device", "phone-device", "no-theme")}>
       <Image
@@ -14,13 +14,12 @@ export default ({ images }) => {
           "1600w": images.x2,
           "2500w": images.x3
         }}
-        sizes={[
-          { size: "80vw", mediaCondition: "(max-width: $mq-laptop)" },
-          { size: "50vw" }
-        ]}
+        sizes={[{ size: "80vw", mediaCondition: "(max-width: $mq-laptop)" }, { size: "50vw" }]}
         src={images.x1}
       />
       <img src={IPhoneSVG} alt="iPhone" />
     </div>
   );
 };
+
+export default IPhone;

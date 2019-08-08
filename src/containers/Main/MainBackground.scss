@@ -34,10 +34,7 @@ $amount: 20;
         left: random(90) * 1%;
         animation-duration: ((1 - $randomFactor) * $animationDuration) + 10s;
         transform-origin: (random(100) - 25) * 1vw (random(100) - 25) * 1vh;
-        box-shadow: ($particleSize * $randomFactor + 1)
-          0
-          $blurRadius
-          currentColor;
+        box-shadow: ($particleSize * $randomFactor + 1) 0 $blurRadius currentColor;
       }
     }
   }

@@ -3,8 +3,10 @@ import Calendar from "../../components/CalendarPage/CalendarPage";
 
 import "./CalendarPage.scss";
 
-export default props => (
+const CalendarPage = props => (
   <div className="page">
     <Calendar {...props} />
   </div>
 );
+
+export default CalendarPage;

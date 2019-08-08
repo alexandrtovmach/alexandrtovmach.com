@@ -45,11 +45,7 @@
         @media screen and (max-width: $mq-laptop) {
           width: 100%;
           padding-bottom: 100vh;
-          -webkit-mask-image: linear-gradient(
-            to top,
-            transparent 35%,
-            black 55%
-          );
+          -webkit-mask-image: linear-gradient(to top, transparent 35%, black 55%);
           mask-image: linear-gradient(to top, transparent 35%, black 55%);
         }
       }

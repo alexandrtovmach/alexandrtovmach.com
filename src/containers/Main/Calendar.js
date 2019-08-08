@@ -4,10 +4,7 @@ import CalendarComponent from "../../components/Calendar/Calendar";
 
 export default class MainCalendarComponent extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
-    return (
-      !this.props.isEqual(this.state, nextState) ||
-      !this.props.isEqual(this.props, nextProps)
-    );
+    return !this.props.isEqual(this.state, nextState) || !this.props.isEqual(this.props, nextProps);
   }
 
   render() {

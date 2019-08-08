@@ -3,8 +3,10 @@ import Blog from "../../components/BlogPage/BlogPage";
 
 import "./BlogPage.scss";
 
-export default props => (
+const BlogPage = props => (
   <div className="page">
     <Blog {...props} />
   </div>
 );
+
+export default BlogPage;

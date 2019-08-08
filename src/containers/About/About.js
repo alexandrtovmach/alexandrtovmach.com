@@ -23,25 +23,14 @@ export default class About extends React.Component {
   render() {
     const { langPack } = this.props;
     return (
-      <div
-        className={classnames(
-          "about-page",
-          "header-compensator",
-          "page-text-wrapper"
-        )}
-      >
+      <div className={classnames("about-page", "header-compensator", "page-text-wrapper")}>
         <section className={"about-story"}>
           <h1>{langPack["my_story"]}</h1>
           <article
             className={classnames("image-right", "parallax")}
             // style={{ backgroundImage: `url(${eightBitSVGSrc})` }}
           >
-            <div
-              className={classnames(
-                "article-text-content",
-                "theme-background-main"
-              )}
-            >
+            <div className={classnames("article-text-content", "theme-background-main")}>
               <h3>8-bit</h3>
               <p>{langPack["story_1"]}</p>
             </div>
@@ -58,12 +47,7 @@ export default class About extends React.Component {
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${sixteenBitSVGSrc})` }}
           >
-            <div
-              className={classnames(
-                "article-text-content",
-                "theme-background-main"
-              )}
-            >
+            <div className={classnames("article-text-content", "theme-background-main")}>
               <h3>16-bit</h3>
               <p>{langPack["story_2"]}</p>
             </div>
@@ -72,12 +56,7 @@ export default class About extends React.Component {
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${comicsSVGSrc})` }}
           >
-            <div
-              className={classnames(
-                "article-text-content",
-                "theme-background-main"
-              )}
-            >
+            <div className={classnames("article-text-content", "theme-background-main")}>
               <h3>Comics</h3>
               <p>{langPack["story_3"]}</p>
             </div>
@@ -86,12 +65,7 @@ export default class About extends React.Component {
             className={classnames("image-right", "parallax")}
             style={{ backgroundImage: `url(${lowPolySVGSrc})` }}
           >
-            <div
-              className={classnames(
-                "article-text-content",
-                "theme-background-main"
-              )}
-            >
+            <div className={classnames("article-text-content", "theme-background-main")}>
               <h3>Lowpoly</h3>
               <p>{langPack["story_4"]}</p>
             </div>
@@ -105,11 +79,7 @@ export default class About extends React.Component {
           </div> */}
         </section>
         <section className={"about-media"}>
-          <YouTube
-            videoId={"aUjBvuUdkhg"}
-            className={"media-youtube"}
-            containerClassName={"media-youtube-container"}
-          />
+          <YouTube videoId={"aUjBvuUdkhg"} className={"media-youtube"} containerClassName={"media-youtube-container"} />
         </section>
         <section className={"about-socials"}>
           <a

@@ -10,49 +10,28 @@ const Calendar = asyncComponent(() => import("./scenes/Calendar/Calendar"));
 const Portfolio = asyncComponent(() => import("./scenes/Portfolio/Portfolio"));
 const Blog = asyncComponent(() => import("./scenes/Blog/Blog"));
 
-export default ({ langPack, theme }) => {
+const Routing = ({ langPack, theme }) => {
   return (
     <Router history={history}>
       <Switch>
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <Main
-              langPack={{ ...langPack, ...langPack["Main"] }}
-              theme={theme}
-            />
-          )}
-        />
-        <Route
-          exact
-          path="/about"
-          render={() => (
-            <About langPack={{ ...langPack, ...langPack["About"] }} />
-          )}
-        />
-        <Route
-          exact
-          path="/calendar"
-          render={() => (
-            <Calendar langPack={{ ...langPack, ...langPack["Calendar"] }} />
-          )}
-        />
-        <Route
-          exact
-          path="/portfolio"
-          render={() => (
-            <Portfolio langPack={{ ...langPack, ...langPack["Portfolio"] }} />
-          )}
-        />
-        <Route
-          exact
-          path="/blog"
-          render={() => (
-            <Blog langPack={{ ...langPack, ...langPack["Blog"] }} />
-          )}
-        />
+        <Route exact path="/">
+          <Main langPack={{ ...langPack, ...langPack["Main"] }} theme={theme} />
+        </Route>
+        <Route exact path="/about">
+          <About langPack={{ ...langPack, ...langPack["About"] }} />
+        </Route>
+        <Route exact path="/calendar">
+          <Calendar langPack={{ ...langPack, ...langPack["Calendar"] }} />
+        </Route>
+        <Route exact path="/portfolio">
+          <Portfolio langPack={{ ...langPack, ...langPack["Portfolio"] }} />
+        </Route>
+        <Route exact path="/blog">
+          <Blog langPack={{ ...langPack, ...langPack["Blog"] }} />
+        </Route>
       </Switch>
     </Router>
   );
 };
+
+export default Routing;

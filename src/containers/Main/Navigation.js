@@ -24,24 +24,17 @@ const iconsInOrder = [
 const AutoPlaySwipeableViews = bindKeyboard(autoPlay(SwipeableViews));
 
 export default class Navigation extends React.Component {
-  constructor() {
-    super();
+  state = {
+    index: 0
+  };
 
-    this.state = {
-      index: 0
-    };
-
-    this.handleChangeIndex = this.handleChangeIndex.bind(this);
-    this.generateTabs = this.generateTabs.bind(this);
-  }
-
-  handleChangeIndex(newIndex) {
+  handleChangeIndex = newIndex => () => {
     this.setState({
       index: newIndex
     });
-  }
+  };
 
-  generateTabs(tagsArray) {
+  generateTabs = tagsArray => {
     const { index } = this.state;
     return tagsArray.map((el, i) => {
       return (
@@ -50,16 +43,14 @@ export default class Navigation extends React.Component {
           className={classnames("tab", {
             "active-tab": index === i
           })}
-          onClick={() => {
-            this.handleChangeIndex(i);
-          }}
+          onClick={this.handleChangeIndex(i)}
         >
           <span className="text">{el}</span>
           {iconsInOrder[i]}
         </div>
       );
     });
-  }
+  };
 
   render() {
     const { langPack, children, theme } = this.props;
@@ -84,7 +75,7 @@ export default class Navigation extends React.Component {
             })}
             title={langPack.left_button}
             name={langPack.left_button}
-            onClick={() => this.handleChangeIndex(index - 1)}
+            onClick={this.handleChangeIndex(index - 1)}
           >
             <LeftArrowSVG stroke={theme.secondColor} />
           </button>
@@ -94,7 +85,7 @@ export default class Navigation extends React.Component {
             })}
             title={langPack.right_button}
             name={langPack.right_button}
-            onClick={() => this.handleChangeIndex(index + 1)}
+            onClick={this.handleChangeIndex(index + 1)}
           >
             <RightArrowSVG stroke={theme.secondColor} />
           </button>

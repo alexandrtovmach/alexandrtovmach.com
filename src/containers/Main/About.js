@@ -3,42 +3,28 @@ import React from "react";
 import SkillsChart from "./SkillsChart";
 
 export default class MainAboutComponent extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      skillsData: {}
-    };
-
-    this.onTooltipUpdate = this.onTooltipUpdate.bind(this);
-  }
+  state = {
+    skillsData: {}
+  };
+  skillsTooltipRef = React.createRef();
 
   componentDidMount() {
     const { getAllByCategory } = this.props;
-    getAllByCategory &&
-      getAllByCategory("skills").then(skillsData =>
-        this.setState({ skillsData })
-      );
+    getAllByCategory && getAllByCategory("skills").then(skillsData => this.setState({ skillsData }));
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return (
-      !this.props.isEqual(this.state, nextState) ||
-      !this.props.isEqual(this.props, nextProps)
-    );
+    return !this.props.isEqual(this.state, nextState) || !this.props.isEqual(this.props, nextProps);
   }
 
   calcHowOldIAm(yearWord) {
-    const yearDiff = Math.floor(
-      (new Date() - new Date(1995, 9, 2)) / (1000 * 60 * 60 * 24 * 365)
-    );
-    return yearDiff.toString().slice(-1) === "1"
-      ? `${yearDiff} ${yearWord.one}`
-      : `${yearDiff} ${yearWord.many}`;
+    const yearDiff = Math.floor((new Date() - new Date(1995, 9, 2)) / (1000 * 60 * 60 * 24 * 365));
+    return yearDiff.toString().slice(-1) === "1" ? `${yearDiff} ${yearWord.one}` : `${yearDiff} ${yearWord.many}`;
   }
 
-  onTooltipUpdate(content) {
-    this.skillsTooltipRef.innerHTML = content;
-  }
+  onTooltipUpdate = content => {
+    this.skillsTooltipRef.current.innerHTML = content;
+  };
 
   render() {
     const { langPack, isEqual } = this.props;
@@ -48,15 +34,9 @@ export default class MainAboutComponent extends React.Component {
         <div className="about-text-block">
           <h2>{langPack.about_head}</h2>
           <p>
-            {langPack.about_text_p1}
-            &nbsp;
-            {this.calcHowOldIAm(langPack.years)}. &nbsp;
-            {langPack.about_text_p2}
-            &nbsp;
-            <span
-              ref={ref => (this.skillsTooltipRef = ref)}
-              className="toltip-name"
-            >
+            {langPack.about_text_p1} {this.calcHowOldIAm(langPack.years)}. &nbsp;
+            {langPack.about_text_p2}{" "}
+            <span ref={this.skillsTooltipRef} className="toltip-name">
               {langPack.many}
             </span>
             <br />
