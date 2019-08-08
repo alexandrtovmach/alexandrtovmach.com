@@ -41,7 +41,9 @@
     "eslint-plugin-react": "^7.12.4",
     "husky": "1.1.3",
     "lint-staged": "8.0.4",
-    "prettier": "1.15.1",
+    "prettier": "1.15.1"
+  },
+  "optionalPeerDependencies": {
     "responsive-images-generator": "^0.2.2",
     "webp-converter": "^2.2.2"
   },
