@@ -1,7 +1,7 @@
 import React from "react";
 
-import PortfolioProjectTextComponent from "../Portfolio/PortfolioText/PortfolioText";
-import DevicesComponent from "../Portfolio/PortfolioDevices/PortfolioDevices";
+import PortfolioProjectTextComponent from "../../components/Portfolio/PortfolioText/PortfolioText";
+import DevicesComponent from "../../components/Portfolio/PortfolioDevices/PortfolioDevices";
 
 export default class MainPortfolioComponent extends React.Component {
   constructor() {

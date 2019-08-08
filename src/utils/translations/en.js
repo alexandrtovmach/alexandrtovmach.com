@@ -53,5 +53,8 @@ export default {
   book_now: "Contact",
   book_now_title: "Free time",
   book_now_description: "Free day. Contact with me to book this time.",
-  my_story: "My Story"
+  my_story: "My Story",
+  Main: {
+    openPrintableCV: "Open printable CV"
+  }
 };
