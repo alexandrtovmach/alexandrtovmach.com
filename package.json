@@ -5,23 +5,22 @@
   "dependencies": {
     "classnames": "2.2.6",
     "d3": "^5.7.0",
-    "dotenv": "^6.1.0",
-    "firebase": "^5.5.8",
+    "dotenv": "^8.0.0",
+    "firebase": "^6.3.4",
     "get-browser-language": "^1.0.0",
     "lodash.isequal": "^4.5.0",
     "node-sass": "^4.10.0",
     "query-string": "^6.2.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
-    "react-intl": "^2.7.2",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "2.1.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1",
     "react-simple-image": "^1.0.0",
     "react-sprite-animator": "^1.2.0",
     "react-swipeable-views": "^0.13.0",
-    "react-switch": "^3.0.4",
+    "react-switch": "^5.0.1",
     "react-youtube": "^7.9.0",
-    "screenfull": "^3.3.3",
+    "screenfull": "^4.2.1",
     "suncalc": "^1.8.0"
   },
   "scripts": {
@@ -39,9 +38,11 @@
   },
   "devDependencies": {
     "eslint-plugin-react": "^7.12.4",
-    "husky": "1.1.3",
-    "lint-staged": "8.0.4",
-    "prettier": "1.15.1",
+    "husky": "3.0.3",
+    "lint-staged": "9.2.1",
+    "prettier": "1.18.2"
+  },
+  "optionalPeerDependencies": {
     "responsive-images-generator": "^0.2.2",
     "webp-converter": "^2.2.2"
   },

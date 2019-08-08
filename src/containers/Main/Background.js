@@ -2,7 +2,7 @@ import React from "react";
 
 import "./MainBackground.scss";
 
-export default () => {
+const Background = () => {
   return (
     <div className="background-main">
       <span />
@@ -18,3 +18,5 @@ export default () => {
     </div>
   );
 };
+
+export default Background;

@@ -5,10 +5,7 @@ import { renderDateString } from "../../../services/calendar";
 
 import "./PortfolioText.scss";
 
-export default ({
-  project: { name, description, price, start, end },
-  locale
-}) => {
+const PortfolioText = ({ project: { name, description, price, start, end }, locale }) => {
   return (
     <div className="portfolio-project-text post">
       <h3>{name && name[locale]}</h3>
@@ -32,3 +29,5 @@ export default ({
     </div>
   );
 };
+
+export default PortfolioText;

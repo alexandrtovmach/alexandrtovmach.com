@@ -7,34 +7,27 @@ import { ReactComponent as EarthSVG } from "../../styles/assets/icons/earth.svg"
 import "./LanguageMenu.scss";
 
 export default class LangSwitchNew extends React.Component {
-  constructor() {
-    super();
+  state = {
+    active: false,
+    timeout: null
+  };
 
-    this.state = {
-      active: false,
-      timeout: null
-    };
-
-    this.onClick = this.onClick.bind(this);
-    this.leaveTimeout = this.leaveTimeout.bind(this);
-  }
-
-  onClick() {
+  handleLanguageClick = () => {
     this.setState({
       active: !this.state.active,
       timeout: null
     });
-  }
+  };
 
-  pickLanguage(lang) {
+  pickLanguage = lang => () => {
     this.props.handleLanguageChange(lang);
     this.setState({
       active: !this.state.active,
       timeout: null
     });
-  }
+  };
 
-  leaveTimeout() {
+  leaveTimeout = () => {
     const { active, timeout } = this.state;
     if (active && !timeout) {
       const timeout = setTimeout(() => {
@@ -46,7 +39,7 @@ export default class LangSwitchNew extends React.Component {
         }
       }, 1000);
     }
-  }
+  };
 
   render() {
     const { langPack, languageWord } = this.props;
@@ -61,7 +54,7 @@ export default class LangSwitchNew extends React.Component {
           style={{
             transform: `scale(1.${+active * 2})`
           }}
-          onClick={this.onClick}
+          onClick={this.handleLanguageClick}
           title={languageWord}
           name={languageWord}
         >
@@ -82,12 +75,10 @@ export default class LangSwitchNew extends React.Component {
             className="lang-button theme-background-second theme-color-main theme-fill-main"
             style={{
               transitionDelay: `${i * 0.1}s`,
-              transform: `translateX(${
-                active ? 0 : 30 * (i + 1)
-              }px) scale(${+active})`,
+              transform: `translateX(${active ? 0 : 30 * (i + 1)}px) scale(${+active})`,
               pointerEvents: active ? "auto" : "none"
             }}
-            onClick={() => this.pickLanguage(value)}
+            onClick={this.pickLanguage(value)}
             title={tooltips[i]}
             name={tooltips[i]}
           >

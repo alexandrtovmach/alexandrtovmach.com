@@ -12,11 +12,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <a
-          className="logo theme-fill-second"
-          href="/"
-          title={this.props.langPack.go_to_main_page}
-        >
+        <a className="logo theme-fill-second" href="/" title={this.props.langPack.go_to_main_page}>
           <LogoSVG />
         </a>
         <div className="control-panel">

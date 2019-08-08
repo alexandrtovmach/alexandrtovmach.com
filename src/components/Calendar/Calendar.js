@@ -31,10 +31,7 @@ export default class Calendar extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return (
-      !this.props.isEqual(this.state, nextState) ||
-      !this.props.isEqual(this.props, nextProps)
-    );
+    return !this.props.isEqual(this.state, nextState) || !this.props.isEqual(this.props, nextProps);
   }
 
   _makeArrOfDates(base = Date.now(), count = 10) {
@@ -78,25 +75,17 @@ export default class Calendar extends React.Component {
             <div
               key={"date-" + date}
               className={classNames("calendar-item", {
-                holiday: currentEvents.some(
-                  event => event.tags && event.tags.includes("holiday")
-                ),
+                holiday: currentEvents.some(event => event.tags && event.tags.includes("holiday")),
                 freeday: !currentEvents.length
               })}
             >
               {currentEvents.length ? (
                 currentEvents.map((event, i) => (
-                  <div
-                    key={`date-event-${date}-${i}`}
-                    className="calendar-event"
-                  >
+                  <div key={`date-event-${date}-${i}`} className="calendar-event">
                     <div className="event-tags">
                       {event.tags &&
                         event.tags.map(tag => (
-                          <div
-                            key={"date-tag-" + date + tag}
-                            className="event-tag"
-                          >
+                          <div key={"date-tag-" + date + tag} className="event-tag">
                             {tag}
                           </div>
                         ))}
@@ -107,17 +96,9 @@ export default class Calendar extends React.Component {
                 ))
               ) : (
                 <div className="event-freeday">
-                  <div className="event-description">
-                    {langPack.book_now_description}
-                  </div>
-                  <a
-                    href="mailto:alexandrtovmach@gmail.com"
-                    className="event-contact-button"
-                  >
-                    <ContactSVG
-                      className="event-contact-button-svg"
-                      alt={langPack.book_now}
-                    />
+                  <div className="event-description">{langPack.book_now_description}</div>
+                  <a href="mailto:alexandrtovmach@gmail.com" className="event-contact-button">
+                    <ContactSVG className="event-contact-button-svg" alt={langPack.book_now} />
                   </a>
                 </div>
               )}

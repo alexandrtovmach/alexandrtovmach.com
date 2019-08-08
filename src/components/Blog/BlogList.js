@@ -25,12 +25,7 @@ export default class BlogListComponent extends React.Component {
     return (
       <div className="blog-list">
         {posts.map((post, i) => (
-          <BlogLinkComponent
-            key={"blog-item-link" + i}
-            post={post}
-            locale={locale}
-            langPack={langPack}
-          />
+          <BlogLinkComponent key={"blog-item-link" + i} post={post} locale={locale} langPack={langPack} />
         ))}
       </div>
     );

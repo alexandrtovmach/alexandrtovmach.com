@@ -9,9 +9,7 @@ export function detectTheme() {
 }
 
 export function updateMetaTagsTheme(newColor) {
-  document
-    .querySelector('meta[name="theme-color"]')
-    .setAttribute("content", newColor);
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", newColor);
 }
 
 const themes = {
