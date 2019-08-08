@@ -32,6 +32,13 @@
     z-index: 2;
     color: $dark-main-color;
     transition: 0.5s;
+
+    &.button-outline {
+      background-color: transparent;
+      border-color: $main-color;
+      border-width: 1px;
+      border-style: solid;
+    }
   }
   .post {
     display: block;

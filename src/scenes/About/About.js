@@ -1,5 +1,5 @@
 import React from "react";
-import About from "../../components/AboutPage/AboutPage";
+import About from "../../containers/About/About";
 
 import "./AboutPage.scss";
 

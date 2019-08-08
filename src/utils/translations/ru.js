@@ -54,6 +54,9 @@ export default {
   book_now_title: "Свободный день",
   book_now_description: "Свободный день. Забронируйте время сейчас.",
   my_story: "Моя история",
+  Main: {
+    openPrintableCV: "Печатная версия резюме"
+  },
   About: {
     story_1: ""
   }
