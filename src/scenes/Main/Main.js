@@ -1,26 +1,22 @@
 import React from "react";
 import isEqual from "lodash.isequal";
 
-import MainBackground from "../../components/MainPage/MainBackground";
-import Navigation from "../../components/MainPage/Navigation";
+import MainBackground from "../../containers/Main/Background";
+import Navigation from "../../containers/Main/Navigation";
 import asyncComponent from "../../AsyncComponent";
 
 import { getAllByCategory } from "../../services/api/firebase";
 
 import "./MainPage.scss";
 
-const MainAbout = asyncComponent(() =>
-  import("../../components/MainPage/MainAbout")
-);
+const MainAbout = asyncComponent(() => import("../../containers/Main/About"));
 const MainCalendar = asyncComponent(() =>
-  import("../../components/MainPage/MainCalendar")
+  import("../../containers/Main/Calendar")
 );
 const MainPortfolio = asyncComponent(() =>
-  import("../../components/MainPage/MainPortfolio")
+  import("../../containers/Main/Portfolio")
 );
-const MainBlog = asyncComponent(() =>
-  import("../../components/MainPage/MainBlog")
-);
+const MainBlog = asyncComponent(() => import("../../containers/Main/Blog"));
 
 export default ({ langPack, theme }) => (
   <div className="page">
