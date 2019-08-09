@@ -25,8 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "minify-public-css": "html-minifier --input-dir ./public/noscriptstyles --output-dir ./build/noscriptstyles --config-file ./minifier.json",
-    "minify-public-html": "html-minifier --input-dir ./public/cv --output-dir ./build --config-file ./minifier.json",
+    "minify-public-html": "html-minifier --file-ext html --input-dir ./build --output-dir ./build --config-file ./minifier.json",
+    "minify-public-css": "html-minifier --file-ext css --input-dir ./build --output-dir ./build --config-file ./minifier.json",
     "postbuild": "npm run minify-public-css && npm run minify-public-html",
     "build": "react-scripts build && npm run postbuild",
     "test": "react-scripts test --env=jsdom",
