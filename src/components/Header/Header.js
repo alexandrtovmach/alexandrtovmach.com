@@ -25,7 +25,7 @@ export default class Header extends React.Component {
               langPack={langPack}
             />
           </div>
-          <div
+          <label
             style={{ fontSize: "initial" }}
             title={isLightMode ? langPack.switch_to_night_mode : langPack.switch_to_day_mode}
           >
@@ -45,7 +45,7 @@ export default class Header extends React.Component {
               checkedIcon={<MoonSVG />}
               uncheckedIcon={<SunSVG />}
             />
-          </div>
+          </label>
         </div>
       </div>
     );
