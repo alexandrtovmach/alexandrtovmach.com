@@ -1,19 +1,17 @@
 import React from "react";
 import isEqual from "lodash.isequal";
 
-import MainBackground from "../../containers/MainPage/Background";
-import Navigation from "../../containers/MainPage/Navigation";
-import asyncComponent from "../../AsyncComponent";
-
 import { getAllByCategory } from "../../services/api/firebase";
 
 import "./MainPage.scss";
 
-const MainHome = asyncComponent(() => import("../../containers/MainPage/HomeSection"));
-const MainAbout = asyncComponent(() => import("../../containers/MainPage/AboutSection"));
-const MainCalendar = asyncComponent(() => import("../../containers/MainPage/CalendarSection"));
-const MainPortfolio = asyncComponent(() => import("../../containers/MainPage/PortfolioSection"));
-const MainBlog = asyncComponent(() => import("../../containers/MainPage/BlogSection"));
+const MainBackground = React.lazy(() => import("../../containers/MainPage/Background"));
+const Navigation = React.lazy(() => import("../../containers/MainPage/Navigation"));
+const MainHome = React.lazy(() => import("../../containers/MainPage/HomeSection"));
+const MainAbout = React.lazy(() => import("../../containers/MainPage/AboutSection"));
+const MainCalendar = React.lazy(() => import("../../containers/MainPage/CalendarSection"));
+const MainPortfolio = React.lazy(() => import("../../containers/MainPage/PortfolioSection"));
+const MainBlog = React.lazy(() => import("../../containers/MainPage/BlogSection"));
 
 const MainPage = ({ langPack, theme }) => (
   <div className="page">
