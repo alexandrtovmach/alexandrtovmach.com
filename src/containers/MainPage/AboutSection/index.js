@@ -34,8 +34,8 @@ export default class MainAboutComponent extends React.Component {
     return (
       <div className="main-about">
         <div className="about-text-block">
-          <p>{langPack.about_head}</p>
-          <h2>
+          <p className="h1">{langPack.about_head}</p>
+          <h2 className="p1">
             {langPack.about_text_p1} {this.calcHowOldIAm(langPack.years)}. &nbsp;
             {langPack.about_text_p2}{" "}
             <span ref={this.skillsTooltipRef} className="toltip-name">

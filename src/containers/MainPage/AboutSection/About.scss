@@ -5,21 +5,9 @@
   @extend .main-page-section;
   .about-text-block {
     width: 100%;
-    p {
-      width: 100%;
-      font-size: 150%;
-      font-weight: 400;
-    }
-    h2 {
-      width: 100%;
-      font-weight: 200;
-      font-size: 60%;
-      font-variant: small-caps;
-      margin: 1vh 0;
-      .toltip-name {
-        display: inline-block;
-        text-align: center;
-      }
+    .toltip-name {
+      display: inline-block;
+      text-align: center;
     }
     .button {
       margin-top: 0.5vh;

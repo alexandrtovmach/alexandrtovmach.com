@@ -12,20 +12,20 @@ import "./StorySection.scss";
 const StorySection = ({ langPack }) => {
   return (
     <section className="about-story">
-      <h1>{langPack["my_story"]}</h1>
+      <h1 className="h1">{langPack["my_story"]}</h1>
       <article>
         <div>
-          <h3>8-bit</h3>
-          <p>{langPack["story_1"]}</p>
+          <legend>8-bit</legend>
+          <SpriteAnimator
+            sprite={eightBitSpriteSrc}
+            width={800}
+            height={800}
+            scale={3}
+            fps={5}
+            className="story-sprite"
+          />
+          <p className="p1">{langPack["story_1"]}</p>
         </div>
-        <SpriteAnimator
-          sprite={eightBitSpriteSrc}
-          width={800}
-          height={800}
-          scale={7}
-          fps={5}
-          className="story-sprite"
-        />
       </article>
     </section>
   );

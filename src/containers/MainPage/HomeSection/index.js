@@ -11,8 +11,8 @@ export default class MainPortfolioComponent extends React.Component {
     const { langPack } = this.props;
     return (
       <div className="main-home">
-        <span>{langPack.welcome_head}</span>
-        <h1>{langPack.welcome_text}</h1>
+        <span className="h1">{langPack.welcome_head}</span>
+        <h1 className="p1">{langPack.welcome_text}</h1>
       </div>
     );
   }

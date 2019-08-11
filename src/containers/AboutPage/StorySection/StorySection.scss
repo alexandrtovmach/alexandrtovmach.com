@@ -3,7 +3,6 @@
 .about-story {
   article {
     font-weight: 100;
-    font-size: 80%;
     .article-text-content {
       width: 60%;
       opacity: 0.8;
@@ -17,10 +16,7 @@
       }
     }
     .story-sprite {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      transform: rotateY(180deg);
+      margin: auto;
     }
   }
 }

@@ -4,11 +4,6 @@
 .main-blog {
   @extend .main-page-section;
   flex-direction: column;
-  h2 {
-    width: 100%;
-    font-size: 150%;
-    font-weight: 400;
-  }
   .blog-list {
     margin: 20px 0;
   }
