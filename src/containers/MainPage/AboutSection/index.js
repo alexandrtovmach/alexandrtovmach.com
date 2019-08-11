@@ -1,6 +1,8 @@
 import React from "react";
 
-import SkillsChart from "./SkillsChart";
+import SkillsChart from "../../../components/SkillsChart";
+
+import "./About.scss";
 
 export default class MainAboutComponent extends React.Component {
   state = {

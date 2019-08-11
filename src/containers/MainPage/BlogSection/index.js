@@ -1,6 +1,8 @@
 import React from "react";
 
-import BlogListComponent from "../../components/Blog/BlogList";
+import BlogListComponent from "../../../components/Blog/BlogList";
+
+import "./Blog.scss";
 
 export default class MainPortfolioComponent extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {

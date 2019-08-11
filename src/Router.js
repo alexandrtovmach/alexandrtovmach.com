@@ -4,11 +4,11 @@ import history from "./services/routerHistory";
 
 import asyncComponent from "./AsyncComponent";
 
-const Main = asyncComponent(() => import("./scenes/Main/Main"));
-const About = asyncComponent(() => import("./scenes/About/About"));
-const Calendar = asyncComponent(() => import("./scenes/Calendar/Calendar"));
-const Portfolio = asyncComponent(() => import("./scenes/Portfolio/Portfolio"));
-const Blog = asyncComponent(() => import("./scenes/Blog/Blog"));
+const Main = asyncComponent(() => import("./scenes/Main"));
+const About = asyncComponent(() => import("./scenes/About"));
+const Calendar = asyncComponent(() => import("./scenes/Calendar"));
+const Portfolio = asyncComponent(() => import("./scenes/Portfolio"));
+const Blog = asyncComponent(() => import("./scenes/Blog"));
 
 const Routing = ({ langPack, theme }) => {
   return (

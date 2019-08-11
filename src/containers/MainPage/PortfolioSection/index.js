@@ -1,7 +1,9 @@
 import React from "react";
 
-import PortfolioProjectTextComponent from "../../components/Portfolio/PortfolioText/PortfolioText";
-import DevicesComponent from "../../components/Portfolio/PortfolioDevices/PortfolioDevices";
+import PortfolioProjectTextComponent from "../../../components/Portfolio/PortfolioText/PortfolioText";
+import DevicesComponent from "../../../components/Portfolio/PortfolioDevices/PortfolioDevices";
+
+import "./Portfolio.scss";
 
 export default class MainPortfolioComponent extends React.Component {
   constructor() {

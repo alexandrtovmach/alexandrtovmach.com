@@ -1,27 +1,25 @@
 import React from "react";
 import isEqual from "lodash.isequal";
 
-import MainBackground from "../../containers/Main/Background";
-import Navigation from "../../containers/Main/Navigation";
+import MainBackground from "../../containers/MainPage/Background";
+import Navigation from "../../containers/MainPage/Navigation";
 import asyncComponent from "../../AsyncComponent";
 
 import { getAllByCategory } from "../../services/api/firebase";
 
 import "./MainPage.scss";
 
-const MainAbout = asyncComponent(() => import("../../containers/Main/About"));
-const MainCalendar = asyncComponent(() => import("../../containers/Main/Calendar"));
-const MainPortfolio = asyncComponent(() => import("../../containers/Main/Portfolio"));
-const MainBlog = asyncComponent(() => import("../../containers/Main/Blog"));
+const MainHome = asyncComponent(() => import("../../containers/MainPage/HomeSection"));
+const MainAbout = asyncComponent(() => import("../../containers/MainPage/AboutSection"));
+const MainCalendar = asyncComponent(() => import("../../containers/MainPage/CalendarSection"));
+const MainPortfolio = asyncComponent(() => import("../../containers/MainPage/PortfolioSection"));
+const MainBlog = asyncComponent(() => import("../../containers/MainPage/BlogSection"));
 
 const MainPage = ({ langPack, theme }) => (
   <div className="page">
     <MainBackground />
     <Navigation theme={theme} langPack={langPack}>
-      <div className="main-index">
-        <span>{langPack.welcome_head}</span>
-        <h1>{langPack.welcome_text}</h1>
-      </div>
+      <MainHome langPack={langPack} isEqual={isEqual} />
       <MainAbout langPack={langPack} getAllByCategory={getAllByCategory} isEqual={isEqual} />
       <MainCalendar langPack={langPack} isEqual={isEqual} />
       <MainPortfolio langPack={langPack} getAllByCategory={getAllByCategory} isEqual={isEqual} />

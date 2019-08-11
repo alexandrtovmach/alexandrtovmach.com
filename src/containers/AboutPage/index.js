@@ -18,6 +18,8 @@ import { ReactComponent as NpmSVG } from "../../styles/assets/icons/npm.svg";
 import { ReactComponent as BehanceSVG } from "../../styles/assets/icons/behance.svg";
 import { ReactComponent as DribbbleSVG } from "../../styles/assets/icons/dribbble.svg";
 
+import "./AboutTemporary.scss";
+
 export default class About extends React.Component {
   render() {
     const { langPack } = this.props;

@@ -1,7 +1,5 @@
 import React from "react";
-import About from "../../containers/About/About";
-
-import "./AboutPage.scss";
+import About from "../../containers/AboutPage";
 
 const AboutPage = props => (
   <div className="page">
