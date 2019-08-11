@@ -1,6 +1,8 @@
 import React from "react";
 
-import BlogListComponent from "../../components/Blog/BlogList";
+import BlogListComponent from "../../../components/Blog/BlogList";
+
+import "./Blog.scss";
 
 export default class MainPortfolioComponent extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
@@ -11,7 +13,7 @@ export default class MainPortfolioComponent extends React.Component {
     const { langPack } = this.props;
     return (
       <div className="main-blog">
-        <h2>{langPack.blog_head}</h2>
+        <h2 className="h1">{langPack.blog_head}</h2>
         <BlogListComponent items={3} infinityScroll={false} locale={langPack._locale} langPack={langPack} />
         {/* <a href="/blog" className="button" title={langPack.blog}>
           {langPack.more}

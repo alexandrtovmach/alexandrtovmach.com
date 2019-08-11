@@ -1,7 +1,9 @@
 import React from "react";
 
-import PortfolioProjectTextComponent from "../../components/Portfolio/PortfolioText/PortfolioText";
-import DevicesComponent from "../../components/Portfolio/PortfolioDevices/PortfolioDevices";
+import PortfolioProjectTextComponent from "../../../components/Portfolio/PortfolioText/PortfolioText";
+import DevicesComponent from "../../../components/Portfolio/PortfolioDevices/PortfolioDevices";
+
+import "./Portfolio.scss";
 
 export default class MainPortfolioComponent extends React.Component {
   constructor() {
@@ -30,7 +32,7 @@ export default class MainPortfolioComponent extends React.Component {
       <div className="main-portfolio">
         <div className="overlapperForSupportTouchEvent" />
         <div className="portfolio-text-block">
-          <h2>{langPack.portfolio_head}</h2>
+          <h2 className="h1">{langPack.portfolio_head}</h2>
           {project && <PortfolioProjectTextComponent project={project} locale={langPack._locale} />}
           {/* <a
             href="/portfolio"

@@ -3,13 +3,13 @@ import classnames from "classnames";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay, bindKeyboard } from "react-swipeable-views-utils";
 
-import { ReactComponent as HomeSVG } from "../../styles/assets/icons/home.svg";
-import { ReactComponent as AboutSVG } from "../../styles/assets/icons/profile.svg";
-import { ReactComponent as CalendarSVG } from "../../styles/assets/icons/calendar.svg";
-import { ReactComponent as PortfolioSVG } from "../../styles/assets/icons/briefcase.svg";
-import { ReactComponent as BlogSVG } from "../../styles/assets/icons/clip.svg";
-import { ReactComponent as LeftArrowSVG } from "../../styles/assets/icons/left-arrow.svg";
-import { ReactComponent as RightArrowSVG } from "../../styles/assets/icons/right-arrow.svg";
+import { ReactComponent as HomeSVG } from "../../../styles/assets/icons/home.svg";
+import { ReactComponent as AboutSVG } from "../../../styles/assets/icons/profile.svg";
+import { ReactComponent as CalendarSVG } from "../../../styles/assets/icons/calendar.svg";
+import { ReactComponent as PortfolioSVG } from "../../../styles/assets/icons/briefcase.svg";
+import { ReactComponent as BlogSVG } from "../../../styles/assets/icons/clip.svg";
+import { ReactComponent as LeftArrowSVG } from "../../../styles/assets/icons/left-arrow.svg";
+import { ReactComponent as RightArrowSVG } from "../../../styles/assets/icons/right-arrow.svg";
 
 import "./Navigation.scss";
 

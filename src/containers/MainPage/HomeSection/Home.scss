@@ -1,0 +1,9 @@
+@import "constants.scss";
+@import "../../../scenes/Main/MainPage.scss";
+
+.main-home {
+  @extend .main-page-section;
+  background-color: inherit;
+  text-align: left;
+  flex-direction: column;
+}

@@ -1,6 +1,8 @@
 import React from "react";
 
-import CalendarComponent from "../../components/Calendar/Calendar";
+import CalendarComponent from "../../../components/Calendar/Calendar";
+
+import "./Calendar.scss";
 
 export default class MainCalendarComponent extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
@@ -12,8 +14,8 @@ export default class MainCalendarComponent extends React.Component {
     return (
       <div className={"main-calendar"}>
         <div className="calendar-block">
-          <h2>{langPack.calendar_head}</h2>
-          <p>{langPack.calendar_text}</p>
+          <h2 className="h1">{langPack.calendar_head}</h2>
+          <p className="p1">{langPack.calendar_text}</p>
           <div className="calendar-wrap">
             <CalendarComponent langPack={langPack} isEqual={isEqual} />
           </div>
