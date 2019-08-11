@@ -4,10 +4,9 @@ import YouTube from "react-youtube";
 import SpriteAnimator from "react-sprite-animator";
 
 import eightBitSpriteSrc from "../../styles/assets/images/8bit_sprite.png";
-// import eightBitSVGSrc from "../../styles/assets/images/8bit.svg";
-import sixteenBitSVGSrc from "../../styles/assets/images/16bit.svg";
-import comicsSVGSrc from "../../styles/assets/images/comics.svg";
-import lowPolySVGSrc from "../../styles/assets/images/lowpoly.svg";
+// import sixteenBitSVGSrc from "../../styles/assets/images/16bit.svg";
+// import comicsSVGSrc from "../../styles/assets/images/comics.svg";
+// import lowPolySVGSrc from "../../styles/assets/images/lowpoly.svg";
 
 import { ReactComponent as GitHubSVG } from "../../styles/assets/icons/github.svg";
 import { ReactComponent as TwitterSVG } from "../../styles/assets/icons/twitter.svg";
@@ -24,13 +23,10 @@ export default class About extends React.Component {
     const { langPack } = this.props;
     return (
       <div className={classnames("about-page", "header-compensator", "page-text-wrapper")}>
-        <section className={"about-story"}>
+        <section className="about-story">
           <h1>{langPack["my_story"]}</h1>
-          <article
-            className={classnames("image-right", "parallax")}
-            // style={{ backgroundImage: `url(${eightBitSVGSrc})` }}
-          >
-            <div className={classnames("article-text-content", "theme-background-main")}>
+          <article>
+            <div>
               <h3>8-bit</h3>
               <p>{langPack["story_1"]}</p>
             </div>
@@ -43,40 +39,6 @@ export default class About extends React.Component {
               className="story-sprite"
             />
           </article>
-          <article
-            className={classnames("image-right", "parallax")}
-            style={{ backgroundImage: `url(${sixteenBitSVGSrc})` }}
-          >
-            <div className={classnames("article-text-content", "theme-background-main")}>
-              <h3>16-bit</h3>
-              <p>{langPack["story_2"]}</p>
-            </div>
-          </article>
-          <article
-            className={classnames("image-right", "parallax")}
-            style={{ backgroundImage: `url(${comicsSVGSrc})` }}
-          >
-            <div className={classnames("article-text-content", "theme-background-main")}>
-              <h3>Comics</h3>
-              <p>{langPack["story_3"]}</p>
-            </div>
-          </article>
-          <article
-            className={classnames("image-right", "parallax")}
-            style={{ backgroundImage: `url(${lowPolySVGSrc})` }}
-          >
-            <div className={classnames("article-text-content", "theme-background-main")}>
-              <h3>Lowpoly</h3>
-              <p>{langPack["story_4"]}</p>
-            </div>
-          </article>
-
-          {/* <div className="alex-bubble">
-            <div className="alex-bubble-content">
-              <span>How to create image like this?</span>
-              <a href="https://youtube.com">Watch on my YouTube</a>
-            </div>
-          </div> */}
         </section>
         <section className={"about-media"}>
           <YouTube videoId={"aUjBvuUdkhg"} className={"media-youtube"} containerClassName={"media-youtube-container"} />
