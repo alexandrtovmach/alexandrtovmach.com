@@ -14,18 +14,33 @@ const StorySection = ({ langPack }) => {
     <section className="about-story">
       <h1 className="h1">{langPack["my_story"]}</h1>
       <article>
-        <div>
-          <legend>8-bit</legend>
+        <div className="sprite-wrapper center">
           <SpriteAnimator
             sprite={eightBitSpriteSrc}
             width={800}
             height={800}
             scale={3}
-            fps={5}
+            fps={4}
             className="story-sprite"
           />
-          <p className="p1">{langPack["story_1"]}</p>
         </div>
+        <h2 className="h2">{langPack["8_bit"]}</h2>
+        <p className="p1">{langPack["story_1_1"]}</p>
+        <p className="p1">{langPack["story_1_2"]}</p>
+      </article>
+      <article>
+        <div className="sprite-wrapper center">
+          <SpriteAnimator
+            sprite={eightBitSpriteSrc}
+            width={800}
+            height={800}
+            scale={3}
+            fps={4}
+            className="story-sprite"
+          />
+        </div>
+        <h2 className="h2">{langPack["16_bit"]}</h2>
+        <p className="p1">{langPack["story_2_1"]}</p>
       </article>
     </section>
   );

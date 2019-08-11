@@ -15,8 +15,12 @@
         mask-image: linear-gradient(to top, transparent 35%, black 55%);
       }
     }
-    .story-sprite {
-      margin: auto;
+    .sprite-wrapper {
+      width: 100%;
+      height: 50vh;
+      .story-sprite {
+        margin: 0 auto;
+      }
     }
   }
 }
