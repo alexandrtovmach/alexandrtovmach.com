@@ -23,7 +23,7 @@ export default {
   many: "many",
   about_text_p3: "and many other things.",
   calendar_head: "Short schedule",
-  calendar_text: "Here you can see the short version of my personal Google calnedar, to know about my work plans.",
+  calendar_text: "Here you can see the short version of my personal Google calendar, to know about my work plans.",
   portfolio_head: "Last projects",
   blog_head: "New articles",
   tags: ["Main", "About", "Schedule", "Portfolio", "Blog"],
