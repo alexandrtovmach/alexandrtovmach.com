@@ -32,7 +32,6 @@
     "eject": "react-scripts eject",
     "deploy": "yarn build && firebase deploy",
     "responsive-images": "node ./utils/task.js",
-    "precommit": "lint-staged",
     "prettify": "eslint './src/**/*.{js,json,jsx,ts,tsx}' --fix && prettier --write './src/**/*.{js,json,jsx,ts,tsx,css,scss}'"
   },
   "engines": {
@@ -66,5 +65,10 @@
       "last 4 versions",
       "not dead"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

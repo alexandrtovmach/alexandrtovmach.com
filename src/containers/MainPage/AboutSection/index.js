@@ -48,13 +48,22 @@ export default class MainAboutComponent extends React.Component {
             {langPack.details}
           </a> */}
           <a
-            href={`/resume.${langPack._locale}.html`}
-            className="button button-outline"
-            title={langPack.about}
+            href="/about"
+            className="button"
+            title={langPack.openPrintableCV}
             target="_blank"
             rel="noopener noreferrer"
           >
             {langPack.openPrintableCV}
+          </a>{" "}
+          <a
+            href={`/resume.${langPack._locale}.html`}
+            className="button button-outline"
+            title={langPack.moreAboutMe}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {langPack.moreAboutMe}
           </a>
         </div>
         <SkillsChart

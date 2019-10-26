@@ -53,6 +53,7 @@ export default {
   book_now_description: "Free day. Contact with me to book this time.",
   my_story: "My Story",
   Main: {
+    moreAboutMe: "More about myself",
     openPrintableCV: "Open printable CV"
   },
   About: {
