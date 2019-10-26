@@ -80,7 +80,7 @@ const ResourcesSection = ({ langPack }) => {
         <DouSVG className="theme-fill-second" />
       </a>
       <a
-        href="https://www.behance.net/alexandrto3b08"
+        href="https://www.behance.net/alexandrtovmach"
         target="_blank"
         title="Behance"
         rel="noopener noreferrer"

@@ -6,7 +6,7 @@
     "classnames": "2.2.6",
     "d3": "^5.7.0",
     "dotenv": "^8.0.0",
-    "firebase": "^6.3.4",
+    "firebase": "^7.2.2",
     "get-browser-language": "^1.0.0",
     "lodash.isequal": "^4.5.0",
     "node-sass": "^4.10.0",
@@ -20,7 +20,6 @@
     "react-swipeable-views": "^0.13.0",
     "react-switch": "^5.0.1",
     "react-youtube": "^7.9.0",
-    "screenfull": "^4.2.1",
     "suncalc": "^1.8.0"
   },
   "scripts": {
@@ -32,7 +31,6 @@
     "eject": "react-scripts eject",
     "deploy": "yarn build && firebase deploy",
     "responsive-images": "node ./utils/task.js",
-    "precommit": "lint-staged",
     "prettify": "eslint './src/**/*.{js,json,jsx,ts,tsx}' --fix && prettier --write './src/**/*.{js,json,jsx,ts,tsx,css,scss}'"
   },
   "engines": {
@@ -41,8 +39,8 @@
   "devDependencies": {
     "eslint-plugin-react": "^7.12.4",
     "html-minifier": "^4.0.0",
-    "husky": "3.0.3",
-    "lint-staged": "9.2.1",
+    "husky": "3.0.9",
+    "lint-staged": "9.4.2",
     "prettier": "1.18.2"
   },
   "optionalPeerDependencies": {
@@ -66,5 +64,10 @@
       "last 4 versions",
       "not dead"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

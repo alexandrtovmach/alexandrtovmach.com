@@ -34,6 +34,12 @@ export default class Navigation extends React.Component {
     });
   };
 
+  handleSwipe = newIndex => {
+    this.setState({
+      index: newIndex
+    });
+  };
+
   generateTabs = tagsArray => {
     const { index } = this.state;
     return tagsArray.map((el, i) => {
@@ -63,11 +69,13 @@ export default class Navigation extends React.Component {
           interval={30000}
           enableMouseEvents={true}
           index={index}
-          onChangeIndex={this.handleChangeIndex}
+          onChangeIndex={this.handleSwipe}
         >
           {children}
         </AutoPlaySwipeableViews>
-        <div className="tabs-panel">{this.generateTabs(langPack.tags)}</div>
+        <div className="tabs-panel">
+          {this.generateTabs([langPack.main, langPack.about, langPack.schedule, langPack.portfolio, langPack.blog])}
+        </div>
         <div className="navigation-arrows">
           <button
             className={classnames("left", "arrow", {
