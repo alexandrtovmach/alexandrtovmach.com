@@ -1,6 +1,6 @@
 import React from "react";
 
-import BlogListComponent from "../../../components/Blog/BlogList";
+import BlogListContainer from "../../../containers/BlogList/BlogList";
 
 import "./Blog.scss";
 
@@ -14,7 +14,7 @@ export default class MainPortfolioComponent extends React.Component {
     return (
       <div className="main-blog">
         <h2 className="h1">{langPack.blog_head}</h2>
-        <BlogListComponent items={3} infinityScroll={false} locale={langPack._locale} langPack={langPack} />
+        <BlogListContainer items={3} infinityScroll={false} locale={langPack._locale} langPack={langPack} />
         {/* <a href="/blog" className="button" title={langPack.blog}>
           {langPack.more}
         </a> */}
