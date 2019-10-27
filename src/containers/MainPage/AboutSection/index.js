@@ -53,13 +53,7 @@ export default class MainAboutComponent extends React.Component {
           >
             {langPack.openPrintableCV}
           </a>{" "}
-          <a
-            href="/about"
-            className="button button-outline"
-            title={langPack.moreAboutMe}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="/about" className="button button-outline" title={langPack.moreAboutMe}>
             {langPack.moreAboutMe}
           </a>
         </div>

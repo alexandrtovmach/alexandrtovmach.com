@@ -15,9 +15,9 @@ export default class MainPortfolioComponent extends React.Component {
       <div className="main-blog">
         <h2 className="h1">{langPack.blog_head}</h2>
         <BlogListContainer items={3} infinityScroll={false} locale={langPack._locale} langPack={langPack} />
-        {/* <a href="/blog" className="button" title={langPack.blog}>
+        <a href="/blog" className="button" title={langPack.more}>
           {langPack.more}
-        </a> */}
+        </a>
       </div>
     );
   }
