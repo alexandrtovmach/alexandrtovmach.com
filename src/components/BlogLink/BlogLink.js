@@ -2,7 +2,7 @@ import React from "react";
 
 import { renderDateString } from "../../services/calendar";
 
-import "./Blog.scss";
+import "./BlogLink.scss";
 
 const BlogLink = props => {
   const post = props.post;

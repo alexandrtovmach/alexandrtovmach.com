@@ -1,11 +1,12 @@
 import React from "react";
-import Blog from "../../components/BlogPage/BlogPage";
 
-import "./BlogPage.scss";
+const BlogList = React.lazy(() => import("../../containers/BlogList/BlogList"));
 
-const BlogPage = props => (
+const BlogPage = ({ langPack }) => (
   <div className="page">
-    <Blog {...props} />
+    <div className="page-text-wrapper header-compensator">
+      <BlogList langPack={langPack} locale={langPack._locale} items={20} />
+    </div>
   </div>
 );
 
