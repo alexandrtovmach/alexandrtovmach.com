@@ -85,6 +85,7 @@ video {
   vertical-align: baseline;
   font-family: $main-font;
   -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article,

@@ -7,7 +7,7 @@ import "./MediaSection.scss";
 const StorySection = ({ langPack }) => {
   return (
     <section className={"about-media"}>
-      <YouTube videoId={"aUjBvuUdkhg"} className={"media-youtube"} containerClassName={"media-youtube-container"} />
+      <YouTube videoId={"wCNSK4iFCuE"} className={"media-youtube"} containerClassName={"media-youtube-container"} />
     </section>
   );
 };
