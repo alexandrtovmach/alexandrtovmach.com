@@ -9,10 +9,10 @@ import eightBitSpriteSrc from "../../../styles/assets/images/8bit_sprite.png";
 
 import "./StorySection.scss";
 
-const StorySection = ({ langPack }) => {
+const StorySection = ({ langPack: { my_story, part_one } }) => {
   return (
     <section className="about-story">
-      <h1 className="h1">{langPack["my_story"]}</h1>
+      <h1 className="h1">{my_story}</h1>
       <article>
         <div className="sprite-wrapper center">
           <SpriteAnimator
@@ -24,11 +24,11 @@ const StorySection = ({ langPack }) => {
             className="story-sprite"
           />
         </div>
-        <h2 className="h2">{langPack["8_bit"]}</h2>
-        <p className="p1">{langPack["story_1_1"]}</p>
-        <p className="p1">{langPack["story_1_2"]}</p>
+        <h2 className="h2">{part_one.title}</h2>
+        <p className="p1">{part_one.content_1}</p>
+        <p className="p1">{part_one.content_2}</p>
       </article>
-      <article>
+      {/* <article>
         <div className="sprite-wrapper center">
           <SpriteAnimator
             sprite={eightBitSpriteSrc}
@@ -41,7 +41,7 @@ const StorySection = ({ langPack }) => {
         </div>
         <h2 className="h2">{langPack["16_bit"]}</h2>
         <p className="p1">{langPack["story_2_1"]}</p>
-      </article>
+      </article> */}
     </section>
   );
 };
