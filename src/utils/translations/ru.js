@@ -60,18 +60,24 @@ export default {
   About: {
     my_story: "Моя история",
     part_one: {
-      title: "8 bit",
+      title: "8-бит",
       content_1:
-        "Я всегда был любознательным. В детстве я любил читать энциклопедии, решать головоломки и собирать конструкторы.",
+        "Моё детство припало на эпоху 8-битных игр, пиксельных героев и полифонической музыки. Не могу назвать себя геймером, потому что я предпочитал книги, кино и мультфильмы, но Super Mario всё же был пройден раз 20.",
       content_2:
-        "Banjo farm-to-table literally, selvage kitsch direct trade shaman tbh sartorial bitters. Aesthetic freegan hot chicken, helvetica cardigan chillwave af VHS."
+        "Сложно однозначно утверждать, но мне кажеться что именно благодаря несовершенству графики у меня развивалась фантазия, ведь вместо квадратиков на экране нужно было видеть персонажей и целый мир."
     },
     part_two: {
-      title: "16 bit",
+      title: "16-бит",
       content_1:
-        "Lomo ugh prism, freegan woke vice try-hard locavore. Man braid tumblr subway tile pug retro. Truffaut mustache fanny pack, authentic squid gentrify pug organic ethical bitters.",
+        "Война между Nintendo и Sega в игровой индустрии подарила всему миру поколение 16-бит. Технологии двигались семимильными шагами, но это было где-то далеко, я же в это время читал научно-популярную литературу. Один раз я даже потратил все деньги подаренные мне на день рождения исключительно на книги.",
       content_2:
-        "Banjo farm-to-table literally, selvage kitsch direct trade shaman tbh sartorial bitters. Aesthetic freegan hot chicken, helvetica cardigan chillwave af VHS."
+        "Основными темами была история, космос и паранормальщина. Это расширило мой кругозор и убедило в том, что призраков, пришельцев и лохнесского чудовища не существует."
+    },
+    part_three: {
+      title: "PlayStation",
+      content_1:
+        "Полноценный трехмерный мир пришел в игры и в мою жизнб. Я вышел из 2D формата книг и экрана ТВ и начал формировать свой музыкальный вкус, пробовать себя в спорте и думать о будущей профессии. Иначе говоря моя личность начала формироваться в того, кем я сейчас являюсь.",
+      content_2: ""
     }
   }
 };
