@@ -2,14 +2,14 @@ import React from "react";
 
 import "./About.scss";
 
-const StorySection = React.lazy(() => import("../../containers/AboutPage/StorySection"));
+// const StorySection = React.lazy(() => import("../../containers/AboutPage/StorySection"));
 const MediaSection = React.lazy(() => import("../../containers/AboutPage/MediaSection"));
 const ResourcesSection = React.lazy(() => import("../../containers/AboutPage/ResourcesSection"));
 
 const AboutPage = ({ langPack }) => (
   <div className="page about-page">
     <div className="page-text-wrapper">
-      <StorySection langPack={langPack} />
+      {/* <StorySection langPack={langPack} /> */}
       <MediaSection langPack={langPack} />
       <ResourcesSection langPack={langPack} />
     </div>
