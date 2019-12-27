@@ -57,7 +57,7 @@ export default class SkillsChart extends React.Component {
       return tween;
     }
   }
-  update(root, svg, partition, x, y, radius, arc, node) {
+  update(root, svg, partition, x, y, radius, arc) {
     this.isBuilded = true;
     const { onSelect, onTooltipUpdate, locale } = this.props;
     const arcTweenZoom = d => {
@@ -85,7 +85,6 @@ export default class SkillsChart extends React.Component {
       .attr("stroke", "rgb(255, 215, 0)")
       .attr("stroke-width", "2")
       .on("click", d => {
-        node = d;
         onSelect && onSelect(d);
         svg
           .selectAll("path")
@@ -106,7 +105,7 @@ export default class SkillsChart extends React.Component {
       .selectAll("path")
       .transition()
       .duration(1000)
-      .attrTween("d", (d, i) => this.arcTweenData(d, i, node, x, arc));
+      .attrTween("d", (d, i) => this.arcTweenData(d, i, d, x, arc));
   }
   renderSunburst() {
     requestAnimationFrame(() => {
@@ -124,7 +123,6 @@ export default class SkillsChart extends React.Component {
           .innerRadius(d => Math.max(0, y(d.y0)))
           .outerRadius(d => Math.max(0, y(d.y1)));
         const rootData = d3.hierarchy(data);
-        const node = rootData;
         rootData.sum(d => calcMonthDuration(d));
 
         if (!this.isBuilded) {
@@ -132,10 +130,10 @@ export default class SkillsChart extends React.Component {
             .select(`#${keyId}-svg`)
             .append("g")
             .attr("transform", `translate(${gWidth / 2},${gHeight / 2})`);
-          this.update(rootData, svg, partition, x, y, radius, arc, node);
+          this.update(rootData, svg, partition, x, y, radius, arc);
         } else {
           const svg = d3.select(`#${keyId}-svg`).select("g");
-          this.update(rootData, svg, partition, x, y, radius, arc, node);
+          this.update(rootData, svg, partition, x, y, radius, arc);
         }
       }
     });
