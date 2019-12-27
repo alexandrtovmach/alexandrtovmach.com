@@ -3,6 +3,13 @@ import * as d3 from "d3";
 
 import "./SkillsChart.scss";
 
+const NOW = Date.now();
+const calcMonthDuration = ({ periods = [] }) =>
+  periods.reduce((prev, { startedAt, finishedAt }) => {
+    const base = finishedAt ? new Date(finishedAt) : NOW;
+    return prev + Math.floor((base - new Date(startedAt)) / (1000 * 60 * 60 * 24 * 30));
+  }, 0);
+
 export default class SkillsChart extends React.Component {
   state = {
     gWidth: 0,
@@ -52,7 +59,7 @@ export default class SkillsChart extends React.Component {
   }
   update(root, svg, partition, x, y, radius, arc, node) {
     this.isBuilded = true;
-    const { onSelect, onTooltipUpdate } = this.props;
+    const { onSelect, onTooltipUpdate, locale } = this.props;
     const arcTweenZoom = d => {
       const xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
         yd = d3.interpolate(y.domain(), [d.y0, 1]),
@@ -86,9 +93,9 @@ export default class SkillsChart extends React.Component {
           .duration(1000)
           .attrTween("d", arcTweenZoom(d));
       })
-      .on("mouseover", (d, i, arr) => {
+      .on("mouseover", ({ data: { name } }, i, arr) => {
         arr[i].style.fill = "rgb(255, 215, 0)";
-        onTooltipUpdate && onTooltipUpdate(d.data.name);
+        onTooltipUpdate && onTooltipUpdate(name[locale] || name.en);
         return null;
       })
       .on("mouseout", (d, i, arr) => {
@@ -118,7 +125,7 @@ export default class SkillsChart extends React.Component {
           .outerRadius(d => Math.max(0, y(d.y1)));
         const rootData = d3.hierarchy(data);
         const node = rootData;
-        rootData.sum(d => d.size);
+        rootData.sum(d => calcMonthDuration(d));
 
         if (!this.isBuilded) {
           const svg = d3
