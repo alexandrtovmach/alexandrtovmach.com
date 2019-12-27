@@ -59,7 +59,29 @@ export default {
   },
   About: {
     my_story: "Моя история",
-    story_1:
-      "Lomo ugh prism, freegan woke vice try-hard locavore. Man braid tumblr subway tile pug retro. Truffaut mustache fanny pack, authentic squid gentrify pug organic ethical bitters. Blue bottle celiac retro vape, viral venmo yuccie succulents vegan. Fixie taxidermy kombucha godard quinoa. Iceland coloring book tilde af kombucha post-ironic, venmo la croix synth chambray celiac williamsburg chillwave lomo drinking vinegar. Blue bottle taiyaki pitchfork, portland enamel pin banh mi tumeric letterpress man bun crucifix. Enamel pin franzen flexitarian locavore brooklyn taxidermy gentrify tilde 3 wolf moon crucifix sustainable occupy vegan beard truffaut. Brooklyn schlitz fingerstache hashtag viral offal asymmetrical venmo neutra small batch you probably haven't heard of them prism sriracha tousled microdosing. Farm-to-table bespoke subway tile pabst, yr flannel direct trade pop-up raclette fashion axe thundercats skateboard chicharrones. Slow-carb roof party lo-fi helvetica copper mug williamsburg keytar ethical YOLO normcore. Actually banjo bushwick iPhone godard portland single-origin coffee chartreuse whatever. Banjo farm-to-table literally, selvage kitsch direct trade shaman tbh sartorial bitters. Aesthetic freegan hot chicken, helvetica cardigan chillwave af VHS."
+    part_one: {
+      title: "8-бит",
+      content_1:
+        "Моё детство припало на эпоху 8-битных игр, пиксельных героев и полифонической музыки. Не могу назвать себя геймером, потому что я предпочитал книги, кино и мультфильмы, но Super Mario всё же был пройден раз 20.",
+      content_2:
+        "Сложно однозначно утверждать, но мне кажеться что именно благодаря несовершенству графики у меня развивалась фантазия, ведь вместо квадратиков на экране нужно было видеть персонажей и целый мир."
+    },
+    part_two: {
+      title: "16-бит",
+      content_1:
+        "Война между Nintendo и Sega в игровой индустрии подарила всему миру поколение 16-бит. Технологии двигались семимильными шагами, но это было где-то далеко, я же в это время читал научно-популярную литературу. Один раз я даже потратил все деньги подаренные мне на день рождения исключительно на книги.",
+      content_2:
+        "Основными темами была история, космос и паранормальщина. Это расширило мой кругозор и убедило в том, что призраков, пришельцев и лохнесского чудовища не существует."
+    },
+    part_three: {
+      title: "PlayStation",
+      content_1:
+        "Появление трехмерного мира в играх совпало с появлением его и в моей жизни. Я вышел из привычного 2D формата книг и экрана ТВ, начал формировать свой музыкальный вкус, пробовать себя в спорте и думать о будущей профессии. Иначе говоря моя личность начала формироваться в того, кем я сейчас являюсь."
+    },
+    part_four: {
+      title: "PlayStation",
+      content_1:
+        "Появление трехмерного мира в играх совпало с появлением его и в моей жизни. Я вышел из привычного 2D формата книг и экрана ТВ, чтобы формировать свой музыкальный вкус, пробовать себя в спорте и думать о будущей профессии. Иначе говоря моя личность начала превращатся в того, кем я сейчас являюсь."
+    }
   }
 };

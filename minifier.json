@@ -20,7 +20,7 @@
     "sortAttributes": true,
     "sortClassName": true,
     "trimCustomFragments": true,
-    "useShortDoctype": true,
+    "useShortDoctype": false,
     "removeScriptTypeAttributes": true,
     "removeStyleLinkTypeAttributes": true,
     "removeTagWhitespace": true,

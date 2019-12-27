@@ -1,6 +1,7 @@
 @import "constants.scss";
 
 .about-story {
+  margin: #{$header-height} 0 0 0;
   article {
     font-weight: 100;
     .article-text-content {

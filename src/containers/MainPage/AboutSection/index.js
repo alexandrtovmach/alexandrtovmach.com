@@ -58,7 +58,8 @@ export default class MainAboutComponent extends React.Component {
           </a>
         </div>
         <SkillsChart
-          data={skillsData[langPack._locale]}
+          data={skillsData}
+          locale={langPack._locale}
           onTooltipUpdate={this.onTooltipUpdate}
           scale="linear"
           keyId="skillsChart"
