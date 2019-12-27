@@ -16,18 +16,20 @@ export default class SkillsChart extends React.Component {
         gWidth: this.chartRef.current.clientWidth,
         gHeight: this.chartRef.current.clientHeight
       });
-      this.renderSunburst(this.props);
+      this.renderSunburst();
     });
   }
 
   componentDidUpdate(prevProps) {
-    if (!this.props.isEqual(prevProps, this.props)) {
-      this.renderSunburst(this.props);
+    const { isEqual } = this.props;
+    if (!isEqual(prevProps, this.props)) {
+      this.renderSunburst();
     }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return !this.props.isEqual(this.state, nextState) || !this.props.isEqual(this.props, nextProps);
+    const { isEqual } = this.props;
+    return !isEqual(this.state, nextState) || !isEqual(this.props, nextProps);
   }
 
   arcTweenData(a, i, node, x, arc) {
@@ -50,6 +52,7 @@ export default class SkillsChart extends React.Component {
   }
   update(root, svg, partition, x, y, radius, arc, node) {
     this.isBuilded = true;
+    const { onSelect, onTooltipUpdate } = this.props;
     const arcTweenZoom = d => {
       const xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
         yd = d3.interpolate(y.domain(), [d.y0, 1]),
@@ -66,15 +69,6 @@ export default class SkillsChart extends React.Component {
         }
       };
     };
-    const click = d => {
-      node = d;
-      this.props.onSelect && this.props.onSelect(d);
-      svg
-        .selectAll("path")
-        .transition()
-        .duration(1000)
-        .attrTween("d", arcTweenZoom(d));
-    };
     svg
       .selectAll("path")
       .data(partition(root).descendants())
@@ -83,10 +77,18 @@ export default class SkillsChart extends React.Component {
       .style("fill", "transparent")
       .attr("stroke", "rgb(255, 215, 0)")
       .attr("stroke-width", "2")
-      .on("click", d => click(d))
+      .on("click", d => {
+        node = d;
+        onSelect && onSelect(d);
+        svg
+          .selectAll("path")
+          .transition()
+          .duration(1000)
+          .attrTween("d", arcTweenZoom(d));
+      })
       .on("mouseover", (d, i, arr) => {
         arr[i].style.fill = "rgb(255, 215, 0)";
-        this.props.onTooltipUpdate(d.data.name);
+        onTooltipUpdate && onTooltipUpdate(d.data.name);
         return null;
       })
       .on("mouseout", (d, i, arr) => {
@@ -99,13 +101,14 @@ export default class SkillsChart extends React.Component {
       .duration(1000)
       .attrTween("d", (d, i) => this.arcTweenData(d, i, node, x, arc));
   }
-  renderSunburst(props) {
+  renderSunburst() {
     requestAnimationFrame(() => {
-      if (props.data) {
+      const { data, scale, keyId } = this.props;
+      if (data) {
         const { gWidth, gHeight } = this.state;
         const radius = Math.min(gWidth, gHeight) / 2 - 10;
         const x = d3.scaleLinear().range([0, 2 * Math.PI]);
-        const y = props.scale === "linear" ? d3.scaleLinear().range([0, radius]) : d3.scaleSqrt().range([0, radius]);
+        const y = scale === "linear" ? d3.scaleLinear().range([0, radius]) : d3.scaleSqrt().range([0, radius]);
         const partition = d3.partition();
         const arc = d3
           .arc()
@@ -113,18 +116,18 @@ export default class SkillsChart extends React.Component {
           .endAngle(d => Math.max(0, Math.min(2 * Math.PI, x(d.x1))))
           .innerRadius(d => Math.max(0, y(d.y0)))
           .outerRadius(d => Math.max(0, y(d.y1)));
-        const rootData = d3.hierarchy(props.data);
+        const rootData = d3.hierarchy(data);
         const node = rootData;
         rootData.sum(d => d.size);
 
         if (!this.isBuilded) {
           const svg = d3
-            .select(`#${this.props.keyId}-svg`)
+            .select(`#${keyId}-svg`)
             .append("g")
             .attr("transform", `translate(${gWidth / 2},${gHeight / 2})`);
           this.update(rootData, svg, partition, x, y, radius, arc, node);
         } else {
-          const svg = d3.select(`#${this.props.keyId}-svg`).select("g");
+          const svg = d3.select(`#${keyId}-svg`).select("g");
           this.update(rootData, svg, partition, x, y, radius, arc, node);
         }
       }
@@ -132,9 +135,10 @@ export default class SkillsChart extends React.Component {
   }
 
   render() {
+    const { keyId } = this.props;
     return (
-      <div ref={this.chartRef} id={this.props.keyId}>
-        <svg id={`${this.props.keyId}-svg`} />
+      <div ref={this.chartRef} id={keyId}>
+        <svg id={`${keyId}-svg`} />
       </div>
     );
   }
