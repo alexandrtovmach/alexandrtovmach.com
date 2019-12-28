@@ -36,6 +36,9 @@
         p {
           display: none;
         }
+        &:not(:first-of-type) {
+          display: none;
+        }
       }
     }
     .portfolio-devices-container {

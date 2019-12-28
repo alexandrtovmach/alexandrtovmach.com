@@ -5,6 +5,7 @@
   @extend .main-page-section;
   flex-direction: column;
   .blog-list {
+    width: 100%;
     margin: 20px 0;
   }
 }

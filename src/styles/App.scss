@@ -60,6 +60,16 @@
         opacity: 1;
       }
     }
+
+    &.active-post {
+      background-position: 0% 0%;
+      z-index: 5;
+      color: $dark-main-color;
+      * {
+        color: $dark-main-color;
+        opacity: 1;
+      }
+    }
   }
 
   .header-compensator {

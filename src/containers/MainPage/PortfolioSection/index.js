@@ -9,14 +9,15 @@ export default class MainPortfolioComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      project: null
+      projectList: [],
+      activeProjectId: 0
     };
   }
 
   componentDidMount() {
-    this.props.getAllByCategory("portfolio", 1).then(project => {
+    this.props.getAllByCategory("portfolio").then(list => {
       this.setState({
-        project: project[0]
+        projectList: list
       });
     });
   }
@@ -25,15 +26,33 @@ export default class MainPortfolioComponent extends React.Component {
     return !this.props.isEqual(this.state, nextState) || !this.props.isEqual(this.props, nextProps);
   }
 
+  handleHoverProject = projectIdx => () => {
+    this.setState({
+      activeProjectId: projectIdx
+    });
+  };
+
   render() {
     const { langPack, isEqual } = this.props;
-    const { project } = this.state;
+    const { activeProjectId, projectList } = this.state;
     return (
       <div className="main-portfolio">
         <div className="overlapperForSupportTouchEvent" />
         <div className="portfolio-text-block">
           <h2 className="h1">{langPack.portfolio_head}</h2>
-          {project && <PortfolioProjectTextComponent project={project} locale={langPack._locale} />}
+          {projectList &&
+            projectList
+              .slice(0, 3)
+              .map((el, i) => (
+                <PortfolioProjectTextComponent
+                  key={`project-text-${i}`}
+                  project={el}
+                  locale={langPack._locale}
+                  idx={i}
+                  isActive={activeProjectId === i}
+                  onHover={this.handleHoverProject}
+                />
+              ))}
           {/* <a
             href="/portfolio"
             className="button"
@@ -43,7 +62,9 @@ export default class MainPortfolioComponent extends React.Component {
           </a> */}
         </div>
         <div className="portfolio-devices-container">
-          {project && <DevicesComponent project={project} isEqual={isEqual} />}
+          {projectList && projectList[activeProjectId] && (
+            <DevicesComponent project={projectList[activeProjectId]} isEqual={isEqual} />
+          )}
         </div>
       </div>
     );
