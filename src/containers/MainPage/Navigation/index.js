@@ -1,7 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import SwipeableViews from "react-swipeable-views";
-import { autoPlay, bindKeyboard } from "react-swipeable-views-utils";
+import { bindKeyboard } from "react-swipeable-views-utils";
 
 import { ReactComponent as HomeSVG } from "../../../styles/assets/icons/home.svg";
 import { ReactComponent as AboutSVG } from "../../../styles/assets/icons/profile.svg";
@@ -21,7 +21,7 @@ const iconsInOrder = [
   <BlogSVG className="icon" key="blog-icon-key" />
 ];
 
-const AutoPlaySwipeableViews = bindKeyboard(autoPlay(SwipeableViews));
+const AutoPlaySwipeableViews = bindKeyboard(SwipeableViews);
 
 export default class Navigation extends React.Component {
   state = {

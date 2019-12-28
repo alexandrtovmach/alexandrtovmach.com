@@ -43,7 +43,7 @@
     "lint-staged": "9.4.2",
     "prettier": "1.18.2"
   },
-  "optionalPeerDependencies": {
+  "optionalDependencies": {
     "responsive-images-generator": "^0.2.2",
     "webp-converter": "^2.2.2"
   },

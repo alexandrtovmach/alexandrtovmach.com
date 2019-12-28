@@ -5,9 +5,17 @@ import { renderDateString } from "../../../services/calendar";
 
 import "./PortfolioText.scss";
 
-const PortfolioText = ({ project: { name, description, price, start, end }, locale }) => {
+const PortfolioText = ({ project: { name, description, price, start, end, link }, isActive, locale, onHover, idx }) => {
   return (
-    <div className="portfolio-project-text post">
+    <a
+      href={link}
+      className={classNames("portfolio-project-text post", {
+        "active-post": isActive
+      })}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseOver={onHover(idx)}
+    >
       <h3>{name && name[locale]}</h3>
       <p>{description && description[locale]}</p>
       <div className="meta-project-info">
@@ -26,7 +34,7 @@ const PortfolioText = ({ project: { name, description, price, start, end }, loca
           {renderDateString(locale, start, end)}
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

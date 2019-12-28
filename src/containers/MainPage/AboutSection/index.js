@@ -8,7 +8,6 @@ export default class MainAboutComponent extends React.Component {
   state = {
     skillsData: {}
   };
-  skillsTooltipRef = React.createRef();
 
   componentDidMount() {
     const { getAllByCategory } = this.props;
@@ -24,13 +23,16 @@ export default class MainAboutComponent extends React.Component {
     return yearDiff.toString().slice(-1) === "1" ? `${yearDiff} ${yearWord.one}` : `${yearDiff} ${yearWord.many}`;
   }
 
-  onTooltipUpdate = content => {
-    this.skillsTooltipRef.current.innerHTML = content;
+  onTooltipUpdate = ({ name, months }) => {
+    this.setState({
+      selectedSkillName: name,
+      selectedSkillsMoths: months
+    });
   };
 
   render() {
     const { langPack, isEqual } = this.props;
-    const { skillsData } = this.state;
+    const { skillsData, selectedSkillName, selectedSkillsMoths } = this.state;
     return (
       <div className="main-about">
         <div className="about-text-block">
@@ -38,11 +40,14 @@ export default class MainAboutComponent extends React.Component {
           <h2 className="p1">
             {langPack.about_text_p1} {this.calcHowOldIAm(langPack.years)}. &nbsp;
             {langPack.about_text_p2}{" "}
-            <span ref={this.skillsTooltipRef} className="toltip-name">
-              {langPack.many}
+            <span className="toltip-name">
+              {selectedSkillName || langPack.many}{" "}
+              {selectedSkillsMoths
+                ? `${langPack.about_text_p3} ${selectedSkillsMoths} ${langPack.about_text_p4}`
+                : null}
             </span>
             <br />
-            {langPack.about_text_p3}
+            {langPack.about_text_p5}
           </h2>
           <a
             href={`/resume.${langPack._locale}.html`}
