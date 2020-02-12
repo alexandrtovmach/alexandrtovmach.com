@@ -25,3 +25,6 @@ yarn.lock
 package-lock.json
 
 /.firebase
+public/resume.en.html
+public/resume.ru.html
+public/resume.ua.html
