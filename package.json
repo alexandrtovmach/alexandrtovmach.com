@@ -46,7 +46,7 @@
     "prettier": "1.19.1"
   },
   "optionalDependencies": {
-    "responsive-images-generator": "^0.2.2",
+    "responsive-images-generator2": "Schaltstelle/responsive-images-generator",
     "webp-converter": "^2.2.2"
   },
   "lint-staged": {
