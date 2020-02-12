@@ -186,6 +186,7 @@
               </p>
             {{/resume.main.mainInfo.experience.list}}
           </article>
+          {{#if resume.main.mainInfo.lookingFor}}
           <article class="lookingfor">
             <h3>{{resume.main.mainInfo.lookingFor.title}}</h3>
             {{#resume.main.mainInfo.lookingFor.list}}
@@ -193,6 +194,7 @@
               <p>{{a}}</p>
             {{/resume.main.mainInfo.lookingFor.list}}
           </article>
+          {{/if}}
         </section>
         <section class="main-info-right">
           <article class="skills">
