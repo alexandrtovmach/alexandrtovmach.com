@@ -36,8 +36,8 @@ const StorySection = ({ langPack: { my_story, part_one, part_two, part_three, pa
             width={800}
             height={800}
             scale={3}
-            fps={1}
-            frameCount={7}
+            fps={8}
+            frameCount={6}
             className="story-sprite"
           />
         </div>
