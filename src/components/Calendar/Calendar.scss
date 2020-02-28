@@ -32,18 +32,11 @@
     }
     &.freeday {
       color: inherit;
-      &:hover {
-        background-color: transparent;
-        .event-contact-button {
-          height: 30%;
-          animation: blaming 0.5s infinite alternate;
-        }
-      }
     }
 
     .calendar-event {
-      margin: 0 0.5em;
-      padding: 0.75em 0;
+      margin: 0 0.5rem;
+      padding: 0.5rem 0;
       transition: 0.5s;
       border-bottom-width: 1px;
       border-bottom-style: solid;
@@ -61,9 +54,9 @@
       }
 
       .event-description {
-        max-height: 3em * 1.1;
+        max-height: 3rem * 1.1;
         overflow: hidden;
-        margin: 0.3em 0 0 0;
+        margin: 0.3rem 0 0 0;
         font-size: 80%;
         opacity: 0.6;
         @media screen and (max-width: $mq-mobile) {
@@ -77,40 +70,33 @@
         font-weight: 600;
         opacity: 0.4;
         .event-tag {
-          margin-right: 0.3em;
+          margin-right: 0.3rem;
           text-transform: uppercase;
         }
       }
     }
 
     .event-freeday {
-      margin: 0 0.5em;
-      padding: 0.75em 0;
-      width: calc(100% - 0.5em * 2);
-      height: calc(100% - 0.75em * 2);
+      margin: 0 0.5rem;
+      padding: 0.5rem 0;
+      width: calc(100% - 0.5rem * 2);
+      height: 100%;
       font-weight: 500;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       .event-description {
         margin: 0;
         font-weight: 100;
-      }
-      .event-contact-button {
-        height: 20%;
-        transition: 0.3s;
-        cursor: pointer;
-        .event-contact-button-svg {
-          height: 100%;
-        }
       }
     }
 
     .meta-date {
       position: absolute;
-      bottom: 0.5em;
-      right: 0.5em;
+      bottom: 0.5rem;
+      right: 0.5rem;
       text-align: right;
       opacity: 0.5;
 

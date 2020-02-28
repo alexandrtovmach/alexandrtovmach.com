@@ -43,10 +43,10 @@
   }
   .post {
     display: block;
-    padding: 1em 1.5em;
+    padding: 1rem 1.5rem;
     transition: 0.5s;
     background: linear-gradient(to right, $main-color 0%, $main-color 50%, transparent 50%, transparent 100%);
-    background-position: calc(100% + 1em) 0%;
+    background-position: calc(100% + 1rem) 0%;
     background-size: 200%;
     * {
       transition: 0s;
@@ -73,8 +73,8 @@
   }
 
   .header-compensator {
-    padding-top: calc(#{$header-height} + 1em);
-    height: calc(100% - #{$header-height} - 1em);
+    padding-top: calc(#{$header-height} + 1rem);
+    height: calc(100% - #{$header-height} - 1rem);
   }
 
   .page-text-wrapper {
