@@ -2,7 +2,6 @@ import React from "react";
 import classNames from "classnames";
 
 import { getEvents } from "../../services/calendar";
-import { ReactComponent as ContactSVG } from "../../styles/assets/icons/envelope.svg";
 
 import "./Calendar.scss";
 
@@ -97,8 +96,13 @@ export default class Calendar extends React.Component {
               ) : (
                 <div className="event-freeday">
                   <div className="event-description">{langPack.book_now_description}</div>
-                  <a href="mailto:alexandrtovmach@gmail.com" className="event-contact-button">
-                    <ContactSVG className="event-contact-button-svg" alt={langPack.book_now} />
+                  <a
+                    href="https://calendly.com/alexandrtovmach"
+                    target="_blank"
+                    title="Calendly"
+                    rel="noopener noreferrer"
+                  >
+                    calendly.com/alexandrtovmach
                   </a>
                 </div>
               )}

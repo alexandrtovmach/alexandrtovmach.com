@@ -32,18 +32,11 @@
     }
     &.freeday {
       color: inherit;
-      &:hover {
-        background-color: transparent;
-        .event-contact-button {
-          height: 30%;
-          animation: blaming 0.5s infinite alternate;
-        }
-      }
     }
 
     .calendar-event {
       margin: 0 0.5rem;
-      padding: 0.75rem 0;
+      padding: 0.5rem 0;
       transition: 0.5s;
       border-bottom-width: 1px;
       border-bottom-style: solid;
@@ -56,7 +49,7 @@
       .event-title {
         font-size: 150%;
         font-weight: 500;
-        max-height: 2rem * 1.1;
+        max-height: 2em * 1.1;
         overflow: hidden;
       }
 
@@ -85,25 +78,18 @@
 
     .event-freeday {
       margin: 0 0.5rem;
-      padding: 0.75rem 0;
+      padding: 0.5rem 0;
       width: calc(100% - 0.5rem * 2);
-      height: calc(100% - 0.75rem * 2);
+      height: 100%;
       font-weight: 500;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       .event-description {
         margin: 0;
         font-weight: 100;
-      }
-      .event-contact-button {
-        height: 20%;
-        transition: 0.3s;
-        cursor: pointer;
-        .event-contact-button-svg {
-          height: 100%;
-        }
       }
     }
 
