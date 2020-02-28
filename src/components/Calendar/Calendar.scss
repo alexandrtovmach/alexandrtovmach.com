@@ -42,8 +42,8 @@
     }
 
     .calendar-event {
-      margin: 0 0.5em;
-      padding: 0.75em 0;
+      margin: 0 0.5rem;
+      padding: 0.75rem 0;
       transition: 0.5s;
       border-bottom-width: 1px;
       border-bottom-style: solid;
@@ -56,14 +56,14 @@
       .event-title {
         font-size: 150%;
         font-weight: 500;
-        max-height: 2em * 1.1;
+        max-height: 2rem * 1.1;
         overflow: hidden;
       }
 
       .event-description {
-        max-height: 3em * 1.1;
+        max-height: 3rem * 1.1;
         overflow: hidden;
-        margin: 0.3em 0 0 0;
+        margin: 0.3rem 0 0 0;
         font-size: 80%;
         opacity: 0.6;
         @media screen and (max-width: $mq-mobile) {
@@ -77,17 +77,17 @@
         font-weight: 600;
         opacity: 0.4;
         .event-tag {
-          margin-right: 0.3em;
+          margin-right: 0.3rem;
           text-transform: uppercase;
         }
       }
     }
 
     .event-freeday {
-      margin: 0 0.5em;
-      padding: 0.75em 0;
-      width: calc(100% - 0.5em * 2);
-      height: calc(100% - 0.75em * 2);
+      margin: 0 0.5rem;
+      padding: 0.75rem 0;
+      width: calc(100% - 0.5rem * 2);
+      height: calc(100% - 0.75rem * 2);
       font-weight: 500;
       display: flex;
       flex-direction: column;
@@ -109,8 +109,8 @@
 
     .meta-date {
       position: absolute;
-      bottom: 0.5em;
-      right: 0.5em;
+      bottom: 0.5rem;
+      right: 0.5rem;
       text-align: right;
       opacity: 0.5;
 
