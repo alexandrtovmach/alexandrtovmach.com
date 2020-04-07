@@ -30,7 +30,7 @@
     "build": "npm run build-resume && react-scripts build && npm run minify-public-css && npm run minify-public-html",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "yarn build && firebase deploy",
+    "deploy": "npm run build && firebase deploy",
     "responsive-images": "node ./utils/task.js",
     "prettify": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix && prettier --write './src/**/*.{js,json,jsx,ts,tsx,css,scss}'"
   },
