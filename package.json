@@ -31,7 +31,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build && firebase deploy",
-    "responsive-images": "node ./utils/task.js",
+    "responsive-images": "node ./utils/generate.js",
     "prettify": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix && prettier --write './src/**/*.{js,json,jsx,ts,tsx,css,scss}'"
   },
   "engines": {
@@ -39,15 +39,13 @@
   },
   "devDependencies": {
     "eslint-plugin-react": "^7.18.3",
+    "firebase-admin": "^8.11.0",
     "handlebars": "^4.7.3",
     "html-minifier": "^4.0.0",
     "husky": "4.2.2",
     "lint-staged": "10.0.7",
-    "prettier": "1.19.1"
-  },
-  "optionalDependencies": {
-    "responsive-images-generator2": "Schaltstelle/responsive-images-generator",
-    "webp-converter": "^2.2.2"
+    "prettier": "1.19.1",
+    "sharp": "^0.25.2"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [

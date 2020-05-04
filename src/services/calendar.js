@@ -3,7 +3,7 @@ import { getTranslations } from "./language";
 
 export function getEvents(count = 5) {
   return pullEventsFromAPI(count).then(response => {
-    return response && response.map(event => transformEventData(event));
+    return response && response.filter(event => event.status !== "cancelled").map(event => transformEventData(event));
   });
 }
 
