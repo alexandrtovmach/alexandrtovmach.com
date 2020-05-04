@@ -17,7 +17,7 @@ export default class MainPortfolioComponent extends React.Component {
   componentDidMount() {
     this.props.getAllByCategory("portfolio").then(list => {
       this.setState({
-        projectList: list
+        projectList: Object.values(list)
       });
     });
   }
