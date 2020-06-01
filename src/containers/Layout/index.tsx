@@ -20,8 +20,4 @@ const Layout = ({ children }: { children: any }) => (
   </div>
 );
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
 export default Layout;
