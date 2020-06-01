@@ -1,0 +1,127 @@
+@import "./ThemeStyles.scss";
+
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  transition: 1s;
+  *::selection {
+    background: gold;
+  }
+  .page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+  }
+  .button {
+    border: none;
+    position: relative;
+    background-color: $main-color;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    color: $dark-main-color;
+    transition: 0.5s;
+
+    &.button-outline {
+      background-color: transparent;
+      border-color: $main-color;
+      border-width: 1px;
+      border-style: solid;
+      color: inherit;
+    }
+  }
+  .post {
+    display: block;
+    padding: 1rem 1.5rem;
+    transition: 0.5s;
+    background: linear-gradient(to right, $main-color 0%, $main-color 50%, transparent 50%, transparent 100%);
+    background-position: calc(100% + 1rem) 0%;
+    background-size: 200%;
+    * {
+      transition: 0s;
+    }
+    &:hover {
+      background-position: 0% 0%;
+      z-index: 5;
+      color: $dark-main-color;
+      * {
+        color: $dark-main-color;
+        opacity: 1;
+      }
+    }
+
+    &.active-post {
+      background-position: 0% 0%;
+      z-index: 5;
+      color: $dark-main-color;
+      * {
+        color: $dark-main-color;
+        opacity: 1;
+      }
+    }
+  }
+
+  .header-compensator {
+    padding-top: calc(#{$header-height} + 1rem);
+    height: calc(100% - #{$header-height} - 1rem);
+  }
+
+  .page-text-wrapper {
+    width: 60%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width: $mq-laptop) {
+      width: 80%;
+    }
+    @media screen and (max-width: $mq-mobile) {
+      width: 90%;
+    }
+  }
+
+  .offline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($main-color, 0.3);
+    &::before {
+      display: block;
+      content: "Offline mode";
+    }
+    * {
+      display: none;
+    }
+  }
+}
+
+.h1 {
+  font-size: 150%;
+  font-weight: 500;
+  width: 100%;
+}
+
+.h2 {
+  font-size: 120%;
+  font-weight: 400;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.p1 {
+  width: 100%;
+  font-size: 60%;
+  font-weight: 200;
+  font-variant: small-caps;
+  margin: 1vh 0;
+}

@@ -1,0 +1,208 @@
+{
+  "_locale": "ua",
+  "about": "Про себе",
+  "blog": "Блог",
+  "schedule": "Розклад",
+  "details": "Детальніше",
+  "language": "Мова",
+  "left_button": "Назад",
+  "month1": "Січень",
+  "main": "Головна",
+  "month10": "Жовтень",
+  "month11": "Листопад",
+  "month12": "Грудень",
+  "month2": "Лютий",
+  "month3": "Березень",
+  "month4": "Квітень",
+  "month5": "Травень",
+  "month6": "Червень",
+  "month7": "Липень",
+  "month8": "Серпень",
+  "month9": "Вересень",
+  "more": "Ще",
+  "portfolio": "Портфоліо",
+  "right_button": "Далі",
+  "years": {
+    "one": "рік",
+    "many": "роки"
+  },
+  "weekday0": "Неділя",
+  "weekday1": "Понеділок",
+  "weekday2": "Вівторок",
+  "weekday3": "Середа",
+  "weekday4": "Четвер",
+  "weekday5": "П'ятниця",
+  "weekday6": "Субота",
+  "Header": {
+    "choose_language": "Обрати мову",
+    "go_to_main_page": "На головну",
+    "switch_to_day_mode": "Включити Денний режим",
+    "switch_to_night_mode": "Включити Нічний режим"
+  },
+  "Main": {
+    "about_head": "Трохи про себе...",
+    "about_text_p1": "Привіт, мене звати Олександр і мені",
+    "about_text_p2": "В мене є досвід роботи з",
+    "about_text_p3": "більше ніж",
+    "about_text_p4": "місяців",
+    "about_text_p5": "та багатьма іншими технологіями.",
+    "blog_head": "Нові статті",
+    "book_now_description": "Заплануйте дзвінок на:",
+    "book_now_title": "Вільний день",
+    "book_now": "Зв'язатись",
+    "calendar_head": "Найближчий розклад",
+    "calendar_text": "Тут ви можете бачити скорочену версію мого Google-календаря, щоб бути в курсі моїх робочіх планів.",
+    "many": "багатьма",
+    "moreAboutMe": "Більше про себе",
+    "openPrintableCV": "Резюме для друку",
+    "portfolio_head": "Останні роботи",
+    "welcome_head": "Вітаємо!",
+    "welcome_text": "Цей міні-сайт створений для демонстрації моїх навичок дизайнера і веб-розробника."
+  },
+  "About": {
+    "my_story": "Моя історія",
+    "story_1": "Lomo ugh prism, freegan woke vice try-hard locavore. Man braid tumblr subway tile pug retro. Truffaut mustache fanny pack, authentic squid gentrify pug organic ethical bitters. Blue bottle celiac retro vape, viral venmo yuccie succulents vegan. Fixie taxidermy kombucha godard quinoa. Iceland coloring book tilde af kombucha post-ironic, venmo la croix synth chambray celiac williamsburg chillwave lomo drinking vinegar. Blue bottle taiyaki pitchfork, portland enamel pin banh mi tumeric letterpress man bun crucifix. Enamel pin franzen flexitarian locavore brooklyn taxidermy gentrify tilde 3 wolf moon crucifix sustainable occupy vegan beard truffaut. Brooklyn schlitz fingerstache hashtag viral offal asymmetrical venmo neutra small batch you probably haven't heard of them prism sriracha tousled microdosing. Farm-to-table bespoke subway tile pabst, yr flannel direct trade pop-up raclette fashion axe thundercats skateboard chicharrones. Slow-carb roof party lo-fi helvetica copper mug williamsburg keytar ethical YOLO normcore. Actually banjo bushwick iPhone godard portland single-origin coffee chartreuse whatever. Banjo farm-to-table literally, selvage kitsch direct trade shaman tbh sartorial bitters. Aesthetic freegan hot chicken, helvetica cardigan chillwave af VHS."
+  },
+  "resume": {
+    "head": {
+      "title": "CV | Олександр Товмач",
+      "description": "Олександр Товмач онлайн резюме",
+      "applicationName": "Олександр Товмач резюме",
+      "msapplicationTooltip": "Онлайн резюме адаптоване для друку"
+    },
+    "header": {
+      "printVersion": "Версія для друку",
+      "chooseLanguage": "Оберіть мову"
+    },
+    "main": {
+      "basicInfo": {
+        "name": "Олександр Товмач",
+        "title": "Веб розробник & дизайнер",
+        "location": "Львів, Україна"
+      },
+      "mainInfo": {
+        "aboutMe1": {
+          "title": "Особистітсть",
+          "p1_1": "Від самого дитинства і до зараз в мені відзначають",
+          "p1_2": "постійну жагу до знаннь",
+          "p1_3": "та здібності до швидкого навчання, в тих сферах, які мене цікавлять, і",
+          "p1_4": "ненависть до рутини.",
+          "p1_5": "З людьми, зазвичай, я швидко захоплюю центр уваги та визнання, заводжу друзів і наскільки мені відомо ― ніхто не може назвати мене своїм ворогом. Згідно з тестом \"16 personalities\"я належу до типу",
+          "p1_6": "\"debater\",",
+          "p1_7": "що в принципі вважаю дуже влучним описом мого характеру.",
+          "p2_1": "",
+          "p2_2": "Не люблю все очевидне,",
+          "p2_3": "неважливо, чи то фільм, пісня або просто жарт, все повинно змушувати задуматись. Як наслідок я",
+          "p2_4": "обожнюю вирішувати головоломки",
+          "p2_5": "та вважаю найкращим подарунком для себе, <s>якщо зовсім не знаєш що подарувати,</s> пазл або книгу. Найбільшим",
+          "p2_6": "натхненням",
+          "p2_7": "в моєму житті, вже понад 6 років, є моя",
+          "p2_8": "улюблена дружина.",
+          "p3_1": "Поважаю людей, які вважають, що",
+          "p3_2": "знання не є власністю",
+          "p3_3": "та охоче діляться з іншими, і тому сам",
+          "p3_4": "пишу статті",
+          "p3_5": "на",
+          "p3_6": ", а також працюю над документаціями для різних проектів, в тому числі для Node.js, Gatsby.js та Dropbox."
+        },
+        "aboutMe2": {
+          "title": "Амбіції",
+          "p1_1": "Я мріяв стати",
+          "p1_2": "археологом,",
+          "p1_3": "щоб відповісти на питання еволюції видів,",
+          "p1_4": "винахідником",
+          "p1_5": "космічних апаратів, щоб розширити кордони досяжного космосу,",
+          "p1_6": "хіміком,",
+          "p1_7": "щоб вирішити екологічні проблеми нашої планети, і все це лише до 14 років. Я завжди",
+          "p1_8": "прагну змінити світ на краще,",
+          "p1_9": "і саме через це я, зараз, займаюсь программуванням ― щоб створювати речі, які",
+          "p1_10": "поки що",
+          "p1_11": "не рятують життя, та хоча б покращують їх.",
+          "p2_1": "Вважаю що",
+          "p2_2": "шедеври створюються на чистому ентузіазмі,",
+          "p2_3": "а не за гроші, і саме тому я є контриб'ютором в декількох open-source проектах, а також маю декілька власних."
+        },
+        "experience": {
+          "title": "Досвід",
+          "list": [
+            {
+              "company": "Crowdin",
+              "link": "https://crowdin.com/",
+              "period": "(10.2019 ⇢ now)",
+              "description": "Інтеграції з іншими сервісами, такими як Figma, InVision, Google, AWS тощо."
+            },
+            {
+              "company": "SnapNurse",
+              "link": "https://snapnurse.com/",
+              "period": "(06.2019 ⇢ now)",
+              "description": "Розробка платформи для зв'язку медичного персоналу з клієнтами."
+            },
+            {
+              "company": "Node.js",
+              "link": "https://nodejs.org/",
+              "period": "(04.2019 ⇢ now)",
+              "description": "Контриб'ютинг у Node.js, допомога із документацією та її перекладами. Робота над новою версією веб-сайту."
+            },
+            {
+              "company": "Gatsby.js",
+              "link": "https://www.gatsbyjs.org/",
+              "period": "(02.2019 ⇢ now)",
+              "description": "Кодинг, написання та переклад документації та популяризація шляхом написання статей та виступу на конференціях."
+            },
+            {
+              "company": "ScreenCloud",
+              "link": "https://screen.cloud/",
+              "period": "(11.2017 ⇢ 03.2019)",
+              "description": "Розробка модулів для екосистеми плеєра ScreenCloud. Інтеграція з багатьма API, використовуючи різні стеки технологій для вирішення завдань найоптимальнішим способом."
+            },
+            {
+              "company": "Binary Studio Academy",
+              "link": "https://academy.binary-studio.com/",
+              "period": "(07.2017 ⇢ 09.2017)",
+              "description": "Розробка соціальної мережі для фітнесу."
+            },
+            {
+              "company": "WebTech",
+              "period": "(07.2016 ⇢ 09.2017)",
+              "description": "Email маркетинг, інтернет-реклама, підтримка клієнтів та розробка веб-сайтів."
+            }
+          ]
+        },
+        "skills": {
+          "title": "Навички",
+          "list": [
+            {
+              "category": "Фронтенд",
+              "list": ["React.js", "Gatsby.js", "Angular", "HTML/CSS", "JavaScript"]
+            },
+            {
+              "category": "Бекенд",
+              "list": ["Node.js", "Socket.io", "AWS Lambda", "Cloud Functions"]
+            },
+            {
+              "category": "Бази Даних",
+              "list": ["PostgreSQL", "MongoDB", "Firebase"]
+            },
+            {
+              "category": "Дизайн",
+              "list": ["Figma", "Adobe XD", "Adobe Photoshop", "Adobe Illustrator"]
+            }
+          ]
+        },
+        "education": {
+          "title": "Освіта",
+          "list": [
+            {
+              "name": "Криворізький Національний Університет",
+              "period": "2014-2019"
+            },
+            {
+              "name": "ЗОШ №32 м. Кривого Рогу",
+              "period": "2001-2012"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

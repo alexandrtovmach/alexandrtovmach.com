@@ -1,0 +1,54 @@
+.lang-button-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+
+  .lang-button {
+    position: relative;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 100px;
+    margin: 0 5px;
+    padding: 0;
+    transition: 0.5s;
+    cursor: pointer;
+
+    &.lang-button--large {
+      margin: 0 10px;
+      position: relative;
+    }
+
+    .earth {
+      position: absolute;
+      display: block;
+      top: 7.5%;
+      left: 7.5%;
+      width: 85%;
+      height: 85%;
+      transition: 200ms 200ms;
+      transform: scale(1);
+      &.active {
+        transform: scale(0);
+        transition: 100ms 200ms;
+      }
+    }
+
+    .cross {
+      position: absolute;
+      display: block;
+      top: 25%;
+      left: 25%;
+      width: 50%;
+      height: 50%;
+      transition: 100ms;
+      transform: scale(0);
+      &.active {
+        transform: scale(1);
+        transition: 300ms 200ms cubic-bezier(0.28, 0.55, 0.385, 1.65);
+      }
+    }
+  }
+}

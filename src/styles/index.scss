@@ -1,0 +1,24 @@
+@import "constants.scss";
+@import "mixins.scss";
+@import "./reset.scss";
+@import "./App.scss";
+
+/* print rules */
+#printable {
+  display: none;
+}
+@media print {
+  #root,
+  #preloader {
+    display: none !important;
+  }
+  #printable {
+    display: block !important;
+    width: 100%;
+    height: calc(100vh - 10mm * 2);
+  }
+  @page {
+    margin: 10mm 20mm;
+  }
+}
+/* print rules end */

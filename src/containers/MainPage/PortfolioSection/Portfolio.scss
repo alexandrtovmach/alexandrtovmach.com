@@ -1,0 +1,55 @@
+@import "constants.scss";
+@import "../../../scenes/Main/MainPage.scss";
+
+.main-portfolio {
+  @extend .main-page-section;
+  position: relative;
+  .overlapperForSupportTouchEvent {
+    position: absolute;
+    top: 20%;
+    bottom: 18%;
+    left: 50%;
+    right: 70px;
+    width: auto;
+    height: auto;
+    z-index: 3;
+    @media screen and (max-width: $mq-laptop) {
+      display: none;
+    }
+  }
+  .portfolio-text-block {
+    flex: 50%;
+    padding: 10px 20px 0 0;
+    margin: 20px 0;
+  }
+  .portfolio-devices-container {
+    flex: 50%;
+    width: 50%;
+    height: 40vw;
+  }
+  @media screen and (max-width: $mq-laptop) {
+    flex-direction: column;
+    .portfolio-text-block {
+      flex: 0 1 10%;
+      width: 100%;
+      .portfolio-project-text {
+        p {
+          display: none;
+        }
+        &:not(:first-of-type) {
+          display: none;
+        }
+      }
+    }
+    .portfolio-devices-container {
+      flex: 0 0 35%;
+      width: 100%;
+      max-width: 600px;
+    }
+  }
+  @media screen and (max-width: $mq-mobile) {
+    .portfolio-devices-container {
+      max-width: 45vh;
+    }
+  }
+}

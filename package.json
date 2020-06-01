@@ -1,0 +1,73 @@
+{
+  "name": "my-landing",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "classnames": "2.2.6",
+    "d3": "^5.15.0",
+    "dotenv": "^8.0.0",
+    "firebase": "^7.8.1",
+    "get-browser-language": "^1.0.0",
+    "lodash.isequal": "^4.5.0",
+    "node-sass": "^4.13.1",
+    "query-string": "^6.10.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.3.1",
+    "react-simple-image": "^1.0.0",
+    "react-sprite-animator": "^1.2.0",
+    "react-swipeable-views": "^0.13.9",
+    "react-switch": "^5.0.1",
+    "react-youtube": "^7.9.0",
+    "suncalc": "^1.8.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "minify-public-html": "html-minifier --file-ext html --input-dir ./build --output-dir ./build --config-file ./minifier.json",
+    "minify-public-css": "html-minifier --file-ext css --input-dir ./build --output-dir ./build --config-file ./minifier.json",
+    "build-resume": "node ./src/utils/resume/resumeBuild.js",
+    "build": "npm run build-resume && react-scripts build && npm run minify-public-css && npm run minify-public-html",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && firebase deploy",
+    "responsive-images": "node ./utils/generate.js",
+    "prettify": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix && prettier --write './src/**/*.{js,json,jsx,ts,tsx,css,scss}'"
+  },
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.18.3",
+    "firebase-admin": "^8.11.0",
+    "handlebars": "^4.7.3",
+    "html-minifier": "^4.0.0",
+    "husky": "4.2.2",
+    "lint-staged": "10.0.7",
+    "prettier": "1.19.1",
+    "sharp": "^0.25.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{js,json,jsx,ts,tsx,css,scss}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "development": [
+      "last 4 versions"
+    ],
+    "production": [
+      "last 4 versions",
+      "not dead"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
