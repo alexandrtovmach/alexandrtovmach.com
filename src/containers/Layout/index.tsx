@@ -12,15 +12,11 @@ import { StaticQuery, graphql } from 'gatsby';
 import Header from '../../components/header';
 import styles from './layout.module.scss';
 
-const Layout = ({ children }) => (
+const Layout = ({ children }: { children: any }) => (
   <div className={styles.pageWrapper}>
     <Header siteTitle={'Alexandr Tovmach website'} />
     <main>{children}</main>
-    <footer>
-      © {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
-    </footer>
+    <footer>resources</footer>
   </div>
 );
 
