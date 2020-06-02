@@ -14,9 +14,18 @@ import DribbbleSVG from '../../assets/icons/dribbble.svg';
 
 import styles from './footer.module.scss';
 
-export default () => {
+const Footer = () => {
   return (
     <footer className={styles.resources}>
+      <a
+        href="https://twitter.com/alexandrtovmach"
+        target="_blank"
+        title="Twitter"
+        rel="noopener noreferrer"
+        className={styles.iconLink}
+      >
+        <TwitterSVG />
+      </a>
       <a
         href="https://github.com/alexandrtovmach"
         target="_blank"
@@ -35,15 +44,6 @@ export default () => {
       >
         <StackOverflowSVG />
       </a> */}
-      <a
-        href="https://twitter.com/alexandrtovmach"
-        target="_blank"
-        title="Twitter"
-        rel="noopener noreferrer"
-        className={styles.iconLink}
-      >
-        <TwitterSVG />
-      </a>
       {/* <a
         href="https://www.npmjs.com/~alexandrtovmach"
         target="_blank"
@@ -88,7 +88,7 @@ export default () => {
         className={styles.iconLink}
       >
         <BehanceSVG />
-      </a>
+      </a> */}
       <a
         href="https://dribbble.com/alexandrtovmach"
         target="_blank"
@@ -97,7 +97,9 @@ export default () => {
         className={styles.iconLink}
       >
         <DribbbleSVG />
-      </a> */}
+      </a>
     </footer>
   );
 };
+
+export default Footer;
