@@ -10,13 +10,14 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from '../../components/header';
+import Footer from '../../components/Footer';
 import styles from './layout.module.scss';
 
 const Layout = ({ children }: { children: any }) => (
   <div className={styles.pageWrapper}>
     <Header siteTitle={'Alexandr Tovmach website'} />
     <main>{children}</main>
-    <footer>resources</footer>
+    <Footer />
   </div>
 );
 
