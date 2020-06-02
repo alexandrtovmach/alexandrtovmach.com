@@ -1,13 +1,22 @@
 .home {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
 
   > div,
-  p {
+  article {
     width: 300px;
     margin: 0.5rem;
+  }
+
+  article {
+    > * {
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-weight: 700;
+    }
   }
 }
