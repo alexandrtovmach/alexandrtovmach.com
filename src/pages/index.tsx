@@ -9,14 +9,12 @@ import styles from './home.module.scss';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Intro" />
     <section className={styles.home}>
       <StaticQuery
         query={graphql`
           query {
-            placeholderImage: file(
-              relativePath: { eq: "gatsby-astronaut.png" }
-            ) {
+            placeholderImage: file(relativePath: { eq: "conference.jpg" }) {
               childImageSharp {
                 fluid(maxWidth: 400) {
                   ...GatsbyImageSharpFluid
@@ -26,14 +24,18 @@ const IndexPage = () => (
           }
         `}
         render={data => (
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          <Img
+            fluid={data.placeholderImage.childImageSharp.fluid}
+            className={styles.image}
+          />
         )}
       />
       <article>
         <h1>Hello, I'm Alexandr Tovmach</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          eiusmod tempor incididunt ut <a href="/">labore et dolore</a> magna
+          aliqua.
         </p>
         <p>
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
