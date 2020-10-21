@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Alexandr Tovmach`,
-    description: `Web developer and UI/UX designer. I build software for startups and big companies. Focus on eye-catching design, usability, a11y and web optimization in complex web and desktop applications.z`,
+    description: `Full stack engineer and UI/UX designer. I build software for startups and big companies with focus on eye-catching design, usability, a11y and web optimization.`,
     author: `@alexandrtovmach`,
   },
   plugins: [
