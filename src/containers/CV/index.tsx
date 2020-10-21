@@ -164,7 +164,7 @@ const CVPaper = () => {
                   title="Crowdin"
                   className={styles.externalLink}
                 ></a>
-                <span className={styles.time}>(09.2019 ⇢ now)</span>
+                <span className={styles.time}>(09.2019 ⇢ now) [part-time]</span>
               </h4>
               <p>
                 Integrated localization platform with designer tools like Figma,
