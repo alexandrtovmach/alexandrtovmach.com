@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Layout from '../containers/Layout';
@@ -32,6 +32,11 @@ const IndexPage = () => (
       />
       <article>
         <h1>Hi, I'm Alexandr Tovmach.</h1>
+        <p>
+          I'm full stack engineer & UI/UX designer, and my expertise is JS
+          ecosystem, especially React and Node.js. But my vision and real
+          experience significantly wider.
+        </p>
         <p>
           I founded several open source packages like:{' '}
           <a
@@ -129,9 +134,17 @@ const IndexPage = () => (
           .
         </p>
         <p>
-          I'm full stack engineer & UI/UX designer, and my expertise is JS
-          ecosystem, especially React and Node.js. But my vision and real
-          experience significantly wider.
+          You can find more details in <Link to="/resume">printable CV</Link>,{' '}
+          <a
+            target="_blank"
+            title="Calendly"
+            rel="noopener noreferrer"
+            href="https://calendly.com/alexandrtovmach"
+          >
+            book an appointment
+          </a>{' '}
+          to talk directly or simply{' '}
+          <a href="mailto:alexandrtovmach@gmail.com">mail me</a>.
         </p>
       </article>
     </section>
