@@ -16,7 +16,7 @@ const IndexPage = () => (
           query {
             placeholderImage: file(relativePath: { eq: "main.png" }) {
               childImageSharp {
-                fluid(maxWidth: 400) {
+                fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid
                 }
               }
