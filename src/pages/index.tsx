@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import Layout from '../containers/Layout';
 import SEO from '../components/seo';
 
-import styles from './home.module.scss';
+import styles from './index.module.scss';
 
 const IndexPage = () => (
   <Layout>
@@ -134,7 +134,7 @@ const IndexPage = () => (
           .
         </p>
         <p>
-          You can find more details in <Link to="/resume">printable CV</Link>,{' '}
+          You can find more details in <Link to="/cv">printable CV</Link>,{' '}
           <a
             target="_blank"
             title="Calendly"
