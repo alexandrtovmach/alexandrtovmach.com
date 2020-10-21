@@ -36,7 +36,7 @@ const Footer = () => {
       >
         <GitHubSVG />
       </a>
-      <a
+      {/* <a
         href="https://ru.stackoverflow.com/users/312473/alexandr-tovmach"
         target="_blank"
         title="StackOverflow"
@@ -44,7 +44,7 @@ const Footer = () => {
         className={styles.iconLink}
       >
         <StackOverflowSVG />
-      </a>
+      </a> */}
       {/* <a
         href="https://www.npmjs.com/~alexandrtovmach"
         target="_blank"

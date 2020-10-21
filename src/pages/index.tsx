@@ -14,7 +14,7 @@ const IndexPage = () => (
       <StaticQuery
         query={graphql`
           query {
-            placeholderImage: file(relativePath: { eq: "conference.jpg" }) {
+            placeholderImage: file(relativePath: { eq: "main.png" }) {
               childImageSharp {
                 fluid(maxWidth: 400) {
                   ...GatsbyImageSharpFluid
