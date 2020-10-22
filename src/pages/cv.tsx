@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Layout from '../containers/Layout';
-import SEO from '../components/seo';
+import SEO from '../containers/SEO';
 import CVPaper from '../containers/CV';
 
 import CVPreviewImageSrc from '../assets/images/cv_preview.png';
