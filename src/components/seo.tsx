@@ -9,13 +9,16 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import PreviewImageSrc from '../assets/images/preview.png';
+
 interface Props {
   description?: string;
   lang?: string;
   title: string;
+  previewImageSrc?: string;
 }
 
-const SEO = ({ description, lang, title }: Props) => {
+const SEO = ({ description, lang, title, previewImageSrc }: Props) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -46,7 +49,7 @@ const SEO = ({ description, lang, title }: Props) => {
       <meta property="og:site_name" content="alexandrtovmach.com" />
       <meta property="og:locale" content="en_US" />
       <meta property="article:author" content={title} />
-      {/* <meta property="og:image" content="/images/sharing-banner.jpg" /> */}
+      <meta property="og:image" content={previewImageSrc || PreviewImageSrc} />
 
       {/* twitter */}
       <meta name="twitter:card" content="summary" />
@@ -55,7 +58,7 @@ const SEO = ({ description, lang, title }: Props) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:url" content="https://alexandrtovmach.com" />
-      {/* <meta name="twitter:image" content="/images/sharing-banner.jpg" /> */}
+      <meta name="twitter:image" content={previewImageSrc || PreviewImageSrc} />
 
       {/* personal meta */}
       <link rel="me" href="https://alexandrtovmach.com/" type="text/html" />

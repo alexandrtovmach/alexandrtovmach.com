@@ -28,11 +28,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Alexandr Tovmach CV`,
+        short_name: `alexandrtovmach.com`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#f6f6f2`,
+        theme_color: `#f6f6f2`,
         display: `minimal-ui`,
         icon: `src/assets/images/favicon.png`,
       },
