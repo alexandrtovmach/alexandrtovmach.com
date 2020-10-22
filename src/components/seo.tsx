@@ -45,7 +45,6 @@ const SEO = ({ description, lang, title, previewImageSrc }: Props) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://alexandrtovmach.com" />
       <meta property="og:site_name" content="alexandrtovmach.com" />
       <meta property="og:locale" content="en_US" />
       <meta property="article:author" content={title} />
@@ -57,7 +56,6 @@ const SEO = ({ description, lang, title, previewImageSrc }: Props) => {
       <meta name="twitter:site" content={site.siteMetadata.author} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:url" content="https://alexandrtovmach.com" />
       <meta name="twitter:image" content={previewImageSrc || PreviewImageSrc} />
 
       {/* personal meta */}
