@@ -1,73 +1,66 @@
 {
-  "name": "my-landing",
-  "version": "0.1.0",
+  "name": "alexandrtovmach.com",
   "private": true,
+  "description": "Alexandr Tovmach personal website",
+  "version": "0.0.1",
+  "author": {
+    "email": "alexandrtovmach@gmail.com",
+    "name": "Alexandr Tovmach",
+    "url": "https://alexandrtovmach.com"
+  },
   "dependencies": {
-    "classnames": "2.2.6",
-    "d3": "^5.15.0",
-    "dotenv": "^8.0.0",
-    "firebase": "^7.8.1",
-    "get-browser-language": "^1.0.0",
-    "lodash.isequal": "^4.5.0",
-    "node-sass": "^4.13.1",
-    "query-string": "^6.10.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "^3.3.1",
-    "react-simple-image": "^1.0.0",
-    "react-sprite-animator": "^1.2.0",
-    "react-swipeable-views": "^0.13.9",
-    "react-switch": "^5.0.1",
-    "react-youtube": "^7.9.0",
-    "suncalc": "^1.8.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "minify-public-html": "html-minifier --file-ext html --input-dir ./build --output-dir ./build --config-file ./minifier.json",
-    "minify-public-css": "html-minifier --file-ext css --input-dir ./build --output-dir ./build --config-file ./minifier.json",
-    "build-resume": "node ./src/utils/resume/resumeBuild.js",
-    "build": "npm run build-resume && react-scripts build && npm run minify-public-css && npm run minify-public-html",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "deploy": "npm run build && firebase deploy",
-    "responsive-images": "node ./utils/generate.js",
-    "prettify": "eslint './src/**/*.{js,jsx,ts,tsx}' --fix && prettier --write './src/**/*.{js,json,jsx,ts,tsx,css,scss}'"
-  },
-  "engines": {
-    "node": ">=9.0.0"
+    "gatsby": "^2.24.84",
+    "gatsby-image": "^2.4.21",
+    "gatsby-plugin-manifest": "^2.4.35",
+    "gatsby-plugin-offline": "^3.2.36",
+    "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sass": "^2.3.20",
+    "gatsby-plugin-sharp": "^2.6.43",
+    "gatsby-plugin-typescript": "^2.4.24",
+    "gatsby-source-filesystem": "^2.3.35",
+    "gatsby-transformer-sharp": "^2.5.19",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-helmet": "^5.2.1",
+    "react-to-print": "^2.10.3"
   },
   "devDependencies": {
-    "eslint-plugin-react": "^7.18.3",
-    "firebase-admin": "^8.11.0",
-    "handlebars": "^4.7.3",
-    "html-minifier": "^4.0.0",
-    "husky": "4.2.2",
-    "lint-staged": "10.0.7",
-    "prettier": "1.19.1",
-    "sharp": "^0.25.2"
+    "@types/react-helmet": "^6.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "prettier": "^1.19.1",
+    "typescript": "^3.9.7"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ],
-    "src/**/*.{js,json,jsx,ts,tsx,css,scss}": [
-      "prettier --write",
-      "git add"
-    ]
+  "keywords": [
+    "gatsby",
+    "gatsby-starter-default",
+    "alexandrtovmach"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
-  "browserslist": {
-    "development": [
-      "last 4 versions"
-    ],
-    "production": [
-      "last 4 versions",
-      "not dead"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexandrtovmach/alexandrtovmach.com"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "bugs": {
+    "url": "https://github.com/alexandrtovmach/alexandrtovmach.com/issues"
   }
 }

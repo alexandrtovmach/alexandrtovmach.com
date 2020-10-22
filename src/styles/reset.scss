@@ -1,3 +1,7 @@
+// http://meyerweb.com/eric/tools/css/reset/
+//  v2.0 | 20110126
+//  License: none (public domain)
+
 html,
 body,
 div,
@@ -82,12 +86,11 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
+  font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
-  font-family: $main-font;
-  -webkit-overflow-scrolling: touch;
-  box-sizing: border-box;
 }
-/* HTML5 display-role reset for older browsers */
+// HTML5 display-role reset for older browsers
 article,
 aside,
 details,
@@ -102,8 +105,7 @@ section {
   display: block;
 }
 body {
-  line-height: 1.1;
-  @include fluid-type(font-size, 300px, 1920px, 30px, 40px);
+  line-height: 1;
 }
 ol,
 ul {
@@ -117,20 +119,10 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-:active,
-:hover,
-:focus {
-  outline: 0;
-  outline-offset: 0;
-}
-a {
-  text-decoration: none;
-  color: inherit;
 }

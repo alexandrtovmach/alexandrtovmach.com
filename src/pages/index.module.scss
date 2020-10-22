@@ -1,0 +1,30 @@
+.home {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  > div,
+  article {
+    flex: 0 1 340px;
+    margin: 0.5rem;
+
+    @media screen and (max-width: 400px) {
+      flex-grow: 1;
+    }
+  }
+
+  .image {
+    border-radius: 5px;
+  }
+
+  article {
+    > * {
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-weight: 700;
+    }
+  }
+}
