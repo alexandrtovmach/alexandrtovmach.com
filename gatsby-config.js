@@ -41,12 +41,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-134175339-1',
-        anonymize: true,
-        respectDNT: true,
-        defer: false,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: 'alexandrtovmach.com',
       },
     },
     `gatsby-plugin-offline`,
