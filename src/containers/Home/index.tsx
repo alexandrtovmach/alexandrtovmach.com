@@ -29,11 +29,11 @@ const Home = () => (
       <h1>Hi, I'm Alexandr Tovmach.</h1>
       <p>
         I'm full stack engineer & UI/UX designer, and my expertise is JS
-        ecosystem, especially React and Node.js. But my vision and real
-        experience significantly wider.
+        ecosystem, especially React and Node.js. But I consider my vision and
+        real experience to be significantly wider.
       </p>
       <p>
-        I founded several open source packages like:{' '}
+        I've founded several open source packages (e.g{' '}
         <a
           target="_blank"
           title="react-microsoft-login"
@@ -50,8 +50,8 @@ const Home = () => (
           href="https://www.npmjs.com/package/react-figma-plugin-ds"
         >
           react-figma-plugin-ds
-        </a>{' '}
-        , and actively contributing to{' '}
+        </a>
+        ) , and I'm actively contributing to{' '}
         <a
           target="_blank"
           title="Node.js"
@@ -87,7 +87,7 @@ const Home = () => (
         >
           Friends of Figma
         </a>{' '}
-        projects.
+        , and other projects.
       </p>
       <p>
         I write and translate articles on{' '}
@@ -117,7 +117,7 @@ const Home = () => (
         >
           DOU
         </a>
-        , and also speak at meetups and{' '}
+        , and also speak at meet-ups and{' '}
         <a
           target="_blank"
           title="JSFest 2019: JAMStack"
@@ -129,8 +129,8 @@ const Home = () => (
         .
       </p>
       <p>
-        You can find more details about my experience in{' '}
-        <Link to="/cv">printable CV</Link>,{' '}
+        You can find more details about my experience in a{' '}
+        <Link to="/cv">printable CV</Link>. To contact with me{' '}
         <a
           target="_blank"
           title="Calendly"

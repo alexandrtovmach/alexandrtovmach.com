@@ -198,17 +198,20 @@ const CVPaper = () => {
             <article className={styles.lookingfor}>
               <h3>FAQ</h3>
               <h4>What type of cooperation would I prefer?</h4>
-              <p>Full-time / Part-time or Contract</p>
-              <h4>Remote vs Office</h4>
               <p>
-                When I started in IT my main goal was to be able to travel, and
-                now, after 4 years working in office, I am looking for a
-                completely remote position.
+                Direct cooperation with product company, without
+                outsource/outstaff agencies!
               </p>
               <h4>What industry would I like to work in?</h4>
               <p>
                 Innovations, Healthcare, Music / Sound Engineering or something
                 interesting
+              </p>
+              <h4>Remote vs Office</h4>
+              <p>
+                When I started in IT my main goal was to be able to travel, and
+                now, after 4 years working in office, I am looking for a
+                completely remote position.
               </p>
               <h4>Frontend vs Backend?</h4>
               <p>
