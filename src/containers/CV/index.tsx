@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
 
 import GitHubSVG from '../../assets/icons/github.svg';
-import LocationSVG from '../../assets/icons/location.svg';
+import TwitterSVG from '../../assets/icons/twitter.svg';
 import MailSVG from '../../assets/icons/mail.svg';
 import PrinterSVG from '../../assets/icons/printer.svg';
 import QRWebPSVG from '../../assets/images/qr.webp';
@@ -49,11 +49,11 @@ const CVPaper = () => {
             </a>
             <a
               className={[styles.contactItem, styles.flexCenter].join(' ')}
-              href="https://goo.gl/maps/Wy9tyDmB6GH2Soxf8"
+              href="https://twitter.com/alexandrtovmach"
               target="_blank"
             >
-              <span>Berdyans'k, Ukraine</span>
-              <LocationSVG />
+              <span>@alexandrtovmach</span>
+              <TwitterSVG />
             </a>
           </div>
         </section>
@@ -200,12 +200,12 @@ const CVPaper = () => {
               <h4>What type of cooperation would I prefer?</h4>
               <p>
                 Direct cooperation with product company, without
-                outsource/outstaff agencies!
+                outsource/outstaff agencies.
               </p>
               <h4>What industry would I like to work in?</h4>
               <p>
                 Innovations, Healthcare, Music / Sound Engineering or something
-                interesting
+                interesting.
               </p>
               <h4>Remote vs Office</h4>
               <p>
@@ -216,7 +216,7 @@ const CVPaper = () => {
               <h4>Frontend vs Backend?</h4>
               <p>
                 I'm ready to work with both, but... if I have a choice it's a
-                frontend
+                frontend.
               </p>
               <h4>React vs Angular vs Vue?</h4>
               <p>
