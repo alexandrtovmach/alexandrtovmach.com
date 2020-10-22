@@ -6,8 +6,12 @@
 
   > div,
   article {
-    width: 300px;
+    flex: 0 1 340px;
     margin: 0.5rem;
+
+    @media screen and (max-width: 400px) {
+      flex-grow: 1;
+    }
   }
 
   .image {

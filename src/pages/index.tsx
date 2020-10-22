@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 
+import PrinterSVG from '../assets/icons/printer.svg';
 import Layout from '../containers/Layout';
 import SEO from '../components/seo';
 
@@ -14,7 +15,7 @@ const IndexPage = () => (
       <StaticQuery
         query={graphql`
           query {
-            placeholderImage: file(relativePath: { eq: "main.png" }) {
+            placeholderImage: file(relativePath: { eq: "main.jpg" }) {
               childImageSharp {
                 fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid
@@ -134,7 +135,8 @@ const IndexPage = () => (
           .
         </p>
         <p>
-          You can find more details in <Link to="/cv">printable CV</Link>,{' '}
+          You can find more details about my experience in{' '}
+          <Link to="/cv">printable CV</Link>,{' '}
           <a
             target="_blank"
             title="Calendly"
@@ -143,8 +145,7 @@ const IndexPage = () => (
           >
             book an appointment
           </a>{' '}
-          to talk directly or simply{' '}
-          <a href="mailto:alexandrtovmach@gmail.com">mail me</a>.
+          or simply <a href="mailto:alexandrtovmach@gmail.com">mail me</a>.
         </p>
       </article>
     </section>

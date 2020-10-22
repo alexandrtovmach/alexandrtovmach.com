@@ -143,7 +143,7 @@ section.main-info {
     flex: 0 1 calc(20% - 1rem);
     padding-left: 1rem;
     > .website-link-container {
-      visibility: hidden;
+      display: none;
       > picture {
         width: 100%;
         margin-top: 0.1rem;
@@ -270,7 +270,7 @@ section.main-info {
   section.main-info {
     > section.main-info-right {
       > .website-link-container {
-        visibility: visible;
+        display: block;
       }
     }
   }
