@@ -3,36 +3,23 @@ import React from 'react';
 import Layout from '../containers/Layout';
 import SEO from '../containers/SEO';
 import { graphql } from 'gatsby';
+import PublicationCard from '../components/PublicationCard';
 
 interface Props {
   data: {
     allFeedMedium: {
       edges: {
-        node: {
-          link: string;
-          title: string;
-          pubDate: string;
-          categories: string[];
-        };
+        node: RSSFeedItem;
       }[];
     };
     allFeedDou: {
       edges: {
-        node: {
-          link: string;
-          title: string;
-          pubDate: string;
-        };
+        node: RSSFeedItem;
       }[];
     };
     allFeedHabr: {
       edges: {
-        node: {
-          link: string;
-          title: string;
-          pubDate: string;
-          categories: string[];
-        };
+        node: RSSFeedItem;
       }[];
     };
   };
@@ -46,6 +33,7 @@ export const blogQuery = graphql`
           link
           title
           pubDate
+          contentSnippet
         }
       }
     }
@@ -66,6 +54,7 @@ export const blogQuery = graphql`
           categories
           link
           pubDate
+          contentSnippet
         }
       }
     }
@@ -74,25 +63,37 @@ export const blogQuery = graphql`
 
 const BlogPage: React.FunctionComponent<Props> = ({
   data: { allFeedDou, allFeedMedium, allFeedHabr },
-}) => (
-  <Layout>
-    <SEO title="Blog" />
-    {allFeedDou.edges.map(({ node: { title, link } }) => (
-      <p>
-        <a href={link}>{title}</a>
-      </p>
-    ))}
-    {allFeedMedium.edges.map(({ node: { title, link } }) => (
-      <p>
-        <a href={link}>{title}</a>
-      </p>
-    ))}
-    {allFeedHabr.edges.map(({ node: { title, link } }) => (
-      <p>
-        <a href={link}>{title}</a>
-      </p>
-    ))}
-  </Layout>
-);
+}) => {
+  const publications = [
+    ...allFeedDou.edges.map(({ node }) => ({
+      ...node,
+      resource: 'dou',
+      language: 'uk',
+    })),
+    ...allFeedMedium.edges.map(({ node }) => ({
+      ...node,
+      resource: 'medium',
+      language: 'en',
+    })),
+    ...allFeedHabr.edges.map(({ node }) => ({
+      ...node,
+      resource: 'habr',
+      language: 'ru',
+    })),
+  ];
+  return (
+    <Layout>
+      <SEO title="Blog" />
+      {publications
+        .sort(
+          (a, b) =>
+            new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf()
+        )
+        .map(data => (
+          <PublicationCard publicationData={data} />
+        ))}
+    </Layout>
+  );
+};
 
 export default BlogPage;
