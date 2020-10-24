@@ -6,7 +6,26 @@ import { graphql } from 'gatsby';
 
 interface Props {
   data: {
-    allFeedMediumBlog: {
+    allFeedMedium: {
+      edges: {
+        node: {
+          link: string;
+          title: string;
+          pubDate: string;
+          categories: string[];
+        };
+      }[];
+    };
+    allFeedDou: {
+      edges: {
+        node: {
+          link: string;
+          title: string;
+          pubDate: string;
+        };
+      }[];
+    };
+    allFeedHabr: {
       edges: {
         node: {
           link: string;
@@ -21,7 +40,16 @@ interface Props {
 
 export const blogQuery = graphql`
   query BlogQuery {
-    allFeedMediumBlog {
+    allFeedDou {
+      edges {
+        node {
+          link
+          title
+          pubDate
+        }
+      }
+    }
+    allFeedMedium {
       edges {
         node {
           link
@@ -31,16 +59,38 @@ export const blogQuery = graphql`
         }
       }
     }
+    allFeedHabr {
+      edges {
+        node {
+          title
+          categories
+          link
+          pubDate
+        }
+      }
+    }
   }
 `;
 
 const BlogPage: React.FunctionComponent<Props> = ({
-  data: { allFeedMediumBlog },
+  data: { allFeedDou, allFeedMedium, allFeedHabr },
 }) => (
   <Layout>
     <SEO title="Blog" />
-    {allFeedMediumBlog.edges.map(({ node: { title } }) => (
-      <p>{title}</p>
+    {allFeedDou.edges.map(({ node: { title, link } }) => (
+      <p>
+        <a href={link}>{title}</a>
+      </p>
+    ))}
+    {allFeedMedium.edges.map(({ node: { title, link } }) => (
+      <p>
+        <a href={link}>{title}</a>
+      </p>
+    ))}
+    {allFeedHabr.edges.map(({ node: { title, link } }) => (
+      <p>
+        <a href={link}>{title}</a>
+      </p>
     ))}
   </Layout>
 );
