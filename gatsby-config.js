@@ -23,6 +23,20 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://medium.com/feed/@alexandrtovmach`,
+        name: `MediumBlog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://dou.ua/users/aleksandr-tovmach/articles/feed/`,
+        name: `DOUBlog`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
