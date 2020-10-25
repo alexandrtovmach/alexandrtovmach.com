@@ -7,4 +7,12 @@ interface RSSFeedItem {
     creator: string;
   };
   contentSnippet: string;
+  content: {
+    encodedSnippet: string;
+  };
+}
+
+interface PublicationItem extends RSSFeedItem {
+  resource: string;
+  language: string;
 }

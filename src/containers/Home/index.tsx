@@ -90,7 +90,7 @@ const Home = () => (
         , and other projects.
       </p>
       <p>
-        I write and translate articles on{' '}
+        In my free time I write and translate articles on{' '}
         <a
           target="_blank"
           title="Medium"

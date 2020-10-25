@@ -1,9 +1,9 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import Layout from '../containers/Layout';
 import SEO from '../containers/SEO';
-import { graphql } from 'gatsby';
-import PublicationCard from '../components/PublicationCard';
+import Publications from '../containers/Publications';
 
 interface Props {
   data: {
@@ -44,6 +44,9 @@ export const blogQuery = graphql`
           title
           pubDate
           categories
+          content {
+            encodedSnippet
+          }
         }
       }
     }
@@ -67,31 +70,25 @@ const BlogPage: React.FunctionComponent<Props> = ({
   const publications = [
     ...allFeedDou.edges.map(({ node }) => ({
       ...node,
-      resource: 'dou',
+      resource: 'dou.ua',
       language: 'uk',
     })),
     ...allFeedMedium.edges.map(({ node }) => ({
       ...node,
-      resource: 'medium',
+      contentSnippet: node.content.encodedSnippet,
+      resource: 'medium.com',
       language: 'en',
     })),
     ...allFeedHabr.edges.map(({ node }) => ({
       ...node,
-      resource: 'habr',
+      resource: 'habr.com',
       language: 'ru',
     })),
   ];
   return (
     <Layout>
       <SEO title="Blog" />
-      {publications
-        .sort(
-          (a, b) =>
-            new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf()
-        )
-        .map(data => (
-          <PublicationCard publicationData={data} />
-        ))}
+      <Publications publications={publications} />
     </Layout>
   );
 };

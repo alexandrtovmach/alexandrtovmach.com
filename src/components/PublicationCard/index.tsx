@@ -1,30 +1,48 @@
 import React from 'react';
-import { capitalize } from 'lodash';
+import { truncate, uniqBy, lowerCase } from 'lodash';
 
 import styles from './publication-card.module.scss';
-
-interface PublicationData extends RSSFeedItem {
-  resource: string;
-  language: string;
-}
+import Flag from '../Flag';
 
 interface Props {
-  publicationData: PublicationData;
+  publicationData: PublicationItem;
 }
 
 const PublicationCard: React.FunctionComponent<Props> = ({
-  publicationData: { title, link, pubDate, contentSnippet, language, resource },
+  publicationData: {
+    title,
+    link,
+    pubDate,
+    contentSnippet,
+    language,
+    resource,
+    categories,
+  },
 }) => {
   const [, snippet] = (contentSnippet && contentSnippet.match(/(.+)\n/)) || [];
   return (
-    <div className={styles.publicationCard}>
-      <h3 className={styles.title}>{title}</h3>
-      <p>{snippet}</p>
-      <p>{pubDate}</p>
-      <a href={link} className={styles.link}>
-        Read at {capitalize(resource)} ⟶
-      </a>
-    </div>
+    <a
+      className={styles.publicationCard}
+      href={link}
+      target="_blank"
+      title={`${resource}: ${title}`}
+      rel="noopener noreferrer"
+    >
+      <h3 className={styles.title}>
+        <Flag language={language} /> {title}
+      </h3>
+      <div className={styles.tagsRow}>
+        {uniqBy(categories, lowerCase).map(
+          el =>
+            el === 'alexandrtovmach' || <span className={styles.tag}>{el}</span>
+        )}
+      </div>
+      <p className={styles.description}>{truncate(snippet, { length: 300 })}</p>
+      <div className={styles.metaRow}>
+        <p>{resource}</p>
+        <p>{new Date(pubDate).toLocaleDateString()}</p>
+      </div>
+    </a>
   );
 };
 
