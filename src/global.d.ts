@@ -6,6 +6,7 @@ interface SkillItem {
     | 'mobile'
     | 'databases'
     | 'design'
+    | 'devops'
     | 'other';
   value: string;
 }

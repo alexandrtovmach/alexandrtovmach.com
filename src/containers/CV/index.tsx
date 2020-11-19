@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import { graphql, useStaticQuery } from 'gatsby';
 import { groupBy, capitalize } from 'lodash';
+import classNames from 'classnames';
 
 import Markdown from '../Markdown';
 import ExperienceItem from '../../components/ExperienceItem';
@@ -101,34 +102,37 @@ const CVPaper = () => {
       </div>
       <main className={styles.paper} ref={componentRef}>
         <section className={styles.basicInfo}>
-          <div className={styles.text}>
+          <div className={styles.title}>
             <h1>ALEXANDR TOVMACH</h1>
             <h2>full stack engineer & UI/UX designer</h2>
           </div>
           <div className={styles.contacts}>
-            <a
-              className={[styles.contactItem, styles.flexCenter].join(' ')}
-              href="https://github.com/alexandrtovmach"
-              target="_blank"
-            >
-              <span>alexandrtovmach</span>
-              <GitHubSVG />
-            </a>
-            <a
-              className={[styles.contactItem, styles.flexCenter].join(' ')}
-              href="mailto:alexandrtovmach@gmail.com"
-            >
-              <span>alexandrtovmach@gmail.com</span>
-              <MailSVG />
-            </a>
-            <a
-              className={[styles.contactItem, styles.flexCenter].join(' ')}
-              href="https://twitter.com/alexandrtovmach"
-              target="_blank"
-            >
-              <span>@alexandrtovmach</span>
-              <TwitterSVG />
-            </a>
+            {[
+              {
+                link: 'https://github.com/alexandrtovmach',
+                label: 'alexandrtovmach',
+                icon: <GitHubSVG />,
+              },
+              {
+                link: 'mailto:alexandrtovmach@gmail.com',
+                label: 'alexandrtovmach@gmail.com',
+                icon: <MailSVG />,
+              },
+              {
+                link: 'https://twitter.com/alexandrtovmach',
+                label: '@alexandrtovmach',
+                icon: <TwitterSVG />,
+              },
+            ].map(({ icon, link, label }) => (
+              <a
+                className={classNames(styles.contactItem, styles.flexCenter)}
+                href={link}
+                target="_blank"
+              >
+                <span>{label}</span>
+                {icon}
+              </a>
+            ))}
           </div>
         </section>
         <section className={styles.mainInfo}>

@@ -1,10 +1,18 @@
 .experience-item {
-  padding-bottom: 0.5rem;
+  margin-bottom: var(--space);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .title {
+    margin-bottom: calc(var(--space) / 4);
+  }
+
   .time {
-    line-height: 1;
     font-weight: 200;
     text-transform: lowercase;
     font-size: 40%;
-    margin: 0.3rem 0;
+    margin-bottom: calc(var(--space) / 2);
   }
 }

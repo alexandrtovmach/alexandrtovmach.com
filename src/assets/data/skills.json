@@ -65,21 +65,6 @@
     "category": "frontend"
   },
   {
-    "label": "Crowdin API",
-    "value": "crowdin_api",
-    "category": "backend"
-  },
-  {
-    "label": "Figma Plugin API",
-    "value": "figma_plugin_api",
-    "category": "backend"
-  },
-  {
-    "label": "Adobe Plugin API",
-    "value": "adobe_plugin_api",
-    "category": "backend"
-  },
-  {
     "label": "Express.js",
     "value": "expressjs",
     "category": "backend"
@@ -143,5 +128,55 @@
     "label": "Blender",
     "value": "blender",
     "category": "design"
+  },
+  {
+    "label": "Mentorship",
+    "value": "mentorship",
+    "category": "other"
+  },
+  {
+    "label": "Leadership",
+    "value": "leadership",
+    "category": "other"
+  },
+  {
+    "label": "Google Cloud",
+    "value": "googlecloud",
+    "category": "devops"
+  },
+  {
+    "label": "Heroku",
+    "value": "heroku",
+    "category": "devops"
+  },
+  {
+    "label": "AWS",
+    "value": "aws",
+    "category": "devops"
+  },
+  {
+    "label": "Azure",
+    "value": "azure",
+    "category": "devops"
+  },
+  {
+    "label": "Bash",
+    "value": "bash",
+    "category": "other"
+  },
+  {
+    "label": "Selenium",
+    "value": "selenium",
+    "category": "other"
+  },
+  {
+    "label": "iMacros",
+    "value": "imacros",
+    "category": "other"
+  },
+  {
+    "label": "JavaScript",
+    "value": "javascript",
+    "category": "frontend"
   }
 ]

@@ -64,7 +64,7 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
         onHoverSkill={onHoverSkill}
         highlightedSkillKey={highlightedSkillKey}
       />
-      <p>{description}</p>
+      {/* <p>{description}</p> */}
     </div>
   );
 };
