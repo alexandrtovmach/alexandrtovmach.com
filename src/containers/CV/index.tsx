@@ -1,5 +1,8 @@
 import React, { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
+import { graphql, useStaticQuery } from 'gatsby';
+
+import Markdown from '../Markdown';
 
 import GitHubSVG from '../../assets/icons/github.svg';
 import TwitterSVG from '../../assets/icons/twitter.svg';
@@ -10,11 +13,53 @@ import QRJpegSVG from '../../assets/images/qr.jpg';
 
 import styles from './cv.module.scss';
 
+interface Query {
+  allFile: {
+    edges: {
+      node: {
+        name: string;
+        internal: {
+          content: string;
+        };
+      };
+    }[];
+  };
+}
+
 const CVPaper = () => {
   const componentRef = useRef<HTMLElement>(null);
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+  const {
+    allFile: { edges },
+  } = useStaticQuery<Query>(graphql`
+    query MarkdownContent {
+      allFile(filter: { extension: { eq: "md" } }) {
+        edges {
+          node {
+            name
+            internal {
+              content
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const contentMd: { [key: string]: string } = {};
+  edges.forEach(
+    ({
+      node: {
+        name,
+        internal: { content },
+      },
+    }) => {
+      contentMd[name] = content;
+    }
+  );
+
   return (
     <>
       <div
@@ -59,87 +104,6 @@ const CVPaper = () => {
         </section>
         <section className={styles.mainInfo}>
           <section className={styles.mainInfoLeft}>
-            <article className={styles.aboutme}>
-              <h3>Personality</h3>
-              <p>
-                Since childhood, I've been told that I have a{' '}
-                <span className={styles.highlighted}>
-                  constant thirst for knowledge,
-                </span>{' '}
-                the ability to learn quickly in areas that interest me, and{' '}
-                <span className={styles.highlighted}>
-                  hate routine affairs.
-                </span>{' '}
-                Usually, I immediately get everybody's attention and
-                recognition, make friends quickly, and as far as I know no one
-                thinks I’m a jerk. According to the "16 personalities" test, I
-                am{' '}
-                <a href="https://www.16personalities.com/profiles/0748e79e8a572">
-                  "debater"
-                </a>
-                , which I think is a good description of my character.
-              </p>
-              <p>
-                I{' '}
-                <span className={styles.highlighted}>
-                  don't like anything that is obvious,
-                </span>{' '}
-                no matter what it is ― movie, song or even a joke. Everything
-                should trigger mental activity. Therefore, I{' '}
-                <span className={styles.highlighted}>love to solve tasks</span>{' '}
-                and for me, the best gift is a puzzle or a book. For over 8
-                years, my first and only love, who eventually became{' '}
-                <span className={styles.highlighted}>my wife,</span> is the
-                biggest{' '}
-                <span className={styles.highlighted}>
-                  inspiration of my life.
-                </span>
-              </p>
-              <p>
-                I respect people who believe that{' '}
-                <span className={styles.highlighted}>
-                  knowledge is not personal property
-                </span>{' '}
-                and who want to share it with others, and in that reason,{' '}
-                <span className={styles.highlighted}>I'm writing articles</span>{' '}
-                to <a href="https://medium.com/@alexandrtovmach">Medium</a>,{' '}
-                <a href="https://habr.com/ru/users/alexandrtovmach/posts/">
-                  Habr
-                </a>
-                ,{' '}
-                <a href="https://dou.ua/users/aleksandr-tovmach/articles">
-                  DOU
-                </a>
-                , and in addition help with documentation for several projects,
-                like a Node.js, Gatsby.js and SemVer.
-              </p>
-            </article>
-            <article className={styles.aboutme}>
-              <h3>Ambitions</h3>
-              <p>
-                I wasn't even 14 when I dreamt of becoming{' '}
-                <span className={styles.highlighted}>an archaeologist</span> to
-                answer the questions of the evolution of species,{' '}
-                <span className={styles.highlighted}>an inventor</span> of
-                spacecraft to expand the boundaries of accessible space, and{' '}
-                <span className={styles.highlighted}>a chemist,</span> to solve
-                the environmental problems of our planet. I always wanted{' '}
-                <span className={styles.highlighted}>
-                  to change this world for the better,
-                </span>{' '}
-                and that's why I’m now engaged in programming to create things
-                that, even if they <s>still</s> don't save lives, at least
-                improve them.
-              </p>
-              <p>
-                I believe that{' '}
-                <span className={styles.highlighted}>
-                  masterpieces are created from pure enthusiasm,
-                </span>{' '}
-                and not for money, therefore I am open source evangelist and an
-                open-minded adventurer.
-              </p>
-            </article>
             <article className={styles.experience}>
               <h3>Experience</h3>
               <h4>
@@ -195,6 +159,12 @@ const CVPaper = () => {
                 website development.
               </p>
             </article>
+            <article className={styles.aboutme}>
+              <Markdown>{contentMd.personality}</Markdown>
+            </article>
+            <article className={styles.aboutme}>
+              <Markdown>{contentMd.ambitions}</Markdown>
+            </article>
             <article className={styles.lookingfor}>
               <h3>FAQ</h3>
               <h4>What type of cooperation would I prefer?</h4>
@@ -233,8 +203,9 @@ const CVPaper = () => {
               <ul>
                 <li>React.js</li>
                 <li>Gatsby.js</li>
-                <li>Angular</li>
+                <li>TypeScript</li>
                 <li>HTML/CSS/JavaScript</li>
+                <li>Angular</li>
               </ul>
               <h4>Backend</h4>
               <ul>

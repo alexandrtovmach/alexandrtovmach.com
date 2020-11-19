@@ -26,6 +26,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
+    "react-markdown": "^5.0.2",
     "react-to-print": "^2.10.3"
   },
   "devDependencies": {
