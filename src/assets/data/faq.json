@@ -1,0 +1,22 @@
+[
+  {
+    "q": "What type of cooperation would I prefer?",
+    "a": "Direct cooperation with product company, without outsource/outstaff agencies."
+  },
+  {
+    "q": "What industry would I like to work in?",
+    "a": "Innovations, Healthcare, Music / Sound Engineering or something interesting."
+  },
+  {
+    "q": "Remote vs Office",
+    "a": "When I started in IT my main goal was to be able to travel, and now, after 4 years working in office, I am looking for a completely remote position."
+  },
+  {
+    "q": "Frontend vs Backend?",
+    "a": "I'm ready to work with both, but... if I have a choice it's a frontend."
+  },
+  {
+    "q": "React vs Angular vs Vue?",
+    "a": "I remember a lot of discussions about this, but for the last 4 years, I prefer to React, in the reason of requirements for projects."
+  }
+]
