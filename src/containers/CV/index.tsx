@@ -3,6 +3,7 @@ import { useReactToPrint } from 'react-to-print';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Markdown from '../Markdown';
+import ExperienceItem from '../../components/ExperienceItem';
 
 import GitHubSVG from '../../assets/icons/github.svg';
 import TwitterSVG from '../../assets/icons/twitter.svg';
@@ -106,58 +107,42 @@ const CVPaper = () => {
           <section className={styles.mainInfoLeft}>
             <article className={styles.experience}>
               <h3>Experience</h3>
-              <h4>
-                MedRecord
-                <a
-                  href="https://medrecord.io/"
-                  target="_blank"
-                  title="MedRecord"
-                  className={styles.externalLink}
-                ></a>
-                <span className={styles.time}>(09.2020 ⇢ now)</span>
-              </h4>
-              <p>
-                Delivering high quality, secure eHealth solutions, and making
-                tools for online medical management.
-              </p>
-              <h4>
-                Crowdin
-                <a
-                  href="https://crowdin.com/"
-                  target="_blank"
-                  title="Crowdin"
-                  className={styles.externalLink}
-                ></a>
-                <span className={styles.time}>(09.2019 ⇢ now) [part-time]</span>
-              </h4>
-              <p>
-                Integrated localization platform with designer tools like Figma,
-                AdobeXD.
-              </p>
-              <h4>
-                Binary Studio
-                <a
-                  href="https://binary-studio.com/"
-                  target="_blank"
-                  title="Binary Studio"
-                  className={styles.externalLink}
-                ></a>
-                <span className={styles.time}>(05.2017 ⇢ 10.2020)</span>
-              </h4>
-              <p>
-                Work on platform for nurses booking. Recorded a few technical
-                lectures and was a mentor for a team of students in Binary
-                Studio Academy. Implemented 10 modules for digital signage
-                software player ecosystem.
-              </p>
-              <h4>
-                DeliSol LLC
-                <span className={styles.time}>(07.2016 ⇢ 09.2017)</span>
-              </h4>
-              <p>
-                Email marketing, online advertising, customer support, and
-                website development.
-              </p>
+              <ExperienceItem
+                position="Software Engineer"
+                name="MedRecord"
+                url="https://medrecord.io/"
+                startDate="Sep 2020"
+                description="Delivering high quality, secure eHealth solutions, and making tools for online medical management."
+                skills={[]}
+              />
+
+              <ExperienceItem
+                position="Contract Software Engineer"
+                name="Crowdin"
+                url="https://crowdin.com/"
+                startDate="Sep 2019"
+                description="Integrated localization platform with designer tools like Figma, AdobeXD."
+                skills={[]}
+              />
+
+              <ExperienceItem
+                position="Software Engineer"
+                name="Binary Studio"
+                url="https://binary-studio.com/"
+                startDate="May 2017"
+                endDate="Oct 2020"
+                description="Work on platform for nurses booking. Recorded a few technical lectures and was a mentor for a team of students in Binary Studio Academy. Implemented 10 modules for digital signage software player ecosystem."
+                skills={[]}
+              />
+
+              <ExperienceItem
+                position="Automation Engineer"
+                name="DeliSol LLC"
+                startDate="Jul 2016"
+                endDate="Sep 2017"
+                description="Email marketing, online advertising, customer support, and website development."
+                skills={[]}
+              />
             </article>
             <article className={styles.aboutme}>
               <Markdown>{contentMd.personality}</Markdown>
