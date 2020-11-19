@@ -80,9 +80,10 @@ const CVPaper = () => {
     personality: string;
     ambitions: string;
   }>(mdContent);
-  const { skills, experience } = parseQuery<{
+  const { skills, experience, faq } = parseQuery<{
     experience: ExperienceItem[];
     skills: SkillItem[];
+    faq: { q: string; a: string }[];
   }>(jsonContent, true);
 
   const extendedExperienceList = experience.map(el =>
@@ -93,7 +94,7 @@ const CVPaper = () => {
   return (
     <>
       <div
-        className={[styles.printButtonContainer, styles.flexCenter].join(' ')}
+        className={classNames(styles.printButtonContainer, styles.flexCenter)}
       >
         <button className={styles.printButton} onClick={handlePrint}>
           <PrinterSVG />
@@ -125,6 +126,7 @@ const CVPaper = () => {
               },
             ].map(({ icon, link, label }) => (
               <a
+                key={label}
                 className={classNames(styles.contactItem, styles.flexCenter)}
                 href={link}
                 target="_blank"
@@ -137,7 +139,7 @@ const CVPaper = () => {
         </section>
         <section className={styles.mainInfo}>
           <section className={styles.mainInfoLeft}>
-            <article className={styles.experience}>
+            <article>
               <h3>Experience</h3>
               {extendedExperienceList.map(el => (
                 <ExperienceItem
@@ -148,67 +150,50 @@ const CVPaper = () => {
                 />
               ))}
             </article>
-            <article className={styles.aboutme}>
+            <article>
               <Markdown>{personality}</Markdown>
             </article>
-            <article className={styles.aboutme}>
+            <article>
               <Markdown>{ambitions}</Markdown>
             </article>
-            <article className={styles.lookingfor}>
+            <article>
               <h3>FAQ</h3>
-              <h4>What type of cooperation would I prefer?</h4>
-              <p>
-                Direct cooperation with product company, without
-                outsource/outstaff agencies.
-              </p>
-              <h4>What industry would I like to work in?</h4>
-              <p>
-                Innovations, Healthcare, Music / Sound Engineering or something
-                interesting.
-              </p>
-              <h4>Remote vs Office</h4>
-              <p>
-                When I started in IT my main goal was to be able to travel, and
-                now, after 4 years working in office, I am looking for a
-                completely remote position.
-              </p>
-              <h4>Frontend vs Backend?</h4>
-              <p>
-                I'm ready to work with both, but... if I have a choice it's a
-                frontend.
-              </p>
-              <h4>React vs Angular vs Vue?</h4>
-              <p>
-                I remember a lot of discussions about this, but for the last 4
-                years, I prefer to React, in the reason of requirements for
-                projects.
-              </p>
+              {faq.map(({ a, q }) => (
+                <div className={styles.faqItem} key={q}>
+                  <h4>{q}</h4>
+                  <p>{a}</p>
+                </div>
+              ))}
             </article>
           </section>
           <section className={styles.mainInfoRight}>
-            <article className={styles.skills}>
+            <article>
               <h3>Skills</h3>
               {Object.entries(groupedSkills).map(([groupName, groupSkills]) => (
-                <React.Fragment key={groupName}>
+                <div key={groupName} className={styles.skillsGroup}>
                   <h4>{capitalize(groupName)}</h4>
                   <SkillList
                     skills={groupSkills}
                     onHoverSkill={onChangeHighlightedSkillKey}
                     highlightedSkillKey={highlightedSkillKey}
                   />
-                </React.Fragment>
+                </div>
               ))}
             </article>
-            <article className={styles.education}>
+            <article>
               <h3>Education</h3>
-              <h4>Kryvyi Rih National University</h4>
-              <span>2014-2019</span>
-              <h4>School №32 of Kryvyi Rih</h4>
-              <span>2001-2012</span>
+              <div className={styles.educationItem}>
+                <h4>Kryvyi Rih National University</h4>
+                <div>2014-2019</div>
+              </div>
+              <div className={styles.educationItem}>
+                <h4>School №32 of Kryvyi Rih</h4>
+                <div>2001-2012</div>
+              </div>
             </article>
             <article className={styles.websiteLinkContainer}>
               <h3>Website</h3>
-              <span>https://alexandrtovmach.com</span>
+              <div>alexandrtovmach.com</div>
               <picture title="alexandrtovmach.com">
                 <source type="image/webp" srcSet={QRWebPSVG} />
                 <img src={QRJpegSVG} alt="alexandrtovmach.com" />
