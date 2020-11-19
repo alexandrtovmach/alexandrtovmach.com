@@ -7,7 +7,10 @@
 // You can delete this file if you're not using it
 
 exports.onCreateNode = async ({ node, loadNodeContent }) => {
-  if (node.internal.mediaType === 'text/markdown') {
+  if (
+    node.internal.type === 'File' &&
+    ['mdContent', 'jsonContent'].includes(node.sourceInstanceName)
+  ) {
     await loadNodeContent(node);
   }
 };

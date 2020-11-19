@@ -1,9 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import { graphql, useStaticQuery } from 'gatsby';
+import { groupBy, capitalize } from 'lodash';
 
 import Markdown from '../Markdown';
 import ExperienceItem from '../../components/ExperienceItem';
+import { mergeExperienceWithSkills, parseQuery } from './helpers';
 
 import GitHubSVG from '../../assets/icons/github.svg';
 import TwitterSVG from '../../assets/icons/twitter.svg';
@@ -13,9 +15,20 @@ import QRWebPSVG from '../../assets/images/qr.webp';
 import QRJpegSVG from '../../assets/images/qr.jpg';
 
 import styles from './cv.module.scss';
+import SkillList from '../SkillList';
 
 interface Query {
-  allFile: {
+  mdContent: {
+    edges: {
+      node: {
+        name: string;
+        internal: {
+          content: string;
+        };
+      };
+    }[];
+  };
+  jsonContent: {
     edges: {
       node: {
         name: string;
@@ -28,15 +41,28 @@ interface Query {
 }
 
 const CVPaper = () => {
+  const [highlightedSkillKey, onChangeHighlightedSkillKey] = useState<
+    string | undefined
+  >();
   const componentRef = useRef<HTMLElement>(null);
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-  const {
-    allFile: { edges },
-  } = useStaticQuery<Query>(graphql`
+  const { mdContent, jsonContent } = useStaticQuery<Query>(graphql`
     query MarkdownContent {
-      allFile(filter: { extension: { eq: "md" } }) {
+      mdContent: allFile(filter: { sourceInstanceName: { eq: "mdContent" } }) {
+        edges {
+          node {
+            name
+            internal {
+              content
+            }
+          }
+        }
+      }
+      jsonContent: allFile(
+        filter: { sourceInstanceName: { eq: "jsonContent" } }
+      ) {
         edges {
           node {
             name
@@ -49,17 +75,19 @@ const CVPaper = () => {
     }
   `);
 
-  const contentMd: { [key: string]: string } = {};
-  edges.forEach(
-    ({
-      node: {
-        name,
-        internal: { content },
-      },
-    }) => {
-      contentMd[name] = content;
-    }
+  const { personality, ambitions } = parseQuery<{
+    personality: string;
+    ambitions: string;
+  }>(mdContent);
+  const { skills, experience } = parseQuery<{
+    experience: ExperienceItem[];
+    skills: SkillItem[];
+  }>(jsonContent, true);
+
+  const extendedExperienceList = experience.map(el =>
+    mergeExperienceWithSkills(el, skills)
   );
+  const groupedSkills = groupBy(skills, 'category');
 
   return (
     <>
@@ -107,48 +135,20 @@ const CVPaper = () => {
           <section className={styles.mainInfoLeft}>
             <article className={styles.experience}>
               <h3>Experience</h3>
-              <ExperienceItem
-                position="Software Engineer"
-                name="MedRecord"
-                url="https://medrecord.io/"
-                startDate="Sep 2020"
-                description="Delivering high quality, secure eHealth solutions, and making tools for online medical management."
-                skills={[]}
-              />
-
-              <ExperienceItem
-                position="Contract Software Engineer"
-                name="Crowdin"
-                url="https://crowdin.com/"
-                startDate="Sep 2019"
-                description="Integrated localization platform with designer tools like Figma, AdobeXD."
-                skills={[]}
-              />
-
-              <ExperienceItem
-                position="Software Engineer"
-                name="Binary Studio"
-                url="https://binary-studio.com/"
-                startDate="May 2017"
-                endDate="Oct 2020"
-                description="Work on platform for nurses booking. Recorded a few technical lectures and was a mentor for a team of students in Binary Studio Academy. Implemented 10 modules for digital signage software player ecosystem."
-                skills={[]}
-              />
-
-              <ExperienceItem
-                position="Automation Engineer"
-                name="DeliSol LLC"
-                startDate="Jul 2016"
-                endDate="Sep 2017"
-                description="Email marketing, online advertising, customer support, and website development."
-                skills={[]}
-              />
+              {extendedExperienceList.map(el => (
+                <ExperienceItem
+                  {...el}
+                  key={el.startDate.toString()}
+                  onHoverSkill={onChangeHighlightedSkillKey}
+                  highlightedSkillKey={highlightedSkillKey}
+                />
+              ))}
             </article>
             <article className={styles.aboutme}>
-              <Markdown>{contentMd.personality}</Markdown>
+              <Markdown>{personality}</Markdown>
             </article>
             <article className={styles.aboutme}>
-              <Markdown>{contentMd.ambitions}</Markdown>
+              <Markdown>{ambitions}</Markdown>
             </article>
             <article className={styles.lookingfor}>
               <h3>FAQ</h3>
@@ -184,41 +184,16 @@ const CVPaper = () => {
           <section className={styles.mainInfoRight}>
             <article className={styles.skills}>
               <h3>Skills</h3>
-              <h4>Frontend</h4>
-              <ul>
-                <li>React.js</li>
-                <li>Gatsby.js</li>
-                <li>TypeScript</li>
-                <li>HTML/CSS/JavaScript</li>
-                <li>Angular</li>
-              </ul>
-              <h4>Backend</h4>
-              <ul>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>Feathers.js</li>
-                <li>Nest.js</li>
-                <li>GraphQL</li>
-                <li>Serverless</li>
-              </ul>
-              <h4>Mobile</h4>
-              <ul>
-                <li>React Native</li>
-                <li>Flutter</li>
-              </ul>
-              <h4>Databases</h4>
-              <ul>
-                <li>PostgreSQL</li>
-                <li>MongoDB</li>
-                <li>Firebase</li>
-              </ul>
-              <h4>Design</h4>
-              <ul>
-                <li>Figma</li>
-                <li>Adobe XD</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe Illustrator</li>
-              </ul>
+              {Object.entries(groupedSkills).map(([groupName, groupSkills]) => (
+                <React.Fragment key={groupName}>
+                  <h4>{capitalize(groupName)}</h4>
+                  <SkillList
+                    skills={groupSkills}
+                    onHoverSkill={onChangeHighlightedSkillKey}
+                    highlightedSkillKey={highlightedSkillKey}
+                  />
+                </React.Fragment>
+              ))}
             </article>
             <article className={styles.education}>
               <h3>Education</h3>

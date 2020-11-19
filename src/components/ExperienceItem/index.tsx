@@ -4,17 +4,11 @@ import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
 import styles from './experience-item.module.scss';
+import SkillList from '../../containers/SkillList';
 
-interface Props {
-  name: string;
-  url?: string;
-  position?: string;
-  description?: string;
-  startDate: string | Date;
-  endDate?: string | Date;
-  skills: {
-    name: string;
-  }[];
+interface Props extends ExperienceItem {
+  onHoverSkill?: (key?: string) => void;
+  highlightedSkillKey?: string;
 }
 
 const getDateString = (
@@ -48,6 +42,9 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
   description,
   startDate,
   endDate,
+  skills,
+  onHoverSkill,
+  highlightedSkillKey,
 }) => {
   return (
     <div className={styles.experienceItem}>
@@ -62,6 +59,11 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
         )}
       </h4>
       <div className={styles.time}>{getDateString(startDate, endDate)}</div>
+      <SkillList
+        skills={skills}
+        onHoverSkill={onHoverSkill}
+        highlightedSkillKey={highlightedSkillKey}
+      />
       <p>{description}</p>
     </div>
   );
