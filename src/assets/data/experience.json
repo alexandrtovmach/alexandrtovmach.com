@@ -6,20 +6,20 @@
     "startDate": "Sep 2020",
     "description": "Delivering high quality, secure eHealth solutions, and making tools for online medical management.",
     "skills": [
-      "angular",
-      "aws",
+      "reactnative",
+      "typescript",
       "ba",
+      "nodejs",
+      "nestjs",
+      "mongodb",
+      "postgresql",
       "figma",
       "html",
-      "javascript",
-      "mongodb",
-      "nestjs",
-      "nodejs",
-      "postgresql",
-      "qa",
-      "reactnative",
       "sass",
-      "typescript"
+      "javascript",
+      "aws",
+      "qa",
+      "angular"
     ]
   },
   {
@@ -29,14 +29,14 @@
     "startDate": "Sep 2019",
     "description": "Integrated localization platform with designer tools like Figma, AdobeXD.",
     "skills": [
+      "react",
+      "typescript",
       "adobexd",
-      "azure",
       "figma",
       "html",
-      "javascript",
-      "react",
       "sass",
-      "typescript"
+      "javascript",
+      "azure"
     ]
   },
   {
@@ -47,29 +47,29 @@
     "endDate": "Oct 2020",
     "description": "Work on platform for nurses booking. Recorded a few technical lectures and was a mentor for a team of students in Binary Studio Academy. Implemented 10 modules for digital signage software player ecosystem.",
     "skills": [
-      "angular",
-      "aws",
+      "react",
+      "nodejs",
       "expressjs",
       "feathersjs",
+      "leadership",
+      "mentorship",
       "gatsby",
-      "googlecloud",
       "graphql",
+      "reactnative",
       "heroku",
       "html",
       "javascript",
-      "leadership",
-      "mentorship",
       "mongodb",
-      "nodejs",
       "postgresql",
       "qa",
-      "react",
-      "reactnative",
+      "googlecloud",
       "redis",
       "sass",
+      "aws",
       "serverless",
-      "flutter",
-      "typescript"
+      "typescript",
+      "angular",
+      "flutter"
     ]
   },
   {
@@ -80,13 +80,13 @@
     "description": "Email marketing, online advertising, customer support, and website development.",
     "skills": [
       "bash",
-      "css",
-      "html",
       "imacros",
+      "selenium",
+      "html",
+      "css",
       "javascript",
       "nodejs",
-      "qa",
-      "selenium"
+      "qa"
     ]
   }
 ]

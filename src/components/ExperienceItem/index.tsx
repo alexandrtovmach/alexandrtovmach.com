@@ -59,11 +59,13 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
         )}
       </h4>
       <div className={styles.time}>{getDateString(startDate, endDate)}</div>
-      <SkillList
-        skills={skills}
-        onHoverSkill={onHoverSkill}
-        highlightedSkillKey={highlightedSkillKey}
-      />
+      <div className={styles.about}>
+        <SkillList
+          skills={skills}
+          onHoverSkill={onHoverSkill}
+          highlightedSkillKey={highlightedSkillKey}
+        />
+      </div>
       {/* <p>{description}</p> */}
     </div>
   );
