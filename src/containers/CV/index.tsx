@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { groupBy, capitalize } from 'lodash';
 import classNames from 'classnames';
 
@@ -96,6 +96,7 @@ const CVPaper = () => {
       <div
         className={classNames(styles.printButtonContainer, styles.flexCenter)}
       >
+        <Link to="/">⟵ Back to main</Link>
         <button className={styles.printButton} onClick={handlePrint}>
           <PrinterSVG />
           Click to print
