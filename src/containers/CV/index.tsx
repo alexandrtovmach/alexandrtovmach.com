@@ -92,8 +92,8 @@ const CVPaper = () => {
   const groupedSkills = groupBy(skills, 'category');
 
   return (
-    <>
-      <div
+    <div>
+      <nav
         className={classNames(styles.printButtonContainer, styles.flexCenter)}
       >
         <Link to="/">⟵ Back to main</Link>
@@ -101,7 +101,7 @@ const CVPaper = () => {
           <PrinterSVG />
           Click to print
         </button>
-      </div>
+      </nav>
       <main className={styles.paper} ref={componentRef}>
         <section className={styles.basicInfo}>
           <div className={styles.title}>
@@ -113,20 +113,24 @@ const CVPaper = () => {
               {
                 link: 'https://github.com/alexandrtovmach',
                 label: 'alexandrtovmach',
+                title: 'My GitHub',
                 icon: <GitHubSVG />,
               },
               {
                 link: 'mailto:alexandrtovmach@gmail.com',
                 label: 'alexandrtovmach@gmail.com',
+                title: 'Email address',
                 icon: <MailSVG />,
               },
               {
                 link: 'https://twitter.com/alexandrtovmach',
                 label: '@alexandrtovmach',
+                title: 'My Twitter',
                 icon: <TwitterSVG />,
               },
-            ].map(({ icon, link, label }) => (
+            ].map(({ icon, link, label, title }) => (
               <a
+                aria-label={title}
                 key={label}
                 className={classNames(styles.contactItem, styles.flexCenter)}
                 href={link}
@@ -203,7 +207,7 @@ const CVPaper = () => {
           </section>
         </section>
       </main>
-    </>
+    </div>
   );
 };
 

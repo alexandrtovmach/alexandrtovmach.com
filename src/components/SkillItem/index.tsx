@@ -25,7 +25,7 @@ const SkillItem: React.FunctionComponent<Props> = ({
       className={classNames(styles.skillItem, {
         [styles.highlighted]: isHighlighted,
       })}
-      title={label}
+      title={`Skill item: ${label}`}
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
     >

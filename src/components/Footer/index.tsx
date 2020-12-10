@@ -21,7 +21,7 @@ const Footer = () => {
       <a
         href="https://twitter.com/alexandrtovmach"
         target="_blank"
-        title="Twitter"
+        title="Link to my Twitter"
         rel="noopener noreferrer"
         className={styles.iconLink}
       >
@@ -30,7 +30,7 @@ const Footer = () => {
       <a
         href="https://github.com/alexandrtovmach"
         target="_blank"
-        title="GitHub"
+        title="Link to my GitHub"
         rel="noopener noreferrer"
         className={styles.iconLink}
       >
@@ -93,7 +93,7 @@ const Footer = () => {
       <a
         href="https://dribbble.com/alexandrtovmach"
         target="_blank"
-        title="Dribbble"
+        title="Link to my Dribbble"
         rel="noopener noreferrer"
         className={styles.iconLink}
       >
@@ -102,7 +102,7 @@ const Footer = () => {
       <a
         href="https://www.linkedin.com/in/alexandrtovmach"
         target="_blank"
-        title="LinkedIn"
+        title="Link to my LinkedIn"
         rel="noopener noreferrer"
         className={styles.iconLink}
       >

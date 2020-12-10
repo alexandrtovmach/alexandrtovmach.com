@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import styles from './home.module.scss';
 
 const Home = () => (
-  <section className={styles.home}>
+  <main className={styles.home}>
     <StaticQuery
       query={graphql`
         query {
@@ -20,6 +20,7 @@ const Home = () => (
       `}
       render={data => (
         <Img
+          alt="My Photo"
           fluid={data.placeholderImage.childImageSharp.fluid}
           className={styles.image}
         />
@@ -36,7 +37,7 @@ const Home = () => (
         I've founded several open source packages (e.g{' '}
         <a
           target="_blank"
-          title="react-microsoft-login"
+          title="Link to react-microsoft-login project"
           rel="noopener noreferrer"
           href="https://www.npmjs.com/package/react-microsoft-login"
         >
@@ -45,7 +46,7 @@ const Home = () => (
         ,{' '}
         <a
           target="_blank"
-          title="react-figma-plugin-ds"
+          title="Link to react-figma-plugin-ds project"
           rel="noopener noreferrer"
           href="https://www.npmjs.com/package/react-figma-plugin-ds"
         >
@@ -54,7 +55,7 @@ const Home = () => (
         ) , and I'm actively contributing to{' '}
         <a
           target="_blank"
-          title="Node.js"
+          title="Link to Node.js project"
           rel="noopener noreferrer"
           href="https://github.com/nodejs/"
         >
@@ -63,7 +64,7 @@ const Home = () => (
         ,{' '}
         <a
           target="_blank"
-          title="SemVer"
+          title="Link to SemVer project"
           rel="noopener noreferrer"
           href="https://github.com/semver/"
         >
@@ -72,7 +73,7 @@ const Home = () => (
         ,{' '}
         <a
           target="_blank"
-          title="Gatsby"
+          title="Link to Gatsby project"
           rel="noopener noreferrer"
           href="https://github.com/gatsbyjs/"
         >
@@ -81,7 +82,7 @@ const Home = () => (
         ,{' '}
         <a
           target="_blank"
-          title="Friends of Figma"
+          title="Link to Friends of Figma project"
           rel="noopener noreferrer"
           href="https://friends.figma.com/plugins/"
         >
@@ -93,7 +94,7 @@ const Home = () => (
         I write and translate articles on{' '}
         <a
           target="_blank"
-          title="Medium"
+          title="Link to my profile on Medium"
           rel="noopener noreferrer"
           href="https://medium.com/@alexandrtovmach"
         >
@@ -102,7 +103,7 @@ const Home = () => (
         ,{' '}
         <a
           target="_blank"
-          title="Habr"
+          title="Link to my profile on Habr"
           rel="noopener noreferrer"
           href="https://habr.com/ru/users/alexandrtovmach/posts/"
         >
@@ -111,7 +112,7 @@ const Home = () => (
         ,{' '}
         <a
           target="_blank"
-          title="DOU"
+          title="Link to my profile on DOU"
           rel="noopener noreferrer"
           href="https://dou.ua/users/aleksandr-tovmach/articles"
         >
@@ -142,7 +143,7 @@ const Home = () => (
         or simply <a href="mailto:alexandrtovmach@gmail.com">mail me</a>.
       </p>
     </article>
-  </section>
+  </main>
 );
 
 export default Home;

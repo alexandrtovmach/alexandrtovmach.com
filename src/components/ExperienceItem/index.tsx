@@ -51,7 +51,11 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
       <h4 className={styles.title}>
         {position && `${position} • `}
         {url ? (
-          <a href={url} target="_blank" title={name}>
+          <a
+            href={url}
+            target="_blank"
+            title={`Link to ${name} company/project`}
+          >
             {name}
           </a>
         ) : (
