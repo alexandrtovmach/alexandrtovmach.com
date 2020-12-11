@@ -87,7 +87,7 @@ const Home = () => (
           href="https://friends.figma.com/plugins/"
         >
           Friends of Figma
-        </a>{' '}
+        </a>
         , and other projects.
       </p>
       <p>
