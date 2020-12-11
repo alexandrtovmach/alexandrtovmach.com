@@ -1,19 +1,25 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import Layout from '../containers/Layout';
 import SEO from '../containers/SEO';
-import { graphql } from 'gatsby';
+import Publications from '../containers/Publications';
 
 interface Props {
   data: {
-    allFeedMediumBlog: {
+    allFeedMedium: {
       edges: {
-        node: {
-          link: string;
-          title: string;
-          pubDate: string;
-          categories: string[];
-        };
+        node: RSSFeedItem;
+      }[];
+    };
+    allFeedDou: {
+      edges: {
+        node: RSSFeedItem;
+      }[];
+    };
+    allFeedHabr: {
+      edges: {
+        node: RSSFeedItem;
       }[];
     };
   };
@@ -21,13 +27,37 @@ interface Props {
 
 export const blogQuery = graphql`
   query BlogQuery {
-    allFeedMediumBlog {
+    allFeedDou {
+      edges {
+        node {
+          link
+          title
+          pubDate
+          contentSnippet
+        }
+      }
+    }
+    allFeedMedium {
       edges {
         node {
           link
           title
           pubDate
           categories
+          content {
+            encodedSnippet
+          }
+        }
+      }
+    }
+    allFeedHabr {
+      edges {
+        node {
+          title
+          categories
+          link
+          pubDate
+          contentSnippet
         }
       }
     }
@@ -35,14 +65,32 @@ export const blogQuery = graphql`
 `;
 
 const BlogPage: React.FunctionComponent<Props> = ({
-  data: { allFeedMediumBlog },
-}) => (
-  <Layout>
-    <SEO title="Blog" />
-    {allFeedMediumBlog.edges.map(({ node: { title } }) => (
-      <p>{title}</p>
-    ))}
-  </Layout>
-);
+  data: { allFeedDou, allFeedMedium, allFeedHabr },
+}) => {
+  const publications = [
+    ...allFeedDou.edges.map(({ node }) => ({
+      ...node,
+      resource: 'dou.ua',
+      language: 'uk',
+    })),
+    ...allFeedMedium.edges.map(({ node }) => ({
+      ...node,
+      contentSnippet: node.content.encodedSnippet,
+      resource: 'medium.com',
+      language: 'en',
+    })),
+    ...allFeedHabr.edges.map(({ node }) => ({
+      ...node,
+      resource: 'habr.com',
+      language: 'ru',
+    })),
+  ];
+  return (
+    <Layout>
+      <SEO title="Blog" />
+      <Publications publications={publications} />
+    </Layout>
+  );
+};
 
 export default BlogPage;

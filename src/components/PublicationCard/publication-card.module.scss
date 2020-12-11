@@ -1,0 +1,34 @@
+.publication-card {
+  margin: 0.5rem;
+  width: calc(340px * 2 + 0.5rem * 2);
+
+  @media screen and (max-width: 400px) {
+    width: calc(100% - 0.5rem * 2);
+  }
+
+  .title {
+    font-weight: bold;
+  }
+  .description {
+    font-size: 80%;
+  }
+  .tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    .tag {
+      font-size: 70%;
+      padding: 0.2rem;
+      margin: 0 0.2rem 0.2rem 0;
+      background-color: var(--light-color);
+      text-transform: lowercase;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+  }
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 90%;
+  }
+}
