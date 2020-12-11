@@ -54,13 +54,29 @@
   &:hover {
     box-shadow: 0 0 5rem #cccccc;
   }
-}
-section.basic-info {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 1rem;
-  > .text {
-    flex: 1 0 60%;
+
+  article {
+    margin-bottom: calc(var(--space) * 1.5);
+  }
+  h3 {
+    font-weight: normal;
+    font-size: 70%;
+    text-transform: uppercase;
+    margin-bottom: var(--space);
+  }
+  h4 {
+    font-weight: bold;
+    font-size: 50%;
+    margin-bottom: calc(var(--space) / 2);
+  }
+  p {
+    line-height: 1.5;
+    font-size: 50%;
+    opacity: 1;
+    text-indent: var(--space);
+  }
+
+  .basic-info {
     display: flex;
     justify-content: space-between;
     padding-bottom: calc(var(--space) * 1.5);
