@@ -3,6 +3,7 @@ import { truncate, uniqBy, lowerCase } from 'lodash';
 
 import styles from './publication-card.module.scss';
 import Flag from '../Flag';
+import SkillItem from '../SkillItem';
 
 interface Props {
   publicationData: PublicationItem;
@@ -29,14 +30,22 @@ const PublicationCard: React.FunctionComponent<Props> = ({
       rel="noopener noreferrer"
     >
       <h3 className={styles.title}>
-        <Flag language={language} /> {title}
+        {title} <Flag language={language} />
       </h3>
-      <div className={styles.tagsRow}>
+      <ul className={styles.tagList}>
         {uniqBy(categories, lowerCase).map(
           el =>
-            el === 'alexandrtovmach' || <span className={styles.tag}>{el}</span>
+            el === 'alexandrtovmach' || (
+              <SkillItem
+                key={el}
+                label={el}
+                value={el}
+                onHover={console.log}
+                isHighlighted={false}
+              />
+            )
         )}
-      </div>
+      </ul>
       <p className={styles.description}>{truncate(snippet, { length: 300 })}</p>
       <div className={styles.metaRow}>
         <p>{resource}</p>

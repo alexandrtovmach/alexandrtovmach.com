@@ -8,22 +8,16 @@
 
   .title {
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
   }
   .description {
     font-size: 80%;
   }
-  .tags-row {
+  .tag-list {
+    font-size: 32px;
     display: flex;
     flex-wrap: wrap;
-    .tag {
-      font-size: 70%;
-      padding: 0.2rem;
-      margin: 0 0.2rem 0.2rem 0;
-      background-color: var(--light-color);
-      text-transform: lowercase;
-      border-radius: 2px;
-      white-space: nowrap;
-    }
   }
   .meta-row {
     display: flex;
