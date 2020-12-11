@@ -1,0 +1,182 @@
+[
+  {
+    "label": "Node.js",
+    "value": "nodejs",
+    "category": "backend"
+  },
+  {
+    "label": "React Native",
+    "value": "reactnative",
+    "category": "mobile"
+  },
+  {
+    "label": "Figma",
+    "value": "figma",
+    "category": "design"
+  },
+  {
+    "label": "Adobe XD",
+    "value": "adobexd",
+    "category": "design"
+  },
+  {
+    "label": "Business Analysis",
+    "value": "ba",
+    "category": "other"
+  },
+  {
+    "label": "QA",
+    "value": "qa",
+    "category": "other"
+  },
+  {
+    "label": "React",
+    "value": "react",
+    "category": "frontend"
+  },
+  {
+    "label": "Gatsby.js",
+    "value": "gatsby",
+    "category": "frontend"
+  },
+  {
+    "label": "TypeScript",
+    "value": "typescript",
+    "category": "frontend"
+  },
+  {
+    "label": "HTML",
+    "value": "html",
+    "category": "frontend"
+  },
+  {
+    "label": "CSS",
+    "value": "css",
+    "category": "frontend"
+  },
+  {
+    "label": "SASS/SCSS",
+    "value": "sass",
+    "category": "frontend"
+  },
+  {
+    "label": "Angular",
+    "value": "angular",
+    "category": "frontend"
+  },
+  {
+    "label": "Express.js",
+    "value": "expressjs",
+    "category": "backend"
+  },
+  {
+    "label": "Feathers.js",
+    "value": "feathersjs",
+    "category": "backend"
+  },
+  {
+    "label": "Nest.js",
+    "value": "nestjs",
+    "category": "backend"
+  },
+  {
+    "label": "GraphQL",
+    "value": "graphql",
+    "category": "backend"
+  },
+  {
+    "label": "Serverless",
+    "value": "serverless",
+    "category": "backend"
+  },
+  {
+    "label": "Flutter",
+    "value": "flutter",
+    "category": "mobile"
+  },
+  {
+    "label": "PostgreSQL",
+    "value": "postgresql",
+    "category": "databases"
+  },
+  {
+    "label": "MongoDB",
+    "value": "mongodb",
+    "category": "databases"
+  },
+  {
+    "label": "Firebase",
+    "value": "firebase",
+    "category": "databases"
+  },
+  {
+    "label": "Redis",
+    "value": "redis",
+    "category": "databases"
+  },
+  {
+    "label": "Adobe Photoshop",
+    "value": "adobephotoshop",
+    "category": "design"
+  },
+  {
+    "label": "Adobe Illustrator",
+    "value": "adobeillustrator",
+    "category": "design"
+  },
+  {
+    "label": "Blender",
+    "value": "blender",
+    "category": "design"
+  },
+  {
+    "label": "Mentorship",
+    "value": "mentorship",
+    "category": "other"
+  },
+  {
+    "label": "Leadership",
+    "value": "leadership",
+    "category": "other"
+  },
+  {
+    "label": "Google Cloud",
+    "value": "googlecloud",
+    "category": "devops"
+  },
+  {
+    "label": "Heroku",
+    "value": "heroku",
+    "category": "devops"
+  },
+  {
+    "label": "AWS",
+    "value": "aws",
+    "category": "devops"
+  },
+  {
+    "label": "Azure",
+    "value": "azure",
+    "category": "devops"
+  },
+  {
+    "label": "Bash",
+    "value": "bash",
+    "category": "other"
+  },
+  {
+    "label": "Selenium",
+    "value": "selenium",
+    "category": "other"
+  },
+  {
+    "label": "iMacros",
+    "value": "imacros",
+    "category": "other"
+  },
+  {
+    "label": "JavaScript",
+    "value": "javascript",
+    "category": "frontend"
+  }
+]

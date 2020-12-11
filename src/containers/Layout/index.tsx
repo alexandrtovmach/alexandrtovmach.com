@@ -14,7 +14,7 @@ const Layout: React.FunctionComponent<Props> = ({
 }) => (
   <div className={styles.pageWrapper}>
     <Header siteTitle={'Alexandr Tovmach website'} />
-    <main>{children}</main>
+    {children}
     {!withoutFooter && <Footer />}
   </div>
 );

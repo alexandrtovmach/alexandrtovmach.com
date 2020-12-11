@@ -1,0 +1,28 @@
+.experience-item {
+  margin-bottom: var(--space);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  &:hover {
+    .about {
+      opacity: 1;
+    }
+  }
+
+  .about {
+    transition: 0.2s;
+    opacity: 0.8;
+  }
+
+  .title {
+    margin-bottom: calc(var(--space) / 4);
+  }
+
+  .time {
+    font-weight: 200;
+    text-transform: lowercase;
+    font-size: 40%;
+    margin-bottom: calc(var(--space) / 2);
+  }
+}

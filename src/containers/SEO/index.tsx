@@ -30,7 +30,7 @@ const SEO = ({ description, lang, title, previewImageSrc }: Props) => {
 
   return (
     <Helmet titleTemplate={`%s | ${site.siteMetadata.title}`}>
-      <html lang={lang} />
+      <html lang={lang || 'en'} />
       <title>{title}</title>
       <meta name="description" content={metaDescription} />
 

@@ -16,6 +16,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `mdContent`,
+        path: `${__dirname}/src/assets/markdown`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `jsonContent`,
+        path: `${__dirname}/src/assets/data`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
