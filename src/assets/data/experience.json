@@ -1,12 +1,28 @@
 [
   {
     "position": "Software Engineer",
+    "name": "PlayHQ",
+    "url": "https://playhq.com/",
+    "startDate": "Feb 2021",
+    "description": "Support and develop new features for the main sports platform in Australia.",
+    "skills": [
+      "react",
+      "typescript",
+      "nodejs",
+      "styledcomponents",
+      "javascript"
+    ]
+  },
+  {
+    "position": "Software Engineer",
     "name": "MedRecord",
-    "url": "https://medsafe.medvision360.org/",
+    "url": "https://medrecord.io/",
     "startDate": "Sep 2020",
+    "endDate": "Apr 2021",
     "description": "Delivering high quality, secure eHealth solutions, and making tools for online medical management.",
     "skills": [
       "reactnative",
+      "redux",
       "typescript",
       "ba",
       "nodejs",
@@ -57,6 +73,7 @@
       "reactnative",
       "heroku",
       "html",
+      "redux",
       "javascript",
       "mongodb",
       "postgresql",

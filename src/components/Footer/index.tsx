@@ -90,7 +90,7 @@ const Footer = () => {
       >
         <BehanceSVG />
       </a> */}
-      <a
+      {/* <a
         href="https://dribbble.com/alexandrtovmach"
         target="_blank"
         title="Link to my Dribbble"
@@ -98,7 +98,7 @@ const Footer = () => {
         className={styles.iconLink}
       >
         <DribbbleSVG />
-      </a>
+      </a> */}
       <a
         href="https://www.linkedin.com/in/alexandrtovmach"
         target="_blank"

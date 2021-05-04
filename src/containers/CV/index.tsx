@@ -135,6 +135,7 @@ const CVPaper = () => {
                 className={classNames(styles.contactItem, styles.flexCenter)}
                 href={link}
                 target="_blank"
+                rel="noreferrer"
               >
                 <span>{label}</span>
                 {icon}

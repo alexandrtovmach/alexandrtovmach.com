@@ -1,37 +1,12 @@
 [
   {
-    "label": "Node.js",
-    "value": "nodejs",
-    "category": "backend"
-  },
-  {
-    "label": "React Native",
-    "value": "reactnative",
-    "category": "mobile"
-  },
-  {
-    "label": "Figma",
-    "value": "figma",
-    "category": "design"
-  },
-  {
-    "label": "Adobe XD",
-    "value": "adobexd",
-    "category": "design"
-  },
-  {
-    "label": "Business Analysis",
-    "value": "ba",
-    "category": "other"
-  },
-  {
-    "label": "QA",
-    "value": "qa",
-    "category": "other"
-  },
-  {
     "label": "React",
     "value": "react",
+    "category": "frontend"
+  },
+  {
+    "label": "Redux",
+    "value": "redux",
     "category": "frontend"
   },
   {
@@ -60,9 +35,44 @@
     "category": "frontend"
   },
   {
+    "label": "styled-components",
+    "value": "styledcomponents",
+    "category": "frontend"
+  },
+  {
     "label": "Angular",
     "value": "angular",
     "category": "frontend"
+  },
+  {
+    "label": "React Native",
+    "value": "reactnative",
+    "category": "mobile"
+  },
+  {
+    "label": "Node.js",
+    "value": "nodejs",
+    "category": "backend"
+  },
+  {
+    "label": "Figma",
+    "value": "figma",
+    "category": "design"
+  },
+  {
+    "label": "Adobe XD",
+    "value": "adobexd",
+    "category": "design"
+  },
+  {
+    "label": "Business Analysis",
+    "value": "ba",
+    "category": "other"
+  },
+  {
+    "label": "QA",
+    "value": "qa",
+    "category": "other"
   },
   {
     "label": "Express.js",
