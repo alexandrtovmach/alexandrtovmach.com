@@ -26,9 +26,15 @@ const getDateString = (
     dayjs.extend(relativeTime);
     resultStr += end.format(FORMAT);
     const diff = end.diff(start, 'month');
-    resultStr += ` • ${dayjs
-      .duration(Math.floor(diff / 12), 'year')
-      .humanize()} ${dayjs.duration(diff % 12, 'month').humanize()}`;
+    const yearDiff = dayjs.duration(Math.floor(diff / 12), 'year');
+    const monthDiff = dayjs.duration(diff % 12, 'month');
+    resultStr += ` •`;
+    if (yearDiff.asMilliseconds()) {
+      resultStr += ` ${yearDiff.humanize()}`;
+    }
+    if (monthDiff.asMilliseconds()) {
+      resultStr += ` ${monthDiff.humanize()}`;
+    }
   } else {
     resultStr += 'present';
   }
@@ -39,7 +45,7 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
   name,
   url,
   position,
-  description,
+  // description,
   startDate,
   endDate,
   skills,
