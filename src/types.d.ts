@@ -7,9 +7,12 @@ interface RSSFeedItem {
     creator: string;
   };
   contentSnippet: string;
-  content: {
-    encodedSnippet: string;
-  };
+  content:
+    | {
+        encoded: string;
+        encodedSnippet: string;
+      }
+    | string;
 }
 
 interface PublicationItem extends RSSFeedItem {

@@ -1,11 +1,14 @@
 .publication-card {
-  margin: 0.5rem;
+  margin: 2rem 0;
   width: calc(340px * 2 + 0.5rem * 2);
 
   @media screen and (max-width: 400px) {
     width: calc(100% - 0.5rem * 2);
   }
-
+  .cover-img {
+    width: 100%;
+    border-radius: 5px;
+  }
   .title {
     font-weight: bold;
     display: flex;

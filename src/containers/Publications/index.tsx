@@ -5,7 +5,7 @@ import PublicationCard from '../../components/PublicationCard';
 import styles from './publications.module.scss';
 
 interface Props {
-  publications: PublicationItem[];
+  publications: (PublicationItem & { coverImg: string })[];
 }
 
 const Publications: React.FunctionComponent<Props> = ({ publications }) => (

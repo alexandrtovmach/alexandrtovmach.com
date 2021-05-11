@@ -6,7 +6,7 @@ import Flag from '../Flag';
 import SkillItem from '../SkillItem';
 
 interface Props {
-  publicationData: PublicationItem;
+  publicationData: PublicationItem & { coverImg: string };
 }
 
 const PublicationCard: React.FunctionComponent<Props> = ({
@@ -18,6 +18,7 @@ const PublicationCard: React.FunctionComponent<Props> = ({
     language,
     resource,
     categories,
+    coverImg,
   },
 }) => {
   const [, snippet] = (contentSnippet && contentSnippet.match(/(.+)\n/)) || [];
@@ -29,6 +30,7 @@ const PublicationCard: React.FunctionComponent<Props> = ({
       title={`${resource}: ${title}`}
       rel="noopener noreferrer"
     >
+      <img className={styles.coverImg} src={coverImg} />
       <h3 className={styles.title}>
         {title} <Flag language={language} />
       </h3>
@@ -36,13 +38,7 @@ const PublicationCard: React.FunctionComponent<Props> = ({
         {uniqBy(categories, lowerCase).map(
           el =>
             el === 'alexandrtovmach' || (
-              <SkillItem
-                key={el}
-                label={el}
-                value={el}
-                onHover={console.log}
-                isHighlighted={false}
-              />
+              <SkillItem key={el} label={el} value={el} isHighlighted={false} />
             )
         )}
       </ul>
