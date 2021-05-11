@@ -1,10 +1,23 @@
 import React from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql, Link, navigate } from 'gatsby';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import Img from 'gatsby-image';
 
 import styles from './home.module.scss';
 
-const Home = () => (
+const handleGAEventProxy = (
+  event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+) => {
+  event.preventDefault();
+  trackCustomEvent({
+    category: 'engagement',
+    action: 'view_item',
+    label: 'CV link',
+  });
+  navigate((event.target as HTMLAnchorElement)['href']);
+};
+
+const Home: React.FunctionComponent = () => (
   <main className={styles.home}>
     <StaticQuery
       query={graphql`
@@ -131,7 +144,10 @@ const Home = () => (
       </p>
       <p>
         You can find more details about my experience in a{' '}
-        <Link to="/cv">printable CV</Link>. To contact with me{' '}
+        <Link to="/cv" onClick={handleGAEventProxy}>
+          printable CV
+        </Link>
+        . To contact with me{' '}
         <a
           target="_blank"
           title="Calendly"
