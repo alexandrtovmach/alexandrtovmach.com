@@ -34,7 +34,7 @@ const Home = () => (
         real experience to be significantly wider.
       </p>
       <p>
-        I've founded several open source packages (e.g{' '}
+        I've founded several open source packages (e.g.{' '}
         <a
           target="_blank"
           title="Link to react-microsoft-login project"
