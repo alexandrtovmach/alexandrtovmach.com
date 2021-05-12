@@ -1,16 +1,17 @@
 import React from 'react';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 // import Img from 'gatsby-image';
 // import classnames from "classnames";
 
 import GitHubSVG from '../../assets/icons/github.svg';
 import TwitterSVG from '../../assets/icons/twitter.svg';
-import StackOverflowSVG from '../../assets/icons/stackoverflow.svg';
-import MediumSVG from '../../assets/icons/medium.svg';
-import HabrSVG from '../../assets/icons/habr.svg';
-import DouSVG from '../../assets/icons/dou.svg';
-import NpmSVG from '../../assets/icons/npm.svg';
-import BehanceSVG from '../../assets/icons/behance.svg';
-import DribbbleSVG from '../../assets/icons/dribbble.svg';
+// import StackOverflowSVG from '../../assets/icons/stackoverflow.svg';
+// import MediumSVG from '../../assets/icons/medium.svg';
+// import HabrSVG from '../../assets/icons/habr.svg';
+// import DouSVG from '../../assets/icons/dou.svg';
+// import NpmSVG from '../../assets/icons/npm.svg';
+// import BehanceSVG from '../../assets/icons/behance.svg';
+// import DribbbleSVG from '../../assets/icons/dribbble.svg';
 import LinkedInSVG from '../../assets/icons/linkedin.svg';
 
 import styles from './footer.module.scss';
@@ -18,7 +19,7 @@ import styles from './footer.module.scss';
 const Footer = () => {
   return (
     <footer className={styles.resources}>
-      <a
+      <OutboundLink
         href="https://twitter.com/alexandrtovmach"
         target="_blank"
         title="Link to my Twitter"
@@ -26,8 +27,8 @@ const Footer = () => {
         className={styles.iconLink}
       >
         <TwitterSVG />
-      </a>
-      <a
+      </OutboundLink>
+      <OutboundLink
         href="https://github.com/alexandrtovmach"
         target="_blank"
         title="Link to my GitHub"
@@ -35,7 +36,7 @@ const Footer = () => {
         className={styles.iconLink}
       >
         <GitHubSVG />
-      </a>
+      </OutboundLink>
       {/* <a
         href="https://ru.stackoverflow.com/users/312473/alexandr-tovmach"
         target="_blank"
@@ -99,7 +100,7 @@ const Footer = () => {
       >
         <DribbbleSVG />
       </a> */}
-      <a
+      <OutboundLink
         href="https://www.linkedin.com/in/alexandrtovmach"
         target="_blank"
         title="Link to my LinkedIn"
@@ -107,7 +108,7 @@ const Footer = () => {
         className={styles.iconLink}
       >
         <LinkedInSVG />
-      </a>
+      </OutboundLink>
     </footer>
   );
 };

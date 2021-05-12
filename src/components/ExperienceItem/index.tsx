@@ -5,6 +5,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 
 import styles from './experience-item.module.scss';
 import SkillList from '../../containers/SkillList';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 interface Props extends ExperienceItem {
   onHoverSkill?: (key?: string) => void;
@@ -57,13 +58,13 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
       <h4 className={styles.title}>
         {position && `${position} • `}
         {url ? (
-          <a
+          <OutboundLink
             href={url}
             target="_blank"
             title={`Link to ${name} company/project`}
           >
             {name}
-          </a>
+          </OutboundLink>
         ) : (
           <>{name}</>
         )}

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { graphql, Link, navigate, useStaticQuery } from 'gatsby';
 import { groupBy, capitalize } from 'lodash';
 import classNames from 'classnames';
 
@@ -17,6 +17,7 @@ import QRJpegSVG from '../../assets/images/qr.jpg';
 
 import styles from './cv.module.scss';
 import SkillList from '../SkillList';
+import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 interface Query {
   mdContent: {
@@ -49,6 +50,29 @@ const CVPaper = () => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  const handleBackPress = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    trackCustomEvent({
+      category: 'engagement',
+      action: 'go_back',
+      label: 'Back to home',
+    });
+    navigate((event.target as HTMLAnchorElement)['href']);
+  };
+
+  const handlePrintPress = () => {
+    trackCustomEvent({
+      category: 'engagement',
+      action: 'generate_lead',
+      label: 'Print CV',
+    });
+
+    handlePrint && handlePrint();
+  };
+
   const { mdContent, jsonContent } = useStaticQuery<Query>(graphql`
     query MarkdownContent {
       mdContent: allFile(filter: { sourceInstanceName: { eq: "mdContent" } }) {
@@ -96,8 +120,10 @@ const CVPaper = () => {
       <nav
         className={classNames(styles.printButtonContainer, styles.flexCenter)}
       >
-        <Link to="/">⟵ Back to main</Link>
-        <button className={styles.printButton} onClick={handlePrint}>
+        <Link to="/" onClick={handleBackPress}>
+          ⟵ Back to main
+        </Link>
+        <button className={styles.printButton} onClick={handlePrintPress}>
           <PrinterSVG />
           Click to print
         </button>
@@ -129,7 +155,7 @@ const CVPaper = () => {
                 icon: <TwitterSVG />,
               },
             ].map(({ icon, link, label, title }) => (
-              <a
+              <OutboundLink
                 aria-label={title}
                 key={label}
                 className={classNames(styles.contactItem, styles.flexCenter)}
@@ -139,7 +165,7 @@ const CVPaper = () => {
               >
                 <span>{label}</span>
                 {icon}
-              </a>
+              </OutboundLink>
             ))}
           </div>
         </section>
