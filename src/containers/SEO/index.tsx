@@ -41,7 +41,7 @@ const SEO = ({ description, lang, title, previewImageSrc }: Props) => {
       <meta property="og:site_name" content="alexandrtovmach.com" />
       <meta property="og:locale" content="en_US" />
       <meta property="article:author" content={title} />
-      <meta property="og:image" content={previewImageSrc || PreviewImageSrc} />
+      <meta property="og:image" content={`https://alexandrtovmach.com${previewImageSrc || PreviewImageSrc}`} />
 
       {/* twitter */}
       <meta name="twitter:card" content="summary" />
@@ -49,7 +49,7 @@ const SEO = ({ description, lang, title, previewImageSrc }: Props) => {
       <meta name="twitter:site" content={site.siteMetadata.author} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:image" content={previewImageSrc || PreviewImageSrc} />
+      <meta name="twitter:image" content={`https://alexandrtovmach.com${previewImageSrc || PreviewImageSrc}`} />
 
       {/* personal meta */}
       <link rel="me" href="https://alexandrtovmach.com/" type="text/html" />
