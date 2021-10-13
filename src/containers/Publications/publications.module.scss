@@ -1,13 +1,37 @@
-.publications-control-panel {
+.print-button-container {
+  font-weight: bold;
+  height: 20vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 20vh;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+
+  a {
+    border-bottom: none;
+  }
+}
+
+.publications-control-panel {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - var(--space) * 3 * 2);
   font-size: 32px;
   line-height: 1;
+  padding: calc(var(--space) * 3);
+  background-color: #ffffff;
+
+  @media screen and (max-width: 1024px) {
+    width: calc(100% - 0.5rem * 2);
+    height: auto;
+    padding: 0.5rem;
+    font-size: 24px;
+  }
 
   .panel-texts {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     h1 {
       font-weight: normal;
       font-size: 150%;
@@ -19,10 +43,16 @@
       text-transform: lowercase;
     }
   }
+  .custom-select {
+    width: 200px;
+    border: 0;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+  }
 }
 
 .publications-wrapper {
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }

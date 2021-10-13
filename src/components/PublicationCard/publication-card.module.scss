@@ -1,8 +1,8 @@
 .publication-card {
-  margin: 2rem 0;
-  width: calc(340px * 2 + 0.5rem * 2);
+  margin: calc(var(--space) * 2) 0;
+  width: 1000px;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 1024px) {
     width: calc(100% - 0.5rem * 2);
   }
   .cover-img {

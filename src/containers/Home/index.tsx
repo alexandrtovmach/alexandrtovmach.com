@@ -18,6 +18,18 @@ const Home: React.FunctionComponent = () => {
     navigate((event.target as HTMLAnchorElement)['href']);
   };
 
+  const handleBlogPress = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    trackCustomEvent({
+      category: 'engagement',
+      action: 'view_item',
+      label: 'blog link',
+    });
+    navigate((event.target as HTMLAnchorElement)['href']);
+  };
+
   return (
     <main className={styles.home}>
       <StaticQuery
@@ -105,7 +117,11 @@ const Home: React.FunctionComponent = () => {
           , and other projects.
         </p>
         <p>
-          In my free time I write and translate articles on{' '}
+          In my free time I write and translate{' '}
+          <Link to="/blog" onClick={handleBlogPress}>
+            articles
+          </Link>{' '}
+          on{' '}
           <OutboundLink
             target="_blank"
             title="Link to my profile on Medium"

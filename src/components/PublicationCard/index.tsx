@@ -30,7 +30,7 @@ const PublicationCard: React.FunctionComponent<Props> = ({
       title={`${resource}: ${title}`}
       rel="noopener noreferrer"
     >
-      <img className={styles.coverImg} src={coverImg} />
+      <img className={styles.coverImg} src={coverImg} alt={coverImg} />
       <h3 className={styles.title}>
         {title} <Flag language={language} />
       </h3>
