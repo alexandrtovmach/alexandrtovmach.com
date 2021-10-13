@@ -26,7 +26,6 @@
   },
   "plugins": ["@typescript-eslint", "react", "jsx-a11y"],
   "rules": {
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "jsx-a11y/rule-name": "warn"
+    "@typescript-eslint/explicit-function-return-type": "off"
   }
 }

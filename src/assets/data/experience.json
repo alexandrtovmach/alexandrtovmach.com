@@ -4,6 +4,7 @@
     "name": "PlayHQ",
     "url": "https://playhq.com/",
     "startDate": "Feb 2021",
+    "endDate": "Aug 2021",
     "description": "Support and develop new features for the main sports platform in Australia.",
     "skills": [
       "react",
@@ -18,7 +19,7 @@
     "name": "MedRecord",
     "url": "https://medrecord.io/",
     "startDate": "Sep 2020",
-    "endDate": "Apr 2021",
+    "endDate": "Oct 2021",
     "description": "Delivering high quality, secure eHealth solutions, and making tools for online medical management.",
     "skills": [
       "reactnative",
@@ -42,6 +43,7 @@
     "name": "Crowdin",
     "url": "https://crowdin.com/",
     "startDate": "Sep 2019",
+    "endDate": "Sep 2021",
     "description": "Integrated localization platform with designer tools like Figma, AdobeXD.",
     "skills": [
       "react",
