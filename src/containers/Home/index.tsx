@@ -3,7 +3,7 @@ import { StaticQuery, graphql, Link, navigate } from 'gatsby';
 import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import Img from 'gatsby-image';
 
-import styles from './home.module.scss';
+import * as styles from './home.module.scss';
 
 const Home: React.FunctionComponent = () => {
   const handleCVPress = (
@@ -44,7 +44,7 @@ const Home: React.FunctionComponent = () => {
             }
           }
         `}
-        render={data => (
+        render={(data) => (
           <Img
             alt="My Photo"
             fluid={data.placeholderImage.childImageSharp.fluid}

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import styles from './skill-item.module.scss';
+import * as styles from './skill-item.module.scss';
 
 interface Props extends SkillItem {
   onHover?: (key?: string) => void;

@@ -14,7 +14,7 @@ import TwitterSVG from '../../assets/icons/twitter.svg';
 // import DribbbleSVG from '../../assets/icons/dribbble.svg';
 import LinkedInSVG from '../../assets/icons/linkedin.svg';
 
-import styles from './footer.module.scss';
+import * as styles from './footer.module.scss';
 
 const Footer = () => {
   return (

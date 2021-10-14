@@ -15,7 +15,7 @@ import PrinterSVG from '../../assets/icons/printer.svg';
 import QRWebPSVG from '../../assets/images/qr.webp';
 import QRJpegSVG from '../../assets/images/qr.jpg';
 
-import styles from './cv.module.scss';
+import * as styles from './cv.module.scss';
 import SkillList from '../SkillList';
 import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
@@ -110,7 +110,7 @@ const CVPaper = () => {
     faq: { q: string; a: string }[];
   }>(jsonContent, true);
 
-  const extendedExperienceList = experience.map(el =>
+  const extendedExperienceList = experience.map((el) =>
     mergeExperienceWithSkills(el, skills)
   );
   const groupedSkills = groupBy(skills, 'category');
@@ -173,7 +173,7 @@ const CVPaper = () => {
           <section className={styles.mainInfoLeft}>
             <article>
               <h3>Experience</h3>
-              {extendedExperienceList.map(el => (
+              {extendedExperienceList.map((el) => (
                 <ExperienceItem
                   {...el}
                   key={el.startDate.toString()}

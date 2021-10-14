@@ -3,7 +3,7 @@ import React from 'react';
 
 // import LogoAnimatedSVG from '../../assets/icons/logo_animated.svg';
 
-import styles from './header.module.scss';
+import * as styles from './header.module.scss';
 
 const Header = ({ siteTitle }: any) => (
   <header className={styles.header}>

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import PublicationCard from '../../components/PublicationCard';
 
-import styles from './publications.module.scss';
+import * as styles from './publications.module.scss';
 import { Link, navigate } from 'gatsby';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
@@ -34,9 +34,7 @@ const Publications: React.FunctionComponent<Props> = ({ publications }) => {
 
   return (
     <main>
-      <nav
-        className={classNames(styles.printButtonContainer, styles.flexCenter)}
-      >
+      <nav className={styles.printButtonContainer}>
         <Link to="/" onClick={handleBackPress}>
           ⟵ Back to main
         </Link>
@@ -46,7 +44,7 @@ const Publications: React.FunctionComponent<Props> = ({ publications }) => {
           <h1>My writings world!</h1>
           <h2>
             {
-              publications.filter(el =>
+              publications.filter((el) =>
                 language === 'all' ? true : el.language === language
               ).length
             }{' '}
@@ -72,8 +70,10 @@ const Publications: React.FunctionComponent<Props> = ({ publications }) => {
             (a, b) =>
               new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf()
           )
-          .filter(el => (language === 'all' ? true : el.language === language))
-          .map(data => (
+          .filter((el) =>
+            language === 'all' ? true : el.language === language
+          )
+          .map((data) => (
             <PublicationCard key={data.link} publicationData={data} />
           ))}
       </section>

@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
-import styles from './experience-item.module.scss';
+import * as styles from './experience-item.module.scss';
 import SkillList from '../../containers/SkillList';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { truncate, uniqBy, lowerCase } from 'lodash';
 
-import styles from './publication-card.module.scss';
+import * as styles from './publication-card.module.scss';
 import Flag from '../Flag';
 import SkillItem from '../SkillItem';
 
@@ -36,7 +36,7 @@ const PublicationCard: React.FunctionComponent<Props> = ({
       </h3>
       <ul className={styles.tagList}>
         {uniqBy(categories, lowerCase).map(
-          el =>
+          (el) =>
             el === 'alexandrtovmach' || (
               <SkillItem key={el} label={el} value={el} isHighlighted={false} />
             )

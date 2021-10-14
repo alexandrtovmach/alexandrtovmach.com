@@ -1,7 +1,7 @@
 import React from 'react';
 import SkillItem from '../../components/SkillItem';
 
-import styles from './skill-list.module.scss';
+import * as styles from './skill-list.module.scss';
 
 interface Props {
   skills: SkillItem[];

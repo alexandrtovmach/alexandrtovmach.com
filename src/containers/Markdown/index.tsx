@@ -1,7 +1,7 @@
 import React, { ElementType } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import styles from './markdown.module.scss';
+import * as styles from './markdown.module.scss';
 
 const customRender: { [nodeType: string]: ElementType } = {
   strong: ({ children }) => (
@@ -13,7 +13,7 @@ const Markdown: React.FunctionComponent<{ children: string }> = ({
   children,
 }) => {
   return (
-    <ReactMarkdown renderers={customRender} linkTarget={'_blank'}>
+    <ReactMarkdown components={customRender} linkTarget={'_blank'}>
       {children}
     </ReactMarkdown>
   );
