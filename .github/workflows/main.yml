@@ -15,12 +15,6 @@ jobs:
         with:
           node-version: 16
           check-latest: true
-          registry-url: https://registry.npmjs.org
-          cache: 'npm'
-      - run: npm -v
-      - name: Upgrade npm 🎉
-        run: npm install -g npm@latest
-      - run: npm -v
       - uses: enriikke/gatsby-gh-pages-action@v2
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
