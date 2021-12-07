@@ -1,7 +1,7 @@
 import React from 'react';
-import { StaticQuery, graphql, Link, navigate } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
-import Img from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import * as styles from './home.module.scss';
 
@@ -32,25 +32,12 @@ const Home: React.FunctionComponent = () => {
 
   return (
     <main className={styles.home}>
-      <StaticQuery
-        query={graphql`
-          query {
-            placeholderImage: file(relativePath: { eq: "main.jpg" }) {
-              childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        `}
-        render={(data) => (
-          <Img
-            alt="My Photo"
-            fluid={data.placeholderImage.childImageSharp.fluid}
-            className={styles.image}
-          />
-        )}
+      <StaticImage
+        alt="My Photo"
+        className={styles.image}
+        src="../../assets/images/main.jpg"
+        placeholder="blurred"
+        layout="fullWidth"
       />
       <article>
         <h1>Hi, I'm Alexandr Tovmach.</h1>
