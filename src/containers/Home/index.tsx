@@ -32,6 +32,7 @@ const Home: React.FunctionComponent = () => {
 
   return (
     <main className={styles.home}>
+      {/* <Link to="/stats">Stats</Link> */}
       <StaticImage
         alt="My Photo"
         className={styles.image}
