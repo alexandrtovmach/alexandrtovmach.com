@@ -180,6 +180,16 @@
     "category": "other"
   },
   {
+    "label": "koa.js",
+    "value": "koa",
+    "category": "backend"
+  },
+  {
+    "label": "Ant.Design",
+    "value": "ant",
+    "category": "design"
+  },
+  {
     "label": "iMacros",
     "value": "imacros",
     "category": "other"

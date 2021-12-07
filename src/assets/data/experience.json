@@ -1,5 +1,25 @@
 [
   {
+    "position": "Contract Software Engineer",
+    "name": "RightStars",
+    "url": "https://www.rightstars.co/",
+    "startDate": "Oct 2020",
+    "endDate": "Jan 2021",
+    "description": "Bootstraping an MVP of social network to connect lawyers with users.",
+    "skills": [
+      "react",
+      "redux",
+      "typescript",
+      "nodejs",
+      "koa",
+      "mongodb",
+      "figma",
+      "javascript",
+      "aws",
+      "ant"
+    ]
+  },
+  {
     "position": "Software Engineer",
     "name": "MedRecord",
     "url": "https://medrecord.io/",

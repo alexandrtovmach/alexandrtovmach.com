@@ -29,7 +29,7 @@ export const mergeExperienceWithSkills = (
 ) => {
   const extendedSkills = item.skills
     .map(
-      targetKey =>
+      (targetKey) =>
         skills.find(({ value }) => targetKey.toString() === value) as SkillItem
     )
     .filter(Boolean);
