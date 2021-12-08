@@ -207,7 +207,7 @@ const CVPaper = () => {
             </article>
             <article className={styles.websiteLinkContainer}>
               <h3 className="section-title ">Website</h3>
-              <div>alexandrtovmach.com</div>
+              <p className="label">alexandrtovmach.com</p>
               <picture title="alexandrtovmach.com">
                 <source type="image/webp" srcSet={QRWebPSVG} />
                 <img src={QRJpegSVG} alt="alexandrtovmach.com" />

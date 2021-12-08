@@ -125,10 +125,12 @@
       }
       .website-link-container {
         display: none;
-        width: 100%;
+        width: 90%;
         > div {
-          font-size: 51%;
           margin-bottom: calc(var(--space) / 2);
+        }
+        > p {
+          text-align: center;
         }
         > picture {
           width: 100%;
@@ -192,7 +194,6 @@
     margin: 10mm;
   }
   body {
-    --space: 0.6rem;
     * {
       box-shadow: none !important;
       text-shadow: none !important;
@@ -209,25 +210,21 @@
         text-shadow: none !important;
       }
     }
-    // layout wrapper "main"
-    main {
-      height: 100%;
-      width: 100%;
-      .print-button-container {
-        display: none;
-      }
-      .paper {
-        font-size: 23px;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
 
-        .main-info {
-          .main-info-right {
-            .website-link-container {
-              display: block;
-            }
+    .print-button-container {
+      display: none;
+    }
+    .paper {
+      width: 100%;
+      min-height: unset;
+      margin: 0;
+      padding: 0;
+
+      .main-info {
+        .main-info-right {
+          .website-link-container {
+            display: block;
+            font-size: 10px;
           }
         }
       }
