@@ -16,6 +16,7 @@
       "figma",
       "javascript",
       "aws",
+      "sass",
       "ant"
     ]
   },
@@ -31,6 +32,8 @@
       "redux",
       "typescript",
       "ba",
+      "leadership",
+      "mentorship",
       "nodejs",
       "nestjs",
       "mongodb",
@@ -38,6 +41,7 @@
       "figma",
       "html",
       "sass",
+      "styledcomponents",
       "javascript",
       "aws",
       "qa"
@@ -54,6 +58,7 @@
       "react",
       "typescript",
       "nodejs",
+      "graphql",
       "styledcomponents",
       "javascript"
     ]
