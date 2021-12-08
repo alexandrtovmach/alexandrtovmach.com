@@ -3,10 +3,12 @@ import { useReactToPrint } from 'react-to-print';
 import { graphql, Link, navigate, useStaticQuery } from 'gatsby';
 import { groupBy, capitalize } from 'lodash';
 import classNames from 'classnames';
+import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 import Markdown from '../Markdown';
 import ExperienceItem from '../../components/ExperienceItem';
 import { mergeExperienceWithSkills, parseQuery } from './helpers';
+import SkillList from '../SkillList';
 
 import GitHubSVG from '../../assets/icons/github.svg';
 import TwitterSVG from '../../assets/icons/twitter.svg';
@@ -14,23 +16,14 @@ import MailSVG from '../../assets/icons/mail.svg';
 import PrinterSVG from '../../assets/icons/printer.svg';
 import QRWebPSVG from '../../assets/images/qr.webp';
 import QRJpegSVG from '../../assets/images/qr.jpg';
+import faq from '../../content/faq.json';
+import experience from '../../content/experience.json';
+import skills from '../../content/skills.json';
 
 import * as styles from './cv.module.scss';
-import SkillList from '../SkillList';
-import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 interface Query {
   mdContent: {
-    edges: {
-      node: {
-        name: string;
-        internal: {
-          content: string;
-        };
-      };
-    }[];
-  };
-  jsonContent: {
     edges: {
       node: {
         name: string;
@@ -73,21 +66,9 @@ const CVPaper = () => {
     handlePrint && handlePrint();
   };
 
-  const { mdContent, jsonContent } = useStaticQuery<Query>(graphql`
+  const { mdContent } = useStaticQuery<Query>(graphql`
     query MarkdownContent {
       mdContent: allFile(filter: { sourceInstanceName: { eq: "mdContent" } }) {
-        edges {
-          node {
-            name
-            internal {
-              content
-            }
-          }
-        }
-      }
-      jsonContent: allFile(
-        filter: { sourceInstanceName: { eq: "jsonContent" } }
-      ) {
         edges {
           node {
             name
@@ -104,16 +85,11 @@ const CVPaper = () => {
     personality: string;
     ambitions: string;
   }>(mdContent);
-  const { skills, experience, faq } = parseQuery<{
-    experience: ExperienceItem[];
-    skills: SkillItem[];
-    faq: { q: string; a: string }[];
-  }>(jsonContent, true);
 
   const extendedExperienceList = experience.map((el) =>
-    mergeExperienceWithSkills(el, skills)
+    mergeExperienceWithSkills(el, skills as SkillItem[])
   );
-  const groupedSkills = groupBy(skills, 'category');
+  const groupedSkills = groupBy<SkillItem>(skills as SkillItem[], 'category');
 
   return (
     <div>

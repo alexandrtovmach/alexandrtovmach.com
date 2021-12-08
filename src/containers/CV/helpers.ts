@@ -30,7 +30,10 @@ export const mergeExperienceWithSkills = (
   const extendedSkills = item.skills
     .map(
       (targetKey) =>
-        skills.find(({ value }) => targetKey.toString() === value) as SkillItem
+        (skills.find(({ value }) => targetKey === value) || {
+          category: 'other',
+          value: targetKey,
+        }) as SkillItem
     )
     .filter(Boolean);
   return {

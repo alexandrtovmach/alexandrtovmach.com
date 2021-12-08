@@ -18,5 +18,15 @@ interface ExperienceItem {
   description?: string;
   startDate: string | Date;
   endDate?: string | Date;
+  skills: SkillItem['value'][];
+}
+
+interface ExtExperienceItem {
+  name: string;
+  url?: string;
+  position?: string;
+  description?: string;
+  startDate: string | Date;
+  endDate?: string | Date;
   skills: SkillItem[];
 }

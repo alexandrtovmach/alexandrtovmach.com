@@ -9,7 +9,7 @@
 exports.onCreateNode = async ({ node, loadNodeContent }) => {
   if (
     node.internal.type === 'File' &&
-    ['mdContent', 'jsonContent'].includes(node.sourceInstanceName)
+    ['mdContent'].includes(node.sourceInstanceName)
   ) {
     await loadNodeContent(node);
   }

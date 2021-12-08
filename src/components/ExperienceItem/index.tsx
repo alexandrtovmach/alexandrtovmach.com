@@ -7,7 +7,7 @@ import * as styles from './experience-item.module.scss';
 import SkillList from '../../containers/SkillList';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
-interface Props extends ExperienceItem {
+interface Props extends ExtExperienceItem {
   onHoverSkill?: (key?: string) => void;
   highlightedSkillKey?: string;
 }
