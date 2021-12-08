@@ -42,7 +42,7 @@
 
 .paper {
   width: calc(1000px - var(--space) * 3 * 2);
-  height: calc(1600px - var(--space) * 3 * 2);
+  min-height: calc(1600px - var(--space) * 3 * 2);
   margin: 0 auto 20vh auto;
   padding: calc(var(--space) * 3);
   box-shadow: 0 0 5rem #eeeeee;
