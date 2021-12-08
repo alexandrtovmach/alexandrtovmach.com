@@ -47,8 +47,9 @@ const Publications: React.FunctionComponent<Props> = ({ publications }) => {
               publications.filter((el) =>
                 language === 'all' ? true : el.language === language
               ).length
-            }{' '}
-            posts and translations collected from public blogs with GraphQL+RSS
+            }
+            &nbsp; posts and translations collected from public blogs with
+            GraphQL+RSS
           </h2>
         </div>
         <select

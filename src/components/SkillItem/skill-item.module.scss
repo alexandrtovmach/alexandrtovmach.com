@@ -1,7 +1,7 @@
 .skill-item {
   padding: 0 calc(var(--space) / 2);
   border-radius: var(--space);
-  border: 1px solid var(--dark-color);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   overflow: hidden;
   text-align: center;
   cursor: pointer;
@@ -10,7 +10,7 @@
   margin-bottom: calc(var(--space) / 4);
   opacity: 0.8;
   line-height: 1.5;
-  font-size: 35%;
+  font-size: 0.7rem;
   transition: 0.4s;
 
   &.highlighted {

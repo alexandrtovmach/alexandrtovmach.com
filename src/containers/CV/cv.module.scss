@@ -11,10 +11,6 @@
   font-weight: bold;
   justify-content: space-between;
 
-  a {
-    border-bottom: none;
-  }
-
   .print-button {
     background-color: transparent;
     border: 1px solid var(--dark-color);
@@ -48,7 +44,6 @@
   box-shadow: 0 0 5rem #eeeeee;
   background-color: #ffffff;
   transition: 500ms;
-  font-size: 32px;
   line-height: 1;
 
   &:hover {
@@ -57,23 +52,6 @@
 
   article {
     margin-bottom: calc(var(--space) * 1.5);
-  }
-  h3 {
-    font-weight: normal;
-    font-size: 70%;
-    text-transform: uppercase;
-    margin-bottom: var(--space);
-  }
-  h4 {
-    font-weight: bold;
-    font-size: 50%;
-    margin-bottom: calc(var(--space) / 2);
-  }
-  p {
-    line-height: 1.5;
-    font-size: 45%;
-    opacity: 1;
-    text-indent: var(--space);
   }
 
   .basic-info {
@@ -87,12 +65,11 @@
       flex-direction: column;
       h1 {
         font-weight: normal;
-        font-size: 150%;
+        font-size: 3rem;
         text-transform: uppercase;
       }
       h2 {
         font-weight: 100;
-        font-size: 60%;
         text-transform: lowercase;
       }
     }
@@ -102,12 +79,9 @@
       justify-content: space-around;
       align-items: flex-end;
       flex-direction: column;
-      font-size: 40%;
 
       .contact-item {
         margin: 0.2rem 0;
-        color: inherit;
-        text-decoration: none;
         border-bottom: none;
         > svg {
           height: var(--space);
@@ -151,10 +125,12 @@
       }
       .website-link-container {
         display: none;
-        width: 100%;
+        width: 90%;
         > div {
-          font-size: 51%;
           margin-bottom: calc(var(--space) / 2);
+        }
+        > p {
+          text-align: center;
         }
         > picture {
           width: 100%;
@@ -218,7 +194,6 @@
     margin: 10mm;
   }
   body {
-    --space: 0.6rem;
     * {
       box-shadow: none !important;
       text-shadow: none !important;
@@ -235,25 +210,21 @@
         text-shadow: none !important;
       }
     }
-    // layout wrapper "main"
-    main {
-      height: 100%;
-      width: 100%;
-      .print-button-container {
-        display: none;
-      }
-      .paper {
-        font-size: 23px;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
 
-        .main-info {
-          .main-info-right {
-            .website-link-container {
-              display: block;
-            }
+    .print-button-container {
+      display: none;
+    }
+    .paper {
+      width: 100%;
+      min-height: unset;
+      margin: 0;
+      padding: 0;
+
+      .main-info {
+        .main-info-right {
+          .website-link-container {
+            display: block;
+            font-size: 10px;
           }
         }
       }

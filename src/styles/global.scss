@@ -7,3 +7,32 @@ a {
     opacity: 0.6;
   }
 }
+
+.section-title {
+  font-weight: 200;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: var(--space);
+}
+
+.label {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: calc(var(--space) / 2);
+}
+
+.text {
+  line-height: 1.5;
+  font-size: 0.9rem;
+  opacity: 1;
+  margin-bottom: calc(var(--space) / 2);
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.secondary-text {
+  font-weight: 200;
+  text-transform: lowercase;
+  font-size: 0.8rem;
+}

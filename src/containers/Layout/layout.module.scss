@@ -8,4 +8,9 @@
   align-items: center;
   justify-content: space-between;
   color: var(--dark-color);
+
+  @media print {
+    width: 100%;
+    height: 100%;
+  }
 }
