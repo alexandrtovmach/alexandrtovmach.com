@@ -41,14 +41,14 @@ const Home: React.FunctionComponent = () => {
         layout="fullWidth"
       />
       <article>
-        <h1>Hi, I'm Alexandr Tovmach.</h1>
-        <p>
+        <h1 className="label">Hi, I'm Alexandr Tovmach.</h1>
+        <p className="text">
           I'm full stack engineer & UI/UX designer, and my expertise is JS
           ecosystem, especially React and Node.js. But I consider my vision and
           real experience to be significantly wider.
         </p>
-        <p>
-          I've founded several open source packages (e.g.{' '}
+        <p className="text">
+          I've founded several open source packages (e.g.&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to react-microsoft-login project"
@@ -57,7 +57,7 @@ const Home: React.FunctionComponent = () => {
           >
             react-microsoft-login
           </OutboundLink>
-          ,{' '}
+          ,&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to react-figma-plugin-ds project"
@@ -66,7 +66,7 @@ const Home: React.FunctionComponent = () => {
           >
             react-figma-plugin-ds
           </OutboundLink>
-          ) , and I'm actively contributing to{' '}
+          ) , and I'm actively contributing to&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to Node.js project"
@@ -75,7 +75,7 @@ const Home: React.FunctionComponent = () => {
           >
             Node.js
           </OutboundLink>
-          ,{' '}
+          ,&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to SemVer project"
@@ -84,7 +84,7 @@ const Home: React.FunctionComponent = () => {
           >
             SemVer
           </OutboundLink>
-          ,{' '}
+          ,&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to Gatsby project"
@@ -93,7 +93,7 @@ const Home: React.FunctionComponent = () => {
           >
             Gatsby
           </OutboundLink>
-          ,{' '}
+          ,&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to Friends of Figma project"
@@ -104,12 +104,12 @@ const Home: React.FunctionComponent = () => {
           </OutboundLink>
           , and other projects.
         </p>
-        <p>
-          In my free time I write and translate{' '}
+        <p className="text">
+          In my free time I write and translate&nbsp;
           <Link to="/blog" onClick={handleBlogPress}>
             articles
-          </Link>{' '}
-          on{' '}
+          </Link>
+          &nbsp; on&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to my profile on Medium"
@@ -118,7 +118,7 @@ const Home: React.FunctionComponent = () => {
           >
             Medium
           </OutboundLink>
-          ,{' '}
+          ,&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to my profile on Habr"
@@ -127,7 +127,7 @@ const Home: React.FunctionComponent = () => {
           >
             Habr
           </OutboundLink>
-          ,{' '}
+          ,&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to my profile on DOU"
@@ -136,7 +136,7 @@ const Home: React.FunctionComponent = () => {
           >
             DOU
           </OutboundLink>
-          , and also speak at meet-ups and{' '}
+          , and also speak at meet-ups and&nbsp;
           <OutboundLink
             target="_blank"
             title="JSFest 2019: JAMStack"
@@ -147,12 +147,12 @@ const Home: React.FunctionComponent = () => {
           </OutboundLink>
           .
         </p>
-        <p>
-          You can find more details about my experience in a{' '}
+        <p className="text">
+          You can find more details about my experience in a&nbsp;
           <Link to="/cv" onClick={handleCVPress}>
             printable CV
           </Link>
-          . To contact with me{' '}
+          . To contact with me&nbsp;
           <OutboundLink
             target="_blank"
             title="Calendly"
@@ -160,8 +160,8 @@ const Home: React.FunctionComponent = () => {
             href="https://calendly.com/alexandrtovmach"
           >
             book an appointment
-          </OutboundLink>{' '}
-          or simply{' '}
+          </OutboundLink>
+          &nbsp; or simply&nbsp;
           <OutboundLink href="mailto:alexandrtovmach@gmail.com">
             mail me
           </OutboundLink>

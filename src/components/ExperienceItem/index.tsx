@@ -2,6 +2,7 @@ import React from 'react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import classNames from 'classnames';
 
 import * as styles from './experience-item.module.scss';
 import SkillList from '../../containers/SkillList';
@@ -55,7 +56,7 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
 }) => {
   return (
     <div className={styles.experienceItem}>
-      <h4 className={styles.title}>
+      <h4 className={classNames(styles.title, 'label')}>
         {position && `${position} • `}
         {url ? (
           <OutboundLink
@@ -69,7 +70,9 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
           <>{name}</>
         )}
       </h4>
-      <div className={styles.time}>{getDateString(startDate, endDate)}</div>
+      <div className={classNames(styles.time, 'secondary-text')}>
+        {getDateString(startDate, endDate)}
+      </div>
       <div className={styles.about}>
         <SkillList
           skills={skills}

@@ -134,7 +134,11 @@ const CVPaper = () => {
               <OutboundLink
                 aria-label={title}
                 key={label}
-                className={classNames(styles.contactItem, styles.flexCenter)}
+                className={classNames(
+                  styles.contactItem,
+                  styles.flexCenter,
+                  'secondary-text'
+                )}
                 href={link}
                 target="_blank"
                 rel="noreferrer"
@@ -148,7 +152,7 @@ const CVPaper = () => {
         <section className={styles.mainInfo}>
           <section className={styles.mainInfoLeft}>
             <article>
-              <h3>Experience</h3>
+              <h3 className="section-title ">Experience</h3>
               {extendedExperienceList.map((el) => (
                 <ExperienceItem
                   {...el}
@@ -159,27 +163,29 @@ const CVPaper = () => {
               ))}
             </article>
             <article>
+              <h3 className="section-title">Personality</h3>
               <Markdown>{personality}</Markdown>
             </article>
             <article>
+              <h3 className="section-title">Ambitions</h3>
               <Markdown>{ambitions}</Markdown>
             </article>
             <article>
-              <h3>FAQ</h3>
+              <h3 className="section-title ">FAQ</h3>
               {faq.map(({ a, q }) => (
                 <div className={styles.faqItem} key={q}>
-                  <h4>{q}</h4>
-                  <p>{a}</p>
+                  <h4 className="label">{q}</h4>
+                  <p className="text">{a}</p>
                 </div>
               ))}
             </article>
           </section>
           <section className={styles.mainInfoRight}>
             <article>
-              <h3>Skills</h3>
+              <h3 className="section-title ">Skills</h3>
               {Object.entries(groupedSkills).map(([groupName, groupSkills]) => (
                 <div key={groupName} className={styles.skillsGroup}>
-                  <h4>{capitalize(groupName)}</h4>
+                  <h4 className="label">{capitalize(groupName)}</h4>
                   <SkillList
                     skills={groupSkills}
                     onHoverSkill={onChangeHighlightedSkillKey}
@@ -189,18 +195,18 @@ const CVPaper = () => {
               ))}
             </article>
             <article>
-              <h3>Education</h3>
+              <h3 className="section-title ">Education</h3>
               <div className={styles.educationItem}>
-                <h4>Kryvyi Rih National University</h4>
-                <div>2014-2019</div>
+                <h4 className="label">Kryvyi Rih National University</h4>
+                <p className="text">2014-2019</p>
               </div>
               <div className={styles.educationItem}>
-                <h4>School №32 of Kryvyi Rih</h4>
-                <div>2001-2012</div>
+                <h4 className="label">School №32 of Kryvyi Rih</h4>
+                <p className="text">2001-2012</p>
               </div>
             </article>
             <article className={styles.websiteLinkContainer}>
-              <h3>Website</h3>
+              <h3 className="section-title ">Website</h3>
               <div>alexandrtovmach.com</div>
               <picture title="alexandrtovmach.com">
                 <source type="image/webp" srcSet={QRWebPSVG} />
