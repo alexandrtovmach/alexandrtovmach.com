@@ -12,6 +12,7 @@
   line-height: 1.5;
   font-size: 0.7rem;
   transition: 0.4s;
+  white-space: nowrap;
 
   &.highlighted {
     background-color: var(--dark-color);

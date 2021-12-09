@@ -9,13 +9,6 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `mdContent`,
-        path: `${__dirname}/src/assets/markdown`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {

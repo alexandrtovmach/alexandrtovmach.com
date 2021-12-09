@@ -211,6 +211,11 @@
       }
     }
 
+    :global(.section-title) {
+      font-size: 1.1rem;
+      margin-bottom: calc(var(--space) / 2);
+    }
+
     .print-button-container {
       display: none;
     }

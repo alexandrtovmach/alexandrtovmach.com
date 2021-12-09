@@ -8,6 +8,11 @@ a {
   }
 }
 
+.highlighted {
+  font-weight: 500;
+  opacity: 1;
+}
+
 .section-title {
   font-weight: 200;
   font-size: 1.5rem;
@@ -16,8 +21,7 @@ a {
 }
 
 .label {
-  font-weight: bold;
-  font-size: 1rem;
+  @extend .highlighted;
   margin-bottom: calc(var(--space) / 2);
 }
 

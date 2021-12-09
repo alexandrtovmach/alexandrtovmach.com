@@ -10,22 +10,22 @@
     border-radius: 5px;
   }
   .title {
-    font-weight: bold;
     display: flex;
     justify-content: space-between;
+    padding: 0 1rem;
   }
   .description {
-    font-size: 80%;
+    padding: 0 1rem;
   }
   .tag-list {
     font-size: 32px;
     display: flex;
     flex-wrap: wrap;
+    padding: 0 1rem;
   }
   .meta-row {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0;
-    font-size: 90%;
+    padding: 0.5rem 1rem;
   }
 }
