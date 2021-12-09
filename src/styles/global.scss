@@ -8,23 +8,6 @@ a {
   }
 }
 
-.highlighted {
-  font-weight: 500;
-  opacity: 1;
-}
-
-.section-title {
-  font-weight: 200;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  margin-bottom: var(--space);
-}
-
-.label {
-  @extend .highlighted;
-  margin-bottom: calc(var(--space) / 2);
-}
-
 .text {
   line-height: 1.5;
   font-size: 0.9rem;
@@ -39,4 +22,21 @@ a {
   font-weight: 200;
   text-transform: lowercase;
   font-size: 0.8rem;
+}
+
+.section-title {
+  font-weight: 200;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: var(--space);
+}
+
+.highlighted {
+  font-weight: 500;
+  opacity: 1;
+}
+
+.label {
+  @extend .highlighted;
+  margin-bottom: calc(var(--space) / 2);
 }
