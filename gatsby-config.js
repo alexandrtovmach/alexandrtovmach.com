@@ -5,6 +5,12 @@ module.exports = {
     author: `@alexandrtovmach`,
   },
   plugins: [
+    {
+      resolve: `gatsby-wikipedia-fetcher`,
+      options: {
+        listSrc: 'src/content/books.json',
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,

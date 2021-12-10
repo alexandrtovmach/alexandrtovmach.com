@@ -15,6 +15,15 @@ interface RSSFeedItem {
     | string;
 }
 
+interface BookWikiItem {
+  title: string;
+  summary: string;
+  requestLang: string;
+  requestArticle: string;
+  extract: string;
+  firstImage: string;
+}
+
 interface BookItem {
   id: string;
   etag: string;

@@ -23,6 +23,7 @@
     "gatsby-plugin-typescript": "^4.3.0",
     "gatsby-source-filesystem": "^4.3.0",
     "gatsby-source-rss-feed": "^1.2.2",
+    "gatsby-wikipedia-fetcher": "github:alexandrtovmach/gatsby-wikipedia-fetcher",
     "node-sass": "^6.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
