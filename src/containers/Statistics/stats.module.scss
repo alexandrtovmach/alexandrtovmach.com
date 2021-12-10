@@ -1,9 +1,23 @@
 .stats {
   section {
-    .section-title {
-      font-weight: normal;
-      text-transform: uppercase;
-      margin-bottom: var(--space);
+    .bookShelf {
+      display: flex;
+      > li {
+        width: 30px;
+        height: 300px;
+        background-color: darkolivegreen;
+        writing-mode: vertical-rl;
+        text-orientation: sideways-right;
+        margin: 0 calc(var(--space) / 10);
+        padding: calc(var(--space) / 2);
+        color: white;
+        font-weight: bold;
+        vertical-align: baseline;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
     }
   }
 }
