@@ -17,9 +17,7 @@ interface RSSFeedItem {
 
 interface BookWikiItem {
   title: string;
-  summary: string;
-  requestLang: string;
-  requestArticle: string;
+  requestUrl: string;
   extract: string;
   firstImage: string;
 }

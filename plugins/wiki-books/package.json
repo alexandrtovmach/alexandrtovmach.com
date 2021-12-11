@@ -1,0 +1,14 @@
+{
+  "name": "wiki-books",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "email": "alexandrtovmach@gmail.com",
+    "name": "Alexandr Tovmach",
+    "url": "https://alexandrtovmach.com"
+  },
+  "license": "MIT"
+}

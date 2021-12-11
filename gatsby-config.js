@@ -6,7 +6,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-wikipedia-fetcher`,
+      resolve: `wiki-books`,
       options: {
         listSrc: 'src/content/books.json',
       },

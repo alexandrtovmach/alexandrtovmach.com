@@ -23,14 +23,15 @@
     "gatsby-plugin-typescript": "^4.3.0",
     "gatsby-source-filesystem": "^4.3.0",
     "gatsby-source-rss-feed": "^1.2.2",
-    "gatsby-wikipedia-fetcher": "github:alexandrtovmach/gatsby-wikipedia-fetcher",
+    "lodash": "^4.17.21",
     "node-sass": "^6.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-markdown": "^7.0.1",
-    "react-to-print": "^2.10.3"
+    "react-to-print": "^2.10.3",
+    "wtf_wikipedia": "^9.0.2"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.11",

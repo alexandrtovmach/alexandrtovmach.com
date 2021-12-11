@@ -7,7 +7,7 @@ import Statistics from '../containers/Statistics';
 
 interface StatsPageProps {
   data: {
-    allWikipediaFetcher: {
+    allWikiBooks: {
       nodes: BookWikiItem[];
     };
   };
@@ -15,12 +15,10 @@ interface StatsPageProps {
 
 export const booksQuery = graphql`
   query BooksQuery {
-    allWikipediaFetcher {
+    allWikiBooks {
       nodes {
         title
-        summary
-        requestLang
-        requestArticle
+        requestUrl
         extract
         firstImage
       }
@@ -29,12 +27,12 @@ export const booksQuery = graphql`
 `;
 
 const StatsPage: React.FunctionComponent<StatsPageProps> = ({
-  data: { allWikipediaFetcher },
+  data: { allWikiBooks },
 }) => {
   return (
     <Layout>
       <SEO title="Random Info" />
-      <Statistics books={allWikipediaFetcher.nodes} />
+      <Statistics books={allWikiBooks.nodes} />
     </Layout>
   );
 };
