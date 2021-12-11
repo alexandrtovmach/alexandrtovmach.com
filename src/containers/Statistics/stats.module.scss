@@ -3,7 +3,6 @@
     .bookShelf {
       display: flex;
       > li {
-        width: 30px;
         height: 300px;
         background-color: darkolivegreen;
         writing-mode: vertical-rl;
@@ -15,8 +14,18 @@
         vertical-align: baseline;
         line-height: 1;
         display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        text-align: end;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: column;
+
+        > h3 {
+          text-transform: uppercase;
+        }
+        > span {
+          font-weight: 100;
+          font-size: 70%;
+        }
       }
     }
   }

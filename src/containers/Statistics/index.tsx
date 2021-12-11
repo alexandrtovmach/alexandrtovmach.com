@@ -15,8 +15,8 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
           {books.map(({ title, author }) => (
             <li>
               {/* <img src={firstImage} alt={title} /> */}
-              <h3>{title}</h3>
               <span>{author}</span>
+              <h3>{title.replace(/\(.*\)/, '')}</h3>
             </li>
           ))}
         </ul>

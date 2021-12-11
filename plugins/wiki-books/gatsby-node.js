@@ -11,12 +11,20 @@ const getAuthorName = (rawJson) =>
   get(rawJson, 'sections[0].templates[0].author') ||
   get(rawJson, 'sections[0].templates[1].author.text') ||
   get(rawJson, 'sections[0].templates[1].author') ||
+  get(rawJson, 'sections[0].templates[2].author.text') ||
+  get(rawJson, 'sections[0].templates[2].author') ||
   get(rawJson, 'sections[0].infoboxes[0].автор.text') ||
   get(rawJson, 'sections[0].infoboxes[0].автор') ||
   get(rawJson, 'sections[0].templates[0].автор.text') ||
   get(rawJson, 'sections[0].templates[0].автор') ||
   get(rawJson, 'sections[0].templates[1].автор.text') ||
-  get(rawJson, 'sections[0].templates[1].автор');
+  get(rawJson, 'sections[0].templates[1].автор') ||
+  get(rawJson, 'sections[0].templates[2].автор.text') ||
+  get(rawJson, 'sections[0].templates[2].автор') ||
+  console.warn(
+    "can't find authro name",
+    JSON.stringify(rawJson.sections[0], null, 2)
+  );
 
 exports.sourceNodes = async (
   { actions, createNodeId, createContentDigest, reporter },
@@ -36,7 +44,7 @@ exports.sourceNodes = async (
   }
 
   const hashTable = {};
-  sourcesList.forEach(({ url }) => (hashTable[url] = true));
+  sourcesList.forEach((url) => (hashTable[url] = true));
   const uniqueSourcesList = Object.keys(hashTable);
 
   return Promise.all(
@@ -52,7 +60,7 @@ exports.sourceNodes = async (
             author: getAuthorName(doc.json()),
             url: doc.url(),
             extract: doc.sections()[0].text(),
-            firstImage: doc.images()[0].url(),
+            firstImage: doc.images()[0] && doc.images()[0].url(),
           };
           actions.createNode({
             ...nodeData,
