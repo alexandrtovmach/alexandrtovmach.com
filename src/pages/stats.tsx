@@ -18,6 +18,7 @@ export const booksQuery = graphql`
     allWikiBooks {
       nodes {
         title
+        author
         requestUrl
         extract
         firstImage

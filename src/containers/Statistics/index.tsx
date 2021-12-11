@@ -12,10 +12,11 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
       <section>
         <h3 className="section-title">Books list</h3>
         <ul className={styles.bookShelf}>
-          {books.map(({ firstImage, title }) => (
+          {books.map(({ title, author }) => (
             <li>
               {/* <img src={firstImage} alt={title} /> */}
               <h3>{title}</h3>
+              <span>{author}</span>
             </li>
           ))}
         </ul>
