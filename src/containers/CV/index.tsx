@@ -140,7 +140,7 @@ const CVPaper = () => {
                 <span className="highlighted">hate routine affairs</span>.
                 Usually, I immediately get everybody's attention and
                 recognition, make friends quickly, and as far as I know no one
-                thinks I’m a jerk. According to the "16 personalities" test, I
+                thinks I'm a jerk. According to the "16 personalities" test, I
                 am&nbsp;
                 <a
                   target="_blank"
@@ -215,7 +215,7 @@ const CVPaper = () => {
                 <span className="highlighted">
                   to change this world for the better
                 </span>
-                , and that's why I’m now engaged in programming to create things
+                , and that's why I'm now engaged in programming to create things
                 that, even if they (still) don't save lives, at least improve
                 them.
               </p>

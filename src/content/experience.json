@@ -1,11 +1,29 @@
 [
   {
+    "position": "Software Engineer",
+    "name": "Fena",
+    "url": "https://www.fena.co/",
+    "startDate": "Nov 2021",
+    "description": "Working on a payment system based on Open Banking and integrated with top list of UK/EU banks.",
+    "skills": [
+      "react",
+      "redux",
+      "typescript",
+      "nodejs",
+      "mongodb",
+      "figma",
+      "javascript",
+      "aws",
+      "styledcomponents"
+    ]
+  },
+  {
     "position": "Contract Software Engineer",
     "name": "RightStars",
     "url": "https://www.rightstars.co/",
-    "startDate": "Oct 2020",
-    "endDate": "Jan 2021",
-    "description": "Bootstraping an MVP of social network to connect lawyers with users.",
+    "startDate": "Oct 2021",
+    "endDate": "Dec 2021",
+    "description": "Bootstraped an MVP of social network to connect lawyers with users.",
     "skills": [
       "react",
       "redux",
