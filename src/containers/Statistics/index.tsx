@@ -3,7 +3,7 @@ import React from 'react';
 import * as styles from './stats.module.scss';
 
 interface StatisticsProps {
-  books: BookWikiItem[];
+  books: BookOpenLibItem[];
 }
 
 const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
@@ -12,9 +12,9 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
       <section>
         <h3 className="section-title">Books list</h3>
         <ul className={styles.bookShelf}>
-          {books.map(({ title, author }) => (
-            <li>
-              {/* <img src={firstImage} alt={title} /> */}
+          {books.map(({ title, author, id, internal }) => (
+            <li key={id}>
+              {console.log(JSON.parse(internal.content))}
               <span>{author}</span>
               <h3>{title.replace(/\(.*\)/, '')}</h3>
             </li>

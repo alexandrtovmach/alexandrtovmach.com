@@ -16,11 +16,24 @@ interface RSSFeedItem {
 }
 
 interface BookWikiItem {
+  id: string;
   title: string;
   author: string;
   requestUrl: string;
   extract: string;
   firstImage: string;
+  internal: {
+    content: any;
+  };
+}
+
+interface BookOpenLibItem {
+  id: string;
+  title: string;
+  author: string;
+  internal: {
+    content: any;
+  };
 }
 
 interface BookItem {

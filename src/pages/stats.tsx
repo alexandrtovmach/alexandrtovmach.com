@@ -7,33 +7,35 @@ import Statistics from '../containers/Statistics';
 
 interface StatsPageProps {
   data: {
-    allWikiBooks: {
-      nodes: BookWikiItem[];
+    allOpenLibBooks: {
+      nodes: BookOpenLibItem[];
     };
   };
 }
 
 export const booksQuery = graphql`
   query BooksQuery {
-    allWikiBooks {
+    allOpenLibBooks {
       nodes {
         title
+        id
+        subjects
         author
-        requestUrl
-        extract
-        firstImage
+        internal {
+          content
+        }
       }
     }
   }
 `;
 
 const StatsPage: React.FunctionComponent<StatsPageProps> = ({
-  data: { allWikiBooks },
+  data: { allOpenLibBooks },
 }) => {
   return (
     <Layout>
       <SEO title="Random Info" />
-      <Statistics books={allWikiBooks.nodes} />
+      <Statistics books={allOpenLibBooks.nodes} />
     </Layout>
   );
 };

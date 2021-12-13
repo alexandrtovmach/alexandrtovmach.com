@@ -4,27 +4,29 @@ const get = require('lodash/get');
 
 const LOG_PREFIX = '[wiki-books]: ';
 
-const getAuthorName = (rawJson) =>
-  get(rawJson, 'sections[0].infoboxes[0].author.text') ||
-  get(rawJson, 'sections[0].infoboxes[0].author') ||
-  get(rawJson, 'sections[0].templates[0].author.text') ||
-  get(rawJson, 'sections[0].templates[0].author') ||
-  get(rawJson, 'sections[0].templates[1].author.text') ||
-  get(rawJson, 'sections[0].templates[1].author') ||
-  get(rawJson, 'sections[0].templates[2].author.text') ||
-  get(rawJson, 'sections[0].templates[2].author') ||
-  get(rawJson, 'sections[0].infoboxes[0].автор.text') ||
-  get(rawJson, 'sections[0].infoboxes[0].автор') ||
-  get(rawJson, 'sections[0].templates[0].автор.text') ||
-  get(rawJson, 'sections[0].templates[0].автор') ||
-  get(rawJson, 'sections[0].templates[1].автор.text') ||
-  get(rawJson, 'sections[0].templates[1].автор') ||
-  get(rawJson, 'sections[0].templates[2].автор.text') ||
-  get(rawJson, 'sections[0].templates[2].автор') ||
+const getAuthorName = (rawJson) => {
+  const authorNames = ['author', 'auteur', 'автор'];
+
+  for (let i = 0; i <= authorNames.length; i++) {
+    const name =
+      get(rawJson, `sections[0].infoboxes[0].${authorNames[i]}.text`) ||
+      get(rawJson, `sections[0].infoboxes[0].${authorNames[i]}`) ||
+      get(rawJson, `sections[0].templates[0].${authorNames[i]}.text`) ||
+      get(rawJson, `sections[0].templates[0].${authorNames[i]}`) ||
+      get(rawJson, `sections[0].templates[1].${authorNames[i]}.text`) ||
+      get(rawJson, `sections[0].templates[1].${authorNames[i]}`) ||
+      get(rawJson, `sections[0].templates[2].${authorNames[i]}.text`) ||
+      get(rawJson, `sections[0].templates[2].${authorNames[i]}`);
+
+    if (name) {
+      return name;
+    }
+  }
   console.warn(
-    "can't find authro name",
+    "can't find author name",
     JSON.stringify(rawJson.sections[0], null, 2)
   );
+};
 
 exports.sourceNodes = async (
   { actions, createNodeId, createContentDigest, reporter },
@@ -70,6 +72,7 @@ exports.sourceNodes = async (
             internal: {
               type: `WikiBooks`,
               contentDigest: createContentDigest(nodeData),
+              content: JSON.stringify(doc.json()),
             },
           });
         })

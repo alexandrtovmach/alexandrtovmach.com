@@ -24,6 +24,7 @@
     "gatsby-source-filesystem": "^4.3.0",
     "gatsby-source-rss-feed": "^1.2.2",
     "lodash": "^4.17.21",
+    "node-fetch": "^2.6.6",
     "node-sass": "^6.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",

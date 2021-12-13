@@ -6,7 +6,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `wiki-books`,
+      resolve: `openlib-books`,
       options: {
         listSrc: 'src/content/books.json',
       },
