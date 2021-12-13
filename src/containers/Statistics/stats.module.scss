@@ -2,6 +2,8 @@
   section {
     .bookShelf {
       display: flex;
+      max-width: 100vw;
+      overflow: auto;
       > li {
         height: 300px;
         background-color: darkolivegreen;
@@ -19,10 +21,10 @@
         justify-content: center;
         flex-direction: column;
 
-        > h3 {
+        h3 {
           text-transform: uppercase;
         }
-        > span {
+        span {
           font-weight: 100;
           font-size: 70%;
         }

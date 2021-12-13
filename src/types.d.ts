@@ -31,6 +31,7 @@ interface BookOpenLibItem {
   id: string;
   title: string;
   author: string;
+  openLibUrl: string;
   internal: {
     content: any;
   };

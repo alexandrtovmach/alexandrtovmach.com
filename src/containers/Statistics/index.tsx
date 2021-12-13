@@ -1,4 +1,5 @@
 import React from 'react';
+import sortBy from 'lodash/sortBy';
 
 import * as styles from './stats.module.scss';
 
@@ -12,13 +13,17 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
       <section>
         <h3 className="section-title">Books list</h3>
         <ul className={styles.bookShelf}>
-          {books.map(({ title, author, id, internal }) => (
-            <li key={id}>
-              {console.log(JSON.parse(internal.content))}
-              <span>{author}</span>
-              <h3>{title.replace(/\(.*\)/, '')}</h3>
-            </li>
-          ))}
+          {sortBy(books, 'author').map(
+            ({ title, author, id, internal, openLibUrl }) => (
+              <li key={id}>
+                <a href={openLibUrl}>
+                  {console.log(JSON.parse(internal.content))}
+                  <span>{author}</span>
+                  <h3>{title.replace(/\(.*\)/, '')}</h3>
+                </a>
+              </li>
+            )
+          )}
         </ul>
       </section>
       <section>

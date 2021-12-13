@@ -34,6 +34,7 @@ exports.sourceNodes = async (
         title: workData.title,
         subjects: workData.subjects,
         author: authorData.name,
+        openLibUrl: `${OPEN_LIB_URL}/works/${id}`,
         id: createNodeId(`OpenLibBooks-${id}`),
         parent: null,
         children: [],
