@@ -11,17 +11,17 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
   return (
     <main className={styles.stats}>
       <section>
-        <h3 className="section-title">Books list</h3>
+        <h3 className="section-title">Read books list</h3>
         <ul className={styles.bookShelf}>
           {sortBy(books, 'author').map(
-            ({ title, author, id, internal, openLibUrl }) => (
-              <li key={id}>
-                <a href={openLibUrl}>
-                  {console.log(JSON.parse(internal.content))}
+            ({ title, author, id, openLibUrl, authorId }) => (
+              <a href={openLibUrl} key={id}>
+                <li style={{ backgroundColor: `#5${authorId.slice(-5)}` }}>
+                  {/* {console.log(JSON.parse(internal.content))} */}
                   <span>{author}</span>
                   <h3>{title.replace(/\(.*\)/, '')}</h3>
-                </a>
-              </li>
+                </li>
+              </a>
             )
           )}
         </ul>
