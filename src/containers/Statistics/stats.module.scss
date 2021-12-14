@@ -3,10 +3,9 @@
     .bookShelf {
       position: relative;
       display: flex;
-      max-width: calc(100vw - var(--space) * 30);
+      width: 100vw;
       overflow-x: auto;
-      padding: calc(var(--space) * 2) calc(var(--space) * 30)
-        calc(var(--space) * 2.7) 0;
+      padding: calc(var(--space) * 2) 0 calc(var(--space) * 2.7) 0;
       background-image: linear-gradient(
         transparent 40%,
         rgba(0, 0, 0, 0.4) 85%,
@@ -15,6 +14,19 @@
         #b3b3b3 92%
       );
       box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+
+      .duck {
+        height: 150px;
+        margin-left: calc(var(--space) * 10);
+        margin-bottom: -10px;
+        align-self: flex-end;
+        opacity: 0.8;
+        background-image: radial-gradient(
+          70% 20% at center 90%,
+          black,
+          transparent 60%
+        );
+      }
 
       > a {
         border-bottom: none;

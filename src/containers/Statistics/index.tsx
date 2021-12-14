@@ -23,6 +23,11 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
               </a>
             )
           )}
+          <img
+            className={styles.duck}
+            src="https://pngimg.com/uploads/rubber_duck/rubber_duck_PNG54.png"
+            alt=""
+          />
         </ul>
       </section>
       <section>
