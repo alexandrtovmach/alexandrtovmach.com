@@ -1,22 +1,45 @@
 .stats {
   section {
     .bookShelf {
+      position: relative;
       display: flex;
-      max-width: calc(100vw - var(--space) * 3);
+      max-width: calc(100vw - var(--space) * 30);
       overflow-x: auto;
-      padding: calc(var(--space) * 3) calc(var(--space) * 3)
-        calc(var(--space) * 3) 0;
+      padding: calc(var(--space) * 2) calc(var(--space) * 30)
+        calc(var(--space) * 2.7) 0;
       background-image: linear-gradient(
         transparent 40%,
-        rgba(0, 0, 0, 0.4) 87%,
-        transparent 95%
+        rgba(0, 0, 0, 0.4) 85%,
+        #d3d3d3 92%,
+        #d3d3d3 92%,
+        #b3b3b3 92%
       );
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+
       > a {
+        border-bottom: none;
+        transform: rotateZ(-8deg);
+        transform-origin: top center;
         &:hover {
           opacity: 1;
         }
-        transform: rotateZ(-8deg);
-        transform-origin: top center;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 1px;
+          right: 5px;
+          height: 10px;
+          background: black;
+          transform: rotateZ(8deg);
+          box-shadow: 6px -1px 3px 5px black;
+        }
+        &:last-of-type {
+          &::before {
+            right: 13px;
+            box-shadow: 6px -1px 5px 5px black;
+          }
+        }
         > li {
           border-radius: 2px;
           position: relative;
@@ -36,7 +59,7 @@
           justify-content: center;
           flex-direction: column;
           transition: box-shadow 0.4s, transform 0.5s;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4), -10px 5px 20px transparent;
+          box-shadow: -10px 5px 20px transparent;
           border-left: 3px solid rgba(0, 0, 0, 0.4);
           border-right: 3px solid rgba(0, 0, 0, 0.4);
 
@@ -48,6 +71,7 @@
             height: 100%;
             opacity: 0.3;
             z-index: 0;
+            background-size: 200px;
             background-image: url('https://www.textures.com/system/gallery/photos/Fabric/Leather/38132/Leather0041_1_350.jpg');
           }
 
@@ -71,7 +95,7 @@
           }
 
           &:hover {
-            transform: scale(110%);
+            transform: scale(110%) translateX(-5%);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4),
               -10px 5px 20px rgba(0, 0, 0, 0.4);
           }

@@ -11,7 +11,6 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
   return (
     <main className={styles.stats}>
       <section>
-        <h3 className="section-title">Read books list</h3>
         <ul className={styles.bookShelf}>
           {sortBy(books, 'author').map(
             ({ title, author, id, openLibUrl, authorId }) => (
