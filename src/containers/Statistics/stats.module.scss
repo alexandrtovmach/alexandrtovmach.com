@@ -122,5 +122,18 @@
         }
       }
     }
+
+    &.posters {
+      display: flex;
+      width: calc(100vw - var(--space) * 2);
+      overflow-x: auto;
+      height: 300px;
+      padding: var(--space);
+      .poster {
+        flex: 0 0 200px;
+        margin: var(--space);
+        background-color: red;
+      }
+    }
   }
 }
