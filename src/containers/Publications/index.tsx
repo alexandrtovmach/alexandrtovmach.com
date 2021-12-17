@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 import PublicationCard from '../../components/PublicationCard';
 
 import * as styles from './publications.module.scss';
-import { Link } from 'gatsby';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 interface Props {
   publications: (PublicationItem & { coverImg: string })[];
