@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 
 import PublicationCard from '../../components/PublicationCard';
 
 import * as styles from './publications.module.scss';
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 interface Props {
@@ -20,16 +19,12 @@ const Publications: React.FunctionComponent<Props> = ({ publications }) => {
     onLanguageChange(event.target.value);
   };
 
-  const handleBackPress = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
-    event.preventDefault();
+  const handleBackPress = () => {
     trackCustomEvent({
       category: 'engagement',
       action: 'go_back',
       label: 'Back to home',
     });
-    navigate((event.target as HTMLAnchorElement)['href']);
   };
 
   return (

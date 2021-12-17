@@ -1,33 +1,25 @@
 import React from 'react';
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import * as styles from './home.module.scss';
 
 const Home: React.FunctionComponent = () => {
-  const handleCVPress = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
-    event.preventDefault();
+  const handleCVPress = () => {
     trackCustomEvent({
       category: 'engagement',
       action: 'view_item',
       label: 'CV link',
     });
-    navigate((event.target as HTMLAnchorElement)['href']);
   };
 
-  const handleBlogPress = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
-    event.preventDefault();
+  const handleBlogPress = () => {
     trackCustomEvent({
       category: 'engagement',
       action: 'view_item',
       label: 'blog link',
     });
-    navigate((event.target as HTMLAnchorElement)['href']);
   };
 
   return (

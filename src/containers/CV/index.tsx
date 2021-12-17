@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import { groupBy, capitalize } from 'lodash';
 import classNames from 'classnames';
 import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
@@ -30,16 +30,12 @@ const CVPaper = () => {
     content: () => componentRef.current,
   });
 
-  const handleBackPress = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
-    event.preventDefault();
+  const handleBackPress = () => {
     trackCustomEvent({
       category: 'engagement',
       action: 'go_back',
       label: 'Back to home',
     });
-    navigate((event.target as HTMLAnchorElement)['href']);
   };
 
   const handlePrintPress = () => {
