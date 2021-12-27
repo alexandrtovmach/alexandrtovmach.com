@@ -15,9 +15,9 @@ import MailSVG from '../../assets/icons/mail.svg';
 import PrinterSVG from '../../assets/icons/printer.svg';
 import QRWebPSVG from '../../assets/images/qr.webp';
 import QRJpegSVG from '../../assets/images/qr.jpg';
-import faq from '../../content/faq.json';
-import experience from '../../content/experience.json';
-import skills from '../../content/skills.json';
+import faq from '../../../content/faq.json';
+import experience from '../../../content/experience.json';
+import skills from '../../../content/skills.json';
 
 import * as styles from './cv.module.scss';
 

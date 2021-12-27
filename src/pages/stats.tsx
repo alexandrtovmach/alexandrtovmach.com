@@ -21,6 +21,9 @@ export const booksQuery = graphql`
         id
         subjects
         author
+        pagesCount
+        coverSrc
+        coverColor
         authorId
         openLibUrl
         internal {

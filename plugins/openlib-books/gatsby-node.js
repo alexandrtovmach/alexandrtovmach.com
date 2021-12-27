@@ -1,8 +1,31 @@
 const path = require(`path`);
+const request = require(`request`).defaults({ encoding: null });
 const fetch = require(`node-fetch`);
+const { getAverageColor } = require(`fast-average-color-node`);
+const { meanBy } = require('lodash');
 
 const LOG_PREFIX = '[openlib-books]: ';
 const OPEN_LIB_URL = 'https://openlibrary.org';
+
+const getColorFromImageSrc = async (imgSrc) => {
+  return new Promise((resolve, reject) => {
+    try {
+      if (imgSrc) {
+        request.get(imgSrc, async (err, res, body) => {
+          if (err) {
+            throw err;
+          }
+          const coverColor = await getAverageColor(body);
+          resolve(coverColor.hex);
+        });
+      } else {
+        resolve('#c1c1c1');
+      }
+    } catch (err) {
+      reject(err);
+    }
+  });
+};
 
 exports.sourceNodes = async (
   { actions, createNodeId, createContentDigest, reporter },
@@ -29,10 +52,24 @@ exports.sourceNodes = async (
       const authorData = await fetch(
         `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
       ).then((res) => res.json());
+      const editionsData = await fetch(
+        `${OPEN_LIB_URL}/works/${id}/editions.json`
+      ).then((res) => res.json());
+      const pagesCount = meanBy(
+        editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
+        'number_of_pages'
+      );
+      const coverSrc =
+        workData.covers?.length &&
+        `https://covers.openlibrary.org/b/id/${workData.covers[0]}-L.jpg`;
+      const coverColor = await getColorFromImageSrc(coverSrc);
 
       actions.createNode({
         title: workData.title,
         subjects: workData.subjects,
+        pagesCount: Math.ceil(pagesCount || 0),
+        coverSrc,
+        coverColor,
         author: authorData.name,
         authorId: authorData.key.split('/')[2],
         openLibUrl: `${OPEN_LIB_URL}/works/${id}`,

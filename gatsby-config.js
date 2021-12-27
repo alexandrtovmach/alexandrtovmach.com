@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `openlib-books`,
       options: {
-        listSrc: 'src/content/books.json',
+        listSrc: 'content/books.json',
       },
     },
     `gatsby-plugin-sass`,
