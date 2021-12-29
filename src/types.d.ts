@@ -30,6 +30,9 @@ interface BookWikiItem {
 interface BookOpenLibItem {
   id: string;
   title: string;
+  pagesCount?: number;
+  coverSrc?: string;
+  coverColor?: string;
   author: string;
   authorId: string;
   openLibUrl: string;

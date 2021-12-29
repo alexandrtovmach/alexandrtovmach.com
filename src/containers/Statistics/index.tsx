@@ -14,10 +14,25 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
       <section>
         <ul className={styles.bookShelf}>
           {sortBy(books, 'author').map(
-            ({ title, author, id, openLibUrl, authorId }) => (
+            ({
+              title,
+              author,
+              id,
+              openLibUrl,
+              authorId,
+              pagesCount,
+              // coverColor,
+              // coverSrc,
+            }) => (
               <a href={openLibUrl} key={id}>
-                <li style={{ backgroundColor: `#5${authorId.slice(-5)}` }}>
-                  {/* {console.log(JSON.parse(internal.content))} */}
+                <li
+                  style={{
+                    // backgroundColor: coverColor,
+                    backgroundColor: `#${authorId.slice(-6)}`,
+                    width: pagesCount ? `${pagesCount * 0.1 + 5}px` : 'initial',
+                  }}
+                >
+                  {/* <img src={coverSrc} alt="emperor" /> */}
                   <span>{author}</span>
                   <h3>{title.replace(/\(.*\)/, '')}</h3>
                 </li>
