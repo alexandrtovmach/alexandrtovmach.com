@@ -28,11 +28,11 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
                 <li
                   style={{
                     // backgroundColor: coverColor,
+                    // backgroundImage: `url(${coverSrc}`,
                     backgroundColor: `#${authorId.slice(-6)}`,
                     width: pagesCount ? `${pagesCount * 0.1 + 5}px` : 'initial',
                   }}
                 >
-                  {/* <img src={coverSrc} alt="emperor" /> */}
                   <span>{author}</span>
                   <h3>{title.replace(/\(.*\)/, '')}</h3>
                 </li>
