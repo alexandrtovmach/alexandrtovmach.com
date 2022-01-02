@@ -52,49 +52,49 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
           className={styles.poster}
           src="../../assets/images/posters/morphine_2012.jpeg"
           placeholder="blurred"
-          layout="fullWidth"
+          layout="constrained"
         />
         <StaticImage
           alt="O.Torvald: MADISAN 2012"
           className={styles.poster}
           src="../../assets/images/posters/otorvald_2012.jpeg"
           placeholder="blurred"
-          layout="fullWidth"
+          layout="constrained"
         />
         <StaticImage
           alt="ПОРНОФИЛЬМЫ: Picasso 2018"
           className={styles.poster}
           src="../../assets/images/posters/pornofilmi_2018.jpeg"
           placeholder="blurred"
-          layout="fullWidth"
+          layout="constrained"
         />
         <StaticImage
           alt="Enter Shikari: !FEST Republic 2019"
           className={styles.poster}
           src="../../assets/images/posters/entershikari_2019.jpeg"
           placeholder="blurred"
-          layout="fullWidth"
+          layout="constrained"
         />
         <StaticImage
           alt="Друга Ріка: Malevich 2019"
           className={styles.poster}
           src="../../assets/images/posters/drugarika_2019.jpeg"
           placeholder="blurred"
-          layout="fullWidth"
+          layout="constrained"
         />
         <StaticImage
           alt="Bullet For My Valentine: Stereo Plaza 2019"
           className={styles.poster}
           src="../../assets/images/posters/bfmv_2019.jpeg"
           placeholder="blurred"
-          layout="fullWidth"
+          layout="constrained"
         />
         <StaticImage
           alt="RadioTapok: Malevich 2020"
           className={styles.poster}
           src="../../assets/images/posters/radiotapok_2020.jpeg"
           placeholder="blurred"
-          layout="fullWidth"
+          layout="constrained"
         />
       </section>
       <section>
