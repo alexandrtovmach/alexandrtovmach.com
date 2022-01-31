@@ -1,5 +1,4 @@
 const path = require(`path`);
-const request = require(`request`).defaults({ encoding: null });
 const fetch = require(`node-fetch`);
 const { getAverageColor } = require(`fast-average-color-node`);
 const { meanBy } = require('lodash');
@@ -8,16 +7,13 @@ const LOG_PREFIX = '[openlib-books]: ';
 const OPEN_LIB_URL = 'https://openlibrary.org';
 
 const getColorFromImageSrc = async (imgSrc) => {
-  return new Promise((resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       if (imgSrc) {
-        request.get(imgSrc, async (err, res, body) => {
-          if (err) {
-            throw err;
-          }
-          const coverColor = await getAverageColor(body);
-          resolve(coverColor.hex);
-        });
+        const res = await fetch(imgSrc);
+        const arrayBuffer = await res.arrayBuffer();
+        const coverColor = await getAverageColor(Buffer.from(arrayBuffer));
+        resolve(coverColor.hex);
       } else {
         resolve('#c1c1c1');
       }
