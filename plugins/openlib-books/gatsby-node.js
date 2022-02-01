@@ -1,5 +1,6 @@
+const fetch = (...args) =>
+  import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const path = require(`path`);
-const fetch = require(`node-fetch`);
 const { getAverageColor } = require(`fast-average-color-node`);
 const { meanBy } = require('lodash');
 
