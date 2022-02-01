@@ -1,5 +1,4 @@
-const fetch = (...args) =>
-  import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const fetch = require(`node-fetch`);
 const path = require(`path`);
 const { getAverageColor } = require(`fast-average-color-node`);
 const { meanBy } = require('lodash');
@@ -7,21 +6,20 @@ const { meanBy } = require('lodash');
 const LOG_PREFIX = '[openlib-books]: ';
 const OPEN_LIB_URL = 'https://openlibrary.org';
 
-const getColorFromImageSrc = async (imgSrc) => {
-  return new Promise(async (resolve, reject) => {
-    try {
-      if (imgSrc) {
-        const res = await fetch(imgSrc);
-        const arrayBuffer = await res.arrayBuffer();
-        const coverColor = await getAverageColor(Buffer.from(arrayBuffer));
-        resolve(coverColor.hex);
-      } else {
-        resolve('#c1c1c1');
-      }
-    } catch (err) {
-      reject(err);
+const getColorFromImageSrc = async (imgSrc, reporter) => {
+  try {
+    if (imgSrc) {
+      const res = await fetch(imgSrc);
+      const arrayBuffer = await res.arrayBuffer();
+      const coverColor = await getAverageColor(Buffer.from(arrayBuffer));
+      return coverColor.hex;
+    } else {
+      return '#c1c1c1';
     }
-  });
+  } catch (err) {
+    reporter.error(`${LOG_PREFIX}${err.message || err.toString()}`);
+    return '#c1c1c1';
+  }
 };
 
 exports.sourceNodes = async (
@@ -43,15 +41,17 @@ exports.sourceNodes = async (
 
   await Promise.all(
     sourcesList.map(async ({ id }) => {
-      const workData = await fetch(`${OPEN_LIB_URL}/works/${id}.json`).then(
-        (res) => res.json()
-      );
-      const authorData = await fetch(
+      const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
+      const workData = await workDataRes.json();
+      const authorDataRes = await fetch(
         `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
-      ).then((res) => res.json());
-      const editionsData = await fetch(
+      );
+      const authorData = await authorDataRes.json();
+      const editionsDataRes = await fetch(
         `${OPEN_LIB_URL}/works/${id}/editions.json`
-      ).then((res) => res.json());
+      );
+      const editionsData = await editionsDataRes.json();
+
       const pagesCount = meanBy(
         editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
         'number_of_pages'
@@ -59,7 +59,7 @@ exports.sourceNodes = async (
       const coverSrc =
         workData.covers?.length &&
         `https://covers.openlibrary.org/b/id/${workData.covers[0]}-L.jpg`;
-      const coverColor = await getColorFromImageSrc(coverSrc);
+      const coverColor = await getColorFromImageSrc(coverSrc, reporter);
 
       actions.createNode({
         title: workData.title,
