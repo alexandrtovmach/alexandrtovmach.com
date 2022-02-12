@@ -10,6 +10,9 @@ interface StatsPageProps {
     allOpenLibBooks: {
       nodes: BookOpenLibItem[];
     };
+    allMultiplexFilms: {
+      nodes: MultiplexFilmItem[];
+    };
   };
 }
 
@@ -31,16 +34,24 @@ export const booksQuery = graphql`
         }
       }
     }
+    allMultiplexFilms {
+      nodes {
+        title
+        mobPoster
+        innerPoster
+        id
+      }
+    }
   }
 `;
 
 const StatsPage: React.FunctionComponent<StatsPageProps> = ({
-  data: { allOpenLibBooks },
+  data: { allOpenLibBooks, allMultiplexFilms },
 }) => {
   return (
     <Layout>
       <SEO title="Random Info" />
-      <Statistics books={allOpenLibBooks.nodes} />
+      <Statistics books={allOpenLibBooks.nodes} movies={allMultiplexFilms.nodes} />
     </Layout>
   );
 };

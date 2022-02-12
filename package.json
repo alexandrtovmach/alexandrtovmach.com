@@ -11,6 +11,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "dayjs": "^1.9.6",
+    "dotenv": "^16.0.0",
     "fast-average-color-node": "^2.1.0",
     "gatsby": "^4.6.1",
     "gatsby-plugin-google-analytics": "^4.3.0",

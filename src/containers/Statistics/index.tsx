@@ -15,10 +15,6 @@ import Poster8 from '../../assets/images/posters/radiotapok_2020.jpeg';
 
 import * as styles from './stats.module.scss';
 
-interface StatisticsProps {
-  books: BookOpenLibItem[];
-}
-
 const IMAGES = [
   {
     src: Poster1,
@@ -54,7 +50,12 @@ const IMAGES = [
   },
 ];
 
-const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
+interface StatisticsProps {
+  books: BookOpenLibItem[];
+  movies: MultiplexFilmItem[];
+}
+
+const Statistics: React.FunctionComponent<StatisticsProps> = ({ books, movies }) => {
   return (
     <main className={styles.stats}>
       <section>
@@ -93,10 +94,15 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
         </ul>
       </section>
       <section className={styles.posters}>
-        <Gallery images={IMAGES} enableImageSelection={false} rowHeight={400} />
+        <Gallery images={IMAGES} enableImageSelection={false} rowHeight={700} />
       </section>
       <section>
         <h3 className="section-title">Movies list</h3>
+        {
+          movies.map(({ id, innerPoster, title }) => (
+            <img key={id} src={innerPoster} alt={title} />
+          ))
+        }
       </section>
     </main>
   );

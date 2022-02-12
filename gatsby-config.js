@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
   siteMetadata: {
     title: `Alexandr Tovmach`,
@@ -9,6 +11,12 @@ module.exports = {
       resolve: `openlib-books`,
       options: {
         listSrc: 'content/books.json',
+      },
+    },
+    {
+      resolve: `multiplex-cinema-history`,
+      options: {
+        token: process.env.MULTIPLEX_TOKEN,
       },
     },
     `gatsby-plugin-sass`,

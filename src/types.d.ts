@@ -41,6 +41,13 @@ interface BookOpenLibItem {
   };
 }
 
+interface MultiplexFilmItem {
+  id: string;
+  title: string;
+  innerPoster: string;
+  mobPoster: string;
+}
+
 interface BookItem {
   id: string;
   etag: string;
