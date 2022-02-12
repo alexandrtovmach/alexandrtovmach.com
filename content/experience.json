@@ -4,6 +4,7 @@
     "name": "Fena",
     "url": "https://www.fena.co/",
     "startDate": "Nov 2021",
+    "endDate": "Feb 2022",
     "description": "Working on a payment system based on Open Banking and integrated with top list of UK/EU banks.",
     "skills": [
       "react",
