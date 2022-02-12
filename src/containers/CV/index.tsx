@@ -63,7 +63,7 @@ const CVPaper = () => {
         </Link>
         <button className={styles.printButton} onClick={handlePrintPress}>
           <PrinterSVG />
-          Click to print
+          Click to print / Save PDF
         </button>
       </nav>
       <main className={styles.paper} ref={componentRef}>
