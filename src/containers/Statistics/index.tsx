@@ -1,12 +1,58 @@
 import React from 'react';
 import sortBy from 'lodash/sortBy';
 import { StaticImage } from 'gatsby-plugin-image';
+// @ts-ignore
+import Gallery from 'react-grid-gallery';
+
+import Poster1 from '../../assets/images/posters/morphine_2012.jpeg';
+import Poster2 from '../../assets/images/posters/prostorock_2012.jpeg';
+import Poster3 from '../../assets/images/posters/otorvald_2012.jpeg';
+import Poster4 from '../../assets/images/posters/pornofilmi_2018.jpeg';
+import Poster5 from '../../assets/images/posters/entershikari_2019.jpeg';
+import Poster6 from '../../assets/images/posters/drugarika_2019.jpeg';
+import Poster7 from '../../assets/images/posters/bfmv_2019.jpeg';
+import Poster8 from '../../assets/images/posters/radiotapok_2020.jpeg';
 
 import * as styles from './stats.module.scss';
 
 interface StatisticsProps {
   books: BookOpenLibItem[];
 }
+
+const IMAGES = [
+  {
+    src: Poster1,
+    thumbnail: Poster1,
+  },
+  {
+    src: Poster2,
+    thumbnail: Poster2,
+  },
+  {
+    src: Poster3,
+    thumbnail: Poster3,
+  },
+  {
+    src: Poster4,
+    thumbnail: Poster4,
+  },
+  {
+    src: Poster5,
+    thumbnail: Poster5,
+  },
+  {
+    src: Poster6,
+    thumbnail: Poster6,
+  },
+  {
+    src: Poster7,
+    thumbnail: Poster7,
+  },
+  {
+    src: Poster8,
+    thumbnail: Poster8,
+  },
+];
 
 const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
   return (
@@ -47,55 +93,7 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books }) => {
         </ul>
       </section>
       <section className={styles.posters}>
-        <StaticImage
-          alt="Morphine Suffering: MADISAN 2012"
-          className={styles.poster}
-          src="../../assets/images/posters/morphine_2012.jpeg"
-          placeholder="blurred"
-          layout="constrained"
-        />
-        <StaticImage
-          alt="O.Torvald: MADISAN 2012"
-          className={styles.poster}
-          src="../../assets/images/posters/otorvald_2012.jpeg"
-          placeholder="blurred"
-          layout="constrained"
-        />
-        <StaticImage
-          alt="ПОРНОФИЛЬМЫ: Picasso 2018"
-          className={styles.poster}
-          src="../../assets/images/posters/pornofilmi_2018.jpeg"
-          placeholder="blurred"
-          layout="constrained"
-        />
-        <StaticImage
-          alt="Enter Shikari: !FEST Republic 2019"
-          className={styles.poster}
-          src="../../assets/images/posters/entershikari_2019.jpeg"
-          placeholder="blurred"
-          layout="constrained"
-        />
-        <StaticImage
-          alt="Друга Ріка: Malevich 2019"
-          className={styles.poster}
-          src="../../assets/images/posters/drugarika_2019.jpeg"
-          placeholder="blurred"
-          layout="constrained"
-        />
-        <StaticImage
-          alt="Bullet For My Valentine: Stereo Plaza 2019"
-          className={styles.poster}
-          src="../../assets/images/posters/bfmv_2019.jpeg"
-          placeholder="blurred"
-          layout="constrained"
-        />
-        <StaticImage
-          alt="RadioTapok: Malevich 2020"
-          className={styles.poster}
-          src="../../assets/images/posters/radiotapok_2020.jpeg"
-          placeholder="blurred"
-          layout="constrained"
-        />
+        <Gallery images={IMAGES} enableImageSelection={false} rowHeight={400} />
       </section>
       <section>
         <h3 className="section-title">Movies list</h3>
