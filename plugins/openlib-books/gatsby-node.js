@@ -1,9 +1,11 @@
 const fetch = require(`node-fetch`);
 const path = require(`path`);
 const { getAverageColor } = require(`fast-average-color-node`);
-const { meanBy } = require('lodash');
+const { meanBy, isEqual, sortBy } = require('lodash');
 
 const LOG_PREFIX = '[openlib-books]: ';
+const SOURCE_CACHE_KEY = 'openlib-books-source';
+const DATA_CACHE_KEY = 'openlib-books-data';
 const OPEN_LIB_URL = 'https://openlibrary.org';
 
 const getColorFromImageSrc = async (imgSrc, reporter) => {
@@ -23,7 +25,7 @@ const getColorFromImageSrc = async (imgSrc, reporter) => {
 };
 
 exports.sourceNodes = async (
-  { actions, createNodeId, createContentDigest, reporter },
+  { actions, createNodeId, createContentDigest, reporter, cache },
   pluginOptions
 ) => {
   if (!pluginOptions.listSrc) {
@@ -39,50 +41,98 @@ exports.sourceNodes = async (
     return;
   }
 
-  await Promise.all(
-    sourcesList.map(async ({ id }) => {
-      const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
-      const workData = await workDataRes.json();
-      const authorDataRes = await fetch(
-        `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
-      );
-      const authorData = await authorDataRes.json();
-      const editionsDataRes = await fetch(
-        `${OPEN_LIB_URL}/works/${id}/editions.json`
-      );
-      const editionsData = await editionsDataRes.json();
+  const cachedSourcesList = await cache.get(SOURCE_CACHE_KEY);
+  const cachedData = await cache.get(DATA_CACHE_KEY);
 
-      const pagesCount = meanBy(
-        editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
-        'number_of_pages'
-      );
-      const coverSrc =
-        workData.covers?.length &&
-        `https://covers.openlibrary.org/b/id/${workData.covers[0]}-L.jpg`;
-      const coverColor = await getColorFromImageSrc(coverSrc, reporter);
+  if (
+    isEqual(sortBy(sourcesList, 'id'), sortBy(cachedSourcesList, 'id')) &&
+    cachedData
+  ) {
+    reporter.info(`${LOG_PREFIX}Cache found`);
+    cachedData.forEach(
+      ({ id, workData, authorData, pagesCount, coverSrc, coverColor }) =>
+        actions.createNode({
+          title: workData.title,
+          subjects: workData.subjects,
+          pagesCount: Math.ceil(pagesCount || 0),
+          coverSrc,
+          coverColor,
+          author: authorData.name,
+          authorId: authorData.key.split('/')[2],
+          openLibUrl: `${OPEN_LIB_URL}/works/${id}`,
+          id: createNodeId(`OpenLibBooks-${id}`),
+          parent: null,
+          children: [],
+          internal: {
+            type: `OpenLibBooks`,
+            contentDigest: createContentDigest(workData),
+            content: JSON.stringify({
+              workData,
+              authorData,
+            }),
+          },
+        })
+    );
+    reporter.info(`${LOG_PREFIX}Restored from cache`);
+  } else {
+    reporter.info(`${LOG_PREFIX}Cache not found. Fetching.`);
+    const data = await Promise.all(
+      sourcesList.map(async ({ id }) => {
+        const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
+        const workData = await workDataRes.json();
+        const authorDataRes = await fetch(
+          `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
+        );
+        const authorData = await authorDataRes.json();
+        const editionsDataRes = await fetch(
+          `${OPEN_LIB_URL}/works/${id}/editions.json`
+        );
+        const editionsData = await editionsDataRes.json();
 
-      actions.createNode({
-        title: workData.title,
-        subjects: workData.subjects,
-        pagesCount: Math.ceil(pagesCount || 0),
-        coverSrc,
-        coverColor,
-        author: authorData.name,
-        authorId: authorData.key.split('/')[2],
-        openLibUrl: `${OPEN_LIB_URL}/works/${id}`,
-        id: createNodeId(`OpenLibBooks-${id}`),
-        parent: null,
-        children: [],
-        internal: {
-          type: `OpenLibBooks`,
-          contentDigest: createContentDigest(workData),
-          content: JSON.stringify({
-            workData,
-            authorData,
-          }),
-        },
-      });
-    })
-  );
+        const pagesCount = meanBy(
+          editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
+          'number_of_pages'
+        );
+        const coverSrc =
+          workData.covers?.length &&
+          `https://covers.openlibrary.org/b/id/${workData.covers[0]}-L.jpg`;
+        const coverColor = await getColorFromImageSrc(coverSrc, reporter);
+
+        return { id, workData, authorData, pagesCount, coverSrc, coverColor };
+      })
+    );
+
+    data.forEach(
+      ({ id, workData, authorData, pagesCount, coverSrc, coverColor }) =>
+        actions.createNode({
+          title: workData.title,
+          subjects: workData.subjects,
+          pagesCount: Math.ceil(pagesCount || 0),
+          coverSrc,
+          coverColor,
+          author: authorData.name,
+          authorId: authorData.key.split('/')[2],
+          openLibUrl: `${OPEN_LIB_URL}/works/${id}`,
+          id: createNodeId(`OpenLibBooks-${id}`),
+          parent: null,
+          children: [],
+          internal: {
+            type: `OpenLibBooks`,
+            contentDigest: createContentDigest(workData),
+            content: JSON.stringify({
+              workData,
+              authorData,
+            }),
+          },
+        })
+    );
+
+    reporter.info(`${LOG_PREFIX}Fetched`);
+
+    await cache.set(SOURCE_CACHE_KEY, sourcesList);
+    await cache.set(DATA_CACHE_KEY, data);
+
+    reporter.info(`${LOG_PREFIX}Saved to cache`);
+  }
   reporter.info(`${LOG_PREFIX}End`);
 };
