@@ -130,16 +130,12 @@
     &.posters {
       width: 100vw;
       overflow-x: auto;
-      // height: 400px;
+      display: flex;
+      height: 500px;
       padding: var(--space) 0;
-      :global(.ReactGridGallery) {
-        display: flex;
+      img {
+        margin: 0 calc(var(--space) / 2);
       }
-      // .poster {
-      //   flex: 1 0 auto;
-      //   margin: 0 var(--space);
-      //   background-color: red;
-      // }
     }
   }
 }

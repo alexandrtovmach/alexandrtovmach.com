@@ -15,47 +15,15 @@ import Poster8 from '../../assets/images/posters/radiotapok_2020.jpeg';
 
 import * as styles from './stats.module.scss';
 
-const IMAGES = [
-  {
-    src: Poster1,
-    thumbnail: Poster1,
-  },
-  {
-    src: Poster2,
-    thumbnail: Poster2,
-  },
-  {
-    src: Poster3,
-    thumbnail: Poster3,
-  },
-  {
-    src: Poster4,
-    thumbnail: Poster4,
-  },
-  {
-    src: Poster5,
-    thumbnail: Poster5,
-  },
-  {
-    src: Poster6,
-    thumbnail: Poster6,
-  },
-  {
-    src: Poster7,
-    thumbnail: Poster7,
-  },
-  {
-    src: Poster8,
-    thumbnail: Poster8,
-  },
-];
-
 interface StatisticsProps {
   books: BookOpenLibItem[];
   movies: MultiplexFilmItem[];
 }
 
-const Statistics: React.FunctionComponent<StatisticsProps> = ({ books, movies }) => {
+const Statistics: React.FunctionComponent<StatisticsProps> = ({
+  books,
+  movies,
+}) => {
   return (
     <main className={styles.stats}>
       <section>
@@ -94,15 +62,23 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({ books, movies })
         </ul>
       </section>
       <section className={styles.posters}>
-        <Gallery images={IMAGES} enableImageSelection={false} rowHeight={700} />
+        {[
+          Poster1,
+          Poster2,
+          Poster3,
+          Poster4,
+          Poster5,
+          Poster6,
+          Poster7,
+          Poster8,
+        ].map((src, i) => (
+          <img key={`poster-${i}`} src={src} alt={`poster-${i}`} />
+        ))}
       </section>
-      <section>
-        <h3 className="section-title">Movies list</h3>
-        {
-          movies.map(({ id, innerPoster, title }) => (
-            <img key={id} src={innerPoster} alt={title} />
-          ))
-        }
+      <section className={styles.posters}>
+        {movies.map(({ id, innerPoster, title }) => (
+          <img key={id} src={innerPoster} alt={title} />
+        ))}
       </section>
     </main>
   );
