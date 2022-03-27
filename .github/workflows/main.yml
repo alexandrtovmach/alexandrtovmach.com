@@ -21,7 +21,11 @@ jobs:
         run: npm ci
 
       - name: Build 📦
-        run: npm run build
+        run: |
+          touch .env
+          echo MULTIPLEX_TOKEN=${{ secrets.MULTIPLEX_TOKEN }} >> .env
+          echo ${{ secrets.MULTIPLEX_TOKEN }}
+          npm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
