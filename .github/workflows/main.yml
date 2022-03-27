@@ -11,14 +11,17 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+      
+      - name: Secrets 🔑
+        run: |
+          touch .env
+          echo MULTIPLEX_TOKEN=${{ secrets.MULTIPLEX_TOKEN }} >> .env
 
       - name: Install 🔧
         run: npm ci
 
       - name: Build 📦
         run: npm run build
-        env:
-          MULTIPLEX_TOKEN: ${{ secrets.MULTIPLEX_TOKEN }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
