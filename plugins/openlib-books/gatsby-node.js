@@ -1,12 +1,13 @@
 const fetch = require(`node-fetch`);
 const path = require(`path`);
 const { getAverageColor } = require(`fast-average-color-node`);
-const { meanBy, isEqual, sortBy } = require('lodash');
+const { meanBy, isEqual, sortBy, get, filter } = require('lodash');
 
 const LOG_PREFIX = '[openlib-books]: ';
 const SOURCE_CACHE_KEY = 'openlib-books-source';
 const DATA_CACHE_KEY = 'openlib-books-data';
 const OPEN_LIB_URL = 'https://openlibrary.org';
+const CYRILLIC_PATTERN = /^[\u0400-\u04FF -,.!]+$/;
 
 const getColorFromImageSrc = async (imgSrc, reporter) => {
   try {
@@ -22,6 +23,26 @@ const getColorFromImageSrc = async (imgSrc, reporter) => {
     reporter.error(`${LOG_PREFIX}${err.message || err.toString()}`);
     return '#c1c1c1';
   }
+};
+
+const getCoverImage = (work, editions) => {
+  const workLang =
+    get(work, 'languages[0].key') || CYRILLIC_PATTERN.test(work.title)
+      ? '/languages/rus'
+      : '/languages/eng';
+  const filteredEditions = editions.entries
+    .filter(
+      ({ covers, publish_date }) =>
+        publish_date &&
+        covers &&
+        covers.length
+    )
+    .sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date));
+    
+  const candidate = filteredEditions.filter((edition) => get(edition, 'languages[0].key') === workLang)[0] || filteredEditions[0];
+  const coverId = filteredEditions.length ? candidate.covers[0] : (work.covers || [])[0];
+
+  console.log(`${work.title}[${Number(filteredEditions.length)}]: https://covers.openlibrary.org/b/id/${coverId}-L.jpg`);
 };
 
 exports.sourceNodes = async (
@@ -93,6 +114,15 @@ exports.sourceNodes = async (
           editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
           'number_of_pages'
         );
+
+        // const filteredEditions = editionsData.entries.filter(
+        //   ({ languages }) => (languages || []).length >= 2
+        // );
+
+        // filteredEditions.length && console.log(filteredEditions);
+
+        // getCoverImage(workData, editionsData);
+
         const coverSrc =
           workData.covers?.length &&
           `https://covers.openlibrary.org/b/id/${workData.covers[0]}-L.jpg`;
