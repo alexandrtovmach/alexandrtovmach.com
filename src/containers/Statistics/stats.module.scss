@@ -1,131 +1,131 @@
 .stats {
   section {
-    .bookShelf {
-      position: relative;
-      display: flex;
-      width: 100vw;
-      overflow-x: auto;
-      padding: calc(var(--space) * 2) 0 calc(var(--space) * 2.7) 0;
-      background-image: linear-gradient(
-        transparent 40%,
-        rgba(0, 0, 0, 0.4) 85%,
-        #d3d3d3 92%,
-        #d3d3d3 92%,
-        #b3b3b3 92%
-      );
-      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+    // .bookShelf {
+    //   position: relative;
+    //   display: flex;
+    //   width: 100vw;
+    //   overflow-x: auto;
+    //   padding: calc(var(--space) * 2) 0 calc(var(--space) * 2.7) 0;
+    //   background-image: linear-gradient(
+    //     transparent 40%,
+    //     rgba(0, 0, 0, 0.4) 85%,
+    //     #d3d3d3 92%,
+    //     #d3d3d3 92%,
+    //     #b3b3b3 92%
+    //   );
+    //   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
 
-      .duck {
-        height: 150px;
-        margin-left: calc(var(--space) * 10);
-        margin-bottom: -10px;
-        align-self: flex-end;
-        opacity: 0.8;
-        background-image: radial-gradient(
-          70% 20% at center 90%,
-          black,
-          transparent 60%
-        );
-      }
+    //   .duck {
+    //     height: 150px;
+    //     margin-left: calc(var(--space) * 10);
+    //     margin-bottom: -10px;
+    //     align-self: flex-end;
+    //     opacity: 0.8;
+    //     background-image: radial-gradient(
+    //       70% 20% at center 90%,
+    //       black,
+    //       transparent 60%
+    //     );
+    //   }
 
-      > a {
-        border-bottom: none;
-        transform: rotateZ(-8deg);
-        transform-origin: top center;
-        &:hover {
-          opacity: 1;
-        }
-        &::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 1px;
-          right: 5px;
-          height: 10px;
-          background: black;
-          transform: rotateZ(8deg);
-          box-shadow: 6px -1px 3px 5px black;
-        }
-        &:last-of-type {
-          &::before {
-            right: 13px;
-            box-shadow: 6px -1px 5px 5px black;
-          }
-        }
-        > li {
-          border-radius: 2px;
-          position: relative;
-          background-color: lightslategrey;
-          height: 300px;
-          margin-right: 0;
-          writing-mode: vertical-rl;
-          text-orientation: sideways-right;
-          padding: calc(var(--space) * 2) calc(var(--space) / 2);
-          color: white;
-          font-weight: bold;
-          vertical-align: baseline;
-          line-height: 1;
-          display: flex;
-          text-align: end;
-          align-items: flex-end;
-          justify-content: center;
-          flex-direction: column;
-          transition: box-shadow 0.4s, transform 0.5s;
-          box-shadow: -10px 5px 20px transparent;
-          border-left: 3px solid rgba(0, 0, 0, 0.4);
-          border-right: 3px solid rgba(0, 0, 0, 0.4);
+    //   > a {
+    //     border-bottom: none;
+    //     transform: rotateZ(-8deg);
+    //     transform-origin: top center;
+    //     &:hover {
+    //       opacity: 1;
+    //     }
+    //     &::before {
+    //       content: '';
+    //       position: absolute;
+    //       bottom: 0;
+    //       left: 1px;
+    //       right: 5px;
+    //       height: 10px;
+    //       background: black;
+    //       transform: rotateZ(8deg);
+    //       box-shadow: 6px -1px 3px 5px black;
+    //     }
+    //     &:last-of-type {
+    //       &::before {
+    //         right: 13px;
+    //         box-shadow: 6px -1px 5px 5px black;
+    //       }
+    //     }
+    //     > li {
+    //       border-radius: 2px;
+    //       position: relative;
+    //       background-color: lightslategrey;
+    //       height: 300px;
+    //       margin-right: 0;
+    //       writing-mode: vertical-rl;
+    //       text-orientation: sideways-right;
+    //       padding: calc(var(--space) * 2) calc(var(--space) / 2);
+    //       color: white;
+    //       font-weight: bold;
+    //       vertical-align: baseline;
+    //       line-height: 1;
+    //       display: flex;
+    //       text-align: end;
+    //       align-items: flex-end;
+    //       justify-content: center;
+    //       flex-direction: column;
+    //       transition: box-shadow 0.4s, transform 0.5s;
+    //       box-shadow: -10px 5px 20px transparent;
+    //       border-left: 3px solid rgba(0, 0, 0, 0.4);
+    //       border-right: 3px solid rgba(0, 0, 0, 0.4);
 
-          &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.3;
-            z-index: 0;
-            background-size: 200px;
-            background-image: url('https://www.textures.com/system/gallery/photos/Fabric/Leather/38132/Leather0041_1_350.jpg');
-          }
+    //       &::before {
+    //         content: '';
+    //         position: absolute;
+    //         top: 0;
+    //         width: 100%;
+    //         height: 100%;
+    //         opacity: 0.3;
+    //         z-index: 0;
+    //         background-size: 200px;
+    //         background-image: url('https://www.textures.com/system/gallery/photos/Fabric/Leather/38132/Leather0041_1_350.jpg');
+    //       }
 
-          &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background-image: linear-gradient(
-              transparent 5%,
-              gold 6%,
-              gold 6%,
-              transparent 6%,
-              transparent 94%,
-              gold 95%,
-              gold 95%,
-              transparent 95%
-            );
-          }
+    //       &::after {
+    //         content: '';
+    //         position: absolute;
+    //         top: 0;
+    //         width: 100%;
+    //         height: 100%;
+    //         z-index: 0;
+    //         background-image: linear-gradient(
+    //           transparent 5%,
+    //           gold 6%,
+    //           gold 6%,
+    //           transparent 6%,
+    //           transparent 94%,
+    //           gold 95%,
+    //           gold 95%,
+    //           transparent 95%
+    //         );
+    //       }
 
-          &:hover {
-            transform: scale(110%) translateX(-5%);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4),
-              -10px 5px 20px rgba(0, 0, 0, 0.4);
-          }
+    //       &:hover {
+    //         transform: scale(110%) translateX(-5%);
+    //         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4),
+    //           -10px 5px 20px rgba(0, 0, 0, 0.4);
+    //       }
 
-          img {
-            width: 30px;
-          }
+    //       img {
+    //         width: 30px;
+    //       }
 
-          h3 {
-            text-transform: uppercase;
-          }
-          span {
-            font-weight: 300;
-            font-size: 70%;
-          }
-        }
-      }
-    }
+    //       h3 {
+    //         text-transform: uppercase;
+    //       }
+    //       span {
+    //         font-weight: 300;
+    //         font-size: 70%;
+    //       }
+    //     }
+    //   }
+    // }
 
     &.posters {
       width: 100vw;
@@ -135,6 +135,178 @@
       padding: var(--space) 0;
       img {
         margin: 0 calc(var(--space) / 2);
+      }
+    }
+  }
+}
+
+.bookShelf {
+  display: flex;
+  .book {
+    position: relative;
+    min-width: 60px;
+    height: 20rem;
+    align-items: flex-end;
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
+    transition: transform 2s, z-index 3s;
+    transform-style: preserve-3d;
+    transform: rotateX(-2deg);
+    border-radius: 2px;
+    background-color: gray;
+    margin-right: 0;
+    color: white;
+    font-weight: bold;
+    vertical-align: baseline;
+    line-height: 1;
+    text-align: end;
+    z-index: 1;
+    // box-shadow: -10px 5px 20px transparent;
+    // border-left: 3px solid rgba(0, 0, 0, 0.4);
+    // border-right: 3px solid rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      transform: rotateY(-90deg) rotateZ(5deg) translateZ(6rem) scaleY(1.1);
+      z-index: 10;
+    }
+
+    .author {
+      font-size: 80%;
+      text-transform: uppercase;
+    }
+    .title {
+      font-weight: 300;
+      font-size: 70%;
+    }
+
+    .side {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+
+      &.front {
+        background: inherit;
+        padding: calc(var(--space) * 2) calc(var(--space) / 2);
+        width: calc(100% - var(--space) / 2 * 2);
+        height: calc(100% - var(--space) * 2 * 2);
+        display: flex;
+        text-align: end;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: column;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+          opacity: 0.3;
+          z-index: 0;
+          background-size: 200px;
+          background-image: url('../../assets/images/leather_texture.jpeg');
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          background-image: linear-gradient(
+            transparent 5%,
+            gold 6%,
+            gold 6%,
+            transparent 6%,
+            transparent 94%,
+            gold 95%,
+            gold 95%,
+            transparent 95%
+          );
+        }
+      }
+
+      &.back {
+        transform: translateZ(-15rem);
+        background: white;
+      }
+
+      &.left {
+        left: 0;
+        width: 15rem;
+        transform-origin: left;
+        transform: rotateY(90deg);
+        background: inherit;
+      }
+
+      &.right {
+        width: 15rem;
+        left: initial;
+        transform-origin: right;
+        transform: rotateY(90deg) translateX(100%);
+        background: inherit;
+        writing-mode: initial;
+        text-orientation: initial;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0.3;
+          z-index: 0;
+          background-size: 200px;
+          background-image: url('../../assets/images/leather_texture.jpeg');
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          background-image: linear-gradient(
+            transparent 5%,
+            gold 6%,
+            gold 6%,
+            transparent 6%,
+            transparent 94%,
+            gold 95%,
+            gold 95%,
+            transparent 95%
+          );
+        }
+      }
+
+      &.top {
+        top: 0;
+        height: 15rem;
+        transform-origin: top center;
+        transform: rotateX(-90deg);
+        background: lightgray;
+        opacity: 1;
+      }
+
+      &.bottom {
+        height: 15rem;
+        transform-origin: bottom;
+        transform: rotateX(90deg);
+        background: white;
       }
     }
   }

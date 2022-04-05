@@ -3,6 +3,7 @@ import sortBy from 'lodash/sortBy';
 import { StaticImage } from 'gatsby-plugin-image';
 // @ts-ignore
 import Gallery from 'react-grid-gallery';
+import classNames from 'classnames';
 
 import Poster1 from '../../assets/images/posters/morphine_2012.jpeg';
 import Poster2 from '../../assets/images/posters/prostorock_2012.jpeg';
@@ -39,29 +40,41 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
               // coverColor,
               // coverSrc,
             }) => (
-              <a href={openLibUrl} key={id}>
-                <li
-                  style={{
-                    // backgroundColor: coverColor,
-                    // backgroundImage: `url(${coverSrc}`,
-                    backgroundColor: `#${authorId.slice(-6)}`,
-                    width: pagesCount ? `${pagesCount * 0.1 + 5}px` : 'initial',
-                  }}
-                >
-                  <span>{author}</span>
-                  <h3>{title.replace(/\(.*\)/, '')}</h3>
-                </li>
-              </a>
+              <li
+                key={id}
+                className={styles.book}
+                style={{
+                  // backgroundColor: coverColor,
+                  // backgroundImage: `url(${coverSrc}`,
+                  backgroundColor: `#${authorId.slice(-6)}`,
+                  width: pagesCount ? `${pagesCount * 0.1 + 5}px` : '60px',
+                }}
+              >
+                {/* <a href={openLibUrl}> */}
+                  <div className={classNames(styles.back, styles.side)}></div>
+                  <div className={classNames(styles.left, styles.side)}></div>
+                  <div className={classNames(styles.right, styles.side)}>
+                    <span className={styles.author}>{author}</span>
+                    <span className={styles.title}>{title}</span>
+                  </div>
+                  <div className={classNames(styles.top, styles.side)}></div>
+                  <div className={classNames(styles.bottom, styles.side)}></div>
+                  <div className={classNames(styles.front, styles.side)}>
+                    <p className={styles.author}>{author}</p>
+                    <span className={styles.title}>{title}</span>
+                  </div>
+                {/* </a> */}
+              </li>
             )
           )}
-          <img
+          {/* <img
             className={styles.duck}
             src="https://pngimg.com/uploads/rubber_duck/rubber_duck_PNG54.png"
             alt=""
-          />
+          /> */}
         </ul>
       </section>
-      <section className={styles.posters}>
+      {/* <section className={styles.posters}>
         {[
           Poster1,
           Poster2,
@@ -79,7 +92,7 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
         {movies.map(({ id, innerPoster, title }) => (
           <img key={id} src={innerPoster} alt={title} />
         ))}
-      </section>
+      </section> */}
     </main>
   );
 };

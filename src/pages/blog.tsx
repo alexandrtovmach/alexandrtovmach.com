@@ -52,20 +52,22 @@ export const blogQuery = graphql`
         }
       }
     }
-    allFeedHabr {
-      edges {
-        node {
-          title
-          categories
-          link
-          pubDate
-          content
-          contentSnippet
-        }
-      }
-    }
   }
 `;
+
+
+// allFeedHabr {
+//   edges {
+//     node {
+//       title
+//       categories
+//       link
+//       pubDate
+//       content
+//       contentSnippet
+//     }
+//   }
+// }
 
 const parseForImage = (contentStr: string) => {
   const startSrc = contentStr.slice(
@@ -78,13 +80,13 @@ const BlogPage: React.FunctionComponent<BlogPageProps> = ({
   data: { allFeedDou, allFeedMedium, allFeedHabr },
 }) => {
   const publications = [
-    ...allFeedDou.edges.map(({ node }) => ({
+    ...allFeedDou?.edges.map(({ node }) => ({
       ...node,
       coverImg: parseForImage(String(node.content)),
       resource: 'dou.ua',
       language: 'uk',
     })),
-    ...allFeedMedium.edges.map(({ node }) => ({
+    ...allFeedMedium?.edges.map(({ node }) => ({
       ...node,
       coverImg: parseForImage(
         typeof node.content !== 'string' ? node.content.encoded : node.content
@@ -96,12 +98,12 @@ const BlogPage: React.FunctionComponent<BlogPageProps> = ({
       resource: 'medium.com',
       language: 'en',
     })),
-    ...allFeedHabr.edges.map(({ node }) => ({
-      ...node,
-      coverImg: parseForImage(String(node.content)),
-      resource: 'habr.com',
-      language: 'ru',
-    })),
+    // ...allFeedHabr?.edges.map(({ node }) => ({
+    //   ...node,
+    //   coverImg: parseForImage(String(node.content)),
+    //   resource: 'habr.com',
+    //   language: 'ru',
+    // })),
   ];
   return (
     <Layout>

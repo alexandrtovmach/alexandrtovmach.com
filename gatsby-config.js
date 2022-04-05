@@ -37,13 +37,13 @@ module.exports = {
         name: `Medium`,
       },
     },
-    {
-      resolve: `gatsby-source-rss-feed`,
-      options: {
-        url: `https://habr.com/ru/users/alexandrtovmach/rss/posts`,
-        name: `Habr`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-rss-feed`,
+    //   options: {
+    //     url: `https://habr.com/ru/users/alexandrtovmach/rss/posts`,
+    //     name: `Habr`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-rss-feed`,
       options: {

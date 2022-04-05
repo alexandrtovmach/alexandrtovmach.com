@@ -99,36 +99,39 @@ exports.sourceNodes = async (
     reporter.info(`${LOG_PREFIX}Cache not found. Fetching.`);
     const data = await Promise.all(
       sourcesList.map(async ({ id }) => {
-        const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
-        const workData = await workDataRes.json();
-        const authorDataRes = await fetch(
-          `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
-        );
-        const authorData = await authorDataRes.json();
-        const editionsDataRes = await fetch(
-          `${OPEN_LIB_URL}/works/${id}/editions.json`
-        );
-        const editionsData = await editionsDataRes.json();
-
-        const pagesCount = meanBy(
-          editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
-          'number_of_pages'
-        );
-
-        // const filteredEditions = editionsData.entries.filter(
-        //   ({ languages }) => (languages || []).length >= 2
-        // );
-
-        // filteredEditions.length && console.log(filteredEditions);
-
-        // getCoverImage(workData, editionsData);
-
-        const coverSrc =
-          workData.covers?.length &&
-          `https://covers.openlibrary.org/b/id/${workData.covers[0]}-L.jpg`;
-        const coverColor = await getColorFromImageSrc(coverSrc, reporter);
-
-        return { id, workData, authorData, pagesCount, coverSrc, coverColor };
+        try {
+          const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
+          const workData = await workDataRes.json();
+          const authorDataRes = await fetch(
+            `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
+          );
+          const authorData = await authorDataRes.json();
+          const editionsDataRes = await fetch(
+            `${OPEN_LIB_URL}/works/${id}/editions.json`
+          );
+          const editionsData = await editionsDataRes.json();
+  
+          const pagesCount = meanBy(
+            editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
+            'number_of_pages'
+          );
+  
+          // const filteredEditions = editionsData.entries.filter(
+          //   ({ languages }) => (languages || []).length >= 2
+          // );
+  
+          // filteredEditions.length && console.log(filteredEditions);
+  
+          // getCoverImage(workData, editionsData);
+  
+          const coverSrc =
+            workData.covers?.length &&
+            `https://covers.openlibrary.org/b/id/${workData.covers[0]}-L.jpg`;
+          const coverColor = await getColorFromImageSrc(coverSrc, reporter);
+          return { id, workData, authorData, pagesCount, coverSrc, coverColor };
+        } catch(err) {
+          reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err)
+        }
       })
     );
 
