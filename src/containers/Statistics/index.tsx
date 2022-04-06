@@ -16,6 +16,16 @@ import Poster8 from '../../assets/images/posters/radiotapok_2020.jpeg';
 
 import * as styles from './stats.module.scss';
 
+const authorShortener = (str: string) => {
+  const names = str.split(' ');
+  const lastName = names.pop();
+  return [...names.map((word) => `${word[0]}.`), lastName].join(
+    ' '
+  );
+};
+
+const titleShortener = (str: string) => str.replace(/\(.*\)/, '');
+
 interface StatisticsProps {
   books: BookOpenLibItem[];
   movies: MultiplexFilmItem[];
@@ -40,17 +50,16 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
               // coverColor,
               // coverSrc,
             }) => (
-              <li
-                key={id}
-                className={styles.book}
-              >
-                <a href={openLibUrl} 
-                style={{
-                  // backgroundColor: coverColor,
-                  // backgroundImage: `url(${coverSrc}`,
-                  backgroundColor: `#${authorId.slice(-6)}`,
-                  width: pagesCount ? `${pagesCount * 0.15}px` : '60px',
-                }}>
+              <li key={id} className={styles.book}>
+                <a
+                  href={openLibUrl}
+                  style={{
+                    // backgroundColor: coverColor,
+                    // backgroundImage: `url(${coverSrc}`,
+                    backgroundColor: `#${authorId.slice(-6)}`,
+                    width: pagesCount ? `${pagesCount * 0.15}px` : '25px',
+                  }}
+                >
                   {/* <div className={classNames(styles.back, styles.side)}></div> */}
                   <div className={classNames(styles.left, styles.side)}></div>
                   <div className={classNames(styles.right, styles.side)}>
@@ -60,8 +69,8 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
                   <div className={classNames(styles.top, styles.side)}></div>
                   {/* <div className={classNames(styles.bottom, styles.side)}></div> */}
                   <div className={classNames(styles.front, styles.side)}>
-                    <p className={styles.author}>{author}</p>
-                    <span className={styles.title}>{title}</span>
+                    <p className={styles.author}>{authorShortener(author)}</p>
+                    <span className={styles.title}>{titleShortener(title)}</span>
                   </div>
                 </a>
               </li>
