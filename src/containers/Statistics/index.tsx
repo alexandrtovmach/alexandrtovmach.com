@@ -43,27 +43,27 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
               <li
                 key={id}
                 className={styles.book}
+              >
+                <a href={openLibUrl} 
                 style={{
                   // backgroundColor: coverColor,
                   // backgroundImage: `url(${coverSrc}`,
                   backgroundColor: `#${authorId.slice(-6)}`,
-                  width: pagesCount ? `${pagesCount * 0.1 + 5}px` : '60px',
-                }}
-              >
-                {/* <a href={openLibUrl}> */}
-                  <div className={classNames(styles.back, styles.side)}></div>
+                  width: pagesCount ? `${pagesCount * 0.15}px` : '60px',
+                }}>
+                  {/* <div className={classNames(styles.back, styles.side)}></div> */}
                   <div className={classNames(styles.left, styles.side)}></div>
                   <div className={classNames(styles.right, styles.side)}>
                     <span className={styles.author}>{author}</span>
                     <span className={styles.title}>{title}</span>
                   </div>
                   <div className={classNames(styles.top, styles.side)}></div>
-                  <div className={classNames(styles.bottom, styles.side)}></div>
+                  {/* <div className={classNames(styles.bottom, styles.side)}></div> */}
                   <div className={classNames(styles.front, styles.side)}>
                     <p className={styles.author}>{author}</p>
                     <span className={styles.title}>{title}</span>
                   </div>
-                {/* </a> */}
+                </a>
               </li>
             )
           )}

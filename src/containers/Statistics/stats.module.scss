@@ -3,9 +3,6 @@
     // .bookShelf {
     //   position: relative;
     //   display: flex;
-    //   width: 100vw;
-    //   overflow-x: auto;
-    //   padding: calc(var(--space) * 2) 0 calc(var(--space) * 2.7) 0;
     //   background-image: linear-gradient(
     //     transparent 40%,
     //     rgba(0, 0, 0, 0.4) 85%,
@@ -142,19 +139,22 @@
 
 .bookShelf {
   display: flex;
-  .book {
+  width: 100vw;
+  overflow-x: auto;
+  padding: calc(var(--space) * 2) 0 calc(var(--space) * 2.7) 0;
+  .book > a {
     position: relative;
     min-width: 60px;
     height: 20rem;
     align-items: flex-end;
     writing-mode: vertical-rl;
     text-orientation: sideways-right;
-    transition: transform 2s, z-index 3s;
+    transition: 3s;
     transform-style: preserve-3d;
-    transform: rotateX(-2deg);
+    transform: rotateX(-2deg) rotateY(-2deg) translateZ(0) scaleY(1);
     border-radius: 2px;
     background-color: gray;
-    margin-right: 0;
+    // margin: 0 3px;
     color: white;
     font-weight: bold;
     vertical-align: baseline;
@@ -166,8 +166,8 @@
     // border-right: 3px solid rgba(0, 0, 0, 0.4);
 
     &:hover {
-      transform: rotateY(-90deg) rotateZ(5deg) translateZ(6rem) scaleY(1.1);
-      z-index: 10;
+      opacity: 1;
+      animation: getBook 1s linear forwards;
     }
 
     .author {
@@ -219,22 +219,32 @@
           height: 100%;
           z-index: 0;
           background-image: linear-gradient(
-            transparent 5%,
-            gold 6%,
-            gold 6%,
-            transparent 6%,
-            transparent 94%,
-            gold 95%,
-            gold 95%,
-            transparent 95%
-          );
+              to right,
+              rgba(0, 0, 0, 0.3) 5%,
+              rgba(0, 0, 0, 0.2) 9%,
+              transparent,
+              rgba(0, 0, 0, 0.2) 91%,
+              rgba(0, 0, 0, 0.3) 95%
+            ),
+            linear-gradient(
+              transparent 5%,
+              gold 6%,
+              gold 6%,
+              transparent 6%,
+              transparent 94%,
+              gold 95%,
+              gold 95%,
+              transparent 95%
+            );
         }
       }
 
-      &.back {
-        transform: translateZ(-15rem);
-        background: white;
-      }
+      // &.back {
+      //   top: 4px;
+      //   height: calc(100% - 4px * 2);
+      //   transform: translateZ(-15rem);
+      //   background: white;
+      // }
 
       &.left {
         left: 0;
@@ -281,33 +291,58 @@
           height: 100%;
           z-index: 0;
           background-image: linear-gradient(
-            transparent 5%,
-            gold 6%,
-            gold 6%,
-            transparent 6%,
-            transparent 94%,
-            gold 95%,
-            gold 95%,
-            transparent 95%
-          );
+              to right,
+              rgba(0, 0, 0, 0.2),
+              transparent,
+              rgba(0, 0, 0, 0.2) 5%,
+              transparent 5.5%
+            ),
+            linear-gradient(
+              transparent 5%,
+              gold 6%,
+              gold 6%,
+              transparent 6%,
+              transparent 94%,
+              gold 95%,
+              gold 95%,
+              transparent 95%
+            );
         }
       }
 
       &.top {
-        top: 0;
-        height: 15rem;
+        top: 4px;
+        height: calc(15rem - 4px);
         transform-origin: top center;
         transform: rotateX(-90deg);
-        background: lightgray;
+        background-image: repeating-linear-gradient(to right, white, lightgrey 2px);
         opacity: 1;
       }
 
-      &.bottom {
-        height: 15rem;
-        transform-origin: bottom;
-        transform: rotateX(90deg);
-        background: white;
-      }
+      // &.bottom {
+      //   top: auto;
+      //   bottom: 0;
+      //   height: 15rem;
+      //   transform-origin: bottom;
+      //   transform: rotateX(90deg);
+      //   background: white;
+      // }
     }
+  }
+}
+
+@keyframes getBook {
+  0% {
+    z-index: 1;
+    transform: rotateX(-2deg) rotateY(-2deg) translateZ(0);
+  }
+  50% {
+    z-index: 1;
+    transform: rotateX(-2deg) rotateY(-2deg) translateZ(20rem);
+  }
+  100% {
+    z-index: 10;
+    transform: rotateY(-75deg) rotateZ(5deg) translateX(10rem)
+     translateZ(10rem) scale(1.05);
   }
 }
