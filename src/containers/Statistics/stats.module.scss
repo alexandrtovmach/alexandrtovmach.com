@@ -149,18 +149,16 @@
     align-items: flex-end;
     writing-mode: vertical-rl;
     text-orientation: sideways-right;
-    transition: 3s;
     transform-style: preserve-3d;
     transform: rotateX(-2deg) rotateY(-2deg) translateZ(0) scaleY(1);
     border-radius: 2px;
-    background-color: gray;
-    // margin: 0 3px;
-    color: white;
+    color: black;
     font-weight: bold;
     vertical-align: baseline;
     line-height: 1;
     text-align: end;
     z-index: 1;
+    animation: backBook 0.5s linear;
     // box-shadow: -10px 5px 20px transparent;
     // border-left: 3px solid rgba(0, 0, 0, 0.4);
     // border-right: 3px solid rgba(0, 0, 0, 0.4);
@@ -173,10 +171,18 @@
     .author {
       font-size: 80%;
       text-transform: uppercase;
+      z-index: 2;
+      color: gold;
+      opacity: 0.8;
+      text-shadow: rgba(0, 0, 0, 0.2) 1px 0, rgba(0, 0, 0, 0.2) -1px 0, rgba(0, 0, 0, 0.2) 0 1px, rgba(0, 0, 0, 0.2) 0 -1px;
     }
     .title {
       font-weight: 300;
       font-size: 70%;
+      z-index: 2;
+      text-shadow: rgba(0, 0, 0, 0.2) 1px 0, rgba(0, 0, 0, 0.2) -1px 0, rgba(0, 0, 0, 0.2) 0 1px, rgba(0, 0, 0, 0.2) 0 -1px;
+      opacity: 0.8;
+      color: white;
     }
 
     .side {
@@ -273,8 +279,10 @@
         text-align: center;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
+        gap: 0.5rem;
         flex-direction: column;
+        line-height: 1.2;
 
         &::before {
           content: '';
@@ -323,7 +331,7 @@
         height: calc(15rem - 4px);
         transform-origin: top center;
         transform: rotateX(-90deg);
-        background-image: repeating-linear-gradient(to right, white, lightgrey 2px);
+        background-image: repeating-linear-gradient(to right, gray, white 2px);
         opacity: 1;
       }
 
@@ -352,5 +360,14 @@
     z-index: 10;
     transform: rotateY(-75deg) rotateZ(5deg) translateX(10rem)
      translateZ(10rem) scale(1.05);
+  }
+}
+
+@keyframes backBook {
+  0% {
+    transform: rotateX(-2deg) rotateY(-2deg) translateZ(20rem);
+  }
+  100% {
+    transform: rotateX(-2deg) rotateY(-2deg) translateZ(0);
   }
 }
