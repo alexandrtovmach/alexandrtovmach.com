@@ -56,7 +56,7 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
                   style={{
                     // backgroundColor: coverColor,
                     // backgroundImage: `url(${coverSrc}`,
-                    backgroundColor: `#${authorId.slice(-6)}`,
+                    backgroundColor: `#${authorId.slice(2, 5)}`,
                     width: pagesCount ? `${pagesCount * 0.15}px` : '25px',
                   }}
                 >
