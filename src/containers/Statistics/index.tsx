@@ -24,7 +24,7 @@ const authorShortener = (str: string) => {
   );
 };
 
-const titleShortener = (str: string) => str.replace(/\(.*\)/, '');
+const titleShortener = (str: string) => str.replace(/\(.*\)/, '').replace(/[;.].+/, '');
 
 interface StatisticsProps {
   books: BookOpenLibItem[];
