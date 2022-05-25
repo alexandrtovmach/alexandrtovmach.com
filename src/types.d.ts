@@ -23,6 +23,7 @@ interface BookWikiItem {
   extract: string;
   firstImage: string;
   internal: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     content: any;
   };
 }
@@ -37,6 +38,7 @@ interface BookOpenLibItem {
   authorId: string;
   openLibUrl: string;
   internal: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     content: any;
   };
 }

@@ -27,6 +27,7 @@ const SkillItem: React.FunctionComponent<Props> = ({
       })}
       title={`Skill item: ${label}`}
       onMouseOver={handleMouseOver}
+      onFocus={handleMouseOver}
       onMouseLeave={handleMouseLeave}
     >
       {label}

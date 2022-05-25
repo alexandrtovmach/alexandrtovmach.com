@@ -1,31 +1,13 @@
 const fetch = require(`node-fetch`);
-const path = require(`path`);
-const { getAverageColor } = require(`fast-average-color-node`);
-const { meanBy, isEqual, sortBy } = require('lodash');
+const { sortBy } = require('lodash');
 
 const LOG_PREFIX = '[multiplex-cinema-history]: ';
-const SOURCE_CACHE_KEY = 'openlib-books-source';
-const DATA_CACHE_KEY = 'openlib-books-data';
-const OPEN_LIB_URL = 'https://openlibrary.org';
-
-const getColorFromImageSrc = async (imgSrc, reporter) => {
-  try {
-    if (imgSrc) {
-      const res = await fetch(imgSrc);
-      const arrayBuffer = await res.arrayBuffer();
-      const coverColor = await getAverageColor(Buffer.from(arrayBuffer));
-      return coverColor.hex;
-    } else {
-      return '#c1c1c1';
-    }
-  } catch (err) {
-    reporter.error(`${LOG_PREFIX}${err.message || err.toString()}`);
-    return '#c1c1c1';
-  }
-};
+// const SOURCE_CACHE_KEY = 'openlib-books-source';
+// const DATA_CACHE_KEY = 'openlib-books-data';
+// const OPEN_LIB_URL = 'https://openlibrary.org';
 
 exports.sourceNodes = async (
-  { actions, createNodeId, createContentDigest, reporter, cache },
+  { actions, createNodeId, createContentDigest, reporter },
   pluginOptions
 ) => {
   if (!pluginOptions.token) {

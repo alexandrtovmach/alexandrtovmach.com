@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const fetch = require(`node-fetch`);
 const path = require(`path`);
 const { getAverageColor } = require(`fast-average-color-node`);
-const { meanBy, isEqual, sortBy, get, filter } = require('lodash');
+const { meanBy, isEqual, sortBy } = require('lodash');
 
 const LOG_PREFIX = '[openlib-books]: ';
 const SOURCE_CACHE_KEY = 'openlib-books-source';
 const DATA_CACHE_KEY = 'openlib-books-data';
 const OPEN_LIB_URL = 'https://openlibrary.org';
-const CYRILLIC_PATTERN = /^[\u0400-\u04FF -,.!]+$/;
+// const CYRILLIC_PATTERN = /^[\u0400-\u04FF -,.!]+$/;
 
 const getColorFromImageSrc = async (imgSrc, reporter) => {
   try {
@@ -25,25 +26,31 @@ const getColorFromImageSrc = async (imgSrc, reporter) => {
   }
 };
 
-const getCoverImage = (work, editions) => {
-  const workLang =
-    get(work, 'languages[0].key') || CYRILLIC_PATTERN.test(work.title)
-      ? '/languages/rus'
-      : '/languages/eng';
-  const filteredEditions = editions.entries
-    .filter(
-      ({ covers, publish_date }) =>
-        publish_date &&
-        covers &&
-        covers.length
-    )
-    .sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date));
-    
-  const candidate = filteredEditions.filter((edition) => get(edition, 'languages[0].key') === workLang)[0] || filteredEditions[0];
-  const coverId = filteredEditions.length ? candidate.covers[0] : (work.covers || [])[0];
+// const getCoverImage = (work, editions) => {
+//   const workLang =
+//     get(work, 'languages[0].key') || CYRILLIC_PATTERN.test(work.title)
+//       ? '/languages/rus'
+//       : '/languages/eng';
+//   const filteredEditions = editions.entries
+//     .filter(
+//       ({ covers, publish_date }) => publish_date && covers && covers.length
+//     )
+//     .sort((a, b) => new Date(b.publish_date) - new Date(a.publish_date));
 
-  console.log(`${work.title}[${Number(filteredEditions.length)}]: https://covers.openlibrary.org/b/id/${coverId}-L.jpg`);
-};
+//   const candidate =
+//     filteredEditions.filter(
+//       (edition) => get(edition, 'languages[0].key') === workLang
+//     )[0] || filteredEditions[0];
+//   const coverId = filteredEditions.length
+//     ? candidate.covers[0]
+//     : (work.covers || [])[0];
+
+//   console.log(
+//     `${work.title}[${Number(
+//       filteredEditions.length
+//     )}]: https://covers.openlibrary.org/b/id/${coverId}-L.jpg`
+//   );
+// };
 
 exports.sourceNodes = async (
   { actions, createNodeId, createContentDigest, reporter, cache },
@@ -110,27 +117,29 @@ exports.sourceNodes = async (
             `${OPEN_LIB_URL}/works/${id}/editions.json`
           );
           const editionsData = await editionsDataRes.json();
-  
+
           const pagesCount = meanBy(
-            editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
+            editionsData.entries.filter(
+              ({ number_of_pages }) => number_of_pages
+            ),
             'number_of_pages'
           );
-  
+
           // const filteredEditions = editionsData.entries.filter(
           //   ({ languages }) => (languages || []).length >= 2
           // );
-  
+
           // filteredEditions.length && console.log(filteredEditions);
-  
+
           // getCoverImage(workData, editionsData);
-  
+
           const coverSrc =
             workData.covers?.length &&
             `https://covers.openlibrary.org/b/id/${workData.covers[0]}-L.jpg`;
           const coverColor = await getColorFromImageSrc(coverSrc, reporter);
           return { id, workData, authorData, pagesCount, coverSrc, coverColor };
-        } catch(err) {
-          reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err)
+        } catch (err) {
+          reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
         }
       })
     );

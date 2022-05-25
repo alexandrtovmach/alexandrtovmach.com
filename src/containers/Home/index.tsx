@@ -33,14 +33,14 @@ const Home: React.FunctionComponent = () => {
         layout="fullWidth"
       />
       <article>
-        <h1 className="label">Hi, I'm Alexandr Tovmach.</h1>
+        <h1 className="label">Hi, I&apos;m Alexandr Tovmach.</h1>
         <p className="text">
-          I'm full stack engineer & UI/UX designer, and my expertise is JS
+          I&apos;m full stack engineer & UI/UX designer, and my expertise is JS
           ecosystem, especially React and Node.js. But I consider my vision and
           real experience to be significantly wider.
         </p>
         <p className="text">
-          I've founded several open source packages (e.g.&nbsp;
+          I&apos;ve founded several open source packages (e.g.&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to react-microsoft-login project"
@@ -58,7 +58,7 @@ const Home: React.FunctionComponent = () => {
           >
             react-figma-plugin-ds
           </OutboundLink>
-          ) , and I'm actively contributing to&nbsp;
+          ) , and I&apos;m actively contributing to&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to Node.js project"

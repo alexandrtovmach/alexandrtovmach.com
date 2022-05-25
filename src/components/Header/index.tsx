@@ -5,7 +5,7 @@ import React from 'react';
 
 import * as styles from './header.module.scss';
 
-const Header = ({ siteTitle }: any) => (
+const Header = () => (
   <header className={styles.header}>
     {/* <nav className={styles.navigation}>
       <Link to="/">

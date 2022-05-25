@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 import ExperienceItem from '../../components/ExperienceItem';
-import { mergeExperienceWithSkills, parseQuery } from './helpers';
+import { mergeExperienceWithSkills } from './helpers';
 import SkillList from '../SkillList';
 
 import GitHubSVG from '../../assets/icons/github.svg';
@@ -127,31 +127,31 @@ const CVPaper = () => {
             <article>
               <h3 className="section-title">Personality</h3>
               <p className="text">
-                Since childhood, I've been told that I have a&nbsp;
+                Since childhood, I&apos;ve been told that I have a&nbsp;
                 <span className="highlighted">
                   constant thirst for knowledge
                 </span>
                 , the ability to learn quickly in areas that interest me,
                 and&nbsp;
                 <span className="highlighted">hate routine affairs</span>.
-                Usually, I immediately get everybody's attention and
+                Usually, I immediately get everybody&apos;s attention and
                 recognition, make friends quickly, and as far as I know no one
-                thinks I'm a jerk. According to the "16 personalities" test, I
-                am&nbsp;
+                thinks I&apos;m a jerk. According to the &ldquo;16
+                personalities&ldquo; test, I am&nbsp;
                 <a
                   target="_blank"
                   title="16 personalities: Debater"
                   rel="noopener noreferrer"
                   href="https://www.16personalities.com/profiles/0748e79e8a572"
                 >
-                  "debater"
+                  &ldquo;debater&ldquo;
                 </a>
                 , which I think is a good description of my character.
               </p>
               <p className="text">
                 I&nbsp;
                 <span className="highlighted">
-                  don't like anything that is obvious
+                  don&apos;t like anything that is obvious
                 </span>
                 , no matter what it is ― movie, song or even a joke. Everything
                 should trigger mental activity. Therefore,&nbsp;
@@ -169,7 +169,7 @@ const CVPaper = () => {
                 </span>
                 &nbsp; and who want to share it with others, and in that
                 reason,&nbsp;
-                <span className="highlighted">I'm writing articles</span>
+                <span className="highlighted">I&apos;m writing articles</span>
                 &nbsp;to&nbsp;
                 <a
                   href="https://medium.com/@alexandrtovmach"
@@ -201,7 +201,7 @@ const CVPaper = () => {
             <article>
               <h3 className="section-title">Ambitions</h3>
               <p className="text">
-                I wasn't even 14 when I dreamt of becoming&nbsp;
+                I wasn&apos;t even 14 when I dreamt of becoming&nbsp;
                 <span className="highlighted">an archaeologist</span>&nbsp; to
                 answer the questions of the evolution of species,&nbsp;
                 <span className="highlighted">an inventor</span> of spacecraft
@@ -211,9 +211,9 @@ const CVPaper = () => {
                 <span className="highlighted">
                   to change this world for the better
                 </span>
-                , and that's why I'm now engaged in programming to create things
-                that, even if they (still) don't save lives, at least improve
-                them.
+                , and that&apos;s why I&apos;m now engaged in programming to
+                create things that, even if they (still) don&apos;t save lives,
+                at least improve them.
               </p>
               <p className="text">
                 I believe that&nbsp;

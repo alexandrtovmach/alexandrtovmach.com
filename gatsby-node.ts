@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-exports.onCreateNode = async ({ node, loadNodeContent }) => {
+exports.onCreateNode = async ({ node, loadNodeContent }: any) => {
   if (
     node.internal.type === 'File' &&
     ['mdContent'].includes(node.sourceInstanceName)

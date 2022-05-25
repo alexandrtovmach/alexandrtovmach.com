@@ -17,11 +17,11 @@ interface BlogPageProps {
         node: RSSFeedItem;
       }[];
     };
-    allFeedHabr: {
-      edges: {
-        node: RSSFeedItem;
-      }[];
-    };
+    // allFeedHabr: {
+    //   edges: {
+    //     node: RSSFeedItem;
+    //   }[];
+    // };
   };
 }
 
@@ -55,7 +55,6 @@ export const blogQuery = graphql`
   }
 `;
 
-
 // allFeedHabr {
 //   edges {
 //     node {
@@ -77,15 +76,17 @@ const parseForImage = (contentStr: string) => {
 };
 
 const BlogPage: React.FunctionComponent<BlogPageProps> = ({
-  data: { allFeedDou, allFeedMedium, allFeedHabr },
+  data: { allFeedDou, allFeedMedium },
 }) => {
   const publications = [
+    // eslint-disable-next-line no-unsafe-optional-chaining
     ...allFeedDou?.edges.map(({ node }) => ({
       ...node,
       coverImg: parseForImage(String(node.content)),
       resource: 'dou.ua',
       language: 'uk',
     })),
+    // eslint-disable-next-line no-unsafe-optional-chaining
     ...allFeedMedium?.edges.map(({ node }) => ({
       ...node,
       coverImg: parseForImage(
