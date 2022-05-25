@@ -28,12 +28,11 @@ const titleShortener = (str: string) => str.replace(/\(.*\)/, '').replace(/[;.].
 
 interface StatisticsProps {
   books: BookOpenLibItem[];
-  movies: MultiplexFilmItem[];
+  movies?: MultiplexFilmItem[];
 }
 
 const Statistics: React.FunctionComponent<StatisticsProps> = ({
   books,
-  movies,
 }) => {
   return (
     <main className={styles.stats}>

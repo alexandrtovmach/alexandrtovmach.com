@@ -13,12 +13,12 @@ module.exports = {
         listSrc: 'content/books.json',
       },
     },
-    {
-      resolve: `multiplex-cinema-history`,
-      options: {
-        token: process.env.MULTIPLEX_TOKEN,
-      },
-    },
+    // {
+    //   resolve: `multiplex-cinema-history`,
+    //   options: {
+    //     token: process.env.MULTIPLEX_TOKEN,
+    //   },
+    // },
     `gatsby-plugin-sass`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
