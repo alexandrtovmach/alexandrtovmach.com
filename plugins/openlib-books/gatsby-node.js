@@ -49,6 +49,10 @@ exports.sourceNodes = async (
       const workData = await fetch(`${OPEN_LIB_URL}/works/${id}.json`).then(
         (res) => res.json()
       );
+      if (!workData.authors) {
+        reporter.error(`${LOG_PREFIX}Work ${id} not found`);
+        return;
+      }
       const authorData = await fetch(
         `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
       ).then((res) => res.json());
