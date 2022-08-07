@@ -139,9 +139,11 @@
 
 .bookShelf {
   display: flex;
+  align-items: flex-end;
   width: calc(100vw - 10rem * 2);
+  height: 70vh;
   overflow-x: auto;
-  padding: calc(var(--space) * 2) calc(var(--space) * 10);
+  padding: calc(var(--space) * 4.5) calc(var(--space) * 10);
   background-image: linear-gradient(
     transparent 40%,
     rgba(0, 0, 0, 0.4) 85%,
@@ -150,6 +152,20 @@
     #b3b3b3 92%
   );
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+
+  .book {
+    &:hover {
+      > a {
+        margin-right: 15rem;
+        opacity: 1;
+        z-index: 10;
+        transition: margin 1s, transform 2s 0.5s;
+        transform: rotateX(-5deg) rotateY(-75deg) rotateZ(0deg)
+          translateX(10rem) translateY(-3rem) translateZ(10rem) scaleZ(1.5)
+          scaleY(1.5);
+      }
+    }
+  }
 
   .book > a {
     position: relative;
@@ -167,13 +183,9 @@
     line-height: 1;
     text-align: end;
     z-index: 1;
-    animation: backBook 0.5s linear;
+    // animation: backBook 0.5s linear;
+    transition: margin 1s 1s, transform 1s 0s;
     box-shadow: -10px 5px 20px transparent;
-
-    &:hover {
-      opacity: 1;
-      animation: getBook 1s linear forwards;
-    }
 
     .author {
       font-size: 80%;
@@ -367,8 +379,8 @@
   }
   100% {
     z-index: 10;
-    transform: rotateX(-2deg) rotateY(-85deg) rotateZ(5deg) translateX(10rem) translateZ(10rem)
-      scale(1.05);
+    transform: rotateX(-2deg) rotateY(-85deg) rotateZ(5deg) translateX(10rem)
+      translateZ(10rem) scale(1.05);
   }
 }
 
