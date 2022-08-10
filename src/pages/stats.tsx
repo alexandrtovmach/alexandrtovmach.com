@@ -10,6 +10,12 @@ interface StatsPageProps {
     allOpenLibBooks: {
       nodes: BookOpenLibItem[];
     };
+    allFile: {
+      nodes: {
+        name: string;
+        publicURL: string;
+      }[];
+    };
     // allMultiplexFilms: {
     //   nodes: MultiplexFilmItem[];
     // };
@@ -18,6 +24,14 @@ interface StatsPageProps {
 
 export const booksQuery = graphql`
   query BooksQuery {
+    allFile(
+      filter: { extension: { eq: "jpg" }, dir: { regex: "/book-covers/" } }
+    ) {
+      nodes {
+        publicURL
+        name
+      }
+    }
     allOpenLibBooks {
       nodes {
         title
@@ -25,9 +39,9 @@ export const booksQuery = graphql`
         subjects
         author
         pagesCount
-        coverSrc
-        coverColor
+        coverPath
         authorId
+        workId
         openLibUrl
         internal {
           content
@@ -38,12 +52,12 @@ export const booksQuery = graphql`
 `;
 
 const StatsPage: React.FunctionComponent<StatsPageProps> = ({
-  data: { allOpenLibBooks },
+  data: { allOpenLibBooks, allFile },
 }) => {
   return (
     <Layout>
       <SEO title="Random Info" />
-      <Statistics books={allOpenLibBooks.nodes} />
+      <Statistics books={allOpenLibBooks.nodes} bookCovers={allFile.nodes} />
     </Layout>
   );
 };

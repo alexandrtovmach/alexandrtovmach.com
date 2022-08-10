@@ -11,6 +11,7 @@ module.exports = {
       resolve: `openlib-books`,
       options: {
         listSrc: 'content/books.json',
+        coversFolderPath: 'src/assets/images/book-covers',
       },
     },
     // {
@@ -56,6 +57,13 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `bookCovers`,
+        path: `${__dirname}/src/assets/images/book-covers`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

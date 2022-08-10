@@ -345,6 +345,14 @@
               transparent 95%
             );
         }
+        .cover {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          border: 1px solid gold;
+          // box-shadow: 0 0 5px rgb(255 217 0);
+          opacity: 0.8;
+        }
       }
 
       &.top {

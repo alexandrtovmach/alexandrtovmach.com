@@ -31,10 +31,10 @@ interface BookOpenLibItem {
   id: string;
   title: string;
   pagesCount?: number;
-  coverSrc?: string;
-  coverColor?: string;
+  coverPath?: string;
   author: string;
   authorId: string;
+  workId: string;
   openLibUrl: string;
   internal: {
     content: any;
