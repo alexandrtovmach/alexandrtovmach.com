@@ -33,6 +33,11 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
   return (
     <main className={styles.stats}>
       <section>
+        <p>
+          My personal reading list. All book covers generated with <a href="https://openai.com/dall-e-2/">DALL-E 2</a>
+        </p>
+      </section>
+      <section>
         <ul className={styles.bookShelf}>
           {bookItems.map(
             ({

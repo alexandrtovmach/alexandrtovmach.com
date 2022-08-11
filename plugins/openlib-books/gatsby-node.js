@@ -21,13 +21,19 @@ const getCoverFromAI = async (id, title, coversFolderPath, reporter) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ prompt: `"${title}" vignette illustration b/w` }),
+        body: JSON.stringify({
+          prompt: `"${title}" vignette illustration b/w`,
+        }),
         redirect: 'follow',
       });
       const json = await res.json();
       const resultImage = json.images[0] || '';
       if (resultImage) {
-        await fs.writeFile(resultPath, resultImage.replaceAll('\n', ''), 'base64');
+        await fs.writeFile(
+          resultPath,
+          resultImage.replaceAll('\n', ''),
+          'base64'
+        );
         return resultPath;
       }
     }
@@ -58,61 +64,54 @@ exports.sourceNodes = async (
     return;
   }
 
-  const cachedData = await cache.get(DATA_CACHE_KEY);
-
-  const chunks = chunk(sourcesList, 5);
-  let booksData = [];
-  for (let chunk of chunks) {
-    console.log('in progress');
-    await sleep(10000);
-    const chunkBooksData = await Promise.all(
-      chunk.map(async ({ id }) => {
-        const fromCache = (cachedData || []).find(
-          ({ id: cachedId }) => cachedId === id
+  const cachedData = (await cache.get(DATA_CACHE_KEY)) || [];
+  const booksData = [];
+  for (const { id } of sourcesList) {
+    const fromCache = cachedData.find(({ id: cachedId }) => cachedId === id);
+    try {
+      if (fromCache) {
+        booksData.push(fromCache);
+      } else {
+        await sleep(1000);
+        reporter.info(`${LOG_PREFIX}Fetching - ${id}`);
+        const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
+        const workData = await workDataRes.json();
+        const authorDataRes = await fetch(
+          `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
         );
-        try {
-          if (fromCache) {
-            return fromCache;
-          } else {
-            const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
-            const workData = await workDataRes.json();
-            const authorDataRes = await fetch(
-              `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
-            );
-            const authorData = await authorDataRes.json();
-            if (!workData.authors) {
-              reporter.error(`${LOG_PREFIX}Work ${id} not found`);
-              return;
-            }
-            const editionsDataRes = await fetch(
-              `${OPEN_LIB_URL}/works/${id}/editions.json`
-            );
-            const editionsData = await editionsDataRes.json();
-  
-            const pagesCount = meanBy(
-              editionsData.entries.filter(
-                ({ number_of_pages }) => number_of_pages
-              ),
-              'number_of_pages'
-            );
-  
-            const coverPath = await getCoverFromAI(id, workData.title, coversFolderPath, reporter);
-  
-            return {
-              id,
-              workData,
-              authorData,
-              pagesCount,
-              coverPath,
-            };
-          }
-        } catch (err) {
-          reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
-          return {};
+        const authorData = await authorDataRes.json();
+        if (!workData.authors) {
+          reporter.error(`${LOG_PREFIX}Work ${id} not found`);
+          continue;
         }
-      })
-    );
-    booksData = [...booksData, ...chunkBooksData];
+        const editionsDataRes = await fetch(
+          `${OPEN_LIB_URL}/works/${id}/editions.json`
+        );
+        const editionsData = await editionsDataRes.json();
+
+        const pagesCount = meanBy(
+          editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
+          'number_of_pages'
+        );
+
+        const coverPath = await getCoverFromAI(
+          id,
+          workData.title,
+          coversFolderPath,
+          reporter
+        );
+
+        booksData.push({
+          id,
+          workData,
+          authorData,
+          pagesCount,
+          coverPath,
+        });
+      }
+    } catch (err) {
+      reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
+    }
   }
 
   booksData.forEach(

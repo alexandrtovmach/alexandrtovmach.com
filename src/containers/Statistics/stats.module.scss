@@ -1,129 +1,5 @@
 .stats {
   section {
-    // .bookShelf {
-    //   position: relative;
-    //   display: flex;
-    //   background-image: linear-gradient(
-    //     transparent 40%,
-    //     rgba(0, 0, 0, 0.4) 85%,
-    //     #d3d3d3 92%,
-    //     #d3d3d3 92%,
-    //     #b3b3b3 92%
-    //   );
-    //   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
-
-    //   .duck {
-    //     height: 150px;
-    //     margin-left: calc(var(--space) * 10);
-    //     margin-bottom: -10px;
-    //     align-self: flex-end;
-    //     opacity: 0.8;
-    //     background-image: radial-gradient(
-    //       70% 20% at center 90%,
-    //       black,
-    //       transparent 60%
-    //     );
-    //   }
-
-    //   > a {
-    //     border-bottom: none;
-    //     transform: rotateZ(-8deg);
-    //     transform-origin: top center;
-    //     &:hover {
-    //       opacity: 1;
-    //     }
-    //     &::before {
-    //       content: '';
-    //       position: absolute;
-    //       bottom: 0;
-    //       left: 1px;
-    //       right: 5px;
-    //       height: 10px;
-    //       background: black;
-    //       transform: rotateZ(8deg);
-    //       box-shadow: 6px -1px 3px 5px black;
-    //     }
-    //     &:last-of-type {
-    //       &::before {
-    //         right: 13px;
-    //         box-shadow: 6px -1px 5px 5px black;
-    //       }
-    //     }
-    //     > li {
-    //       border-radius: 2px;
-    //       position: relative;
-    //       background-color: lightslategrey;
-    //       height: 300px;
-    //       margin-right: 0;
-    //       writing-mode: vertical-rl;
-    //       text-orientation: sideways-right;
-    //       padding: calc(var(--space) * 2) calc(var(--space) / 2);
-    //       color: white;
-    //       font-weight: bold;
-    //       vertical-align: baseline;
-    //       line-height: 1;
-    //       display: flex;
-    //       text-align: end;
-    //       align-items: flex-end;
-    //       justify-content: center;
-    //       flex-direction: column;
-    //       transition: box-shadow 0.4s, transform 0.5s;
-    //       box-shadow: -10px 5px 20px transparent;
-    //       border-left: 3px solid rgba(0, 0, 0, 0.4);
-    //       border-right: 3px solid rgba(0, 0, 0, 0.4);
-
-    //       &::before {
-    //         content: '';
-    //         position: absolute;
-    //         top: 0;
-    //         width: 100%;
-    //         height: 100%;
-    //         opacity: 0.3;
-    //         z-index: 0;
-    //         background-size: 200px;
-    //         background-image: url('https://www.textures.com/system/gallery/photos/Fabric/Leather/38132/Leather0041_1_350.jpg');
-    //       }
-
-    //       &::after {
-    //         content: '';
-    //         position: absolute;
-    //         top: 0;
-    //         width: 100%;
-    //         height: 100%;
-    //         z-index: 0;
-    //         background-image: linear-gradient(
-    //           transparent 5%,
-    //           gold 6%,
-    //           gold 6%,
-    //           transparent 6%,
-    //           transparent 94%,
-    //           gold 95%,
-    //           gold 95%,
-    //           transparent 95%
-    //         );
-    //       }
-
-    //       &:hover {
-    //         transform: scale(110%) translateX(-5%);
-    //         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4),
-    //           -10px 5px 20px rgba(0, 0, 0, 0.4);
-    //       }
-
-    //       img {
-    //         width: 30px;
-    //       }
-
-    //       h3 {
-    //         text-transform: uppercase;
-    //       }
-    //       span {
-    //         font-weight: 300;
-    //         font-size: 70%;
-    //       }
-    //     }
-    //   }
-    // }
-
     &.posters {
       width: 100vw;
       overflow-x: auto;
@@ -159,7 +35,7 @@
         margin-right: 15rem;
         opacity: 1;
         z-index: 10;
-        transition: margin 1s, transform 2s 0.5s;
+        transition: margin 1s, transform 1s 0.3s ease-out;
         transform: rotateX(-5deg) rotateY(-75deg) rotateZ(0deg)
           translateX(10rem) translateY(-3rem) translateZ(10rem) scaleZ(1.5)
           scaleY(1.5);
@@ -183,8 +59,7 @@
     line-height: 1;
     text-align: end;
     z-index: 1;
-    // animation: backBook 0.5s linear;
-    transition: margin 1s 1s, transform 1s 0s;
+    transition: margin 0.5s 0.4s ease-in, transform 0.5s 0s ease-in;
     box-shadow: -10px 5px 20px transparent;
 
     .author {
@@ -350,8 +225,7 @@
           height: 100px;
           border-radius: 50%;
           border: 1px solid gold;
-          // box-shadow: 0 0 5px rgb(255 217 0);
-          opacity: 0.8;
+          opacity: 0.7;
         }
       }
 
