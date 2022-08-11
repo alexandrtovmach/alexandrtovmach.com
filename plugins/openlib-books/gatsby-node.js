@@ -63,7 +63,7 @@ exports.sourceNodes = async (
   const chunks = chunk(sourcesList, 5);
   let booksData = [];
   for (let chunk of chunks) {
-    console.log('chunk');
+    console.log('in progress');
     await sleep(10000);
     const chunkBooksData = await Promise.all(
       chunk.map(async ({ id }) => {

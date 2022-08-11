@@ -29,7 +29,7 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
     ...el,
     coverPath: (bookCovers.find((elem) => elem.name === el.workId) || {}).publicURL,
   }));
-  console.log(bookItems);
+
   return (
     <main className={styles.stats}>
       <section>
