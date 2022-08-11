@@ -58,7 +58,7 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
                       <img
                         className={styles.cover}
                         src={coverPath}
-                        alt={`COVER ${title}`}
+                        alt={`cover for "${title}" by DALL-E 2`}
                       />
                     )}
                     <span className={styles.author}>{author}</span>

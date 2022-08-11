@@ -1,12 +1,14 @@
 const fetch = require(`node-fetch`);
 const { resolve } = require(`path`);
 const { promises: fs, existsSync } = require(`fs`);
-const { meanBy } = require(`lodash`);
+const { meanBy, chunk } = require(`lodash`);
 
 const LOG_PREFIX = '[openlib-books]: ';
 const DATA_CACHE_KEY = 'openlib-books-data';
 const OPEN_LIB_URL = 'https://openlibrary.org';
 const DALL_E_URL = 'https://bf.dallemini.ai';
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const getCoverFromAI = async (id, title, coversFolderPath, reporter) => {
   try {
@@ -58,53 +60,60 @@ exports.sourceNodes = async (
 
   const cachedData = await cache.get(DATA_CACHE_KEY);
 
-  const booksData = await Promise.all(
-    sourcesList.map(async ({ id }) => {
-      const fromCache = (cachedData || []).find(
-        ({ id: cachedId }) => cachedId === id
-      );
-      try {
-        if (fromCache) {
-          return fromCache;
-        } else {
-          const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
-          const workData = await workDataRes.json();
-          const authorDataRes = await fetch(
-            `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
-          );
-          const authorData = await authorDataRes.json();
-          if (!workData.authors) {
-            reporter.error(`${LOG_PREFIX}Work ${id} not found`);
-            return;
+  const chunks = chunk(sourcesList, 5);
+  let booksData = [];
+  for (let chunk of chunks) {
+    console.log('chunk');
+    await sleep(10000);
+    const chunkBooksData = await Promise.all(
+      chunk.map(async ({ id }) => {
+        const fromCache = (cachedData || []).find(
+          ({ id: cachedId }) => cachedId === id
+        );
+        try {
+          if (fromCache) {
+            return fromCache;
+          } else {
+            const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
+            const workData = await workDataRes.json();
+            const authorDataRes = await fetch(
+              `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
+            );
+            const authorData = await authorDataRes.json();
+            if (!workData.authors) {
+              reporter.error(`${LOG_PREFIX}Work ${id} not found`);
+              return;
+            }
+            const editionsDataRes = await fetch(
+              `${OPEN_LIB_URL}/works/${id}/editions.json`
+            );
+            const editionsData = await editionsDataRes.json();
+  
+            const pagesCount = meanBy(
+              editionsData.entries.filter(
+                ({ number_of_pages }) => number_of_pages
+              ),
+              'number_of_pages'
+            );
+  
+            const coverPath = await getCoverFromAI(id, workData.title, coversFolderPath, reporter);
+  
+            return {
+              id,
+              workData,
+              authorData,
+              pagesCount,
+              coverPath,
+            };
           }
-          const editionsDataRes = await fetch(
-            `${OPEN_LIB_URL}/works/${id}/editions.json`
-          );
-          const editionsData = await editionsDataRes.json();
-
-          const pagesCount = meanBy(
-            editionsData.entries.filter(
-              ({ number_of_pages }) => number_of_pages
-            ),
-            'number_of_pages'
-          );
-
-          const coverPath = await getCoverFromAI(id, workData.title, coversFolderPath, reporter);
-
-          return {
-            id,
-            workData,
-            authorData,
-            pagesCount,
-            coverPath,
-          };
+        } catch (err) {
+          reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
+          return {};
         }
-      } catch (err) {
-        reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
-        return {};
-      }
-    })
-  );
+      })
+    );
+    booksData = [...booksData, ...chunkBooksData];
+  }
 
   booksData.forEach(
     ({ id, workData, authorData, pagesCount, coverPath }) =>
