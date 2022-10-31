@@ -16,6 +16,7 @@ const getCoverFromAI = async (id, title, coversFolderPath, reporter) => {
     if (existsSync(resultPath)) {
       return resultPath;
     } else {
+      await sleep(1000);
       const res = await fetch(`${DALL_E_URL}/generate`, {
         method: 'POST',
         headers: {
@@ -72,7 +73,6 @@ exports.sourceNodes = async (
       if (fromCache) {
         booksData.push(fromCache);
       } else {
-        await sleep(1000);
         reporter.info(`${LOG_PREFIX}Fetching - ${id}`);
         const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
         const workData = await workDataRes.json();
@@ -120,11 +120,11 @@ exports.sourceNodes = async (
       workData &&
       authorData &&
       actions.createNode({
-        title: workData.title,
+        title: workData.title.normalize("NFC").replace(/[\u0300-\u036f]/g, ""),
         subjects: workData.subjects,
         pagesCount: Math.ceil(pagesCount || 0),
         coverPath,
-        author: authorData.name,
+        author: authorData.name.normalize("NFC").replace(/[\u0300-\u036f]/g, ""),
         authorId: authorData.key.split('/')[2],
         workId: id,
         openLibUrl: `${OPEN_LIB_URL}/works/${id}`,
