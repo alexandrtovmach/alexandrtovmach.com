@@ -30,20 +30,7 @@
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
 
   .book {
-    &:hover {
-      > a {
-        margin-right: 15rem;
-        opacity: 1;
-        z-index: 10;
-        transition: margin 1s, transform 1s 0.3s ease-out;
-        transform: rotateX(-5deg) rotateY(-75deg) rotateZ(0deg)
-          translateX(10rem) translateY(-3rem) translateZ(10rem) scaleZ(1.5)
-          scaleY(1.5);
-      }
-    }
-  }
-
-  .book > a {
+    flex-shrink: 0;
     position: relative;
     min-width: 25px;
     height: 20rem;
@@ -61,6 +48,15 @@
     z-index: 1;
     transition: margin 0.5s 0.4s ease-in, transform 0.5s 0s ease-in;
     box-shadow: -10px 5px 20px transparent;
+
+    &.active {
+      margin-right: 15rem;
+      opacity: 1;
+      z-index: 10;
+      transition: margin 1s, transform 1s 0.3s ease-out;
+      transform: rotateX(-5deg) rotateY(-75deg) rotateZ(0deg) translateX(10rem)
+        translateY(-3rem) translateZ(10rem) scaleZ(1.5) scaleY(1.5);
+    }
 
     .author {
       font-size: 80%;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import sortBy from 'lodash/sortBy';
 import classNames from 'classnames';
 import * as styles from './stats.module.scss';
@@ -25,16 +25,26 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
   books,
   bookCovers,
 }) => {
+  const [activeBookId, setActiveBookId] = useState('');
   const bookItems = sortBy(books, 'author').map((el) => ({
     ...el,
-    coverPath: (bookCovers.find((elem) => elem.name === el.workId) || {}).publicURL,
+    coverPath: (bookCovers.find((elem) => elem.name === el.workId) || {})
+      .publicURL,
   }));
 
+  const handleBookClick: (
+    bookId: string
+  ) => React.MouseEventHandler<HTMLElement> = (bookId) => (e) => {
+    e.stopPropagation();
+    setActiveBookId(bookId);
+  };
+
   return (
-    <main className={styles.stats}>
+    <main className={styles.stats} onClick={handleBookClick('')}>
       <section>
         <p>
-          My personal reading list. All book covers generated with <a href="https://openai.com/dall-e-2/">DALL-E 2</a>
+          My personal reading list. All book covers generated with{' '}
+          <a href="https://openai.com/dall-e-2/">DALL-E 2</a>
         </p>
       </section>
       <section>
@@ -49,34 +59,36 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
               pagesCount,
               coverPath,
             }) => (
-              <li key={id} className={styles.book}>
-                <a
-                  href={openLibUrl}
-                  style={{
-                    backgroundColor: `#${authorId.slice(2, 5)}`,
-                    width: pagesCount ? `${pagesCount * 0.15}px` : '25px',
-                  }}
-                >
-                  <div className={classNames(styles.left, styles.side)}></div>
-                  <div className={classNames(styles.right, styles.side)}>
-                    {coverPath && (
-                      <img
-                        className={styles.cover}
-                        src={coverPath}
-                        alt={`cover for "${title}" by DALL-E 2`}
-                      />
-                    )}
-                    <span className={styles.author}>{author}</span>
-                    <span className={styles.title}>{title}</span>
-                  </div>
-                  <div className={classNames(styles.top, styles.side)}></div>
-                  <div className={classNames(styles.front, styles.side)}>
-                    <p className={styles.author}>{authorShortener(author)}</p>
-                    <span className={styles.title}>
-                      {titleShortener(title)}
-                    </span>
-                  </div>
-                </a>
+              <li
+                key={id}
+                className={classNames(styles.book, {
+                  [styles.active]: activeBookId === id,
+                })}
+                style={{
+                  backgroundColor: `#${authorId.slice(2, 5)}`,
+                  flexBasis: pagesCount ? `${pagesCount * 0.15}px` : '25px',
+                }}
+                onClick={handleBookClick(id)}
+              >
+                <div className={classNames(styles.left, styles.side)}></div>
+                <div className={classNames(styles.right, styles.side)}>
+                  {coverPath && (
+                    <img
+                      className={styles.cover}
+                      src={coverPath}
+                      alt={`cover for "${title}" by DALL-E 2`}
+                    />
+                  )}
+                  <span className={styles.author}>{author}</span>
+                  <a href={openLibUrl} target="_blank" className={styles.title}>
+                    {title}
+                  </a>
+                </div>
+                <div className={classNames(styles.top, styles.side)}></div>
+                <div className={classNames(styles.front, styles.side)}>
+                  <p className={styles.author}>{authorShortener(author)}</p>
+                  <span className={styles.title}>{titleShortener(title)}</span>
+                </div>
               </li>
             )
           )}
