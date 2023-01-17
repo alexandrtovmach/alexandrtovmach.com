@@ -93,6 +93,7 @@
         align-items: center;
         justify-content: space-between;
         // flex-direction: column;
+        cursor: context-menu  ;
 
         &::before {
           content: '';
