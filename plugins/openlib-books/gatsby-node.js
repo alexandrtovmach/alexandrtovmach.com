@@ -1,7 +1,7 @@
 const fetch = require(`node-fetch`);
 const { resolve } = require(`path`);
 const { promises: fs, existsSync } = require(`fs`);
-const { meanBy, chunk } = require(`lodash`);
+const { meanBy, difference } = require(`lodash`);
 
 const LOG_PREFIX = '[openlib-books]: ';
 const DATA_CACHE_KEY = 'openlib-books-data';
@@ -10,7 +10,7 @@ const DALL_E_URL = 'https://bf.dallemini.ai';
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const getCoverFromAI = async (id, title, coversFolderPath, reporter) => {
+const getCoverFromAI = async (id, title, coversFolderPath) => {
   try {
     const resultPath = resolve(coversFolderPath, `${id}.jpg`);
     if (existsSync(resultPath)) {
@@ -39,9 +39,52 @@ const getCoverFromAI = async (id, title, coversFolderPath, reporter) => {
       }
     }
   } catch (err) {
-    reporter.error(`${LOG_PREFIX}Failed to get AI cover for "${title}"`);
+    throw new Error(`${LOG_PREFIX}Failed to get AI cover for "${title}"`);
   }
 };
+
+const getBookDataById = async (bookId, coversFolderPath) => {
+  const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${bookId}.json`);
+  const workData = await workDataRes.json();
+  if (workData.type?.key === '/type/redirect') {
+    throw new Error(`${LOG_PREFIX}Book ID ${bookId}, should be replaced with ${workData.location.split('/')[2]}`);
+  }
+  const authorDataRes = await fetch(
+    `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
+  );
+  const authorData = await authorDataRes.json();
+  if (!workData.authors) {
+    throw new Error(`${LOG_PREFIX}Work ${bookId} not found`);
+  }
+  const editionsDataRes = await fetch(
+    `${OPEN_LIB_URL}/works/${bookId}/editions.json`
+  );
+  const editionsData = await editionsDataRes.json();
+
+  const pagesCount = meanBy(
+    editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
+    'number_of_pages'
+  );
+
+  const coverPath = await getCoverFromAI(
+    bookId,
+    workData.title,
+    coversFolderPath
+  );
+
+  return {
+    id: bookId,
+    workData,
+    authorData,
+    pagesCount,
+    coverPath,
+  }
+};
+
+const cleanUpCoversFolder = async (coversFolderPath, idsArr) => {
+  const files = await fs.readdir(coversFolderPath);
+  return Promise.all(difference(files, idsArr).map(fileName => fs.unlink(resolve(coversFolderPath, fileName))));
+}
 
 exports.sourceNodes = async (
   { actions, createNodeId, createContentDigest, reporter, cache },
@@ -58,7 +101,7 @@ exports.sourceNodes = async (
   reporter.info(`${LOG_PREFIX}Start`);
 
   const sourcesList = require(resolve(pluginOptions.listSrc));
-  const coversFolderPath = resolve(pluginOptions.coversFolderPath);
+  const COVERS_FOLDER_PATH = resolve(pluginOptions.coversFolderPath);
 
   if (!Array.isArray(sourcesList) || !sourcesList.length) {
     reporter.error(`${LOG_PREFIX}"listSrc" empty or incorrect.`);
@@ -74,40 +117,8 @@ exports.sourceNodes = async (
         booksData.push(fromCache);
       } else {
         reporter.info(`${LOG_PREFIX}Fetching - ${id}`);
-        const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${id}.json`);
-        const workData = await workDataRes.json();
-        const authorDataRes = await fetch(
-          `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
-        );
-        const authorData = await authorDataRes.json();
-        if (!workData.authors) {
-          reporter.error(`${LOG_PREFIX}Work ${id} not found`);
-          continue;
-        }
-        const editionsDataRes = await fetch(
-          `${OPEN_LIB_URL}/works/${id}/editions.json`
-        );
-        const editionsData = await editionsDataRes.json();
-
-        const pagesCount = meanBy(
-          editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
-          'number_of_pages'
-        );
-
-        const coverPath = await getCoverFromAI(
-          id,
-          workData.title,
-          coversFolderPath,
-          reporter
-        );
-
-        booksData.push({
-          id,
-          workData,
-          authorData,
-          pagesCount,
-          coverPath,
-        });
+        const data = await getBookDataById(id, COVERS_FOLDER_PATH);
+        booksData.push(data);
       }
     } catch (err) {
       reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
@@ -142,6 +153,7 @@ exports.sourceNodes = async (
       })
   );
 
+  await cleanUpCoversFolder(COVERS_FOLDER_PATH, sourcesList.map(({ id }) => `${id}.jpg`));
   await cache.set(DATA_CACHE_KEY, booksData);
   reporter.info(`${LOG_PREFIX}End`);
 };
