@@ -40,6 +40,10 @@ const Home: React.FunctionComponent = () => {
           real experience to be significantly wider.
         </p>
         <p className="text">
+          My web development course helped 20 students obtain valuable skills
+          for their future careers.
+        </p>
+        <p className="text">
           I've founded several open source packages (e.g.&nbsp;
           <OutboundLink
             target="_blank"
@@ -140,11 +144,7 @@ const Home: React.FunctionComponent = () => {
           .
         </p>
         <p className="text">
-          You can find more details about my experience in a&nbsp;
-          <Link to="/cv" onClick={handleCVPress}>
-            printable CV
-          </Link>
-          . To contact with me&nbsp;
+          To contact with me&nbsp;
           <OutboundLink
             target="_blank"
             title="Calendly"
@@ -157,6 +157,10 @@ const Home: React.FunctionComponent = () => {
           <OutboundLink href="mailto:alexandrtovmach@gmail.com">
             mail me
           </OutboundLink>
+          . You can find more details about my experience in a&nbsp;
+          <Link to="/cv" className={styles.cvLink} onClick={handleCVPress}>
+            printable CV
+          </Link>
           .
         </p>
       </article>
