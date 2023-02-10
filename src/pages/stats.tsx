@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../containers/Layout';
 import SEO from '../containers/SEO';
-import Statistics from '../containers/Statistics';
+import BookList from '../containers/BookList';
 
 interface StatsPageProps {
   data: {
@@ -56,8 +56,8 @@ const StatsPage: React.FunctionComponent<StatsPageProps> = ({
 }) => {
   return (
     <Layout>
-      <SEO title="Random Info" />
-      <Statistics books={allOpenLibBooks.nodes} bookCovers={allFile.nodes} />
+      <SEO title="Book List" />
+      <BookList books={allOpenLibBooks.nodes} bookCovers={allFile.nodes} />
     </Layout>
   );
 };
