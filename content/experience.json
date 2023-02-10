@@ -7,15 +7,33 @@
     "endDate": "Aug 2022",
     "description": "Working on a payment system based on Open Banking and integrated with top list of UK/EU banks.",
     "skills": [
+      "nodejs",
+      "typescript",
+      "aws",
       "react",
       "redux",
-      "typescript",
-      "nodejs",
       "mongodb",
       "figma",
       "javascript",
-      "aws",
-      "styledcomponents"
+      "styledcomponents",
+      "mentorship",
+      "leadership"
+    ]
+  },
+  {
+    "position": "External Technical Interviewer",
+    "name": "Ciklum",
+    "url": "https://www.ciklum.com/",
+    "startDate": "Nov 2021",
+    "endDate": "Feb 2022",
+    "description": "Interviewing potential candidates on tech stage on hourly basis as external expert.",
+    "skills": [
+      "techinterview",
+      "javascript",
+      "typescript",
+      "react",
+      "reactnative",
+      "nodejs"
     ]
   },
   {
@@ -24,7 +42,7 @@
     "url": "https://www.rightstars.co/",
     "startDate": "Oct 2021",
     "endDate": "Dec 2021",
-    "description": "Bootstraped an MVP of social network to connect lawyers with users.",
+    "description": "Made an MVP of social network to connect lawyers with users.",
     "skills": [
       "react",
       "redux",
@@ -78,6 +96,25 @@
       "typescript",
       "nodejs",
       "graphql",
+      "styledcomponents",
+      "javascript"
+    ]
+  },
+  {
+    "position": "Software Engineer",
+    "name": "Shifamed",
+    "url": "https://shifamed.com/",
+    "startDate": "Jun 2021",
+    "endDate": "Aug 2021",
+    "description": "Build next-generation medical products that improve clinical standards and patients lives.",
+    "skills": [
+      "react",
+      "typescript",
+      "nodejs",
+      "redis",
+      "nestjs",
+      "postgresql",
+      "aws",
       "styledcomponents",
       "javascript"
     ]
