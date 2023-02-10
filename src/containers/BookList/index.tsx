@@ -41,14 +41,14 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
 
   return (
     <main className={styles.stats} onClick={handleBookClick('')}>
-      <section>
+      {/* <section>
         <p>
           My personal reading list. All book covers generated with{' '}
           <a href="https://openai.com/dall-e-2/">DALL-E 2</a>
         </p>
-      </section>
+      </section> */}
       <section>
-        <ul className={styles.bookShelf}>
+        <ul className={styles.booksList}>
           {bookItems.map(
             ({
               title,

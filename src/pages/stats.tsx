@@ -55,7 +55,7 @@ const StatsPage: React.FunctionComponent<StatsPageProps> = ({
   data: { allOpenLibBooks, allFile },
 }) => {
   return (
-    <Layout>
+    <Layout withoutFooter>
       <SEO title="Book List" />
       <BookList books={allOpenLibBooks.nodes} bookCovers={allFile.nodes} />
     </Layout>

@@ -1,268 +1,257 @@
+$book-height: 25rem;
+$book-width: 17rem;
+$book-depth: 30px;
+$gold-line-gradient: linear-gradient(
+  transparent 5%,
+  gold 5%,
+  gold 6%,
+  transparent 6%,
+  transparent 94%,
+  gold 94%,
+  gold 95%,
+  transparent 95%
+);
+$root-shadow-gradient: linear-gradient(
+  to right,
+  black 1%,
+  rgba(0, 0, 0, 0.6) 3%,
+  transparent 10%,
+  transparent 90%,
+  rgba(0, 0, 0, 0.6) 97%,
+  black 99%
+);
+$front-root-gradient: linear-gradient(
+  to right,
+  transparent 0.5%,
+  rgba(0, 0, 0, 0.6) 1%,
+  transparent,
+  rgba(0, 0, 0, 0.4) 5%,
+  transparent 6%
+);
+
 .stats {
-  section {
-    &.posters {
-      width: 100vw;
-      overflow-x: auto;
+
+    .booksList {
       display: flex;
-      height: 500px;
-      padding: var(--space) 0;
-      img {
-        margin: 0 calc(var(--space) / 2);
-      }
-    }
-  }
-}
+      align-items: flex-end;
+      width: calc(100vw - var(--space) * 10 * 2);
+      height: calc(100vh - var(--space) * 4.5);
+      padding: calc(var(--space) * 4.5) calc(var(--space) * 10) 0;
+      overflow-x: auto;
+      background-image: linear-gradient(
+          to bottom,
+          rgba(245, 222, 179, 0.2),
+          rgba(245, 222, 179, 0.6)
+        ),
+        url('../../assets/images/wall_texture.jpg');
+      background-size: 30%;
 
-.bookShelf {
-  display: flex;
-  align-items: flex-end;
-  width: calc(100vw - 10rem * 2);
-  height: 70vh;
-  overflow-x: auto;
-  padding: calc(var(--space) * 4.5) calc(var(--space) * 10);
-  background-image: linear-gradient(
-    transparent 40%,
-    rgba(0, 0, 0, 0.4) 85%,
-    #d3d3d3 92%,
-    #d3d3d3 92%,
-    #b3b3b3 92%
-  );
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+      .book {
+        flex-shrink: 0;
+        position: relative;
+        min-width: $book-depth;
+        height: $book-height;
+        align-items: flex-end;
+        writing-mode: vertical-rl;
+        text-orientation: sideways-right;
+        transform-style: preserve-3d;
+        transform: rotateX(-2deg) rotateY(-2deg) translateZ(0) scaleY(1);
+        border-radius: 2px;
+        color: black;
+        font-weight: bold;
+        vertical-align: baseline;
+        line-height: 1;
+        text-align: end;
+        z-index: 1;
+        transition: margin 0.5s 0.4s ease-in, transform 0.5s 0s ease-in;
+        box-shadow: -10px 5px 20px transparent;
 
-  .book {
-    flex-shrink: 0;
-    position: relative;
-    min-width: 25px;
-    height: 20rem;
-    align-items: flex-end;
-    writing-mode: vertical-rl;
-    text-orientation: sideways-right;
-    transform-style: preserve-3d;
-    transform: rotateX(-2deg) rotateY(-2deg) translateZ(0) scaleY(1);
-    border-radius: 2px;
-    color: black;
-    font-weight: bold;
-    vertical-align: baseline;
-    line-height: 1;
-    text-align: end;
-    z-index: 1;
-    transition: margin 0.5s 0.4s ease-in, transform 0.5s 0s ease-in;
-    box-shadow: -10px 5px 20px transparent;
-
-    &.active {
-      margin-right: 15rem;
-      opacity: 1;
-      z-index: 10;
-      transition: margin 1s, transform 1s 0.3s ease-out;
-      transform: rotateX(-5deg) rotateY(-75deg) rotateZ(0deg) translateX(10rem)
-        translateY(-3rem) translateZ(10rem) scaleZ(1.5) scaleY(1.5);
-    }
-
-    .author {
-      font-size: 80%;
-      text-transform: uppercase;
-      z-index: 2;
-      color: gold;
-      opacity: 0.8;
-      text-shadow: rgba(0, 0, 0, 0.2) 1px 0, rgba(0, 0, 0, 0.2) -1px 0,
-        rgba(0, 0, 0, 0.2) 0 1px, rgba(0, 0, 0, 0.2) 0 -1px;
-    }
-    .title {
-      font-weight: 300;
-      font-size: 70%;
-      z-index: 2;
-      text-shadow: rgba(0, 0, 0, 0.2) 1px 0, rgba(0, 0, 0, 0.2) -1px 0,
-        rgba(0, 0, 0, 0.2) 0 1px, rgba(0, 0, 0, 0.2) 0 -1px;
-      opacity: 0.8;
-      color: white;
-    }
-
-    .side {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-
-      &.front {
-        background: inherit;
-        padding: calc(var(--space) * 2) calc(var(--space) / 2);
-        width: calc(100% - var(--space) / 2 * 2);
-        height: calc(100% - var(--space) * 2 * 2);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        // flex-direction: column;
-        cursor: context-menu  ;
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 100%;
-          opacity: 0.3;
-          z-index: 0;
-          background-size: 200px;
-          background-image: url('../../assets/images/leather_texture.jpeg');
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 0;
-          background-image: linear-gradient(
-              to right,
-              rgba(0, 0, 0, 0.3) 5%,
-              rgba(0, 0, 0, 0.2) 9%,
-              transparent,
-              rgba(0, 0, 0, 0.2) 91%,
-              rgba(0, 0, 0, 0.3) 95%
-            ),
-            linear-gradient(
-              transparent 5%,
-              gold 6%,
-              gold 6%,
-              transparent 6%,
-              transparent 94%,
-              gold 95%,
-              gold 95%,
-              transparent 95%
-            );
+        &.active {
+          margin-right: $book-width;
+          opacity: 1;
+          z-index: 10;
+          transition: margin 1s, transform 1s 0.3s ease-out;
+          transform: rotateX(-5deg) rotateY(-75deg) rotateZ(0deg)
+            translateX(10rem) translateY(-3rem) translateZ(10rem) scaleZ(1.5)
+            scaleY(1.5);
         }
 
         .author {
-          text-align: start;
-          flex: 1 0 50%;
-          white-space: nowrap;
+          font-size: 80%;
+          text-transform: uppercase;
+          z-index: 2;
+          color: gold;
+          opacity: 0.9;
+          text-shadow: rgba(0, 0, 0, 0.2) 1px 0, rgba(0, 0, 0, 0.2) -1px 0,
+            rgba(0, 0, 0, 0.2) 0 1px, rgba(0, 0, 0, 0.2) 0 -1px;
         }
         .title {
-          text-align: end;
-        }
-      }
-
-      // &.back {
-      //   top: 4px;
-      //   height: calc(100% - 4px * 2);
-      //   transform: translateZ(-15rem);
-      //   background: white;
-      // }
-
-      &.left {
-        left: 0;
-        width: 15rem;
-        transform-origin: left;
-        transform: rotateY(90deg);
-        background: inherit;
-      }
-
-      &.right {
-        width: calc(15rem - 2rem * 2);
-        padding: 0 2rem;
-        left: initial;
-        transform-origin: right;
-        transform: rotateY(90deg) translateX(100%);
-        background: inherit;
-        writing-mode: initial;
-        text-orientation: initial;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        flex-direction: column;
-        line-height: 1.2;
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0.3;
-          z-index: 0;
-          background-size: 200px;
-          background-image: url('../../assets/images/leather_texture.jpeg');
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 0;
-          background-image: linear-gradient(
-              to right,
-              rgba(0, 0, 0, 0.2),
-              transparent,
-              rgba(0, 0, 0, 0.2) 5%,
-              transparent 5.5%
-            ),
-            linear-gradient(
-              transparent 5%,
-              gold 6%,
-              gold 6%,
-              transparent 6%,
-              transparent 94%,
-              gold 95%,
-              gold 95%,
-              transparent 95%
-            );
-        }
-        .cover {
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          border: 1px solid gold;
+          font-weight: 300;
+          font-size: 80%;
+          font-family: serif;
           opacity: 0.7;
+          z-index: 2;
+          letter-spacing: 0.7px;
+          color: white;
+          text-shadow: rgba(0, 0, 0, 0.2) 1px 0, rgba(0, 0, 0, 0.2) -1px 0,
+            rgba(0, 0, 0, 0.2) 0 1px, rgba(0, 0, 0, 0.2) 0 -1px;
+        }
+
+        .side {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+
+          &.front {
+            background: inherit;
+            padding: calc(var(--space) * 2) calc(var(--space) / 2);
+            width: calc(100% - var(--space) / 2 * 2);
+            height: calc(100% - var(--space) * 2 * 2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // flex-direction: column;
+            cursor: context-menu;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 0;
+              // background-image: $gold-line-gradient;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              mix-blend-mode: luminosity;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 100%;
+              z-index: 0;
+              background-size: auto 50%;
+              background-image: $root-shadow-gradient,
+                url('../../assets/images/leather_texture.jpeg');
+            }
+
+            .author {
+              text-align: start;
+              flex: 1 0 50%;
+              white-space: nowrap;
+            }
+            .title {
+              text-align: end;
+            }
+          }
+
+          // &.back {
+          //   top: 4px;
+          //   height: calc(100% - 4px * 2);
+          //   transform: translateZ(-15rem);
+          //   background: white;
+          // }
+
+          &.left {
+            left: 0;
+            width: $book-width;
+            transform-origin: left;
+            transform: rotateY(90deg);
+            background: inherit;
+          }
+
+          &.right {
+            width: calc($book-width - 2rem * 2);
+            padding: 0 2rem;
+            left: initial;
+            transform-origin: right;
+            transform: rotateY(90deg) translateX(100%);
+            background: inherit;
+            writing-mode: initial;
+            text-orientation: initial;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-direction: column;
+            line-height: 1.2;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 0;
+              // background-image: $gold-line-gradient;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              mix-blend-mode: luminosity;
+              top: 0;
+              left: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+              // opacity: 0.3;
+              z-index: 0;
+              background-size: auto 50%;
+              background-image: $front-root-gradient,
+                url('../../assets/images/leather_texture.jpeg');
+            }
+            .title {
+              font-size: 100%;
+            }
+            .cover {
+              width: 150px;
+              height: 150px;
+              border-radius: 50%;
+              border: 1px solid gold;
+              opacity: 0.9;
+              z-index: 1;
+            }
+          }
+
+          &.top {
+            top: 4px;
+            height: calc($book-width - 4px);
+            transform-origin: top center;
+            transform: rotateX(-90deg);
+            background-image: repeating-linear-gradient(
+              to right,
+              gray,
+              white 1px
+            );
+            opacity: 1;
+          }
         }
       }
-
-      &.top {
-        top: 4px;
-        height: calc(15rem - 4px);
-        transform-origin: top center;
-        transform: rotateX(-90deg);
-        background-image: repeating-linear-gradient(to right, gray, white 2px);
-        opacity: 1;
-      }
-
-      // &.bottom {
-      //   top: auto;
-      //   bottom: 0;
-      //   height: 15rem;
-      //   transform-origin: bottom;
-      //   transform: rotateX(90deg);
-      //   background: white;
-      // }
     }
   }
-}
 
-@keyframes getBook {
-  0% {
-    z-index: 1;
-    transform: rotateX(-2deg) rotateY(-2deg) translateZ(0);
+  @keyframes getBook {
+    0% {
+      z-index: 1;
+      transform: rotateX(-2deg) rotateY(-2deg) translateZ(0);
+    }
+    50% {
+      z-index: 1;
+      transform: rotateX(-2deg) rotateY(-2deg) translateZ(20rem);
+    }
+    100% {
+      z-index: 10;
+      transform: rotateX(-2deg) rotateY(-85deg) rotateZ(5deg) translateX(10rem)
+        translateZ(10rem) scale(1.05);
+    }
   }
-  50% {
-    z-index: 1;
-    transform: rotateX(-2deg) rotateY(-2deg) translateZ(20rem);
-  }
-  100% {
-    z-index: 10;
-    transform: rotateX(-2deg) rotateY(-85deg) rotateZ(5deg) translateX(10rem)
-      translateZ(10rem) scale(1.05);
-  }
-}
+
 
 @keyframes backBook {
   0% {
