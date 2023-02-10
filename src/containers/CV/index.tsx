@@ -70,7 +70,7 @@ const CVPaper = () => {
         <section className={styles.basicInfo}>
           <div className={styles.title}>
             <h1>ALEXANDR TOVMACH</h1>
-            <h2>full stack engineer & UI/UX designer</h2>
+            <h2>lead software engineer & UI/UX designer</h2>
           </div>
           <div className={styles.contacts}>
             {[
