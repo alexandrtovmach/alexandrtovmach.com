@@ -66,7 +66,7 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
                 })}
                 style={{
                   backgroundColor: `#${authorId.slice(2, 5)}`,
-                  flexBasis: pagesCount ? `${pagesCount * 0.15}px` : '25px',
+                  flexBasis: pagesCount ? `${pagesCount * 0.3}px` : '50px',
                 }}
                 onClick={handleBookClick(id)}
               >
