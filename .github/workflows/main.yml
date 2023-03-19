@@ -12,16 +12,30 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
       
-      - name: Secrets 🔑
-        run: |
-          touch .env
-          echo MULTIPLEX_TOKEN=${{ secrets.MULTIPLEX_TOKEN }} >> .env
+      # - name: Secrets 🔑
+      #   run: |
+      #     touch .env
+      #     echo MULTIPLEX_TOKEN=${{ secrets.MULTIPLEX_TOKEN }} >> .env
+
+      - name: Caching Gatsby ☘️
+        id: gatsby-cache-build
+        uses: actions/cache@v2
+        with:
+          path: |
+            public
+            .cache
+          key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-gatsby-build-
 
       - name: Install 🔧
         run: npm ci
 
       - name: Build 📦
         run: npm run build
+        env:
+          GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
+          CI: true
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
