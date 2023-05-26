@@ -203,5 +203,20 @@
     "label": "JavaScript",
     "value": "javascript",
     "category": "frontend"
+  },
+  {
+    "label": "NX",
+    "value": "nx",
+    "category": "devops"
+  },
+  {
+    "label": "Chakra UI",
+    "value": "chakra",
+    "category": "frontend"
+  },
+  {
+    "label": "Next.js",
+    "value": "nextjs",
+    "category": "frontend"
   }
 ]
