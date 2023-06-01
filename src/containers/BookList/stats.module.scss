@@ -200,6 +200,9 @@ $front-root-gradient: linear-gradient(
             background-image: $front-root-gradient,
               url('../../assets/images/leather_texture.jpeg');
           }
+          &:hover {
+            opacity: 1;
+          }
           .title {
             font-size: 200%;
           }

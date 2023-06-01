@@ -71,7 +71,7 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
                 onClick={handleBookClick(id)}
               >
                 <div className={classNames(styles.left, styles.side)}></div>
-                <div className={classNames(styles.right, styles.side)}>
+                <a href={openLibUrl} target="_blank" className={classNames(styles.right, styles.side)}>
                   {coverPath && (
                     <img
                       className={styles.cover}
@@ -80,10 +80,10 @@ const Statistics: React.FunctionComponent<StatisticsProps> = ({
                     />
                   )}
                   <span className={styles.author}>{author}</span>
-                  <a href={openLibUrl} target="_blank" className={styles.title}>
+                  <h3 className={styles.title}>
                     {title}
-                  </a>
-                </div>
+                  </h3>
+                </a>
                 <div className={classNames(styles.top, styles.side)}></div>
                 <div className={classNames(styles.front, styles.side)}>
                   <p className={styles.author}>{authorShortener(author)}</p>
