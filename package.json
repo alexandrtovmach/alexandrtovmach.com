@@ -13,7 +13,7 @@
     "dayjs": "^1.11.4",
     "dotenv": "^16.0.1",
     "fast-average-color-node": "^2.4.0",
-    "gatsby": "^4.25.7",
+    "gatsby": "^5.10.0",
     "gatsby-plugin-google-analytics": "^4.20.0",
     "gatsby-plugin-image": "^2.20.0",
     "gatsby-plugin-manifest": "^4.20.0",
