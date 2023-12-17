@@ -55,7 +55,6 @@ export const blogQuery = graphql`
   }
 `;
 
-
 // allFeedHabr {
 //   edges {
 //     node {
@@ -68,6 +67,7 @@ export const blogQuery = graphql`
 //     }
 //   }
 // }
+
 
 const parseForImage = (contentStr: string) => {
   const startSrc = contentStr.slice(

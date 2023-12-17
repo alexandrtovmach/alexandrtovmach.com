@@ -44,7 +44,7 @@ const Home: React.FunctionComponent = () => {
           for their future careers.
         </p>
         <p className="text">
-          I've founded several open source packages (e.g.&nbsp;
+          I've started several open-source packages (e.g.&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to react-microsoft-login project"
@@ -62,7 +62,7 @@ const Home: React.FunctionComponent = () => {
           >
             react-figma-plugin-ds
           </OutboundLink>
-          ) , and I'm actively contributing to&nbsp;
+          ) , and was active contributor of&nbsp;
           <OutboundLink
             target="_blank"
             title="Link to Node.js project"

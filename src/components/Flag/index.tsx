@@ -12,12 +12,12 @@ const Flag: React.FunctionComponent<Props> = ({ language }) => {
           🇺🇦
         </span>
       );
-    case 'ru':
-      return (
-        <span role="img" aria-label="russian">
-          🇷🇺
-        </span>
-      );
+    // case 'ru':
+    //   return (
+    //     <span role="img" aria-label="russian">
+    //       🇷🇺
+    //     </span>
+    //   );
     case 'en':
       return (
         <span role="img" aria-label="english">

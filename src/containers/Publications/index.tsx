@@ -56,7 +56,7 @@ const Publications: React.FunctionComponent<Props> = ({ publications }) => {
         >
           <option value="all">All languages</option>
           <option value="en">English</option>
-          <option value="ru">Russian</option>
+          {/* <option value="ru">Russian</option> */}
           <option value="uk">Ukrainian</option>
         </select>
       </header>
