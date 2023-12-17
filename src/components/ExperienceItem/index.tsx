@@ -47,7 +47,7 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
   name,
   url,
   position,
-  // description,
+  description,
   startDate,
   endDate,
   skills,
@@ -56,7 +56,7 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
 }) => {
   return (
     <div className={styles.experienceItem}>
-      <h4 className={classNames(styles.title, 'label')}>
+      <h4 className={classNames(styles.title, 'label')} title={description}>
         {position && `${position} • `}
         {url ? (
           <OutboundLink

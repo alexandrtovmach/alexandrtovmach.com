@@ -218,5 +218,20 @@
     "label": "Next.js",
     "value": "nextjs",
     "category": "frontend"
+  },
+  {
+    "label": "Prisma",
+    "value": "prisma",
+    "category": "databases"
+  },
+  {
+    "label": "Swagger/OpenAPI",
+    "value": "swagger",
+    "category": "backend"
+  },
+  {
+    "label": "Bootstrap",
+    "value": "bootstrap",
+    "category": "frontend"
   }
 ]

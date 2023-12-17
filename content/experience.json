@@ -1,8 +1,41 @@
 [
   {
+    "position": "Founder/CTO",
+    "name": "soft4manufacture",
+    "url": "https://soft4manufacture.com/",
+    "startDate": "Mar 2023",
+    "description": "Founded a company that provides software solutions for manufacturing companies.",
+    "skills": [
+      "nodejs",
+      "typescript",
+      "heroku",
+      "bash",
+      "react",
+      "bootstrap",
+      "postgresql",
+      "prisma",
+      "swagger"
+    ]
+  },
+  {
+    "position": "External Technical Interviewer",
+    "name": "NDA",
+    "startDate": "Jul 2023",
+    "description": "Conducted technical interviews with potential candidates as an external expert on an hourly basis.",
+    "skills": [
+      "techinterview",
+      "javascript",
+      "typescript",
+      "react",
+      "reactnative",
+      "nodejs",
+      "nestjs"
+    ]
+  },
+  {
     "position": "Software Engineer",
     "name": "RESPONSIBLE",
-    "url": "https://www.getresponsible.com/",
+    "url": "https://www.responsible.us/",
     "startDate": "Feb 2023",
     "endDate": "Jul 2023",
     "description": "Worked on a platform that helped facilitate the buyback and resale of unused clothes, aiming to contribute to environmental conservation. Collaborated with popular brands such as Kuyichi, Haglöfs, and Rains to promote sustainable practices in the fashion industry.",
