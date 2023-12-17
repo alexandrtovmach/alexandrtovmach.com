@@ -40,8 +40,30 @@ const Home: React.FunctionComponent = () => {
           real experience to be significantly wider.
         </p>
         <p className="text">
-          My web development course helped 20 students obtain valuable skills
-          for their future careers.
+          Founded and led&nbsp;
+          <OutboundLink
+            target="_blank"
+            title="Link to soft4manufacture company website"
+            rel="noopener noreferrer"
+            href="http://soft4manufacture.com/"
+          >
+            soft4manufacture
+          </OutboundLink>
+          &nbsp; company, which provides development services and
+          IT solutions for manufacturing companies.
+        </p>
+        <p className="text">
+          My&nbsp;
+          <OutboundLink
+            target="_blank"
+            title="Link to attech-org project"
+            rel="noopener noreferrer"
+            href="https://github.com/attech-org"
+          >
+            web development course
+          </OutboundLink>
+          &nbsp;helped 20 students obtain valuable skills for their future
+          careers.
         </p>
         <p className="text">
           I've started several open-source packages (e.g.&nbsp;
