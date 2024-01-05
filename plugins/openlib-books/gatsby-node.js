@@ -47,7 +47,11 @@ const getBookDataById = async (bookId, coversFolderPath) => {
   const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${bookId}.json`);
   const workData = await workDataRes.json();
   if (workData.type?.key === '/type/redirect') {
-    throw new Error(`${LOG_PREFIX}Book ID ${bookId}, should be replaced with ${workData.location.split('/')[2]}`);
+    throw new Error(
+      `${LOG_PREFIX}Book ID ${bookId}, should be replaced with ${
+        workData.location.split('/')[2]
+      }`
+    );
   }
   const authorDataRes = await fetch(
     `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
@@ -78,13 +82,17 @@ const getBookDataById = async (bookId, coversFolderPath) => {
     authorData,
     pagesCount,
     coverPath,
-  }
+  };
 };
 
 const cleanUpCoversFolder = async (coversFolderPath, idsArr) => {
   const files = await fs.readdir(coversFolderPath);
-  return Promise.all(difference(files, idsArr).map(fileName => fs.unlink(resolve(coversFolderPath, fileName))));
-}
+  return Promise.all(
+    difference(files, idsArr).map((fileName) =>
+      fs.unlink(resolve(coversFolderPath, fileName))
+    )
+  );
+};
 
 exports.sourceNodes = async (
   { actions, createNodeId, createContentDigest, reporter, cache },
@@ -110,19 +118,38 @@ exports.sourceNodes = async (
 
   const cachedData = (await cache.get(DATA_CACHE_KEY)) || [];
   const booksData = [];
-  for (const { id } of sourcesList) {
-    const fromCache = cachedData.find(({ id: cachedId }) => cachedId === id);
-    try {
-      if (fromCache) {
-        booksData.push(fromCache);
+  // split sourcesList to chunks by 5
+  const chunks = sourcesList.reduce(
+    (acc, item) => {
+      const last = acc[acc.length - 1];
+      if (last.length < 3) {
+        last.push(item);
       } else {
-        reporter.info(`${LOG_PREFIX}Fetching - ${id}`);
-        const data = await getBookDataById(id, COVERS_FOLDER_PATH);
-        booksData.push(data);
+        acc.push([item]);
       }
-    } catch (err) {
-      reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
-    }
+      return acc;
+    },
+    [[]]
+  );
+  for (const chunk of chunks) {
+    const booksChunk = await Promise.all(
+      chunk.map(({ id }) => {
+        const fromCache = cachedData.find(
+          ({ id: cachedId }) => cachedId === id
+        );
+        try {
+          if (fromCache) {
+            return fromCache;
+          } else {
+            reporter.info(`${LOG_PREFIX}Fetching - ${id}`);
+            return getBookDataById(id, COVERS_FOLDER_PATH);
+          }
+        } catch (err) {
+          reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
+        }
+      })
+    );
+    booksData.push(...booksChunk);
   }
 
   booksData.forEach(
@@ -131,11 +158,13 @@ exports.sourceNodes = async (
       workData &&
       authorData &&
       actions.createNode({
-        title: workData.title.normalize("NFC").replace(/[\u0300-\u036f]/g, ""),
+        title: workData.title.normalize('NFC').replace(/[\u0300-\u036f]/g, ''),
         subjects: workData.subjects,
         pagesCount: Math.ceil(pagesCount || 0),
         coverPath,
-        author: authorData.name.normalize("NFC").replace(/[\u0300-\u036f]/g, ""),
+        author: authorData.name
+          .normalize('NFC')
+          .replace(/[\u0300-\u036f]/g, ''),
         authorId: authorData.key.split('/')[2],
         workId: id,
         openLibUrl: `${OPEN_LIB_URL}/works/${id}`,
@@ -153,7 +182,10 @@ exports.sourceNodes = async (
       })
   );
 
-  await cleanUpCoversFolder(COVERS_FOLDER_PATH, sourcesList.map(({ id }) => `${id}.jpg`));
+  await cleanUpCoversFolder(
+    COVERS_FOLDER_PATH,
+    sourcesList.map(({ id }) => `${id}.jpg`)
+  );
   await cache.set(DATA_CACHE_KEY, booksData);
   reporter.info(`${LOG_PREFIX}End`);
 };
