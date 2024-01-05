@@ -1,6 +1,8 @@
-require("dotenv").config();
+import { config } from 'dotenv';
 
-module.exports = {
+config();
+
+export default {
   siteMetadata: {
     title: `Alexandr Tovmach`,
     description: `Full stack engineer and UI/UX designer. I build software for startups and big companies with focus on eye-catching design, usability, a11y and web optimization.`,

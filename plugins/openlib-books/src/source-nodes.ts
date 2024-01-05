@@ -1,16 +1,17 @@
-const fetch = require(`node-fetch`);
-const { resolve } = require(`path`);
-const { promises: fs, existsSync } = require(`fs`);
-const { meanBy, difference } = require(`lodash`);
+import fetch from 'node-fetch';
+import { resolve } from 'path';
+import { promises as fs, existsSync } from 'fs';
+import { meanBy, difference } from 'lodash';
+import type { GatsbyNode, PluginOptions } from "gatsby"
 
 const LOG_PREFIX = '[openlib-books]: ';
 const DATA_CACHE_KEY = 'openlib-books-data';
 const OPEN_LIB_URL = 'https://openlibrary.org';
 const DALL_E_URL = 'https://bf.dallemini.ai';
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const getCoverFromAI = async (id, title, coversFolderPath) => {
+const getCoverFromAI = async (id: string, title: string, coversFolderPath: string) => {
   try {
     const resultPath = resolve(coversFolderPath, `${id}.jpg`);
     if (existsSync(resultPath)) {
@@ -27,7 +28,7 @@ const getCoverFromAI = async (id, title, coversFolderPath) => {
         }),
         redirect: 'follow',
       });
-      const json = await res.json();
+      const json: any = await res.json();
       const resultImage = json.images[0] || '';
       if (resultImage) {
         await fs.writeFile(
@@ -43,9 +44,9 @@ const getCoverFromAI = async (id, title, coversFolderPath) => {
   }
 };
 
-const getBookDataById = async (bookId, coversFolderPath) => {
+const getBookDataById = async (bookId: string, coversFolderPath: string) => {
   const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${bookId}.json`);
-  const workData = await workDataRes.json();
+  const workData: any = await workDataRes.json();
   if (workData.type?.key === '/type/redirect') {
     throw new Error(
       `${LOG_PREFIX}Book ID ${bookId}, should be replaced with ${
@@ -63,10 +64,10 @@ const getBookDataById = async (bookId, coversFolderPath) => {
   const editionsDataRes = await fetch(
     `${OPEN_LIB_URL}/works/${bookId}/editions.json`
   );
-  const editionsData = await editionsDataRes.json();
+  const editionsData: any = await editionsDataRes.json();
 
   const pagesCount = meanBy(
-    editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
+    editionsData.entries.filter(({ number_of_pages }: any) => number_of_pages),
     'number_of_pages'
   );
 
@@ -85,7 +86,7 @@ const getBookDataById = async (bookId, coversFolderPath) => {
   };
 };
 
-const cleanUpCoversFolder = async (coversFolderPath, idsArr) => {
+const cleanUpCoversFolder = async (coversFolderPath: string, idsArr: string[]) => {
   const files = await fs.readdir(coversFolderPath);
   return Promise.all(
     difference(files, idsArr).map((fileName) =>
@@ -94,9 +95,14 @@ const cleanUpCoversFolder = async (coversFolderPath, idsArr) => {
   );
 };
 
-exports.sourceNodes = async (
+interface OpenLibPluginOptions extends PluginOptions {
+  listSrc: string;
+  coversFolderPath: string;
+}
+
+export const sourceNodes: GatsbyNode["sourceNodes"] = async (
   { actions, createNodeId, createContentDigest, reporter, cache },
-  pluginOptions
+  pluginOptions: OpenLibPluginOptions
 ) => {
   if (!pluginOptions.listSrc) {
     reporter.error(`${LOG_PREFIX}Missed required field "listSrc"`);
@@ -108,7 +114,9 @@ exports.sourceNodes = async (
   }
   reporter.info(`${LOG_PREFIX}Start`);
 
-  const sourcesList = require(resolve(pluginOptions.listSrc));
+  interface Item { id: string };
+  const sourcesListSource: string = await fs.readFile(resolve(pluginOptions.listSrc), 'utf-8');
+  const sourcesList: Item[] = JSON.parse(sourcesListSource);
   const COVERS_FOLDER_PATH = resolve(pluginOptions.coversFolderPath);
 
   if (!Array.isArray(sourcesList) || !sourcesList.length) {
@@ -119,7 +127,7 @@ exports.sourceNodes = async (
   const cachedData = (await cache.get(DATA_CACHE_KEY)) || [];
   const booksData = [];
   // split sourcesList to chunks by 5
-  const chunks = sourcesList.reduce(
+  const chunks = sourcesList.reduce<Item[][]>(
     (acc, item) => {
       const last = acc[acc.length - 1];
       if (last.length < 3) {
@@ -135,7 +143,7 @@ exports.sourceNodes = async (
     const booksChunk = await Promise.all(
       chunk.map(({ id }) => {
         const fromCache = cachedData.find(
-          ({ id: cachedId }) => cachedId === id
+          (cache: any) => cache.id === id
         );
         try {
           if (fromCache) {
@@ -144,7 +152,7 @@ exports.sourceNodes = async (
             reporter.info(`${LOG_PREFIX}Fetching - ${id}`);
             return getBookDataById(id, COVERS_FOLDER_PATH);
           }
-        } catch (err) {
+        } catch (err: any) {
           reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
         }
       })
@@ -188,4 +196,10 @@ exports.sourceNodes = async (
   );
   await cache.set(DATA_CACHE_KEY, booksData);
   reporter.info(`${LOG_PREFIX}End`);
-};
+}
+
+// export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gatsbyApi) => {
+//   const { reporter } = gatsbyApi
+
+//   reporter.info(`Example plugin sourceNodes...`)
+// }
