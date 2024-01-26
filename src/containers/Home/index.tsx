@@ -137,7 +137,7 @@ const Home: React.FunctionComponent = () => {
             Medium
           </OutboundLink>
           ,&nbsp;
-          <OutboundLink
+          {/* <OutboundLink
             target="_blank"
             title="Link to my profile on Habr"
             rel="noopener noreferrer"
@@ -145,7 +145,7 @@ const Home: React.FunctionComponent = () => {
           >
             Habr
           </OutboundLink>
-          ,&nbsp;
+          ,&nbsp; */}
           <OutboundLink
             target="_blank"
             title="Link to my profile on DOU"
