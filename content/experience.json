@@ -1,10 +1,10 @@
 [
   {
-    "position": "Founder/CTO",
+    "position": "Founder",
     "name": "soft4manufacture",
     "url": "https://soft4manufacture.com/",
     "startDate": "Mar 2023",
-    "description": "Founded a company that provides software solutions for manufacturing companies.",
+    "description": "Founded a company that provides software solutions for big manufacturing business.",
     "skills": [
       "nodejs",
       "typescript",
