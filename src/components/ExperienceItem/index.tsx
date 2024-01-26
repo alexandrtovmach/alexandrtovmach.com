@@ -10,14 +10,15 @@ import SkillItem from '../SkillItem';
 import skillsList from '../../../content/skills.json';
 import SkillList from '../../containers/SkillList';
 
-interface Props extends ExtExperienceItem {
+interface ExperienceItemProps extends ExtExperienceItem {
+  isOld?: boolean;
   onHoverSkill?: (key?: string) => void;
   highlightedSkillKey?: string;
 }
 
 const getDateString = (
-  startDate: Props['startDate'],
-  endDate: Props['endDate']
+  startDate: ExperienceItemProps['startDate'],
+  endDate: ExperienceItemProps['endDate']
 ) => {
   let resultStr = '';
   const start = dayjs(startDate);
@@ -45,7 +46,7 @@ const getDateString = (
   return resultStr;
 };
 
-const ExperienceItem: React.FunctionComponent<Props> = ({
+const ExperienceItem: React.FunctionComponent<ExperienceItemProps> = ({
   name,
   url,
   position,
@@ -55,6 +56,7 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
   skills,
   onHoverSkill,
   highlightedSkillKey,
+  isOld,
 }) => {
   const skill2label = useMemo(() => {
     const hash: { [key: string]: string } = {};
@@ -66,7 +68,7 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
 
   return (
     <div className={styles.experienceItem}>
-      <h4 className={classNames(styles.title, 'label')} title={description}>
+      <h4 className={classNames(styles.title, 'label')}>
         {position && `${position} • `}
         {url ? (
           <OutboundLink
@@ -83,8 +85,8 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
       <div className={classNames(styles.time, 'secondary-text')}>
         {getDateString(startDate, endDate)}
       </div>
-      {description && (
-        <p className={classNames(styles.about, 'text')}>
+      {!isOld && description && (
+        <p className="text">
           {description
             ?.split('%%')
             .map((item) =>
@@ -103,7 +105,7 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
             )}
         </p>
       )}
-      {skills && (
+      {isOld && skills && (
         <div className={styles.about}>
           <SkillList
             skills={skills}

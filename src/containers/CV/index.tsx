@@ -115,10 +115,19 @@ const CVPaper = () => {
           <section className={styles.mainInfoLeft}>
             <article>
               <h3 className="section-title ">Experience</h3>
-              {extendedExperienceList.map((el) => (
+              {extendedExperienceList.slice(0, 3).map((el) => (
                 <ExperienceItem
                   {...el}
                   key={el.startDate.toString()}
+                  onHoverSkill={onChangeHighlightedSkillKey}
+                  highlightedSkillKey={highlightedSkillKey}
+                />
+              ))}
+              {extendedExperienceList.slice(3).map((el) => (
+                <ExperienceItem
+                  {...el}
+                  key={el.startDate.toString()}
+                  isOld
                   onHoverSkill={onChangeHighlightedSkillKey}
                   highlightedSkillKey={highlightedSkillKey}
                 />

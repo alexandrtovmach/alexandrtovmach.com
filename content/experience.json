@@ -3,14 +3,33 @@
     "position": "External Technical Interviewer",
     "name": "NDA",
     "startDate": "Jul 2023",
-    "description": "Conducted %%techinterview%% as an external expert on an hourly basis, in next areas: %%javascript%%, %%typescript%%, %%nodejs%%, %%nestjs%% and other."
+    "description": "Conducted %%techinterview%% as an external expert on an hourly basis, in next areas: %%javascript%%, %%typescript%%, %%nodejs%%, %%nestjs%% and other.",
+    "skills": [
+      "techinterview",
+      "javascript",
+      "typescript",
+      "nodejs",
+      "nestjs"
+    ]
   },
   {
     "position": "Founder",
     "name": "soft4manufacture",
     "url": "https://soft4manufacture.com/",
     "startDate": "Mar 2023",
-    "description": "Founded a company specializing in software solutions and development services tailored for large-scale manufacturing enterprises. Successfully delivered a comprehensive product based on %%nodejs%% and %%typescript%% facilitating the efficient management of production processes and real-time tracking of production line progress. Developed a responsive frontend with %%react%%, %%bootstrap%%, and managed data with %%postgresql%% and %%prisma%%. Ensured streamlined operations with %%bash%% scripting and provided API documentation using %%swagger%%. Collaborated on design aspects using %%figma%%."
+    "description": "Founded a company specializing in software solutions and development services for manufacturing enterprises. Delivered a product based on %%nodejs%% and %%typescript%% for efficient management of production processes and real-time progress tracking. Developed a responsive frontend with %%react%%, %%bootstrap%%, and managed data with %%postgresql%% and %%prisma%%. Made cross-platform devops scripts with %%bash%% to run app on different platforms.",
+    "skills": [
+      "nodejs",
+      "typescript",
+      "heroku",
+      "bash",
+      "react",
+      "bootstrap",
+      "postgresql",
+      "prisma",
+      "swagger",
+      "figma"
+    ]
   },
   {
     "position": "Software Engineer",
@@ -18,7 +37,20 @@
     "url": "https://www.responsible.us/",
     "startDate": "Feb 2023",
     "endDate": "Jul 2023",
-    "description": "Worked on a %%typescript%% project that involved developing a platform facilitating the buyback and resale of unused clothes. Leveraged %%nodejs%% and %%nestjs%% for robust backend functionalities, hosted on the %%azure%% cloud platform. Collaborated with renowned brands such as Kuyichi, Haglöfs, and Rains to advance sustainable practices in the fashion industry. Employed %%react%%, %%nx%%, and %%chakra%% for the frontend development, while utilizing %%nextjs%% for seamless server-side rendering. Managed data with %%postgresql%%, and utilized %%figma%% for design collaboration."
+    "description": "Worked on a %%typescript%% based platform for buyback and resale of unused clothes. Collaborated with renowned brands such as Kuyichi, Haglöfs, and Rains to advance sustainable practices in the fashion industry. Used %%nodejs%% and %%nestjs%% for backend, and %%nextjs%% with %%chakra%% for frontend. Managed monorepo with %%nx%%, hosted apps on the %%azure%% cloud platform. Stored data in %%postgresql%%, and utilized %%figma%% for design collaboration.",
+    "skills": [
+      "typescript",
+      "nodejs",
+      "nestjs",
+      "azure",
+      "react",
+      "nx",
+      "chakra",
+      "nextjs",
+      "postgresql",
+      "figma",
+      "javascript"
+    ]
   },
   {
     "position": "Software Engineer",
@@ -26,7 +58,21 @@
     "url": "https://www.fena.co/",
     "startDate": "Nov 2021",
     "endDate": "Aug 2022",
-    "description": "Contributed to an Open Banking-based payment system, seamlessly integrating with leading banks in the UK/EU. Utilized %%nodejs%%, %%typescript%%, and %%aws%% for backend development, while implementing a responsive frontend with %%react%%, %%redux%%, and %%nextjs%%. Managed data using %%mongodb%% and collaborated on design using %%figma%%. Demonstrated proficiency in %%javascript%%, %%styledcomponents%%, and provided %%mentorship%% and %%leadership%% within the team."
+    "description": "Contributed to an Open Banking-based payment system, seamlessly integrating with leading banks in the UK/EU. Utilized %%nodejs%%, %%typescript%%, and %%aws%% for backend development, while implementing a responsive frontend with %%react%%, %%redux%%, and %%nextjs%%. Managed data using %%mongodb%% and collaborated on design using %%figma%%. Demonstrated proficiency in %%javascript%%, %%styledcomponents%%, and provided %%mentorship%% and %%leadership%% within the team.",
+    "skills": [
+      "nodejs",
+      "typescript",
+      "aws",
+      "react",
+      "redux",
+      "nextjs",
+      "mongodb",
+      "figma",
+      "javascript",
+      "styledcomponents",
+      "mentorship",
+      "leadership"
+    ]
   },
   {
     "position": "External Technical Interviewer",
@@ -34,6 +80,7 @@
     "url": "https://www.ciklum.com/",
     "startDate": "Nov 2021",
     "endDate": "Feb 2022",
+    "description": "Conducted %%techinterview%% as an external expert on an hourly basis, in next areas: %%javascript%%, %%typescript%%, %%react%%, %%reactnative%% and other.",
     "skills": [
       "techinterview",
       "javascript",
@@ -48,6 +95,7 @@
     "url": "https://www.rightstars.co/",
     "startDate": "Oct 2021",
     "endDate": "Dec 2021",
+    "description": "Developed an MVP of a social network that connects lawyers with clients.",
     "skills": [
       "react",
       "redux",
@@ -68,6 +116,7 @@
     "url": "https://medrecord.io/",
     "startDate": "Sep 2020",
     "endDate": "Oct 2021",
+    "description": "Delivered high-quality and secure eHealth solutions while developing tools for online medical management.",
     "skills": [
       "reactnative",
       "redux",
@@ -95,6 +144,7 @@
     "url": "https://playhq.com/",
     "startDate": "Feb 2021",
     "endDate": "Aug 2021",
+    "description": "Supported and developed new features for the leading sports platform in Australia.",
     "skills": [
       "react",
       "typescript",
@@ -110,6 +160,7 @@
     "url": "https://shifamed.com/",
     "startDate": "Jun 2021",
     "endDate": "Aug 2021",
+    "description": "Built next-generation medical products aimed at enhancing clinical standards and improving the lives of patients.",
     "skills": [
       "react",
       "typescript",
@@ -128,6 +179,7 @@
     "url": "https://crowdin.com/",
     "startDate": "Sep 2019",
     "endDate": "Sep 2021",
+    "description": "Integrated a localization platform with popular designer tools such as Figma and Adobe XD.",
     "skills": [
       "react",
       "typescript",
@@ -145,6 +197,7 @@
     "url": "https://binary-studio.com/",
     "startDate": "May 2017",
     "endDate": "Oct 2020",
+    "description": "Contributed to the development of a platform for nurses booking. Created technical lectures and served as a mentor for a team of students in Binary Studio Academy. Developed 10 modules for a digital signage software player ecosystem.",
     "skills": [
       "react",
       "nodejs",
@@ -177,6 +230,7 @@
     "name": "DeliSol LLC",
     "startDate": "Jul 2016",
     "endDate": "Sep 2017",
+    "description": "Worked in various roles encompassing email marketing, online advertising, customer support, and website development.",
     "skills": [
       "bash",
       "imacros",
