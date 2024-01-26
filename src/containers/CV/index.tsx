@@ -179,14 +179,14 @@ const CVPaper = () => {
                   Medium
                 </a>
                 ,&nbsp;
-                <a
+                {/* <a
                   href="https://habr.com/ru/users/alexandrtovmach/posts/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Habr
                 </a>
-                ,&nbsp;
+                ,&nbsp; */}
                 <a
                   href="https://dou.ua/users/aleksandr-tovmach/articles"
                   target="_blank"
@@ -250,6 +250,10 @@ const CVPaper = () => {
             </article>
             <article>
               <h3 className="section-title ">Education</h3>
+              <div className={styles.educationItem}>
+                <h4 className="label">Higher School of Management and Administration in Opole</h4>
+                <p className="text">2022-2024</p>
+              </div>
               <div className={styles.educationItem}>
                 <h4 className="label">Kryvyi Rih National University</h4>
                 <p className="text">2014-2019</p>

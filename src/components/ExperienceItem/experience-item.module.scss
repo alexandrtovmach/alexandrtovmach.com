@@ -9,6 +9,7 @@
   .about {
     transition: 0.2s;
     opacity: 0.8;
+    margin-bottom: calc(var(--space) / 2);
   }
 
   .title {

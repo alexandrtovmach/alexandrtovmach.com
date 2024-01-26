@@ -83,7 +83,7 @@ interface ExperienceItem {
   description?: string;
   startDate: string | Date;
   endDate?: string | Date;
-  skills: SkillItem['value'][];
+  skills?: SkillItem['value'][];
 }
 
 interface ExtExperienceItem {
@@ -93,5 +93,5 @@ interface ExtExperienceItem {
   description?: string;
   startDate: string | Date;
   endDate?: string | Date;
-  skills: SkillItem[];
+  skills?: SkillItem[];
 }

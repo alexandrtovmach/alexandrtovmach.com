@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import classNames from 'classnames';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import * as styles from './experience-item.module.scss';
+import SkillItem from '../SkillItem';
+import skillsList from '../../../content/skills.json';
 import SkillList from '../../containers/SkillList';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 interface Props extends ExtExperienceItem {
   onHoverSkill?: (key?: string) => void;
@@ -54,6 +56,14 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
   onHoverSkill,
   highlightedSkillKey,
 }) => {
+  const skill2label = useMemo(() => {
+    const hash: { [key: string]: string } = {};
+    skillsList.forEach((skill) => {
+      hash[skill.value] = skill.label;
+    });
+    return hash;
+  }, [skillsList]);
+
   return (
     <div className={styles.experienceItem}>
       <h4 className={classNames(styles.title, 'label')} title={description}>
@@ -73,14 +83,35 @@ const ExperienceItem: React.FunctionComponent<Props> = ({
       <div className={classNames(styles.time, 'secondary-text')}>
         {getDateString(startDate, endDate)}
       </div>
-      <div className={styles.about}>
-        <SkillList
-          skills={skills}
-          onHoverSkill={onHoverSkill}
-          highlightedSkillKey={highlightedSkillKey}
-        />
-      </div>
-      {/* <p>{description}</p> */}
+      {description && (
+        <p className={classNames(styles.about, 'text')}>
+          {description
+            ?.split('%%')
+            .map((item) =>
+              skill2label[item] ? (
+                <SkillItem
+                  isText
+                  key={item}
+                  label={skill2label[item]}
+                  value={item}
+                  onHover={onHoverSkill}
+                  isHighlighted={highlightedSkillKey === item}
+                />
+              ) : (
+                item
+              )
+            )}
+        </p>
+      )}
+      {skills && (
+        <div className={styles.about}>
+          <SkillList
+            skills={skills}
+            onHoverSkill={onHoverSkill}
+            highlightedSkillKey={highlightedSkillKey}
+          />
+        </div>
+      )}
     </div>
   );
 };

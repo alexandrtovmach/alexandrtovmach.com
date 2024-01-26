@@ -6,6 +6,7 @@ import * as styles from './skill-item.module.scss';
 interface Props extends SkillItem {
   onHover?: (key?: string) => void;
   isHighlighted: boolean;
+  isText?: boolean;
 }
 
 const SkillItem: React.FunctionComponent<Props> = ({
@@ -13,6 +14,7 @@ const SkillItem: React.FunctionComponent<Props> = ({
   value,
   onHover,
   isHighlighted,
+  isText,
 }) => {
   const handleMouseOver = () => {
     onHover && onHover(value);
@@ -20,7 +22,19 @@ const SkillItem: React.FunctionComponent<Props> = ({
   const handleMouseLeave = () => {
     onHover && onHover();
   };
-  return (
+  return isText ? (
+    <span
+      className={classNames(styles.skillItem, {
+        [styles.highlighted]: isHighlighted,
+        [styles.isText]: isText,
+      })}
+      title={`Skill item: ${label}`}
+      onMouseOver={handleMouseOver}
+      onMouseLeave={handleMouseLeave}
+    >
+      {label}
+    </span>
+  ) : (
     <li
       className={classNames(styles.skillItem, {
         [styles.highlighted]: isHighlighted,
