@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics';
 
 import PublicationCard from '../../components/PublicationCard';
 
@@ -20,11 +19,11 @@ const Publications: React.FunctionComponent<Props> = ({ publications }) => {
   };
 
   const handleBackPress = () => {
-    trackCustomEvent({
-      category: 'engagement',
-      action: 'go_back',
-      label: 'Back to home',
-    });
+    // trackCustomEvent({
+    //   category: 'engagement',
+    //   action: 'go_back',
+    //   label: 'Back to home',
+    // });
   };
 
   return (

@@ -3,7 +3,7 @@ import { useReactToPrint } from 'react-to-print';
 import { Link } from 'gatsby';
 import { groupBy, capitalize } from 'lodash';
 import classNames from 'classnames';
-import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 import ExperienceItem from '../../components/ExperienceItem';
 import { mergeExperienceWithSkills, parseQuery } from './helpers';
@@ -31,19 +31,19 @@ const CVPaper = () => {
   });
 
   const handleBackPress = () => {
-    trackCustomEvent({
-      category: 'engagement',
-      action: 'go_back',
-      label: 'Back to home',
-    });
+    // trackCustomEvent({
+    //   category: 'engagement',
+    //   action: 'go_back',
+    //   label: 'Back to home',
+    // });
   };
 
   const handlePrintPress = () => {
-    trackCustomEvent({
-      category: 'engagement',
-      action: 'generate_lead',
-      label: 'Print CV',
-    });
+    // trackCustomEvent({
+    //   category: 'engagement',
+    //   action: 'generate_lead',
+    //   label: 'Print CV',
+    // });
 
     handlePrint && handlePrint();
   };

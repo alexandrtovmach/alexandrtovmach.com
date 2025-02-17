@@ -48,9 +48,7 @@ const getBookDataById = async (bookId, coversFolderPath) => {
   const workData = await workDataRes.json();
   if (workData.type?.key === '/type/redirect') {
     throw new Error(
-      `${LOG_PREFIX}Book ID ${bookId}, should be replaced with ${
-        workData.location.split('/')[2]
-      }`
+      `${bookId} > ${workData.location.split('/')[2]}`
     );
   }
   const authorDataRes = await fetch(
@@ -131,9 +129,10 @@ exports.sourceNodes = async (
     },
     [[]]
   );
+  const idToReplaceErrors = [];
   for (const chunk of chunks) {
     const booksChunk = await Promise.all(
-      chunk.map(({ id }) => {
+      chunk.map(async ({ id }) => {
         const fromCache = cachedData.find(
           ({ id: cachedId }) => cachedId === id
         );
@@ -142,7 +141,13 @@ exports.sourceNodes = async (
             return fromCache;
           } else {
             reporter.info(`${LOG_PREFIX}Fetching - ${id}`);
-            return getBookDataById(id, COVERS_FOLDER_PATH);
+            try {
+              const result = await getBookDataById(id, COVERS_FOLDER_PATH);
+              return result;
+            } catch (err) {
+              idToReplaceErrors.push(err);
+              return null;
+            }
           }
         } catch (err) {
           reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
@@ -150,6 +155,12 @@ exports.sourceNodes = async (
       })
     );
     booksData.push(...booksChunk);
+  }
+
+  if (idToReplaceErrors.length) {
+    throw new Error(
+      `${LOG_PREFIX}Some books should be replaced: ${idsToReplace.join(', ')}`
+    );
   }
 
   booksData.forEach(

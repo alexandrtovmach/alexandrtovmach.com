@@ -1,5 +1,5 @@
 import React from 'react';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 // import classnames from "classnames";
 
 import GitHubSVG from '../../assets/icons/github.svg';

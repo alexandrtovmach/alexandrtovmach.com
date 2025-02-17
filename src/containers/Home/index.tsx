@@ -1,25 +1,25 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { OutboundLink, trackCustomEvent } from 'gatsby-plugin-google-analytics';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import * as styles from './home.module.scss';
 
 const Home: React.FunctionComponent = () => {
   const handleCVPress = () => {
-    trackCustomEvent({
-      category: 'engagement',
-      action: 'view_item',
-      label: 'CV link',
-    });
+    // trackCustomEvent({
+    //   category: 'engagement',
+    //   action: 'view_item',
+    //   label: 'CV link',
+    // });
   };
 
   const handleBlogPress = () => {
-    trackCustomEvent({
-      category: 'engagement',
-      action: 'view_item',
-      label: 'blog link',
-    });
+    // trackCustomEvent({
+    //   category: 'engagement',
+    //   action: 'view_item',
+    //   label: 'blog link',
+    // });
   };
 
   return (
@@ -35,8 +35,8 @@ const Home: React.FunctionComponent = () => {
       <article>
         <h1 className="label">Hi, I'm Alexandr Tovmach.</h1>
         <p className="text">
-          I'm full stack engineer & UI/UX designer, and my expertise is JS
-          ecosystem, especially React and Node.js. But I consider my vision and
+          I'm full stack engineer & UI/UX designer. My expertise is JS
+          ecosystem, especially React and Node.js, but I consider my vision and
           real experience to be significantly wider.
         </p>
         <p className="text">
