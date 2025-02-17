@@ -52,7 +52,7 @@ const getBookDataById = async (bookId, coversFolderPath) => {
     );
   }
   if (!workData.authors) {
-    throw new Error(`${LOG_PREFIX}Work ${bookId} not found`);
+    throw new Error(`${LOG_PREFIX}Work ${bookId} not found. ${JSON.stringify(workData)}`);
   }
   const authorDataRes = await fetch(
     `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
