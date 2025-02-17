@@ -51,13 +51,13 @@ const getBookDataById = async (bookId, coversFolderPath) => {
       `${bookId} > ${workData.location.split('/')[2]}`
     );
   }
+  if (!workData.authors) {
+    throw new Error(`${LOG_PREFIX}Work ${bookId} not found`);
+  }
   const authorDataRes = await fetch(
     `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
   );
   const authorData = await authorDataRes.json();
-  if (!workData.authors) {
-    throw new Error(`${LOG_PREFIX}Work ${bookId} not found`);
-  }
   const editionsDataRes = await fetch(
     `${OPEN_LIB_URL}/works/${bookId}/editions.json`
   );
