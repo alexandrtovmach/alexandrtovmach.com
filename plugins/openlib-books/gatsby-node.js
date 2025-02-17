@@ -62,10 +62,18 @@ const getBookDataById = async (bookId, coversFolderPath) => {
     `${OPEN_LIB_URL}${workData.authors[0].author.key}.json`
   );
   const authorData = await authorDataRes.json();
+  if (authorData.status === 429) {
+    await sleep(10000);
+    return getBookDataById(bookId, coversFolderPath);
+  }
   const editionsDataRes = await fetch(
     `${OPEN_LIB_URL}/works/${bookId}/editions.json`
   );
   const editionsData = await editionsDataRes.json();
+  if (editionsData.status === 429) {
+    await sleep(10000);
+    return getBookDataById(bookId, coversFolderPath);
+  }
 
   const pagesCount = meanBy(
     editionsData.entries?.filter(({ number_of_pages }) => number_of_pages),
@@ -120,7 +128,6 @@ exports.sourceNodes = async (
 
   const cachedData = (await cache.get(DATA_CACHE_KEY)) || [];
   const booksData = [];
-  // split sourcesList to chunks by 5
   const chunks = sourcesList.reduce(
     (acc, item) => {
       const last = acc[acc.length - 1];
