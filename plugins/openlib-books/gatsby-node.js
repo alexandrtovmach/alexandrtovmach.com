@@ -159,7 +159,7 @@ exports.sourceNodes = async (
 
   if (idToReplaceErrors.length) {
     throw new Error(
-      `${LOG_PREFIX}Some books should be replaced: ${idsToReplace.join(', ')}`
+      `${LOG_PREFIX}Some books should be replaced: ${idToReplaceErrors.join(', ')}`
     );
   }
 
