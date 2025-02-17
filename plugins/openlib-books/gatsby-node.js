@@ -129,7 +129,6 @@ exports.sourceNodes = async (
     },
     [[]]
   );
-  const idToReplaceErrors = [];
   for (const chunk of chunks) {
     const booksChunk = await Promise.all(
       chunk.map(async ({ id }) => {
@@ -141,13 +140,7 @@ exports.sourceNodes = async (
             return fromCache;
           } else {
             reporter.info(`${LOG_PREFIX}Fetching - ${id}`);
-            try {
-              const result = await getBookDataById(id, COVERS_FOLDER_PATH);
-              return result;
-            } catch (err) {
-              idToReplaceErrors.push(err);
-              return null;
-            }
+            return getBookDataById(id, COVERS_FOLDER_PATH);
           }
         } catch (err) {
           reporter.error(`${LOG_PREFIX}Failed to fetch ${id}`, err);
@@ -155,12 +148,6 @@ exports.sourceNodes = async (
       })
     );
     booksData.push(...booksChunk);
-  }
-
-  if (idToReplaceErrors.length) {
-    throw new Error(
-      `${LOG_PREFIX}Some books should be replaced: ${idToReplaceErrors.join(', ')}`
-    );
   }
 
   booksData.forEach(
