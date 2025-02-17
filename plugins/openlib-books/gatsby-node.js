@@ -46,6 +46,10 @@ const getCoverFromAI = async (id, title, coversFolderPath) => {
 const getBookDataById = async (bookId, coversFolderPath) => {
   const workDataRes = await fetch(`${OPEN_LIB_URL}/works/${bookId}.json`);
   const workData = await workDataRes.json();
+  if (workData.status === 429) {
+    await sleep(10000);
+    return getBookDataById(bookId, coversFolderPath);
+  }
   if (workData.type?.key === '/type/redirect') {
     throw new Error(
       `${bookId} > ${workData.location.split('/')[2]}`
