@@ -64,7 +64,7 @@ const getBookDataById = async (bookId, coversFolderPath) => {
   const editionsData = await editionsDataRes.json();
 
   const pagesCount = meanBy(
-    editionsData.entries.filter(({ number_of_pages }) => number_of_pages),
+    editionsData.entries?.filter(({ number_of_pages }) => number_of_pages),
     'number_of_pages'
   );
 
