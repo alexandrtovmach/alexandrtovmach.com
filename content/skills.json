@@ -233,5 +233,20 @@
     "label": "Bootstrap",
     "value": "bootstrap",
     "category": "frontend"
+  },
+  {
+    "label": "Tailwind",
+    "value": "tailwind",
+    "category": "frontend"
+  },
+  {
+    "label": "CloudFront",
+    "value": "cloudfront",
+    "category": "devops"
+  },
+  {
+    "label": "Chrome Extension",
+    "value": "chrome_extension",
+    "category": "other"
   }
 ]

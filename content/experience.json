@@ -1,8 +1,36 @@
 [
   {
+    "position": "Founder",
+    "name": "duckarchive",
+    "url": "https://duckarchive.com/",
+    "startDate": "Mar 2024",
+    "description": "Started a non-profit initiative to develop tools and products for genealogy and archival researchers. Used %%nextjs%%, %%typescript%%, %%tailwind%% to build a platform to check online status of archival case. Under the hood using %%nodejs%%, %%postgresql%% and %%prisma%% to scrap tens of resources with hundred of thousands items.",
+    "skills": [
+      "nextjs",
+      "typescript",
+      "nodejs",
+      "postgresql",
+      "react",
+      "tailwind",
+      "prisma",
+      "chrome_extension",
+      "cloudfront",
+      "figma"
+    ]
+  },
+  {
+    "position": "Software Engineer",
+    "name": "Blackbird Lab",
+    "startDate": "Oct 2023",
+    "description": "",
+    "skills": [
+    ]
+  },
+  {
     "position": "External Technical Interviewer",
     "name": "NDA",
     "startDate": "Jul 2023",
+    "endDate": "Dec 2023",
     "description": "Conducted %%techinterview%% as an external expert on an hourly basis, in next areas: %%javascript%%, %%typescript%%, %%nodejs%%, %%nestjs%% and other.",
     "skills": [
       "techinterview",
@@ -17,6 +45,7 @@
     "name": "soft4manufacture",
     "url": "https://soft4manufacture.com/",
     "startDate": "Mar 2023",
+    "endDate": "Feb 2025",
     "description": "Founded a company specializing in software solutions and development services for manufacturing enterprises. Delivered a product based on %%nodejs%% and %%typescript%% for efficient management of production processes and real-time progress tracking. Developed a responsive frontend with %%react%%, %%bootstrap%%, and managed data with %%postgresql%% and %%prisma%%. Made cross-platform devops scripts with %%bash%% to run app on different platforms.",
     "skills": [
       "nodejs",

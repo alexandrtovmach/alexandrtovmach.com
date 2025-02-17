@@ -167,8 +167,10 @@ const CVPaper = () => {
                 , no matter what it is ― movie, song or even a joke. Everything
                 should trigger mental activity. Therefore,&nbsp;
                 <span className="highlighted">I love to solve tasks</span>
-                &nbsp;and for me, the best gift is a puzzle or a book. For over
-                {yearsOfMarriage} years, my first and only love, who eventually became&nbsp;
+                &nbsp;and for me, the best gift is a puzzle or a book. For
+                over&nbsp;
+                {yearsOfMarriage} years, my first and only love, who eventually
+                became&nbsp;
                 <span className="highlighted">my wife</span>, is the
                 biggest&nbsp;
                 <span className="highlighted">inspiration of my life</span>.
@@ -262,7 +264,9 @@ const CVPaper = () => {
             <article>
               <h3 className="section-title ">Education</h3>
               <div className={styles.educationItem}>
-                <h4 className="label">Higher School of Management and Administration in Opole</h4>
+                <h4 className="label">
+                  Higher School of Management and Administration in Opole
+                </h4>
                 <p className="text">2022-2024</p>
               </div>
               <div className={styles.educationItem}>
