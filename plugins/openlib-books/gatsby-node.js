@@ -131,7 +131,7 @@ exports.sourceNodes = async (
   );
   for (const chunk of chunks) {
     const booksChunk = await Promise.all(
-      chunk.map(async ({ id }) => {
+      chunk.map(({ id }) => {
         const fromCache = cachedData.find(
           ({ id: cachedId }) => cachedId === id
         );
