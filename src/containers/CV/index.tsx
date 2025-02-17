@@ -53,6 +53,8 @@ const CVPaper = () => {
   );
   const groupedSkills = groupBy<SkillItem>(skills as SkillItem[], 'category');
 
+  const yearsOfMarriage = new Date().getFullYear() - 2012;
+
   return (
     <div>
       <nav
@@ -166,7 +168,7 @@ const CVPaper = () => {
                 should trigger mental activity. Therefore,&nbsp;
                 <span className="highlighted">I love to solve tasks</span>
                 &nbsp;and for me, the best gift is a puzzle or a book. For over
-                9 years, my first and only love, who eventually became&nbsp;
+                {yearsOfMarriage} years, my first and only love, who eventually became&nbsp;
                 <span className="highlighted">my wife</span>, is the
                 biggest&nbsp;
                 <span className="highlighted">inspiration of my life</span>.
