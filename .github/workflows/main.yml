@@ -29,10 +29,10 @@ jobs:
             ${{ runner.os }}-gatsby-build-
 
       - name: Install 🔧
-        run: npm ci
+        run: pnpm ci
 
       - name: Build 📦
-        run: npm run build
+        run: pnpm run build
         env:
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
           CI: true
