@@ -5,11 +5,10 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ siteTitle }) => (
-  <header className="bg-white shadow-sm">
+  <header className="text-transparent">
     <nav className="flex items-center justify-start px-4 py-2">
-      {/* Logo will be added back when needed */}
       {siteTitle && (
-        <h1 className="text-xl font-semibold text-secondary">{siteTitle}</h1>
+        <h1 className="text-xl font-semibold">{siteTitle}</h1>
       )}
     </nav>
   </header>

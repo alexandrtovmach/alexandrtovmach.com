@@ -1,17 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import Home from '@/containers/Home';
 import '@/styles/globals.css';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 ---
 
 <Layout title="Alexandr Tovmach - Full Stack Engineer & UI/UX Designer">
-  <div class="min-h-screen flex flex-col">
-    <Header client:load />
-    <div class="flex-1">
-      <Home client:load />
-    </div>
-    <Footer client:load />
-  </div>
+  <Header client:load siteTitle="Alexandr Tovmach" />
+  <Home client:load />
+  <Footer client:load />
 </Layout>

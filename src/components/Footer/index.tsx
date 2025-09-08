@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="flex items-center justify-center gap-4 p-6 bg-white border-t border-gray-200">
+    <footer className="flex items-center justify-center gap-1">
       <a
         href="https://twitter.com/alexandrtovmach"
         target="_blank"
