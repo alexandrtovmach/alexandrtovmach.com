@@ -9,25 +9,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2
         with:
-          version: 8
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+          version: '9'
+      - uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'pnpm'
+      - run: pnpm install
 
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build Astro
-        run: pnpm run build
+      - run: pnpm run build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
