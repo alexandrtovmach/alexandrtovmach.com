@@ -1,0 +1,39 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    background-color: #f6f6f2;
+    color: #333;
+  }
+}
+
+@layer components {
+  .label {
+    @apply text-2xl font-semibold mb-4;
+  }
+  
+  .text {
+    @apply text-base leading-relaxed mb-4;
+  }
+  
+  .link {
+    @apply text-accent hover:underline transition-colors duration-200;
+  }
+  
+  .button {
+    @apply inline-flex items-center px-4 py-2 bg-accent text-white rounded-md hover:bg-blue-700 transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+}

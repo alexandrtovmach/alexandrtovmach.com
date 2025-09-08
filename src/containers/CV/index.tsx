@@ -1,9 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
-import { Link } from 'gatsby';
 import { groupBy, capitalize } from 'lodash';
 import classNames from 'classnames';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 import ExperienceItem from '../../components/ExperienceItem';
 import { mergeExperienceWithSkills, parseQuery } from './helpers';
@@ -60,9 +58,9 @@ const CVPaper = () => {
       <nav
         className={classNames(styles.printButtonContainer, styles.flexCenter)}
       >
-        <Link to="/" onClick={handleBackPress}>
+        <a href="/" onClick={handleBackPress} className="text-blue-600 hover:text-blue-800 underline">
           ⟵ Back to main
-        </Link>
+        </a>
         <button className={styles.printButton} onClick={handlePrintPress}>
           <PrinterSVG />
           Click to print / Save PDF
@@ -95,7 +93,7 @@ const CVPaper = () => {
                 icon: <TwitterSVG />,
               },
             ].map(({ icon, link, label, title }) => (
-              <OutboundLink
+              <a
                 aria-label={title}
                 key={label}
                 className={classNames(
@@ -109,7 +107,7 @@ const CVPaper = () => {
               >
                 <span>{label}</span>
                 {icon}
-              </OutboundLink>
+              </a>
             ))}
           </div>
         </section>

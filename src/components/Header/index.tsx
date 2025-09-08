@@ -1,17 +1,17 @@
 import React from 'react';
-// import { Link } from 'gatsby';
 
-// import LogoAnimatedSVG from '../../assets/icons/logo_animated.svg';
+interface HeaderProps {
+  siteTitle?: string;
+}
 
-import * as styles from './header.module.scss';
-
-const Header = ({ siteTitle }: any) => (
-  <header className={styles.header}>
-    {/* <nav className={styles.navigation}>
-      <Link to="/">
-        <LogoAnimatedSVG />
-      </Link>
-    </nav> */}
+const Header: React.FC<HeaderProps> = ({ siteTitle }) => (
+  <header className="bg-white shadow-sm">
+    <nav className="flex items-center justify-start px-4 py-2">
+      {/* Logo will be added back when needed */}
+      {siteTitle && (
+        <h1 className="text-xl font-semibold text-secondary">{siteTitle}</h1>
+      )}
+    </nav>
   </header>
 );
 

@@ -2,15 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Home from '../containers/Home';
+import BookList from '../containers/BookList';
 import '../styles/globals.css';
+
+// For now, we'll use static data. Later this can be replaced with actual data fetching
+const staticBooks = [];
 ---
 
-<Layout title="Alexandr Tovmach - Full Stack Engineer & UI/UX Designer">
+<Layout title="Stats - Alexandr Tovmach" description="Reading statistics and personal metrics">
   <div class="min-h-screen flex flex-col">
     <Header client:load />
     <div class="flex-1">
-      <Home client:load />
+      <BookList client:load books={staticBooks} />
     </div>
     <Footer client:load />
   </div>

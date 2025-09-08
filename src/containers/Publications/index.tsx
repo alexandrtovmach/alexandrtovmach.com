@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'gatsby';
 
 import PublicationCard from '../../components/PublicationCard';
 
@@ -29,9 +28,9 @@ const Publications: React.FunctionComponent<Props> = ({ publications }) => {
   return (
     <main>
       <nav className={styles.printButtonContainer}>
-        <Link to="/" onClick={handleBackPress}>
+        <a href="/" onClick={handleBackPress} className="text-blue-600 hover:text-blue-800 underline">
           ⟵ Back to main
-        </Link>
+        </a>
       </nav>
       <header className={styles.publicationsControlPanel}>
         <div className={styles.panelTexts}>

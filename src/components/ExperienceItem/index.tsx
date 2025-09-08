@@ -3,7 +3,6 @@ import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import classNames from 'classnames';
-import { OutboundLink } from 'gatsby-plugin-google-gtag';
 
 import * as styles from './experience-item.module.scss';
 import SkillItem from '../SkillItem';
@@ -71,13 +70,14 @@ const ExperienceItem: React.FunctionComponent<ExperienceItemProps> = ({
       <h4 className={classNames(styles.title, 'label')}>
         {position && `${position} • `}
         {url ? (
-          <OutboundLink
+          <a
             href={url}
             target="_blank"
             title={`Link to ${name} company/project`}
+            className="text-blue-600 hover:text-blue-800 underline"
           >
             {name}
-          </OutboundLink>
+          </a>
         ) : (
           <>{name}</>
         )}
