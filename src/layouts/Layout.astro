@@ -1,0 +1,22 @@
+---
+import '@fontsource/quicksand';
+import "@/styles/global.css";
+import jsonLd from '@/data/ld-base.json';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="application/ld+json" href="/ai-profile.json" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline/>
+		<meta name="generator" content={Astro.generator} />
+		<title>Alexandr Tovmach</title>
+	</head>
+	<body class="h-screen bg-[#f6f6f2] overflow-y-scroll">
+		<slot />
+	</body>
+</html>

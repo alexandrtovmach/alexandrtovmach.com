@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alexandr Tovmach",
+  "alternateName": "Олександр Товмач",
+  "url": "https://alexandrtovmach.com",
+  "image": "https://alexandrtovmach.com/avatar.jpg",
+  "jobTitle": "Software Engineer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "duckarchive.com",
+    "alternateName": "Архівна Качка",
+    "url": "https://duckarchive.org",
+    "email": "admin@duckarchive.com",
+    "description": "Platform with multiple sub-projects that solve different challenges in the genealogical domain."
+  },
+  "nationality": "Ukrainian",
+  "sameAs": [
+    "https://github.com/alexandrtovmach",
+    "https://linkedin.com/in/alexandrtovmach",
+    "https://medium.com/@alexandrtovmach",
+    "https://dou.ua/users/aleksandr-tovmach/"
+  ],
+  "knowsAbout": [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "OCR",
+    "OCR with AI",
+    "UI/UX Design",
+    "Open Source Software",
+    "Genealogy Research"
+  ]
+}

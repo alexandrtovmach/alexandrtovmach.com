@@ -1,0 +1,160 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import photo from "@/assets/images/photo.jpg";
+import { Image } from "astro:assets";
+import GitHubSVG from "@/assets/icons/github.svg";
+import TwitterSVG from "@/assets/icons/twitter.svg";
+import LinkedInSVG from "@/assets/icons/linkedin.svg";
+---
+
+<Layout>
+  <main class="flex flex-col items-center justify-between min-h-full">
+    <header></header>
+    <section class="flex flex-col md:flex-row gap-0">
+      <div
+        class="flex items-center justify-center overflow-hidden w-[340px] grow-0 shrink-0 m-2"
+      >
+        <Image
+          src={photo}
+          alt="Alexandr Tovmach"
+          class="object-cover w-full h-full rounded-lg"
+        />
+      </div>
+      <article class="rounded-lg w-[340px] grow-0 shrink-1 m-2">
+        <h1 class="font-bold mb-1">Hi, I'm Alexandr Tovmach.</h1>
+        <p class="text">
+          I'm a full-stack engineer & UI/UX designer. My expertise lies in the JavaScript ecosystem, especially React and Node.js, though my vision and practical experience extend significantly further.
+        </p>
+        <!-- Це група проєктів та інструментів, що допомагають в дослідженнях українських родоводів -->
+        <p class="text">
+          Founded and lead the
+          <a
+            target="_blank"
+            title="Link soft4manufacture company website"
+            rel="noopener noreferrer"
+            href="https://duckarchive.com/">duckarchive</a
+          >
+          project, a platform with multiple sub-projects that address different challenges in the genealogical domain.
+        </p>
+        <p class="text">
+          My
+          <a
+            target="_blank"
+            title="Link attech-org project"
+            rel="noopener noreferrer"
+            href="https://github.com/attech-org"
+          >
+            web development course
+          </a>
+          has helped 20 students gain valuable skills for their future careers.
+        </p>
+        <p class="text">
+          I've started several open-source packages (e.g.
+          <a
+            target="_blank"
+            title="Link react-microsoft-login project"
+            rel="noopener noreferrer"
+            href="https://www.npmjs.com/package/react-microsoft-login"
+            >react-microsoft-login</a
+          >,
+          <a
+            target="_blank"
+            title="Link react-figma-plugin-ds project"
+            rel="noopener noreferrer"
+            href="https://www.npmjs.com/package/react-figma-plugin-ds"
+            >react-figma-plugin-ds</a
+          >), and have been an active contributor to
+          <a
+            target="_blank"
+            title="Link Node.js project"
+            rel="noopener noreferrer"
+            href="https://github.com/nodejs/">Node.js</a
+          >,
+          <a
+            target="_blank"
+            title="Link SemVer project"
+            rel="noopener noreferrer"
+            href="https://github.com/semver/">SemVer</a
+          >,
+          <a
+            target="_blank"
+            title="Link Gatsby project"
+            rel="noopener noreferrer"
+            href="https://github.com/gatsbyjs/">Gatsby</a
+          >,
+          <a
+            target="_blank"
+            title="Link Friends of Figma project"
+            rel="noopener noreferrer"
+            href="https://friends.figma.com/plugins/">Friends of Figma</a
+          >, and other projects.
+        </p>
+        <p class="text">
+          In my free time I write and translate articles on
+          <a
+            target="_blank"
+            title="Link my profile on Medium"
+            rel="noopener noreferrer"
+            href="https://medium.com/@alexandrtovmach">Medium</a
+          >
+          and
+          <a
+            target="_blank"
+            title="Link my profile on DOU"
+            rel="noopener noreferrer"
+            href="https://dou.ua/users/aleksandr-tovmach/articles">DOU</a
+          >, and also speak at meet-ups and
+          <a
+            target="_blank"
+            title="JSFest 2019: JAMStack"
+            rel="noopener noreferrer"
+            href="https://www.youtube.com/watch?v=wCNSK4iFCuE">conferences</a
+          >.
+        </p>
+        <p class="text">
+          To get in touch, you can
+          <a
+            target="_blank"
+            title="Calendly"
+            rel="noopener noreferrer"
+            href="https://calendly.com/alexandrtovmach">book an appointment</a
+          >
+          or simply
+          <a href="mailto:alexandrtovmach@gmail.com">email me</a>. More details about my experience are available in my
+          <a href="/cv" class="font-black opacity-100">printable CV</a>.
+        </p>
+      </article>
+    </section>
+    <footer
+      class="flex items-center justify-center gap-4 p-4 w-full"
+    >
+      <a
+        href="https://twitter.com/alexandrtovmach"
+        target="_blank"
+        title="Link to my Twitter"
+        rel="noopener noreferrer"
+        class="w-6 h-6 inline-block border-none no-underline"
+      >
+        <TwitterSVG />
+      </a>
+      <a
+        href="https://github.com/alexandrtovmach"
+        target="_blank"
+        title="Link to my GitHub"
+        rel="noopener noreferrer"
+        class="w-6 h-6 inline-block border-none no-underline"
+      >
+        <GitHubSVG />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/alexandrtovmach"
+        target="_blank"
+        title="Link to my LinkedIn"
+        rel="noopener noreferrer"
+        class="w-6 h-6 inline-block border-none no-underline"
+      >
+        <LinkedInSVG />
+      </a>
+    </footer>
+  </main>
+</Layout>
