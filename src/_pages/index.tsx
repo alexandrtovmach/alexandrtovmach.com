@@ -1,9 +1,9 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import Home from '@/containers/Home';
-import '@/styles/globals.css';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Home from '../containers/Home';
+import '../styles/globals.css';
 ---
 
 <Layout title="Alexandr Tovmach - Full Stack Engineer & UI/UX Designer">
