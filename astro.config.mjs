@@ -1,28 +1,18 @@
+// @ts-check
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
-import path from 'path';
+import tailwindcss from "@tailwindcss/vite";
+import sitemap from '@astrojs/sitemap';
 
+// https://astro.build/config
 export default defineConfig({
   site: 'https://alexandrtovmach.com',
   integrations: [
-    react(),
-    tailwind({
-      applyBaseStyles: false,
-    })
+    sitemap(),
+    react()
   ],
   vite: {
-    resolve: {
-      alias: {
-        '@': path.resolve('./src'),
-      }
-    },
-    optimizeDeps: {
-      include: ['react', 'react-dom']
-    }
+    // @ts-ignore
+    plugins: [tailwindcss()],
   },
-  output: 'static',
-  build: {
-    assets: 'assets'
-  }
 });

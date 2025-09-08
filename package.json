@@ -1,73 +1,26 @@
 {
-  "name": "alexandrtovmach.com",
+  "name": "atv2",
   "type": "module",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Alexandr Tovmach personal website",
-  "author": {
-    "email": "alexandrtovmach@gmail.com",
-    "name": "Alexandr Tovmach",
-    "url": "https://alexandrtovmach.com"
-  },
+  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx --ext astro",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,astro}"
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/react": "^3.6.2",
-    "@astrojs/tailwind": "^5.1.1",
-    "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^4.15.4",
-    "classnames": "^2.5.1",
-    "dayjs": "^1.11.13",
-    "dotenv": "^16.4.5",
-    "fast-average-color-node": "^2.4.0",
-    "lodash": "^4.17.21",
-    "node-fetch": "^3.3.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-grid-gallery": "^1.0.0",
-    "react-markdown": "^9.0.1",
-    "react-to-print": "^3.1.1",
-    "tailwindcss": "^3.4.10",
-    "typescript": "^5.5.4"
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.5.1",
+    "@fontsource/quicksand": "^5.2.9",
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "astro": "^5.13.5",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@types/classnames": "^2.3.1",
-    "@types/lodash": "^4.17.7",
-    "@typescript-eslint/eslint-plugin": "^8.3.0",
-    "@typescript-eslint/parser": "^8.3.0",
-    "eslint": "^9.9.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-astro": "^1.2.3",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsx-a11y": "^6.9.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.35.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1"
-  },
-  "keywords": [
-    "astro",
-    "react",
-    "typescript",
-    "tailwind",
-    "alexandrtovmach"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alexandrtovmach/alexandrtovmach.com"
-  },
-  "bugs": {
-    "url": "https://github.com/alexandrtovmach/alexandrtovmach.com/issues"
+    "sharp": "^0.34.3"
   }
 }
