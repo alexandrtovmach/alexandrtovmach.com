@@ -345,43 +345,43 @@
       "@type": "DefinedTerm",
       "name": "Python",
       "inDefinedTermSet": "https://www.python.org/",
-      "description": "machine_learning"
+      "description": "AI / machine_learning"
     },
     {
       "@type": "DefinedTerm",
-      "name": "OCR",
-      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Optical_character_recognition",
-      "description": "machine_learning"
+      "name": "PyTorch",
+      "inDefinedTermSet": "https://pytorch.org/",
+      "description": "AI / machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "Tesseract OCR",
       "inDefinedTermSet": "https://github.com/tesseract-ocr/tesseract",
-      "description": "machine_learning"
+      "description": "AI / machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "EasyOCR",
-      "inDefinedTermSet": "https://github.com/JaidedAI/EasyOCR",
-      "description": "machine_learning"
+      "inDefinedTermSet": "https://github.com/JaidedAI / EasyOCR",
+      "description": "AI / machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "PaddleOCR",
       "inDefinedTermSet": "https://github.com/PaddlePaddle/PaddleOCR",
-      "description": "machine_learning"
+      "description": "AI / machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "Gemini AI",
       "inDefinedTermSet": "https://deepmind.google/technologies/gemini/",
-      "description": "machine_learning"
+      "description": "AI / machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "OpenAI",
       "inDefinedTermSet": "https://openai.com/",
-      "description": "machine_learning"
+      "description": "AI / machine_learning"
     },
     {
       "@type": "DefinedTerm",
