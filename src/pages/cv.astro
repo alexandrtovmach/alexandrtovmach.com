@@ -1,0 +1,346 @@
+---
+// import React, { useRef, useState } from 'react';
+// import { useReactToPrint } from 'react-to-print';
+// import { Link } from 'gatsby';
+// import { groupBy, capitalize } from 'lodash';
+// import classs from 'classs';
+// import { OutboundLink } from 'gatsby-plugin-google-gtag';
+
+// import ExperienceItem from '@/components/ExperienceItem';
+// import { mergeExperienceWithSkills, parseQuery } from './helpers';
+// import SkillList from '../SkillList';
+
+import GitHubSVG from '@/assets/icons/github.svg';
+import TwitterSVG from '@/assets/icons/twitter.svg';
+import MailSVG from '@/assets/icons/mail.svg';
+import PrinterSVG from '@/assets/icons/printer.svg';
+import QRJpeg from '@/assets/images/qr.jpg';
+import Layout from '@/layouts/Layout.astro';
+// import faq from '@/../content/faq.json';
+// import experience from '@/../content/experience.json';
+// import skills from '@/../content/skills.json';
+
+// Removed SCSS import - using Tailwind instead
+---
+
+<style>
+  /* Custom CSS variables */
+  :root {
+    --space: 1rem;
+    --dark-color: #000000;
+    --light-color: #ffffff;
+  }
+
+  /* Print styles */
+  @media print {
+    @page {
+      margin: 10mm;
+    }
+
+    body * {
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    body *:before,
+    body *:after,
+    body *:first-letter {
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      margin-bottom: calc(1 / 2);
+    }
+  }
+
+  /* Global classes for CV content */
+  .section-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .secondary-text {
+    opacity: 0.7;
+  }
+</style>
+
+<!-- const CVPaper = () => {
+  const [highlightedSkillKey, onChangeHighlightedSkillKey] = useState<
+    string | undefined
+  >();
+  const componentRef = useRef<HTMLElement>(null);
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
+  const handleBackPress = () => {
+    // trackCustomEvent({
+    //   category: 'engagement',
+    //   action: 'go_back',
+    //   label: 'Back to home',
+    // });
+  };
+
+  const handlePrintPress = () => {
+    // trackCustomEvent({
+    //   category: 'engagement',
+    //   action: 'generate_lead',
+    //   label: 'Print CV',
+    // });
+
+    handlePrint && handlePrint();
+  };
+
+  const extendedExperienceList = experience.map((el) =>
+    mergeExperienceWithSkills(el, skills as SkillItem[])
+  );
+  const groupedSkills = groupBy<SkillItem>(skills as SkillItem[], 'category');
+
+  const yearsOfMarriage = new Date().getFullYear() - 2012;
+
+  return ( -->
+
+<Layout>
+  <nav
+    class="max-w-[1000px] mx-auto flex items-center justify-between h-[20vh] font-bold print:hidden max-lg:hidden"
+  >
+    <a href="/"> ⟵ Back to main </a>
+    <button
+      class="flex items-center gap-3 bg-transparent border border-black rounded-full flex p-4 cursor-pointer transition-all duration-[200ms] text-sm hover:bg-black hover:text-white"
+    >
+      <PrinterSVG class="h-4" />
+      Click to print / Save PDF
+    </button>
+  </nav>
+  <main
+    class="max-w-[1000px] mx-auto mb-[20vh] p-12 max-lg:p-4 shadow-[0_0_5rem_#eeeeee] bg-white transition-all duration-[500ms] hover:shadow-[0_0_5rem_#cccccc] print:w-full print:min-h-[unset] print:m-0 print:p-0 max-lg:w-full"
+  >
+    <section
+      class="flex justify-between pb-6 max-lg:flex-col max-lg:p-0"
+    >
+      <div class="flex-[1_0_60%] flex justify-between flex-col gap-0">
+        <h1 class="font-bold text-5xl uppercase">ALEXANDR TOVMACH</h1>
+        <h2 class="font-thin lowercase opacity-60">
+          lead software engineer & UI/UX designer
+        </h2>
+      </div>
+      <div
+        class="flex-[0_1_30%] flex justify-around items-end flex-col gap-0 max-lg:flex-row max-lg:flex-wrap max-lg:justify-start max-lg:mt-8 max-lg:mb-2"
+      >
+        {
+          [
+            {
+              link: 'https://github.com/alexandrtovmach',
+              label: 'alexandrtovmach',
+              title: 'My GitHub',
+              icon: <GitHubSVG />,
+            },
+            {
+              link: 'mailto:alexandrtovmach@gmail.com',
+              label: 'alexandrtovmach@gmail.com',
+              title: 'Email address',
+              icon: <MailSVG />,
+            },
+            {
+              link: 'https://twitter.com/alexandrtovmach',
+              label: '@alexandrtovmach',
+              title: 'My Twitter',
+              icon: <TwitterSVG />,
+            },
+          ].map(({ icon, link, label, title }) => (
+            <a
+              aria-label={title}
+              class="border-b-0 flex items-center justify-center text-sm max-lg:flex-row-reverse"
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>{label}</span>
+              {icon && (
+                <span class="size-4 mx-2">
+                  {icon}
+                </span>
+              )}
+            </a>
+          ))
+        }
+      </div>
+    </section>
+    <section class="flex flex-wrap">
+      <section
+        class="flex-[1_0_calc(70%-2rem-1px)] pr-[calc(1*1.5)] border-r border-black pt-[calc(1*1.5)] border-t border-black max-lg:flex-[100%] max-lg:border-r-0 max-lg:pr-0"
+      >
+        <article class="mb-[calc(1*1.5)]">
+          <h3 class="section-title">Experience</h3>
+          <!-- {
+            extendedExperienceList
+              .slice(0, 3)
+              .map((el) => (
+                <ExperienceItem
+                  {...el}
+                  key={el.startDate.toString()}
+                  onHoverSkill={onChangeHighlightedSkillKey}
+                  highlightedSkillKey={highlightedSkillKey}
+                />
+              ))
+          }
+          {
+            extendedExperienceList
+              .slice(3)
+              .map((el) => (
+                <ExperienceItem
+                  {...el}
+                  key={el.startDate.toString()}
+                  isOld
+                  onHoverSkill={onChangeHighlightedSkillKey}
+                  highlightedSkillKey={highlightedSkillKey}
+                />
+              ))
+          } -->
+        </article>
+        <article class="mb-[calc(1*1.5)]">
+          <h3 class="section-title">Personality</h3>
+          <p class="text">
+            Since childhood, I've been told that I have a&nbsp;
+            <span class="highlighted"> constant thirst for knowledge </span>
+            , the ability to learn quickly in areas that interest me, and&nbsp;
+            <span class="highlighted">hate routine affairs</span>. Usually, I
+            immediately get everybody's attention and recognition, make friends
+            quickly, and as far as I know no one thinks I'm a jerk. According to
+            the "16 personalities" test, I am&nbsp;
+            <a
+              target="_blank"
+              title="16 personalities: Debater"
+              rel="noopener noreferrer"
+              href="https://www.16personalities.com/profiles/0748e79e8a572"
+            >
+              "debater"
+            </a>
+            , which I think is a good description of my character.
+          </p>
+          <p class="text">
+            I&nbsp;
+            <span class="highlighted">
+              don't like anything that is obvious
+            </span>
+            , no matter what it is ― movie, song or even a joke. Everything should
+            trigger mental activity. Therefore,&nbsp;
+            <span class="highlighted">I love to solve tasks</span>
+            &nbsp;and for me, the best gift is a puzzle or a book. For over&nbsp;
+            22 years, my first and only love, who eventually became&nbsp;
+            <span class="highlighted">my wife</span>, is the biggest&nbsp;
+            <span class="highlighted">inspiration of my life</span>.
+          </p>
+          <p class="text">
+            I respect people who believe that&nbsp;
+            <span class="highlighted">
+              knowledge is not personal property
+            </span>
+            &nbsp; and who want to share it with others, and in that reason,&nbsp;
+            <span class="highlighted">I'm writing articles</span>
+            &nbsp;to&nbsp;
+            <a
+              href="https://medium.com/@alexandrtovmach"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Medium
+            </a>
+            ,&nbsp;
+            <a
+              href="https://dou.ua/users/aleksandr-tovmach/articles"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DOU
+            </a>
+            , and in addition help with documentation for several projects, like
+            a Node.js, Gatsby.js and SemVer.
+          </p>
+        </article>
+        <article class="mb-[calc(1*1.5)]">
+          <h3 class="section-title">Ambitions</h3>
+          <p class="text">
+            I wasn't even 14 when I dreamt of becoming&nbsp;
+            <span class="highlighted">an archaeologist</span>&nbsp; to answer
+            the questions of the evolution of species,&nbsp;
+            <span class="highlighted">an inventor</span> of spacecraft to expand
+            the boundaries of accessible space, and&nbsp;
+            <span class="highlighted">a chemist</span>, to solve the
+            environmental problems of our planet. I always wanted&nbsp;
+            <span class="highlighted">
+              to change this world for the better
+            </span>
+            , and that's why I'm now engaged in programming to create things that,
+            even if they (still) don't save lives, at least improve them.
+          </p>
+          <p class="text">
+            I believe that&nbsp;
+            <span class="highlighted">
+              masterpieces are created from pure enthusiasm
+            </span>
+            , and not for money, therefore I am open source evangelist and an open-minded
+            adventurer.
+          </p>
+        </article>
+        <article class="mb-[calc(1*1.5)]">
+          <h3 class="section-title">FAQ</h3>
+          <!-- {
+            faq.map(({ a, q }) => (
+              <div class="mb-1" key={q}>
+                <h4 class="label">{q}</h4>
+                <p class="text">{a}</p>
+              </div>
+            ))
+          } -->
+        </article>
+      </section>
+      <section
+        class="flex-[0_1_calc(20%-1)] pl-[calc(1*1.5)] w-[calc(20%-1)] pt-[calc(1*1.5)] border-t border-black max-lg:flex-[100%] max-lg:pl-0 max-lg:pt-0 max-lg:border-t-0"
+      >
+        <article>
+          <h3 class="section-title">Skills</h3>
+          <!-- {
+            Object.entries(groupedSkills).map(([groupName, groupSkills]) => (
+              <div key={groupName} class="mb-1">
+                <h4 class="label">{capitalize(groupName)}</h4>
+                <SkillList
+                  skills={groupSkills}
+                  onHoverSkill={onChangeHighlightedSkillKey}
+                  highlightedSkillKey={highlightedSkillKey}
+                />
+              </div>
+            ))
+          } -->
+        </article>
+        <article>
+          <h3 class="section-title">Education</h3>
+          <div class="mb-1">
+            <h4 class="label">
+              Higher School of Management and Administration in Opole
+            </h4>
+            <p class="text">2022-2024</p>
+          </div>
+          <div class="mb-1">
+            <h4 class="label">Kryvyi Rih National University</h4>
+            <p class="text">2014-2019</p>
+          </div>
+          <div class="mb-1">
+            <h4 class="label">School №32 of Kryvyi Rih</h4>
+            <p class="text">2001-2012</p>
+          </div>
+        </article>
+        <article class="hidden w-[90%] print:block print:text-[10px]">
+          <h3 class="section-title">Website</h3>
+          <p class="label">alexandrtovmach.com</p>
+          <picture title="alexandrtovmach.com" class="w-full mt-1">
+            <img src={QRJpeg.src} alt="alexandrtovmach.com" class="w-full" />
+          </picture>
+        </article>
+      </section>
+    </section>
+  </main>
+</Layout>
