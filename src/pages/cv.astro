@@ -48,22 +48,6 @@ import Layout from '@/layouts/Layout.astro';
       box-shadow: none !important;
       text-shadow: none !important;
     }
-
-    .section-title {
-      font-size: 1.1rem;
-      margin-bottom: calc(1 / 2);
-    }
-  }
-
-  /* Global classes for CV content */
-  .section-title {
-    font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-  }
-
-  .secondary-text {
-    opacity: 0.7;
   }
 </style>
 
@@ -171,10 +155,10 @@ import Layout from '@/layouts/Layout.astro';
     </section>
     <section class="flex flex-wrap">
       <section
-        class="flex-[1_0_calc(70%-2rem-1px)] pr-[calc(1*1.5)] border-r border-black pt-[calc(1*1.5)] border-t border-black max-lg:flex-[100%] max-lg:border-r-0 max-lg:pr-0"
+        class="flex-[1_0_70%] pr-6 pt-6 border-r border-black border-t border-black max-lg:flex-[100%] max-lg:border-r-0 max-lg:pr-0"
       >
-        <article class="mb-[calc(1*1.5)]">
-          <h3 class="section-title">Experience</h3>
+        <article class="mb-6">
+          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70 ">Experience</h3>
           <!-- {
             extendedExperienceList
               .slice(0, 3)
@@ -201,8 +185,8 @@ import Layout from '@/layouts/Layout.astro';
               ))
           } -->
         </article>
-        <article class="mb-[calc(1*1.5)]">
-          <h3 class="section-title">Personality</h3>
+        <article class="mb-6">
+          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70 ">Personality</h3>
           <p class="text">
             Since childhood, I've been told that I have a&nbsp;
             <span class="highlighted"> constant thirst for knowledge </span>
@@ -261,8 +245,8 @@ import Layout from '@/layouts/Layout.astro';
             a Node.js, Gatsby.js and SemVer.
           </p>
         </article>
-        <article class="mb-[calc(1*1.5)]">
-          <h3 class="section-title">Ambitions</h3>
+        <article class="mb-6">
+          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70 ">Ambitions</h3>
           <p class="text">
             I wasn't even 14 when I dreamt of becoming&nbsp;
             <span class="highlighted">an archaeologist</span>&nbsp; to answer
@@ -286,8 +270,8 @@ import Layout from '@/layouts/Layout.astro';
             adventurer.
           </p>
         </article>
-        <article class="mb-[calc(1*1.5)]">
-          <h3 class="section-title">FAQ</h3>
+        <article class="mb-6">
+          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70 ">FAQ</h3>
           <!-- {
             faq.map(({ a, q }) => (
               <div class="mb-1" key={q}>
@@ -299,10 +283,10 @@ import Layout from '@/layouts/Layout.astro';
         </article>
       </section>
       <section
-        class="flex-[0_1_calc(20%-1)] pl-[calc(1*1.5)] w-[calc(20%-1)] pt-[calc(1*1.5)] border-t border-black max-lg:flex-[100%] max-lg:pl-0 max-lg:pt-0 max-lg:border-t-0"
+        class="flex-[0_1_20%] pl-6 w-[calc(20%-1)] pt-6 border-t border-black max-lg:flex-[100%] max-lg:pl-0 max-lg:pt-0 max-lg:border-t-0"
       >
         <article>
-          <h3 class="section-title">Skills</h3>
+          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70 ">Skills</h3>
           <!-- {
             Object.entries(groupedSkills).map(([groupName, groupSkills]) => (
               <div key={groupName} class="mb-1">
@@ -317,12 +301,12 @@ import Layout from '@/layouts/Layout.astro';
           } -->
         </article>
         <article>
-          <h3 class="section-title">Education</h3>
+          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70 ">Education</h3>
           <div class="mb-1">
             <h4 class="label">
               Higher School of Management and Administration in Opole
             </h4>
-            <p class="text">2022-2024</p>
+            <p class="text">2022-2025</p>
           </div>
           <div class="mb-1">
             <h4 class="label">Kryvyi Rih National University</h4>
@@ -334,7 +318,7 @@ import Layout from '@/layouts/Layout.astro';
           </div>
         </article>
         <article class="hidden w-[90%] print:block print:text-[10px]">
-          <h3 class="section-title">Website</h3>
+          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70 ">Website</h3>
           <p class="label">alexandrtovmach.com</p>
           <picture title="alexandrtovmach.com" class="w-full mt-1">
             <img src={QRJpeg.src} alt="alexandrtovmach.com" class="w-full" />
