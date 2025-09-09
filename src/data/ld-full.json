@@ -38,322 +38,392 @@
     {
       "@type": "DefinedTerm",
       "name": "React",
-      "inDefinedTermSet": "https://react.dev/"
+      "inDefinedTermSet": "https://react.dev/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Redux",
-      "inDefinedTermSet": "https://redux.js.org/"
+      "inDefinedTermSet": "https://redux.js.org/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Gatsby.js",
-      "inDefinedTermSet": "https://www.gatsbyjs.com/"
+      "inDefinedTermSet": "https://www.gatsbyjs.com/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "TypeScript",
-      "inDefinedTermSet": "https://www.typescriptlang.org/"
+      "inDefinedTermSet": "https://www.typescriptlang.org/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "HTML",
-      "inDefinedTermSet": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+      "inDefinedTermSet": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "CSS",
-      "inDefinedTermSet": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+      "inDefinedTermSet": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "SASS/SCSS",
-      "inDefinedTermSet": "https://sass-lang.com/"
+      "inDefinedTermSet": "https://sass-lang.com/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "styled-components",
-      "inDefinedTermSet": "https://styled-components.com/"
+      "inDefinedTermSet": "https://styled-components.com/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Angular",
-      "inDefinedTermSet": "https://angular.io/"
+      "inDefinedTermSet": "https://angular.io/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "React Native",
-      "inDefinedTermSet": "https://reactnative.dev/"
+      "inDefinedTermSet": "https://reactnative.dev/",
+      "description": "mobile"
     },
     {
       "@type": "DefinedTerm",
       "name": "Node.js",
-      "inDefinedTermSet": "https://nodejs.org/"
+      "inDefinedTermSet": "https://nodejs.org/",
+      "description": "backend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Figma",
-      "inDefinedTermSet": "https://www.figma.com/"
+      "inDefinedTermSet": "https://www.figma.com/",
+      "description": "design"
     },
     {
       "@type": "DefinedTerm",
       "name": "Adobe XD",
-      "inDefinedTermSet": "https://helpx.adobe.com/support/xd.html"
+      "inDefinedTermSet": "https://helpx.adobe.com/support/xd.html",
+      "description": "design"
     },
     {
       "@type": "DefinedTerm",
       "name": "Business Analysis",
-      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Business_analysis"
+      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Business_analysis",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "Tech Interview",
-      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Job_interview"
+      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Job_interview",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "QA",
-      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Software_quality_assurance"
+      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Software_quality_assurance",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "Express.js",
-      "inDefinedTermSet": "https://expressjs.com/"
+      "inDefinedTermSet": "https://expressjs.com/",
+      "description": "backend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Feathers.js",
-      "inDefinedTermSet": "https://feathersjs.com/"
+      "inDefinedTermSet": "https://feathersjs.com/",
+      "description": "backend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Nest.js",
-      "inDefinedTermSet": "https://nestjs.com/"
+      "inDefinedTermSet": "https://nestjs.com/",
+      "description": "backend"
     },
     {
       "@type": "DefinedTerm",
       "name": "GraphQL",
-      "inDefinedTermSet": "https://graphql.org/"
+      "inDefinedTermSet": "https://graphql.org/",
+      "description": "backend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Serverless",
-      "inDefinedTermSet": "https://www.serverless.com/"
+      "inDefinedTermSet": "https://www.serverless.com/",
+      "description": "backend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Flutter",
-      "inDefinedTermSet": "https://flutter.dev/"
+      "inDefinedTermSet": "https://flutter.dev/",
+      "description": "mobile"
     },
     {
       "@type": "DefinedTerm",
       "name": "PostgreSQL",
-      "inDefinedTermSet": "https://www.postgresql.org/"
+      "inDefinedTermSet": "https://www.postgresql.org/",
+      "description": "database"
     },
     {
       "@type": "DefinedTerm",
       "name": "MongoDB",
-      "inDefinedTermSet": "https://www.mongodb.com/"
+      "inDefinedTermSet": "https://www.mongodb.com/",
+      "description": "database"
     },
     {
       "@type": "DefinedTerm",
       "name": "Firebase",
-      "inDefinedTermSet": "https://firebase.google.com/"
+      "inDefinedTermSet": "https://firebase.google.com/",
+      "description": "database"
     },
     {
       "@type": "DefinedTerm",
       "name": "Redis",
-      "inDefinedTermSet": "https://redis.io/"
+      "inDefinedTermSet": "https://redis.io/",
+      "description": "database"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Neo4j",
+      "inDefinedTermSet": "https://neo4j.com/",
+      "description": "database"
     },
     {
       "@type": "DefinedTerm",
       "name": "Adobe Photoshop",
-      "inDefinedTermSet": "https://www.adobe.com/products/photoshop.html"
+      "inDefinedTermSet": "https://www.adobe.com/products/photoshop.html",
+      "description": "design"
     },
     {
       "@type": "DefinedTerm",
       "name": "Adobe Illustrator",
-      "inDefinedTermSet": "https://www.adobe.com/products/illustrator.html"
+      "inDefinedTermSet": "https://www.adobe.com/products/illustrator.html",
+      "description": "design"
     },
     {
       "@type": "DefinedTerm",
       "name": "Blender",
-      "inDefinedTermSet": "https://www.blender.org/"
+      "inDefinedTermSet": "https://www.blender.org/",
+      "description": "design"
     },
     {
       "@type": "DefinedTerm",
       "name": "Mentorship",
-      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Mentorship"
+      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Mentorship",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "Leadership",
-      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Leadership"
+      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Leadership",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "Google Cloud",
-      "inDefinedTermSet": "https://cloud.google.com/"
+      "inDefinedTermSet": "https://cloud.google.com/",
+      "description": "devops"
     },
     {
       "@type": "DefinedTerm",
       "name": "Heroku",
-      "inDefinedTermSet": "https://www.heroku.com/"
+      "inDefinedTermSet": "https://www.heroku.com/",
+      "description": "devops"
     },
     {
       "@type": "DefinedTerm",
       "name": "AWS",
-      "inDefinedTermSet": "https://aws.amazon.com/"
+      "inDefinedTermSet": "https://aws.amazon.com/",
+      "description": "devops"
     },
     {
       "@type": "DefinedTerm",
       "name": "Azure",
-      "inDefinedTermSet": "https://azure.microsoft.com/"
+      "inDefinedTermSet": "https://azure.microsoft.com/",
+      "description": "devops"
     },
     {
       "@type": "DefinedTerm",
       "name": "Bash",
-      "inDefinedTermSet": "https://www.gnu.org/software/bash/"
+      "inDefinedTermSet": "https://www.gnu.org/software/bash/",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "Selenium",
-      "inDefinedTermSet": "https://www.selenium.dev/"
+      "inDefinedTermSet": "https://www.selenium.dev/",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "koa.js",
-      "inDefinedTermSet": "https://koajs.com/"
+      "inDefinedTermSet": "https://koajs.com/",
+      "description": "backend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Ant.Design",
-      "inDefinedTermSet": "https://ant.design/"
+      "inDefinedTermSet": "https://ant.design/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "iMacros",
-      "inDefinedTermSet": "https://en.wikipedia.org/wiki/IMacros"
+      "inDefinedTermSet": "https://en.wikipedia.org/wiki/IMacros",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "JavaScript",
-      "inDefinedTermSet": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+      "inDefinedTermSet": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "NX",
-      "inDefinedTermSet": "https://nx.dev/"
+      "inDefinedTermSet": "https://nx.dev/",
+      "description": "devops"
     },
     {
       "@type": "DefinedTerm",
       "name": "Chakra UI",
-      "inDefinedTermSet": "https://chakra-ui.com/"
+      "inDefinedTermSet": "https://chakra-ui.com/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Next.js",
-      "inDefinedTermSet": "https://nextjs.org/"
+      "inDefinedTermSet": "https://nextjs.org/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Prisma",
-      "inDefinedTermSet": "https://www.prisma.io/"
+      "inDefinedTermSet": "https://www.prisma.io/",
+      "description": "database"
     },
     {
       "@type": "DefinedTerm",
       "name": "Swagger/OpenAPI",
-      "inDefinedTermSet": "https://swagger.io/specification/"
+      "inDefinedTermSet": "https://swagger.io/specification/",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "Bootstrap",
-      "inDefinedTermSet": "https://getbootstrap.com/"
+      "inDefinedTermSet": "https://getbootstrap.com/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Tailwind",
-      "inDefinedTermSet": "https://tailwindcss.com/"
+      "inDefinedTermSet": "https://tailwindcss.com/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "CloudFront",
-      "inDefinedTermSet": "https://aws.amazon.com/cloudfront/"
+      "inDefinedTermSet": "https://aws.amazon.com/cloudfront/",
+      "description": "devops"
     },
     {
       "@type": "DefinedTerm",
       "name": "Chrome Extension",
-      "inDefinedTermSet": "https://developer.chrome.com/docs/extensions/"
+      "inDefinedTermSet": "https://developer.chrome.com/docs/extensions/",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "Python",
-      "inDefinedTermSet": "https://www.python.org/"
+      "inDefinedTermSet": "https://www.python.org/",
+      "description": "machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "OCR",
-      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Optical_character_recognition"
+      "inDefinedTermSet": "https://en.wikipedia.org/wiki/Optical_character_recognition",
+      "description": "machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "Tesseract OCR",
-      "inDefinedTermSet": "https://github.com/tesseract-ocr/tesseract"
+      "inDefinedTermSet": "https://github.com/tesseract-ocr/tesseract",
+      "description": "machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "EasyOCR",
-      "inDefinedTermSet": "https://github.com/JaidedAI/EasyOCR"
+      "inDefinedTermSet": "https://github.com/JaidedAI/EasyOCR",
+      "description": "machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "PaddleOCR",
-      "inDefinedTermSet": "https://github.com/PaddlePaddle/PaddleOCR"
+      "inDefinedTermSet": "https://github.com/PaddlePaddle/PaddleOCR",
+      "description": "machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "Gemini AI",
-      "inDefinedTermSet": "https://deepmind.google/technologies/gemini/"
+      "inDefinedTermSet": "https://deepmind.google/technologies/gemini/",
+      "description": "machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "OpenAI",
-      "inDefinedTermSet": "https://openai.com/"
+      "inDefinedTermSet": "https://openai.com/",
+      "description": "machine_learning"
     },
     {
       "@type": "DefinedTerm",
       "name": "Electron",
-      "inDefinedTermSet": "https://www.electronjs.org/"
+      "inDefinedTermSet": "https://www.electronjs.org/",
+      "description": "mobile"
     },
     {
       "@type": "DefinedTerm",
       "name": "Astro",
-      "inDefinedTermSet": "https://astro.build/"
+      "inDefinedTermSet": "https://astro.build/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Vite",
-      "inDefinedTermSet": "https://vitejs.dev/"
+      "inDefinedTermSet": "https://vitejs.dev/",
+      "description": "frontend"
     },
     {
       "@type": "DefinedTerm",
       "name": "Jest",
-      "inDefinedTermSet": "https://jestjs.io/"
+      "inDefinedTermSet": "https://jestjs.io/",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "Puppeteer",
-      "inDefinedTermSet": "https://pptr.dev/"
+      "inDefinedTermSet": "https://pptr.dev/",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "Playwright",
-      "inDefinedTermSet": "https://playwright.dev/"
+      "inDefinedTermSet": "https://playwright.dev/",
+      "description": "other"
     },
     {
       "@type": "DefinedTerm",
       "name": "Rust",
-      "inDefinedTermSet": "https://www.rust-lang.org/"
+      "inDefinedTermSet": "https://www.rust-lang.org/",
+      "description": "other"
     }
   ],
   "nationality": "Ukrainian",
