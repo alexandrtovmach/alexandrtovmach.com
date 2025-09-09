@@ -92,7 +92,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
   >
     <a href="/"> ⟵ Back to main </a>
     <button
-      class="flex items-center gap-3 bg-transparent border border-black rounded-full flex p-4 cursor-pointer transition-all duration-[200ms] text-sm hover:bg-black hover:text-white"
+      class="flex items-center gap-3 bg-transparent border border-black rounded-full flex p-4 cursor-pointer transition-all duration-[200ms] text-xs font-medium hover:bg-black hover:text-white"
     >
       <PrinterSVG class="h-4" />
       Click to print / Save PDF
@@ -103,8 +103,8 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
   >
     <section class="flex justify-between pb-6 max-lg:flex-col max-lg:p-0">
       <div class="flex-[1_0_60%] flex justify-between flex-col gap-0">
-        <h1 class="font-bold text-5xl uppercase">ALEXANDR TOVMACH</h1>
-        <h2 class="font-thin lowercase opacity-60">
+        <h1 class="text-5xl uppercase">ALEXANDR TOVMACH</h1>
+        <h2 class="font-thin lowercase">
           lead software engineer & UI/UX designer
         </h2>
       </div>
@@ -134,7 +134,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
           ].map(({ icon, link, label, title }) => (
             <a
               aria-label={title}
-              class="border-b-0 flex items-center justify-center text-sm max-lg:flex-row-reverse"
+              class="border-b-0 flex items-center justify-center font-extralight text-xs max-lg:flex-row-reverse"
               href={link}
               target="_blank"
               rel="noreferrer"
@@ -151,7 +151,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
         class="flex-[1_0_70%] pr-6 pt-6 border-r border-black border-t border-black max-lg:flex-[100%] max-lg:border-r-0 max-lg:pr-0"
       >
         <article class="mb-6">
-          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70">
+          <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Experience
           </h3>
           <!-- {
@@ -181,7 +181,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
           } -->
         </article>
         <article class="mb-6">
-          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70">
+          <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Personality
           </h3>
           <p class="text">
@@ -243,7 +243,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
           </p>
         </article>
         <article class="mb-6">
-          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70">
+          <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Ambitions
           </h3>
           <p class="text">
@@ -270,7 +270,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
           </p>
         </article>
         <article class="mb-6">
-          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70">
+          <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             FAQ
           </h3>
           <!-- {
@@ -287,18 +287,18 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
         class="flex-[0_1_20%] pl-6 w-[calc(20%-1)] pt-6 border-t border-black max-lg:flex-[100%] max-lg:pl-0 max-lg:pt-0 max-lg:border-t-0"
       >
         <article>
-          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70">
+          <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Skills
           </h3>
           {
             Object.entries(groupedSkills).map(([groupName, groupSkills]) => (
-              <div class="mb-1">
-                <h4 class="lowercase text-sm font-bold">
+              <div class="mb-4">
+                <h4 class="lowercase text-sm opacity-70 mb-1">
                   {capitalize(groupName.replace(/_/g, ' '))}
                 </h4>
                 <ul class="flex flex-wrap gap-1">
                   {groupSkills.map((skill) => (
-                    <li class="font-black text-xs px-1 rounded-full transition-all duration-[200ms] text-sm border border-gray-300 cursor-default opacity-70 hover:bg-black hover:text-white hover:border-white">
+                    <li class="font-bold text-xs px-2 rounded-full transition-all duration-[200ms] text-sm border border-gray-300 cursor-default opacity-70 hover:bg-black hover:text-white hover:border-white">
                       {skill.name}
                     </li>
                   ))}
@@ -308,7 +308,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
           }
         </article>
         <article>
-          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70">
+          <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Education
           </h3>
           <div class="mb-1">
@@ -327,7 +327,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
           </div>
         </article>
         <article class="hidden w-[90%] print:block print:text-[10px]">
-          <h3 class="mb-4 leading-none uppercase font-thin text-2xl opacity-70">
+          <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Website
           </h3>
           <p class="label">alexandrtovmach.com</p>
