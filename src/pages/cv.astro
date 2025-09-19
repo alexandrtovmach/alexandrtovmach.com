@@ -1,27 +1,18 @@
 ---
-// import React, { useRef, useState } from 'react';
-// import { useReactToPrint } from 'react-to-print';
-// import { Link } from 'gatsby';
-// import { groupBy, capitalize } from 'lodash';
-// import classs from 'classs';
-// import { OutboundLink } from 'gatsby-plugin-google-gtag';
-
-// import ExperienceItem from '@/components/ExperienceItem';
-// import { mergeExperienceWithSkills, parseQuery } from './helpers';
-// import SkillList from '../SkillList';
-
+import { useState } from 'react';
 import GitHubSVG from '@/assets/icons/github.svg';
 import TwitterSVG from '@/assets/icons/twitter.svg';
 import MailSVG from '@/assets/icons/mail.svg';
 import PrinterSVG from '@/assets/icons/printer.svg';
 import QRJpeg from '@/assets/images/qr.jpg';
 import Layout from '@/layouts/Layout.astro';
-import { skills } from '@/data/ld-full.json';
+import { skills, hasOccupation } from '@/data/ld-full.json';
 import groupBy from 'lodash/groupBy';
 import capitalize from 'lodash/capitalize';
-import type { DefinedTerm } from 'schema-dts';
+import SkillList from '@/components/SkillList';
+import ExperienceItem from '@/components/ExperienceItem';
 
-const groupedSkills: Record<string, DefinedTerm[]> = groupBy<DefinedTerm>(skills, 'description');
+const groupedSkills = groupBy(skills, 'description');
 
 const yearsOfMarriage = new Date().getFullYear() - 2012;
 ---
@@ -154,31 +145,8 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
           <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Experience
           </h3>
-          <!-- {
-            extendedExperienceList
-              .slice(0, 3)
-              .map((el) => (
-                <ExperienceItem
-                  {...el}
-                  key={el.startDate.toString()}
-                  onHoverSkill={onChangeHighlightedSkillKey}
-                  highlightedSkillKey={highlightedSkillKey}
-                />
-              ))
-          }
-          {
-            extendedExperienceList
-              .slice(3)
-              .map((el) => (
-                <ExperienceItem
-                  {...el}
-                  key={el.startDate.toString()}
-                  isOld
-                  onHoverSkill={onChangeHighlightedSkillKey}
-                  highlightedSkillKey={highlightedSkillKey}
-                />
-              ))
-          } -->
+          {hasOccupation.slice(0, 3).map((el) => <ExperienceItem {...el} />)}
+          {hasOccupation.slice(3).map((el) => <ExperienceItem {...el} isOld />)}
         </article>
         <article class="mb-6">
           <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
@@ -296,13 +264,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
                 <h4 class="lowercase text-sm opacity-70 mb-1">
                   {capitalize(groupName.replace(/_/g, ' '))}
                 </h4>
-                <ul class="flex flex-wrap gap-1">
-                  {groupSkills.map((skill) => (
-                    <li class="font-bold text-xs px-2 rounded-full transition-all duration-[200ms] text-sm border border-gray-300 cursor-default opacity-70 hover:bg-black hover:text-white hover:border-white">
-                      {skill.name}
-                    </li>
-                  ))}
-                </ul>
+                <SkillList skills={groupSkills.map((skill) => skill.name)} />
               </div>
             ))
           }
