@@ -2,16 +2,13 @@ import React, { useMemo } from 'react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import SkillList, {
-  SkillListItem,
-  type SkillItem,
-} from '@/components/SkillList';
-import startCase from 'lodash/startCase';
+import SkillList, { SkillListItem } from '@/components/SkillList';
 import type { Occupation, EmployeeRole } from 'schema-dts';
 
 interface ExperienceItemProps extends EmployeeRole {
   isOld?: boolean;
   hasOccupation: Occupation;
+  fullSkillSet: string[];
 }
 
 const getDateString = (startDate?: string, endDate?: string) => {
@@ -65,16 +62,23 @@ const getDateString = (startDate?: string, endDate?: string) => {
 const ExperienceItem: React.FC<ExperienceItemProps> = ({
   startDate,
   endDate,
-  hasOccupation: { url, name: position, description: company, responsibilities, skills },
+  hasOccupation: {
+    url,
+    name: position,
+    description: company,
+    responsibilities,
+    skills,
+  },
   isOld,
+  fullSkillSet,
 }) => {
   const skillsHash = useMemo(() => {
     const hash: { [key: string]: string } = {};
-    (skills as string[])?.forEach((skill) => {
-      hash[skill] = startCase(skill);
+    fullSkillSet?.forEach((skill) => {
+      hash[skill] = skill;
     });
     return hash;
-  }, [skills]);
+  }, [fullSkillSet]);
 
   return (
     <div className="mb-4">
