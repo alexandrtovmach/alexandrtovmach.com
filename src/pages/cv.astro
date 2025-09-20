@@ -149,14 +149,14 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
             hasOccupation
               .slice(0, 3)
               .map((el) => (
-                <ExperienceItem {...(el as any)} fullSkillSet={skills.map((skill) => skill.name)} client:load />
+                <ExperienceItem {...(el as any)} fullSkillSet={skills.map((skill) => skill.name)} />
               ))
           }
           {
             hasOccupation
               .slice(3)
               .map((el) => (
-                <ExperienceItem {...(el as any)} isOld fullSkillSet={skills.map((skill) => skill.name)} client:load />
+                <ExperienceItem {...(el as any)} isOld fullSkillSet={skills.map((skill) => skill.name)} />
               ))
           }
         </article>
@@ -276,7 +276,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
                 <h4 class="lowercase text-sm opacity-70 mb-1">
                   {capitalize(groupName.replace(/_/g, ' '))}
                 </h4>
-                <SkillList skills={groupSkills.map((skill) => skill.name)} client:load />
+                <SkillList skills={groupSkills.map((skill) => skill.name)} />
               </div>
             ))
           }
