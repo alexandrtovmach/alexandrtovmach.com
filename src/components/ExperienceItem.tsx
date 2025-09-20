@@ -2,25 +2,19 @@ import React, { useMemo } from 'react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import SkillList, { SkillListItem, type SkillItem } from '@/components/SkillList';
+import SkillList, {
+  SkillListItem,
+  type SkillItem,
+} from '@/components/SkillList';
+import startCase from 'lodash/startCase';
+import type { Occupation, EmployeeRole } from 'schema-dts';
 
-interface ExperienceItemProps {
+interface ExperienceItemProps extends EmployeeRole {
   isOld?: boolean;
-  onHoverSkill?: (key?: string) => void;
-  highlightedSkillKey?: string;
-  name?: string;
-  url?: string;
-  position?: string;
-  description?: string;
-  startDate: string | Date;
-  endDate?: string | Date;
-  skills?: string[];
+  hasOccupation: Occupation;
 }
 
-const getDateString = (
-  startDate: ExperienceItemProps['startDate'],
-  endDate: ExperienceItemProps['endDate']
-) => {
+const getDateString = (startDate?: string, endDate?: string) => {
   let resultStr = '';
   const start = dayjs(startDate);
   const end = dayjs(endDate);
@@ -47,53 +41,68 @@ const getDateString = (
   return resultStr;
 };
 
+// {
+//   "hasOccupation": {
+//     "@type": "Occupation",
+//     "name": "Founder",
+//     "responsibilities": "Founded a company that provides software solutions for big manufacturing business.",
+//     "skills": [
+//       "nodejs",
+//       "typescript",
+//       "heroku",
+//       "bash",
+//       "react",
+//       "bootstrap",
+//       "postgresql",
+//       "prisma",
+//       "swagger"
+//     ],
+//     "url": "https://soft4manufacture.com/",
+//     "description": "soft4manufacture"
+//   }
+// }
+
 const ExperienceItem: React.FC<ExperienceItemProps> = ({
-  name,
-  url,
-  position,
-  description,
   startDate,
   endDate,
-  skills,
+  hasOccupation: { url, name: position, description: company, responsibilities, skills },
   isOld,
 }) => {
   const skillsHash = useMemo(() => {
     const hash: { [key: string]: string } = {};
-    skills?.forEach((skill) => {
-      hash[skill] = skill;
+    (skills as string[])?.forEach((skill) => {
+      hash[skill] = startCase(skill);
     });
     return hash;
   }, [skills]);
 
   return (
-    <div>
+    <div className="mb-4">
       <h4>
         {position && `${position} • `}
         {url ? (
           <a
-            href={url}
+            href={url?.toString()}
             target="_blank"
-            title={`Link to ${name} company/project`}
+            title={`Link to ${company} company/project`}
           >
-            {name}
+            {company?.toString()}
           </a>
         ) : (
-          <>{name}</>
+          <>{company?.toString()}</>
         )}
       </h4>
-      <div>
-        {getDateString(startDate, endDate)}
-      </div>
-      {!isOld && description && (
-        <p className="text">
-          {description
+      <p className="font-extralight text-xs mb-1 lowercase">
+        {getDateString(startDate?.toString(), endDate?.toString())}
+      </p>
+      {!isOld && responsibilities && (
+        <p className="font-extralight text-sm">
+          {responsibilities
+            .toString()
             ?.split('%%')
             .map((item) =>
               skillsHash[item] ? (
-                <SkillListItem
-                  isText
-                  name={skillsHash[item]}
-                />
+                <SkillListItem key={item} isText name={skillsHash[item]} />
               ) : (
                 item
               )
@@ -102,9 +111,7 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({
       )}
       {isOld && skills && (
         <div>
-          <SkillList
-            skills={skills}
-          />
+          <SkillList skills={skills as string[]} />
         </div>
       )}
     </div>

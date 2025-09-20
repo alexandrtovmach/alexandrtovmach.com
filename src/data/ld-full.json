@@ -448,28 +448,32 @@
   ],
   "hasOccupation": [
     {
-      "position": "Founder",
-      "name": "duckarchive",
-      "url": "https://duckarchive.com/",
+      "@type": "EmployeeRole",
       "startDate": "2024-03",
-      "description": "Started a non-profit initiative to develop tools and products for genealogy and archival researchers. Used %%nextjs%%, %%typescript%%, %%tailwind%% to build a platform to check online status of archival case. Under the hood using %%nodejs%%, %%postgresql%% and %%prisma%% to scrap tens of resources with hundred of thousands items. Created a %%chrome_extension%% to help researchers to quickly save archival references while browsing online archival catalogs. Developed an AI-powered tool to automatically extract text from archival documents using %%ai%% and %%ocr%% technologies.",
-      "skills": [
-        "ai",
-        "ocr",
-        "nextjs",
-        "typescript",
-        "nodejs",
-        "postgresql",
-        "react",
-        "tailwind",
-        "prisma",
-        "chrome_extension",
-        "cloudfront",
-        "figma"
-      ]
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Founder",
+        "responsibilities": "Started a non-profit initiative to develop tools and products for genealogy and archival researchers. Used %%nextjs%%, %%typescript%%, %%tailwind%% to build a platform to check online status of archival case. Under the hood using %%nodejs%%, %%postgresql%% and %%prisma%% to scrap tens of resources with hundred of thousands items. Created a %%chrome_extension%% to help researchers to quickly save archival references while browsing online archival catalogs. Developed an AI-powered tool to automatically extract text from archival documents using %%ai%% and %%ocr%% technologies.",
+        "skills": [
+          "ai",
+          "ocr",
+          "nextjs",
+          "typescript",
+          "nodejs",
+          "postgresql",
+          "react",
+          "tailwind",
+          "prisma",
+          "chrome_extension",
+          "cloudfront",
+          "figma"
+        ],
+        "url": "https://duckarchive.com/",
+        "description": "duckarchive"
+      }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2023-03",
       "endDate": "2025-02",
       "hasOccupation": {
@@ -492,7 +496,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2023-07",
       "endDate": "2023-12",
       "hasOccupation": {
@@ -512,7 +516,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2023-02",
       "endDate": "2023-07",
       "hasOccupation": {
@@ -537,7 +541,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2021-11",
       "endDate": "2022-08",
       "hasOccupation": {
@@ -563,7 +567,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2021-11",
       "endDate": "2022-02",
       "hasOccupation": {
@@ -583,7 +587,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2021-10",
       "endDate": "2021-12",
       "hasOccupation": {
@@ -608,7 +612,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2020-09",
       "endDate": "2021-10",
       "hasOccupation": {
@@ -640,7 +644,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2021-02",
       "endDate": "2021-08",
       "hasOccupation": {
@@ -660,7 +664,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2021-06",
       "endDate": "2021-08",
       "hasOccupation": {
@@ -683,7 +687,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2019-09",
       "endDate": "2021-09",
       "hasOccupation": {
@@ -705,7 +709,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2017-05",
       "endDate": "2020-10",
       "hasOccupation": {
@@ -743,7 +747,7 @@
       }
     },
     {
-      "@type": "Role",
+      "@type": "EmployeeRole",
       "startDate": "2016-07",
       "endDate": "2017-09",
       "hasOccupation": {

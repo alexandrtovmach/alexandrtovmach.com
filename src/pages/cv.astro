@@ -145,8 +145,8 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
           <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Experience
           </h3>
-          {hasOccupation.slice(0, 3).map((el) => <ExperienceItem {...el} />)}
-          {hasOccupation.slice(3).map((el) => <ExperienceItem {...el} isOld />)}
+          {hasOccupation.slice(0, 3).map((el) => <ExperienceItem {...el as any} />)}
+          {hasOccupation.slice(3).map((el) => <ExperienceItem {...el as any} />)}
         </article>
         <article class="mb-6">
           <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
