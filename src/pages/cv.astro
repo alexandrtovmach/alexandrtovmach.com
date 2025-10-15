@@ -4,6 +4,7 @@ import TwitterSVG from '@/assets/icons/twitter.svg';
 import MailSVG from '@/assets/icons/mail.svg';
 import PrinterSVG from '@/assets/icons/printer.svg';
 import QRJpeg from '@/assets/images/qr.jpg';
+import QRWebP from '@/assets/images/qr.webp';
 import Layout from '@/layouts/Layout.astro';
 import { skills, hasOccupation, hasCredential } from '@/data/ld-full.json';
 import groupBy from 'lodash/groupBy';
@@ -285,6 +286,7 @@ const faq = [
             Website
           </h3>
           <picture title="alexandrtovmach.com" class="w-full mt-1">
+            <source type="image/webp" src={QRWebP.src} />
             <img src={QRJpeg.src} alt="alexandrtovmach.com" class="w-full" />
           </picture>
           <p>alexandrtovmach.com</p>
