@@ -4,7 +4,7 @@ export interface SkillItem {
 }
 
 export const SkillListItem: React.FC<SkillItem> = ({ name, isText }) => {
-  const className = "inline font-bold text-xs px-2 rounded-full transition-all duration-[200ms] text-sm border border-gray-300 cursor-default opacity-70 hover:bg-black hover:text-white hover:border-white";
+  const className = "inline font-bold text-xs px-2 rounded-full transition-all duration-[200ms] border border-gray-300 cursor-default opacity-70 hover:bg-black hover:text-white hover:border-white";
   if (isText) {
     return <span className={className}>{name}</span>;
   }

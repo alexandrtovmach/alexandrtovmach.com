@@ -15,28 +15,5 @@
       opacity: 0.6;
     }
   }
-  
-  .highlighted {
-    font-weight: 500;
-    opacity: 1;
-  }
-  
-  .label {
-    font-weight: 500;
-    opacity: 1;
-    margin-bottom: 0.5rem;
-  }
-  
-  .text {
-    line-height: 1.5;
-    font-size: 0.9rem;
-    opacity: 0.7;
-    font-weight: 300;
-    opacity: 0.7;
-    margin-bottom: 0.5rem;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
 }
 
