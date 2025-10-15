@@ -792,5 +792,49 @@
         "description": "DeliSol LLC"
       }
     }
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Higher School of Management and Administration in Opole",
+      "sameAs": "https://wszia.opole.pl/en/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Kryvyi Rih National University",
+      "sameAs": "https://www.knu.edu.ua/en/"
+    }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Master's Degree in Management and Business Administration",
+      "educationalLevel": "Master's degree",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Higher School of Management and Administration in Opole",
+        "sameAs": "https://wszia.opole.pl/en/"
+      },
+      "description": "2022-2025"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Bachelor's Degree in Mineral Processing and Mining",
+      "educationalLevel": "Bachelor's degree",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Kryvyi Rih National University",
+        "sameAs": "https://www.knu.edu.ua/en/"
+      },
+      "description": "2014-2019"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "recognizedBy": {
+        "@type": "School",
+        "name": "School #32 of Kryvyi Rih"
+      },
+      "description": "2001-2012"
+    }
   ]
 }

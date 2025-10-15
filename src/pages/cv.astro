@@ -1,12 +1,11 @@
 ---
-import { useState } from 'react';
 import GitHubSVG from '@/assets/icons/github.svg';
 import TwitterSVG from '@/assets/icons/twitter.svg';
 import MailSVG from '@/assets/icons/mail.svg';
 import PrinterSVG from '@/assets/icons/printer.svg';
 import QRJpeg from '@/assets/images/qr.jpg';
 import Layout from '@/layouts/Layout.astro';
-import { skills, hasOccupation } from '@/data/ld-full.json';
+import { skills, hasOccupation, hasCredential } from '@/data/ld-full.json';
 import groupBy from 'lodash/groupBy';
 import capitalize from 'lodash/capitalize';
 import SkillList from '@/components/SkillList';
@@ -15,6 +14,24 @@ import ExperienceItem from '@/components/ExperienceItem';
 const groupedSkills = groupBy(skills, 'description');
 
 const yearsOfMarriage = new Date().getFullYear() - 2012;
+const faq = [
+  {
+    "q": "What type of cooperation would I prefer?",
+    "a": "Direct cooperation with product company, without outsource/outstaff agencies."
+  },
+  {
+    "q": "What industry would I like to work in?",
+    "a": "Innovations, Healthcare, Music / Sound Engineering or something interesting."
+  },
+  {
+    "q": "Remote vs Office",
+    "a": "When I started in IT my main goal was to be able to travel, and now, after 4 years working in office, I am looking for a completely remote position. No exceptions."
+  },
+  {
+    "q": "Frontend vs Backend vs Mobile?",
+    "a": "I'm ready to work with each, but... if I have a choice it's a frontend."
+  }
+]
 ---
 
 <style>
@@ -45,62 +62,31 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
   }
 </style>
 
-<!-- const CVPaper = () => {
-  const [highlightedSkillKey, onChangeHighlightedSkillKey] = useState<
-    string | undefined
-  >();
-  const componentRef = useRef<HTMLElement>(null);
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
-
-  const handleBackPress = () => {
-    // trackCustomEvent({
-    //   category: 'engagement',
-    //   action: 'go_back',
-    //   label: 'Back to home',
-    // });
-  };
-
-  const handlePrintPress = () => {
-    // trackCustomEvent({
-    //   category: 'engagement',
-    //   action: 'generate_lead',
-    //   label: 'Print CV',
-    // });
-
-    handlePrint && handlePrint();
-  };
-
-  const extendedExperienceList = experience.map((el) =>
-    mergeExperienceWithSkills(el, skills as SkillItem[])
-  );
--->
-
 <Layout>
   <nav
-    class="max-w-[1000px] mx-auto flex items-center justify-between h-[20vh] font-bold print:hidden max-lg:hidden"
+    class="max-w-[1000px] mx-auto flex items-center justify-between h-[20vh] font-bold print:hidden max-sm:hidden"
   >
     <a href="/"> ⟵ Back to main </a>
     <button
       class="flex items-center gap-3 bg-transparent border border-black rounded-full flex p-4 cursor-pointer transition-all duration-[200ms] text-xs font-medium hover:bg-black hover:text-white"
+      onclick="window.print()"
     >
       <PrinterSVG class="h-4" />
       Click to print / Save PDF
     </button>
   </nav>
   <main
-    class="max-w-[1000px] mx-auto mb-[20vh] p-12 max-lg:p-4 shadow-[0_0_5rem_#eeeeee] bg-white transition-all duration-[500ms] hover:shadow-[0_0_5rem_#cccccc] print:w-full print:min-h-[unset] print:m-0 print:p-0 max-lg:w-full"
+    class="max-w-[1000px] mx-auto mb-[20vh] p-12 max-sm:p-4 shadow-[0_0_5rem_#eeeeee] bg-white transition-all duration-[500ms] hover:shadow-[0_0_5rem_#cccccc] print:w-full print:min-h-[unset] print:m-0 print:p-0 max-sm:w-full"
   >
-    <section class="flex justify-between pb-6 max-lg:flex-col max-lg:p-0">
+    <section class="flex justify-between pb-6 max-sm:flex-col max-sm:p-0">
       <div class="flex-[1_0_60%] flex justify-between flex-col gap-0">
-        <h1 class="text-5xl uppercase">ALEXANDR TOVMACH</h1>
+        <h1 class="text-5xl print:text-4xl uppercase">ALEXANDR TOVMACH</h1>
         <h2 class="font-thin lowercase">
           lead software engineer & UI/UX designer
         </h2>
       </div>
       <div
-        class="flex-[0_1_30%] flex justify-around items-end flex-col gap-0 max-lg:flex-row max-lg:flex-wrap max-lg:justify-start max-lg:mt-8 max-lg:mb-2"
+        class="flex-[0_1_30%] flex justify-around items-end flex-col gap-0 max-sm:flex-row max-sm:flex-wrap max-sm:justify-start max-sm:mt-8 max-sm:mb-2"
       >
         {
           [
@@ -125,7 +111,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
           ].map(({ icon, link, label, title }) => (
             <a
               aria-label={title}
-              class="border-b-0 flex items-center justify-center font-extralight text-xs max-lg:flex-row-reverse"
+              class="border-b-0 flex items-center justify-center font-extralight text-xs max-sm:flex-row-reverse"
               href={link}
               target="_blank"
               rel="noreferrer"
@@ -139,7 +125,7 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
     </section>
     <section class="flex flex-wrap">
       <section
-        class="flex-[1_0_70%] pr-6 pt-6 border-r border-black border-t border-black max-lg:flex-[100%] max-lg:border-r-0 max-lg:pr-0"
+        class="flex-[1_0_70%] pr-6 pt-6 border-r border-black border-t border-black max-sm:flex-[100%] max-sm:border-r-0 max-sm:pr-0"
       >
         <article class="mb-6">
           <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
@@ -253,20 +239,20 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
           <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             FAQ
           </h3>
-          <!-- {
+          {
             faq.map(({ a, q }) => (
-              <div class="mb-1" key={q}>
-                <h4 class="label">{q}</h4>
-                <p class="text">{a}</p>
+              <div class="mb-4">
+                <h4>{q}</h4>
+                <p class="font-extralight text-sm">{a}</p>
               </div>
             ))
-          } -->
+          }
         </article>
       </section>
       <section
-        class="flex-[0_1_20%] pl-6 w-[calc(20%-1)] pt-6 border-t border-black max-lg:flex-[100%] max-lg:pl-0 max-lg:pt-0 max-lg:border-t-0"
+        class="flex-[0_1_20%] pl-6 pt-6 border-t border-black max-sm:flex-[100%] max-sm:pl-0 max-sm:pt-0 max-sm:border-t-0"
       >
-        <article>
+        <article class="mb-6">
           <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Skills
           </h3>
@@ -281,33 +267,27 @@ const yearsOfMarriage = new Date().getFullYear() - 2012;
             ))
           }
         </article>
-        <article>
+        <article class="mb-6">
           <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Education
           </h3>
-          <div class="mb-1">
-            <h4 class="label">
-              Higher School of Management and Administration in Opole
-            </h4>
-            <p class="text">2022-2025</p>
-          </div>
-          <div class="mb-1">
-            <h4 class="label">Kryvyi Rih National University</h4>
-            <p class="text">2014-2019</p>
-          </div>
-          <div class="mb-1">
-            <h4 class="label">School №32 of Kryvyi Rih</h4>
-            <p class="text">2001-2012</p>
-          </div>
+          {
+            hasCredential.map(({ recognizedBy: { name }, description }) => (
+              <div class="mb-4">
+                <h4 class="mb-0 leading-5">{name}</h4>
+                <p class="font-extralight text-xs mb-1 lowercase">{description}</p>
+              </div>
+            ))
+          }
         </article>
         <article class="hidden w-[90%] print:block print:text-[10px]">
           <h3 class="mb-4 leading-none uppercase font-extralight text-2xl">
             Website
           </h3>
-          <p class="label">alexandrtovmach.com</p>
           <picture title="alexandrtovmach.com" class="w-full mt-1">
             <img src={QRJpeg.src} alt="alexandrtovmach.com" class="w-full" />
           </picture>
+          <p>alexandrtovmach.com</p>
         </article>
       </section>
     </section>
