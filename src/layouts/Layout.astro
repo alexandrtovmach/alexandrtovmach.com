@@ -1,6 +1,11 @@
 ---
+import { SEO } from 'astro-seo';
 import "@/styles/global.css";
 import jsonLd from '@/data/ld-base.json';
+
+const title = "Alexandr Tovmach - Software Engineer";
+const description = "Personal website and CV of Alexandr Tovmach, a software engineer and UI/UX designer.";
+
 ---
 
 <!doctype html>
@@ -13,7 +18,45 @@ import jsonLd from '@/data/ld-base.json';
     <link rel="sitemap" href="/sitemap-index.xml" />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline/>
 		<meta name="generator" content={Astro.generator} />
-		<title>Alexandr Tovmach</title>
+    <link rel="me" href="https://alexandrtovmach.com/" type="text/html" />
+    <link rel="me" href="mailto:alexandrtovmach@gmail.com" />
+		<SEO
+      title={title}
+      description={description}
+      extend={{
+        meta: [
+          {
+            name: 'keywords',
+            content:
+              'personal website, cv, software engineer, ui/ux designer, cto',
+          },
+        ],
+      }}
+      openGraph={{
+        basic: {
+          title,
+          type: 'website',
+          image: '/preview.png',
+          url: 'https://alexandrtovmach.com/',
+        },
+        optional: {
+          description,
+          siteName: "alexandrtovmach.com",
+          locale: 'en_US',
+        },
+        article: {
+          authors: ['Alexandr Tovmach'],
+        },
+      }}
+      twitter={{
+        creator: '@alexandrtovmach',
+        site: 'https://alexandrtovmach.com/',
+        title,
+        description,
+        image: '/preview.png',
+        card: 'summary_large_image',
+      }}
+    />
 	</head>
 	<body class="h-screen bg-[#f6f6f2] overflow-y-scroll">
 		<slot />
