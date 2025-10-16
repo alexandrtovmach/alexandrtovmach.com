@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alexandrtovmach.com/sitemap-index.xml
+Sitemap: https://<YOUR SITE>/sitemap-index.xml
