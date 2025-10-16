@@ -819,7 +819,7 @@
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Bachelor's Degree in Mineral Processing and Mining",
+      "name": "Bachelor's Degree in Mining and Mineral Processing",
       "educationalLevel": "Bachelor's degree",
       "recognizedBy": {
         "@type": "CollegeOrUniversity",
