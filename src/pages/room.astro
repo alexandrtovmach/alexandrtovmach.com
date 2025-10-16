@@ -1,11 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Chair from '@/components/Chair';
-import ChairSVG from '@/assets/images/room/chair.svg';
+import Chair from '@/components/room/Chair';
+import Table from '@/components/room/Table';
 ---
 
 <Layout>
-  <div class="flex justify-center items-end h-full">
+  <div class="relative flex justify-center items-end h-full overflow-hidden">
+    <Table client:only />
     <Chair client:only />
   </div>
 </Layout>
