@@ -1,0 +1,49 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Book from "@/components/Book.tsx";
+import chunk from "lodash/chunk.js";
+import books from "@/data/books.json";
+
+// rules
+// max books per shelf: 15
+
+// Colors
+// light wood: #8c5c25
+// dark wood: #3e0000
+const categories = [
+  "Fiction",
+  "Non-Fiction",
+  "Fantasy",
+  "Mystery",
+  "Biography",
+  "Self-Help",
+  "History",
+  "Philosophy",
+  "Psychology",
+  "History",
+  "Philosophy",
+  "Psychology",
+];
+
+const shelfChunkSize = Math.floor(books.length / categories.length);
+const chunks = chunk(books, shelfChunkSize)
+---
+
+<Layout>
+  <main class="grid grid-cols-1 lg:grid-cols-2 gap-3 p-4 mx-auto mt-36 min-h-full bg-[#8c5c25]">
+    {chunks.map((chunk, i) => (
+      <section class="bg-[#3e0000] h-[300px] p-0.5 flex justify-between">
+        <div aria-label="left-side-shelf" class="flex gap-0.5">
+          {chunk.map((book) => (
+            <Book data={book} />
+          ))}
+        </div>
+        {/* <div aria-label="right-side-shelf" class="flex gap-0.5">
+          {Array.from("123").map((_char, idx) => (
+            <Book className="mt-8" title={"R" + idx} author="" coverUrl="" link="" />
+          ))}
+        </div> */}
+      </section>
+    ))}
+  </main>
+</Layout>
