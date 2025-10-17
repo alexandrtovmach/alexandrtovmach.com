@@ -21,8 +21,8 @@ const Cup: React.FC = () => {
         className="absolute w-64 bottom-64"
         src={MScottCup.src}
         alt="Michael Scott Cup"
-        initial={{ scale: 0 }}
-        animate={isActive ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+        initial={{ display: 'none', opacity: 0 }}
+        animate={isActive ? { display: 'block', opacity: 1 } : { display: 'none', opacity: 0 }}
         transition={isActive ? { delay: 0.5 } : { delay: 0 }}
       />
       <motion.svg
