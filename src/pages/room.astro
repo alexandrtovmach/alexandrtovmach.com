@@ -5,10 +5,12 @@ import MonitorLeft from '@/components/room/MonitorLeft';
 import MonitorRight from '@/components/room/MonitorRight';
 import Cup from '@/components/room/Cup';
 import ManOnChair from '@/components/room/ManOnChair';
+import Wallpaper from '@/components/room/Wallpaper';
 ---
 
 <Layout>
   <div class="relative flex justify-center items-center h-full overflow-hidden">
+    <Wallpaper client:only />
     <MonitorLeft client:only />
     <MonitorRight client:only />
     <Table client:only />
