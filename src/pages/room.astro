@@ -2,11 +2,17 @@
 import Layout from '@/layouts/Layout.astro';
 import Chair from '@/components/room/Chair';
 import Table from '@/components/room/Table';
+import MonitorLeft from '@/components/room/MonitorLeft';
+import MonitorRight from '@/components/room/MonitorRight';
+import Cup from '@/components/room/Cup';
 ---
 
 <Layout>
-  <div class="relative flex justify-center items-end h-full overflow-hidden">
+  <div class="relative flex justify-center items-center h-full overflow-hidden">
+    <MonitorLeft client:only />
+    <MonitorRight client:only />
     <Table client:only />
     <Chair client:only />
+    <Cup client:only />
   </div>
 </Layout>

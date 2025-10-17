@@ -61,7 +61,7 @@ const Chair: React.FC = () => {
       whileHover="hover"
       onHoverStart={() => setTooltip(tooltipMessages.hover)}
       onHoverEnd={() => setTooltip(undefined)}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      transition={{ duration: 0.5, delay: 20, }}
     >
       {tooltip && (
         <g>
