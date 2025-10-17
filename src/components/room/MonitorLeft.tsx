@@ -18,7 +18,7 @@ const MonitorLeft: React.FC = () => {
         height="190"
         fill="#4A4A4A"
         stroke="#090909"
-        stroke-width="10"
+        strokeWidth="10"
       />
       <rect x="110" y="200" width="80" height="60" fill="#090909" />
       <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2, type: 'tween' }}>

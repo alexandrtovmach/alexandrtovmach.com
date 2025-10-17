@@ -18,12 +18,12 @@ const Cup: React.FC = () => {
   return (
     <>
       <motion.img
-        className="absolute w-64"
+        className="absolute w-64 bottom-64"
         src={MScottCup.src}
         alt="Michael Scott Cup"
         initial={{ scale: 0 }}
         animate={isActive ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
-        transition={isActive ? { delay: 2 } : { delay: 0 }}
+        transition={isActive ? { delay: 0.5 } : { delay: 0 }}
       />
       <motion.svg
         className="absolute bottom-32 -mr-48 w-8 cursor-zoom-in"
@@ -51,7 +51,7 @@ const Cup: React.FC = () => {
           cy="45"
           r="25"
           stroke="white"
-          stroke-width="10"
+          strokeWidth="10"
         />
         <motion.g>
           <motion.text
