@@ -35,6 +35,15 @@ const Cup: React.FC = () => {
         variants={cupVariants}
         onClick={() => setIsActive(!isActive)}
       >
+        <motion.circle
+          cx="70"
+          animate={isActive ? { x: -40 } : { x: 0 }}
+          transition={{ duration: 1 }}
+          cy="45"
+          r="25"
+          stroke="#D9D9D9"
+          strokeWidth="10"
+        />
         <rect
           x="0.5"
           y="0.5"
@@ -42,21 +51,12 @@ const Cup: React.FC = () => {
           height="90"
           rx="4.5"
           fill="white"
-          stroke="white"
-        />
-        <motion.circle
-          cx="70"
-          animate={isActive ? { x: -40 } : { x: 0 }}
-          transition={{ duration: 1 }}
-          cy="45"
-          r="25"
-          stroke="white"
-          strokeWidth="10"
+          stroke="#D9D9D9"
         />
         <motion.g>
           <motion.text
             animate={isActive ? { x: 5 } : { x: -30 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             y="30%"
             textAnchor="start"
             fill="black"
@@ -67,7 +67,7 @@ const Cup: React.FC = () => {
           </motion.text>
           <motion.text
             animate={isActive ? { x: 5 } : { x: -30 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             y="45%"
             textAnchor="start"
             fill="black"
@@ -78,7 +78,7 @@ const Cup: React.FC = () => {
           </motion.text>
           <motion.text
             animate={isActive ? { x: 5 } : { x: -30 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             y="60%"
             textAnchor="start"
             fill="black"
@@ -89,7 +89,7 @@ const Cup: React.FC = () => {
           </motion.text>
           <motion.text
             animate={isActive ? { x: 5 } : { x: -30 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             y="75%"
             textAnchor="start"
             fill="black"

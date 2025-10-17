@@ -35,6 +35,9 @@ importers:
       dayjs:
         specifier: ^1.11.18
         version: 1.11.18
+      framer-motion:
+        specifier: ^12.23.24
+        version: 12.23.24(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       lodash:
         specifier: ^4.17.21
         version: 4.17.21

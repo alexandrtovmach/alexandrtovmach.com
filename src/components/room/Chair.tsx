@@ -10,6 +10,10 @@ const chairMotion: Variants = {
     x: 0,
     rotate: 0,
   },
+  hover: {
+    x: 0,
+    rotate: 0,
+  },
 };
 
 const backMotion: Variants = {
@@ -46,7 +50,12 @@ const tooltipMessages = {
   ],
 };
 
-const Chair: React.FC = () => {
+interface ChairProps {
+  isChairActive: boolean;
+  onChangeChairState: (isActive: boolean) => void;
+}
+
+const Chair: React.FC<ChairProps> = ({ isChairActive, onChangeChairState }) => {
   const [tooltip, setTooltip] = useState<string[] | undefined>();
 
   return (
@@ -59,8 +68,10 @@ const Chair: React.FC = () => {
       initial="initial"
       animate="rest"
       whileHover="hover"
-      onHoverStart={() => setTooltip(tooltipMessages.hover)}
-      onHoverEnd={() => setTooltip(undefined)}
+      // animate={isChairActive ? "hover" : "rest"}
+      // whileHover={isChairActive ? undefined : "hover"}
+      // onHoverStart={() => onChangeChairState(true)}
+      // onHoverEnd={() => onChangeChairState(false)}
       transition={{ duration: 0.5, delay: 1, }}
     >
       {tooltip && (
