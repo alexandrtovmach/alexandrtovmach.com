@@ -7,13 +7,15 @@ import Cup from '@/components/room/Cup';
 import ManOnChair from '@/components/room/ManOnChair';
 import Window from '@/components/room/Window';
 import BookShelf from '@/components/room/BookShelf';
+import Walls from '@/components/room/Walls';
 ---
 
 <Layout>
   <div class="relative flex justify-center items-center h-full overflow-hidden max-md:hidden">
-    <Window client:only />
+    <Walls client:only />
+    <!-- <Window client:only />
     <BookShelf client:only />
-    <!-- <MonitorLeft client:only />
+    <MonitorLeft client:only />
     <MonitorRight client:only />
     <Table client:only />
     <ManOnChair client:only />

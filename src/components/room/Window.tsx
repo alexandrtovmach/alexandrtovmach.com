@@ -80,6 +80,8 @@ const Window: React.FC = () => {
     e: MouseEvent | TouchEvent | PointerEvent,
     { offset, velocity }: PanInfo
   ) => {
+    e.stopPropagation();
+    e.preventDefault();
     const swipe = swipePower(offset.x, velocity.x);
 
     if (swipe < -swipeConfidenceThreshold) {
@@ -94,7 +96,7 @@ const Window: React.FC = () => {
   const selectedWallpaper = wallpapers[wallpaperIndex];
 
   return (
-    <div className="absolute bottom-0 right-0 w-[40vw] h-[90vh] border-12 border-white overflow-hidden">
+    <div className="absolute top-20 right-40 bottom-0 left-40 border-12 border-white overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
