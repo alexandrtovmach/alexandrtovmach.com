@@ -10,6 +10,10 @@ import Snow from '@/assets/images/room/wallpapers/snow.jpg';
 
 const wallpapers: { author: string; image: string }[] = [
   {
+    author: 'empty',
+    image: '',
+  },
+  {
     author: 'Photo by Laura Cleffmann on Unsplash',
     image: ColdSun.src,
   },
@@ -60,21 +64,28 @@ const variants = {
   },
 };
 
-const Wallpaper: React.FC = () => {
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset: number, velocity: number) => {
+  return Math.abs(offset) * velocity;
+};
+
+const Window: React.FC = () => {
   const [[page, direction], setPage] = useState([0, 0]);
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
   };
 
-  const handlePan = (
+  const onDragEnd = (
     e: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo
+    { offset, velocity }: PanInfo
   ) => {
-    if (info.offset.x > 100) {
-      paginate(-1);
-    } else if (info.offset.x < -100) {
+    const swipe = swipePower(offset.x, velocity.x);
+
+    if (swipe < -swipeConfidenceThreshold) {
       paginate(1);
+    } else if (swipe > swipeConfidenceThreshold) {
+      paginate(-1);
     }
   };
 
@@ -83,28 +94,32 @@ const Wallpaper: React.FC = () => {
   const selectedWallpaper = wallpapers[wallpaperIndex];
 
   return (
-    <AnimatePresence initial={false} custom={direction}>
-      <motion.div
-        key={page}
-        className="absolute inset-0 -z-10 bg-center bg-no-repeat bg-fixed"
-        style={{
-          backgroundImage: `url(${selectedWallpaper.image})`,
-          backgroundSize: 'auto 100%',
-        }}
-        title={selectedWallpaper.author}
-        custom={direction}
-        variants={variants}
-        initial="enter"
-        animate="center"
-        exit="exit"
-        transition={{
-          x: { type: 'spring', stiffness: 300, damping: 30 },
-          opacity: { duration: 0.2 },
-        }}
-        onPan={handlePan}
-      />
-    </AnimatePresence>
+    <div className="absolute bottom-0 right-0 w-[40vw] h-[90vh] border-12 border-white overflow-hidden">
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          key={page}
+          className="absolute inset-0 bg-center bg-size-[100vw 100vh]"
+          style={{
+            backgroundImage: `url(${selectedWallpaper.image})`,
+          }}
+          title={selectedWallpaper.author}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            x: { type: 'spring', stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
+          }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={1}
+          onDragEnd={onDragEnd}
+        />
+      </AnimatePresence>
+    </div>
   );
 };
 
-export default Wallpaper;
+export default Window;

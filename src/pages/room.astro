@@ -5,16 +5,21 @@ import MonitorLeft from '@/components/room/MonitorLeft';
 import MonitorRight from '@/components/room/MonitorRight';
 import Cup from '@/components/room/Cup';
 import ManOnChair from '@/components/room/ManOnChair';
-import Wallpaper from '@/components/room/Wallpaper';
+import Window from '@/components/room/Window';
+import BookShelf from '@/components/room/BookShelf';
 ---
 
 <Layout>
-  <div class="relative flex justify-center items-center h-full overflow-hidden">
-    <Wallpaper client:only />
-    <MonitorLeft client:only />
+  <div class="relative flex justify-center items-center h-full overflow-hidden max-md:hidden">
+    <Window client:only />
+    <BookShelf client:only />
+    <!-- <MonitorLeft client:only />
     <MonitorRight client:only />
     <Table client:only />
     <ManOnChair client:only />
-    <Cup client:only />
+    <Cup client:only /> -->
+  </div>
+  <div class="relative flex justify-center items-center h-full min-md:hidden">
+    <p class="text-center p-4">This 3D room is only available on larger screens. Please visit on a desktop or tablet device to view the full experience.</p>
   </div>
 </Layout>

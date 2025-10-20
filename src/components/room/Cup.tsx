@@ -6,9 +6,9 @@ const cupVariants: Variants = {
   initial: { y: -2000 },
   animate: { y: 0, transition: { delay: 0.8, type: 'tween' } },
   active: {
-    scale: 4,
-    x: -150,
-    y: -180,
+    scale: 3,
+    x: -180,
+    y: -200,
   },
 };
 
@@ -18,7 +18,7 @@ const Cup: React.FC = () => {
   return (
     <>
       <motion.img
-        className="absolute w-64 bottom-64"
+        className="absolute w-64 bottom-1/3"
         src={MScottCup.src}
         alt="Michael Scott Cup"
         initial={{ display: 'none', opacity: 0 }}
@@ -26,7 +26,7 @@ const Cup: React.FC = () => {
         transition={isActive ? { delay: 0.5 } : { delay: 0 }}
       />
       <motion.svg
-        className="absolute bottom-32 -mr-48 w-8 cursor-zoom-in"
+        className="absolute bottom-42 ml-62 w-10 cursor-zoom-in"
         viewBox="0 0 110 90"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

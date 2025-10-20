@@ -60,7 +60,7 @@ const Chair: React.FC<ChairProps> = ({ isChairActive, onChangeChairState }) => {
 
   return (
     <motion.svg
-      className="absolute bottom-0 w-26 overflow-visible cursor-help"
+      className="absolute bottom-0 w-36 overflow-visible cursor-help"
       viewBox="0 0 300 525"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

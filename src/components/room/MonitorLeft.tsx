@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 const MonitorLeft: React.FC = () => {
   return (
     <motion.svg
-      className="absolute bottom-32 -ml-21 w-20 overflow-visible"
+      className="absolute bottom-42 -ml-29 w-28 overflow-visible"
       viewBox="0 0 300 260"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
