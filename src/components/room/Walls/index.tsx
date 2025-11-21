@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { motion, type PanInfo } from 'framer-motion';
 import FrontWall from '@/components/room/Walls/Front';
+import TopWall from '@/components/room/Walls/Top';
 
 const Q = 1.4;
-const H = 1200;
+const H = 500;
 const W = H * Q;
 
 const Walls: React.FC = () => {
@@ -42,7 +43,7 @@ const Walls: React.FC = () => {
         onDragEnd={onDragEnd}
       >
         <motion.div
-          className="absolute border-2 border-black"
+          className="absolute border-2 border-black bg-gray-100"
           style={{
             transform: `rotateY(0deg) translate3d(0, 0, -${H / 2}px)`,
             width: W,
@@ -56,7 +57,7 @@ const Walls: React.FC = () => {
           <FrontWall />
         </motion.div>
         <motion.div
-          className="absolute border-2 border-black"
+          className="absolute border-2 border-black bg-gray-100"
           style={{
             transform: `rotateY(90deg) translate3d(0, 0, -${H / 2}px)`,
             width: H,
@@ -70,7 +71,7 @@ const Walls: React.FC = () => {
           Right
         </motion.div>
         <motion.div
-          className="absolute border-2 border-black"
+          className="absolute border-2 border-black bg-gray-100"
           style={{
             transform: `rotateY(180deg) translate3d(0, 0, -${H / 2}px)`,
             width: W,
@@ -84,7 +85,7 @@ const Walls: React.FC = () => {
           Back
         </motion.div>
         <motion.div
-          className="absolute border-2 border-black"
+          className="absolute border-2 border-black bg-gray-100"
           style={{
             transform: `rotateY(-90deg) translate3d(0, 0, -${W - H / 2}px)`,
             width: H,
@@ -98,7 +99,7 @@ const Walls: React.FC = () => {
           Left
         </motion.div>
         <div
-          className="absolute border-2 border-black"
+          className="absolute border-2 border-black bg-gray-100"
           style={{
             transform: `rotateX(90deg) translate3d(0, 0, -${H / 2}px)`,
             width: W,
@@ -109,7 +110,7 @@ const Walls: React.FC = () => {
           Bottom
         </div>
         <div
-          className="absolute border-2 border-black"
+          className="absolute border-2 border-black bg-gray-100"
           style={{
             transform: `rotateX(-90deg) translate3d(0, 0, -${H / 2}px)`,
             width: W,
@@ -117,7 +118,7 @@ const Walls: React.FC = () => {
             opacity: 1,
           }}
         >
-          Top
+          <TopWall />
         </div>
       </motion.div>
     </div>
