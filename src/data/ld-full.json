@@ -571,7 +571,7 @@
       "endDate": "2022-08",
       "hasOccupation": {
         "@type": "Occupation",
-        "name": "Software Engineer",
+        "name": "Lead Software Engineer",
         "responsibilities": "Worked on a payment system based on Open Banking and integrated it with a top list of banks in the UK/EU.",
         "skills": [
           "Node.js",
