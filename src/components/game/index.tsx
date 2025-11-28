@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import kontra from 'kontra';
 import { initPlayer } from '@/components/game/player';
+import { initRoom } from '@/components/game/interior';
 
 const CANVAS_WIDTH = 400;
 const CANVAS_HEIGHT = 400;
@@ -21,6 +22,7 @@ const Game = () => {
     canvas.width = CANVAS_WIDTH;
     canvas.height = CANVAS_HEIGHT;
     const player = initPlayer(CANVAS_WIDTH, CANVAS_HEIGHT);
+    const room = initRoom();
 
     // Create game loop
     const loop = GameLoop({
@@ -34,6 +36,7 @@ const Game = () => {
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         // Render player
+        room.render();
         player.render();
       },
     });
@@ -42,9 +45,9 @@ const Game = () => {
     loop.start();
 
     // Cleanup function
-    // return () => {
-    //   loop.stop();
-    // };
+    return () => {
+      loop.stop();
+    };
   }, []);
 
   return (
