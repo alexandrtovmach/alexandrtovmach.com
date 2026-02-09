@@ -1,0 +1,64 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "MusicEvent",
+      "name": "Weekend Metal Tour",
+      "description": "An immersive electronic music festival featuring top-tier electronic and synth-pop artists from around the world. Three days of non-stop music, art installations, and immersive visual experiences.",
+      "url": "https://example.com/events/weekend-metal-tour-2012",
+      "image": "https://alexandrtovmach.com/shows/morphine_2012.jpeg",
+      "startDate": "2012-02-04T19:00:00Z",
+      "endDate": "2012-02-04T23:00:00Z",
+      "duration": "PT4H",
+      "location": {
+        "@type": "Place",
+        "name": "Рок-клуб \"MADiSAN\"",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "проспект Металургів, 12, Кривий Ріг, Дніпропетровська область, Україна, 50000",
+          "addressLocality": "Кривий Ріг",
+          "addressRegion": "Дніпропетровська область",
+          "addressCountry": "Україна"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "47.8951",
+          "longitude": "33.3958"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Morphine Suffering",
+          "sameAs": "https://uk.wikipedia.org/wiki/Morphine_Suffering",
+          "description": "Український металкор-гурт з Києва, заснований у м. Боярка в 2008 році.",
+          "image": "https://uk.wikipedia.org/wiki/Morphine_Suffering#/media/%D0%A4%D0%B0%D0%B9%D0%BB:Morphine_Suffering_Logotype.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "https://example.com/audio-samples/daft-punk-sample.mp3",
+            "description": "Audio sample from the performance"
+          }
+        }
+      ],
+      "video": {
+        "@type": "VideoObject",
+        "url": "https://example.com/videos/electronic-nights-2025-highlights.mp4",
+        "description": "Video highlights from Electronic Nights Festival 2025",
+        "duration": "PT12M30S",
+        "uploadDate": "2025-07-20T10:00:00Z"
+      },
+      "recordedIn": {
+        "@type": "AudioObject",
+        "url": "https://example.com/audio/electronic-nights-2025-full-recording.mp3",
+        "description": "Full recording of the festival"
+      },
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    }
+  ]
+}

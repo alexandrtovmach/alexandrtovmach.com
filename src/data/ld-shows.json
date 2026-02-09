@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "MusicEvent",
+      "name": "Weekend Metal Tour",
+      "image": "/shows/morphine_2012.jpeg",
+      "startDate": "2012-02-04T19:00:00Z",
+      "endDate": "2012-02-04T23:00:00Z",
+      "duration": "PT4H",
+      "location": {
+        "@type": "Place",
+        "name": "Рок-клуб \"MADiSAN\"",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "проспект Металургів, 12",
+          "addressLocality": "Кривий Ріг",
+          "addressRegion": "Дніпропетровська область",
+          "addressCountry": "Україна"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "47.8951",
+          "longitude": "33.3958"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Broken Paris",
+          "sameAs": "https://www.facebook.com/BrokenParis/",
+          "description": "Український металкор-гурт, заснований у м. Кривий Ріг в 2011 році.",
+          "image": "/bands/images/broken_paris.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/broken_paris-millioni_ognej.mp3",
+            "description": "Миллионы огней · В ритме сердец (2012)"
+          }
+        },
+        {
+          "@type": "Person",
+          "name": "Morphine Suffering",
+          "sameAs": "https://uk.wikipedia.org/wiki/Morphine_Suffering",
+          "description": "Український металкор-гурт, заснований у м. Боярка в 2008 році.",
+          "image": "/bands/images/morphine_suffering.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/morphine_suffering-tane_snig.mp3",
+            "description": "Тане Сніг · Світло не згасне (2011)"
+          }
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    }
+  ]
+}

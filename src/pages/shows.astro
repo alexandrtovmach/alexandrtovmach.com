@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ShowsList from '../components/ShowsList';
+import showsData from '../data/ld-shows.json';
+
+const events = showsData.itemListElement || [];
+const pageTitle = "Shows I've Attended";
+const pageDescription =
+  "A collection of concerts and music events I've experienced.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <main class="shows-page">
+    <div class="container">
+      <header class="page-header">
+        <h1>{pageTitle}</h1>
+        <p class="page-subtitle">{pageDescription}</p>
+        <p class="events-count">
+          {events.length}
+          {events.length === 1 ? 'event' : 'events'} recorded
+        </p>
+      </header>
+
+      <ShowsList client:load events={events} />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .shows-page {
+    padding: 2rem 0;
+    min-height: calc(100vh - 200px);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+    color: #333;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.5;
+  }
+
+  .events-count {
+    font-size: 0.95rem;
+    color: #999;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 1.8rem;
+    }
+
+    .page-subtitle {
+      font-size: 1rem;
+    }
+  }
+</style>
