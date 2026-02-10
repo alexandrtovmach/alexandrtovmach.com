@@ -11,7 +11,7 @@
       "duration": "PT4H",
       "location": {
         "@type": "Place",
-        "name": "Rock club \"MADiSAN\"",
+        "name": "Рок-клуб \"MADiSAN\"",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "проспект Металургів, 12",
@@ -67,7 +67,7 @@
       "duration": "PT7H",
       "location": {
         "@type": "Place",
-        "name": "Stadium \"Chornomorets\"",
+        "name": "Стадіон \"Чорноморець\"",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "вулиця Маразліївська 1/20",

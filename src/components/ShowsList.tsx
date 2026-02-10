@@ -86,22 +86,33 @@ export default function ShowsList({ events }: ShowsListProps) {
   };
 
   return (
-    <div className="shows-container">
-      <div className="shows-grid">
+    <div className="py-8">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-8">
         {events.map((event, idx) => (
-          <div key={idx} className="show-card">
+          <div
+            key={idx}
+            className="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
             {event.image && (
-              <div className="show-poster">
-                <img src={event.image} alt={event.name} />
+              <div className="w-full h-64 overflow-hidden bg-gray-100">
+                <img
+                  src={event.image}
+                  alt={event.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
             )}
 
-            <div className="show-content">
-              <h3 className="show-title">{event.name}</h3>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                {event.name}
+              </h3>
 
-              <div className="show-date">📅 {formatDate(event.startDate)}</div>
+              <div className="text-sm text-gray-600 leading-relaxed my-2">
+                📅 {formatDate(event.startDate)}
+              </div>
 
-              <div className="show-location">
+              <div className="text-sm text-gray-600 leading-relaxed my-2">
                 📍 {event.location.name}
                 {event.location.address?.addressLocality && (
                   <span>, {event.location.address.addressLocality}</span>
@@ -109,16 +120,24 @@ export default function ShowsList({ events }: ShowsListProps) {
               </div>
 
               {event.description && (
-                <p className="show-description">{event.description}</p>
+                <p className="text-sm text-gray-700 leading-relaxed my-4">
+                  {event.description}
+                </p>
               )}
 
-              <div className="performers">
-                <h4>Artists</h4>
-                <div className="performers-list">
+              <div className="mt-6 border-t border-gray-200 pt-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-4">
+                  Artists
+                </h4>
+                <div className="flex flex-col gap-4">
                   {event.performer.map((performer, pidx) => (
                     <div
                       key={pidx}
-                      className={`performer ${hoveredBand === `${event.name}-${performer.name}` ? 'active' : ''}`}
+                      className={`flex gap-4 p-3 rounded-md cursor-pointer transition-all duration-200 ${
+                        hoveredBand === `${event.name}-${performer.name}`
+                          ? 'bg-gray-100 translate-x-1'
+                          : 'bg-gray-50 hover:bg-gray-100 hover:translate-x-1'
+                      }`}
                       onMouseEnter={() =>
                         handleBandHover(event.name, performer)
                       }
@@ -128,19 +147,16 @@ export default function ShowsList({ events }: ShowsListProps) {
                         <img
                           src={performer.image}
                           alt={performer.name}
-                          className="performer-image"
+                          className="w-16 h-16 rounded-md object-cover flex-shrink-0"
                         />
                       )}
-                      <div className="performer-info">
-                        <p className="performer-name">{performer.name}</p>
+                      <div className="flex flex-col flex-1 justify-center">
+                        <p className="font-semibold text-sm text-gray-900">
+                          {performer.name}
+                        </p>
                         {performer.description && (
-                          <p className="performer-description">
+                          <p className="text-xs text-gray-600 leading-relaxed mt-1">
                             {performer.description}
-                          </p>
-                        )}
-                        {performer.audio && (
-                          <p className="audio-hint">
-                            🔊 Hover to listen: {performer.audio.description}
                           </p>
                         )}
                       </div>
@@ -152,147 +168,6 @@ export default function ShowsList({ events }: ShowsListProps) {
           </div>
         ))}
       </div>
-
-      <style>{`
-        .shows-container {
-          padding: 2rem 0;
-        }
-
-        .shows-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          gap: 2rem;
-        }
-
-        .show-card {
-          border: 1px solid #e0e0e0;
-          border-radius: 8px;
-          overflow: hidden;
-          background: white;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-          transition: box-shadow 0.3s ease;
-        }
-
-        .show-card:hover {
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .show-poster {
-          width: 100%;
-          height: 250px;
-          overflow: hidden;
-          background: #f5f5f5;
-        }
-
-        .show-poster img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .show-content {
-          padding: 1.5rem;
-        }
-
-        .show-title {
-          margin: 0 0 1rem 0;
-          font-size: 1.3rem;
-          font-weight: 600;
-          color: #333;
-        }
-
-        .show-date,
-        .show-location {
-          margin: 0.5rem 0;
-          font-size: 0.95rem;
-          color: #666;
-          line-height: 1.4;
-        }
-
-        .show-description {
-          margin: 1rem 0;
-          font-size: 0.9rem;
-          color: #555;
-          line-height: 1.5;
-        }
-
-        .performers {
-          margin-top: 1.5rem;
-          border-top: 1px solid #e0e0e0;
-          padding-top: 1rem;
-        }
-
-        .performers h4 {
-          margin: 0 0 1rem 0;
-          font-size: 1rem;
-          font-weight: 600;
-          color: #333;
-        }
-
-        .performers-list {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-        }
-
-        .performer {
-          display: flex;
-          gap: 1rem;
-          padding: 0.75rem;
-          border-radius: 6px;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          background: #f9f9f9;
-        }
-
-        .performer:hover,
-        .performer.active {
-          background: #f0f0f0;
-          transform: translateX(4px);
-        }
-
-        .performer-image {
-          width: 60px;
-          height: 60px;
-          border-radius: 4px;
-          object-fit: cover;
-          flex-shrink: 0;
-        }
-
-        .performer-info {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-
-        .performer-name {
-          margin: 0;
-          font-weight: 600;
-          font-size: 0.95rem;
-          color: #333;
-        }
-
-        .performer-description {
-          margin: 0.25rem 0 0 0;
-          font-size: 0.85rem;
-          color: #777;
-          line-height: 1.3;
-        }
-
-        .audio-hint {
-          margin: 0.5rem 0 0 0;
-          font-size: 0.8rem;
-          color: #999;
-          font-style: italic;
-        }
-
-        @media (max-width: 768px) {
-          .shows-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-      `}</style>
     </div>
   );
 }
