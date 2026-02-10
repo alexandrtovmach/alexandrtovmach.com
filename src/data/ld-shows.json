@@ -11,7 +11,7 @@
       "duration": "PT4H",
       "location": {
         "@type": "Place",
-        "name": "Рок-клуб \"MADiSAN\"",
+        "name": "Rock club \"MADiSAN\"",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "проспект Металургів, 12",
@@ -30,7 +30,7 @@
           "@type": "Person",
           "name": "Broken Paris",
           "sameAs": "https://www.facebook.com/BrokenParis/",
-          "description": "Кривий Ріг, 2011",
+          "description": "🇺🇦 Kryvyi Rih, 2011",
           "image": "/bands/images/broken_paris.png",
           "audio": {
             "@type": "AudioObject",
@@ -42,7 +42,7 @@
           "@type": "Person",
           "name": "Morphine Suffering",
           "sameAs": "https://uk.wikipedia.org/wiki/Morphine_Suffering",
-          "description": "Боярка, 2008",
+          "description": "🇺🇦 Boyarka, 2008",
           "image": "/bands/images/morphine_suffering.png",
           "audio": {
             "@type": "AudioObject",
@@ -67,7 +67,7 @@
       "duration": "PT7H",
       "location": {
         "@type": "Place",
-        "name": "Стадіон \"Чорноморець\"",
+        "name": "Stadium \"Chornomorets\"",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "вулиця Маразліївська 1/20",
@@ -86,28 +86,28 @@
           "@type": "Person",
           "name": "O.Torvald",
           "sameAs": "https://uk.wikipedia.org/wiki/O.Torvald",
-          "description": "Київ, 2006",
+          "description": "🇺🇦 Poltava, 2005",
           "image": "/bands/images/otorvald.png"
         },
         {
           "@type": "Person",
           "name": "Бумбокс",
           "sameAs": "https://uk.wikipedia.org/wiki/Бумбокс",
-          "description": "Київ, 2004",
+          "description": "🇺🇦 Kyiv, 2004",
           "image": "/bands/images/boombox.png"
         },
         {
           "@type": "Person",
           "name": "Garbage",
-          "sameAs": "https://uk.wikipedia.org/wiki/Garbage",
-          "description": "Мадісон, 1993",
+          "sameAs": "https://en.wikipedia.org/wiki/Garbage",
+          "description": "🇺🇸 Madison, 1994",
           "image": "/bands/images/garbage.png"
         },
         {
           "@type": "Person",
           "name": "Linkin Park",
-          "sameAs": "https://uk.wikipedia.org/wiki/Linkin_Park",
-          "description": "Каліфорнія, 1996",
+          "sameAs": "https://en.wikipedia.org/wiki/Linkin_Park",
+          "description": "🇺🇸 California, 1996",
           "image": "/bands/images/linkin_park.png"
         }
       ],
@@ -146,8 +146,47 @@
           "@type": "Person",
           "name": "O.Torvald",
           "sameAs": "https://uk.wikipedia.org/wiki/O.Torvald",
-          "description": "Український рок-гурт, Київ, 2006",
+          "description": "🇺🇦 Poltava, 2005",
           "image": "/bands/images/otorvald.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "ПОРНОФИЛЬМЫ презентація альбому",
+      "image": "/shows/pornofilmi_2018.jpeg",
+      "startDate": "2018-03-07T20:00:00Z",
+      "endDate": "2018-03-07T23:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Picasso Club",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "вулиця Зелена, 88",
+          "addressLocality": "Львів",
+          "addressRegion": "Львівська область",
+          "addressCountry": "Україна"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "49.82762422154835",
+          "longitude": "24.045641051034746"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "ПОРНОФИЛЬМЫ",
+          "sameAs": "https://ru.wikipedia.org/wiki/Порнофильмы_(группа)",
+          "description": "🏳️ Dubna, 2008",
+          "image": "/bands/images/pornofilmi.png"
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
