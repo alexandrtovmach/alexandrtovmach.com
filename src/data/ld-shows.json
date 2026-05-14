@@ -60,7 +60,7 @@
     },
     {
       "@type": "MusicEvent",
-      "name": "ProstoRock 2012",
+      "name": "ProstoRock Festival",
       "image": "/shows/prostorock_2012.jpeg",
       "startDate": "2012-06-12T16:00:00Z",
       "endDate": "2012-06-12T23:00:00Z",
@@ -120,7 +120,7 @@
     },
     {
       "@type": "MusicEvent",
-      "name": "O.Torvald презентація альбому",
+      "name": "Презентація альбому \"Примат\"",
       "image": "/shows/otorvald_2012.jpeg",
       "startDate": "2012-12-01T19:00:00Z",
       "endDate": "2012-12-01T23:00:00Z",
@@ -159,7 +159,7 @@
     },
     {
       "@type": "MusicEvent",
-      "name": "ПОРНОФИЛЬМЫ презентація альбому",
+      "name": "Презентація альбому \"В диапазоне между отчаянием и надеждой\"",
       "image": "/shows/pornofilmi_2018.jpeg",
       "startDate": "2018-03-07T20:00:00Z",
       "endDate": "2018-03-07T23:00:00Z",
@@ -187,6 +187,713 @@
           "sameAs": "https://ru.wikipedia.org/wiki/Порнофильмы_(группа)",
           "description": "🏳️ Dubna, 2008",
           "image": "/bands/images/pornofilmi.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Stop the Clocks Tour",
+      "image": "/shows/entershikari_2019.jpeg",
+      "startDate": "2019-03-01T20:00:00Z",
+      "endDate": "2019-03-01T23:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "!FESTrepublic",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "вулиця Старознесенська, 24-26",
+          "addressLocality": "Львів",
+          "addressRegion": "Львівська область",
+          "addressCountry": "Україна"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "49.851440964963935",
+          "longitude": "24.051628486577577"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Enter Shikari",
+          "sameAs": "https://en.wikipedia.org/wiki/Enter_Shikari",
+          "description": "🇬🇧 Brighton, 2009",
+          "image": "/bands/images/entershikari.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Відкриття сезону",
+      "image": "/shows/drugarika_2019.jpeg",
+      "startDate": "2019-03-07T20:00:00Z",
+      "endDate": "2019-03-07T23:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Клуб \"Малевич\"",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "проспект В'ячеслава Чорновола, 2",
+          "addressLocality": "Львів",
+          "addressRegion": "Львівська область",
+          "addressCountry": "Україна"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "49.847614797295236",
+          "longitude": "24.026015191731144"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Друга Ріка",
+          "sameAs": "https://uk.wikipedia.org/wiki/Друга_Ріка",
+          "description": "🇺🇦 Zhytomyr, 1996",
+          "image": "/bands/images/drugarika.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Gravity Tour",
+      "image": "/shows/bfmv_2019.jpeg",
+      "startDate": "2019-04-22T20:00:00Z",
+      "endDate": "2019-04-22T23:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "STEREO PLAZA",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "проспект Валерія Лобановського, 119",
+          "addressLocality": "Київ",
+          "addressRegion": "Київська область",
+          "addressCountry": "Україна"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "50.410652176669494",
+          "longitude": "30.511454841094896"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Bullet for My Valentine",
+          "sameAs": "https://en.wikipedia.org/wiki/Bullet_for_My_Valentine",
+          "description": "🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wales, 1998",
+          "image": "/bands/images/bfmv.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "#РадиоМитал",
+      "image": "/shows/radiotapok_2020.jpeg",
+      "startDate": "2020-02-26T20:00:00Z",
+      "endDate": "2020-02-26T23:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Клуб \"Малевич\"",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "проспект В'ячеслава Чорновола, 2",
+          "addressLocality": "Львів",
+          "addressRegion": "Львівська область",
+          "addressCountry": "Україна"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "49.847614797295236",
+          "longitude": "24.026015191731144"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Radio Tapok",
+          "sameAs": "https://ru.wikipedia.org/wiki/Radio_Tapok",
+          "description": "🏳️ Moscow, 2016",
+          "image": "/bands/images/radiotapok.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "IMAGO Europe Tour",
+      "image": "/shows/space_of_variations_2024.jpeg",
+      "startDate": "2024-03-22T20:00:00Z",
+      "endDate": "2024-03-22T23:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Klub Łącznik",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Tramwajowa 1-3",
+          "addressLocality": "Wrocław",
+          "addressRegion": "Dolnośląskie", 
+          "addressCountry": "Polska"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.1055504556416",
+          "longitude": "17.0876621392603"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Evermorphing",
+          "description": "🇺🇸 USA, 2023",
+          "image": "/bands/images/evermorphing.png"
+        },
+        {
+          "@type": "Person",
+          "name": "Space of Variations",
+          "sameAs": "https://uk.wikipedia.org/wiki/Space_of_Variations",
+          "description": "🇺🇦 Vinnytsia, 2009",
+          "image": "/bands/images/space_of_variations.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Seasons Tour",
+      "image": "/shows/thirty_seconds_to_mars_2024.jpeg",
+      "startDate": "2024-05-09T20:00:00Z",
+      "endDate": "2024-05-09T23:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Tauron Arena",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Stanisława Lema 7",
+          "addressLocality": "Kraków",
+          "addressRegion": "Małopolskie", 
+          "addressCountry": "Polska"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "50.06785926198904",
+          "longitude": "19.991424294369324"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Thirty Seconds To Mars",
+          "sameAs": "https://en.wikipedia.org/wiki/Thirty_Seconds_to_Mars",
+          "description": "🇺🇸 California, 1998",
+          "image": "/bands/images/thirty_seconds_to_mars.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "UK/EU Tour",
+      "image": "/shows/underoath_2024.jpeg",
+      "startDate": "2024-06-12T19:00:00Z",
+      "endDate": "2024-06-12T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Klub Proxima",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Żwirki i Wigury 99A",
+          "addressLocality": "Warszawa",
+          "addressRegion": "Mazowieckie", 
+          "addressCountry": "Polska"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "52.21275367325466",
+          "longitude": "20.98727135123666"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Solence",
+          "sameAs": "https://en.wikipedia.org/wiki/Solence",
+          "description": "🇸🇪 Norrköping, 2012",
+          "image": "/bands/images/solence.png"
+        },
+        {
+          "@type": "Person",
+          "name": "Underoath",
+          "sameAs": "https://en.wikipedia.org/wiki/Underoath",
+          "description": "🇺🇸 Tampa, 1997",
+          "image": "/bands/images/underoath.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Friday Night Every Night & Sucker Punch Tour",
+      "image": "/shows/zebrahead_2024.jpeg",
+      "startDate": "2024-07-25T19:00:00Z",
+      "endDate": "2024-07-25T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Legend Club",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Viale Enrico Fermi, 98",
+          "addressLocality": "Milano",
+          "addressRegion": "Lombardia", 
+          "addressCountry": "Italia"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "45.516301217095084",
+          "longitude": "9.17923487932224"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Zebrahead",
+          "sameAs": "https://en.wikipedia.org/wiki/Zebrahead",
+          "description": "🇺🇸 La Habra, 1996",
+          "image": "/bands/images/zebrahead.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "From Zero Tour",
+      "image": "/shows/linkin_park_2024.jpeg",
+      "startDate": "2024-11-03T19:00:00Z",
+      "endDate": "2024-11-03T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Paris la Défense Arena",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "99 Jard. de l'Arche",
+          "addressLocality": "Nanterre",
+          "addressRegion": "Île-de-France", 
+          "addressCountry": "France"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "48.89582796480756",
+          "longitude": "2.2299693331534516"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Sleep Token",
+          "sameAs": "https://en.wikipedia.org/wiki/Sleep_Token",
+          "description": "🇬🇧 London, 2016",
+          "image": "/bands/images/sleeptoken.png"
+        },
+        {
+          "@type": "Person",
+          "name": "Linkin Park",
+          "sameAs": "https://en.wikipedia.org/wiki/Linkin_Park",
+          "description": "🇺🇸 Agoura Hills, 1996",
+          "image": "/bands/images/linkinpark.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Tour of the Setting Sum",
+      "image": "/shows/sum41_2024.jpeg",
+      "startDate": "2024-11-20T19:00:00Z",
+      "endDate": "2024-11-20T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Palau Sant Jordi",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Passeig Olímpic, 5-7",
+          "addressLocality": "Barcelona",
+          "addressRegion": "Catalonia", 
+          "addressCountry": "Espana"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "41.36405605888922",
+          "longitude": "2.1525018459641343"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Neck Deep",
+          "sameAs": "https://en.wikipedia.org/wiki/Neck_Deep",
+          "description": "🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wrexham, 2012",
+          "image": "/bands/images/neckdeep.png"
+        },
+        {
+          "@type": "Person",
+          "name": "SUM 41",
+          "sameAs": "https://en.wikipedia.org/wiki/Sum_41",
+          "description": "🇨🇦 Ontario, 1996",
+          "image": "/bands/images/sum41.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "20 years of \"Ocean Avenue\"",
+      "image": "/shows/sum41_2024.jpeg",
+      "startDate": "2024-11-22T19:00:00Z",
+      "endDate": "2024-11-22T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Bataclan",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "50 Bd Voltaire",
+          "addressLocality": "Paris",
+          "addressRegion": "Île-de-France", 
+          "addressCountry": "France"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "48.86325159691343",
+          "longitude": "2.3708196912806394"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Story of the Year",
+          "sameAs": "https://en.wikipedia.org/wiki/Story_of_the_Year",
+          "description": "🇺🇸 St. Louis, 1995",
+          "image": "/bands/images/storyoftheyear.png"
+        },
+        {
+          "@type": "Person",
+          "name": "Yellowcard",
+          "sameAs": "https://en.wikipedia.org/wiki/Yellowcard",
+          "description": "🇺🇸 Jacksonville, 1997",
+          "image": "/bands/images/yellowcard.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "The Popular MonsTOUR II: World Domination",
+      "image": "/shows/falling_in_reverse_2024.jpeg",
+      "startDate": "2024-11-25T19:00:00Z",
+      "endDate": "2024-11-25T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Bataclan",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Władysława Bandurskiego 7",
+          "addressLocality": "Łódź",
+          "addressRegion": "Łódzkie",
+          "addressCountry": "Polska"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.75737118930694",
+          "longitude": "19.42508377974142"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Sleep Theory",
+          "sameAs": "https://en.wikipedia.org/wiki/Sleep_Theory",
+          "description": "🇺🇸 Memphis, 2019",
+          "image": "/bands/images/sleep_theory.png"
+        },
+        {
+          "@type": "Person",
+          "name": "Hollywood Undead",
+          "sameAs": "https://en.wikipedia.org/wiki/Hollywood_Undead",
+          "description": "🇺🇸 Los Angeles, 2005",
+          "image": "/bands/images/hollywood_undead.png"
+        },
+        {
+          "@type": "Person",
+          "name": "Falling in Reverse",
+          "sameAs": "https://en.wikipedia.org/wiki/Falling_in_Reverse",
+          "description": "🇺🇸 Las Vegas, 2008",
+          "image": "/bands/images/falling_in_reverse.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "UK + Europe Tour",
+      "image": "/shows/a_day_to_remember_2025.jpeg",
+      "startDate": "2025-06-14T19:00:00Z",
+      "endDate": "2025-06-14T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Concert Center A2",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Góralska 5",
+          "addressLocality": "Wrocław",
+          "addressRegion": "Dolnośląskie",
+          "addressCountry": "Polska"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.108546072596084",
+          "longitude": "17.001965384485736"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "A Day to Remember",
+          "sameAs": "https://en.wikipedia.org/wiki/A_Day_to_Remember",
+          "description": "🇺🇸 Ocala, 2003",
+          "image": "/bands/images/a_day_to_remember.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "European Tour",
+      "image": "/shows/the_plot_in_you_2025.jpeg",
+      "startDate": "2025-11-19T19:00:00Z",
+      "endDate": "2025-11-19T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Klub Progresja",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Fort Wola 22",
+          "addressLocality": "Warszawa",
+          "addressRegion": "Mazowieckie",
+          "addressCountry": "Polska"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "52.224969944923416",
+          "longitude": "20.928941340679263"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Saosin",
+          "sameAs": "https://en.wikipedia.org/wiki/Saosin",
+          "description": "🇺🇸 Orange County, 2003",
+          "image": "/bands/images/saosin.png"
+        },
+        {
+          "@type": "Person",
+          "name": "Currents",
+          "sameAs": "https://en.wikipedia.org/wiki/Currents_(band)",
+          "description": "🇺🇸 Newtown, 2011",
+          "image": "/bands/images/currents.png"
+        },
+        {
+          "@type": "Person",
+          "name": "The Plot In You",
+          "sameAs": "https://en.wikipedia.org/wiki/The_Plot_In_You",
+          "description": "🇺🇸 Hancock County, 2010",
+          "image": "/bands/images/the_plot_in_you.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "TANZNEID World Tour",
+      "image": "/shows/electric_callboy_2025.jpeg",
+      "startDate": "2025-11-23T19:00:00Z",
+      "endDate": "2025-11-23T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Tauron Arena",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Stanisława Lema 7",
+          "addressLocality": "Kraków",
+          "addressRegion": "Małopolskie", 
+          "addressCountry": "Polska"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "50.06785926198904",
+          "longitude": "19.991424294369324"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Wargasm",
+          "sameAs": "https://en.wikipedia.org/wiki/Wargasm",
+          "description": "🇬🇧 London, 2018",
+          "image": "/bands/images/wargasm.png"
+        },
+        {
+          "@type": "Person",
+          "name": "Bury Tomorrow",
+          "sameAs": "https://en.wikipedia.org/wiki/Bury_Tomorrow",
+          "description": "🇬🇧 Southampton, 2011",
+          "image": "/bands/images/bury_tomorrow.png"
+        },
+        {
+          "@type": "Person",
+          "name": "Electric Callboy",
+          "sameAs": "https://en.wikipedia.org/wiki/Electric_Callboy",
+          "description": "🇩🇪 Castrop-Rauxel, 2010",
+          "image": "/bands/images/electric_callboy.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Everyone's Talking!",
+      "image": "/shows/all_time_low_2026.jpeg",
+      "startDate": "2026-02-08T19:00:00Z",
+      "endDate": "2026-02-08T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Klub Stodoła",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Stefana Batorego 10",
+          "addressLocality": "Warszawa",
+          "addressRegion": "Mazowieckie", 
+          "addressCountry": "Polska"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "52.21168655477812",
+          "longitude": "21.01022673451379"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Mayday Parade",
+          "sameAs": "https://en.wikipedia.org/wiki/Mayday_Parade",
+          "description": "🇺🇸 Tallahassee, 2005",
+          "image": "/bands/images/mayday_parade.png"
+        },
+        {
+          "@type": "Person",
+          "name": "All Time Low",
+          "sameAs": "https://en.wikipedia.org/wiki/All_Time_Low",
+          "description": "🇺🇸 Towson, 2003",
+          "image": "/bands/images/all_time_low.png"
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
