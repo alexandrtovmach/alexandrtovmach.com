@@ -1,6 +1,6 @@
 ---
 import GitHubSVG from '@/assets/icons/github.svg';
-import TwitterSVG from '@/assets/icons/twitter.svg';
+import XSVG from '@/assets/icons/x.svg';
 import MailSVG from '@/assets/icons/mail.svg';
 import PrinterSVG from '@/assets/icons/printer.svg';
 import QRJpeg from '@/assets/images/qr.jpg';
@@ -17,22 +17,22 @@ const groupedSkills = groupBy(skills, 'description');
 const yearsOfMarriage = new Date().getFullYear() - 2012;
 const faq = [
   {
-    "q": "What type of cooperation would I prefer?",
-    "a": "Direct cooperation with product company, without outsource/outstaff agencies."
+    q: 'What type of cooperation would I prefer?',
+    a: 'Direct cooperation with product company, without outsource/outstaff agencies.',
   },
   {
-    "q": "What industry would I like to work in?",
-    "a": "Innovations, Healthcare, Music / Sound Engineering or something interesting."
+    q: 'What industry would I like to work in?',
+    a: 'Innovations, Healthcare, Music / Sound Engineering or something interesting.',
   },
   {
-    "q": "Remote vs Office",
-    "a": "When I started in IT my main goal was to be able to travel, and now, after 4 years working in office, I am looking for a completely remote position. No exceptions."
+    q: 'Remote vs Office',
+    a: 'When I started in IT my main goal was to be able to travel, and now, after 4 years working in office, I am looking for a completely remote position. No exceptions.',
   },
   {
-    "q": "Frontend vs Backend vs Mobile?",
-    "a": "I'm ready to work with each, but... if I have a choice it's a frontend."
-  }
-]
+    q: 'Frontend vs Backend vs Mobile?',
+    a: "I'm ready to work with each, but... if I have a choice it's a frontend.",
+  },
+];
 ---
 
 <style>
@@ -107,7 +107,7 @@ const faq = [
               link: 'https://twitter.com/alexandrtovmach',
               label: '@alexandrtovmach',
               title: 'My Twitter',
-              icon: <TwitterSVG />,
+              icon: <XSVG />,
             },
           ].map(({ icon, link, label, title }) => (
             <a
@@ -136,14 +136,21 @@ const faq = [
             hasOccupation
               .slice(0, 3)
               .map((el) => (
-                <ExperienceItem {...(el as any)} fullSkillSet={skills.map((skill) => skill.name)} />
+                <ExperienceItem
+                  {...(el as any)}
+                  fullSkillSet={skills.map((skill) => skill.name)}
+                />
               ))
           }
           {
             hasOccupation
               .slice(3)
               .map((el) => (
-                <ExperienceItem {...(el as any)} isOld fullSkillSet={skills.map((skill) => skill.name)} />
+                <ExperienceItem
+                  {...(el as any)}
+                  isOld
+                  fullSkillSet={skills.map((skill) => skill.name)}
+                />
               ))
           }
         </article>
@@ -152,61 +159,54 @@ const faq = [
             Personality
           </h3>
           <p class="font-extralight text-sm leading-5 opacity-80 mb-2">
-            Since childhood, I've been told that I have a&nbsp;
-            <span class="font-bold text-sm opacity-70"> constant thirst for knowledge </span>
-            , the ability to learn quickly in areas that interest me, and&nbsp;
-            <span class="font-bold text-sm opacity-70">hate routine affairs</span>. Usually, I
-            immediately get everybody's attention and recognition, make friends
-            quickly, and as far as I know no one thinks I'm a jerk. According to
-            the "16 personalities" test, I am&nbsp;
-            <a
+            Throughout my life, I've been defined by a <span
+              class="font-bold text-sm opacity-70">thirst for knowledge</span
+            > and a natural distaste for the mundane. I enjoy the fast-paced nature
+            of learning new things and find that I thrive in social environments where
+            I can build quick, genuine connections. I'm a classic <a
               target="_blank"
               title="16 personalities: Debater"
               rel="noopener noreferrer"
-              href="https://www.16personalities.com/profiles/0748e79e8a572"
-            >
-              "debater"
-            </a>
-            , which I think is a good description of my character.
+              href="https://www.16personalities.com/entp-personality"
+              >ENTP-A debater</a
+            > personality — someone who <span
+              class="font-bold text-sm opacity-70"
+              >loves a good intellectual challenge</span
+            > — which is reflected in official MENSA certification, where I scored
+            a 132 IQ (WAIS).
           </p>
           <p class="font-extralight text-sm leading-5 opacity-80 mb-2">
-            I&nbsp;
-            <span class="font-bold text-sm opacity-70">
-              don't like anything that is obvious
-            </span>
-            , no matter what it is ― movie, song or even a joke. Everything should
-            trigger mental activity. Therefore,&nbsp;
-            <span class="font-bold text-sm opacity-70">I love to solve tasks</span>
-            &nbsp;and for me, the best gift is a puzzle or a book. For over&nbsp;
-            {yearsOfMarriage} years, my first and only love, who eventually became&nbsp;
-            <span class="font-bold text-sm opacity-70">my wife</span>, is the biggest&nbsp;
-            <span class="font-bold text-sm opacity-70">inspiration of my life</span>.
+            I <span class="font-bold text-sm opacity-70"
+              >don't like anything that is obvious</span
+            >, no matter what it is ― movie, song or even a joke. Everything
+            should trigger mental activity. Therefore, <span
+              class="font-bold text-sm opacity-70">I love to solve tasks</span
+            > and for me, the best gift is a puzzle or a book. For over
+            {yearsOfMarriage} years, my first and only love, who eventually became
+            <span class="font-bold text-sm opacity-70">my wife</span>, is the
+            biggest <span class="font-bold text-sm opacity-70"
+              >inspiration of my life</span
+            >.
           </p>
           <p class="font-extralight text-sm leading-5 opacity-80">
-            I respect people who believe that&nbsp;
-            <span class="font-bold text-sm opacity-70">
+            I respect people who believe that <span
+              class="font-bold text-sm opacity-70"
+            >
               knowledge is not personal property
             </span>
-            &nbsp; and who want to share it with others, and in that reason,&nbsp;
-            <span class="font-bold text-sm opacity-70">I'm writing articles</span>
-            &nbsp;to&nbsp;
-            <a
+            and who want to share it with others, and in that reason,
+            <span class="font-bold text-sm opacity-70"
+              >I'm writing articles</span
+            > to <a
               href="https://medium.com/@alexandrtovmach"
               target="_blank"
-              rel="noopener noreferrer"
-            >
-              Medium
-            </a>
-            ,&nbsp;
-            <a
+              rel="noopener noreferrer">Medium</a
+            >, <a
               href="https://dou.ua/users/aleksandr-tovmach/articles"
               target="_blank"
-              rel="noopener noreferrer"
-            >
-              DOU
-            </a>
-            , and in addition help with documentation for several projects, like
-            a Node.js, Gatsby.js and SemVer.
+              rel="noopener noreferrer">DOU</a
+            > and in addition help with documentation for several projects, like a
+            Node.js, Gatsby.js and SemVer.
           </p>
         </article>
         <article class="mb-6">
@@ -214,13 +214,13 @@ const faq = [
             Ambitions
           </h3>
           <p class="font-extralight text-sm leading-5 opacity-80 mb-2">
-            I wasn't even 14 when I dreamt of becoming&nbsp;
-            <span class="font-bold text-sm opacity-70">an archaeologist</span>&nbsp; to answer
-            the questions of the evolution of species,&nbsp;
-            <span class="font-bold text-sm opacity-70">an inventor</span> of spacecraft to expand
-            the boundaries of accessible space, and&nbsp;
-            <span class="font-bold text-sm opacity-70">a chemist</span>, to solve the
-            environmental problems of our planet. I always wanted&nbsp;
+            I wasn't even 14 when I dreamt of becoming
+            <span class="font-bold text-sm opacity-70">an archaeologist</span> to
+            answer the questions of the evolution of species,
+            <span class="font-bold text-sm opacity-70">an inventor</span> of spacecraft
+            to expand the boundaries of accessible space, and
+            <span class="font-bold text-sm opacity-70">a chemist</span>, to
+            solve the environmental problems of our planet. I always wanted
             <span class="font-bold text-sm opacity-70">
               to change this world for the better
             </span>
@@ -228,7 +228,7 @@ const faq = [
             even if they (still) don't save lives, at least improve them.
           </p>
           <p class="font-extralight text-sm leading-5 opacity-80">
-            I believe that&nbsp;
+            I believe that
             <span class="font-bold text-sm opacity-70">
               masterpieces are created from pure enthusiasm
             </span>
@@ -244,7 +244,9 @@ const faq = [
             faq.map(({ a, q }) => (
               <div class="mb-4">
                 <h4>{q}</h4>
-                <p class="font-extralight text-sm leading-5 opacity-80 mb-2">{a}</p>
+                <p class="font-extralight text-sm leading-5 opacity-80 mb-2">
+                  {a}
+                </p>
               </div>
             ))
           }
@@ -273,12 +275,25 @@ const faq = [
             Education
           </h3>
           {
-            hasCredential.map(({ recognizedBy: { name }, description }) => (
-              <div class="mb-4">
-                <h4 class="mb-0 leading-5">{name}</h4>
-                <p class="font-extralight text-xs mb-1 lowercase">{description}</p>
-              </div>
-            ))
+            hasCredential.map(
+              ({
+                recognizedBy,
+                educationalLevel,
+                credentialCategory,
+                name,
+                description,
+              }) => (
+                <div class="mb-4">
+                  <h4 class="mb-0 leading-5">{recognizedBy.name}</h4>
+                  <p class="font-extralight text-xs mb-1 lowercase">
+                    {educationalLevel} {credentialCategory} of {name}
+                  </p>
+                  <p class="font-extralight text-xs mb-1 lowercase">
+                    {description}
+                  </p>
+                </div>
+              )
+            )
           }
         </article>
         <article class="hidden w-[90%] print:block print:text-[10px]">
@@ -293,5 +308,5 @@ const faq = [
         </article>
       </section>
     </section>
-  </main>
-</Layout>
+  </main></Layout
+>

@@ -343,6 +343,12 @@
     },
     {
       "@type": "DefinedTerm",
+      "name": "GEDCOM",
+      "inDefinedTermSet": "https://en.wikipedia.org/wiki/GEDCOM",
+      "description": "other"
+    },
+    {
+      "@type": "DefinedTerm",
       "name": "Python",
       "inDefinedTermSet": "https://www.python.org/",
       "description": "AI / machine_learning"
@@ -453,9 +459,11 @@
       "hasOccupation": {
         "@type": "Occupation",
         "name": "Founder",
-        "responsibilities": "Started initiative to develop tools and products for genealogy and archival researchers. Used %%Next.js%%, %%TypeScript%%, %%Tailwind%% to build a platform to check online status of archival case. Under the hood using %%Node.js%%, %%PostgreSQL%% and %%Prisma%% to scrap tens of resources with hundred of thousands items. Created a %%Chrome Extension%% to help researchers to quickly save archival references while browsing online archival catalogs. Developed an AI-powered tool to automatically extract text from archival documents using %%OpenAI%% and %%Gemini AI%% with %%EasyOCR%% and %%Tesseract OCR%%.",
+        "responsibilities": "Started initiative to develop tools and products for genealogy and archival researchers. Used %%Next.js%%, %%TypeScript%%, %%Tailwind%% to build a platform to check online status of archival case. Under the hood using %%Node.js%%, %%PostgreSQL%% and %%Prisma%% to scrap tens of resources with hundred of thousands items. Created a %%Chrome Extension%% to help researchers to quickly save archival references while browsing online archival catalogs. Developed an AI-powered tool to automatically extract text from archival documents using %%OpenAI%% and %%Gemini AI%% with %%EasyOCR%% and %%Tesseract OCR%%. Made few tools to work with %%GEDCOM%% file format, which is a standard format for genealogical data.",
         "skills": [
+          "Gemini AI",
           "OpenAI",
+          "GEDCOM",
           "EasyOCR",
           "Next.js",
           "TypeScript",
@@ -466,7 +474,8 @@
           "Prisma",
           "Chrome Extension",
           "Cloudflare",
-          "Figma"
+          "Figma",
+          "Tesseract OCR"
         ],
         "url": "https://duckarchive.com/",
         "description": "duckarchive"
@@ -808,8 +817,22 @@
   "hasCredential": [
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Master's Degree in Management and Business Administration",
-      "educationalLevel": "Master's degree",
+      "name": "Mensa IQ Test",
+      "credentialCategory": "certificate",
+      "educationalLevel": "132 IQ (WAIS)",
+      "dateIssued": "2025-12-18",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Mensa International",
+        "sameAs": "https://www.mensa.org/"
+      },
+      "description": "2025"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Management and Business Administration",
+      "credentialCategory": "degree",
+      "educationalLevel": "Master's",
       "recognizedBy": {
         "@type": "CollegeOrUniversity",
         "name": "Higher School of Management and Administration in Opole",
@@ -819,8 +842,9 @@
     },
     {
       "@type": "EducationalOccupationalCredential",
-      "name": "Bachelor's Degree in Mining and Mineral Processing",
-      "educationalLevel": "Bachelor's degree",
+      "name": "Mining and Mineral Processing",
+      "credentialCategory": "degree",
+      "educationalLevel": "Bachelor's",
       "recognizedBy": {
         "@type": "CollegeOrUniversity",
         "name": "Kryvyi Rih National University",
@@ -830,6 +854,9 @@
     },
     {
       "@type": "EducationalOccupationalCredential",
+      "name": "General education",
+      "credentialCategory": "certificate",
+      "educationalLevel": "Secondary school",
       "recognizedBy": {
         "@type": "School",
         "name": "School #32 of Kryvyi Rih"
