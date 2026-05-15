@@ -87,7 +87,12 @@
           "name": "O.Torvald",
           "sameAs": "https://uk.wikipedia.org/wiki/O.Torvald",
           "description": "🇺🇦 Poltava, 2005",
-          "image": "/bands/images/otorvald.png"
+          "image": "/bands/images/otorvald.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/otorvald-radiomerezhi.mp3",
+            "description": "Радіомережі · В тобі (2011)"
+          }
         },
         {
           "@type": "Person",
@@ -108,7 +113,12 @@
           "name": "Linkin Park",
           "sameAs": "https://en.wikipedia.org/wiki/Linkin_Park",
           "description": "🇺🇸 California, 1996",
-          "image": "/bands/images/linkin_park.png"
+          "image": "/bands/images/linkin_park.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/linkin_park-waiting_for_the_end_waiting_for_the_end.mp3",
+            "description": "Waiting for the End · A Thousands Suns (2010)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -147,7 +157,12 @@
           "name": "O.Torvald",
           "sameAs": "https://uk.wikipedia.org/wiki/O.Torvald",
           "description": "🇺🇦 Poltava, 2005",
-          "image": "/bands/images/otorvald.png"
+          "image": "/bands/images/otorvald.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/otorvald-primat.mp3",
+            "description": "Примат · Примат (2012)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -186,7 +201,12 @@
           "name": "ПОРНОФИЛЬМЫ",
           "sameAs": "https://ru.wikipedia.org/wiki/Порнофильмы_(группа)",
           "description": "🏳️ Dubna, 2008",
-          "image": "/bands/images/pornofilmi.png"
+          "image": "/bands/images/pornofilmi.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/pornofilmi-molodaja_semja.mp3",
+            "description": "Молодая семья · Русская мечта. Часть 1 (2015)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -264,7 +284,12 @@
           "name": "Друга Ріка",
           "sameAs": "https://uk.wikipedia.org/wiki/Друга_Ріка",
           "description": "🇺🇦 Zhytomyr, 1996",
-          "image": "/bands/images/drugarika.png"
+          "image": "/bands/images/drugarika.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/druga_rika-monstr.mp3",
+            "description": "Монстр · Піраміда (2017)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -303,7 +328,12 @@
           "name": "Bullet for My Valentine",
           "sameAs": "https://en.wikipedia.org/wiki/Bullet_for_My_Valentine",
           "description": "🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wales, 1998",
-          "image": "/bands/images/bfmv.png"
+          "image": "/bands/images/bfmv.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/bfmv-all_these_things_i_hate_revol_all_these_things_i_hate.mp3",
+            "description": "All These Things I Hate · The Poison (2005)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
