@@ -99,7 +99,12 @@
           "name": "Бумбокс",
           "sameAs": "https://uk.wikipedia.org/wiki/Бумбокс",
           "description": "🇺🇦 Kyiv, 2004",
-          "image": "/bands/images/boombox.png"
+          "image": "/bands/images/boombox.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/bumboks-beta-karotin.mp3",
+            "description": "Бета-каротин · Меломанія (2005)"
+          }
         },
         {
           "@type": "Person",
@@ -245,7 +250,12 @@
           "name": "Enter Shikari",
           "sameAs": "https://en.wikipedia.org/wiki/Enter_Shikari",
           "description": "🇬🇧 Brighton, 2009",
-          "image": "/bands/images/entershikari.png"
+          "image": "/bands/images/entershikari.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/enter_shikari-live_outside.mp3",
+            "description": "Live Outside · The Spark (2017)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -456,7 +466,12 @@
           "name": "Thirty Seconds To Mars",
           "sameAs": "https://en.wikipedia.org/wiki/Thirty_Seconds_to_Mars",
           "description": "🇺🇸 California, 1998",
-          "image": "/bands/images/thirty_seconds_to_mars.png"
+          "image": "/bands/images/thirty_seconds_to_mars.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/30_seconds_to_mars-attack.mp3",
+            "description": "Attack · A Beautiful Lie (2005)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -587,7 +602,12 @@
           "name": "Linkin Park",
           "sameAs": "https://en.wikipedia.org/wiki/Linkin_Park",
           "description": "🇺🇸 Agoura Hills, 1996",
-          "image": "/bands/images/linkinpark.png"
+          "image": "/bands/images/linkinpark.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/linkin_park-the_emptiness_machine.mp3",
+            "description": "The Emptiness Machine · From Zero (2024)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -732,7 +752,12 @@
           "name": "Falling in Reverse",
           "sameAs": "https://en.wikipedia.org/wiki/Falling_in_Reverse",
           "description": "🇺🇸 Las Vegas, 2008",
-          "image": "/bands/images/falling_in_reverse.png"
+          "image": "/bands/images/falling_in_reverse.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/falling_in_reverse-self-destruct_personality.mp3",
+            "description": "Self-Destruct Personality · Fashionably Late (2013)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -771,7 +796,12 @@
           "name": "A Day to Remember",
           "sameAs": "https://en.wikipedia.org/wiki/A_Day_to_Remember",
           "description": "🇺🇸 Ocala, 2003",
-          "image": "/bands/images/a_day_to_remember.png"
+          "image": "/bands/images/a_day_to_remember.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/a_day_to_remember-sometimes.mp3",
+            "description": "Sometimes You're the Hammer, Sometimes You're the Nail · Common Courtesy (2013)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -817,7 +847,12 @@
           "name": "Currents",
           "sameAs": "https://en.wikipedia.org/wiki/Currents_(band)",
           "description": "🇺🇸 Newtown, 2011",
-          "image": "/bands/images/currents.png"
+          "image": "/bands/images/currents.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/currents-remember_me.mp3",
+            "description": "Remember Me · The Death We Seek (2023)"
+          }
         },
         {
           "@type": "Person",
@@ -870,14 +905,24 @@
           "name": "Bury Tomorrow",
           "sameAs": "https://en.wikipedia.org/wiki/Bury_Tomorrow",
           "description": "🇬🇧 Southampton, 2011",
-          "image": "/bands/images/bury_tomorrow.png"
+          "image": "/bands/images/bury_tomorrow.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/bury_tomorrow-abandon_us.mp3",
+            "description": "Abandon Us · The Seventh Sun (2023)"
+          }
         },
         {
           "@type": "Person",
           "name": "Electric Callboy",
           "sameAs": "https://en.wikipedia.org/wiki/Electric_Callboy",
           "description": "🇩🇪 Castrop-Rauxel, 2010",
-          "image": "/bands/images/electric_callboy.png"
+          "image": "/bands/images/electric_callboy.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/eskimo_callboy-bury_me_in_vegas.mp3",
+            "description": "Bury Me in Vegas · Bury Me in Vegas (2012)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -916,14 +961,24 @@
           "name": "Mayday Parade",
           "sameAs": "https://en.wikipedia.org/wiki/Mayday_Parade",
           "description": "🇺🇸 Tallahassee, 2005",
-          "image": "/bands/images/mayday_parade.png"
+          "image": "/bands/images/mayday_parade.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/mayday_parade-jamie_all_over.mp3",
+            "description": "Jamie All Over · A Lesson in Romantics (2007)"
+          }
         },
         {
           "@type": "Person",
           "name": "All Time Low",
           "sameAs": "https://en.wikipedia.org/wiki/All_Time_Low",
           "description": "🇺🇸 Towson, 2003",
-          "image": "/bands/images/all_time_low.png"
+          "image": "/bands/images/all_time_low.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/all_time_low-dear_maria_count_me_in.mp3",
+            "description": "Dear Maria, Count Me In · So Wrong, It's Right (2007)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
