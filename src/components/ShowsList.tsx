@@ -171,7 +171,7 @@ export default function ShowsList({ events: _events }: ShowsListProps) {
             transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
           }
           .poster-card:hover {
-            transform: scale(1.02) rotate(-1deg);
+            transform: scale(1.02);
             box-shadow: 0 0 20px rgba(255, 0, 60, 0.4), inset 0 0 0 1px rgba(255, 0, 60, 0.8);
           }
           @keyframes fade-in {

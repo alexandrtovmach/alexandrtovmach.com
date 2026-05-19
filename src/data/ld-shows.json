@@ -140,8 +140,47 @@
     },
     {
       "@type": "MusicEvent",
+      "name": "SUM 41 cover party",
+      "image": "/shows/sum_41_cover_party_2012.jpg",
+      "startDate": "2012-11-10T20:00:00Z",
+      "endDate": "2012-11-10T22:00:00Z",
+      "duration": "PT2H",
+      "location": {
+        "@type": "Place",
+        "name": "Рок-клуб \"MADiSAN\"",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "проспект Металургів, 12",
+          "addressLocality": "Кривий Ріг",
+          "addressRegion": "Дніпропетровська область",
+          "addressCountry": "Україна"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "47.8951",
+          "longitude": "33.3958"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Sheldon Cooper",
+          "sameAs": "https://www.facebook.com/sheldon.cooper.kharkov/",
+          "description": "🇺🇦 Kharkiv, 2005",
+          "image": "/bands/images/otorvald.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
       "name": "Презентація альбому \"Примат\"",
-      "image": "/shows/otorvald_2012.jpeg",
+      "image": "/shows/primat_tour_2012.jpg",
       "startDate": "2012-12-01T19:00:00Z",
       "endDate": "2012-12-01T23:00:00Z",
       "duration": "PT4H",
@@ -360,6 +399,94 @@
     },
     {
       "@type": "MusicEvent",
+      "name": "Олдскульна Культурна Програма",
+      "image": "/shows/oldskulna_kulturna_prohrama_2019.png",
+      "startDate": "2019-05-19T19:00:00Z",
+      "endDate": "2019-05-19T22:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Клуб \"Малевич\"",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "проспект В'ячеслава Чорновола, 2",
+          "addressLocality": "Львів",
+          "addressRegion": "Львівська область",
+          "addressCountry": "Україна"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "49.847614797295236",
+          "longitude": "24.026015191731144"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Бумбокс",
+          "sameAs": "https://uk.wikipedia.org/wiki/Бумбокс",
+          "description": "🇺🇦 Kyiv, 2004",
+          "image": "/bands/images/boombox.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/bumboks-beta-karotin.mp3",
+            "description": "Бета-каротин · Меломанія (2005)"
+          }
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Акустика в опері",
+      "image": "/shows/druga_rika-akustika_v_operi_2020.webp",
+      "startDate": "2020-02-10T20:00:00Z",
+      "endDate": "2020-02-10T23:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Львівська Національна Опера",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "проспект Свободи, 28",
+          "addressLocality": "Львів",
+          "addressRegion": "Львівська область",
+          "addressCountry": "Україна"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "49.847614797295236",
+          "longitude": "24.026015191731144"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Друга Ріка",
+          "sameAs": "https://uk.wikipedia.org/wiki/Друга_Ріка",
+          "description": "🇺🇦 Zhytomyr, 1996",
+          "image": "/bands/images/drugarika.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/druga_rika-monstr.mp3",
+            "description": "Монстр · Піраміда (2017)"
+          }
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
       "name": "#РадиоМитал",
       "image": "/shows/radiotapok_2020.jpeg",
       "startDate": "2020-02-26T20:00:00Z",
@@ -411,7 +538,7 @@
           "@type": "PostalAddress",
           "streetAddress": "Tramwajowa 1-3",
           "addressLocality": "Wrocław",
-          "addressRegion": "Dolnośląskie", 
+          "addressRegion": "Dolnośląskie",
           "addressCountry": "Polska"
         },
         "geo": {
@@ -466,7 +593,7 @@
           "@type": "PostalAddress",
           "streetAddress": "Stanisława Lema 7",
           "addressLocality": "Kraków",
-          "addressRegion": "Małopolskie", 
+          "addressRegion": "Małopolskie",
           "addressCountry": "Polska"
         },
         "geo": {
@@ -510,7 +637,7 @@
           "@type": "PostalAddress",
           "streetAddress": "Żwirki i Wigury 99A",
           "addressLocality": "Warszawa",
-          "addressRegion": "Mazowieckie", 
+          "addressRegion": "Mazowieckie",
           "addressCountry": "Polska"
         },
         "geo": {
@@ -566,7 +693,7 @@
           "@type": "PostalAddress",
           "streetAddress": "Viale Enrico Fermi, 98",
           "addressLocality": "Milano",
-          "addressRegion": "Lombardia", 
+          "addressRegion": "Lombardia",
           "addressCountry": "Italia"
         },
         "geo": {
@@ -610,7 +737,7 @@
           "@type": "PostalAddress",
           "streetAddress": "99 Jard. de l'Arche",
           "addressLocality": "Nanterre",
-          "addressRegion": "Île-de-France", 
+          "addressRegion": "Île-de-France",
           "addressCountry": "France"
         },
         "geo": {
@@ -666,7 +793,7 @@
           "@type": "PostalAddress",
           "streetAddress": "Passeig Olímpic, 5-7",
           "addressLocality": "Barcelona",
-          "addressRegion": "Catalonia", 
+          "addressRegion": "Catalonia",
           "addressCountry": "Espana"
         },
         "geo": {
@@ -722,7 +849,7 @@
           "@type": "PostalAddress",
           "streetAddress": "50 Bd Voltaire",
           "addressLocality": "Paris",
-          "addressRegion": "Île-de-France", 
+          "addressRegion": "Île-de-France",
           "addressCountry": "France"
         },
         "geo": {
@@ -878,6 +1005,45 @@
     },
     {
       "@type": "MusicEvent",
+      "name": "Не все дома тур",
+      "image": "/shows/ne_vse_doma_2025.png",
+      "startDate": "2025-10-02T20:00:00Z",
+      "endDate": "2025-10-02T23:00:00Z",
+      "duration": "PT3H",
+      "location": {
+        "@type": "Place",
+        "name": "Concert Center A2",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Góralska 5",
+          "addressLocality": "Wrocław",
+          "addressRegion": "Dolnośląskie",
+          "addressCountry": "Polska"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "51.108546072596084",
+          "longitude": "17.001965384485736"
+        }
+      },
+      "performer": [
+        {
+          "@type": "Person",
+          "name": "Noize MC",
+          "sameAs": "https://ru.wikipedia.org/wiki/Noize_MC",
+          "description": "🏳️ Moscow, 2003",
+          "image": "/bands/images/noize_mc.png"
+        }
+      ],
+      "eventAttendanceMode": "OfflineEventAttendanceMode",
+      "attendees": {
+        "@type": "Person",
+        "name": "Alexandr Tovmach",
+        "sameAs": "https://alexandrtovmach.com"
+      }
+    },
+    {
+      "@type": "MusicEvent",
       "name": "Europe 2025 Tour",
       "image": "/shows/the_plot_in_you_europe_2025.webp",
       "startDate": "2025-11-19T19:00:00Z",
@@ -958,7 +1124,7 @@
           "@type": "PostalAddress",
           "streetAddress": "Stanisława Lema 7",
           "addressLocality": "Kraków",
-          "addressRegion": "Małopolskie", 
+          "addressRegion": "Małopolskie",
           "addressCountry": "Polska"
         },
         "geo": {
@@ -1026,7 +1192,7 @@
           "@type": "PostalAddress",
           "streetAddress": "Stefana Batorego 10",
           "addressLocality": "Warszawa",
-          "addressRegion": "Mazowieckie", 
+          "addressRegion": "Mazowieckie",
           "addressCountry": "Polska"
         },
         "geo": {
