@@ -111,7 +111,12 @@
           "name": "Garbage",
           "sameAs": "https://en.wikipedia.org/wiki/Garbage",
           "description": "🇺🇸 Madison, 1994",
-          "image": "/bands/images/garbage.png"
+          "image": "/bands/images/garbage.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/garbage-the_world_is_not_enough.mp3",
+            "description": "The World Is Not Enough · The World Is Not Enough (1999)"
+          }
         },
         {
           "@type": "Person",
@@ -121,7 +126,7 @@
           "image": "/bands/images/linkin_park.png",
           "audio": {
             "@type": "AudioObject",
-            "url": "/bands/samples/linkin_park-waiting_for_the_end_waiting_for_the_end.mp3",
+            "url": "/bands/samples/linkin_park-waiting_for_the_end.mp3",
             "description": "Waiting for the End · A Thousands Suns (2010)"
           }
         }
@@ -510,14 +515,24 @@
           "name": "Solence",
           "sameAs": "https://en.wikipedia.org/wiki/Solence",
           "description": "🇸🇪 Norrköping, 2012",
-          "image": "/bands/images/solence.png"
+          "image": "/bands/images/solence.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/solence-blackout.mp3",
+            "description": "Blackout · Direction (2020)"
+          }
         },
         {
           "@type": "Person",
           "name": "Underoath",
           "sameAs": "https://en.wikipedia.org/wiki/Underoath",
           "description": "🇺🇸 Tampa, 1997",
-          "image": "/bands/images/underoath.png"
+          "image": "/bands/images/underoath.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/underoath-reinventing_your_exit.mp3",
+            "description": "Reinventing Your Exit · They're Only Chasing Safety (2004)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -556,7 +571,12 @@
           "name": "Zebrahead",
           "sameAs": "https://en.wikipedia.org/wiki/Zebrahead",
           "description": "🇺🇸 La Habra, 1996",
-          "image": "/bands/images/zebrahead.png"
+          "image": "/bands/images/zebrahead.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/zebrahead-hell_yeah.mp3",
+            "description": "Hell Yeah · Phoenix (2008)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -595,7 +615,12 @@
           "name": "Sleep Token",
           "sameAs": "https://en.wikipedia.org/wiki/Sleep_Token",
           "description": "🇬🇧 London, 2016",
-          "image": "/bands/images/sleeptoken.png"
+          "image": "/bands/images/sleeptoken.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/sleep_token-rain.mp3",
+            "description": "Rain · Take Me Back to Eden (2023)"
+          }
         },
         {
           "@type": "Person",
@@ -646,14 +671,24 @@
           "name": "Neck Deep",
           "sameAs": "https://en.wikipedia.org/wiki/Neck_Deep",
           "description": "🏴󠁧󠁢󠁷󠁬󠁳󠁿 Wrexham, 2012",
-          "image": "/bands/images/neckdeep.png"
+          "image": "/bands/images/neckdeep.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/neck_deep-in_bloom.mp3",
+            "description": "In Bloom · The Peace and the Panic (2017)"
+          }
         },
         {
           "@type": "Person",
           "name": "SUM 41",
           "sameAs": "https://en.wikipedia.org/wiki/Sum_41",
-          "description": "🇨🇦 Ontario, 1996",
-          "image": "/bands/images/sum41.png"
+          "description": "🇨🇦 Ajax, 1996",
+          "image": "/bands/images/sum41.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/sum_41-noots.mp3",
+            "description": "Noots · Chuck (2004)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -692,14 +727,24 @@
           "name": "Story of the Year",
           "sameAs": "https://en.wikipedia.org/wiki/Story_of_the_Year",
           "description": "🇺🇸 St. Louis, 1995",
-          "image": "/bands/images/storyoftheyear.png"
+          "image": "/bands/images/storyoftheyear.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/story_of_the_year-until_the_day.mp3",
+            "description": "Until the Day · Page Avenue (2003)"
+          }
         },
         {
           "@type": "Person",
           "name": "Yellowcard",
           "sameAs": "https://en.wikipedia.org/wiki/Yellowcard",
           "description": "🇺🇸 Jacksonville, 1997",
-          "image": "/bands/images/yellowcard.png"
+          "image": "/bands/images/yellowcard.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/yellowcard-believe.mp3",
+            "description": "Believe · Ocean Avenue (2003)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -738,14 +783,24 @@
           "name": "Sleep Theory",
           "sameAs": "https://en.wikipedia.org/wiki/Sleep_Theory",
           "description": "🇺🇸 Memphis, 2019",
-          "image": "/bands/images/sleep_theory.png"
+          "image": "/bands/images/sleep_theory.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/sleep_theory-static.mp3",
+            "description": "Static · Afterglow (2025)"
+          }
         },
         {
           "@type": "Person",
           "name": "Hollywood Undead",
           "sameAs": "https://en.wikipedia.org/wiki/Hollywood_Undead",
           "description": "🇺🇸 Los Angeles, 2005",
-          "image": "/bands/images/hollywood_undead.png"
+          "image": "/bands/images/hollywood_undead.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/hollywood_undead-undead.mp3",
+            "description": "Undead · Swan Songs (2008)"
+          }
         },
         {
           "@type": "Person",
@@ -840,7 +895,12 @@
           "name": "Saosin",
           "sameAs": "https://en.wikipedia.org/wiki/Saosin",
           "description": "🇺🇸 Orange County, 2003",
-          "image": "/bands/images/saosin.png"
+          "image": "/bands/images/saosin.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/saosin-youre_not_alone.mp3",
+            "description": "You're Not Alone · Saosin (2006)"
+          }
         },
         {
           "@type": "Person",
@@ -859,7 +919,12 @@
           "name": "The Plot In You",
           "sameAs": "https://en.wikipedia.org/wiki/The_Plot_In_You",
           "description": "🇺🇸 Hancock County, 2010",
-          "image": "/bands/images/the_plot_in_you.png"
+          "image": "/bands/images/the_plot_in_you.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/the_plot_in_you-left_behind.mp3",
+            "description": "Left Behind · The Plot In You (2023)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -898,7 +963,12 @@
           "name": "Wargasm",
           "sameAs": "https://en.wikipedia.org/wiki/Wargasm",
           "description": "🇬🇧 London, 2018",
-          "image": "/bands/images/wargasm.png"
+          "image": "/bands/images/wargasm.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/wargasm_uk-do_it_so_good.mp3",
+            "description": "Do It So Good · Venom (2023)"
+          }
         },
         {
           "@type": "Person",
