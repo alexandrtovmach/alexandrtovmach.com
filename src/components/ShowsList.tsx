@@ -44,6 +44,7 @@ interface MusicEvent {
   performer: Performer[];
   eventAttendanceMode?: string;
   description?: string;
+  hidden?: boolean;
 }
 
 interface ShowsListProps {
@@ -80,7 +81,7 @@ const ListView = ({ events }: { events: MusicEvent[] }) => {
             <div className="w-1/4 md:w-1/5 text-right text-xs tracking-widest text-[#e9bcba] uppercase font-mono">Venue</div>
           </div>
 
-          {events.map((event, idx) => (
+          {events.filter(event => !event.hidden).map((event, idx) => (
             <div key={idx} className="group flex flex-col border-b border-white/5 hover:bg-[#2a2a2a]/40 transition-colors duration-300 relative overflow-hidden">
               <div className="absolute inset-0 bg-[#ffb3b2]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-0 pointer-events-none"></div>
 
@@ -120,7 +121,7 @@ const PosterView = ({ events }: { events: MusicEvent[] }) => {
 
         {/* Masonry Layout for Adaptive/Fluid sizing */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
-          {events.map((event, idx) => {
+          {events.filter(event => !event.hidden).map((event, idx) => {
             const fallbacks = [
               "https://lh3.googleusercontent.com/aida-public/AB6AXuBCK4CKWg78LSOkRWj3HlVB_LOiMaiWD7uNAO5iH6HVOsHfakVE3jDsHojg7DYBgvsbZh_vF9Y5zdC-fgDYVSdDM6WGy1laAjqpWUsm0_PI5pEm35uxyz8orlyVDFVCq7_2yy7urIHM6easuXBs4lOU2QTZ-2uv_4qTJ2obULenbTBllhoIcoAMPSn-GD10Bb7oqXbQvHdtRQnMU9trixnmtjEMnF93C3yRqSRpV5oSABLjRwwZEr-DQdNW31xqYAiZi8PYxd8LQy8",
               "https://lh3.googleusercontent.com/aida-public/AB6AXuDI3ooxX0PS_wXpltXGvzQhMgsBVuUGXuGwBrCAKcvFmmnICjtteO6CgmlLL01XqOY2eyTfSoAVjCRS5M1pyhOIdFLxOEysTvsfwex2XaO6IYy3U_N4GHwRN7JTDeNEqvPourP3_qqSgWtxIM2XicynEddMcTteCmAHv3l85DtnsVI88PzRF2BQebaS7Vy3LwAxjjQm8YfI0PZinGezskxjOSZTuOcHuCLXb9gtCEvouKf5qP-E_kYWhs_-0OR-ux5zYoyBW0CphqI",
