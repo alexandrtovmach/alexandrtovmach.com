@@ -400,7 +400,7 @@
     {
       "@type": "MusicEvent",
       "name": "IMAGO Europe Tour",
-      "image": "/shows/space_of_variations_2024.jpeg",
+      "image": "/shows/imago_europe_tour_2024.jpg",
       "startDate": "2024-03-22T20:00:00Z",
       "endDate": "2024-03-22T23:00:00Z",
       "duration": "PT3H",
@@ -425,14 +425,24 @@
           "@type": "Person",
           "name": "Evermorphing",
           "description": "🇺🇸 USA, 2023",
-          "image": "/bands/images/evermorphing.png"
+          "image": "/bands/images/evermorphing.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/evermorphing-snowmelt.mp3",
+            "description": "Snowmelt · Snowmelt (2023)"
+          }
         },
         {
           "@type": "Person",
           "name": "Space of Variations",
           "sameAs": "https://uk.wikipedia.org/wiki/Space_of_Variations",
           "description": "🇺🇦 Vinnytsia, 2009",
-          "image": "/bands/images/space_of_variations.png"
+          "image": "/bands/images/space_of_variations.png",
+          "audio": {
+            "@type": "AudioObject",
+            "url": "/bands/samples/space_of_variations-act_of_god.mp3",
+            "description": "Act of God · Blackmail (2016)"
+          }
         }
       ],
       "eventAttendanceMode": "OfflineEventAttendanceMode",
@@ -445,7 +455,7 @@
     {
       "@type": "MusicEvent",
       "name": "Seasons Tour",
-      "image": "/shows/thirty_seconds_to_mars_2024.jpeg",
+      "image": "/shows/seasons_tour_2024.jpg",
       "startDate": "2024-05-09T20:00:00Z",
       "endDate": "2024-05-09T23:00:00Z",
       "duration": "PT3H",
@@ -488,8 +498,8 @@
     },
     {
       "@type": "MusicEvent",
-      "name": "UK/EU Tour",
-      "image": "/shows/underoath_2024.jpeg",
+      "name": "Underoath UK/EU Tour",
+      "image": "/shows/underoath_uk_eu_tour_2024.jpg",
       "startDate": "2024-06-12T19:00:00Z",
       "endDate": "2024-06-12T22:00:00Z",
       "duration": "PT3H",
@@ -545,7 +555,7 @@
     {
       "@type": "MusicEvent",
       "name": "Friday Night Every Night & Sucker Punch Tour",
-      "image": "/shows/zebrahead_2024.jpeg",
+      "image": "/shows/zebrahead_tour_2024.webp",
       "startDate": "2024-07-25T19:00:00Z",
       "endDate": "2024-07-25T22:00:00Z",
       "duration": "PT3H",
@@ -588,8 +598,8 @@
     },
     {
       "@type": "MusicEvent",
-      "name": "From Zero Tour",
-      "image": "/shows/linkin_park_2024.jpeg",
+      "name": "From Zero World Tour",
+      "image": "/shows/from_zero_world_tour_2024.jpg",
       "startDate": "2024-11-03T19:00:00Z",
       "endDate": "2024-11-03T22:00:00Z",
       "duration": "PT3H",
@@ -645,7 +655,7 @@
     {
       "@type": "MusicEvent",
       "name": "Tour of the Setting Sum",
-      "image": "/shows/sum41_2024.jpeg",
+      "image": "/shows/tour_of_the_setting_sum_2024.webp",
       "startDate": "2024-11-20T19:00:00Z",
       "endDate": "2024-11-20T22:00:00Z",
       "duration": "PT3H",
@@ -701,7 +711,7 @@
     {
       "@type": "MusicEvent",
       "name": "20 years of \"Ocean Avenue\"",
-      "image": "/shows/sum41_2024.jpeg",
+      "image": "/shows/20_years_of_ocean_avenue_2024.webp",
       "startDate": "2024-11-22T19:00:00Z",
       "endDate": "2024-11-22T22:00:00Z",
       "duration": "PT3H",
@@ -757,7 +767,7 @@
     {
       "@type": "MusicEvent",
       "name": "The Popular MonsTOUR II: World Domination",
-      "image": "/shows/falling_in_reverse_2024.jpeg",
+      "image": "/shows/popular_monstour_ii_world_domination_2024.webp",
       "startDate": "2024-11-25T19:00:00Z",
       "endDate": "2024-11-25T22:00:00Z",
       "duration": "PT3H",
@@ -825,7 +835,7 @@
     {
       "@type": "MusicEvent",
       "name": "UK + Europe Tour",
-      "image": "/shows/a_day_to_remember_2025.jpeg",
+      "image": "/shows/a_day_to_remember_uk_europe_2025.webp",
       "startDate": "2025-06-14T19:00:00Z",
       "endDate": "2025-06-14T22:00:00Z",
       "duration": "PT3H",
@@ -868,8 +878,8 @@
     },
     {
       "@type": "MusicEvent",
-      "name": "European Tour",
-      "image": "/shows/the_plot_in_you_2025.jpeg",
+      "name": "Europe 2025 Tour",
+      "image": "/shows/the_plot_in_you_europe_2025.webp",
       "startDate": "2025-11-19T19:00:00Z",
       "endDate": "2025-11-19T22:00:00Z",
       "duration": "PT3H",
@@ -937,7 +947,7 @@
     {
       "@type": "MusicEvent",
       "name": "TANZNEID World Tour",
-      "image": "/shows/electric_callboy_2025.jpeg",
+      "image": "/shows/tanzneid_world_tour_2025.png",
       "startDate": "2025-11-23T19:00:00Z",
       "endDate": "2025-11-23T22:00:00Z",
       "duration": "PT3H",
@@ -1005,7 +1015,7 @@
     {
       "@type": "MusicEvent",
       "name": "Everyone's Talking!",
-      "image": "/shows/all_time_low_2026.jpeg",
+      "image": "/shows/everyones_talking_2026.jpg",
       "startDate": "2026-02-08T19:00:00Z",
       "endDate": "2026-02-08T22:00:00Z",
       "duration": "PT3H",
