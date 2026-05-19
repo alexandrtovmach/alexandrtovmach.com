@@ -1,10 +1,9 @@
 @import url('https://rsms.me/inter/inter.css');
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: Inter, sans-serif;
-  --font-mono: 'Pixelify Sans', monospace;
+  --font-mono: monospace;
 }
 
 @layer base {

@@ -1,8 +1,6 @@
 ---
-import GitHubSVG from '@/assets/icons/github.svg';
-import XSVG from '@/assets/icons/x.svg';
-import MailSVG from '@/assets/icons/mail.svg';
-import PrinterSVG from '@/assets/icons/printer.svg';
+import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
+import { Mail, Printer } from 'lucide-react';
 import QRJpeg from '@/assets/images/qr.jpg';
 import QRWebP from '@/assets/images/qr.webp';
 import Layout from '@/layouts/Layout.astro';
@@ -72,7 +70,7 @@ const faq = [
       class="flex items-center gap-3 bg-transparent border border-black rounded-full flex p-4 cursor-pointer transition-all duration-[200ms] text-xs font-medium hover:bg-black hover:text-white"
       onclick="window.print()"
     >
-      <PrinterSVG class="h-4" />
+      <Printer className="h-4 w-4" />
       Click to print / Save PDF
     </button>
   </nav>
@@ -95,19 +93,19 @@ const faq = [
               link: 'https://github.com/alexandrtovmach',
               label: 'alexandrtovmach',
               title: 'My GitHub',
-              icon: <GitHubSVG />,
+              icon: <SiGithub className="w-full h-full" />,
             },
             {
               link: 'mailto:alexandrtovmach@gmail.com',
               label: 'alexandrtovmach@gmail.com',
               title: 'Email address',
-              icon: <MailSVG />,
+              icon: <Mail className="w-full h-full" />,
             },
             {
               link: 'https://x.com/alexandrtovmach',
               label: '@alexandrtovmach',
-              title: 'My Twitter',
-              icon: <XSVG />,
+              title: 'My X',
+              icon: <SiX className="w-full h-full" />,
             },
           ].map(({ icon, link, label, title }) => (
             <a
@@ -309,4 +307,3 @@ const faq = [
       </section>
     </section>
   </main></Layout
->

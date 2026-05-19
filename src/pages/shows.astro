@@ -10,22 +10,8 @@ const pageDescription =
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-  <main class="py-8 min-h-[calc(100vh-200px)]">
-    <div class="max-w-5xl mx-auto px-4">
-      <header class="text-center mb-12">
-        <h1 class="text-5xl font-semibold text-gray-900 mb-4 md:text-2.5xl">
-          {pageTitle}
-        </h1>
-        <p class="text-lg text-gray-600 mb-2 leading-relaxed">
-          {pageDescription}
-        </p>
-        <p class="text-sm text-gray-400">
-          {events.length}
-          {events.length === 1 ? 'event' : 'events'} recorded
-        </p>
-      </header>
-
-      <ShowsList client:load events={events} />
-    </div>
+  
+  <main class="bg-[#131313] text-[#e5e2e1] min-h-screen w-full relative selection:bg-[#ffb3b2] selection:text-[#680012]">
+    <ShowsList client:load events={events} />
   </main>
 </Layout>
