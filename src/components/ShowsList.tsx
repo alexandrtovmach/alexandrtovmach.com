@@ -77,11 +77,13 @@ const ListView = ({ events }: { events: MusicEvent[] }) => {
       <div className="relative z-10 pt-24 pb-48 px-6 md:px-16 md:pr-32 max-w-7xl mx-auto min-h-screen flex flex-col">
         <header className="mb-16">
           <h1 className="text-5xl md:text-7xl text-[#e5e2e1] uppercase mb-4 opacity-90 font-bold tracking-tighter">
-            Archive Directory
+            Stack Trace
           </h1>
           <p className="text-base md:text-lg text-[#e9bcba] max-w-xl">
-            A chronological record of aural decimation. Raw data extracted from
-            the touring history.
+            Software engineer by day, concert enthusiast by night. This log
+            tracks my journey through the live rock scene, serving as a personal
+            archive of the shows that have provided the perfect soundtrack to my
+            life.
           </p>
         </header>
 
@@ -111,7 +113,8 @@ const ListView = ({ events }: { events: MusicEvent[] }) => {
                   <div className="basis-full md:basis-1/5 text-sm tracking-wider text-[#929090] uppercase font-mono">
                     {formatDateList(event.startDate)}
                     <span className="inline md:hidden">
-                      {' '}//{' '}
+                      {' '}
+                      //{' '}
                       {event.location?.address?.addressLocality ||
                         event.location?.name}
                     </span>
@@ -149,13 +152,15 @@ const PosterView = ({ events }: { events: MusicEvent[] }) => {
       <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vh] bg-[radial-gradient(circle,_rgba(255,179,178,0.05)_0%,_rgba(19,19,19,0)_70%)] pointer-events-none z-0"></div>
 
       <div className="relative z-10 pt-24 pb-48 px-6 md:px-16 md:pr-32 max-w-7xl mx-auto min-h-screen">
-        <header className="mb-16 border-b border-white/10 pb-8">
-          <h1 className="text-5xl md:text-7xl font-bold text-[#e5e2e1] mb-2 tracking-tighter uppercase">
-            Visual Archive
+        <header className="mb-16">
+          <h1 className="text-5xl md:text-7xl text-[#e5e2e1] uppercase mb-4 opacity-90 font-bold tracking-tighter">
+            Stack Trace
           </h1>
           <p className="text-base md:text-lg text-[#e9bcba] max-w-xl">
-            A curated collection of brutalist tour graphics from the underground
-            circuit. High contrast. High distortion.
+            Software engineer by day, concert enthusiast by night. This log
+            tracks my journey through the live rock scene, serving as a personal
+            archive of the shows that have provided the perfect soundtrack to my
+            life.
           </p>
         </header>
 
