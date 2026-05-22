@@ -83,13 +83,16 @@ const BackgroundLayer = () => (
         alt="Shows background"
       />
     </video>
-    <div className="absolute inset-0 bg-gradient-to-b from-[#131313] via-[#131313]/80 to-[#131313]"></div>
-    <div className="absolute inset-0 bg-grain transition-opacity duration-300 opacity-10"></div>
+    <div className="absolute inset-0 bg-gradient-to-b from-[#131313] via-[#131313]/95 to-[#131313]"></div>
+    <div className="absolute inset-0 bg-grain transition-opacity duration-300"></div>
   </div>
 );
 
 const PageHeader = () => (
-  <header className="mb-16">
+  <header className="mb-12">
+    <nav className="mx-auto flex items-center justify-between font-bold max-sm:hidden opacity-80">
+      <a href="/"> ⟵ Back to main </a>
+    </nav>
     <h1 className="text-5xl md:text-7xl text-[#e5e2e1] uppercase mb-4 opacity-90 font-bold tracking-tighter">
       Stack Trace
     </h1>
@@ -101,7 +104,7 @@ const PageHeader = () => (
 );
 
 const PageWrapper = ({ children }: { children: ReactNode }) => (
-  <div className="relative z-10 pt-24 pb-48 px-6 md:px-16 md:pr-32 max-w-7xl mx-auto min-h-screen">
+  <div className="relative z-10 py-12 px-6 md:px-12 max-w-6xl mx-auto min-h-screen">
     <PageHeader />
     {children}
   </div>
@@ -219,8 +222,8 @@ export default function ShowsList({ events: _events }: ShowsListProps) {
     <div className="relative min-h-screen w-full font-sans overflow-x-hidden">
       <style>{`
           .bg-grain {
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.8;
             mix-blend-mode: overlay;
             pointer-events: none;
           }
